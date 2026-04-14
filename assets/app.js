@@ -301,6 +301,45 @@ function renderBlueprints() {
   }
 }
 
+function getCatInfo(catPath) {
+  const p = (catPath || '').toLowerCase();
+  if (p.includes('ammo')) {
+    if (p.includes('laser'))     return { abbr: 'LASER',    color: '#f59e0b' };
+    if (p.includes('ballistic')) return { abbr: 'BALÍSTICO', color: '#ef4444' };
+    if (p.includes('plasma'))    return { abbr: 'PLASMA',   color: '#8b5cf6' };
+    if (p.includes('electron'))  return { abbr: 'ELECTRÓN', color: '#06b6d4' };
+    if (p.includes('shotgun'))   return { abbr: 'ESCOPETA', color: '#f97316' };
+    return { abbr: 'MUNICIÓN', color: '#ef4444' };
+  }
+  if (p.includes('armour') || p.includes('armor')) {
+    if (p.includes('combat'))      return { abbr: 'COMBATE',  color: '#3b82f6' };
+    if (p.includes('stealth'))     return { abbr: 'SIGILO',   color: '#6366f1' };
+    if (p.includes('explorer'))    return { abbr: 'EXPLORAC', color: '#10b981' };
+    if (p.includes('hunter'))      return { abbr: 'CAZADOR',  color: '#f97316' };
+    if (p.includes('medic'))       return { abbr: 'MÉDICO',   color: '#06b6d4' };
+    if (p.includes('miner'))       return { abbr: 'MINERO',   color: '#78716c' };
+    if (p.includes('engineer'))    return { abbr: 'INGENIERO',color: '#a78bfa' };
+    if (p.includes('salvager'))    return { abbr: 'SALVADOR', color: '#d97706' };
+    if (p.includes('flightsuit'))  return { abbr: 'PILOTO',   color: '#22c55e' };
+    if (p.includes('racer'))       return { abbr: 'PILOTO',   color: '#22c55e' };
+    if (p.includes('radiation'))   return { abbr: 'RADIACIÓN',color: '#84cc16' };
+    if (p.includes('environment')) return { abbr: 'AMBIENTAL',color: '#84cc16' };
+    if (p.includes('cosmonaut'))   return { abbr: 'COSMONAUTA',color:'#60a5fa' };
+    if (p.includes('undersuit'))   return { abbr: 'INTERIOR', color: '#94a3b8' };
+    return { abbr: 'ARMADURA', color: '#3b82f6' };
+  }
+  if (p.includes('weapons') || p.includes('weapon')) {
+    if (p.includes('rifle'))   return { abbr: 'RIFLE',    color: '#f59e0b' };
+    if (p.includes('pistol'))  return { abbr: 'PISTOLA',  color: '#d97706' };
+    if (p.includes('sniper'))  return { abbr: 'FRANCOTIRADOR', color: '#8b5cf6' };
+    if (p.includes('smg'))     return { abbr: 'SMG',      color: '#ef4444' };
+    if (p.includes('lmg'))     return { abbr: 'LMG',      color: '#dc2626' };
+    if (p.includes('shotgun')) return { abbr: 'ESCOPETA', color: '#f97316' };
+    return { abbr: 'ARMA', color: '#f59e0b' };
+  }
+  return { abbr: 'OBJETO', color: '#8a7048' };
+}
+
 function renderBlueprintCard(bp, idx) {
   const tier = bp.tiers[0];
   const ingredients = tier?.ingredients || [];
@@ -315,6 +354,7 @@ function renderBlueprintCard(bp, idx) {
     </div>
   `).join('');
 
+  const catInfo = getCatInfo(bp.categoryPath);
   const missionBadge = bp.hasMissions
     ? `<span class="bp-mission-badge">✓ MISIÓN</span>`
     : '';
@@ -349,7 +389,10 @@ function renderBlueprintCard(bp, idx) {
         <span class="bp-name">${escHtml(bp.name)}</span>
         ${missionBadge}
       </div>
-      <div class="bp-category">${escHtml(bp.categoryPath)}</div>
+      <div class="bp-category">
+        <span class="bp-cat-badge" style="color:${catInfo.color};border-color:${catInfo.color};background:${catInfo.color}18">${catInfo.abbr}</span>
+        ${escHtml(bp.categoryPath)}
+      </div>
       <div class="bp-ingredients">
         ${ingHtml}
         ${extraCount > 0 ? `<span class="bp-more-ingredients">+${extraCount} materiales más...</span>` : ''}

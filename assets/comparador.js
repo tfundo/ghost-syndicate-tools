@@ -162,7 +162,9 @@
     filterRole: '',
     filterMfr: '',
     filterType: '',
-    selected: []   // [{type:'ship'|'weapon', name:string}]
+    selected: [],  // [{type:'ship'|'weapon', name:string}]
+    shipImages: {},
+    _imagesLoaded: false
   };
 
   // ============================================================
@@ -402,11 +404,24 @@
     }[ship.size] || '#a88b4a';
 
     const roleColor = getRoleColor(ship.role);
+    const mfrColor  = MFR_COLOR[ship.mfr] || '#8a7048';
+
+    const imgUrl = compState.shipImages && compState.shipImages[ship.name];
+    const bannerHtml = imgUrl
+      ? `<div class="comp-ship-banner">
+          <img src="${escComp(imgUrl)}" alt="${escComp(ship.name)}" loading="lazy"
+               onerror="this.parentElement.style.background='linear-gradient(135deg,${mfrColor}15 0%,transparent 80%)';this.remove()">
+        </div>`
+      : `<div class="comp-ship-banner comp-banner-placeholder"
+             style="background:linear-gradient(135deg,${mfrColor}15 0%,transparent 80%)">
+          <span class="comp-banner-mfr" style="color:${mfrColor}">${escComp(ship.mfr)}</span>
+        </div>`;
 
     return `
       <div class="bp-card comp-card${selClass}"
            onclick="Comp.toggleSelect('ship','${nameEncoded}')"
            title="${sel ? 'Quitar de comparación' : 'Añadir a comparación'}">
+        ${bannerHtml}
         ${sel ? '<div class="comp-selected-mark">&#10003;</div>' : ''}
         <div class="comp-card-header">
           <div class="comp-ship-name">${escComp(ship.name)}</div>
@@ -603,6 +618,18 @@
     }[ship.size] || '#a88b4a';
 
     const roleColor = getRoleColor(ship.role);
+    const mfrColor  = MFR_COLOR[ship.mfr] || '#8a7048';
+
+    const imgUrl = compState.shipImages && compState.shipImages[ship.name];
+    const cmpBannerHtml = imgUrl
+      ? `<div class="comp-cmp-banner">
+          <img src="${escComp(imgUrl)}" alt="${escComp(ship.name)}" loading="lazy"
+               onerror="this.parentElement.style.background='linear-gradient(135deg,${mfrColor}18 0%,transparent 80%)';this.remove()">
+        </div>`
+      : `<div class="comp-cmp-banner comp-banner-placeholder"
+             style="background:linear-gradient(135deg,${mfrColor}18 0%,transparent 80%)">
+          <span class="comp-banner-mfr" style="color:${mfrColor}">${escComp(ship.mfr)}</span>
+        </div>`;
 
     const stats = [
       { label: 'SCM Speed',    key: 'scm',     unit: 'm/s', higher: true },
@@ -619,6 +646,7 @@
 
     return `
       <div class="comp-compare-card">
+        ${cmpBannerHtml}
         <div class="comp-cmp-header">
           <div class="comp-cmp-name">${escComp(ship.name)}</div>
           <div class="comp-cmp-sub">${escComp(ship.mfr)}</div>
@@ -697,6 +725,27 @@
   // ============================================================
   // COLOR HELPERS
   // ============================================================
+
+  const MFR_COLOR = {
+    'Aegis':                 '#4a9eff',
+    'Anvil':                 '#22c55e',
+    'Aopoa':                 '#8b5cf6',
+    'Banu':                  '#d97706',
+    'Consolidated Outland':  '#ef4444',
+    'Crusader':              '#f59e0b',
+    'Drake':                 '#dc2626',
+    'Esperia':               '#8b5cf6',
+    'Gatac':                 '#22c55e',
+    'Greycat':               '#78716c',
+    'Kruger':                '#60a5fa',
+    'MISC':                  '#10b981',
+    'Mirai':                 '#a855f7',
+    'NDC':                   '#6b7280',
+    'Origin':                '#e2e8f0',
+    'RSI':                   '#3b82f6',
+    'Tumbril':               '#92400e',
+    'Willsop':               '#6b7280'
+  };
 
   function getRoleColor(role) {
     const r = (role || '').toLowerCase();
@@ -985,6 +1034,55 @@
         letter-spacing: 0.04em;
       }
 
+      /* ===== SHIP IMAGE BANNERS ===== */
+      .comp-ship-banner {
+        height: 100px;
+        margin: -1rem -1rem 0.8rem;
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-bottom: 1px solid var(--border);
+        background: rgba(0,0,0,0.35);
+        flex-shrink: 0;
+      }
+      .comp-ship-banner img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 40%;
+        display: block;
+        transition: transform 0.4s ease;
+      }
+      .comp-card:hover .comp-ship-banner img { transform: scale(1.05); }
+      .comp-cmp-banner {
+        height: 140px;
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-bottom: 1px solid var(--border);
+        background: rgba(0,0,0,0.35);
+        flex-shrink: 0;
+      }
+      .comp-cmp-banner img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 40%;
+        display: block;
+      }
+      .comp-banner-mfr {
+        font-family: var(--font-hud);
+        font-size: 0.65rem;
+        font-weight: 700;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        opacity: 0.35;
+      }
+
       /* ===== BADGES ===== */
       .comp-badges {
         display: flex;
@@ -1225,6 +1323,13 @@
   function init() {
     injectStyles();
     render();
+    if (!compState._imagesLoaded) {
+      compState._imagesLoaded = true;
+      fetch('data/ship_images.json')
+        .then(r => r.ok ? r.json() : {})
+        .then(imgs => { compState.shipImages = imgs; render(); })
+        .catch(() => {});
+    }
   }
 
   // ============================================================
