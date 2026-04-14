@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ghost Syndicate Tools — Star Citizen Companion</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo">
+      <span class="logo-ghost">◈</span>
+      <span class="logo-text">GHOST <span class="accent">SYNDICATE</span> TOOLS</span>
+    </div>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home" class="nav-link active" data-section="home">Inicio</a></li>
+      <li><a href="#crafting" class="nav-link" data-section="crafting">Fabricación</a></li>
+      <li><a href="#ships" class="nav-link nav-coming" data-section="ships">Naves <span class="badge">Próx.</span></a></li>
+      <li><a href="#weapons" class="nav-link nav-coming" data-section="weapons">Armas <span class="badge">Próx.</span></a></li>
+      <li><a href="#locations" class="nav-link nav-coming" data-section="locations">Localizaciones <span class="badge">Próx.</span></a></li>
+      <li><a href="#trading" class="nav-link nav-coming" data-section="trading">Comercio <span class="badge">Próx.</span></a></li>
+    </ul>
+    <div class="nav-version">SC 4.7.0</div>
+  </nav>
+
+  <!-- ===== HOME SECTION ===== -->
+  <section class="section active" id="home">
+    <div class="hero">
+      <div class="hero-bg">
+        <div class="stars" id="stars"></div>
+        <div class="nebula"></div>
+      </div>
+      <div class="hero-content">
+        <div class="hero-badge">Star Citizen 4.7.0 · Actualizado 2026</div>
+        <div class="hero-logo-big">◈</div>
+        <h1 class="hero-title">
+          GHOST SYNDICATE<br>
+          <span class="hero-sub">TOOLS</span>
+        </h1>
+        <p class="hero-desc">
+          Tu compañero definitivo en el universo de Star Citizen.<br>
+          Base de datos actualizada directamente desde los archivos del juego.
+        </p>
+        <div class="hero-stats">
+          <div class="stat-card" id="stat-blueprints">
+            <span class="stat-num">—</span>
+            <span class="stat-label">Planos de Fabricación</span>
+          </div>
+          <div class="stat-card" id="stat-materials">
+            <span class="stat-num">—</span>
+            <span class="stat-label">Materiales</span>
+          </div>
+          <div class="stat-card" id="stat-missions">
+            <span class="stat-num">—</span>
+            <span class="stat-label">Planos con Misión</span>
+          </div>
+        </div>
+        <div class="hero-actions">
+          <button class="btn-primary" onclick="showSection('crafting')">
+            <span class="btn-icon">⚙</span> Explorar Fabricación
+          </button>
+          <button class="btn-ghost" onclick="showSection('ships')">
+            <span class="btn-icon">◈</span> Ver Naves
+          </button>
+        </div>
+      </div>
+      <div class="hero-ship">
+        <div class="ship-hologram">
+          <div class="holo-ring ring-1"></div>
+          <div class="holo-ring ring-2"></div>
+          <div class="holo-ring ring-3"></div>
+          <div class="holo-core">◈</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Feature cards -->
+    <div class="features container">
+      <h2 class="section-title">¿Qué incluye?</h2>
+      <div class="feature-grid">
+        <div class="feature-card" onclick="showSection('crafting')">
+          <div class="feature-icon">⚙</div>
+          <h3>Fabricación</h3>
+          <p>1.044 planos con ingredientes exactos, cantidades en SCU y las misiones donde se obtienen como recompensa.</p>
+          <span class="feature-link">Ver ahora →</span>
+        </div>
+        <div class="feature-card coming-soon">
+          <div class="feature-icon">🚀</div>
+          <h3>Naves</h3>
+          <p>Fichas técnicas completas, comparador de naves y guías de compra para todas las naves del universo.</p>
+          <span class="feature-coming">Próximamente</span>
+        </div>
+        <div class="feature-card coming-soon">
+          <div class="feature-icon">🔫</div>
+          <h3>Armas & Equipo</h3>
+          <p>Estadísticas detalladas, comparador de DPS y builds recomendados para cada estilo de juego.</p>
+          <span class="feature-coming">Próximamente</span>
+        </div>
+        <div class="feature-card coming-soon">
+          <div class="feature-icon">🗺</div>
+          <h3>Localizaciones</h3>
+          <p>Mapa interactivo del universo, puntos de interés y guías de los sistemas Stanton y Pyro.</p>
+          <span class="feature-coming">Próximamente</span>
+        </div>
+        <div class="feature-card coming-soon">
+          <div class="feature-icon">📦</div>
+          <h3>Comercio</h3>
+          <p>Calculadora de rutas comerciales, precios actualizados y análisis de beneficios por carga.</p>
+          <span class="feature-coming">Próximamente</span>
+        </div>
+        <div class="feature-card coming-soon">
+          <div class="feature-icon">🎯</div>
+          <h3>Misiones</h3>
+          <p>Base de datos de misiones, requisitos de reputación y guías de las facciones del universo.</p>
+          <span class="feature-coming">Próximamente</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CRAFTING SECTION ===== -->
+  <section class="section" id="crafting">
+    <div class="container">
+      <div class="page-header">
+        <h1 class="page-title">⚙ Fabricación</h1>
+        <p class="page-subtitle">Base de datos de planos · SC 4.7.0</p>
+      </div>
+
+      <!-- Controls -->
+      <div class="controls-bar">
+        <div class="search-box">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="searchInput" placeholder="Buscar por nombre, material o categoría..." autocomplete="off" />
+          <button class="search-clear" id="searchClear" onclick="clearSearch()">✕</button>
+        </div>
+        <div class="filters">
+          <select id="categoryFilter" class="filter-select">
+            <option value="">Todas las categorías</option>
+          </select>
+          <select id="missionFilter" class="filter-select">
+            <option value="">Todas las fuentes</option>
+            <option value="mission">Solo con misión</option>
+            <option value="no-mission">Sin misión</option>
+          </select>
+          <select id="sortSelect" class="filter-select">
+            <option value="name">Ordenar: Nombre</option>
+            <option value="category">Ordenar: Categoría</option>
+            <option value="ingredients">Ordenar: Ingredientes</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Stats bar -->
+      <div class="results-bar">
+        <span id="resultsCount">Cargando...</span>
+        <div class="view-toggle">
+          <button class="view-btn active" id="viewGrid" onclick="setView('grid')" title="Vista cuadrícula">⊞</button>
+          <button class="view-btn" id="viewList" onclick="setView('list')" title="Vista lista">☰</button>
+        </div>
+      </div>
+
+      <!-- Blueprint grid -->
+      <div class="blueprint-grid" id="blueprintGrid"></div>
+
+      <!-- Loading / empty state -->
+      <div class="loading-state" id="loadingState">
+        <div class="loading-spinner"></div>
+        <p>Cargando base de datos...</p>
+      </div>
+      <div class="empty-state hidden" id="emptyState">
+        <div class="empty-icon">◈</div>
+        <p>No se encontraron planos con ese criterio</p>
+        <button class="btn-ghost" onclick="clearSearch()">Limpiar búsqueda</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== COMING SOON SECTIONS ===== -->
+  <section class="section" id="ships">
+    <div class="coming-soon-page container">
+      <div class="cs-icon">🚀</div>
+      <h2>Naves</h2>
+      <p>Esta sección está en desarrollo. Incluirá fichas técnicas, comparador y guías de todas las naves.</p>
+      <button class="btn-ghost" onclick="showSection('home')">← Volver al inicio</button>
+    </div>
+  </section>
+  <section class="section" id="weapons">
+    <div class="coming-soon-page container">
+      <div class="cs-icon">🔫</div>
+      <h2>Armas & Equipo</h2>
+      <p>Estadísticas, comparador y builds en desarrollo.</p>
+      <button class="btn-ghost" onclick="showSection('home')">← Volver al inicio</button>
+    </div>
+  </section>
+  <section class="section" id="locations">
+    <div class="coming-soon-page container">
+      <div class="cs-icon">🗺</div>
+      <h2>Localizaciones</h2>
+      <p>Mapa interactivo y guías de localizaciones en desarrollo.</p>
+      <button class="btn-ghost" onclick="showSection('home')">← Volver al inicio</button>
+    </div>
+  </section>
+  <section class="section" id="trading">
+    <div class="coming-soon-page container">
+      <div class="cs-icon">📦</div>
+      <h2>Comercio</h2>
+      <p>Calculadora de rutas comerciales en desarrollo.</p>
+      <button class="btn-ghost" onclick="showSection('home')">← Volver al inicio</button>
+    </div>
+  </section>
+
+  <!-- ===== DETAIL MODAL ===== -->
+  <div class="modal-overlay" id="modalOverlay" onclick="closeModal()"></div>
+  <div class="modal" id="detailModal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-content" id="modalContent"></div>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-logo">◈ GHOST SYNDICATE TOOLS</div>
+      <p class="footer-note">
+        Datos extraídos directamente de Star Citizen 4.7.0. Uso no comercial.<br>
+        Star Citizen® es marca registrada de Cloud Imperium Games Corp.
+      </p>
+    </div>
+  </footer>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>
