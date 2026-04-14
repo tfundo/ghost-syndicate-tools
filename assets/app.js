@@ -91,6 +91,9 @@ function setupNavigation() {
 }
 
 window.showSection = function(sectionId) {
+  // Redirect legacy section IDs that were merged into comparador
+  if (sectionId === 'ships' || sectionId === 'weapons') sectionId = 'comparador';
+
   currentSection = sectionId;
 
   // Hide all sections
@@ -106,6 +109,11 @@ window.showSection = function(sectionId) {
 
   // Update URL
   window.history.replaceState(null, '', '#' + sectionId);
+
+  // Init comparador on first visit
+  if (sectionId === 'comparador' && window.Comp) {
+    window.Comp.init();
+  }
 
   // Scroll to top
   window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -326,9 +334,12 @@ function renderBlueprintCard(bp, idx) {
         const label = (m.missionTitles && m.missionTitles.length > 0)
           ? m.missionTitles[0]
           : m.missionName;
-        const display = label.length > 40 ? label.substring(0, 40) + '…' : label;
+        const display = label.length > 36 ? label.substring(0, 36) + '…' : label;
         const contractor = m.contractor ? `${m.contractor}: ` : '';
-        return `<span class="mission-tag" title="${escHtml(m.missionName)}">${escHtml(contractor)}${escHtml(display)}</span>`;
+        const sysBadges = (m.systems && m.systems.length > 0)
+          ? m.systems.map(s => `<span class="card-system-badge card-system-${s.toLowerCase()}">${s}</span>`).join('')
+          : '';
+        return `<span class="mission-tag" title="${escHtml(m.missionName)}">${escHtml(contractor)}${escHtml(display)}${sysBadges}</span>`;
       }).join('')
     : `<span style="color:var(--text-muted);font-size:0.7rem">Sin misión asignada</span>`;
 
@@ -392,6 +403,9 @@ window.openBlueprintDetail = function(idx) {
     }
   });
 
+  const DIFF_ABBREV = { VeryEasy: 'MF', Easy: 'F', Medium: 'M', Hard: 'D', VeryHard: 'MD', Super: 'S' };
+  const DIFF_LABEL  = { VeryEasy: 'Muy Fácil', Easy: 'Fácil', Medium: 'Media', Hard: 'Difícil', VeryHard: 'Muy Difícil', Super: 'Súper' };
+
   const missionsHtml = uniqueMissions.length > 0
     ? uniqueMissions.map(m => {
         const titlesHtml = m.missionTitles && m.missionTitles.length > 0
@@ -400,13 +414,46 @@ window.openBlueprintDetail = function(idx) {
         const contractorBadge = m.contractor
           ? `<span class="modal-contractor-badge">${escHtml(m.contractor)}</span>`
           : '';
+
+        // Systems badges
+        const systemsHtml = (m.systems && m.systems.length > 0)
+          ? m.systems.map(s => `<span class="mission-system-badge mission-system-${s.toLowerCase()}">${escHtml(s)}</span>`).join('')
+          : '';
+
+        // Scrip table: if we have per-difficulty data show it; else just difficulty list
+        let rewardsHtml = '';
+        const hasScrip = m.scripPerDiff && Object.keys(m.scripPerDiff).length > 0;
+        const hasDiffs = m.difficulties && m.difficulties.length > 0;
+        if (hasScrip) {
+          const label = m.scripLabel || 'Scrip';
+          const rows = m.difficulties
+            .filter(d => m.scripPerDiff[d] != null)
+            .map(d => {
+              const abbr = DIFF_ABBREV[d] || d;
+              const fullLabel = DIFF_LABEL[d] || d;
+              return `<tr><td title="${escHtml(fullLabel)}">${escHtml(abbr)}</td><td>${m.scripPerDiff[d]} <span class="scrip-unit">${escHtml(label)}</span> <span class="scrip-auec">+ aUEC variable</span></td></tr>`;
+            }).join('');
+          if (rows) {
+            rewardsHtml = `<table class="mission-scrip-table"><thead><tr><th>Dificultad</th><th>Recompensa</th></tr></thead><tbody>${rows}</tbody></table>`;
+          }
+        } else if (hasDiffs) {
+          const diffBadges = m.difficulties.map(d => {
+            const abbr = DIFF_ABBREV[d] || d;
+            const fullLabel = DIFF_LABEL[d] || d;
+            return `<span class="mission-diff-badge" title="${escHtml(fullLabel)}">${escHtml(abbr)}</span>`;
+          }).join('');
+          rewardsHtml = `<div class="mission-diffs">${diffBadges}</div>`;
+        }
+
         return `
           <div class="modal-mission-item">
             <div class="modal-mission-header">
               ${contractorBadge}
               <span class="modal-mission-name">${escHtml(m.missionName)}</span>
+              ${systemsHtml}
             </div>
             ${titlesHtml}
+            ${rewardsHtml}
           </div>
         `;
       }).join('')

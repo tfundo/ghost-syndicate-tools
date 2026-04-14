@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ghost Syndicate Tools — Star Citizen Companion</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
@@ -22,8 +22,8 @@
     <ul class="nav-links" id="navLinks">
       <li><a href="#home" class="nav-link active" data-section="home">Inicio</a></li>
       <li><a href="#crafting" class="nav-link" data-section="crafting">Fabricación</a></li>
-      <li><a href="#ships" class="nav-link nav-coming" data-section="ships">Naves <span class="badge">Próx.</span></a></li>
-      <li><a href="#weapons" class="nav-link nav-coming" data-section="weapons">Armas <span class="badge">Próx.</span></a></li>
+      <li><a href="#comparador" class="nav-link" data-section="comparador">Comparador</a></li>
+      <li><a href="#wikelodata" class="nav-link" data-section="wikelodata">WikeloData</a></li>
       <li><a href="#locations" class="nav-link nav-coming" data-section="locations">Localizaciones <span class="badge">Próx.</span></a></li>
       <li><a href="#trading" class="nav-link nav-coming" data-section="trading">Comercio <span class="badge">Próx.</span></a></li>
     </ul>
@@ -38,20 +38,20 @@
         <div class="nebula"></div>
       </div>
       <div class="hero-content">
-        <div class="hero-badge">Star Citizen 4.7.0 · Actualizado 2026</div>
+        <div class="hero-badge">Star Citizen 4.7.0 · Base de datos activa</div>
         <div class="hero-logo-big">◈</div>
         <h1 class="hero-title">
-          GHOST SYNDICATE<br>
-          <span class="hero-sub">TOOLS</span>
+          Ghost Syndicate<br>
+          <span class="hero-sub">Tools</span>
         </h1>
         <p class="hero-desc">
-          Tu compañero definitivo en el universo de Star Citizen.<br>
-          Base de datos actualizada directamente desde los archivos del juego.
+          Terminal de consulta para operadores del universo persistente.<br>
+          Datos extraídos directamente de los archivos del juego — SC 4.7.0.
         </p>
         <div class="hero-stats">
           <div class="stat-card" id="stat-blueprints">
             <span class="stat-num">—</span>
-            <span class="stat-label">Planos de Fabricación</span>
+            <span class="stat-label">Planos</span>
           </div>
           <div class="stat-card" id="stat-materials">
             <span class="stat-num">—</span>
@@ -59,12 +59,12 @@
           </div>
           <div class="stat-card" id="stat-missions">
             <span class="stat-num">—</span>
-            <span class="stat-label">Planos con Misión</span>
+            <span class="stat-label">Con misión</span>
           </div>
         </div>
         <div class="hero-actions">
           <button class="btn-primary" onclick="showSection('crafting')">
-            <span class="btn-icon">⚙</span> Explorar Fabricación
+            <span class="btn-icon">⚙</span> Acceder a Fabricación
           </button>
           <button class="btn-ghost" onclick="showSection('ships')">
             <span class="btn-icon">◈</span> Ver Naves
@@ -81,45 +81,45 @@
       </div>
     </div>
 
-    <!-- Feature cards -->
+    <!-- Module cards -->
     <div class="features container">
-      <h2 class="section-title">¿Qué incluye?</h2>
+      <h2 class="section-title">Módulos Disponibles</h2>
       <div class="feature-grid">
         <div class="feature-card" onclick="showSection('crafting')">
           <div class="feature-icon">⚙</div>
           <h3>Fabricación</h3>
-          <p>1.044 planos con ingredientes exactos, cantidades en SCU y las misiones donde se obtienen como recompensa.</p>
-          <span class="feature-link">Ver ahora →</span>
+          <p>1.044 planos con ingredientes exactos en SCU, fuentes de misiones por contratista y recompensas de scrip por dificultad.</p>
+          <span class="feature-link">Acceder →</span>
         </div>
-        <div class="feature-card coming-soon">
-          <div class="feature-icon">🚀</div>
-          <h3>Naves</h3>
-          <p>Fichas técnicas completas, comparador de naves y guías de compra para todas las naves del universo.</p>
-          <span class="feature-coming">Próximamente</span>
+        <div class="feature-card" onclick="showSection('comparador')">
+          <div class="feature-icon">⚖</div>
+          <h3>Comparador</h3>
+          <p>120 naves y 31 armas con todos sus stats. Busca, filtra por rol o fabricante y compara hasta 4 naves lado a lado.</p>
+          <span class="feature-link">Acceder →</span>
         </div>
-        <div class="feature-card coming-soon">
-          <div class="feature-icon">🔫</div>
-          <h3>Armas & Equipo</h3>
-          <p>Estadísticas detalladas, comparador de DPS y builds recomendados para cada estilo de juego.</p>
-          <span class="feature-coming">Próximamente</span>
+        <div class="feature-card" onclick="showSection('wikelodata')">
+          <div class="feature-icon">◈</div>
+          <h3>WikeloData</h3>
+          <p>Base de datos de ítems Wikelo: naves, armaduras, armas y equipamiento con costes de fabricación y reputación.</p>
+          <span class="feature-link">Acceder →</span>
         </div>
         <div class="feature-card coming-soon">
           <div class="feature-icon">🗺</div>
           <h3>Localizaciones</h3>
-          <p>Mapa interactivo del universo, puntos de interés y guías de los sistemas Stanton y Pyro.</p>
-          <span class="feature-coming">Próximamente</span>
+          <p>Cartografía de puntos de interés, zonas de aterrizaje y rutas seguras en Stanton y Pyro.</p>
+          <span class="feature-coming">En desarrollo</span>
         </div>
         <div class="feature-card coming-soon">
           <div class="feature-icon">📦</div>
           <h3>Comercio</h3>
-          <p>Calculadora de rutas comerciales, precios actualizados y análisis de beneficios por carga.</p>
-          <span class="feature-coming">Próximamente</span>
+          <p>Calculadora de rutas, precios de mercado actualizados y análisis de márgenes por carga.</p>
+          <span class="feature-coming">En desarrollo</span>
         </div>
         <div class="feature-card coming-soon">
           <div class="feature-icon">🎯</div>
           <h3>Misiones</h3>
-          <p>Base de datos de misiones, requisitos de reputación y guías de las facciones del universo.</p>
-          <span class="feature-coming">Próximamente</span>
+          <p>Base de datos de contratos, requisitos de reputación y guías de facciones del universo.</p>
+          <span class="feature-coming">En desarrollo</span>
         </div>
       </div>
     </div>
@@ -186,23 +186,55 @@
     </div>
   </section>
 
+  <!-- ===== COMPARADOR SECTION ===== -->
+  <section class="section" id="comparador">
+    <div class="container">
+      <div class="page-header">
+        <h1 class="page-title">⚖ Comparador</h1>
+        <p class="page-subtitle">Naves &amp; Armas · SC 4.7.0 · 120 naves · 31 armas</p>
+      </div>
+
+      <!-- Tabs -->
+      <div class="comp-tabs">
+        <button class="comp-tab active" id="compTabShips" onclick="Comp.switchTab('ships')">Naves</button>
+        <button class="comp-tab" id="compTabWeapons" onclick="Comp.switchTab('weapons')">Armas</button>
+        <button class="comp-tab" id="compTabCompare" onclick="Comp.switchTab('compare')">
+          Comparar <span class="comp-badge" id="compBadge">0</span>
+        </button>
+      </div>
+
+      <!-- Main content rendered by comparador.js -->
+      <div id="compContentArea"></div>
+    </div>
+  </section>
+
+  <!-- ===== WIKELODATA SECTION ===== -->
+  <section class="section" id="wikelodata">
+    <div class="container">
+      <div class="page-header">
+        <h1 class="page-title">◈ WikeloData</h1>
+        <p class="page-subtitle">Base de datos Wikelo · Naves, armaduras, armas &amp; economía</p>
+      </div>
+      <div class="wikelo-portal">
+        <div class="wikelo-card">
+          <div class="wikelo-icon">◈</div>
+          <h2>Acceder a WikeloData</h2>
+          <p>La base de datos completa de ítems Wikelo está disponible en su propio portal dedicado.<br>Incluye naves exclusivas, armaduras, armas, equipo y tablas de economía y reputación.</p>
+          <div class="wikelo-features">
+            <span class="wikelo-feat">34 ítems fabricables</span>
+            <span class="wikelo-feat">Costes en materiales</span>
+            <span class="wikelo-feat">Sistema de reputación</span>
+            <span class="wikelo-feat">Economía &amp; conversión</span>
+          </div>
+          <a class="btn-primary" href="https://tfundo.github.io/WikeloData/" target="_blank" rel="noopener">
+            <span class="btn-icon">◈</span> Abrir WikeloData
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ===== COMING SOON SECTIONS ===== -->
-  <section class="section" id="ships">
-    <div class="coming-soon-page container">
-      <div class="cs-icon">🚀</div>
-      <h2>Naves</h2>
-      <p>Esta sección está en desarrollo. Incluirá fichas técnicas, comparador y guías de todas las naves.</p>
-      <button class="btn-ghost" onclick="showSection('home')">← Volver al inicio</button>
-    </div>
-  </section>
-  <section class="section" id="weapons">
-    <div class="coming-soon-page container">
-      <div class="cs-icon">🔫</div>
-      <h2>Armas & Equipo</h2>
-      <p>Estadísticas, comparador y builds en desarrollo.</p>
-      <button class="btn-ghost" onclick="showSection('home')">← Volver al inicio</button>
-    </div>
-  </section>
   <section class="section" id="locations">
     <div class="coming-soon-page container">
       <div class="cs-icon">🗺</div>
@@ -238,6 +270,7 @@
     </div>
   </footer>
 
+  <script src="assets/comparador.js"></script>
   <script src="assets/app.js"></script>
 </body>
 </html>

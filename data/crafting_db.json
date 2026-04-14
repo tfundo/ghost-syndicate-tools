@@ -44,7 +44,13 @@
             "Eliminar dossier letal",
             "Destruir información sensible"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -153,7 +159,13 @@
           "missionTitles": [
             "Eliminar a …"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -201,7 +213,13 @@
             "Operación especial de recuperación",
             "El envío de carga debe completarse"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -248,7 +266,13 @@
             "Eliminar dossier letal",
             "Destruir información sensible"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -289,14 +313,22 @@
           "missionName": "North Rock FPS Kill › Eliminate Boss",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         },
         {
           "poolFile": "bp_missionreward_northrockfpskill_eliminateboss",
           "missionName": "North Rock FPS Kill › Eliminate Boss",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -377,7 +409,13 @@
             "Operación especial de recuperación",
             "El envío de carga debe completarse"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -425,7 +463,13 @@
             "Operación especial de recuperación",
             "El envío de carga debe completarse"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -472,7 +516,13 @@
             "Eliminar dossier letal",
             "Destruir información sensible"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -519,7 +569,13 @@
             "Objetivo pagado en CFP",
             "Hablar rápidamente"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -566,7 +622,13 @@
             "Objetivo pagado en CFP",
             "Hablar rápidamente"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -607,7 +669,11 @@
           "missionName": "Vaughn Generator › Eliminate Boss",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -648,7 +714,14 @@
           "missionName": "Vaughn Generator › Eliminate Specific",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro",
+            "Stanton"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -696,7 +769,11 @@
             "Eliminar …",
             "Contrato Incompleto"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -744,7 +821,11 @@
             "Eliminar …",
             "Contrato Incompleto"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -792,7 +873,27 @@
             "Contrato de Nivel Amarillo: Defender …",
             "Contrato de Nivel Naranja: Necesaria protección de naves"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [
+            "VeryEasy",
+            "Easy",
+            "Medium",
+            "Hard",
+            "VeryHard",
+            "Super"
+          ],
+          "scripPerDiff": {
+            "VeryEasy": 2,
+            "Easy": 4,
+            "Medium": 8,
+            "Hard": 14,
+            "VeryHard": 18,
+            "Super": 24
+          },
+          "scripLabel": "MG Scrip"
         },
         {
           "poolFile": "bp_missionreward_foxwellenforcement_ambush",
@@ -806,7 +907,28 @@
             "Contrato Nivel Rojo: Ataque Sorpresa",
             "Contrato de Nivel Rojo: Emboscar a un Escuadrón de Ataque"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro",
+            "Stanton"
+          ],
+          "difficulties": [
+            "VeryEasy",
+            "Easy",
+            "Medium",
+            "Hard",
+            "VeryHard",
+            "Super"
+          ],
+          "scripPerDiff": {
+            "VeryEasy": 1,
+            "Easy": 3,
+            "Medium": 5,
+            "Hard": 8,
+            "VeryHard": 12,
+            "Super": 16
+          },
+          "scripLabel": "MG Scrip"
         },
         {
           "poolFile": "bp_missionreward_foxwellenforcement_escortships",
@@ -818,7 +940,28 @@
             "Contrato nivel naranja: Destruir amenaza de forajidos",
             "Contrato nivel naranja: Eliminar flota criminal"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro",
+            "Stanton"
+          ],
+          "difficulties": [
+            "VeryEasy",
+            "Easy",
+            "Medium",
+            "Hard",
+            "VeryHard",
+            "Super"
+          ],
+          "scripPerDiff": {
+            "VeryEasy": 2,
+            "Easy": 4,
+            "Medium": 8,
+            "Hard": 14,
+            "VeryHard": 18,
+            "Super": 24
+          },
+          "scripLabel": "MG Scrip"
         },
         {
           "poolFile": "bp_missionreward_foxwellenforcement_patrol",
@@ -832,7 +975,28 @@
             "Contrato de Nivel Rojo: Asegurar Espacio Amenazado",
             "Contrato Nivel Rojo: Patrulla de Seguridad de Alto Riesgo"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro",
+            "Stanton"
+          ],
+          "difficulties": [
+            "VeryEasy",
+            "Easy",
+            "Medium",
+            "Hard",
+            "VeryHard",
+            "Super"
+          ],
+          "scripPerDiff": {
+            "VeryEasy": 2,
+            "Easy": 4,
+            "Medium": 8,
+            "Hard": 14,
+            "VeryHard": 18,
+            "Super": 24
+          },
+          "scripLabel": "MG Scrip"
         }
       ],
       "hasMissions": true
@@ -880,7 +1044,11 @@
             "Registros de Seguridad",
             "Registros de Personal"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         },
         {
           "poolFile": "bp_missionreward_asd3",
@@ -894,7 +1062,11 @@
             "Registros de Seguridad",
             "Registros de Personal"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -968,28 +1140,44 @@
           "missionName": "Shubin › Resource Gathering › FPS Mining › Pyro",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         },
         {
           "poolFile": "bp_missionreward_shubin_resourcegathering_fpsmining_stanton",
           "missionName": "Shubin › Resource Gathering › FPS Mining › Stanton",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         },
         {
           "poolFile": "bp_missionreward_shubin_resourcegathering_shipmining_pyronyx",
           "missionName": "Shubin › Resource Gathering › Ship Mining › Pyro Nyx",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         },
         {
           "poolFile": "bp_missionreward_shubin_resourcegathering_shipmining_stanton",
           "missionName": "Shubin › Resource Gathering › Ship Mining › Stanton",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -1036,7 +1224,13 @@
             "Eliminar dossier letal",
             "Destruir información sensible"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -1084,7 +1278,20 @@
             "Malas despedidas",
             "Nuestra versión de la verdad"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [
+            "VeryEasy",
+            "Easy",
+            "Medium",
+            "Hard",
+            "VeryHard",
+            "Super"
+          ],
+          "scripPerDiff": {},
+          "scripLabel": ""
         },
         {
           "poolFile": "bp_missionreward_bitzeros_recoveritem_stanton",
@@ -1095,7 +1302,13 @@
             "Volverles la jugada",
             "Recogida de mejora"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -1143,7 +1356,20 @@
             "Malas despedidas",
             "Nuestra versión de la verdad"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [
+            "VeryEasy",
+            "Easy",
+            "Medium",
+            "Hard",
+            "VeryHard",
+            "Super"
+          ],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -1188,7 +1414,13 @@
             "Volverles la jugada",
             "Recogida de mejora"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -1236,7 +1468,11 @@
             "Registros de Seguridad",
             "Registros de Personal"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         },
         {
           "poolFile": "bp_missionreward_asd2b",
@@ -1250,7 +1486,11 @@
             "Registros de Seguridad",
             "Registros de Personal"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         },
         {
           "poolFile": "bp_missionreward_asd2d",
@@ -1264,7 +1504,11 @@
             "Registros de Seguridad",
             "Registros de Personal"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -1305,14 +1549,30 @@
           "missionName": "IDS › Recover Encrypted Data",
           "contractor": "IDS",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": "MG Scrip"
         },
         {
           "poolFile": "bp_missionreward_intersec_defendship",
           "missionName": "Inter Sec › Defend Ship",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [
+            "Easy",
+            "Medium",
+            "Hard",
+            "VeryHard",
+            "Super"
+          ],
+          "scripPerDiff": {},
+          "scripLabel": ""
         },
         {
           "poolFile": "bp_missionreward_intersec_resourcegathering",
@@ -1322,14 +1582,22 @@
             "Recuperar tecnología vanduul",
             "Recuperar cadáveres vanduul"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         },
         {
           "poolFile": "bp_missionreward_rayari_recoveritem_hathorloot",
           "missionName": "Rayari › Recover Item › Hathor Loot",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -1370,21 +1638,43 @@
           "missionName": "IDS › Recover Encrypted Data",
           "contractor": "IDS",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": "MG Scrip"
         },
         {
           "poolFile": "bp_missionreward_intersec_patrol",
           "missionName": "Inter Sec › Patrol",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [
+            "Hard",
+            "VeryHard",
+            "Super"
+          ],
+          "scripPerDiff": {
+            "Hard": 14,
+            "VeryHard": 18,
+            "Super": 24
+          },
+          "scripLabel": "MG Scrip"
         },
         {
           "poolFile": "bp_missionreward_rayari_recoveritem_hathorloot",
           "missionName": "Rayari › Recover Item › Hathor Loot",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -1430,7 +1720,13 @@
             "Ataque de forajidos en …",
             "Recuperar puestos de avanzada de los Headhunters"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         },
         {
           "poolFile": "bp_missionreward_cfp_chainelim_3",
@@ -1441,7 +1737,13 @@
             "Recuperando puestos de avanzada de Headhunters",
             "Campaña para recuperar puestos de avanzada de los XenoThreat"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         },
         {
           "poolFile": "bp_missionreward_cfp_outpost_regionab",
@@ -1452,7 +1754,13 @@
             "Corregir error de entrega",
             "Entrega de buenas noticias"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         },
         {
           "poolFile": "bp_missionreward_cfp_outpost_regionc",
@@ -1463,7 +1771,13 @@
             "Corregir error de entrega",
             "Entrega de buenas noticias"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         },
         {
           "poolFile": "bp_missionreward_cfp_outpost_regiond",
@@ -1474,7 +1788,13 @@
             "Corregir error de entrega",
             "Entrega de buenas noticias"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -1520,7 +1840,13 @@
             "Necesito que elimines a un CFP",
             "Objetivo pagado en CFP"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -1561,7 +1887,11 @@
           "missionName": "Rayari › Recover Item › Irradiated",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -1608,7 +1938,13 @@
             "Eliminar dossier letal",
             "Destruir información sensible"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -1649,21 +1985,46 @@
           "missionName": "RDC › Boss",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         },
         {
           "poolFile": "bp_missionreward_rdc_exclusive",
           "missionName": "RDC › Exclusive",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         },
         {
           "poolFile": "bp_missionreward_rdc_generic",
           "missionName": "RDC › Generic",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [
+            "VeryEasy",
+            "Easy",
+            "Medium",
+            "Hard",
+            "VeryHard",
+            "Super"
+          ],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -1707,7 +2068,11 @@
             "Eliminar a un pez gordo",
             "Ajuste de cuentas"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -1748,7 +2113,11 @@
           "missionName": "Vaughn Generator › Eliminate Boss",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -1792,14 +2161,25 @@
             "Eliminar a un pez gordo",
             "Ajuste de cuentas"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         },
         {
           "poolFile": "bp_missionreward_vaughngenerator_eliminatespecific",
           "missionName": "Vaughn Generator › Eliminate Specific",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro",
+            "Stanton"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -1846,7 +2226,13 @@
             "Eliminar dossier letal",
             "Destruir información sensible"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -1893,7 +2279,13 @@
             "Eliminar dossier letal",
             "Destruir información sensible"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -1940,7 +2332,13 @@
             "Eliminar dossier letal",
             "Destruir información sensible"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -1987,7 +2385,13 @@
             "Eliminar dossier letal",
             "Destruir información sensible"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -2067,7 +2471,13 @@
             "Eliminar dossier letal",
             "Destruir información sensible"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -2840,7 +3250,13 @@
             "Eliminar dossier letal",
             "Destruir información sensible"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -3613,7 +4029,13 @@
             "Eliminar dossier letal",
             "Destruir información sensible"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -4353,7 +4775,13 @@
             "Eliminar dossier letal",
             "Destruir información sensible"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -5095,7 +5523,20 @@
           "missionName": "RDC › Generic",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [
+            "VeryEasy",
+            "Easy",
+            "Medium",
+            "Hard",
+            "VeryHard",
+            "Super"
+          ],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -5144,7 +5585,13 @@
           "missionName": "RDC › Exclusive",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -5193,7 +5640,13 @@
           "missionName": "RDC › Boss",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -5242,7 +5695,13 @@
           "missionName": "RDC › Boss",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -5291,7 +5750,13 @@
           "missionName": "RDC › Exclusive",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -5340,7 +5805,20 @@
           "missionName": "RDC › Generic",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [
+            "VeryEasy",
+            "Easy",
+            "Medium",
+            "Hard",
+            "VeryHard",
+            "Super"
+          ],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -5389,7 +5867,20 @@
           "missionName": "RDC › Generic",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [
+            "VeryEasy",
+            "Easy",
+            "Medium",
+            "Hard",
+            "VeryHard",
+            "Super"
+          ],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -5438,7 +5929,13 @@
           "missionName": "RDC › Exclusive",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -5487,7 +5984,13 @@
           "missionName": "RDC › Boss",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -5536,7 +6039,13 @@
           "missionName": "RDC › Boss",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -5585,7 +6094,13 @@
           "missionName": "RDC › Exclusive",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -5634,7 +6149,20 @@
           "missionName": "RDC › Generic",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [
+            "VeryEasy",
+            "Easy",
+            "Medium",
+            "Hard",
+            "VeryHard",
+            "Super"
+          ],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -5683,7 +6211,20 @@
           "missionName": "RDC › Generic",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [
+            "VeryEasy",
+            "Easy",
+            "Medium",
+            "Hard",
+            "VeryHard",
+            "Super"
+          ],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -5732,7 +6273,13 @@
           "missionName": "RDC › Exclusive",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -5781,7 +6328,13 @@
           "missionName": "RDC › Boss",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -5830,7 +6383,13 @@
           "missionName": "RDC › Boss",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -5879,7 +6438,13 @@
           "missionName": "RDC › Exclusive",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -5928,7 +6493,20 @@
           "missionName": "RDC › Generic",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [
+            "VeryEasy",
+            "Easy",
+            "Medium",
+            "Hard",
+            "VeryHard",
+            "Super"
+          ],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -5977,7 +6555,20 @@
           "missionName": "RDC › Generic",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [
+            "VeryEasy",
+            "Easy",
+            "Medium",
+            "Hard",
+            "VeryHard",
+            "Super"
+          ],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -6026,7 +6617,13 @@
           "missionName": "RDC › Exclusive",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -6075,7 +6672,13 @@
           "missionName": "RDC › Boss",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -6124,7 +6727,13 @@
           "missionName": "RDC › Boss",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -6173,7 +6782,13 @@
           "missionName": "RDC › Exclusive",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -6222,7 +6837,20 @@
           "missionName": "RDC › Generic",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [
+            "VeryEasy",
+            "Easy",
+            "Medium",
+            "Hard",
+            "VeryHard",
+            "Super"
+          ],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -6271,7 +6899,11 @@
           "missionName": "Vaughn Generator › Eliminate Boss",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -6402,7 +7034,11 @@
           "missionName": "Vaughn Generator › Eliminate Boss",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -6533,7 +7169,11 @@
           "missionName": "Vaughn Generator › Eliminate Boss",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -6623,7 +7263,11 @@
           "missionName": "Vaughn Generator › Eliminate Boss",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -6705,7 +7349,11 @@
           "missionName": "North Rock FPS Kill › Eliminate Boss",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -6944,7 +7592,11 @@
           "missionName": "North Rock FPS Kill › Eliminate Boss",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -7216,7 +7868,11 @@
           "missionName": "North Rock FPS Kill › Eliminate Boss",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -7455,7 +8111,11 @@
           "missionName": "North Rock FPS Kill › Eliminate Boss",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -7694,7 +8354,14 @@
           "missionName": "Vaughn Generator › Eliminate Specific",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro",
+            "Stanton"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -7735,7 +8402,14 @@
           "missionName": "Vaughn Generator › Eliminate Specific",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro",
+            "Stanton"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -7776,7 +8450,14 @@
           "missionName": "Vaughn Generator › Eliminate Specific",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro",
+            "Stanton"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -7817,7 +8498,14 @@
           "missionName": "Vaughn Generator › Eliminate Specific",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro",
+            "Stanton"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -8004,7 +8692,13 @@
             "Eliminar dossier letal",
             "Destruir información sensible"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -8838,7 +9532,13 @@
             "Eliminar dossier letal",
             "Destruir información sensible"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -9672,7 +10372,13 @@
             "Eliminar dossier letal",
             "Destruir información sensible"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -10465,7 +11171,13 @@
             "Eliminar dossier letal",
             "Destruir información sensible"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -11285,7 +11997,11 @@
           "missionName": "Vaughn Generator › Eliminate Boss",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -11326,14 +12042,22 @@
           "missionName": "Vaughn Generator › Eliminate Boss",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         },
         {
           "poolFile": "bp_missionreward_vaughngenerator_eliminateboss",
           "missionName": "Vaughn Generator › Eliminate Boss",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -11389,7 +12113,11 @@
             "Eliminar …",
             "Contrato Incompleto"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -11486,7 +12214,11 @@
             "Eliminar …",
             "Contrato Incompleto"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -11583,7 +12315,11 @@
             "Eliminar …",
             "Contrato Incompleto"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -11680,7 +12416,11 @@
             "Eliminar …",
             "Contrato Incompleto"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -11777,7 +12517,20 @@
             "Malas despedidas",
             "Nuestra versión de la verdad"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [
+            "VeryEasy",
+            "Easy",
+            "Medium",
+            "Hard",
+            "VeryHard",
+            "Super"
+          ],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -11833,7 +12586,20 @@
             "Malas despedidas",
             "Nuestra versión de la verdad"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [
+            "VeryEasy",
+            "Easy",
+            "Medium",
+            "Hard",
+            "VeryHard",
+            "Super"
+          ],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -11930,7 +12696,20 @@
             "Malas despedidas",
             "Nuestra versión de la verdad"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [
+            "VeryEasy",
+            "Easy",
+            "Medium",
+            "Hard",
+            "VeryHard",
+            "Super"
+          ],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -11986,7 +12765,20 @@
             "Malas despedidas",
             "Nuestra versión de la verdad"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [
+            "VeryEasy",
+            "Easy",
+            "Medium",
+            "Hard",
+            "VeryHard",
+            "Super"
+          ],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -12083,7 +12875,20 @@
             "Malas despedidas",
             "Nuestra versión de la verdad"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [
+            "VeryEasy",
+            "Easy",
+            "Medium",
+            "Hard",
+            "VeryHard",
+            "Super"
+          ],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -12139,7 +12944,20 @@
             "Malas despedidas",
             "Nuestra versión de la verdad"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [
+            "VeryEasy",
+            "Easy",
+            "Medium",
+            "Hard",
+            "VeryHard",
+            "Super"
+          ],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -12236,7 +13054,20 @@
             "Malas despedidas",
             "Nuestra versión de la verdad"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [
+            "VeryEasy",
+            "Easy",
+            "Medium",
+            "Hard",
+            "VeryHard",
+            "Super"
+          ],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -12292,7 +13123,20 @@
             "Malas despedidas",
             "Nuestra versión de la verdad"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [
+            "VeryEasy",
+            "Easy",
+            "Medium",
+            "Hard",
+            "VeryHard",
+            "Super"
+          ],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -12389,7 +13233,13 @@
             "Operación especial de recuperación",
             "El envío de carga debe completarse"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -12650,7 +13500,13 @@
             "Operación especial de recuperación",
             "El envío de carga debe completarse"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -12870,7 +13726,13 @@
             "Operación especial de recuperación",
             "El envío de carga debe completarse"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -13090,7 +13952,13 @@
             "Operación especial de recuperación",
             "El envío de carga debe completarse"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -13335,7 +14203,13 @@
             "Operación especial de recuperación",
             "El envío de carga debe completarse"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -14175,7 +15049,13 @@
             "Operación especial de recuperación",
             "El envío de carga debe completarse"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -15081,7 +15961,13 @@
             "Operación especial de recuperación",
             "El envío de carga debe completarse"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -15888,7 +16774,13 @@
             "Operación especial de recuperación",
             "El envío de carga debe completarse"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -16828,7 +17720,11 @@
           "missionName": "IDS › Recover Encrypted Data",
           "contractor": "IDS",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": "MG Scrip"
         }
       ],
       "hasMissions": true
@@ -16877,7 +17773,19 @@
           "missionName": "Inter Sec › Defend Ship",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [
+            "Easy",
+            "Medium",
+            "Hard",
+            "VeryHard",
+            "Super"
+          ],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -16926,7 +17834,21 @@
           "missionName": "Inter Sec › Patrol",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [
+            "Hard",
+            "VeryHard",
+            "Super"
+          ],
+          "scripPerDiff": {
+            "Hard": 14,
+            "VeryHard": 18,
+            "Super": 24
+          },
+          "scripLabel": "MG Scrip"
         }
       ],
       "hasMissions": true
@@ -16978,7 +17900,11 @@
             "Recuperar tecnología vanduul",
             "Recuperar cadáveres vanduul"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -17027,7 +17953,21 @@
           "missionName": "Inter Sec › Patrol",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [
+            "Hard",
+            "VeryHard",
+            "Super"
+          ],
+          "scripPerDiff": {
+            "Hard": 14,
+            "VeryHard": 18,
+            "Super": 24
+          },
+          "scripLabel": "MG Scrip"
         }
       ],
       "hasMissions": true
@@ -17076,7 +18016,11 @@
           "missionName": "IDS › Recover Encrypted Data",
           "contractor": "IDS",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": "MG Scrip"
         }
       ],
       "hasMissions": true
@@ -17166,7 +18110,11 @@
           "missionName": "IDS › Recover Encrypted Data",
           "contractor": "IDS",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": "MG Scrip"
         }
       ],
       "hasMissions": true
@@ -17215,7 +18163,19 @@
           "missionName": "Inter Sec › Defend Ship",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [
+            "Easy",
+            "Medium",
+            "Hard",
+            "VeryHard",
+            "Super"
+          ],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -17264,7 +18224,21 @@
           "missionName": "Inter Sec › Patrol",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [
+            "Hard",
+            "VeryHard",
+            "Super"
+          ],
+          "scripPerDiff": {
+            "Hard": 14,
+            "VeryHard": 18,
+            "Super": 24
+          },
+          "scripLabel": "MG Scrip"
         }
       ],
       "hasMissions": true
@@ -17316,7 +18290,11 @@
             "Recuperar tecnología vanduul",
             "Recuperar cadáveres vanduul"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -17365,7 +18343,21 @@
           "missionName": "Inter Sec › Patrol",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [
+            "Hard",
+            "VeryHard",
+            "Super"
+          ],
+          "scripPerDiff": {
+            "Hard": 14,
+            "VeryHard": 18,
+            "Super": 24
+          },
+          "scripLabel": "MG Scrip"
         }
       ],
       "hasMissions": true
@@ -17414,7 +18406,11 @@
           "missionName": "IDS › Recover Encrypted Data",
           "contractor": "IDS",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": "MG Scrip"
         }
       ],
       "hasMissions": true
@@ -17463,7 +18459,11 @@
           "missionName": "IDS › Recover Encrypted Data",
           "contractor": "IDS",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": "MG Scrip"
         }
       ],
       "hasMissions": true
@@ -17512,7 +18512,19 @@
           "missionName": "Inter Sec › Defend Ship",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [
+            "Easy",
+            "Medium",
+            "Hard",
+            "VeryHard",
+            "Super"
+          ],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -17561,7 +18573,21 @@
           "missionName": "Inter Sec › Patrol",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [
+            "Hard",
+            "VeryHard",
+            "Super"
+          ],
+          "scripPerDiff": {
+            "Hard": 14,
+            "VeryHard": 18,
+            "Super": 24
+          },
+          "scripLabel": "MG Scrip"
         }
       ],
       "hasMissions": true
@@ -17613,7 +18639,11 @@
             "Recuperar tecnología vanduul",
             "Recuperar cadáveres vanduul"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -17662,7 +18692,21 @@
           "missionName": "Inter Sec › Patrol",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [
+            "Hard",
+            "VeryHard",
+            "Super"
+          ],
+          "scripPerDiff": {
+            "Hard": 14,
+            "VeryHard": 18,
+            "Super": 24
+          },
+          "scripLabel": "MG Scrip"
         }
       ],
       "hasMissions": true
@@ -17711,7 +18755,11 @@
           "missionName": "IDS › Recover Encrypted Data",
           "contractor": "IDS",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": "MG Scrip"
         }
       ],
       "hasMissions": true
@@ -17760,7 +18808,11 @@
           "missionName": "IDS › Recover Encrypted Data",
           "contractor": "IDS",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": "MG Scrip"
         }
       ],
       "hasMissions": true
@@ -17809,7 +18861,19 @@
           "missionName": "Inter Sec › Defend Ship",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [
+            "Easy",
+            "Medium",
+            "Hard",
+            "VeryHard",
+            "Super"
+          ],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -17858,7 +18922,21 @@
           "missionName": "Inter Sec › Patrol",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [
+            "Hard",
+            "VeryHard",
+            "Super"
+          ],
+          "scripPerDiff": {
+            "Hard": 14,
+            "VeryHard": 18,
+            "Super": 24
+          },
+          "scripLabel": "MG Scrip"
         }
       ],
       "hasMissions": true
@@ -17910,7 +18988,11 @@
             "Recuperar tecnología vanduul",
             "Recuperar cadáveres vanduul"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -17959,7 +19041,21 @@
           "missionName": "Inter Sec › Patrol",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [
+            "Hard",
+            "VeryHard",
+            "Super"
+          ],
+          "scripPerDiff": {
+            "Hard": 14,
+            "VeryHard": 18,
+            "Super": 24
+          },
+          "scripLabel": "MG Scrip"
         }
       ],
       "hasMissions": true
@@ -18008,7 +19104,11 @@
           "missionName": "IDS › Recover Encrypted Data",
           "contractor": "IDS",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": "MG Scrip"
         }
       ],
       "hasMissions": true
@@ -18056,7 +19156,11 @@
             "Eliminar …",
             "Contrato Incompleto"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -18170,7 +19274,11 @@
             "Eliminar …",
             "Contrato Incompleto"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -18284,7 +19392,11 @@
             "Eliminar …",
             "Contrato Incompleto"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -18398,7 +19510,11 @@
             "Eliminar …",
             "Contrato Incompleto"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -18571,7 +19687,11 @@
           "missionName": "Shubin › Resource Gathering › Ship Mining › Pyro Nyx",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -18645,7 +19765,11 @@
           "missionName": "Shubin › Resource Gathering › Ship Mining › Pyro Nyx",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -18686,7 +19810,11 @@
           "missionName": "Shubin › Resource Gathering › Ship Mining › Pyro Nyx",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -18760,7 +19888,11 @@
           "missionName": "Shubin › Resource Gathering › Ship Mining › Pyro Nyx",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -18849,7 +19981,11 @@
             "Registros de Seguridad",
             "Registros de Personal"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -18905,7 +20041,11 @@
             "Registros de Seguridad",
             "Registros de Personal"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -18961,7 +20101,11 @@
             "Registros de Seguridad",
             "Registros de Personal"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -19017,7 +20161,11 @@
             "Registros de Seguridad",
             "Registros de Personal"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -19114,7 +20262,11 @@
             "Registros de Seguridad",
             "Registros de Personal"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -19170,7 +20322,11 @@
             "Registros de Seguridad",
             "Registros de Personal"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -19226,7 +20382,11 @@
             "Registros de Seguridad",
             "Registros de Personal"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -19282,7 +20442,11 @@
             "Registros de Seguridad",
             "Registros de Personal"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -19379,7 +20543,11 @@
             "Registros de Seguridad",
             "Registros de Personal"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -19435,7 +20603,11 @@
             "Registros de Seguridad",
             "Registros de Personal"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -19491,7 +20663,11 @@
             "Registros de Seguridad",
             "Registros de Personal"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -19547,7 +20723,11 @@
             "Registros de Seguridad",
             "Registros de Personal"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -19644,7 +20824,11 @@
             "Registros de Seguridad",
             "Registros de Personal"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -19700,7 +20884,11 @@
             "Registros de Seguridad",
             "Registros de Personal"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -19756,7 +20944,11 @@
             "Registros de Seguridad",
             "Registros de Personal"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -19812,7 +21004,11 @@
             "Registros de Seguridad",
             "Registros de Personal"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -19904,7 +21100,13 @@
           "missionTitles": [
             "Eliminar a …"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -19955,7 +21157,13 @@
           "missionTitles": [
             "Recompensa verificada: … en …"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -20006,7 +21214,13 @@
           "missionTitles": [
             "Recompensa verificada: … en …"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -20057,7 +21271,13 @@
           "missionTitles": [
             "Eliminar a …"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -20149,7 +21369,13 @@
           "missionTitles": [
             "Recompensa verificada: … en …"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -20200,7 +21426,13 @@
           "missionTitles": [
             "Eliminar a …"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -20251,7 +21483,13 @@
           "missionTitles": [
             "Recompensa verificada: … en …"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -20302,7 +21540,13 @@
           "missionTitles": [
             "Recompensa verificada: … en …"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -20353,7 +21597,13 @@
           "missionTitles": [
             "Eliminar a …"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -20445,7 +21695,13 @@
           "missionTitles": [
             "Recompensa verificada: … en …"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -20496,7 +21752,13 @@
           "missionTitles": [
             "Eliminar a …"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -20547,7 +21809,13 @@
           "missionTitles": [
             "Recompensa verificada: … en …"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -20598,7 +21866,13 @@
           "missionTitles": [
             "Recompensa verificada: … en …"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -20649,7 +21923,13 @@
           "missionTitles": [
             "Eliminar a …"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -20700,7 +21980,13 @@
           "missionTitles": [
             "Recompensa verificada: … en …"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -20751,7 +22037,13 @@
           "missionTitles": [
             "Eliminar a …"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -20802,7 +22094,13 @@
           "missionTitles": [
             "Recompensa verificada: … en …"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -20853,7 +22151,13 @@
           "missionTitles": [
             "Recompensa verificada: … en …"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -20904,7 +22208,13 @@
           "missionTitles": [
             "Eliminar a …"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -20996,7 +22306,13 @@
           "missionTitles": [
             "Recompensa verificada: … en …"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -21037,7 +22353,11 @@
           "missionName": "North Rock FPS Kill › Eliminate Boss",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -21111,7 +22431,11 @@
           "missionName": "North Rock FPS Kill › Eliminate Boss",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -21185,7 +22509,11 @@
           "missionName": "North Rock FPS Kill › Eliminate Boss",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -21259,7 +22587,11 @@
           "missionName": "North Rock FPS Kill › Eliminate Boss",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -21339,7 +22671,13 @@
             "Eliminar dossier letal",
             "Destruir información sensible"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -22013,7 +23351,13 @@
             "Eliminar dossier letal",
             "Destruir información sensible"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -22654,7 +23998,13 @@
             "Eliminar dossier letal",
             "Destruir información sensible"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -23361,7 +24711,13 @@
             "Eliminar dossier letal",
             "Destruir información sensible"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -24029,7 +25385,11 @@
           "missionName": "Shubin › Resource Gathering › FPS Mining › Pyro",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -24070,7 +25430,11 @@
           "missionName": "Shubin › Resource Gathering › FPS Mining › Pyro",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -24177,7 +25541,11 @@
           "missionName": "Shubin › Resource Gathering › FPS Mining › Pyro",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -24218,7 +25586,11 @@
           "missionName": "Rayari › Recover Item › Irradiated",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -24259,7 +25631,11 @@
           "missionName": "Shubin › Resource Gathering › FPS Mining › Pyro",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -24303,7 +25679,11 @@
             "Eliminar a un pez gordo",
             "Ajuste de cuentas"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -24355,7 +25735,11 @@
             "Eliminar a un pez gordo",
             "Ajuste de cuentas"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -24407,7 +25791,11 @@
             "Eliminar a un pez gordo",
             "Ajuste de cuentas"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -24459,7 +25847,11 @@
             "Eliminar a un pez gordo",
             "Ajuste de cuentas"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -24500,7 +25892,14 @@
           "missionName": "Vaughn Generator › Eliminate Specific",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro",
+            "Stanton"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -24673,7 +26072,14 @@
           "missionName": "Vaughn Generator › Eliminate Specific",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro",
+            "Stanton"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -24714,7 +26120,14 @@
           "missionName": "Vaughn Generator › Eliminate Specific",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro",
+            "Stanton"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -24755,7 +26168,14 @@
           "missionName": "Vaughn Generator › Eliminate Specific",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro",
+            "Stanton"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -24861,7 +26281,27 @@
             "Contrato de Nivel Amarillo: Defender …",
             "Contrato de Nivel Naranja: Necesaria protección de naves"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [
+            "VeryEasy",
+            "Easy",
+            "Medium",
+            "Hard",
+            "VeryHard",
+            "Super"
+          ],
+          "scripPerDiff": {
+            "VeryEasy": 2,
+            "Easy": 4,
+            "Medium": 8,
+            "Hard": 14,
+            "VeryHard": 18,
+            "Super": 24
+          },
+          "scripLabel": "MG Scrip"
         }
       ],
       "hasMissions": true
@@ -24915,7 +26355,28 @@
             "Contrato nivel naranja: Destruir amenaza de forajidos",
             "Contrato nivel naranja: Eliminar flota criminal"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro",
+            "Stanton"
+          ],
+          "difficulties": [
+            "VeryEasy",
+            "Easy",
+            "Medium",
+            "Hard",
+            "VeryHard",
+            "Super"
+          ],
+          "scripPerDiff": {
+            "VeryEasy": 2,
+            "Easy": 4,
+            "Medium": 8,
+            "Hard": 14,
+            "VeryHard": 18,
+            "Super": 24
+          },
+          "scripLabel": "MG Scrip"
         }
       ],
       "hasMissions": true
@@ -24971,7 +26432,28 @@
             "Contrato Nivel Rojo: Ataque Sorpresa",
             "Contrato de Nivel Rojo: Emboscar a un Escuadrón de Ataque"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro",
+            "Stanton"
+          ],
+          "difficulties": [
+            "VeryEasy",
+            "Easy",
+            "Medium",
+            "Hard",
+            "VeryHard",
+            "Super"
+          ],
+          "scripPerDiff": {
+            "VeryEasy": 1,
+            "Easy": 3,
+            "Medium": 5,
+            "Hard": 8,
+            "VeryHard": 12,
+            "Super": 16
+          },
+          "scripLabel": "MG Scrip"
         }
       ],
       "hasMissions": true
@@ -25027,7 +26509,17 @@
             "Contrato nivel rojo: Destruir infraestructura de forajidos",
             "Contrato nivel rojo: Demolición de contenedores de combustible"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [
+            "Easy",
+            "Medium",
+            "Hard"
+          ],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -25083,7 +26575,28 @@
             "Contrato de Nivel Rojo: Asegurar Espacio Amenazado",
             "Contrato Nivel Rojo: Patrulla de Seguridad de Alto Riesgo"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro",
+            "Stanton"
+          ],
+          "difficulties": [
+            "VeryEasy",
+            "Easy",
+            "Medium",
+            "Hard",
+            "VeryHard",
+            "Super"
+          ],
+          "scripPerDiff": {
+            "VeryEasy": 2,
+            "Easy": 4,
+            "Medium": 8,
+            "Hard": 14,
+            "VeryHard": 18,
+            "Super": 24
+          },
+          "scripLabel": "MG Scrip"
         }
       ],
       "hasMissions": true
@@ -25139,7 +26652,17 @@
             "Contrato nivel rojo: Destruir infraestructura de forajidos",
             "Contrato nivel rojo: Demolición de contenedores de combustible"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [
+            "Easy",
+            "Medium",
+            "Hard"
+          ],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -25236,7 +26759,27 @@
             "Contrato de Nivel Amarillo: Defender …",
             "Contrato de Nivel Naranja: Necesaria protección de naves"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [
+            "VeryEasy",
+            "Easy",
+            "Medium",
+            "Hard",
+            "VeryHard",
+            "Super"
+          ],
+          "scripPerDiff": {
+            "VeryEasy": 2,
+            "Easy": 4,
+            "Medium": 8,
+            "Hard": 14,
+            "VeryHard": 18,
+            "Super": 24
+          },
+          "scripLabel": "MG Scrip"
         }
       ],
       "hasMissions": true
@@ -25290,7 +26833,28 @@
             "Contrato nivel naranja: Destruir amenaza de forajidos",
             "Contrato nivel naranja: Eliminar flota criminal"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro",
+            "Stanton"
+          ],
+          "difficulties": [
+            "VeryEasy",
+            "Easy",
+            "Medium",
+            "Hard",
+            "VeryHard",
+            "Super"
+          ],
+          "scripPerDiff": {
+            "VeryEasy": 2,
+            "Easy": 4,
+            "Medium": 8,
+            "Hard": 14,
+            "VeryHard": 18,
+            "Super": 24
+          },
+          "scripLabel": "MG Scrip"
         }
       ],
       "hasMissions": true
@@ -25346,7 +26910,28 @@
             "Contrato Nivel Rojo: Ataque Sorpresa",
             "Contrato de Nivel Rojo: Emboscar a un Escuadrón de Ataque"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro",
+            "Stanton"
+          ],
+          "difficulties": [
+            "VeryEasy",
+            "Easy",
+            "Medium",
+            "Hard",
+            "VeryHard",
+            "Super"
+          ],
+          "scripPerDiff": {
+            "VeryEasy": 1,
+            "Easy": 3,
+            "Medium": 5,
+            "Hard": 8,
+            "VeryHard": 12,
+            "Super": 16
+          },
+          "scripLabel": "MG Scrip"
         }
       ],
       "hasMissions": true
@@ -25402,7 +26987,17 @@
             "Contrato nivel rojo: Destruir infraestructura de forajidos",
             "Contrato nivel rojo: Demolición de contenedores de combustible"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [
+            "Easy",
+            "Medium",
+            "Hard"
+          ],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -25458,7 +27053,28 @@
             "Contrato de Nivel Rojo: Asegurar Espacio Amenazado",
             "Contrato Nivel Rojo: Patrulla de Seguridad de Alto Riesgo"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro",
+            "Stanton"
+          ],
+          "difficulties": [
+            "VeryEasy",
+            "Easy",
+            "Medium",
+            "Hard",
+            "VeryHard",
+            "Super"
+          ],
+          "scripPerDiff": {
+            "VeryEasy": 2,
+            "Easy": 4,
+            "Medium": 8,
+            "Hard": 14,
+            "VeryHard": 18,
+            "Super": 24
+          },
+          "scripLabel": "MG Scrip"
         }
       ],
       "hasMissions": true
@@ -25514,7 +27130,17 @@
             "Contrato nivel rojo: Destruir infraestructura de forajidos",
             "Contrato nivel rojo: Demolición de contenedores de combustible"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [
+            "Easy",
+            "Medium",
+            "Hard"
+          ],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -25611,7 +27237,27 @@
             "Contrato de Nivel Amarillo: Defender …",
             "Contrato de Nivel Naranja: Necesaria protección de naves"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [
+            "VeryEasy",
+            "Easy",
+            "Medium",
+            "Hard",
+            "VeryHard",
+            "Super"
+          ],
+          "scripPerDiff": {
+            "VeryEasy": 2,
+            "Easy": 4,
+            "Medium": 8,
+            "Hard": 14,
+            "VeryHard": 18,
+            "Super": 24
+          },
+          "scripLabel": "MG Scrip"
         }
       ],
       "hasMissions": true
@@ -25665,7 +27311,28 @@
             "Contrato nivel naranja: Destruir amenaza de forajidos",
             "Contrato nivel naranja: Eliminar flota criminal"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro",
+            "Stanton"
+          ],
+          "difficulties": [
+            "VeryEasy",
+            "Easy",
+            "Medium",
+            "Hard",
+            "VeryHard",
+            "Super"
+          ],
+          "scripPerDiff": {
+            "VeryEasy": 2,
+            "Easy": 4,
+            "Medium": 8,
+            "Hard": 14,
+            "VeryHard": 18,
+            "Super": 24
+          },
+          "scripLabel": "MG Scrip"
         }
       ],
       "hasMissions": true
@@ -25721,7 +27388,28 @@
             "Contrato Nivel Rojo: Ataque Sorpresa",
             "Contrato de Nivel Rojo: Emboscar a un Escuadrón de Ataque"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro",
+            "Stanton"
+          ],
+          "difficulties": [
+            "VeryEasy",
+            "Easy",
+            "Medium",
+            "Hard",
+            "VeryHard",
+            "Super"
+          ],
+          "scripPerDiff": {
+            "VeryEasy": 1,
+            "Easy": 3,
+            "Medium": 5,
+            "Hard": 8,
+            "VeryHard": 12,
+            "Super": 16
+          },
+          "scripLabel": "MG Scrip"
         }
       ],
       "hasMissions": true
@@ -25777,7 +27465,17 @@
             "Contrato nivel rojo: Destruir infraestructura de forajidos",
             "Contrato nivel rojo: Demolición de contenedores de combustible"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [
+            "Easy",
+            "Medium",
+            "Hard"
+          ],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -25833,7 +27531,28 @@
             "Contrato de Nivel Rojo: Asegurar Espacio Amenazado",
             "Contrato Nivel Rojo: Patrulla de Seguridad de Alto Riesgo"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro",
+            "Stanton"
+          ],
+          "difficulties": [
+            "VeryEasy",
+            "Easy",
+            "Medium",
+            "Hard",
+            "VeryHard",
+            "Super"
+          ],
+          "scripPerDiff": {
+            "VeryEasy": 2,
+            "Easy": 4,
+            "Medium": 8,
+            "Hard": 14,
+            "VeryHard": 18,
+            "Super": 24
+          },
+          "scripLabel": "MG Scrip"
         }
       ],
       "hasMissions": true
@@ -25889,7 +27608,17 @@
             "Contrato nivel rojo: Destruir infraestructura de forajidos",
             "Contrato nivel rojo: Demolición de contenedores de combustible"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [
+            "Easy",
+            "Medium",
+            "Hard"
+          ],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -25986,7 +27715,27 @@
             "Contrato de Nivel Amarillo: Defender …",
             "Contrato de Nivel Naranja: Necesaria protección de naves"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [
+            "VeryEasy",
+            "Easy",
+            "Medium",
+            "Hard",
+            "VeryHard",
+            "Super"
+          ],
+          "scripPerDiff": {
+            "VeryEasy": 2,
+            "Easy": 4,
+            "Medium": 8,
+            "Hard": 14,
+            "VeryHard": 18,
+            "Super": 24
+          },
+          "scripLabel": "MG Scrip"
         }
       ],
       "hasMissions": true
@@ -26040,7 +27789,28 @@
             "Contrato nivel naranja: Destruir amenaza de forajidos",
             "Contrato nivel naranja: Eliminar flota criminal"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro",
+            "Stanton"
+          ],
+          "difficulties": [
+            "VeryEasy",
+            "Easy",
+            "Medium",
+            "Hard",
+            "VeryHard",
+            "Super"
+          ],
+          "scripPerDiff": {
+            "VeryEasy": 2,
+            "Easy": 4,
+            "Medium": 8,
+            "Hard": 14,
+            "VeryHard": 18,
+            "Super": 24
+          },
+          "scripLabel": "MG Scrip"
         }
       ],
       "hasMissions": true
@@ -26096,7 +27866,28 @@
             "Contrato Nivel Rojo: Ataque Sorpresa",
             "Contrato de Nivel Rojo: Emboscar a un Escuadrón de Ataque"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro",
+            "Stanton"
+          ],
+          "difficulties": [
+            "VeryEasy",
+            "Easy",
+            "Medium",
+            "Hard",
+            "VeryHard",
+            "Super"
+          ],
+          "scripPerDiff": {
+            "VeryEasy": 1,
+            "Easy": 3,
+            "Medium": 5,
+            "Hard": 8,
+            "VeryHard": 12,
+            "Super": 16
+          },
+          "scripLabel": "MG Scrip"
         }
       ],
       "hasMissions": true
@@ -26152,7 +27943,17 @@
             "Contrato nivel rojo: Destruir infraestructura de forajidos",
             "Contrato nivel rojo: Demolición de contenedores de combustible"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [
+            "Easy",
+            "Medium",
+            "Hard"
+          ],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -26208,7 +28009,28 @@
             "Contrato de Nivel Rojo: Asegurar Espacio Amenazado",
             "Contrato Nivel Rojo: Patrulla de Seguridad de Alto Riesgo"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro",
+            "Stanton"
+          ],
+          "difficulties": [
+            "VeryEasy",
+            "Easy",
+            "Medium",
+            "Hard",
+            "VeryHard",
+            "Super"
+          ],
+          "scripPerDiff": {
+            "VeryEasy": 2,
+            "Easy": 4,
+            "Medium": 8,
+            "Hard": 14,
+            "VeryHard": 18,
+            "Super": 24
+          },
+          "scripLabel": "MG Scrip"
         }
       ],
       "hasMissions": true
@@ -26264,7 +28086,17 @@
             "Contrato nivel rojo: Destruir infraestructura de forajidos",
             "Contrato nivel rojo: Demolición de contenedores de combustible"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [
+            "Easy",
+            "Medium",
+            "Hard"
+          ],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -26393,7 +28225,13 @@
             "Objetivo pagado en CFP",
             "Hablar rápidamente"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -26488,7 +28326,13 @@
             "Necesito que elimines a un CFP",
             "Objetivo pagado en CFP"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -26666,7 +28510,13 @@
             "Objetivo pagado en CFP",
             "Hablar rápidamente"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -26761,7 +28611,13 @@
             "Necesito que elimines a un CFP",
             "Objetivo pagado en CFP"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -26939,7 +28795,13 @@
             "Objetivo pagado en CFP",
             "Hablar rápidamente"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -27034,7 +28896,13 @@
             "Necesito que elimines a un CFP",
             "Objetivo pagado en CFP"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -27253,7 +29121,13 @@
             "Objetivo pagado en CFP",
             "Hablar rápidamente"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -27348,7 +29222,13 @@
             "Necesito que elimines a un CFP",
             "Objetivo pagado en CFP"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -27590,7 +29470,13 @@
             "Volverles la jugada",
             "Recogida de mejora"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -27635,7 +29521,13 @@
             "Volverles la jugada",
             "Recogida de mejora"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -27680,7 +29572,13 @@
             "Volverles la jugada",
             "Recogida de mejora"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -27725,7 +29623,13 @@
             "Volverles la jugada",
             "Recogida de mejora"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -28188,7 +30092,13 @@
             "Volverles la jugada",
             "Recogida de mejora"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -28241,7 +30151,13 @@
             "Volverles la jugada",
             "Recogida de mejora"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -29032,7 +30948,13 @@
             "Volverles la jugada",
             "Recogida de mejora"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -29085,7 +31007,13 @@
             "Volverles la jugada",
             "Recogida de mejora"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -29917,7 +31845,13 @@
             "Volverles la jugada",
             "Recogida de mejora"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -29970,7 +31904,13 @@
             "Volverles la jugada",
             "Recogida de mejora"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -30384,7 +32324,13 @@
             "Volverles la jugada",
             "Recogida de mejora"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -30597,7 +32543,11 @@
           "missionName": "Shubin › Resource Gathering › FPS Mining › Stanton",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -30974,7 +32924,11 @@
           "missionName": "Shubin › Resource Gathering › FPS Mining › Stanton",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -31220,7 +33174,11 @@
           "missionName": "Shubin › Resource Gathering › FPS Mining › Stanton",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -31433,7 +33391,11 @@
           "missionName": "Shubin › Resource Gathering › FPS Mining › Stanton",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -31721,7 +33683,11 @@
           "missionName": "Rayari › Recover Item › Irradiated",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -31803,7 +33769,11 @@
           "missionName": "Shubin › Resource Gathering › Ship Mining › Stanton",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -31885,7 +33855,11 @@
           "missionName": "Shubin › Resource Gathering › Ship Mining › Stanton",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -31934,7 +33908,11 @@
           "missionName": "Shubin › Resource Gathering › Ship Mining › Stanton",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -31983,7 +33961,11 @@
           "missionName": "Shubin › Resource Gathering › Ship Mining › Stanton",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -32072,7 +34054,11 @@
             "Registros de Seguridad",
             "Registros de Personal"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -32128,7 +34114,11 @@
             "Registros de Seguridad",
             "Registros de Personal"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -32184,7 +34174,11 @@
             "Registros de Seguridad",
             "Registros de Personal"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         },
         {
           "poolFile": "bp_missionreward_asd2d",
@@ -32198,7 +34192,11 @@
             "Registros de Seguridad",
             "Registros de Personal"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -32254,7 +34252,11 @@
             "Registros de Seguridad",
             "Registros de Personal"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -32310,7 +34312,11 @@
             "Registros de Seguridad",
             "Registros de Personal"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -32366,7 +34372,11 @@
             "Registros de Seguridad",
             "Registros de Personal"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -32463,7 +34473,11 @@
             "Registros de Seguridad",
             "Registros de Personal"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -32519,7 +34533,11 @@
             "Registros de Seguridad",
             "Registros de Personal"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -32575,7 +34593,11 @@
             "Registros de Seguridad",
             "Registros de Personal"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         },
         {
           "poolFile": "bp_missionreward_asd2d",
@@ -32589,7 +34611,11 @@
             "Registros de Seguridad",
             "Registros de Personal"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -32645,7 +34671,11 @@
             "Registros de Seguridad",
             "Registros de Personal"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -32701,7 +34731,11 @@
             "Registros de Seguridad",
             "Registros de Personal"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -32757,7 +34791,11 @@
             "Registros de Seguridad",
             "Registros de Personal"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -32854,7 +34892,11 @@
             "Registros de Seguridad",
             "Registros de Personal"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -32910,7 +34952,11 @@
             "Registros de Seguridad",
             "Registros de Personal"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -32966,7 +35012,11 @@
             "Registros de Seguridad",
             "Registros de Personal"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         },
         {
           "poolFile": "bp_missionreward_asd2d",
@@ -32980,7 +35030,11 @@
             "Registros de Seguridad",
             "Registros de Personal"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -33036,7 +35090,11 @@
             "Registros de Seguridad",
             "Registros de Personal"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -33092,7 +35150,11 @@
             "Registros de Seguridad",
             "Registros de Personal"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -33148,7 +35210,11 @@
             "Registros de Seguridad",
             "Registros de Personal"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -33245,7 +35311,11 @@
             "Registros de Seguridad",
             "Registros de Personal"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -33301,7 +35371,11 @@
             "Registros de Seguridad",
             "Registros de Personal"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -33357,7 +35431,11 @@
             "Registros de Seguridad",
             "Registros de Personal"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         },
         {
           "poolFile": "bp_missionreward_asd2d",
@@ -33371,7 +35449,11 @@
             "Registros de Seguridad",
             "Registros de Personal"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -33427,7 +35509,11 @@
             "Registros de Seguridad",
             "Registros de Personal"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -33483,7 +35569,11 @@
             "Registros de Seguridad",
             "Registros de Personal"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -33539,7 +35629,11 @@
             "Registros de Seguridad",
             "Registros de Personal"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -34125,7 +36219,13 @@
             "Corregir error de entrega",
             "Entrega de buenas noticias"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -34219,7 +36319,13 @@
             "Corregir error de entrega",
             "Entrega de buenas noticias"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -34273,7 +36379,13 @@
             "Ataque de forajidos en …",
             "Recuperar puestos de avanzada de los Headhunters"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -34326,7 +36438,13 @@
             "Corregir error de entrega",
             "Entrega de buenas noticias"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -34502,7 +36620,13 @@
             "Recuperando puestos de avanzada de Headhunters",
             "Campaña para recuperar puestos de avanzada de los XenoThreat"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -34596,7 +36720,13 @@
             "Corregir error de entrega",
             "Entrega de buenas noticias"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -34690,7 +36820,13 @@
             "Corregir error de entrega",
             "Entrega de buenas noticias"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -34744,7 +36880,13 @@
             "Ataque de forajidos en …",
             "Recuperar puestos de avanzada de los Headhunters"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -34797,7 +36939,13 @@
             "Corregir error de entrega",
             "Entrega de buenas noticias"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -34973,7 +37121,13 @@
             "Recuperando puestos de avanzada de Headhunters",
             "Campaña para recuperar puestos de avanzada de los XenoThreat"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -35067,7 +37221,13 @@
             "Corregir error de entrega",
             "Entrega de buenas noticias"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -35161,7 +37321,13 @@
             "Corregir error de entrega",
             "Entrega de buenas noticias"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -35215,7 +37381,13 @@
             "Ataque de forajidos en …",
             "Recuperar puestos de avanzada de los Headhunters"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -35268,7 +37440,13 @@
             "Corregir error de entrega",
             "Entrega de buenas noticias"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -35485,7 +37663,13 @@
             "Corregir error de entrega",
             "Entrega de buenas noticias"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -35579,7 +37763,13 @@
             "Corregir error de entrega",
             "Entrega de buenas noticias"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -35633,7 +37823,13 @@
             "Ataque de forajidos en …",
             "Recuperar puestos de avanzada de los Headhunters"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -35686,7 +37882,13 @@
             "Corregir error de entrega",
             "Entrega de buenas noticias"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -36305,7 +38507,13 @@
             "Eliminar dossier letal",
             "Destruir información sensible"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -36477,7 +38685,11 @@
           "missionName": "North Rock FPS Kill › Eliminate Boss",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -36682,7 +38894,11 @@
           "missionName": "Vaughn Generator › Eliminate Boss",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -36730,7 +38946,11 @@
             "Registros de Seguridad",
             "Registros de Personal"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -36778,7 +38998,11 @@
             "Registros de Seguridad",
             "Registros de Personal"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -36826,7 +39050,11 @@
             "Registros de Seguridad",
             "Registros de Personal"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -36874,7 +39102,11 @@
             "Registros de Seguridad",
             "Registros de Personal"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -37005,7 +39237,11 @@
           "missionName": "North Rock FPS Kill › Eliminate Boss",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -37497,7 +39733,11 @@
           "missionName": "Shubin › Resource Gathering › Ship Mining › Pyro Nyx",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -37538,7 +39778,11 @@
           "missionName": "Shubin › Resource Gathering › FPS Mining › Stanton",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -37579,7 +39823,11 @@
           "missionName": "Shubin › Resource Gathering › Ship Mining › Stanton",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -37620,7 +39868,11 @@
           "missionName": "Shubin › Resource Gathering › FPS Mining › Pyro",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -37694,7 +39946,11 @@
           "missionName": "Shubin › Resource Gathering › Ship Mining › Stanton",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -37735,7 +39991,11 @@
           "missionName": "Shubin › Resource Gathering › FPS Mining › Pyro",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -37776,7 +40036,11 @@
           "missionName": "Shubin › Resource Gathering › Ship Mining › Pyro Nyx",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -37831,7 +40095,13 @@
             "Objetivo pagado en CFP",
             "Hablar rápidamente"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -37886,7 +40156,13 @@
             "Objetivo pagado en CFP",
             "Hablar rápidamente"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -38023,7 +40299,13 @@
             "Objetivo pagado en CFP",
             "Hablar rápidamente"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -38071,7 +40353,11 @@
             "Eliminar …",
             "Contrato Incompleto"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -38152,7 +40438,11 @@
             "Eliminar …",
             "Contrato Incompleto"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -38200,7 +40490,11 @@
             "Eliminar …",
             "Contrato Incompleto"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -38249,7 +40543,11 @@
           "missionName": "Vaughn Generator › Eliminate Boss",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -38293,14 +40591,22 @@
             "Recuperar tecnología vanduul",
             "Recuperar cadáveres vanduul"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         },
         {
           "poolFile": "bp_missionreward_rayari_recoveritem_hathorloot",
           "missionName": "Rayari › Recover Item › Hathor Loot",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -38341,14 +40647,22 @@
           "missionName": "IDS › Recover Encrypted Data",
           "contractor": "IDS",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": "MG Scrip"
         },
         {
           "poolFile": "bp_missionreward_rayari_recoveritem_hathorloot",
           "missionName": "Rayari › Recover Item › Hathor Loot",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -38389,14 +40703,30 @@
           "missionName": "Inter Sec › Defend Ship",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [
+            "Easy",
+            "Medium",
+            "Hard",
+            "VeryHard",
+            "Super"
+          ],
+          "scripPerDiff": {},
+          "scripLabel": ""
         },
         {
           "poolFile": "bp_missionreward_rayari_recoveritem_hathorloot",
           "missionName": "Rayari › Recover Item › Hathor Loot",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -38652,7 +40982,13 @@
           "missionTitles": [
             "Eliminar a …"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -38708,7 +41044,13 @@
             "Operación especial de recuperación",
             "El envío de carga debe completarse"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -38837,7 +41179,13 @@
             "Eliminar dossier letal",
             "Destruir información sensible"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -39113,7 +41461,13 @@
             "Corregir error de entrega",
             "Entrega de buenas noticias"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -39158,7 +41512,13 @@
             "Corregir error de entrega",
             "Entrega de buenas noticias"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -39203,7 +41563,13 @@
             "Corregir error de entrega",
             "Entrega de buenas noticias"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -39248,7 +41614,13 @@
             "Recuperando puestos de avanzada de Headhunters",
             "Campaña para recuperar puestos de avanzada de los XenoThreat"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -39294,7 +41666,13 @@
             "Ataque de forajidos en …",
             "Recuperar puestos de avanzada de los Headhunters"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -39376,7 +41754,14 @@
           "missionName": "Vaughn Generator › Eliminate Specific",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro",
+            "Stanton"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -39424,7 +41809,27 @@
             "Contrato de Nivel Amarillo: Defender …",
             "Contrato de Nivel Naranja: Necesaria protección de naves"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [
+            "VeryEasy",
+            "Easy",
+            "Medium",
+            "Hard",
+            "VeryHard",
+            "Super"
+          ],
+          "scripPerDiff": {
+            "VeryEasy": 2,
+            "Easy": 4,
+            "Medium": 8,
+            "Hard": 14,
+            "VeryHard": 18,
+            "Super": 24
+          },
+          "scripLabel": "MG Scrip"
         }
       ],
       "hasMissions": true
@@ -39470,7 +41875,28 @@
             "Contrato nivel naranja: Destruir amenaza de forajidos",
             "Contrato nivel naranja: Eliminar flota criminal"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro",
+            "Stanton"
+          ],
+          "difficulties": [
+            "VeryEasy",
+            "Easy",
+            "Medium",
+            "Hard",
+            "VeryHard",
+            "Super"
+          ],
+          "scripPerDiff": {
+            "VeryEasy": 2,
+            "Easy": 4,
+            "Medium": 8,
+            "Hard": 14,
+            "VeryHard": 18,
+            "Super": 24
+          },
+          "scripLabel": "MG Scrip"
         }
       ],
       "hasMissions": true
@@ -39518,7 +41944,28 @@
             "Contrato Nivel Rojo: Ataque Sorpresa",
             "Contrato de Nivel Rojo: Emboscar a un Escuadrón de Ataque"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro",
+            "Stanton"
+          ],
+          "difficulties": [
+            "VeryEasy",
+            "Easy",
+            "Medium",
+            "Hard",
+            "VeryHard",
+            "Super"
+          ],
+          "scripPerDiff": {
+            "VeryEasy": 1,
+            "Easy": 3,
+            "Medium": 5,
+            "Hard": 8,
+            "VeryHard": 12,
+            "Super": 16
+          },
+          "scripLabel": "MG Scrip"
         }
       ],
       "hasMissions": true
@@ -39566,7 +42013,28 @@
             "Contrato de Nivel Rojo: Asegurar Espacio Amenazado",
             "Contrato Nivel Rojo: Patrulla de Seguridad de Alto Riesgo"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro",
+            "Stanton"
+          ],
+          "difficulties": [
+            "VeryEasy",
+            "Easy",
+            "Medium",
+            "Hard",
+            "VeryHard",
+            "Super"
+          ],
+          "scripPerDiff": {
+            "VeryEasy": 2,
+            "Easy": 4,
+            "Medium": 8,
+            "Hard": 14,
+            "VeryHard": 18,
+            "Super": 24
+          },
+          "scripLabel": "MG Scrip"
         }
       ],
       "hasMissions": true
@@ -39621,7 +42089,13 @@
             "Eliminar dossier letal",
             "Destruir información sensible"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -39711,14 +42185,33 @@
           "missionName": "RDC › Boss",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         },
         {
           "poolFile": "bp_missionreward_rdc_generic",
           "missionName": "RDC › Generic",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [
+            "VeryEasy",
+            "Easy",
+            "Medium",
+            "Hard",
+            "VeryHard",
+            "Super"
+          ],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -39767,7 +42260,13 @@
           "missionName": "RDC › Boss",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -39816,7 +42315,13 @@
           "missionName": "RDC › Exclusive",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -39865,7 +42370,13 @@
           "missionName": "RDC › Exclusive",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -39917,7 +42428,11 @@
             "Eliminar a un pez gordo",
             "Ajuste de cuentas"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -40004,7 +42519,13 @@
             "Necesito que elimines a un CFP",
             "Objetivo pagado en CFP"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -40050,7 +42571,13 @@
             "Necesito que elimines a un CFP",
             "Objetivo pagado en CFP"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -40228,7 +42755,13 @@
             "Necesito que elimines a un CFP",
             "Objetivo pagado en CFP"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -40376,7 +42909,14 @@
           "missionName": "Vaughn Generator › Eliminate Specific",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro",
+            "Stanton"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -40417,7 +42957,11 @@
           "missionName": "Rayari › Recover Item › Irradiated",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -40458,7 +43002,11 @@
           "missionName": "Rayari › Recover Item › Irradiated",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -40499,7 +43047,11 @@
           "missionName": "Rayari › Recover Item › Irradiated",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -40540,7 +43092,11 @@
           "missionName": "Rayari › Recover Item › Irradiated",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -40596,7 +43152,13 @@
             "Operación especial de recuperación",
             "El envío de carga debe completarse"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -40939,7 +43501,13 @@
             "Operación especial de recuperación",
             "El envío de carga debe completarse"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -41110,7 +43678,20 @@
             "Malas despedidas",
             "Nuestra versión de la verdad"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [
+            "VeryEasy",
+            "Easy",
+            "Medium",
+            "Hard",
+            "VeryHard",
+            "Super"
+          ],
+          "scripPerDiff": {},
+          "scripLabel": ""
         },
         {
           "poolFile": "bp_missionreward_bitzeros_recoveritem_stanton",
@@ -41121,7 +43702,13 @@
             "Volverles la jugada",
             "Recogida de mejora"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -41199,7 +43786,13 @@
             "Volverles la jugada",
             "Recogida de mejora"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -41244,7 +43837,13 @@
             "Volverles la jugada",
             "Recogida de mejora"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -41355,7 +43954,13 @@
             "Volverles la jugada",
             "Recogida de mejora"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -41564,7 +44169,11 @@
             "Eliminar a un pez gordo",
             "Ajuste de cuentas"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -41605,14 +44214,22 @@
           "missionName": "IDS › Recover Encrypted Data",
           "contractor": "IDS",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": "MG Scrip"
         },
         {
           "poolFile": "bp_missionreward_rayari_recoveritem_hathorloot",
           "missionName": "Rayari › Recover Item › Hathor Loot",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -41653,14 +44270,32 @@
           "missionName": "Inter Sec › Patrol",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [
+            "Hard",
+            "VeryHard",
+            "Super"
+          ],
+          "scripPerDiff": {
+            "Hard": 14,
+            "VeryHard": 18,
+            "Super": 24
+          },
+          "scripLabel": "MG Scrip"
         },
         {
           "poolFile": "bp_missionreward_rayari_recoveritem_hathorloot",
           "missionName": "Rayari › Recover Item › Hathor Loot",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -41701,14 +44336,22 @@
           "missionName": "IDS › Recover Encrypted Data",
           "contractor": "IDS",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": "MG Scrip"
         },
         {
           "poolFile": "bp_missionreward_rayari_recoveritem_hathorloot",
           "missionName": "Rayari › Recover Item › Hathor Loot",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -41749,14 +44392,32 @@
           "missionName": "Inter Sec › Patrol",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [
+            "Hard",
+            "VeryHard",
+            "Super"
+          ],
+          "scripPerDiff": {
+            "Hard": 14,
+            "VeryHard": 18,
+            "Super": 24
+          },
+          "scripLabel": "MG Scrip"
         },
         {
           "poolFile": "bp_missionreward_rayari_recoveritem_hathorloot",
           "missionName": "Rayari › Recover Item › Hathor Loot",
           "contractor": "",
           "missionTitles": [],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -41811,7 +44472,13 @@
             "Eliminar dossier letal",
             "Destruir información sensible"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -41989,7 +44656,13 @@
             "Eliminar dossier letal",
             "Destruir información sensible"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -42201,7 +44874,20 @@
             "Malas despedidas",
             "Nuestra versión de la verdad"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Stanton"
+          ],
+          "difficulties": [
+            "VeryEasy",
+            "Easy",
+            "Medium",
+            "Hard",
+            "VeryHard",
+            "Super"
+          ],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -42553,7 +45239,13 @@
             "Objetivo pagado en CFP",
             "Hablar rápidamente"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [
+            "Pyro"
+          ],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -42642,7 +45334,11 @@
             "Eliminar …",
             "Contrato Incompleto"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -42723,7 +45419,11 @@
             "Eliminar …",
             "Contrato Incompleto"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -42771,7 +45471,11 @@
             "Eliminar …",
             "Contrato Incompleto"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -42852,7 +45556,11 @@
             "Registros de Seguridad",
             "Registros de Personal"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -42933,7 +45641,11 @@
             "Registros de Seguridad",
             "Registros de Personal"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -42981,7 +45693,11 @@
             "Registros de Seguridad",
             "Registros de Personal"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
@@ -43029,7 +45745,11 @@
             "Registros de Seguridad",
             "Registros de Personal"
           ],
-          "weight": 1.0
+          "weight": 1.0,
+          "systems": [],
+          "difficulties": [],
+          "scripPerDiff": {},
+          "scripLabel": ""
         }
       ],
       "hasMissions": true
