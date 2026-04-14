@@ -35,7 +35,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_citizensforprosperitydestroyitems_ab",
-          "missionName": "Citizensforprosperitydestroyitems Ab",
+          "missionName": "Citizens For Prosperity Destroy Items › AB",
           "weight": 1.0
         }
       ],
@@ -140,7 +140,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_bountyhuntersguild_paf_eliminatespecific",
-          "missionName": "Bountyhuntersguild Paf Eliminatespecific",
+          "missionName": "Bounty Hunters Guild › PAF › Eliminate Specific",
           "weight": 1.0
         }
       ],
@@ -179,7 +179,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_citizensforprosperityrecovercargo_pyro",
-          "missionName": "Citizensforprosperityrecovercargo Pyro",
+          "missionName": "Citizens For Prosperity Recover Cargo › Pyro",
           "weight": 1.0
         }
       ],
@@ -218,7 +218,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_citizensforprosperitydestroyitems_cd",
-          "missionName": "Citizensforprosperitydestroyitems Cd",
+          "missionName": "Citizens For Prosperity Destroy Items › CD",
           "weight": 1.0
         }
       ],
@@ -257,12 +257,12 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_northrockfpskill_eliminateboss",
-          "missionName": "Northrockfpskill Eliminateboss",
+          "missionName": "North Rock FPS Kill › Eliminate Boss",
           "weight": 1.0
         },
         {
           "poolFile": "bp_missionreward_northrockfpskill_eliminateboss",
-          "missionName": "Northrockfpskill Eliminateboss",
+          "missionName": "North Rock FPS Kill › Eliminate Boss",
           "weight": 1.0
         }
       ],
@@ -334,7 +334,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_citizensforprosperityrecovercargo_pyro",
-          "missionName": "Citizensforprosperityrecovercargo Pyro",
+          "missionName": "Citizens For Prosperity Recover Cargo › Pyro",
           "weight": 1.0
         }
       ],
@@ -373,7 +373,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_citizensforprosperityrecovercargo_pyro",
-          "missionName": "Citizensforprosperityrecovercargo Pyro",
+          "missionName": "Citizens For Prosperity Recover Cargo › Pyro",
           "weight": 1.0
         }
       ],
@@ -412,7 +412,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_citizensforprosperitydestroyitems_cd",
-          "missionName": "Citizensforprosperitydestroyitems Cd",
+          "missionName": "Citizens For Prosperity Destroy Items › CD",
           "weight": 1.0
         }
       ],
@@ -451,7 +451,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminatespecific_regionab",
-          "missionName": "Headhunters Mercenaryfps Eliminatespecific Regionab",
+          "missionName": "Head Hunters › Mercenary FPS › Eliminate Specific › Region AB",
           "weight": 1.0
         }
       ],
@@ -490,7 +490,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminatespecific_regionab",
-          "missionName": "Headhunters Mercenaryfps Eliminatespecific Regionab",
+          "missionName": "Head Hunters › Mercenary FPS › Eliminate Specific › Region AB",
           "weight": 1.0
         }
       ],
@@ -529,7 +529,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_vaughngenerator_eliminateboss",
-          "missionName": "Vaughngenerator Eliminateboss",
+          "missionName": "Vaughn Generator › Eliminate Boss",
           "weight": 1.0
         }
       ],
@@ -568,7 +568,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_vaughngenerator_eliminatespecific",
-          "missionName": "Vaughngenerator Eliminatespecific",
+          "missionName": "Vaughn Generator › Eliminate Specific",
           "weight": 1.0
         }
       ],
@@ -607,7 +607,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminateall_regioncd",
-          "missionName": "Headhunters Mercenaryfps Eliminateall Regioncd",
+          "missionName": "Head Hunters › Mercenary FPS › Eliminate ALL › Region CD",
           "weight": 1.0
         }
       ],
@@ -646,7 +646,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminateall_regionab",
-          "missionName": "Headhunters Mercenaryfps Eliminateall Regionab",
+          "missionName": "Head Hunters › Mercenary FPS › Eliminate ALL › Region AB",
           "weight": 1.0
         }
       ],
@@ -685,22 +685,22 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_foxwell_defendentitiesandescort",
-          "missionName": "Foxwell Defendentitiesandescort",
+          "missionName": "Foxwell › Defend Entities And Escort",
           "weight": 1.0
         },
         {
           "poolFile": "bp_missionreward_foxwellenforcement_ambush",
-          "missionName": "Foxwellenforcement Ambush",
+          "missionName": "Foxwell Enforcement › Ambush",
           "weight": 1.0
         },
         {
           "poolFile": "bp_missionreward_foxwellenforcement_escortships",
-          "missionName": "Foxwellenforcement Escortships",
+          "missionName": "Foxwell Enforcement › Escort Ships",
           "weight": 1.0
         },
         {
           "poolFile": "bp_missionreward_foxwellenforcement_patrol",
-          "missionName": "Foxwellenforcement Patrol",
+          "missionName": "Foxwell Enforcement › Patrol",
           "weight": 1.0
         }
       ],
@@ -739,12 +739,12 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_asd2c",
-          "missionName": "Asd2C",
+          "missionName": "ASD2 C",
           "weight": 1.0
         },
         {
           "poolFile": "bp_missionreward_asd3",
-          "missionName": "Asd3",
+          "missionName": "ASD3",
           "weight": 1.0
         }
       ],
@@ -816,22 +816,22 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_shubin_resourcegathering_fpsmining_pyro",
-          "missionName": "Shubin Resourcegathering Fpsmining Pyro",
+          "missionName": "Shubin › Resource Gathering › FPS Mining › Pyro",
           "weight": 1.0
         },
         {
           "poolFile": "bp_missionreward_shubin_resourcegathering_fpsmining_stanton",
-          "missionName": "Shubin Resourcegathering Fpsmining Stanton",
+          "missionName": "Shubin › Resource Gathering › FPS Mining › Stanton",
           "weight": 1.0
         },
         {
           "poolFile": "bp_missionreward_shubin_resourcegathering_shipmining_pyronyx",
-          "missionName": "Shubin Resourcegathering Shipmining Pyronyx",
+          "missionName": "Shubin › Resource Gathering › Ship Mining › Pyro Nyx",
           "weight": 1.0
         },
         {
           "poolFile": "bp_missionreward_shubin_resourcegathering_shipmining_stanton",
-          "missionName": "Shubin Resourcegathering Shipmining Stanton",
+          "missionName": "Shubin › Resource Gathering › Ship Mining › Stanton",
           "weight": 1.0
         }
       ],
@@ -870,7 +870,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_citizensforprosperitydestroyitems_ab",
-          "missionName": "Citizensforprosperitydestroyitems Ab",
+          "missionName": "Citizens For Prosperity Destroy Items › AB",
           "weight": 1.0
         }
       ],
@@ -909,12 +909,12 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_bitzeros_blackboxrecovery",
-          "missionName": "Bitzeros Blackboxrecovery",
+          "missionName": "Bit Zeros › Black Box Recovery",
           "weight": 1.0
         },
         {
           "poolFile": "bp_missionreward_bitzeros_recoveritem_stanton",
-          "missionName": "Bitzeros Recoveritem Stanton",
+          "missionName": "Bit Zeros › Recover Item › Stanton",
           "weight": 1.0
         }
       ],
@@ -953,7 +953,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_bitzeros_blackboxrecovery",
-          "missionName": "Bitzeros Blackboxrecovery",
+          "missionName": "Bit Zeros › Black Box Recovery",
           "weight": 1.0
         }
       ],
@@ -992,7 +992,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_bitzeros_recoveritem_pyronyx",
-          "missionName": "Bitzeros Recoveritem Pyronyx",
+          "missionName": "Bit Zeros › Recover Item › Pyro Nyx",
           "weight": 1.0
         }
       ],
@@ -1031,17 +1031,17 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_asd2a",
-          "missionName": "Asd2A",
+          "missionName": "ASD2 A",
           "weight": 1.0
         },
         {
           "poolFile": "bp_missionreward_asd2b",
-          "missionName": "Asd2B",
+          "missionName": "ASD2 B",
           "weight": 1.0
         },
         {
           "poolFile": "bp_missionreward_asd2d",
-          "missionName": "Asd2D",
+          "missionName": "ASD2 D",
           "weight": 1.0
         }
       ],
@@ -1080,22 +1080,22 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_ids_recoverencrypteddata",
-          "missionName": "Ids Recoverencrypteddata",
+          "missionName": "IDS › Recover Encrypted Data",
           "weight": 1.0
         },
         {
           "poolFile": "bp_missionreward_intersec_defendship",
-          "missionName": "Intersec Defendship",
+          "missionName": "Inter Sec › Defend Ship",
           "weight": 1.0
         },
         {
           "poolFile": "bp_missionreward_intersec_resourcegathering",
-          "missionName": "Intersec Resourcegathering",
+          "missionName": "Inter Sec › Resource Gathering",
           "weight": 1.0
         },
         {
           "poolFile": "bp_missionreward_rayari_recoveritem_hathorloot",
-          "missionName": "Rayari Recoveritem Hathorloot",
+          "missionName": "Rayari › Recover Item › Hathor Loot",
           "weight": 1.0
         }
       ],
@@ -1134,17 +1134,17 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_ids_recoverencrypteddata",
-          "missionName": "Ids Recoverencrypteddata",
+          "missionName": "IDS › Recover Encrypted Data",
           "weight": 1.0
         },
         {
           "poolFile": "bp_missionreward_intersec_patrol",
-          "missionName": "Intersec Patrol",
+          "missionName": "Inter Sec › Patrol",
           "weight": 1.0
         },
         {
           "poolFile": "bp_missionreward_rayari_recoveritem_hathorloot",
-          "missionName": "Rayari Recoveritem Hathorloot",
+          "missionName": "Rayari › Recover Item › Hathor Loot",
           "weight": 1.0
         }
       ],
@@ -1183,27 +1183,27 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_cfp_chainelim_1and2",
-          "missionName": "Cfp Chainelim 1And2",
+          "missionName": "CFP › Chain Elim › 1and2",
           "weight": 1.0
         },
         {
           "poolFile": "bp_missionreward_cfp_chainelim_3",
-          "missionName": "Cfp Chainelim 3",
+          "missionName": "CFP › Chain Elim › 3",
           "weight": 1.0
         },
         {
           "poolFile": "bp_missionreward_cfp_outpost_regionab",
-          "missionName": "Cfp Outpost Regionab",
+          "missionName": "CFP › Outpost › Region AB",
           "weight": 1.0
         },
         {
           "poolFile": "bp_missionreward_cfp_outpost_regionc",
-          "missionName": "Cfp Outpost Regionc",
+          "missionName": "CFP › Outpost › Region C",
           "weight": 1.0
         },
         {
           "poolFile": "bp_missionreward_cfp_outpost_regiond",
-          "missionName": "Cfp Outpost Regiond",
+          "missionName": "CFP › Outpost › Region D",
           "weight": 1.0
         }
       ],
@@ -1242,7 +1242,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminatespecific_regioncd",
-          "missionName": "Headhunters Mercenaryfps Eliminatespecific Regioncd",
+          "missionName": "Head Hunters › Mercenary FPS › Eliminate Specific › Region CD",
           "weight": 1.0
         }
       ],
@@ -1281,7 +1281,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_rayari_recoveritem_irradiated",
-          "missionName": "Rayari Recoveritem Irradiated",
+          "missionName": "Rayari › Recover Item › Irradiated",
           "weight": 1.0
         }
       ],
@@ -1320,7 +1320,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_citizensforprosperitydestroyitems_ab",
-          "missionName": "Citizensforprosperitydestroyitems Ab",
+          "missionName": "Citizens For Prosperity Destroy Items › AB",
           "weight": 1.0
         }
       ],
@@ -1359,17 +1359,17 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_rdc_boss",
-          "missionName": "Rdc Boss",
+          "missionName": "RDC › Boss",
           "weight": 1.0
         },
         {
           "poolFile": "bp_missionreward_rdc_exclusive",
-          "missionName": "Rdc Exclusive",
+          "missionName": "RDC › Exclusive",
           "weight": 1.0
         },
         {
           "poolFile": "bp_missionreward_rdc_generic",
-          "missionName": "Rdc Generic",
+          "missionName": "RDC › Generic",
           "weight": 1.0
         }
       ],
@@ -1408,7 +1408,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminateboss",
-          "missionName": "Headhunters Mercenaryfps Eliminateboss",
+          "missionName": "Head Hunters › Mercenary FPS › Eliminate Boss",
           "weight": 1.0
         }
       ],
@@ -1447,7 +1447,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_vaughngenerator_eliminateboss",
-          "missionName": "Vaughngenerator Eliminateboss",
+          "missionName": "Vaughn Generator › Eliminate Boss",
           "weight": 1.0
         }
       ],
@@ -1486,12 +1486,12 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminateboss",
-          "missionName": "Headhunters Mercenaryfps Eliminateboss",
+          "missionName": "Head Hunters › Mercenary FPS › Eliminate Boss",
           "weight": 1.0
         },
         {
           "poolFile": "bp_missionreward_vaughngenerator_eliminatespecific",
-          "missionName": "Vaughngenerator Eliminatespecific",
+          "missionName": "Vaughn Generator › Eliminate Specific",
           "weight": 1.0
         }
       ],
@@ -1530,7 +1530,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_citizensforprosperitydestroyitems_ab",
-          "missionName": "Citizensforprosperitydestroyitems Ab",
+          "missionName": "Citizens For Prosperity Destroy Items › AB",
           "weight": 1.0
         }
       ],
@@ -1569,7 +1569,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_citizensforprosperitydestroyitems_ab",
-          "missionName": "Citizensforprosperitydestroyitems Ab",
+          "missionName": "Citizens For Prosperity Destroy Items › AB",
           "weight": 1.0
         }
       ],
@@ -1608,7 +1608,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_citizensforprosperitydestroyitems_ab",
-          "missionName": "Citizensforprosperitydestroyitems Ab",
+          "missionName": "Citizens For Prosperity Destroy Items › AB",
           "weight": 1.0
         }
       ],
@@ -1647,7 +1647,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_citizensforprosperitydestroyitems_ab",
-          "missionName": "Citizensforprosperitydestroyitems Ab",
+          "missionName": "Citizens For Prosperity Destroy Items › AB",
           "weight": 1.0
         }
       ],
@@ -1719,7 +1719,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_citizensforprosperitydestroyitems_ab",
-          "missionName": "Citizensforprosperitydestroyitems Ab",
+          "missionName": "Citizens For Prosperity Destroy Items › AB",
           "weight": 1.0
         }
       ],
@@ -2484,7 +2484,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_citizensforprosperitydestroyitems_ab",
-          "missionName": "Citizensforprosperitydestroyitems Ab",
+          "missionName": "Citizens For Prosperity Destroy Items › AB",
           "weight": 1.0
         }
       ],
@@ -3249,7 +3249,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_citizensforprosperitydestroyitems_ab",
-          "missionName": "Citizensforprosperitydestroyitems Ab",
+          "missionName": "Citizens For Prosperity Destroy Items › AB",
           "weight": 1.0
         }
       ],
@@ -3981,7 +3981,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_citizensforprosperitydestroyitems_ab",
-          "missionName": "Citizensforprosperitydestroyitems Ab",
+          "missionName": "Citizens For Prosperity Destroy Items › AB",
           "weight": 1.0
         }
       ],
@@ -4721,7 +4721,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_rdc_generic",
-          "missionName": "Rdc Generic",
+          "missionName": "RDC › Generic",
           "weight": 1.0
         }
       ],
@@ -4768,7 +4768,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_rdc_exclusive",
-          "missionName": "Rdc Exclusive",
+          "missionName": "RDC › Exclusive",
           "weight": 1.0
         }
       ],
@@ -4815,7 +4815,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_rdc_boss",
-          "missionName": "Rdc Boss",
+          "missionName": "RDC › Boss",
           "weight": 1.0
         }
       ],
@@ -4862,7 +4862,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_rdc_boss",
-          "missionName": "Rdc Boss",
+          "missionName": "RDC › Boss",
           "weight": 1.0
         }
       ],
@@ -4909,7 +4909,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_rdc_exclusive",
-          "missionName": "Rdc Exclusive",
+          "missionName": "RDC › Exclusive",
           "weight": 1.0
         }
       ],
@@ -4956,7 +4956,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_rdc_generic",
-          "missionName": "Rdc Generic",
+          "missionName": "RDC › Generic",
           "weight": 1.0
         }
       ],
@@ -5003,7 +5003,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_rdc_generic",
-          "missionName": "Rdc Generic",
+          "missionName": "RDC › Generic",
           "weight": 1.0
         }
       ],
@@ -5050,7 +5050,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_rdc_exclusive",
-          "missionName": "Rdc Exclusive",
+          "missionName": "RDC › Exclusive",
           "weight": 1.0
         }
       ],
@@ -5097,7 +5097,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_rdc_boss",
-          "missionName": "Rdc Boss",
+          "missionName": "RDC › Boss",
           "weight": 1.0
         }
       ],
@@ -5144,7 +5144,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_rdc_boss",
-          "missionName": "Rdc Boss",
+          "missionName": "RDC › Boss",
           "weight": 1.0
         }
       ],
@@ -5191,7 +5191,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_rdc_exclusive",
-          "missionName": "Rdc Exclusive",
+          "missionName": "RDC › Exclusive",
           "weight": 1.0
         }
       ],
@@ -5238,7 +5238,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_rdc_generic",
-          "missionName": "Rdc Generic",
+          "missionName": "RDC › Generic",
           "weight": 1.0
         }
       ],
@@ -5285,7 +5285,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_rdc_generic",
-          "missionName": "Rdc Generic",
+          "missionName": "RDC › Generic",
           "weight": 1.0
         }
       ],
@@ -5332,7 +5332,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_rdc_exclusive",
-          "missionName": "Rdc Exclusive",
+          "missionName": "RDC › Exclusive",
           "weight": 1.0
         }
       ],
@@ -5379,7 +5379,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_rdc_boss",
-          "missionName": "Rdc Boss",
+          "missionName": "RDC › Boss",
           "weight": 1.0
         }
       ],
@@ -5426,7 +5426,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_rdc_boss",
-          "missionName": "Rdc Boss",
+          "missionName": "RDC › Boss",
           "weight": 1.0
         }
       ],
@@ -5473,7 +5473,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_rdc_exclusive",
-          "missionName": "Rdc Exclusive",
+          "missionName": "RDC › Exclusive",
           "weight": 1.0
         }
       ],
@@ -5520,7 +5520,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_rdc_generic",
-          "missionName": "Rdc Generic",
+          "missionName": "RDC › Generic",
           "weight": 1.0
         }
       ],
@@ -5567,7 +5567,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_rdc_generic",
-          "missionName": "Rdc Generic",
+          "missionName": "RDC › Generic",
           "weight": 1.0
         }
       ],
@@ -5614,7 +5614,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_rdc_exclusive",
-          "missionName": "Rdc Exclusive",
+          "missionName": "RDC › Exclusive",
           "weight": 1.0
         }
       ],
@@ -5661,7 +5661,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_rdc_boss",
-          "missionName": "Rdc Boss",
+          "missionName": "RDC › Boss",
           "weight": 1.0
         }
       ],
@@ -5708,7 +5708,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_rdc_boss",
-          "missionName": "Rdc Boss",
+          "missionName": "RDC › Boss",
           "weight": 1.0
         }
       ],
@@ -5755,7 +5755,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_rdc_exclusive",
-          "missionName": "Rdc Exclusive",
+          "missionName": "RDC › Exclusive",
           "weight": 1.0
         }
       ],
@@ -5802,7 +5802,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_rdc_generic",
-          "missionName": "Rdc Generic",
+          "missionName": "RDC › Generic",
           "weight": 1.0
         }
       ],
@@ -5849,7 +5849,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_vaughngenerator_eliminateboss",
-          "missionName": "Vaughngenerator Eliminateboss",
+          "missionName": "Vaughn Generator › Eliminate Boss",
           "weight": 1.0
         }
       ],
@@ -5978,7 +5978,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_vaughngenerator_eliminateboss",
-          "missionName": "Vaughngenerator Eliminateboss",
+          "missionName": "Vaughn Generator › Eliminate Boss",
           "weight": 1.0
         }
       ],
@@ -6107,7 +6107,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_vaughngenerator_eliminateboss",
-          "missionName": "Vaughngenerator Eliminateboss",
+          "missionName": "Vaughn Generator › Eliminate Boss",
           "weight": 1.0
         }
       ],
@@ -6195,7 +6195,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_vaughngenerator_eliminateboss",
-          "missionName": "Vaughngenerator Eliminateboss",
+          "missionName": "Vaughn Generator › Eliminate Boss",
           "weight": 1.0
         }
       ],
@@ -6275,7 +6275,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_northrockfpskill_eliminateboss",
-          "missionName": "Northrockfpskill Eliminateboss",
+          "missionName": "North Rock FPS Kill › Eliminate Boss",
           "weight": 1.0
         }
       ],
@@ -6512,7 +6512,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_northrockfpskill_eliminateboss",
-          "missionName": "Northrockfpskill Eliminateboss",
+          "missionName": "North Rock FPS Kill › Eliminate Boss",
           "weight": 1.0
         }
       ],
@@ -6782,7 +6782,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_northrockfpskill_eliminateboss",
-          "missionName": "Northrockfpskill Eliminateboss",
+          "missionName": "North Rock FPS Kill › Eliminate Boss",
           "weight": 1.0
         }
       ],
@@ -7019,7 +7019,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_northrockfpskill_eliminateboss",
-          "missionName": "Northrockfpskill Eliminateboss",
+          "missionName": "North Rock FPS Kill › Eliminate Boss",
           "weight": 1.0
         }
       ],
@@ -7256,7 +7256,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_vaughngenerator_eliminatespecific",
-          "missionName": "Vaughngenerator Eliminatespecific",
+          "missionName": "Vaughn Generator › Eliminate Specific",
           "weight": 1.0
         }
       ],
@@ -7295,7 +7295,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_vaughngenerator_eliminatespecific",
-          "missionName": "Vaughngenerator Eliminatespecific",
+          "missionName": "Vaughn Generator › Eliminate Specific",
           "weight": 1.0
         }
       ],
@@ -7334,7 +7334,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_vaughngenerator_eliminatespecific",
-          "missionName": "Vaughngenerator Eliminatespecific",
+          "missionName": "Vaughn Generator › Eliminate Specific",
           "weight": 1.0
         }
       ],
@@ -7373,7 +7373,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_vaughngenerator_eliminatespecific",
-          "missionName": "Vaughngenerator Eliminatespecific",
+          "missionName": "Vaughn Generator › Eliminate Specific",
           "weight": 1.0
         }
       ],
@@ -7552,7 +7552,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_citizensforprosperitydestroyitems_cd",
-          "missionName": "Citizensforprosperitydestroyitems Cd",
+          "missionName": "Citizens For Prosperity Destroy Items › CD",
           "weight": 1.0
         }
       ],
@@ -8378,7 +8378,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_citizensforprosperitydestroyitems_cd",
-          "missionName": "Citizensforprosperitydestroyitems Cd",
+          "missionName": "Citizens For Prosperity Destroy Items › CD",
           "weight": 1.0
         }
       ],
@@ -9204,7 +9204,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_citizensforprosperitydestroyitems_cd",
-          "missionName": "Citizensforprosperitydestroyitems Cd",
+          "missionName": "Citizens For Prosperity Destroy Items › CD",
           "weight": 1.0
         }
       ],
@@ -9989,7 +9989,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_citizensforprosperitydestroyitems_cd",
-          "missionName": "Citizensforprosperitydestroyitems Cd",
+          "missionName": "Citizens For Prosperity Destroy Items › CD",
           "weight": 1.0
         }
       ],
@@ -10807,7 +10807,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_vaughngenerator_eliminateboss",
-          "missionName": "Vaughngenerator Eliminateboss",
+          "missionName": "Vaughn Generator › Eliminate Boss",
           "weight": 1.0
         }
       ],
@@ -10846,12 +10846,12 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_vaughngenerator_eliminateboss",
-          "missionName": "Vaughngenerator Eliminateboss",
+          "missionName": "Vaughn Generator › Eliminate Boss",
           "weight": 1.0
         },
         {
           "poolFile": "bp_missionreward_vaughngenerator_eliminateboss",
-          "missionName": "Vaughngenerator Eliminateboss",
+          "missionName": "Vaughn Generator › Eliminate Boss",
           "weight": 1.0
         }
       ],
@@ -10898,7 +10898,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminateall_regionab",
-          "missionName": "Headhunters Mercenaryfps Eliminateall Regionab",
+          "missionName": "Head Hunters › Mercenary FPS › Eliminate ALL › Region AB",
           "weight": 1.0
         }
       ],
@@ -10986,7 +10986,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminateall_regionab",
-          "missionName": "Headhunters Mercenaryfps Eliminateall Regionab",
+          "missionName": "Head Hunters › Mercenary FPS › Eliminate ALL › Region AB",
           "weight": 1.0
         }
       ],
@@ -11074,7 +11074,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminateall_regionab",
-          "missionName": "Headhunters Mercenaryfps Eliminateall Regionab",
+          "missionName": "Head Hunters › Mercenary FPS › Eliminate ALL › Region AB",
           "weight": 1.0
         }
       ],
@@ -11162,7 +11162,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminateall_regionab",
-          "missionName": "Headhunters Mercenaryfps Eliminateall Regionab",
+          "missionName": "Head Hunters › Mercenary FPS › Eliminate ALL › Region AB",
           "weight": 1.0
         }
       ],
@@ -11250,7 +11250,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_bitzeros_blackboxrecovery",
-          "missionName": "Bitzeros Blackboxrecovery",
+          "missionName": "Bit Zeros › Black Box Recovery",
           "weight": 1.0
         }
       ],
@@ -11297,7 +11297,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_bitzeros_blackboxrecovery",
-          "missionName": "Bitzeros Blackboxrecovery",
+          "missionName": "Bit Zeros › Black Box Recovery",
           "weight": 1.0
         }
       ],
@@ -11385,7 +11385,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_bitzeros_blackboxrecovery",
-          "missionName": "Bitzeros Blackboxrecovery",
+          "missionName": "Bit Zeros › Black Box Recovery",
           "weight": 1.0
         }
       ],
@@ -11432,7 +11432,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_bitzeros_blackboxrecovery",
-          "missionName": "Bitzeros Blackboxrecovery",
+          "missionName": "Bit Zeros › Black Box Recovery",
           "weight": 1.0
         }
       ],
@@ -11520,7 +11520,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_bitzeros_blackboxrecovery",
-          "missionName": "Bitzeros Blackboxrecovery",
+          "missionName": "Bit Zeros › Black Box Recovery",
           "weight": 1.0
         }
       ],
@@ -11567,7 +11567,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_bitzeros_blackboxrecovery",
-          "missionName": "Bitzeros Blackboxrecovery",
+          "missionName": "Bit Zeros › Black Box Recovery",
           "weight": 1.0
         }
       ],
@@ -11655,7 +11655,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_bitzeros_blackboxrecovery",
-          "missionName": "Bitzeros Blackboxrecovery",
+          "missionName": "Bit Zeros › Black Box Recovery",
           "weight": 1.0
         }
       ],
@@ -11702,7 +11702,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_bitzeros_blackboxrecovery",
-          "missionName": "Bitzeros Blackboxrecovery",
+          "missionName": "Bit Zeros › Black Box Recovery",
           "weight": 1.0
         }
       ],
@@ -11790,7 +11790,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_citizensforprosperityrecovercargo_pyro",
-          "missionName": "Citizensforprosperityrecovercargo Pyro",
+          "missionName": "Citizens For Prosperity Recover Cargo › Pyro",
           "weight": 1.0
         }
       ],
@@ -12042,7 +12042,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_citizensforprosperityrecovercargo_pyro",
-          "missionName": "Citizensforprosperityrecovercargo Pyro",
+          "missionName": "Citizens For Prosperity Recover Cargo › Pyro",
           "weight": 1.0
         }
       ],
@@ -12253,7 +12253,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_citizensforprosperityrecovercargo_pyro",
-          "missionName": "Citizensforprosperityrecovercargo Pyro",
+          "missionName": "Citizens For Prosperity Recover Cargo › Pyro",
           "weight": 1.0
         }
       ],
@@ -12464,7 +12464,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_citizensforprosperityrecovercargo_pyro",
-          "missionName": "Citizensforprosperityrecovercargo Pyro",
+          "missionName": "Citizens For Prosperity Recover Cargo › Pyro",
           "weight": 1.0
         }
       ],
@@ -12700,7 +12700,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_citizensforprosperityrecovercargo_pyro",
-          "missionName": "Citizensforprosperityrecovercargo Pyro",
+          "missionName": "Citizens For Prosperity Recover Cargo › Pyro",
           "weight": 1.0
         }
       ],
@@ -13531,7 +13531,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_citizensforprosperityrecovercargo_pyro",
-          "missionName": "Citizensforprosperityrecovercargo Pyro",
+          "missionName": "Citizens For Prosperity Recover Cargo › Pyro",
           "weight": 1.0
         }
       ],
@@ -14428,7 +14428,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_citizensforprosperityrecovercargo_pyro",
-          "missionName": "Citizensforprosperityrecovercargo Pyro",
+          "missionName": "Citizens For Prosperity Recover Cargo › Pyro",
           "weight": 1.0
         }
       ],
@@ -15226,7 +15226,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_citizensforprosperityrecovercargo_pyro",
-          "missionName": "Citizensforprosperityrecovercargo Pyro",
+          "missionName": "Citizens For Prosperity Recover Cargo › Pyro",
           "weight": 1.0
         }
       ],
@@ -16164,7 +16164,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_ids_recoverencrypteddata",
-          "missionName": "Ids Recoverencrypteddata",
+          "missionName": "IDS › Recover Encrypted Data",
           "weight": 1.0
         }
       ],
@@ -16211,7 +16211,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_intersec_defendship",
-          "missionName": "Intersec Defendship",
+          "missionName": "Inter Sec › Defend Ship",
           "weight": 1.0
         }
       ],
@@ -16258,7 +16258,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_intersec_patrol",
-          "missionName": "Intersec Patrol",
+          "missionName": "Inter Sec › Patrol",
           "weight": 1.0
         }
       ],
@@ -16305,7 +16305,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_intersec_resourcegathering",
-          "missionName": "Intersec Resourcegathering",
+          "missionName": "Inter Sec › Resource Gathering",
           "weight": 1.0
         }
       ],
@@ -16352,7 +16352,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_intersec_patrol",
-          "missionName": "Intersec Patrol",
+          "missionName": "Inter Sec › Patrol",
           "weight": 1.0
         }
       ],
@@ -16399,7 +16399,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_ids_recoverencrypteddata",
-          "missionName": "Ids Recoverencrypteddata",
+          "missionName": "IDS › Recover Encrypted Data",
           "weight": 1.0
         }
       ],
@@ -16487,7 +16487,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_ids_recoverencrypteddata",
-          "missionName": "Ids Recoverencrypteddata",
+          "missionName": "IDS › Recover Encrypted Data",
           "weight": 1.0
         }
       ],
@@ -16534,7 +16534,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_intersec_defendship",
-          "missionName": "Intersec Defendship",
+          "missionName": "Inter Sec › Defend Ship",
           "weight": 1.0
         }
       ],
@@ -16581,7 +16581,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_intersec_patrol",
-          "missionName": "Intersec Patrol",
+          "missionName": "Inter Sec › Patrol",
           "weight": 1.0
         }
       ],
@@ -16628,7 +16628,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_intersec_resourcegathering",
-          "missionName": "Intersec Resourcegathering",
+          "missionName": "Inter Sec › Resource Gathering",
           "weight": 1.0
         }
       ],
@@ -16675,7 +16675,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_intersec_patrol",
-          "missionName": "Intersec Patrol",
+          "missionName": "Inter Sec › Patrol",
           "weight": 1.0
         }
       ],
@@ -16722,7 +16722,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_ids_recoverencrypteddata",
-          "missionName": "Ids Recoverencrypteddata",
+          "missionName": "IDS › Recover Encrypted Data",
           "weight": 1.0
         }
       ],
@@ -16769,7 +16769,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_ids_recoverencrypteddata",
-          "missionName": "Ids Recoverencrypteddata",
+          "missionName": "IDS › Recover Encrypted Data",
           "weight": 1.0
         }
       ],
@@ -16816,7 +16816,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_intersec_defendship",
-          "missionName": "Intersec Defendship",
+          "missionName": "Inter Sec › Defend Ship",
           "weight": 1.0
         }
       ],
@@ -16863,7 +16863,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_intersec_patrol",
-          "missionName": "Intersec Patrol",
+          "missionName": "Inter Sec › Patrol",
           "weight": 1.0
         }
       ],
@@ -16910,7 +16910,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_intersec_resourcegathering",
-          "missionName": "Intersec Resourcegathering",
+          "missionName": "Inter Sec › Resource Gathering",
           "weight": 1.0
         }
       ],
@@ -16957,7 +16957,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_intersec_patrol",
-          "missionName": "Intersec Patrol",
+          "missionName": "Inter Sec › Patrol",
           "weight": 1.0
         }
       ],
@@ -17004,7 +17004,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_ids_recoverencrypteddata",
-          "missionName": "Ids Recoverencrypteddata",
+          "missionName": "IDS › Recover Encrypted Data",
           "weight": 1.0
         }
       ],
@@ -17051,7 +17051,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_ids_recoverencrypteddata",
-          "missionName": "Ids Recoverencrypteddata",
+          "missionName": "IDS › Recover Encrypted Data",
           "weight": 1.0
         }
       ],
@@ -17098,7 +17098,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_intersec_defendship",
-          "missionName": "Intersec Defendship",
+          "missionName": "Inter Sec › Defend Ship",
           "weight": 1.0
         }
       ],
@@ -17145,7 +17145,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_intersec_patrol",
-          "missionName": "Intersec Patrol",
+          "missionName": "Inter Sec › Patrol",
           "weight": 1.0
         }
       ],
@@ -17192,7 +17192,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_intersec_resourcegathering",
-          "missionName": "Intersec Resourcegathering",
+          "missionName": "Inter Sec › Resource Gathering",
           "weight": 1.0
         }
       ],
@@ -17239,7 +17239,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_intersec_patrol",
-          "missionName": "Intersec Patrol",
+          "missionName": "Inter Sec › Patrol",
           "weight": 1.0
         }
       ],
@@ -17286,7 +17286,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_ids_recoverencrypteddata",
-          "missionName": "Ids Recoverencrypteddata",
+          "missionName": "IDS › Recover Encrypted Data",
           "weight": 1.0
         }
       ],
@@ -17325,7 +17325,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminateall_regioncd",
-          "missionName": "Headhunters Mercenaryfps Eliminateall Regioncd",
+          "missionName": "Head Hunters › Mercenary FPS › Eliminate ALL › Region CD",
           "weight": 1.0
         }
       ],
@@ -17430,7 +17430,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminateall_regioncd",
-          "missionName": "Headhunters Mercenaryfps Eliminateall Regioncd",
+          "missionName": "Head Hunters › Mercenary FPS › Eliminate ALL › Region CD",
           "weight": 1.0
         }
       ],
@@ -17535,7 +17535,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminateall_regioncd",
-          "missionName": "Headhunters Mercenaryfps Eliminateall Regioncd",
+          "missionName": "Head Hunters › Mercenary FPS › Eliminate ALL › Region CD",
           "weight": 1.0
         }
       ],
@@ -17640,7 +17640,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminateall_regioncd",
-          "missionName": "Headhunters Mercenaryfps Eliminateall Regioncd",
+          "missionName": "Head Hunters › Mercenary FPS › Eliminate ALL › Region CD",
           "weight": 1.0
         }
       ],
@@ -17811,7 +17811,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_shubin_resourcegathering_shipmining_pyronyx",
-          "missionName": "Shubin Resourcegathering Shipmining Pyronyx",
+          "missionName": "Shubin › Resource Gathering › Ship Mining › Pyro Nyx",
           "weight": 1.0
         }
       ],
@@ -17883,7 +17883,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_shubin_resourcegathering_shipmining_pyronyx",
-          "missionName": "Shubin Resourcegathering Shipmining Pyronyx",
+          "missionName": "Shubin › Resource Gathering › Ship Mining › Pyro Nyx",
           "weight": 1.0
         }
       ],
@@ -17922,7 +17922,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_shubin_resourcegathering_shipmining_pyronyx",
-          "missionName": "Shubin Resourcegathering Shipmining Pyronyx",
+          "missionName": "Shubin › Resource Gathering › Ship Mining › Pyro Nyx",
           "weight": 1.0
         }
       ],
@@ -17994,7 +17994,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_shubin_resourcegathering_shipmining_pyronyx",
-          "missionName": "Shubin Resourcegathering Shipmining Pyronyx",
+          "missionName": "Shubin › Resource Gathering › Ship Mining › Pyro Nyx",
           "weight": 1.0
         }
       ],
@@ -18074,7 +18074,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_asd2d",
-          "missionName": "Asd2D",
+          "missionName": "ASD2 D",
           "weight": 1.0
         }
       ],
@@ -18121,7 +18121,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_asd2c",
-          "missionName": "Asd2C",
+          "missionName": "ASD2 C",
           "weight": 1.0
         }
       ],
@@ -18168,7 +18168,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_asd2a",
-          "missionName": "Asd2A",
+          "missionName": "ASD2 A",
           "weight": 1.0
         }
       ],
@@ -18215,7 +18215,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_asd2b",
-          "missionName": "Asd2B",
+          "missionName": "ASD2 B",
           "weight": 1.0
         }
       ],
@@ -18303,7 +18303,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_asd2d",
-          "missionName": "Asd2D",
+          "missionName": "ASD2 D",
           "weight": 1.0
         }
       ],
@@ -18350,7 +18350,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_asd2c",
-          "missionName": "Asd2C",
+          "missionName": "ASD2 C",
           "weight": 1.0
         }
       ],
@@ -18397,7 +18397,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_asd2a",
-          "missionName": "Asd2A",
+          "missionName": "ASD2 A",
           "weight": 1.0
         }
       ],
@@ -18444,7 +18444,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_asd2b",
-          "missionName": "Asd2B",
+          "missionName": "ASD2 B",
           "weight": 1.0
         }
       ],
@@ -18532,7 +18532,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_asd2d",
-          "missionName": "Asd2D",
+          "missionName": "ASD2 D",
           "weight": 1.0
         }
       ],
@@ -18579,7 +18579,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_asd2c",
-          "missionName": "Asd2C",
+          "missionName": "ASD2 C",
           "weight": 1.0
         }
       ],
@@ -18626,7 +18626,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_asd2a",
-          "missionName": "Asd2A",
+          "missionName": "ASD2 A",
           "weight": 1.0
         }
       ],
@@ -18673,7 +18673,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_asd2b",
-          "missionName": "Asd2B",
+          "missionName": "ASD2 B",
           "weight": 1.0
         }
       ],
@@ -18761,7 +18761,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_asd2d",
-          "missionName": "Asd2D",
+          "missionName": "ASD2 D",
           "weight": 1.0
         }
       ],
@@ -18808,7 +18808,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_asd2c",
-          "missionName": "Asd2C",
+          "missionName": "ASD2 C",
           "weight": 1.0
         }
       ],
@@ -18855,7 +18855,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_asd2a",
-          "missionName": "Asd2A",
+          "missionName": "ASD2 A",
           "weight": 1.0
         }
       ],
@@ -18902,7 +18902,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_asd2b",
-          "missionName": "Asd2B",
+          "missionName": "ASD2 B",
           "weight": 1.0
         }
       ],
@@ -18990,7 +18990,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_bountyhuntersguild_paf_eliminatespecific",
-          "missionName": "Bountyhuntersguild Paf Eliminatespecific",
+          "missionName": "Bounty Hunters Guild › PAF › Eliminate Specific",
           "weight": 1.0
         }
       ],
@@ -19037,7 +19037,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_bhg_asdfacilitydelving_engineeringwing_eliminatespecific",
-          "missionName": "Bhg Asdfacilitydelving Engineeringwing Eliminatespecific",
+          "missionName": "BHG › ASD Facility Delving › Engineering Wing › Eliminate Specific",
           "weight": 1.0
         }
       ],
@@ -19084,7 +19084,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_bhg_asdfacilitydelving_researchwing_eliminatespecific",
-          "missionName": "Bhg Asdfacilitydelving Researchwing Eliminatespecific",
+          "missionName": "BHG › ASD Facility Delving › Research Wing › Eliminate Specific",
           "weight": 1.0
         }
       ],
@@ -19131,7 +19131,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_bountyhuntersguild_paf_eliminatespecific",
-          "missionName": "Bountyhuntersguild Paf Eliminatespecific",
+          "missionName": "Bounty Hunters Guild › PAF › Eliminate Specific",
           "weight": 1.0
         }
       ],
@@ -19219,7 +19219,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_bhg_asdfacilitydelving_researchwing_eliminatespecific",
-          "missionName": "Bhg Asdfacilitydelving Researchwing Eliminatespecific",
+          "missionName": "BHG › ASD Facility Delving › Research Wing › Eliminate Specific",
           "weight": 1.0
         }
       ],
@@ -19266,7 +19266,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_bountyhuntersguild_paf_eliminatespecific",
-          "missionName": "Bountyhuntersguild Paf Eliminatespecific",
+          "missionName": "Bounty Hunters Guild › PAF › Eliminate Specific",
           "weight": 1.0
         }
       ],
@@ -19313,7 +19313,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_bhg_asdfacilitydelving_engineeringwing_eliminatespecific",
-          "missionName": "Bhg Asdfacilitydelving Engineeringwing Eliminatespecific",
+          "missionName": "BHG › ASD Facility Delving › Engineering Wing › Eliminate Specific",
           "weight": 1.0
         }
       ],
@@ -19360,7 +19360,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_bhg_asdfacilitydelving_researchwing_eliminatespecific",
-          "missionName": "Bhg Asdfacilitydelving Researchwing Eliminatespecific",
+          "missionName": "BHG › ASD Facility Delving › Research Wing › Eliminate Specific",
           "weight": 1.0
         }
       ],
@@ -19407,7 +19407,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_bountyhuntersguild_paf_eliminatespecific",
-          "missionName": "Bountyhuntersguild Paf Eliminatespecific",
+          "missionName": "Bounty Hunters Guild › PAF › Eliminate Specific",
           "weight": 1.0
         }
       ],
@@ -19495,7 +19495,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_bhg_asdfacilitydelving_researchwing_eliminatespecific",
-          "missionName": "Bhg Asdfacilitydelving Researchwing Eliminatespecific",
+          "missionName": "BHG › ASD Facility Delving › Research Wing › Eliminate Specific",
           "weight": 1.0
         }
       ],
@@ -19542,7 +19542,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_bountyhuntersguild_paf_eliminatespecific",
-          "missionName": "Bountyhuntersguild Paf Eliminatespecific",
+          "missionName": "Bounty Hunters Guild › PAF › Eliminate Specific",
           "weight": 1.0
         }
       ],
@@ -19589,7 +19589,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_bhg_asdfacilitydelving_engineeringwing_eliminatespecific",
-          "missionName": "Bhg Asdfacilitydelving Engineeringwing Eliminatespecific",
+          "missionName": "BHG › ASD Facility Delving › Engineering Wing › Eliminate Specific",
           "weight": 1.0
         }
       ],
@@ -19636,7 +19636,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_bhg_asdfacilitydelving_researchwing_eliminatespecific",
-          "missionName": "Bhg Asdfacilitydelving Researchwing Eliminatespecific",
+          "missionName": "BHG › ASD Facility Delving › Research Wing › Eliminate Specific",
           "weight": 1.0
         }
       ],
@@ -19683,7 +19683,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_bountyhuntersguild_paf_eliminatespecific",
-          "missionName": "Bountyhuntersguild Paf Eliminatespecific",
+          "missionName": "Bounty Hunters Guild › PAF › Eliminate Specific",
           "weight": 1.0
         }
       ],
@@ -19730,7 +19730,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_bhg_asdfacilitydelving_researchwing_eliminatespecific",
-          "missionName": "Bhg Asdfacilitydelving Researchwing Eliminatespecific",
+          "missionName": "BHG › ASD Facility Delving › Research Wing › Eliminate Specific",
           "weight": 1.0
         }
       ],
@@ -19777,7 +19777,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_bountyhuntersguild_paf_eliminatespecific",
-          "missionName": "Bountyhuntersguild Paf Eliminatespecific",
+          "missionName": "Bounty Hunters Guild › PAF › Eliminate Specific",
           "weight": 1.0
         }
       ],
@@ -19824,7 +19824,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_bhg_asdfacilitydelving_engineeringwing_eliminatespecific",
-          "missionName": "Bhg Asdfacilitydelving Engineeringwing Eliminatespecific",
+          "missionName": "BHG › ASD Facility Delving › Engineering Wing › Eliminate Specific",
           "weight": 1.0
         }
       ],
@@ -19871,7 +19871,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_bhg_asdfacilitydelving_researchwing_eliminatespecific",
-          "missionName": "Bhg Asdfacilitydelving Researchwing Eliminatespecific",
+          "missionName": "BHG › ASD Facility Delving › Research Wing › Eliminate Specific",
           "weight": 1.0
         }
       ],
@@ -19918,7 +19918,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_bountyhuntersguild_paf_eliminatespecific",
-          "missionName": "Bountyhuntersguild Paf Eliminatespecific",
+          "missionName": "Bounty Hunters Guild › PAF › Eliminate Specific",
           "weight": 1.0
         }
       ],
@@ -20006,7 +20006,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_bhg_asdfacilitydelving_researchwing_eliminatespecific",
-          "missionName": "Bhg Asdfacilitydelving Researchwing Eliminatespecific",
+          "missionName": "BHG › ASD Facility Delving › Research Wing › Eliminate Specific",
           "weight": 1.0
         }
       ],
@@ -20045,7 +20045,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_northrockfpskill_eliminateboss",
-          "missionName": "Northrockfpskill Eliminateboss",
+          "missionName": "North Rock FPS Kill › Eliminate Boss",
           "weight": 1.0
         }
       ],
@@ -20117,7 +20117,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_northrockfpskill_eliminateboss",
-          "missionName": "Northrockfpskill Eliminateboss",
+          "missionName": "North Rock FPS Kill › Eliminate Boss",
           "weight": 1.0
         }
       ],
@@ -20189,7 +20189,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_northrockfpskill_eliminateboss",
-          "missionName": "Northrockfpskill Eliminateboss",
+          "missionName": "North Rock FPS Kill › Eliminate Boss",
           "weight": 1.0
         }
       ],
@@ -20261,7 +20261,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_northrockfpskill_eliminateboss",
-          "missionName": "Northrockfpskill Eliminateboss",
+          "missionName": "North Rock FPS Kill › Eliminate Boss",
           "weight": 1.0
         }
       ],
@@ -20333,7 +20333,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_citizensforprosperitydestroyitems_cd",
-          "missionName": "Citizensforprosperitydestroyitems Cd",
+          "missionName": "Citizens For Prosperity Destroy Items › CD",
           "weight": 1.0
         }
       ],
@@ -20999,7 +20999,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_citizensforprosperitydestroyitems_cd",
-          "missionName": "Citizensforprosperitydestroyitems Cd",
+          "missionName": "Citizens For Prosperity Destroy Items › CD",
           "weight": 1.0
         }
       ],
@@ -21632,7 +21632,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_citizensforprosperitydestroyitems_cd",
-          "missionName": "Citizensforprosperitydestroyitems Cd",
+          "missionName": "Citizens For Prosperity Destroy Items › CD",
           "weight": 1.0
         }
       ],
@@ -22331,7 +22331,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_citizensforprosperitydestroyitems_cd",
-          "missionName": "Citizensforprosperitydestroyitems Cd",
+          "missionName": "Citizens For Prosperity Destroy Items › CD",
           "weight": 1.0
         }
       ],
@@ -22997,7 +22997,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_shubin_resourcegathering_fpsmining_pyro",
-          "missionName": "Shubin Resourcegathering Fpsmining Pyro",
+          "missionName": "Shubin › Resource Gathering › FPS Mining › Pyro",
           "weight": 1.0
         }
       ],
@@ -23036,7 +23036,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_shubin_resourcegathering_fpsmining_pyro",
-          "missionName": "Shubin Resourcegathering Fpsmining Pyro",
+          "missionName": "Shubin › Resource Gathering › FPS Mining › Pyro",
           "weight": 1.0
         }
       ],
@@ -23141,7 +23141,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_shubin_resourcegathering_fpsmining_pyro",
-          "missionName": "Shubin Resourcegathering Fpsmining Pyro",
+          "missionName": "Shubin › Resource Gathering › FPS Mining › Pyro",
           "weight": 1.0
         }
       ],
@@ -23180,7 +23180,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_rayari_recoveritem_irradiated",
-          "missionName": "Rayari Recoveritem Irradiated",
+          "missionName": "Rayari › Recover Item › Irradiated",
           "weight": 1.0
         }
       ],
@@ -23219,7 +23219,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_shubin_resourcegathering_fpsmining_pyro",
-          "missionName": "Shubin Resourcegathering Fpsmining Pyro",
+          "missionName": "Shubin › Resource Gathering › FPS Mining › Pyro",
           "weight": 1.0
         }
       ],
@@ -23258,7 +23258,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminateboss",
-          "missionName": "Headhunters Mercenaryfps Eliminateboss",
+          "missionName": "Head Hunters › Mercenary FPS › Eliminate Boss",
           "weight": 1.0
         }
       ],
@@ -23305,7 +23305,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminateboss",
-          "missionName": "Headhunters Mercenaryfps Eliminateboss",
+          "missionName": "Head Hunters › Mercenary FPS › Eliminate Boss",
           "weight": 1.0
         }
       ],
@@ -23352,7 +23352,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminateboss",
-          "missionName": "Headhunters Mercenaryfps Eliminateboss",
+          "missionName": "Head Hunters › Mercenary FPS › Eliminate Boss",
           "weight": 1.0
         }
       ],
@@ -23399,7 +23399,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminateboss",
-          "missionName": "Headhunters Mercenaryfps Eliminateboss",
+          "missionName": "Head Hunters › Mercenary FPS › Eliminate Boss",
           "weight": 1.0
         }
       ],
@@ -23438,7 +23438,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_vaughngenerator_eliminatespecific",
-          "missionName": "Vaughngenerator Eliminatespecific",
+          "missionName": "Vaughn Generator › Eliminate Specific",
           "weight": 1.0
         }
       ],
@@ -23609,7 +23609,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_vaughngenerator_eliminatespecific",
-          "missionName": "Vaughngenerator Eliminatespecific",
+          "missionName": "Vaughn Generator › Eliminate Specific",
           "weight": 1.0
         }
       ],
@@ -23648,7 +23648,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_vaughngenerator_eliminatespecific",
-          "missionName": "Vaughngenerator Eliminatespecific",
+          "missionName": "Vaughn Generator › Eliminate Specific",
           "weight": 1.0
         }
       ],
@@ -23687,7 +23687,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_vaughngenerator_eliminatespecific",
-          "missionName": "Vaughngenerator Eliminatespecific",
+          "missionName": "Vaughn Generator › Eliminate Specific",
           "weight": 1.0
         }
       ],
@@ -23784,7 +23784,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_foxwell_defendentitiesandescort",
-          "missionName": "Foxwell Defendentitiesandescort",
+          "missionName": "Foxwell › Defend Entities And Escort",
           "weight": 1.0
         }
       ],
@@ -23831,7 +23831,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_foxwellenforcement_escortships",
-          "missionName": "Foxwellenforcement Escortships",
+          "missionName": "Foxwell Enforcement › Escort Ships",
           "weight": 1.0
         }
       ],
@@ -23878,7 +23878,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_foxwellenforcement_ambush",
-          "missionName": "Foxwellenforcement Ambush",
+          "missionName": "Foxwell Enforcement › Ambush",
           "weight": 1.0
         }
       ],
@@ -23925,7 +23925,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_foxwellenforcement_generator",
-          "missionName": "Foxwellenforcement Generator",
+          "missionName": "Foxwell Enforcement › Generator",
           "weight": 1.0
         }
       ],
@@ -23972,7 +23972,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_foxwellenforcement_patrol",
-          "missionName": "Foxwellenforcement Patrol",
+          "missionName": "Foxwell Enforcement › Patrol",
           "weight": 1.0
         }
       ],
@@ -24019,7 +24019,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_foxwellenforcement_generator",
-          "missionName": "Foxwellenforcement Generator",
+          "missionName": "Foxwell Enforcement › Generator",
           "weight": 1.0
         }
       ],
@@ -24107,7 +24107,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_foxwell_defendentitiesandescort",
-          "missionName": "Foxwell Defendentitiesandescort",
+          "missionName": "Foxwell › Defend Entities And Escort",
           "weight": 1.0
         }
       ],
@@ -24154,7 +24154,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_foxwellenforcement_escortships",
-          "missionName": "Foxwellenforcement Escortships",
+          "missionName": "Foxwell Enforcement › Escort Ships",
           "weight": 1.0
         }
       ],
@@ -24201,7 +24201,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_foxwellenforcement_ambush",
-          "missionName": "Foxwellenforcement Ambush",
+          "missionName": "Foxwell Enforcement › Ambush",
           "weight": 1.0
         }
       ],
@@ -24248,7 +24248,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_foxwellenforcement_generator",
-          "missionName": "Foxwellenforcement Generator",
+          "missionName": "Foxwell Enforcement › Generator",
           "weight": 1.0
         }
       ],
@@ -24295,7 +24295,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_foxwellenforcement_patrol",
-          "missionName": "Foxwellenforcement Patrol",
+          "missionName": "Foxwell Enforcement › Patrol",
           "weight": 1.0
         }
       ],
@@ -24342,7 +24342,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_foxwellenforcement_generator",
-          "missionName": "Foxwellenforcement Generator",
+          "missionName": "Foxwell Enforcement › Generator",
           "weight": 1.0
         }
       ],
@@ -24430,7 +24430,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_foxwell_defendentitiesandescort",
-          "missionName": "Foxwell Defendentitiesandescort",
+          "missionName": "Foxwell › Defend Entities And Escort",
           "weight": 1.0
         }
       ],
@@ -24477,7 +24477,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_foxwellenforcement_escortships",
-          "missionName": "Foxwellenforcement Escortships",
+          "missionName": "Foxwell Enforcement › Escort Ships",
           "weight": 1.0
         }
       ],
@@ -24524,7 +24524,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_foxwellenforcement_ambush",
-          "missionName": "Foxwellenforcement Ambush",
+          "missionName": "Foxwell Enforcement › Ambush",
           "weight": 1.0
         }
       ],
@@ -24571,7 +24571,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_foxwellenforcement_generator",
-          "missionName": "Foxwellenforcement Generator",
+          "missionName": "Foxwell Enforcement › Generator",
           "weight": 1.0
         }
       ],
@@ -24618,7 +24618,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_foxwellenforcement_patrol",
-          "missionName": "Foxwellenforcement Patrol",
+          "missionName": "Foxwell Enforcement › Patrol",
           "weight": 1.0
         }
       ],
@@ -24665,7 +24665,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_foxwellenforcement_generator",
-          "missionName": "Foxwellenforcement Generator",
+          "missionName": "Foxwell Enforcement › Generator",
           "weight": 1.0
         }
       ],
@@ -24753,7 +24753,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_foxwell_defendentitiesandescort",
-          "missionName": "Foxwell Defendentitiesandescort",
+          "missionName": "Foxwell › Defend Entities And Escort",
           "weight": 1.0
         }
       ],
@@ -24800,7 +24800,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_foxwellenforcement_escortships",
-          "missionName": "Foxwellenforcement Escortships",
+          "missionName": "Foxwell Enforcement › Escort Ships",
           "weight": 1.0
         }
       ],
@@ -24847,7 +24847,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_foxwellenforcement_ambush",
-          "missionName": "Foxwellenforcement Ambush",
+          "missionName": "Foxwell Enforcement › Ambush",
           "weight": 1.0
         }
       ],
@@ -24894,7 +24894,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_foxwellenforcement_generator",
-          "missionName": "Foxwellenforcement Generator",
+          "missionName": "Foxwell Enforcement › Generator",
           "weight": 1.0
         }
       ],
@@ -24941,7 +24941,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_foxwellenforcement_patrol",
-          "missionName": "Foxwellenforcement Patrol",
+          "missionName": "Foxwell Enforcement › Patrol",
           "weight": 1.0
         }
       ],
@@ -24988,7 +24988,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_foxwellenforcement_generator",
-          "missionName": "Foxwellenforcement Generator",
+          "missionName": "Foxwell Enforcement › Generator",
           "weight": 1.0
         }
       ],
@@ -25109,7 +25109,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminatespecific_regionab",
-          "missionName": "Headhunters Mercenaryfps Eliminatespecific Regionab",
+          "missionName": "Head Hunters › Mercenary FPS › Eliminate Specific › Region AB",
           "weight": 1.0
         }
       ],
@@ -25197,7 +25197,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminatespecific_regioncd",
-          "missionName": "Headhunters Mercenaryfps Eliminatespecific Regioncd",
+          "missionName": "Head Hunters › Mercenary FPS › Eliminate Specific › Region CD",
           "weight": 1.0
         }
       ],
@@ -25367,7 +25367,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminatespecific_regionab",
-          "missionName": "Headhunters Mercenaryfps Eliminatespecific Regionab",
+          "missionName": "Head Hunters › Mercenary FPS › Eliminate Specific › Region AB",
           "weight": 1.0
         }
       ],
@@ -25455,7 +25455,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminatespecific_regioncd",
-          "missionName": "Headhunters Mercenaryfps Eliminatespecific Regioncd",
+          "missionName": "Head Hunters › Mercenary FPS › Eliminate Specific › Region CD",
           "weight": 1.0
         }
       ],
@@ -25625,7 +25625,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminatespecific_regionab",
-          "missionName": "Headhunters Mercenaryfps Eliminatespecific Regionab",
+          "missionName": "Head Hunters › Mercenary FPS › Eliminate Specific › Region AB",
           "weight": 1.0
         }
       ],
@@ -25713,7 +25713,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminatespecific_regioncd",
-          "missionName": "Headhunters Mercenaryfps Eliminatespecific Regioncd",
+          "missionName": "Head Hunters › Mercenary FPS › Eliminate Specific › Region CD",
           "weight": 1.0
         }
       ],
@@ -25924,7 +25924,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminatespecific_regionab",
-          "missionName": "Headhunters Mercenaryfps Eliminatespecific Regionab",
+          "missionName": "Head Hunters › Mercenary FPS › Eliminate Specific › Region AB",
           "weight": 1.0
         }
       ],
@@ -26012,7 +26012,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminatespecific_regioncd",
-          "missionName": "Headhunters Mercenaryfps Eliminatespecific Regioncd",
+          "missionName": "Head Hunters › Mercenary FPS › Eliminate Specific › Region CD",
           "weight": 1.0
         }
       ],
@@ -26248,7 +26248,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_bitzeros_recoveritem_pyronyx",
-          "missionName": "Bitzeros Recoveritem Pyronyx",
+          "missionName": "Bit Zeros › Recover Item › Pyro Nyx",
           "weight": 1.0
         }
       ],
@@ -26287,7 +26287,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_bitzeros_recoveritem_pyronyx",
-          "missionName": "Bitzeros Recoveritem Pyronyx",
+          "missionName": "Bit Zeros › Recover Item › Pyro Nyx",
           "weight": 1.0
         }
       ],
@@ -26326,7 +26326,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_bitzeros_recoveritem_pyronyx",
-          "missionName": "Bitzeros Recoveritem Pyronyx",
+          "missionName": "Bit Zeros › Recover Item › Pyro Nyx",
           "weight": 1.0
         }
       ],
@@ -26365,7 +26365,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_bitzeros_recoveritem_pyronyx",
-          "missionName": "Bitzeros Recoveritem Pyronyx",
+          "missionName": "Bit Zeros › Recover Item › Pyro Nyx",
           "weight": 1.0
         }
       ],
@@ -26822,7 +26822,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_bitzeros_recoveritem_stanton",
-          "missionName": "Bitzeros Recoveritem Stanton",
+          "missionName": "Bit Zeros › Recover Item › Stanton",
           "weight": 1.0
         }
       ],
@@ -26869,7 +26869,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_bitzeros_recoveritem_stanton",
-          "missionName": "Bitzeros Recoveritem Stanton",
+          "missionName": "Bit Zeros › Recover Item › Stanton",
           "weight": 1.0
         }
       ],
@@ -27654,7 +27654,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_bitzeros_recoveritem_stanton",
-          "missionName": "Bitzeros Recoveritem Stanton",
+          "missionName": "Bit Zeros › Recover Item › Stanton",
           "weight": 1.0
         }
       ],
@@ -27701,7 +27701,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_bitzeros_recoveritem_stanton",
-          "missionName": "Bitzeros Recoveritem Stanton",
+          "missionName": "Bit Zeros › Recover Item › Stanton",
           "weight": 1.0
         }
       ],
@@ -28527,7 +28527,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_bitzeros_recoveritem_stanton",
-          "missionName": "Bitzeros Recoveritem Stanton",
+          "missionName": "Bit Zeros › Recover Item › Stanton",
           "weight": 1.0
         }
       ],
@@ -28574,7 +28574,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_bitzeros_recoveritem_stanton",
-          "missionName": "Bitzeros Recoveritem Stanton",
+          "missionName": "Bit Zeros › Recover Item › Stanton",
           "weight": 1.0
         }
       ],
@@ -28982,7 +28982,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_bitzeros_recoveritem_stanton",
-          "missionName": "Bitzeros Recoveritem Stanton",
+          "missionName": "Bit Zeros › Recover Item › Stanton",
           "weight": 1.0
         }
       ],
@@ -29193,7 +29193,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_shubin_resourcegathering_fpsmining_stanton",
-          "missionName": "Shubin Resourcegathering Fpsmining Stanton",
+          "missionName": "Shubin › Resource Gathering › FPS Mining › Stanton",
           "weight": 1.0
         }
       ],
@@ -29568,7 +29568,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_shubin_resourcegathering_fpsmining_stanton",
-          "missionName": "Shubin Resourcegathering Fpsmining Stanton",
+          "missionName": "Shubin › Resource Gathering › FPS Mining › Stanton",
           "weight": 1.0
         }
       ],
@@ -29812,7 +29812,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_shubin_resourcegathering_fpsmining_stanton",
-          "missionName": "Shubin Resourcegathering Fpsmining Stanton",
+          "missionName": "Shubin › Resource Gathering › FPS Mining › Stanton",
           "weight": 1.0
         }
       ],
@@ -30023,7 +30023,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_shubin_resourcegathering_fpsmining_stanton",
-          "missionName": "Shubin Resourcegathering Fpsmining Stanton",
+          "missionName": "Shubin › Resource Gathering › FPS Mining › Stanton",
           "weight": 1.0
         }
       ],
@@ -30309,7 +30309,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_rayari_recoveritem_irradiated",
-          "missionName": "Rayari Recoveritem Irradiated",
+          "missionName": "Rayari › Recover Item › Irradiated",
           "weight": 1.0
         }
       ],
@@ -30389,7 +30389,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_shubin_resourcegathering_shipmining_stanton",
-          "missionName": "Shubin Resourcegathering Shipmining Stanton",
+          "missionName": "Shubin › Resource Gathering › Ship Mining › Stanton",
           "weight": 1.0
         }
       ],
@@ -30469,7 +30469,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_shubin_resourcegathering_shipmining_stanton",
-          "missionName": "Shubin Resourcegathering Shipmining Stanton",
+          "missionName": "Shubin › Resource Gathering › Ship Mining › Stanton",
           "weight": 1.0
         }
       ],
@@ -30516,7 +30516,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_shubin_resourcegathering_shipmining_stanton",
-          "missionName": "Shubin Resourcegathering Shipmining Stanton",
+          "missionName": "Shubin › Resource Gathering › Ship Mining › Stanton",
           "weight": 1.0
         }
       ],
@@ -30563,7 +30563,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_shubin_resourcegathering_shipmining_stanton",
-          "missionName": "Shubin Resourcegathering Shipmining Stanton",
+          "missionName": "Shubin › Resource Gathering › Ship Mining › Stanton",
           "weight": 1.0
         }
       ],
@@ -30643,7 +30643,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_asd2b",
-          "missionName": "Asd2B",
+          "missionName": "ASD2 B",
           "weight": 1.0
         }
       ],
@@ -30690,7 +30690,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_asd2d",
-          "missionName": "Asd2D",
+          "missionName": "ASD2 D",
           "weight": 1.0
         }
       ],
@@ -30737,12 +30737,12 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_asd2c",
-          "missionName": "Asd2C",
+          "missionName": "ASD2 C",
           "weight": 1.0
         },
         {
           "poolFile": "bp_missionreward_asd2d",
-          "missionName": "Asd2D",
+          "missionName": "ASD2 D",
           "weight": 1.0
         }
       ],
@@ -30789,7 +30789,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_asd2c",
-          "missionName": "Asd2C",
+          "missionName": "ASD2 C",
           "weight": 1.0
         }
       ],
@@ -30836,7 +30836,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_asd2a",
-          "missionName": "Asd2A",
+          "missionName": "ASD2 A",
           "weight": 1.0
         }
       ],
@@ -30883,7 +30883,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_asd3",
-          "missionName": "Asd3",
+          "missionName": "ASD3",
           "weight": 1.0
         }
       ],
@@ -30971,7 +30971,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_asd2b",
-          "missionName": "Asd2B",
+          "missionName": "ASD2 B",
           "weight": 1.0
         }
       ],
@@ -31018,7 +31018,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_asd2d",
-          "missionName": "Asd2D",
+          "missionName": "ASD2 D",
           "weight": 1.0
         }
       ],
@@ -31065,12 +31065,12 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_asd2c",
-          "missionName": "Asd2C",
+          "missionName": "ASD2 C",
           "weight": 1.0
         },
         {
           "poolFile": "bp_missionreward_asd2d",
-          "missionName": "Asd2D",
+          "missionName": "ASD2 D",
           "weight": 1.0
         }
       ],
@@ -31117,7 +31117,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_asd2c",
-          "missionName": "Asd2C",
+          "missionName": "ASD2 C",
           "weight": 1.0
         }
       ],
@@ -31164,7 +31164,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_asd2a",
-          "missionName": "Asd2A",
+          "missionName": "ASD2 A",
           "weight": 1.0
         }
       ],
@@ -31211,7 +31211,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_asd3",
-          "missionName": "Asd3",
+          "missionName": "ASD3",
           "weight": 1.0
         }
       ],
@@ -31299,7 +31299,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_asd2b",
-          "missionName": "Asd2B",
+          "missionName": "ASD2 B",
           "weight": 1.0
         }
       ],
@@ -31346,7 +31346,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_asd2d",
-          "missionName": "Asd2D",
+          "missionName": "ASD2 D",
           "weight": 1.0
         }
       ],
@@ -31393,12 +31393,12 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_asd2c",
-          "missionName": "Asd2C",
+          "missionName": "ASD2 C",
           "weight": 1.0
         },
         {
           "poolFile": "bp_missionreward_asd2d",
-          "missionName": "Asd2D",
+          "missionName": "ASD2 D",
           "weight": 1.0
         }
       ],
@@ -31445,7 +31445,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_asd2c",
-          "missionName": "Asd2C",
+          "missionName": "ASD2 C",
           "weight": 1.0
         }
       ],
@@ -31492,7 +31492,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_asd2a",
-          "missionName": "Asd2A",
+          "missionName": "ASD2 A",
           "weight": 1.0
         }
       ],
@@ -31539,7 +31539,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_asd3",
-          "missionName": "Asd3",
+          "missionName": "ASD3",
           "weight": 1.0
         }
       ],
@@ -31627,7 +31627,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_asd2b",
-          "missionName": "Asd2B",
+          "missionName": "ASD2 B",
           "weight": 1.0
         }
       ],
@@ -31674,7 +31674,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_asd2d",
-          "missionName": "Asd2D",
+          "missionName": "ASD2 D",
           "weight": 1.0
         }
       ],
@@ -31721,12 +31721,12 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_asd2c",
-          "missionName": "Asd2C",
+          "missionName": "ASD2 C",
           "weight": 1.0
         },
         {
           "poolFile": "bp_missionreward_asd2d",
-          "missionName": "Asd2D",
+          "missionName": "ASD2 D",
           "weight": 1.0
         }
       ],
@@ -31773,7 +31773,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_asd2c",
-          "missionName": "Asd2C",
+          "missionName": "ASD2 C",
           "weight": 1.0
         }
       ],
@@ -31820,7 +31820,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_asd2a",
-          "missionName": "Asd2A",
+          "missionName": "ASD2 A",
           "weight": 1.0
         }
       ],
@@ -31867,7 +31867,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_asd3",
-          "missionName": "Asd3",
+          "missionName": "ASD3",
           "weight": 1.0
         }
       ],
@@ -32447,7 +32447,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_cfp_outpost_regionab",
-          "missionName": "Cfp Outpost Regionab",
+          "missionName": "CFP › Outpost › Region AB",
           "weight": 1.0
         }
       ],
@@ -32535,7 +32535,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_cfp_outpost_regionc",
-          "missionName": "Cfp Outpost Regionc",
+          "missionName": "CFP › Outpost › Region C",
           "weight": 1.0
         }
       ],
@@ -32582,7 +32582,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_cfp_chainelim_1and2",
-          "missionName": "Cfp Chainelim 1And2",
+          "missionName": "CFP › Chain Elim › 1and2",
           "weight": 1.0
         }
       ],
@@ -32629,7 +32629,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_cfp_outpost_regiond",
-          "missionName": "Cfp Outpost Regiond",
+          "missionName": "CFP › Outpost › Region D",
           "weight": 1.0
         }
       ],
@@ -32799,7 +32799,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_cfp_chainelim_3",
-          "missionName": "Cfp Chainelim 3",
+          "missionName": "CFP › Chain Elim › 3",
           "weight": 1.0
         }
       ],
@@ -32887,7 +32887,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_cfp_outpost_regionab",
-          "missionName": "Cfp Outpost Regionab",
+          "missionName": "CFP › Outpost › Region AB",
           "weight": 1.0
         }
       ],
@@ -32975,7 +32975,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_cfp_outpost_regionc",
-          "missionName": "Cfp Outpost Regionc",
+          "missionName": "CFP › Outpost › Region C",
           "weight": 1.0
         }
       ],
@@ -33022,7 +33022,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_cfp_chainelim_1and2",
-          "missionName": "Cfp Chainelim 1And2",
+          "missionName": "CFP › Chain Elim › 1and2",
           "weight": 1.0
         }
       ],
@@ -33069,7 +33069,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_cfp_outpost_regiond",
-          "missionName": "Cfp Outpost Regiond",
+          "missionName": "CFP › Outpost › Region D",
           "weight": 1.0
         }
       ],
@@ -33239,7 +33239,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_cfp_chainelim_3",
-          "missionName": "Cfp Chainelim 3",
+          "missionName": "CFP › Chain Elim › 3",
           "weight": 1.0
         }
       ],
@@ -33327,7 +33327,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_cfp_outpost_regionab",
-          "missionName": "Cfp Outpost Regionab",
+          "missionName": "CFP › Outpost › Region AB",
           "weight": 1.0
         }
       ],
@@ -33415,7 +33415,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_cfp_outpost_regionc",
-          "missionName": "Cfp Outpost Regionc",
+          "missionName": "CFP › Outpost › Region C",
           "weight": 1.0
         }
       ],
@@ -33462,7 +33462,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_cfp_chainelim_1and2",
-          "missionName": "Cfp Chainelim 1And2",
+          "missionName": "CFP › Chain Elim › 1and2",
           "weight": 1.0
         }
       ],
@@ -33509,7 +33509,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_cfp_outpost_regiond",
-          "missionName": "Cfp Outpost Regiond",
+          "missionName": "CFP › Outpost › Region D",
           "weight": 1.0
         }
       ],
@@ -33720,7 +33720,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_cfp_outpost_regionab",
-          "missionName": "Cfp Outpost Regionab",
+          "missionName": "CFP › Outpost › Region AB",
           "weight": 1.0
         }
       ],
@@ -33808,7 +33808,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_cfp_outpost_regionc",
-          "missionName": "Cfp Outpost Regionc",
+          "missionName": "CFP › Outpost › Region C",
           "weight": 1.0
         }
       ],
@@ -33855,7 +33855,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_cfp_chainelim_1and2",
-          "missionName": "Cfp Chainelim 1And2",
+          "missionName": "CFP › Chain Elim › 1and2",
           "weight": 1.0
         }
       ],
@@ -33902,7 +33902,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_cfp_outpost_regiond",
-          "missionName": "Cfp Outpost Regiond",
+          "missionName": "CFP › Outpost › Region D",
           "weight": 1.0
         }
       ],
@@ -34513,7 +34513,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_citizensforprosperitydestroyitems_ab",
-          "missionName": "Citizensforprosperitydestroyitems Ab",
+          "missionName": "Citizens For Prosperity Destroy Items › AB",
           "weight": 1.0
         }
       ],
@@ -34683,7 +34683,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_northrockfpskill_eliminateboss",
-          "missionName": "Northrockfpskill Eliminateboss",
+          "missionName": "North Rock FPS Kill › Eliminate Boss",
           "weight": 1.0
         }
       ],
@@ -34886,7 +34886,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_vaughngenerator_eliminateboss",
-          "missionName": "Vaughngenerator Eliminateboss",
+          "missionName": "Vaughn Generator › Eliminate Boss",
           "weight": 1.0
         }
       ],
@@ -34925,7 +34925,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_asd2a",
-          "missionName": "Asd2A",
+          "missionName": "ASD2 A",
           "weight": 1.0
         }
       ],
@@ -34964,7 +34964,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_asd3",
-          "missionName": "Asd3",
+          "missionName": "ASD3",
           "weight": 1.0
         }
       ],
@@ -35003,7 +35003,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_asd2d",
-          "missionName": "Asd2D",
+          "missionName": "ASD2 D",
           "weight": 1.0
         }
       ],
@@ -35042,7 +35042,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_asd2b",
-          "missionName": "Asd2B",
+          "missionName": "ASD2 B",
           "weight": 1.0
         }
       ],
@@ -35171,7 +35171,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_northrockfpskill_eliminateboss",
-          "missionName": "Northrockfpskill Eliminateboss",
+          "missionName": "North Rock FPS Kill › Eliminate Boss",
           "weight": 1.0
         }
       ],
@@ -35661,7 +35661,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_shubin_resourcegathering_shipmining_pyronyx",
-          "missionName": "Shubin Resourcegathering Shipmining Pyronyx",
+          "missionName": "Shubin › Resource Gathering › Ship Mining › Pyro Nyx",
           "weight": 1.0
         }
       ],
@@ -35700,7 +35700,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_shubin_resourcegathering_fpsmining_stanton",
-          "missionName": "Shubin Resourcegathering Fpsmining Stanton",
+          "missionName": "Shubin › Resource Gathering › FPS Mining › Stanton",
           "weight": 1.0
         }
       ],
@@ -35739,7 +35739,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_shubin_resourcegathering_shipmining_stanton",
-          "missionName": "Shubin Resourcegathering Shipmining Stanton",
+          "missionName": "Shubin › Resource Gathering › Ship Mining › Stanton",
           "weight": 1.0
         }
       ],
@@ -35778,7 +35778,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_shubin_resourcegathering_fpsmining_pyro",
-          "missionName": "Shubin Resourcegathering Fpsmining Pyro",
+          "missionName": "Shubin › Resource Gathering › FPS Mining › Pyro",
           "weight": 1.0
         }
       ],
@@ -35850,7 +35850,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_shubin_resourcegathering_shipmining_stanton",
-          "missionName": "Shubin Resourcegathering Shipmining Stanton",
+          "missionName": "Shubin › Resource Gathering › Ship Mining › Stanton",
           "weight": 1.0
         }
       ],
@@ -35889,7 +35889,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_shubin_resourcegathering_fpsmining_pyro",
-          "missionName": "Shubin Resourcegathering Fpsmining Pyro",
+          "missionName": "Shubin › Resource Gathering › FPS Mining › Pyro",
           "weight": 1.0
         }
       ],
@@ -35928,7 +35928,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_shubin_resourcegathering_shipmining_pyronyx",
-          "missionName": "Shubin Resourcegathering Shipmining Pyronyx",
+          "missionName": "Shubin › Resource Gathering › Ship Mining › Pyro Nyx",
           "weight": 1.0
         }
       ],
@@ -35975,7 +35975,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminatespecific_regionab",
-          "missionName": "Headhunters Mercenaryfps Eliminatespecific Regionab",
+          "missionName": "Head Hunters › Mercenary FPS › Eliminate Specific › Region AB",
           "weight": 1.0
         }
       ],
@@ -36022,7 +36022,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminatespecific_regionab",
-          "missionName": "Headhunters Mercenaryfps Eliminatespecific Regionab",
+          "missionName": "Head Hunters › Mercenary FPS › Eliminate Specific › Region AB",
           "weight": 1.0
         }
       ],
@@ -36151,7 +36151,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminatespecific_regionab",
-          "missionName": "Headhunters Mercenaryfps Eliminatespecific Regionab",
+          "missionName": "Head Hunters › Mercenary FPS › Eliminate Specific › Region AB",
           "weight": 1.0
         }
       ],
@@ -36190,7 +36190,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminateall_regioncd",
-          "missionName": "Headhunters Mercenaryfps Eliminateall Regioncd",
+          "missionName": "Head Hunters › Mercenary FPS › Eliminate ALL › Region CD",
           "weight": 1.0
         }
       ],
@@ -36262,7 +36262,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminateall_regioncd",
-          "missionName": "Headhunters Mercenaryfps Eliminateall Regioncd",
+          "missionName": "Head Hunters › Mercenary FPS › Eliminate ALL › Region CD",
           "weight": 1.0
         }
       ],
@@ -36301,7 +36301,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminateall_regioncd",
-          "missionName": "Headhunters Mercenaryfps Eliminateall Regioncd",
+          "missionName": "Head Hunters › Mercenary FPS › Eliminate ALL › Region CD",
           "weight": 1.0
         }
       ],
@@ -36348,7 +36348,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_vaughngenerator_eliminateboss",
-          "missionName": "Vaughngenerator Eliminateboss",
+          "missionName": "Vaughn Generator › Eliminate Boss",
           "weight": 1.0
         }
       ],
@@ -36387,12 +36387,12 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_intersec_resourcegathering",
-          "missionName": "Intersec Resourcegathering",
+          "missionName": "Inter Sec › Resource Gathering",
           "weight": 1.0
         },
         {
           "poolFile": "bp_missionreward_rayari_recoveritem_hathorloot",
-          "missionName": "Rayari Recoveritem Hathorloot",
+          "missionName": "Rayari › Recover Item › Hathor Loot",
           "weight": 1.0
         }
       ],
@@ -36431,12 +36431,12 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_ids_recoverencrypteddata",
-          "missionName": "Ids Recoverencrypteddata",
+          "missionName": "IDS › Recover Encrypted Data",
           "weight": 1.0
         },
         {
           "poolFile": "bp_missionreward_rayari_recoveritem_hathorloot",
-          "missionName": "Rayari Recoveritem Hathorloot",
+          "missionName": "Rayari › Recover Item › Hathor Loot",
           "weight": 1.0
         }
       ],
@@ -36475,12 +36475,12 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_intersec_defendship",
-          "missionName": "Intersec Defendship",
+          "missionName": "Inter Sec › Defend Ship",
           "weight": 1.0
         },
         {
           "poolFile": "bp_missionreward_rayari_recoveritem_hathorloot",
-          "missionName": "Rayari Recoveritem Hathorloot",
+          "missionName": "Rayari › Recover Item › Hathor Loot",
           "weight": 1.0
         }
       ],
@@ -36732,7 +36732,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_bountyhuntersguild_paf_eliminatespecific",
-          "missionName": "Bountyhuntersguild Paf Eliminatespecific",
+          "missionName": "Bounty Hunters Guild › PAF › Eliminate Specific",
           "weight": 1.0
         }
       ],
@@ -36779,7 +36779,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_citizensforprosperityrecovercargo_pyro",
-          "missionName": "Citizensforprosperityrecovercargo Pyro",
+          "missionName": "Citizens For Prosperity Recover Cargo › Pyro",
           "weight": 1.0
         }
       ],
@@ -36900,7 +36900,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_citizensforprosperitydestroyitems_ab",
-          "missionName": "Citizensforprosperitydestroyitems Ab",
+          "missionName": "Citizens For Prosperity Destroy Items › AB",
           "weight": 1.0
         }
       ],
@@ -37170,7 +37170,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_cfp_outpost_regionab",
-          "missionName": "Cfp Outpost Regionab",
+          "missionName": "CFP › Outpost › Region AB",
           "weight": 1.0
         }
       ],
@@ -37209,7 +37209,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_cfp_outpost_regionc",
-          "missionName": "Cfp Outpost Regionc",
+          "missionName": "CFP › Outpost › Region C",
           "weight": 1.0
         }
       ],
@@ -37248,7 +37248,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_cfp_outpost_regiond",
-          "missionName": "Cfp Outpost Regiond",
+          "missionName": "CFP › Outpost › Region D",
           "weight": 1.0
         }
       ],
@@ -37287,7 +37287,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_cfp_chainelim_3",
-          "missionName": "Cfp Chainelim 3",
+          "missionName": "CFP › Chain Elim › 3",
           "weight": 1.0
         }
       ],
@@ -37326,7 +37326,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_cfp_chainelim_1and2",
-          "missionName": "Cfp Chainelim 1And2",
+          "missionName": "CFP › Chain Elim › 1and2",
           "weight": 1.0
         }
       ],
@@ -37406,7 +37406,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_vaughngenerator_eliminatespecific",
-          "missionName": "Vaughngenerator Eliminatespecific",
+          "missionName": "Vaughn Generator › Eliminate Specific",
           "weight": 1.0
         }
       ],
@@ -37445,7 +37445,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_foxwell_defendentitiesandescort",
-          "missionName": "Foxwell Defendentitiesandescort",
+          "missionName": "Foxwell › Defend Entities And Escort",
           "weight": 1.0
         }
       ],
@@ -37484,7 +37484,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_foxwellenforcement_escortships",
-          "missionName": "Foxwellenforcement Escortships",
+          "missionName": "Foxwell Enforcement › Escort Ships",
           "weight": 1.0
         }
       ],
@@ -37523,7 +37523,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_foxwellenforcement_ambush",
-          "missionName": "Foxwellenforcement Ambush",
+          "missionName": "Foxwell Enforcement › Ambush",
           "weight": 1.0
         }
       ],
@@ -37562,7 +37562,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_foxwellenforcement_patrol",
-          "missionName": "Foxwellenforcement Patrol",
+          "missionName": "Foxwell Enforcement › Patrol",
           "weight": 1.0
         }
       ],
@@ -37609,7 +37609,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_citizensforprosperitydestroyitems_ab",
-          "missionName": "Citizensforprosperitydestroyitems Ab",
+          "missionName": "Citizens For Prosperity Destroy Items › AB",
           "weight": 1.0
         }
       ],
@@ -37697,12 +37697,12 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_rdc_boss",
-          "missionName": "Rdc Boss",
+          "missionName": "RDC › Boss",
           "weight": 1.0
         },
         {
           "poolFile": "bp_missionreward_rdc_generic",
-          "missionName": "Rdc Generic",
+          "missionName": "RDC › Generic",
           "weight": 1.0
         }
       ],
@@ -37749,7 +37749,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_rdc_boss",
-          "missionName": "Rdc Boss",
+          "missionName": "RDC › Boss",
           "weight": 1.0
         }
       ],
@@ -37796,7 +37796,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_rdc_exclusive",
-          "missionName": "Rdc Exclusive",
+          "missionName": "RDC › Exclusive",
           "weight": 1.0
         }
       ],
@@ -37843,7 +37843,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_rdc_exclusive",
-          "missionName": "Rdc Exclusive",
+          "missionName": "RDC › Exclusive",
           "weight": 1.0
         }
       ],
@@ -37890,7 +37890,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminateboss",
-          "missionName": "Headhunters Mercenaryfps Eliminateboss",
+          "missionName": "Head Hunters › Mercenary FPS › Eliminate Boss",
           "weight": 1.0
         }
       ],
@@ -37970,7 +37970,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminatespecific_regioncd",
-          "missionName": "Headhunters Mercenaryfps Eliminatespecific Regioncd",
+          "missionName": "Head Hunters › Mercenary FPS › Eliminate Specific › Region CD",
           "weight": 1.0
         }
       ],
@@ -38009,7 +38009,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminatespecific_regioncd",
-          "missionName": "Headhunters Mercenaryfps Eliminatespecific Regioncd",
+          "missionName": "Head Hunters › Mercenary FPS › Eliminate Specific › Region CD",
           "weight": 1.0
         }
       ],
@@ -38180,7 +38180,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminatespecific_regioncd",
-          "missionName": "Headhunters Mercenaryfps Eliminatespecific Regioncd",
+          "missionName": "Head Hunters › Mercenary FPS › Eliminate Specific › Region CD",
           "weight": 1.0
         }
       ],
@@ -38326,7 +38326,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_vaughngenerator_eliminatespecific",
-          "missionName": "Vaughngenerator Eliminatespecific",
+          "missionName": "Vaughn Generator › Eliminate Specific",
           "weight": 1.0
         }
       ],
@@ -38365,7 +38365,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_rayari_recoveritem_irradiated",
-          "missionName": "Rayari Recoveritem Irradiated",
+          "missionName": "Rayari › Recover Item › Irradiated",
           "weight": 1.0
         }
       ],
@@ -38404,7 +38404,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_rayari_recoveritem_irradiated",
-          "missionName": "Rayari Recoveritem Irradiated",
+          "missionName": "Rayari › Recover Item › Irradiated",
           "weight": 1.0
         }
       ],
@@ -38443,7 +38443,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_rayari_recoveritem_irradiated",
-          "missionName": "Rayari Recoveritem Irradiated",
+          "missionName": "Rayari › Recover Item › Irradiated",
           "weight": 1.0
         }
       ],
@@ -38482,7 +38482,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_rayari_recoveritem_irradiated",
-          "missionName": "Rayari Recoveritem Irradiated",
+          "missionName": "Rayari › Recover Item › Irradiated",
           "weight": 1.0
         }
       ],
@@ -38529,7 +38529,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_citizensforprosperityrecovercargo_pyro",
-          "missionName": "Citizensforprosperityrecovercargo Pyro",
+          "missionName": "Citizens For Prosperity Recover Cargo › Pyro",
           "weight": 1.0
         }
       ],
@@ -38863,7 +38863,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_citizensforprosperityrecovercargo_pyro",
-          "missionName": "Citizensforprosperityrecovercargo Pyro",
+          "missionName": "Citizens For Prosperity Recover Cargo › Pyro",
           "weight": 1.0
         }
       ],
@@ -39025,12 +39025,12 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_bitzeros_blackboxrecovery",
-          "missionName": "Bitzeros Blackboxrecovery",
+          "missionName": "Bit Zeros › Black Box Recovery",
           "weight": 1.0
         },
         {
           "poolFile": "bp_missionreward_bitzeros_recoveritem_stanton",
-          "missionName": "Bitzeros Recoveritem Stanton",
+          "missionName": "Bit Zeros › Recover Item › Stanton",
           "weight": 1.0
         }
       ],
@@ -39102,7 +39102,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_bitzeros_recoveritem_pyronyx",
-          "missionName": "Bitzeros Recoveritem Pyronyx",
+          "missionName": "Bit Zeros › Recover Item › Pyro Nyx",
           "weight": 1.0
         }
       ],
@@ -39141,7 +39141,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_bitzeros_recoveritem_pyronyx",
-          "missionName": "Bitzeros Recoveritem Pyronyx",
+          "missionName": "Bit Zeros › Recover Item › Pyro Nyx",
           "weight": 1.0
         }
       ],
@@ -39246,7 +39246,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_bitzeros_recoveritem_pyronyx",
-          "missionName": "Bitzeros Recoveritem Pyronyx",
+          "missionName": "Bit Zeros › Recover Item › Pyro Nyx",
           "weight": 1.0
         }
       ],
@@ -39450,7 +39450,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminateboss",
-          "missionName": "Headhunters Mercenaryfps Eliminateboss",
+          "missionName": "Head Hunters › Mercenary FPS › Eliminate Boss",
           "weight": 1.0
         }
       ],
@@ -39489,12 +39489,12 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_ids_recoverencrypteddata",
-          "missionName": "Ids Recoverencrypteddata",
+          "missionName": "IDS › Recover Encrypted Data",
           "weight": 1.0
         },
         {
           "poolFile": "bp_missionreward_rayari_recoveritem_hathorloot",
-          "missionName": "Rayari Recoveritem Hathorloot",
+          "missionName": "Rayari › Recover Item › Hathor Loot",
           "weight": 1.0
         }
       ],
@@ -39533,12 +39533,12 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_intersec_patrol",
-          "missionName": "Intersec Patrol",
+          "missionName": "Inter Sec › Patrol",
           "weight": 1.0
         },
         {
           "poolFile": "bp_missionreward_rayari_recoveritem_hathorloot",
-          "missionName": "Rayari Recoveritem Hathorloot",
+          "missionName": "Rayari › Recover Item › Hathor Loot",
           "weight": 1.0
         }
       ],
@@ -39577,12 +39577,12 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_ids_recoverencrypteddata",
-          "missionName": "Ids Recoverencrypteddata",
+          "missionName": "IDS › Recover Encrypted Data",
           "weight": 1.0
         },
         {
           "poolFile": "bp_missionreward_rayari_recoveritem_hathorloot",
-          "missionName": "Rayari Recoveritem Hathorloot",
+          "missionName": "Rayari › Recover Item › Hathor Loot",
           "weight": 1.0
         }
       ],
@@ -39621,12 +39621,12 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_intersec_patrol",
-          "missionName": "Intersec Patrol",
+          "missionName": "Inter Sec › Patrol",
           "weight": 1.0
         },
         {
           "poolFile": "bp_missionreward_rayari_recoveritem_hathorloot",
-          "missionName": "Rayari Recoveritem Hathorloot",
+          "missionName": "Rayari › Recover Item › Hathor Loot",
           "weight": 1.0
         }
       ],
@@ -39673,7 +39673,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_citizensforprosperitydestroyitems_cd",
-          "missionName": "Citizensforprosperitydestroyitems Cd",
+          "missionName": "Citizens For Prosperity Destroy Items › CD",
           "weight": 1.0
         }
       ],
@@ -39843,7 +39843,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_citizensforprosperitydestroyitems_cd",
-          "missionName": "Citizensforprosperitydestroyitems Cd",
+          "missionName": "Citizens For Prosperity Destroy Items › CD",
           "weight": 1.0
         }
       ],
@@ -40046,7 +40046,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_bitzeros_blackboxrecovery",
-          "missionName": "Bitzeros Blackboxrecovery",
+          "missionName": "Bit Zeros › Black Box Recovery",
           "weight": 1.0
         }
       ],
@@ -40390,7 +40390,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminatespecific_regionab",
-          "missionName": "Headhunters Mercenaryfps Eliminatespecific Regionab",
+          "missionName": "Head Hunters › Mercenary FPS › Eliminate Specific › Region AB",
           "weight": 1.0
         }
       ],
@@ -40470,7 +40470,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminateall_regionab",
-          "missionName": "Headhunters Mercenaryfps Eliminateall Regionab",
+          "missionName": "Head Hunters › Mercenary FPS › Eliminate ALL › Region AB",
           "weight": 1.0
         }
       ],
@@ -40542,7 +40542,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminateall_regionab",
-          "missionName": "Headhunters Mercenaryfps Eliminateall Regionab",
+          "missionName": "Head Hunters › Mercenary FPS › Eliminate ALL › Region AB",
           "weight": 1.0
         }
       ],
@@ -40581,7 +40581,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminateall_regionab",
-          "missionName": "Headhunters Mercenaryfps Eliminateall Regionab",
+          "missionName": "Head Hunters › Mercenary FPS › Eliminate ALL › Region AB",
           "weight": 1.0
         }
       ],
@@ -40653,7 +40653,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_asd2a",
-          "missionName": "Asd2A",
+          "missionName": "ASD2 A",
           "weight": 1.0
         }
       ],
@@ -40725,7 +40725,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_asd3",
-          "missionName": "Asd3",
+          "missionName": "ASD3",
           "weight": 1.0
         }
       ],
@@ -40764,7 +40764,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_asd2b",
-          "missionName": "Asd2B",
+          "missionName": "ASD2 B",
           "weight": 1.0
         }
       ],
@@ -40803,7 +40803,7 @@
       "missions": [
         {
           "poolFile": "bp_missionreward_asd2c",
-          "missionName": "Asd2C",
+          "missionName": "ASD2 C",
           "weight": 1.0
         }
       ],

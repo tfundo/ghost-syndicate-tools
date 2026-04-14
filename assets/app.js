@@ -199,6 +199,15 @@ window.clearSearch = function() {
   applyFilters();
 };
 
+window.toggleMissionOnly = function() {
+  const btn = document.getElementById('missionToggle');
+  const isActive = btn.classList.toggle('active');
+  state.missionFilter = isActive ? 'mission' : '';
+  // Keep hidden select in sync
+  document.getElementById('missionFilter').value = state.missionFilter;
+  applyFilters();
+};
+
 window.setView = function(view) {
   currentView = view;
   const grid = document.getElementById('blueprintGrid');
@@ -307,9 +316,11 @@ function renderBlueprintCard(bp, idx) {
     : '';
 
   const missionsHtml = bp.hasMissions
-    ? bp.missions.slice(0, 2).map(m =>
-        `<span class="mission-tag">${escHtml(m.missionName.substring(0, 25))}${m.missionName.length > 25 ? '…' : ''}</span>`
-      ).join('')
+    ? bp.missions.slice(0, 2).map(m => {
+        const name = m.missionName;
+        const display = name.length > 38 ? name.substring(0, 38) + '…' : name;
+        return `<span class="mission-tag">${escHtml(display)}</span>`;
+      }).join('')
     : `<span style="color:var(--text-muted);font-size:0.7rem">Sin misión asignada</span>`;
 
   return `

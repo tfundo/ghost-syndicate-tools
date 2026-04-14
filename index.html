@@ -141,10 +141,14 @@
           <button class="search-clear" id="searchClear" onclick="clearSearch()">✕</button>
         </div>
         <div class="filters">
+          <button class="btn-mission-toggle" id="missionToggle" onclick="toggleMissionOnly()" title="Mostrar solo planos que se obtienen como recompensa de misión">
+            <span class="mission-toggle-icon">🎯</span>
+            <span class="mission-toggle-label">Solo con misión</span>
+          </button>
           <select id="categoryFilter" class="filter-select">
             <option value="">Todas las categorías</option>
           </select>
-          <select id="missionFilter" class="filter-select">
+          <select id="missionFilter" class="filter-select" style="display:none">
             <option value="">Todas las fuentes</option>
             <option value="mission">Solo con misión</option>
             <option value="no-mission">Sin misión</option>
