@@ -960,16 +960,56 @@ img { max-width: 100%; }
 
 .modal-mission-item {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.6rem 0;
-  border-bottom: 1px solid rgba(0, 212, 255, 0.05);
-  font-size: 0.9rem;
-  gap: 1rem;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(0, 212, 255, 0.07);
 }
 .modal-mission-item:last-child { border-bottom: none; }
-.modal-mission-name { color: var(--text-primary); flex: 1; }
+.modal-mission-header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.modal-contractor-badge {
+  background: rgba(0, 212, 255, 0.1);
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  color: var(--accent);
+  font-size: 0.7rem;
+  font-family: var(--font-hud);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 0.15rem 0.55rem;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+.modal-mission-name {
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+}
+.modal-mission-titles {
+  list-style: none;
+  margin: 0.15rem 0 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.modal-mission-titles li {
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  padding: 0.2rem 0 0.2rem 1rem;
+  position: relative;
+}
+.modal-mission-titles li::before {
+  content: '›';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: bold;
+}
 .modal-mission-pool {
   font-size: 0.65rem;
   color: var(--text-muted);

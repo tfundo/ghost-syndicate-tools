@@ -36,6 +36,14 @@
         {
           "poolFile": "bp_missionreward_citizensforprosperitydestroyitems_ab",
           "missionName": "Citizens For Prosperity Destroy Items › AB",
+          "contractor": "Citizens for Prosperity",
+          "missionTitles": [
+            "Represalia contra centro de datos",
+            "Destruir inteligencia de seguridad",
+            "Destruir registros robados",
+            "Eliminar dossier letal",
+            "Destruir información sensible"
+          ],
           "weight": 1.0
         }
       ],
@@ -141,6 +149,10 @@
         {
           "poolFile": "bp_missionreward_bountyhuntersguild_paf_eliminatespecific",
           "missionName": "Bounty Hunters Guild › PAF › Eliminate Specific",
+          "contractor": "Gremio de cazarrecompensas",
+          "missionTitles": [
+            "Eliminar a …"
+          ],
           "weight": 1.0
         }
       ],
@@ -180,6 +192,15 @@
         {
           "poolFile": "bp_missionreward_citizensforprosperityrecovercargo_pyro",
           "missionName": "Citizens For Prosperity Recover Cargo › Pyro",
+          "contractor": "Citizens for Prosperity",
+          "missionTitles": [
+            "Recuperar nuestros suministros",
+            "Entrega de suministros interceptada",
+            "Recuperación de suministros valiosos",
+            "Es necesario recuperar suministros cruciales",
+            "Operación especial de recuperación",
+            "El envío de carga debe completarse"
+          ],
           "weight": 1.0
         }
       ],
@@ -219,6 +240,14 @@
         {
           "poolFile": "bp_missionreward_citizensforprosperitydestroyitems_cd",
           "missionName": "Citizens For Prosperity Destroy Items › CD",
+          "contractor": "Citizens for Prosperity",
+          "missionTitles": [
+            "Represalia contra centro de datos",
+            "Destruir inteligencia de seguridad",
+            "Destruir registros robados",
+            "Eliminar dossier letal",
+            "Destruir información sensible"
+          ],
           "weight": 1.0
         }
       ],
@@ -258,11 +287,15 @@
         {
           "poolFile": "bp_missionreward_northrockfpskill_eliminateboss",
           "missionName": "North Rock FPS Kill › Eliminate Boss",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         },
         {
           "poolFile": "bp_missionreward_northrockfpskill_eliminateboss",
           "missionName": "North Rock FPS Kill › Eliminate Boss",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -335,6 +368,15 @@
         {
           "poolFile": "bp_missionreward_citizensforprosperityrecovercargo_pyro",
           "missionName": "Citizens For Prosperity Recover Cargo › Pyro",
+          "contractor": "Citizens for Prosperity",
+          "missionTitles": [
+            "Recuperar nuestros suministros",
+            "Entrega de suministros interceptada",
+            "Recuperación de suministros valiosos",
+            "Es necesario recuperar suministros cruciales",
+            "Operación especial de recuperación",
+            "El envío de carga debe completarse"
+          ],
           "weight": 1.0
         }
       ],
@@ -374,6 +416,15 @@
         {
           "poolFile": "bp_missionreward_citizensforprosperityrecovercargo_pyro",
           "missionName": "Citizens For Prosperity Recover Cargo › Pyro",
+          "contractor": "Citizens for Prosperity",
+          "missionTitles": [
+            "Recuperar nuestros suministros",
+            "Entrega de suministros interceptada",
+            "Recuperación de suministros valiosos",
+            "Es necesario recuperar suministros cruciales",
+            "Operación especial de recuperación",
+            "El envío de carga debe completarse"
+          ],
           "weight": 1.0
         }
       ],
@@ -413,6 +464,14 @@
         {
           "poolFile": "bp_missionreward_citizensforprosperitydestroyitems_cd",
           "missionName": "Citizens For Prosperity Destroy Items › CD",
+          "contractor": "Citizens for Prosperity",
+          "missionTitles": [
+            "Represalia contra centro de datos",
+            "Destruir inteligencia de seguridad",
+            "Destruir registros robados",
+            "Eliminar dossier letal",
+            "Destruir información sensible"
+          ],
           "weight": 1.0
         }
       ],
@@ -452,6 +511,14 @@
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminatespecific_regionab",
           "missionName": "Head Hunters › Mercenary FPS › Eliminate Specific › Region AB",
+          "contractor": "Headhunters",
+          "missionTitles": [
+            "Mata al rey",
+            "Disparo en el caos",
+            "Necesito que elimines a un CFP",
+            "Objetivo pagado en CFP",
+            "Hablar rápidamente"
+          ],
           "weight": 1.0
         }
       ],
@@ -491,6 +558,14 @@
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminatespecific_regionab",
           "missionName": "Head Hunters › Mercenary FPS › Eliminate Specific › Region AB",
+          "contractor": "Headhunters",
+          "missionTitles": [
+            "Mata al rey",
+            "Disparo en el caos",
+            "Necesito que elimines a un CFP",
+            "Objetivo pagado en CFP",
+            "Hablar rápidamente"
+          ],
           "weight": 1.0
         }
       ],
@@ -530,6 +605,8 @@
         {
           "poolFile": "bp_missionreward_vaughngenerator_eliminateboss",
           "missionName": "Vaughn Generator › Eliminate Boss",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -569,6 +646,8 @@
         {
           "poolFile": "bp_missionreward_vaughngenerator_eliminatespecific",
           "missionName": "Vaughn Generator › Eliminate Specific",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -608,6 +687,15 @@
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminateall_regioncd",
           "missionName": "Head Hunters › Mercenary FPS › Eliminate ALL › Region CD",
+          "contractor": "Headhunters",
+          "missionTitles": [
+            "Se necesita un ejecutor",
+            "Atacar un sitio de CFP",
+            "… ha sido autorizado",
+            "Enviar un Mensaje",
+            "Eliminar …",
+            "Contrato Incompleto"
+          ],
           "weight": 1.0
         }
       ],
@@ -647,6 +735,15 @@
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminateall_regionab",
           "missionName": "Head Hunters › Mercenary FPS › Eliminate ALL › Region AB",
+          "contractor": "Headhunters",
+          "missionTitles": [
+            "Se necesita un ejecutor",
+            "Atacar un sitio de CFP",
+            "… ha sido autorizado",
+            "Enviar un Mensaje",
+            "Eliminar …",
+            "Contrato Incompleto"
+          ],
           "weight": 1.0
         }
       ],
@@ -686,21 +783,55 @@
         {
           "poolFile": "bp_missionreward_foxwell_defendentitiesandescort",
           "missionName": "Foxwell › Defend Entities And Escort",
+          "contractor": "Foxwell Enforcement",
+          "missionTitles": [
+            "Contrato de Nivel Amarillo: Nave Bajo Ataque",
+            "Contrato de Nivel Naranja: … Necesita Ayuda",
+            "Contrato de Nivel Rojo: Nave Bajo Ataque",
+            "Contrato de Nivel Amarillo: Haz frente a los agresores",
+            "Contrato de Nivel Amarillo: Defender …",
+            "Contrato de Nivel Naranja: Necesaria protección de naves"
+          ],
           "weight": 1.0
         },
         {
           "poolFile": "bp_missionreward_foxwellenforcement_ambush",
           "missionName": "Foxwell Enforcement › Ambush",
+          "contractor": "Foxwell Enforcement",
+          "missionTitles": [
+            "Contrato Nivel Amarillo: Embosca a un Novato",
+            "Contrato de Nivel Amarillo: Golpe Sorpresa",
+            "Contrato Nivel Naranja: Tender la Trampa",
+            "Contrato Nivel Naranja: Devolver el Favor",
+            "Contrato Nivel Rojo: Ataque Sorpresa",
+            "Contrato de Nivel Rojo: Emboscar a un Escuadrón de Ataque"
+          ],
           "weight": 1.0
         },
         {
           "poolFile": "bp_missionreward_foxwellenforcement_escortships",
           "missionName": "Foxwell Enforcement › Escort Ships",
+          "contractor": "Foxwell Enforcement",
+          "missionTitles": [
+            "Contrato nivel amarillo: Limpiar grupo de secuestradores de naves",
+            "Contrato nivel amarillo: Neutralizar banda de secuestradores de naves",
+            "Contrato nivel naranja: Destruir amenaza de forajidos",
+            "Contrato nivel naranja: Eliminar flota criminal"
+          ],
           "weight": 1.0
         },
         {
           "poolFile": "bp_missionreward_foxwellenforcement_patrol",
           "missionName": "Foxwell Enforcement › Patrol",
+          "contractor": "Foxwell Enforcement",
+          "missionTitles": [
+            "Contrato de Nivel Amarillo: Patrulla de Rutina",
+            "Contrato de Nivel Amarillo: Barrido de Seguridad",
+            "Contrato de Nivel Naranja: Patrulla de Seguridad",
+            "Contrato de Nivel Naranja: Amenaza de Seguridad Potencial",
+            "Contrato de Nivel Rojo: Asegurar Espacio Amenazado",
+            "Contrato Nivel Rojo: Patrulla de Seguridad de Alto Riesgo"
+          ],
           "weight": 1.0
         }
       ],
@@ -740,11 +871,29 @@
         {
           "poolFile": "bp_missionreward_asd2c",
           "missionName": "ASD2 C",
+          "contractor": "ASD Facility Delving",
+          "missionTitles": [
+            "Núcleo de energía",
+            "Lecturas Sísmicas",
+            "Control de Esclusa",
+            "Lecturas del Sensor de Energía",
+            "Registros de Seguridad",
+            "Registros de Personal"
+          ],
           "weight": 1.0
         },
         {
           "poolFile": "bp_missionreward_asd3",
           "missionName": "ASD3",
+          "contractor": "ASD Facility Delving",
+          "missionTitles": [
+            "Núcleo de energía",
+            "Lecturas Sísmicas",
+            "Control de Esclusa",
+            "Lecturas del Sensor de Energía",
+            "Registros de Seguridad",
+            "Registros de Personal"
+          ],
           "weight": 1.0
         }
       ],
@@ -817,21 +966,29 @@
         {
           "poolFile": "bp_missionreward_shubin_resourcegathering_fpsmining_pyro",
           "missionName": "Shubin › Resource Gathering › FPS Mining › Pyro",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         },
         {
           "poolFile": "bp_missionreward_shubin_resourcegathering_fpsmining_stanton",
           "missionName": "Shubin › Resource Gathering › FPS Mining › Stanton",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         },
         {
           "poolFile": "bp_missionreward_shubin_resourcegathering_shipmining_pyronyx",
           "missionName": "Shubin › Resource Gathering › Ship Mining › Pyro Nyx",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         },
         {
           "poolFile": "bp_missionreward_shubin_resourcegathering_shipmining_stanton",
           "missionName": "Shubin › Resource Gathering › Ship Mining › Stanton",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -871,6 +1028,14 @@
         {
           "poolFile": "bp_missionreward_citizensforprosperitydestroyitems_ab",
           "missionName": "Citizens For Prosperity Destroy Items › AB",
+          "contractor": "Citizens for Prosperity",
+          "missionTitles": [
+            "Represalia contra centro de datos",
+            "Destruir inteligencia de seguridad",
+            "Destruir registros robados",
+            "Eliminar dossier letal",
+            "Destruir información sensible"
+          ],
           "weight": 1.0
         }
       ],
@@ -910,11 +1075,26 @@
         {
           "poolFile": "bp_missionreward_bitzeros_blackboxrecovery",
           "missionName": "Bit Zeros › Black Box Recovery",
+          "contractor": "BitZeros",
+          "missionTitles": [
+            "Recoger y entregar",
+            "Llegando al fondo del asunto",
+            "Demasiado listos para nuestro bien",
+            "¿Información legendaria?",
+            "Malas despedidas",
+            "Nuestra versión de la verdad"
+          ],
           "weight": 1.0
         },
         {
           "poolFile": "bp_missionreward_bitzeros_recoveritem_stanton",
           "missionName": "Bit Zeros › Recover Item › Stanton",
+          "contractor": "BitZeros",
+          "missionTitles": [
+            "Tecnología de vanguardia",
+            "Volverles la jugada",
+            "Recogida de mejora"
+          ],
           "weight": 1.0
         }
       ],
@@ -954,6 +1134,15 @@
         {
           "poolFile": "bp_missionreward_bitzeros_blackboxrecovery",
           "missionName": "Bit Zeros › Black Box Recovery",
+          "contractor": "BitZeros",
+          "missionTitles": [
+            "Recoger y entregar",
+            "Llegando al fondo del asunto",
+            "Demasiado listos para nuestro bien",
+            "¿Información legendaria?",
+            "Malas despedidas",
+            "Nuestra versión de la verdad"
+          ],
           "weight": 1.0
         }
       ],
@@ -993,6 +1182,12 @@
         {
           "poolFile": "bp_missionreward_bitzeros_recoveritem_pyronyx",
           "missionName": "Bit Zeros › Recover Item › Pyro Nyx",
+          "contractor": "BitZeros",
+          "missionTitles": [
+            "Tecnología de vanguardia",
+            "Volverles la jugada",
+            "Recogida de mejora"
+          ],
           "weight": 1.0
         }
       ],
@@ -1032,16 +1227,43 @@
         {
           "poolFile": "bp_missionreward_asd2a",
           "missionName": "ASD2 A",
+          "contractor": "ASD Facility Delving",
+          "missionTitles": [
+            "Núcleo de energía",
+            "Lecturas Sísmicas",
+            "Control de Esclusa",
+            "Lecturas del Sensor de Energía",
+            "Registros de Seguridad",
+            "Registros de Personal"
+          ],
           "weight": 1.0
         },
         {
           "poolFile": "bp_missionreward_asd2b",
           "missionName": "ASD2 B",
+          "contractor": "ASD Facility Delving",
+          "missionTitles": [
+            "Núcleo de energía",
+            "Lecturas Sísmicas",
+            "Control de Esclusa",
+            "Lecturas del Sensor de Energía",
+            "Registros de Seguridad",
+            "Registros de Personal"
+          ],
           "weight": 1.0
         },
         {
           "poolFile": "bp_missionreward_asd2d",
           "missionName": "ASD2 D",
+          "contractor": "ASD Facility Delving",
+          "missionTitles": [
+            "Núcleo de energía",
+            "Lecturas Sísmicas",
+            "Control de Esclusa",
+            "Lecturas del Sensor de Energía",
+            "Registros de Seguridad",
+            "Registros de Personal"
+          ],
           "weight": 1.0
         }
       ],
@@ -1081,21 +1303,32 @@
         {
           "poolFile": "bp_missionreward_ids_recoverencrypteddata",
           "missionName": "IDS › Recover Encrypted Data",
+          "contractor": "IDS",
+          "missionTitles": [],
           "weight": 1.0
         },
         {
           "poolFile": "bp_missionreward_intersec_defendship",
           "missionName": "Inter Sec › Defend Ship",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         },
         {
           "poolFile": "bp_missionreward_intersec_resourcegathering",
           "missionName": "Inter Sec › Resource Gathering",
+          "contractor": "InterSec Defense Solutions",
+          "missionTitles": [
+            "Recuperar tecnología vanduul",
+            "Recuperar cadáveres vanduul"
+          ],
           "weight": 1.0
         },
         {
           "poolFile": "bp_missionreward_rayari_recoveritem_hathorloot",
           "missionName": "Rayari › Recover Item › Hathor Loot",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -1135,16 +1368,22 @@
         {
           "poolFile": "bp_missionreward_ids_recoverencrypteddata",
           "missionName": "IDS › Recover Encrypted Data",
+          "contractor": "IDS",
+          "missionTitles": [],
           "weight": 1.0
         },
         {
           "poolFile": "bp_missionreward_intersec_patrol",
           "missionName": "Inter Sec › Patrol",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         },
         {
           "poolFile": "bp_missionreward_rayari_recoveritem_hathorloot",
           "missionName": "Rayari › Recover Item › Hathor Loot",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -1184,26 +1423,57 @@
         {
           "poolFile": "bp_missionreward_cfp_chainelim_1and2",
           "missionName": "CFP › Chain Elim › 1and2",
+          "contractor": "Citizens for Prosperity",
+          "missionTitles": [
+            "Alerta: … bajo ataque",
+            "Recuperando de los Headhunters",
+            "Ataque de forajidos en …",
+            "Recuperar puestos de avanzada de los Headhunters"
+          ],
           "weight": 1.0
         },
         {
           "poolFile": "bp_missionreward_cfp_chainelim_3",
           "missionName": "CFP › Chain Elim › 3",
+          "contractor": "Citizens for Prosperity",
+          "missionTitles": [
+            "Se necesitan recuperar varios puestos de avanzada de CFP",
+            "Recuperando puestos de avanzada de Headhunters",
+            "Campaña para recuperar puestos de avanzada de los XenoThreat"
+          ],
           "weight": 1.0
         },
         {
           "poolFile": "bp_missionreward_cfp_outpost_regionab",
           "missionName": "CFP › Outpost › Region AB",
+          "contractor": "Citizens for Prosperity",
+          "missionTitles": [
+            "Entrega entre puestos de avanzada en …",
+            "Corregir error de entrega",
+            "Entrega de buenas noticias"
+          ],
           "weight": 1.0
         },
         {
           "poolFile": "bp_missionreward_cfp_outpost_regionc",
           "missionName": "CFP › Outpost › Region C",
+          "contractor": "Citizens for Prosperity",
+          "missionTitles": [
+            "Entrega entre puestos de avanzada en …",
+            "Corregir error de entrega",
+            "Entrega de buenas noticias"
+          ],
           "weight": 1.0
         },
         {
           "poolFile": "bp_missionreward_cfp_outpost_regiond",
           "missionName": "CFP › Outpost › Region D",
+          "contractor": "Citizens for Prosperity",
+          "missionTitles": [
+            "Entrega entre puestos de avanzada en …",
+            "Corregir error de entrega",
+            "Entrega de buenas noticias"
+          ],
           "weight": 1.0
         }
       ],
@@ -1243,6 +1513,13 @@
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminatespecific_regioncd",
           "missionName": "Head Hunters › Mercenary FPS › Eliminate Specific › Region CD",
+          "contractor": "Headhunters",
+          "missionTitles": [
+            "Mata al rey",
+            "Disparo en el caos",
+            "Necesito que elimines a un CFP",
+            "Objetivo pagado en CFP"
+          ],
           "weight": 1.0
         }
       ],
@@ -1282,6 +1559,8 @@
         {
           "poolFile": "bp_missionreward_rayari_recoveritem_irradiated",
           "missionName": "Rayari › Recover Item › Irradiated",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -1321,6 +1600,14 @@
         {
           "poolFile": "bp_missionreward_citizensforprosperitydestroyitems_ab",
           "missionName": "Citizens For Prosperity Destroy Items › AB",
+          "contractor": "Citizens for Prosperity",
+          "missionTitles": [
+            "Represalia contra centro de datos",
+            "Destruir inteligencia de seguridad",
+            "Destruir registros robados",
+            "Eliminar dossier letal",
+            "Destruir información sensible"
+          ],
           "weight": 1.0
         }
       ],
@@ -1360,16 +1647,22 @@
         {
           "poolFile": "bp_missionreward_rdc_boss",
           "missionName": "RDC › Boss",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         },
         {
           "poolFile": "bp_missionreward_rdc_exclusive",
           "missionName": "RDC › Exclusive",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         },
         {
           "poolFile": "bp_missionreward_rdc_generic",
           "missionName": "RDC › Generic",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -1409,6 +1702,11 @@
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminateboss",
           "missionName": "Head Hunters › Mercenary FPS › Eliminate Boss",
+          "contractor": "Headhunters",
+          "missionTitles": [
+            "Eliminar a un pez gordo",
+            "Ajuste de cuentas"
+          ],
           "weight": 1.0
         }
       ],
@@ -1448,6 +1746,8 @@
         {
           "poolFile": "bp_missionreward_vaughngenerator_eliminateboss",
           "missionName": "Vaughn Generator › Eliminate Boss",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -1487,11 +1787,18 @@
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminateboss",
           "missionName": "Head Hunters › Mercenary FPS › Eliminate Boss",
+          "contractor": "Headhunters",
+          "missionTitles": [
+            "Eliminar a un pez gordo",
+            "Ajuste de cuentas"
+          ],
           "weight": 1.0
         },
         {
           "poolFile": "bp_missionreward_vaughngenerator_eliminatespecific",
           "missionName": "Vaughn Generator › Eliminate Specific",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -1531,6 +1838,14 @@
         {
           "poolFile": "bp_missionreward_citizensforprosperitydestroyitems_ab",
           "missionName": "Citizens For Prosperity Destroy Items › AB",
+          "contractor": "Citizens for Prosperity",
+          "missionTitles": [
+            "Represalia contra centro de datos",
+            "Destruir inteligencia de seguridad",
+            "Destruir registros robados",
+            "Eliminar dossier letal",
+            "Destruir información sensible"
+          ],
           "weight": 1.0
         }
       ],
@@ -1570,6 +1885,14 @@
         {
           "poolFile": "bp_missionreward_citizensforprosperitydestroyitems_ab",
           "missionName": "Citizens For Prosperity Destroy Items › AB",
+          "contractor": "Citizens for Prosperity",
+          "missionTitles": [
+            "Represalia contra centro de datos",
+            "Destruir inteligencia de seguridad",
+            "Destruir registros robados",
+            "Eliminar dossier letal",
+            "Destruir información sensible"
+          ],
           "weight": 1.0
         }
       ],
@@ -1609,6 +1932,14 @@
         {
           "poolFile": "bp_missionreward_citizensforprosperitydestroyitems_ab",
           "missionName": "Citizens For Prosperity Destroy Items › AB",
+          "contractor": "Citizens for Prosperity",
+          "missionTitles": [
+            "Represalia contra centro de datos",
+            "Destruir inteligencia de seguridad",
+            "Destruir registros robados",
+            "Eliminar dossier letal",
+            "Destruir información sensible"
+          ],
           "weight": 1.0
         }
       ],
@@ -1648,6 +1979,14 @@
         {
           "poolFile": "bp_missionreward_citizensforprosperitydestroyitems_ab",
           "missionName": "Citizens For Prosperity Destroy Items › AB",
+          "contractor": "Citizens for Prosperity",
+          "missionTitles": [
+            "Represalia contra centro de datos",
+            "Destruir inteligencia de seguridad",
+            "Destruir registros robados",
+            "Eliminar dossier letal",
+            "Destruir información sensible"
+          ],
           "weight": 1.0
         }
       ],
@@ -1720,6 +2059,14 @@
         {
           "poolFile": "bp_missionreward_citizensforprosperitydestroyitems_ab",
           "missionName": "Citizens For Prosperity Destroy Items › AB",
+          "contractor": "Citizens for Prosperity",
+          "missionTitles": [
+            "Represalia contra centro de datos",
+            "Destruir inteligencia de seguridad",
+            "Destruir registros robados",
+            "Eliminar dossier letal",
+            "Destruir información sensible"
+          ],
           "weight": 1.0
         }
       ],
@@ -2485,6 +2832,14 @@
         {
           "poolFile": "bp_missionreward_citizensforprosperitydestroyitems_ab",
           "missionName": "Citizens For Prosperity Destroy Items › AB",
+          "contractor": "Citizens for Prosperity",
+          "missionTitles": [
+            "Represalia contra centro de datos",
+            "Destruir inteligencia de seguridad",
+            "Destruir registros robados",
+            "Eliminar dossier letal",
+            "Destruir información sensible"
+          ],
           "weight": 1.0
         }
       ],
@@ -3250,6 +3605,14 @@
         {
           "poolFile": "bp_missionreward_citizensforprosperitydestroyitems_ab",
           "missionName": "Citizens For Prosperity Destroy Items › AB",
+          "contractor": "Citizens for Prosperity",
+          "missionTitles": [
+            "Represalia contra centro de datos",
+            "Destruir inteligencia de seguridad",
+            "Destruir registros robados",
+            "Eliminar dossier letal",
+            "Destruir información sensible"
+          ],
           "weight": 1.0
         }
       ],
@@ -3982,6 +4345,14 @@
         {
           "poolFile": "bp_missionreward_citizensforprosperitydestroyitems_ab",
           "missionName": "Citizens For Prosperity Destroy Items › AB",
+          "contractor": "Citizens for Prosperity",
+          "missionTitles": [
+            "Represalia contra centro de datos",
+            "Destruir inteligencia de seguridad",
+            "Destruir registros robados",
+            "Eliminar dossier letal",
+            "Destruir información sensible"
+          ],
           "weight": 1.0
         }
       ],
@@ -4722,6 +5093,8 @@
         {
           "poolFile": "bp_missionreward_rdc_generic",
           "missionName": "RDC › Generic",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -4769,6 +5142,8 @@
         {
           "poolFile": "bp_missionreward_rdc_exclusive",
           "missionName": "RDC › Exclusive",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -4816,6 +5191,8 @@
         {
           "poolFile": "bp_missionreward_rdc_boss",
           "missionName": "RDC › Boss",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -4863,6 +5240,8 @@
         {
           "poolFile": "bp_missionreward_rdc_boss",
           "missionName": "RDC › Boss",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -4910,6 +5289,8 @@
         {
           "poolFile": "bp_missionreward_rdc_exclusive",
           "missionName": "RDC › Exclusive",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -4957,6 +5338,8 @@
         {
           "poolFile": "bp_missionreward_rdc_generic",
           "missionName": "RDC › Generic",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -5004,6 +5387,8 @@
         {
           "poolFile": "bp_missionreward_rdc_generic",
           "missionName": "RDC › Generic",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -5051,6 +5436,8 @@
         {
           "poolFile": "bp_missionreward_rdc_exclusive",
           "missionName": "RDC › Exclusive",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -5098,6 +5485,8 @@
         {
           "poolFile": "bp_missionreward_rdc_boss",
           "missionName": "RDC › Boss",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -5145,6 +5534,8 @@
         {
           "poolFile": "bp_missionreward_rdc_boss",
           "missionName": "RDC › Boss",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -5192,6 +5583,8 @@
         {
           "poolFile": "bp_missionreward_rdc_exclusive",
           "missionName": "RDC › Exclusive",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -5239,6 +5632,8 @@
         {
           "poolFile": "bp_missionreward_rdc_generic",
           "missionName": "RDC › Generic",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -5286,6 +5681,8 @@
         {
           "poolFile": "bp_missionreward_rdc_generic",
           "missionName": "RDC › Generic",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -5333,6 +5730,8 @@
         {
           "poolFile": "bp_missionreward_rdc_exclusive",
           "missionName": "RDC › Exclusive",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -5380,6 +5779,8 @@
         {
           "poolFile": "bp_missionreward_rdc_boss",
           "missionName": "RDC › Boss",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -5427,6 +5828,8 @@
         {
           "poolFile": "bp_missionreward_rdc_boss",
           "missionName": "RDC › Boss",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -5474,6 +5877,8 @@
         {
           "poolFile": "bp_missionreward_rdc_exclusive",
           "missionName": "RDC › Exclusive",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -5521,6 +5926,8 @@
         {
           "poolFile": "bp_missionreward_rdc_generic",
           "missionName": "RDC › Generic",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -5568,6 +5975,8 @@
         {
           "poolFile": "bp_missionreward_rdc_generic",
           "missionName": "RDC › Generic",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -5615,6 +6024,8 @@
         {
           "poolFile": "bp_missionreward_rdc_exclusive",
           "missionName": "RDC › Exclusive",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -5662,6 +6073,8 @@
         {
           "poolFile": "bp_missionreward_rdc_boss",
           "missionName": "RDC › Boss",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -5709,6 +6122,8 @@
         {
           "poolFile": "bp_missionreward_rdc_boss",
           "missionName": "RDC › Boss",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -5756,6 +6171,8 @@
         {
           "poolFile": "bp_missionreward_rdc_exclusive",
           "missionName": "RDC › Exclusive",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -5803,6 +6220,8 @@
         {
           "poolFile": "bp_missionreward_rdc_generic",
           "missionName": "RDC › Generic",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -5850,6 +6269,8 @@
         {
           "poolFile": "bp_missionreward_vaughngenerator_eliminateboss",
           "missionName": "Vaughn Generator › Eliminate Boss",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -5979,6 +6400,8 @@
         {
           "poolFile": "bp_missionreward_vaughngenerator_eliminateboss",
           "missionName": "Vaughn Generator › Eliminate Boss",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -6108,6 +6531,8 @@
         {
           "poolFile": "bp_missionreward_vaughngenerator_eliminateboss",
           "missionName": "Vaughn Generator › Eliminate Boss",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -6196,6 +6621,8 @@
         {
           "poolFile": "bp_missionreward_vaughngenerator_eliminateboss",
           "missionName": "Vaughn Generator › Eliminate Boss",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -6276,6 +6703,8 @@
         {
           "poolFile": "bp_missionreward_northrockfpskill_eliminateboss",
           "missionName": "North Rock FPS Kill › Eliminate Boss",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -6513,6 +6942,8 @@
         {
           "poolFile": "bp_missionreward_northrockfpskill_eliminateboss",
           "missionName": "North Rock FPS Kill › Eliminate Boss",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -6783,6 +7214,8 @@
         {
           "poolFile": "bp_missionreward_northrockfpskill_eliminateboss",
           "missionName": "North Rock FPS Kill › Eliminate Boss",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -7020,6 +7453,8 @@
         {
           "poolFile": "bp_missionreward_northrockfpskill_eliminateboss",
           "missionName": "North Rock FPS Kill › Eliminate Boss",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -7257,6 +7692,8 @@
         {
           "poolFile": "bp_missionreward_vaughngenerator_eliminatespecific",
           "missionName": "Vaughn Generator › Eliminate Specific",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -7296,6 +7733,8 @@
         {
           "poolFile": "bp_missionreward_vaughngenerator_eliminatespecific",
           "missionName": "Vaughn Generator › Eliminate Specific",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -7335,6 +7774,8 @@
         {
           "poolFile": "bp_missionreward_vaughngenerator_eliminatespecific",
           "missionName": "Vaughn Generator › Eliminate Specific",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -7374,6 +7815,8 @@
         {
           "poolFile": "bp_missionreward_vaughngenerator_eliminatespecific",
           "missionName": "Vaughn Generator › Eliminate Specific",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -7553,6 +7996,14 @@
         {
           "poolFile": "bp_missionreward_citizensforprosperitydestroyitems_cd",
           "missionName": "Citizens For Prosperity Destroy Items › CD",
+          "contractor": "Citizens for Prosperity",
+          "missionTitles": [
+            "Represalia contra centro de datos",
+            "Destruir inteligencia de seguridad",
+            "Destruir registros robados",
+            "Eliminar dossier letal",
+            "Destruir información sensible"
+          ],
           "weight": 1.0
         }
       ],
@@ -8379,6 +8830,14 @@
         {
           "poolFile": "bp_missionreward_citizensforprosperitydestroyitems_cd",
           "missionName": "Citizens For Prosperity Destroy Items › CD",
+          "contractor": "Citizens for Prosperity",
+          "missionTitles": [
+            "Represalia contra centro de datos",
+            "Destruir inteligencia de seguridad",
+            "Destruir registros robados",
+            "Eliminar dossier letal",
+            "Destruir información sensible"
+          ],
           "weight": 1.0
         }
       ],
@@ -9205,6 +9664,14 @@
         {
           "poolFile": "bp_missionreward_citizensforprosperitydestroyitems_cd",
           "missionName": "Citizens For Prosperity Destroy Items › CD",
+          "contractor": "Citizens for Prosperity",
+          "missionTitles": [
+            "Represalia contra centro de datos",
+            "Destruir inteligencia de seguridad",
+            "Destruir registros robados",
+            "Eliminar dossier letal",
+            "Destruir información sensible"
+          ],
           "weight": 1.0
         }
       ],
@@ -9990,6 +10457,14 @@
         {
           "poolFile": "bp_missionreward_citizensforprosperitydestroyitems_cd",
           "missionName": "Citizens For Prosperity Destroy Items › CD",
+          "contractor": "Citizens for Prosperity",
+          "missionTitles": [
+            "Represalia contra centro de datos",
+            "Destruir inteligencia de seguridad",
+            "Destruir registros robados",
+            "Eliminar dossier letal",
+            "Destruir información sensible"
+          ],
           "weight": 1.0
         }
       ],
@@ -10808,6 +11283,8 @@
         {
           "poolFile": "bp_missionreward_vaughngenerator_eliminateboss",
           "missionName": "Vaughn Generator › Eliminate Boss",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -10847,11 +11324,15 @@
         {
           "poolFile": "bp_missionreward_vaughngenerator_eliminateboss",
           "missionName": "Vaughn Generator › Eliminate Boss",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         },
         {
           "poolFile": "bp_missionreward_vaughngenerator_eliminateboss",
           "missionName": "Vaughn Generator › Eliminate Boss",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -10899,6 +11380,15 @@
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminateall_regionab",
           "missionName": "Head Hunters › Mercenary FPS › Eliminate ALL › Region AB",
+          "contractor": "Headhunters",
+          "missionTitles": [
+            "Se necesita un ejecutor",
+            "Atacar un sitio de CFP",
+            "… ha sido autorizado",
+            "Enviar un Mensaje",
+            "Eliminar …",
+            "Contrato Incompleto"
+          ],
           "weight": 1.0
         }
       ],
@@ -10987,6 +11477,15 @@
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminateall_regionab",
           "missionName": "Head Hunters › Mercenary FPS › Eliminate ALL › Region AB",
+          "contractor": "Headhunters",
+          "missionTitles": [
+            "Se necesita un ejecutor",
+            "Atacar un sitio de CFP",
+            "… ha sido autorizado",
+            "Enviar un Mensaje",
+            "Eliminar …",
+            "Contrato Incompleto"
+          ],
           "weight": 1.0
         }
       ],
@@ -11075,6 +11574,15 @@
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminateall_regionab",
           "missionName": "Head Hunters › Mercenary FPS › Eliminate ALL › Region AB",
+          "contractor": "Headhunters",
+          "missionTitles": [
+            "Se necesita un ejecutor",
+            "Atacar un sitio de CFP",
+            "… ha sido autorizado",
+            "Enviar un Mensaje",
+            "Eliminar …",
+            "Contrato Incompleto"
+          ],
           "weight": 1.0
         }
       ],
@@ -11163,6 +11671,15 @@
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminateall_regionab",
           "missionName": "Head Hunters › Mercenary FPS › Eliminate ALL › Region AB",
+          "contractor": "Headhunters",
+          "missionTitles": [
+            "Se necesita un ejecutor",
+            "Atacar un sitio de CFP",
+            "… ha sido autorizado",
+            "Enviar un Mensaje",
+            "Eliminar …",
+            "Contrato Incompleto"
+          ],
           "weight": 1.0
         }
       ],
@@ -11251,6 +11768,15 @@
         {
           "poolFile": "bp_missionreward_bitzeros_blackboxrecovery",
           "missionName": "Bit Zeros › Black Box Recovery",
+          "contractor": "BitZeros",
+          "missionTitles": [
+            "Recoger y entregar",
+            "Llegando al fondo del asunto",
+            "Demasiado listos para nuestro bien",
+            "¿Información legendaria?",
+            "Malas despedidas",
+            "Nuestra versión de la verdad"
+          ],
           "weight": 1.0
         }
       ],
@@ -11298,6 +11824,15 @@
         {
           "poolFile": "bp_missionreward_bitzeros_blackboxrecovery",
           "missionName": "Bit Zeros › Black Box Recovery",
+          "contractor": "BitZeros",
+          "missionTitles": [
+            "Recoger y entregar",
+            "Llegando al fondo del asunto",
+            "Demasiado listos para nuestro bien",
+            "¿Información legendaria?",
+            "Malas despedidas",
+            "Nuestra versión de la verdad"
+          ],
           "weight": 1.0
         }
       ],
@@ -11386,6 +11921,15 @@
         {
           "poolFile": "bp_missionreward_bitzeros_blackboxrecovery",
           "missionName": "Bit Zeros › Black Box Recovery",
+          "contractor": "BitZeros",
+          "missionTitles": [
+            "Recoger y entregar",
+            "Llegando al fondo del asunto",
+            "Demasiado listos para nuestro bien",
+            "¿Información legendaria?",
+            "Malas despedidas",
+            "Nuestra versión de la verdad"
+          ],
           "weight": 1.0
         }
       ],
@@ -11433,6 +11977,15 @@
         {
           "poolFile": "bp_missionreward_bitzeros_blackboxrecovery",
           "missionName": "Bit Zeros › Black Box Recovery",
+          "contractor": "BitZeros",
+          "missionTitles": [
+            "Recoger y entregar",
+            "Llegando al fondo del asunto",
+            "Demasiado listos para nuestro bien",
+            "¿Información legendaria?",
+            "Malas despedidas",
+            "Nuestra versión de la verdad"
+          ],
           "weight": 1.0
         }
       ],
@@ -11521,6 +12074,15 @@
         {
           "poolFile": "bp_missionreward_bitzeros_blackboxrecovery",
           "missionName": "Bit Zeros › Black Box Recovery",
+          "contractor": "BitZeros",
+          "missionTitles": [
+            "Recoger y entregar",
+            "Llegando al fondo del asunto",
+            "Demasiado listos para nuestro bien",
+            "¿Información legendaria?",
+            "Malas despedidas",
+            "Nuestra versión de la verdad"
+          ],
           "weight": 1.0
         }
       ],
@@ -11568,6 +12130,15 @@
         {
           "poolFile": "bp_missionreward_bitzeros_blackboxrecovery",
           "missionName": "Bit Zeros › Black Box Recovery",
+          "contractor": "BitZeros",
+          "missionTitles": [
+            "Recoger y entregar",
+            "Llegando al fondo del asunto",
+            "Demasiado listos para nuestro bien",
+            "¿Información legendaria?",
+            "Malas despedidas",
+            "Nuestra versión de la verdad"
+          ],
           "weight": 1.0
         }
       ],
@@ -11656,6 +12227,15 @@
         {
           "poolFile": "bp_missionreward_bitzeros_blackboxrecovery",
           "missionName": "Bit Zeros › Black Box Recovery",
+          "contractor": "BitZeros",
+          "missionTitles": [
+            "Recoger y entregar",
+            "Llegando al fondo del asunto",
+            "Demasiado listos para nuestro bien",
+            "¿Información legendaria?",
+            "Malas despedidas",
+            "Nuestra versión de la verdad"
+          ],
           "weight": 1.0
         }
       ],
@@ -11703,6 +12283,15 @@
         {
           "poolFile": "bp_missionreward_bitzeros_blackboxrecovery",
           "missionName": "Bit Zeros › Black Box Recovery",
+          "contractor": "BitZeros",
+          "missionTitles": [
+            "Recoger y entregar",
+            "Llegando al fondo del asunto",
+            "Demasiado listos para nuestro bien",
+            "¿Información legendaria?",
+            "Malas despedidas",
+            "Nuestra versión de la verdad"
+          ],
           "weight": 1.0
         }
       ],
@@ -11791,6 +12380,15 @@
         {
           "poolFile": "bp_missionreward_citizensforprosperityrecovercargo_pyro",
           "missionName": "Citizens For Prosperity Recover Cargo › Pyro",
+          "contractor": "Citizens for Prosperity",
+          "missionTitles": [
+            "Recuperar nuestros suministros",
+            "Entrega de suministros interceptada",
+            "Recuperación de suministros valiosos",
+            "Es necesario recuperar suministros cruciales",
+            "Operación especial de recuperación",
+            "El envío de carga debe completarse"
+          ],
           "weight": 1.0
         }
       ],
@@ -12043,6 +12641,15 @@
         {
           "poolFile": "bp_missionreward_citizensforprosperityrecovercargo_pyro",
           "missionName": "Citizens For Prosperity Recover Cargo › Pyro",
+          "contractor": "Citizens for Prosperity",
+          "missionTitles": [
+            "Recuperar nuestros suministros",
+            "Entrega de suministros interceptada",
+            "Recuperación de suministros valiosos",
+            "Es necesario recuperar suministros cruciales",
+            "Operación especial de recuperación",
+            "El envío de carga debe completarse"
+          ],
           "weight": 1.0
         }
       ],
@@ -12254,6 +12861,15 @@
         {
           "poolFile": "bp_missionreward_citizensforprosperityrecovercargo_pyro",
           "missionName": "Citizens For Prosperity Recover Cargo › Pyro",
+          "contractor": "Citizens for Prosperity",
+          "missionTitles": [
+            "Recuperar nuestros suministros",
+            "Entrega de suministros interceptada",
+            "Recuperación de suministros valiosos",
+            "Es necesario recuperar suministros cruciales",
+            "Operación especial de recuperación",
+            "El envío de carga debe completarse"
+          ],
           "weight": 1.0
         }
       ],
@@ -12465,6 +13081,15 @@
         {
           "poolFile": "bp_missionreward_citizensforprosperityrecovercargo_pyro",
           "missionName": "Citizens For Prosperity Recover Cargo › Pyro",
+          "contractor": "Citizens for Prosperity",
+          "missionTitles": [
+            "Recuperar nuestros suministros",
+            "Entrega de suministros interceptada",
+            "Recuperación de suministros valiosos",
+            "Es necesario recuperar suministros cruciales",
+            "Operación especial de recuperación",
+            "El envío de carga debe completarse"
+          ],
           "weight": 1.0
         }
       ],
@@ -12701,6 +13326,15 @@
         {
           "poolFile": "bp_missionreward_citizensforprosperityrecovercargo_pyro",
           "missionName": "Citizens For Prosperity Recover Cargo › Pyro",
+          "contractor": "Citizens for Prosperity",
+          "missionTitles": [
+            "Recuperar nuestros suministros",
+            "Entrega de suministros interceptada",
+            "Recuperación de suministros valiosos",
+            "Es necesario recuperar suministros cruciales",
+            "Operación especial de recuperación",
+            "El envío de carga debe completarse"
+          ],
           "weight": 1.0
         }
       ],
@@ -13532,6 +14166,15 @@
         {
           "poolFile": "bp_missionreward_citizensforprosperityrecovercargo_pyro",
           "missionName": "Citizens For Prosperity Recover Cargo › Pyro",
+          "contractor": "Citizens for Prosperity",
+          "missionTitles": [
+            "Recuperar nuestros suministros",
+            "Entrega de suministros interceptada",
+            "Recuperación de suministros valiosos",
+            "Es necesario recuperar suministros cruciales",
+            "Operación especial de recuperación",
+            "El envío de carga debe completarse"
+          ],
           "weight": 1.0
         }
       ],
@@ -14429,6 +15072,15 @@
         {
           "poolFile": "bp_missionreward_citizensforprosperityrecovercargo_pyro",
           "missionName": "Citizens For Prosperity Recover Cargo › Pyro",
+          "contractor": "Citizens for Prosperity",
+          "missionTitles": [
+            "Recuperar nuestros suministros",
+            "Entrega de suministros interceptada",
+            "Recuperación de suministros valiosos",
+            "Es necesario recuperar suministros cruciales",
+            "Operación especial de recuperación",
+            "El envío de carga debe completarse"
+          ],
           "weight": 1.0
         }
       ],
@@ -15227,6 +15879,15 @@
         {
           "poolFile": "bp_missionreward_citizensforprosperityrecovercargo_pyro",
           "missionName": "Citizens For Prosperity Recover Cargo › Pyro",
+          "contractor": "Citizens for Prosperity",
+          "missionTitles": [
+            "Recuperar nuestros suministros",
+            "Entrega de suministros interceptada",
+            "Recuperación de suministros valiosos",
+            "Es necesario recuperar suministros cruciales",
+            "Operación especial de recuperación",
+            "El envío de carga debe completarse"
+          ],
           "weight": 1.0
         }
       ],
@@ -16165,6 +16826,8 @@
         {
           "poolFile": "bp_missionreward_ids_recoverencrypteddata",
           "missionName": "IDS › Recover Encrypted Data",
+          "contractor": "IDS",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -16212,6 +16875,8 @@
         {
           "poolFile": "bp_missionreward_intersec_defendship",
           "missionName": "Inter Sec › Defend Ship",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -16259,6 +16924,8 @@
         {
           "poolFile": "bp_missionreward_intersec_patrol",
           "missionName": "Inter Sec › Patrol",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -16306,6 +16973,11 @@
         {
           "poolFile": "bp_missionreward_intersec_resourcegathering",
           "missionName": "Inter Sec › Resource Gathering",
+          "contractor": "InterSec Defense Solutions",
+          "missionTitles": [
+            "Recuperar tecnología vanduul",
+            "Recuperar cadáveres vanduul"
+          ],
           "weight": 1.0
         }
       ],
@@ -16353,6 +17025,8 @@
         {
           "poolFile": "bp_missionreward_intersec_patrol",
           "missionName": "Inter Sec › Patrol",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -16400,6 +17074,8 @@
         {
           "poolFile": "bp_missionreward_ids_recoverencrypteddata",
           "missionName": "IDS › Recover Encrypted Data",
+          "contractor": "IDS",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -16488,6 +17164,8 @@
         {
           "poolFile": "bp_missionreward_ids_recoverencrypteddata",
           "missionName": "IDS › Recover Encrypted Data",
+          "contractor": "IDS",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -16535,6 +17213,8 @@
         {
           "poolFile": "bp_missionreward_intersec_defendship",
           "missionName": "Inter Sec › Defend Ship",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -16582,6 +17262,8 @@
         {
           "poolFile": "bp_missionreward_intersec_patrol",
           "missionName": "Inter Sec › Patrol",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -16629,6 +17311,11 @@
         {
           "poolFile": "bp_missionreward_intersec_resourcegathering",
           "missionName": "Inter Sec › Resource Gathering",
+          "contractor": "InterSec Defense Solutions",
+          "missionTitles": [
+            "Recuperar tecnología vanduul",
+            "Recuperar cadáveres vanduul"
+          ],
           "weight": 1.0
         }
       ],
@@ -16676,6 +17363,8 @@
         {
           "poolFile": "bp_missionreward_intersec_patrol",
           "missionName": "Inter Sec › Patrol",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -16723,6 +17412,8 @@
         {
           "poolFile": "bp_missionreward_ids_recoverencrypteddata",
           "missionName": "IDS › Recover Encrypted Data",
+          "contractor": "IDS",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -16770,6 +17461,8 @@
         {
           "poolFile": "bp_missionreward_ids_recoverencrypteddata",
           "missionName": "IDS › Recover Encrypted Data",
+          "contractor": "IDS",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -16817,6 +17510,8 @@
         {
           "poolFile": "bp_missionreward_intersec_defendship",
           "missionName": "Inter Sec › Defend Ship",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -16864,6 +17559,8 @@
         {
           "poolFile": "bp_missionreward_intersec_patrol",
           "missionName": "Inter Sec › Patrol",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -16911,6 +17608,11 @@
         {
           "poolFile": "bp_missionreward_intersec_resourcegathering",
           "missionName": "Inter Sec › Resource Gathering",
+          "contractor": "InterSec Defense Solutions",
+          "missionTitles": [
+            "Recuperar tecnología vanduul",
+            "Recuperar cadáveres vanduul"
+          ],
           "weight": 1.0
         }
       ],
@@ -16958,6 +17660,8 @@
         {
           "poolFile": "bp_missionreward_intersec_patrol",
           "missionName": "Inter Sec › Patrol",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -17005,6 +17709,8 @@
         {
           "poolFile": "bp_missionreward_ids_recoverencrypteddata",
           "missionName": "IDS › Recover Encrypted Data",
+          "contractor": "IDS",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -17052,6 +17758,8 @@
         {
           "poolFile": "bp_missionreward_ids_recoverencrypteddata",
           "missionName": "IDS › Recover Encrypted Data",
+          "contractor": "IDS",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -17099,6 +17807,8 @@
         {
           "poolFile": "bp_missionreward_intersec_defendship",
           "missionName": "Inter Sec › Defend Ship",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -17146,6 +17856,8 @@
         {
           "poolFile": "bp_missionreward_intersec_patrol",
           "missionName": "Inter Sec › Patrol",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -17193,6 +17905,11 @@
         {
           "poolFile": "bp_missionreward_intersec_resourcegathering",
           "missionName": "Inter Sec › Resource Gathering",
+          "contractor": "InterSec Defense Solutions",
+          "missionTitles": [
+            "Recuperar tecnología vanduul",
+            "Recuperar cadáveres vanduul"
+          ],
           "weight": 1.0
         }
       ],
@@ -17240,6 +17957,8 @@
         {
           "poolFile": "bp_missionreward_intersec_patrol",
           "missionName": "Inter Sec › Patrol",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -17287,6 +18006,8 @@
         {
           "poolFile": "bp_missionreward_ids_recoverencrypteddata",
           "missionName": "IDS › Recover Encrypted Data",
+          "contractor": "IDS",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -17326,6 +18047,15 @@
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminateall_regioncd",
           "missionName": "Head Hunters › Mercenary FPS › Eliminate ALL › Region CD",
+          "contractor": "Headhunters",
+          "missionTitles": [
+            "Se necesita un ejecutor",
+            "Atacar un sitio de CFP",
+            "… ha sido autorizado",
+            "Enviar un Mensaje",
+            "Eliminar …",
+            "Contrato Incompleto"
+          ],
           "weight": 1.0
         }
       ],
@@ -17431,6 +18161,15 @@
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminateall_regioncd",
           "missionName": "Head Hunters › Mercenary FPS › Eliminate ALL › Region CD",
+          "contractor": "Headhunters",
+          "missionTitles": [
+            "Se necesita un ejecutor",
+            "Atacar un sitio de CFP",
+            "… ha sido autorizado",
+            "Enviar un Mensaje",
+            "Eliminar …",
+            "Contrato Incompleto"
+          ],
           "weight": 1.0
         }
       ],
@@ -17536,6 +18275,15 @@
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminateall_regioncd",
           "missionName": "Head Hunters › Mercenary FPS › Eliminate ALL › Region CD",
+          "contractor": "Headhunters",
+          "missionTitles": [
+            "Se necesita un ejecutor",
+            "Atacar un sitio de CFP",
+            "… ha sido autorizado",
+            "Enviar un Mensaje",
+            "Eliminar …",
+            "Contrato Incompleto"
+          ],
           "weight": 1.0
         }
       ],
@@ -17641,6 +18389,15 @@
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminateall_regioncd",
           "missionName": "Head Hunters › Mercenary FPS › Eliminate ALL › Region CD",
+          "contractor": "Headhunters",
+          "missionTitles": [
+            "Se necesita un ejecutor",
+            "Atacar un sitio de CFP",
+            "… ha sido autorizado",
+            "Enviar un Mensaje",
+            "Eliminar …",
+            "Contrato Incompleto"
+          ],
           "weight": 1.0
         }
       ],
@@ -17812,6 +18569,8 @@
         {
           "poolFile": "bp_missionreward_shubin_resourcegathering_shipmining_pyronyx",
           "missionName": "Shubin › Resource Gathering › Ship Mining › Pyro Nyx",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -17884,6 +18643,8 @@
         {
           "poolFile": "bp_missionreward_shubin_resourcegathering_shipmining_pyronyx",
           "missionName": "Shubin › Resource Gathering › Ship Mining › Pyro Nyx",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -17923,6 +18684,8 @@
         {
           "poolFile": "bp_missionreward_shubin_resourcegathering_shipmining_pyronyx",
           "missionName": "Shubin › Resource Gathering › Ship Mining › Pyro Nyx",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -17995,6 +18758,8 @@
         {
           "poolFile": "bp_missionreward_shubin_resourcegathering_shipmining_pyronyx",
           "missionName": "Shubin › Resource Gathering › Ship Mining › Pyro Nyx",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -18075,6 +18840,15 @@
         {
           "poolFile": "bp_missionreward_asd2d",
           "missionName": "ASD2 D",
+          "contractor": "ASD Facility Delving",
+          "missionTitles": [
+            "Núcleo de energía",
+            "Lecturas Sísmicas",
+            "Control de Esclusa",
+            "Lecturas del Sensor de Energía",
+            "Registros de Seguridad",
+            "Registros de Personal"
+          ],
           "weight": 1.0
         }
       ],
@@ -18122,6 +18896,15 @@
         {
           "poolFile": "bp_missionreward_asd2c",
           "missionName": "ASD2 C",
+          "contractor": "ASD Facility Delving",
+          "missionTitles": [
+            "Núcleo de energía",
+            "Lecturas Sísmicas",
+            "Control de Esclusa",
+            "Lecturas del Sensor de Energía",
+            "Registros de Seguridad",
+            "Registros de Personal"
+          ],
           "weight": 1.0
         }
       ],
@@ -18169,6 +18952,15 @@
         {
           "poolFile": "bp_missionreward_asd2a",
           "missionName": "ASD2 A",
+          "contractor": "ASD Facility Delving",
+          "missionTitles": [
+            "Núcleo de energía",
+            "Lecturas Sísmicas",
+            "Control de Esclusa",
+            "Lecturas del Sensor de Energía",
+            "Registros de Seguridad",
+            "Registros de Personal"
+          ],
           "weight": 1.0
         }
       ],
@@ -18216,6 +19008,15 @@
         {
           "poolFile": "bp_missionreward_asd2b",
           "missionName": "ASD2 B",
+          "contractor": "ASD Facility Delving",
+          "missionTitles": [
+            "Núcleo de energía",
+            "Lecturas Sísmicas",
+            "Control de Esclusa",
+            "Lecturas del Sensor de Energía",
+            "Registros de Seguridad",
+            "Registros de Personal"
+          ],
           "weight": 1.0
         }
       ],
@@ -18304,6 +19105,15 @@
         {
           "poolFile": "bp_missionreward_asd2d",
           "missionName": "ASD2 D",
+          "contractor": "ASD Facility Delving",
+          "missionTitles": [
+            "Núcleo de energía",
+            "Lecturas Sísmicas",
+            "Control de Esclusa",
+            "Lecturas del Sensor de Energía",
+            "Registros de Seguridad",
+            "Registros de Personal"
+          ],
           "weight": 1.0
         }
       ],
@@ -18351,6 +19161,15 @@
         {
           "poolFile": "bp_missionreward_asd2c",
           "missionName": "ASD2 C",
+          "contractor": "ASD Facility Delving",
+          "missionTitles": [
+            "Núcleo de energía",
+            "Lecturas Sísmicas",
+            "Control de Esclusa",
+            "Lecturas del Sensor de Energía",
+            "Registros de Seguridad",
+            "Registros de Personal"
+          ],
           "weight": 1.0
         }
       ],
@@ -18398,6 +19217,15 @@
         {
           "poolFile": "bp_missionreward_asd2a",
           "missionName": "ASD2 A",
+          "contractor": "ASD Facility Delving",
+          "missionTitles": [
+            "Núcleo de energía",
+            "Lecturas Sísmicas",
+            "Control de Esclusa",
+            "Lecturas del Sensor de Energía",
+            "Registros de Seguridad",
+            "Registros de Personal"
+          ],
           "weight": 1.0
         }
       ],
@@ -18445,6 +19273,15 @@
         {
           "poolFile": "bp_missionreward_asd2b",
           "missionName": "ASD2 B",
+          "contractor": "ASD Facility Delving",
+          "missionTitles": [
+            "Núcleo de energía",
+            "Lecturas Sísmicas",
+            "Control de Esclusa",
+            "Lecturas del Sensor de Energía",
+            "Registros de Seguridad",
+            "Registros de Personal"
+          ],
           "weight": 1.0
         }
       ],
@@ -18533,6 +19370,15 @@
         {
           "poolFile": "bp_missionreward_asd2d",
           "missionName": "ASD2 D",
+          "contractor": "ASD Facility Delving",
+          "missionTitles": [
+            "Núcleo de energía",
+            "Lecturas Sísmicas",
+            "Control de Esclusa",
+            "Lecturas del Sensor de Energía",
+            "Registros de Seguridad",
+            "Registros de Personal"
+          ],
           "weight": 1.0
         }
       ],
@@ -18580,6 +19426,15 @@
         {
           "poolFile": "bp_missionreward_asd2c",
           "missionName": "ASD2 C",
+          "contractor": "ASD Facility Delving",
+          "missionTitles": [
+            "Núcleo de energía",
+            "Lecturas Sísmicas",
+            "Control de Esclusa",
+            "Lecturas del Sensor de Energía",
+            "Registros de Seguridad",
+            "Registros de Personal"
+          ],
           "weight": 1.0
         }
       ],
@@ -18627,6 +19482,15 @@
         {
           "poolFile": "bp_missionreward_asd2a",
           "missionName": "ASD2 A",
+          "contractor": "ASD Facility Delving",
+          "missionTitles": [
+            "Núcleo de energía",
+            "Lecturas Sísmicas",
+            "Control de Esclusa",
+            "Lecturas del Sensor de Energía",
+            "Registros de Seguridad",
+            "Registros de Personal"
+          ],
           "weight": 1.0
         }
       ],
@@ -18674,6 +19538,15 @@
         {
           "poolFile": "bp_missionreward_asd2b",
           "missionName": "ASD2 B",
+          "contractor": "ASD Facility Delving",
+          "missionTitles": [
+            "Núcleo de energía",
+            "Lecturas Sísmicas",
+            "Control de Esclusa",
+            "Lecturas del Sensor de Energía",
+            "Registros de Seguridad",
+            "Registros de Personal"
+          ],
           "weight": 1.0
         }
       ],
@@ -18762,6 +19635,15 @@
         {
           "poolFile": "bp_missionreward_asd2d",
           "missionName": "ASD2 D",
+          "contractor": "ASD Facility Delving",
+          "missionTitles": [
+            "Núcleo de energía",
+            "Lecturas Sísmicas",
+            "Control de Esclusa",
+            "Lecturas del Sensor de Energía",
+            "Registros de Seguridad",
+            "Registros de Personal"
+          ],
           "weight": 1.0
         }
       ],
@@ -18809,6 +19691,15 @@
         {
           "poolFile": "bp_missionreward_asd2c",
           "missionName": "ASD2 C",
+          "contractor": "ASD Facility Delving",
+          "missionTitles": [
+            "Núcleo de energía",
+            "Lecturas Sísmicas",
+            "Control de Esclusa",
+            "Lecturas del Sensor de Energía",
+            "Registros de Seguridad",
+            "Registros de Personal"
+          ],
           "weight": 1.0
         }
       ],
@@ -18856,6 +19747,15 @@
         {
           "poolFile": "bp_missionreward_asd2a",
           "missionName": "ASD2 A",
+          "contractor": "ASD Facility Delving",
+          "missionTitles": [
+            "Núcleo de energía",
+            "Lecturas Sísmicas",
+            "Control de Esclusa",
+            "Lecturas del Sensor de Energía",
+            "Registros de Seguridad",
+            "Registros de Personal"
+          ],
           "weight": 1.0
         }
       ],
@@ -18903,6 +19803,15 @@
         {
           "poolFile": "bp_missionreward_asd2b",
           "missionName": "ASD2 B",
+          "contractor": "ASD Facility Delving",
+          "missionTitles": [
+            "Núcleo de energía",
+            "Lecturas Sísmicas",
+            "Control de Esclusa",
+            "Lecturas del Sensor de Energía",
+            "Registros de Seguridad",
+            "Registros de Personal"
+          ],
           "weight": 1.0
         }
       ],
@@ -18991,6 +19900,10 @@
         {
           "poolFile": "bp_missionreward_bountyhuntersguild_paf_eliminatespecific",
           "missionName": "Bounty Hunters Guild › PAF › Eliminate Specific",
+          "contractor": "Gremio de cazarrecompensas",
+          "missionTitles": [
+            "Eliminar a …"
+          ],
           "weight": 1.0
         }
       ],
@@ -19038,6 +19951,10 @@
         {
           "poolFile": "bp_missionreward_bhg_asdfacilitydelving_engineeringwing_eliminatespecific",
           "missionName": "BHG › ASD Facility Delving › Engineering Wing › Eliminate Specific",
+          "contractor": "Gremio de cazarrecompensas",
+          "missionTitles": [
+            "Recompensa verificada: … en …"
+          ],
           "weight": 1.0
         }
       ],
@@ -19085,6 +20002,10 @@
         {
           "poolFile": "bp_missionreward_bhg_asdfacilitydelving_researchwing_eliminatespecific",
           "missionName": "BHG › ASD Facility Delving › Research Wing › Eliminate Specific",
+          "contractor": "Gremio de cazarrecompensas",
+          "missionTitles": [
+            "Recompensa verificada: … en …"
+          ],
           "weight": 1.0
         }
       ],
@@ -19132,6 +20053,10 @@
         {
           "poolFile": "bp_missionreward_bountyhuntersguild_paf_eliminatespecific",
           "missionName": "Bounty Hunters Guild › PAF › Eliminate Specific",
+          "contractor": "Gremio de cazarrecompensas",
+          "missionTitles": [
+            "Eliminar a …"
+          ],
           "weight": 1.0
         }
       ],
@@ -19220,6 +20145,10 @@
         {
           "poolFile": "bp_missionreward_bhg_asdfacilitydelving_researchwing_eliminatespecific",
           "missionName": "BHG › ASD Facility Delving › Research Wing › Eliminate Specific",
+          "contractor": "Gremio de cazarrecompensas",
+          "missionTitles": [
+            "Recompensa verificada: … en …"
+          ],
           "weight": 1.0
         }
       ],
@@ -19267,6 +20196,10 @@
         {
           "poolFile": "bp_missionreward_bountyhuntersguild_paf_eliminatespecific",
           "missionName": "Bounty Hunters Guild › PAF › Eliminate Specific",
+          "contractor": "Gremio de cazarrecompensas",
+          "missionTitles": [
+            "Eliminar a …"
+          ],
           "weight": 1.0
         }
       ],
@@ -19314,6 +20247,10 @@
         {
           "poolFile": "bp_missionreward_bhg_asdfacilitydelving_engineeringwing_eliminatespecific",
           "missionName": "BHG › ASD Facility Delving › Engineering Wing › Eliminate Specific",
+          "contractor": "Gremio de cazarrecompensas",
+          "missionTitles": [
+            "Recompensa verificada: … en …"
+          ],
           "weight": 1.0
         }
       ],
@@ -19361,6 +20298,10 @@
         {
           "poolFile": "bp_missionreward_bhg_asdfacilitydelving_researchwing_eliminatespecific",
           "missionName": "BHG › ASD Facility Delving › Research Wing › Eliminate Specific",
+          "contractor": "Gremio de cazarrecompensas",
+          "missionTitles": [
+            "Recompensa verificada: … en …"
+          ],
           "weight": 1.0
         }
       ],
@@ -19408,6 +20349,10 @@
         {
           "poolFile": "bp_missionreward_bountyhuntersguild_paf_eliminatespecific",
           "missionName": "Bounty Hunters Guild › PAF › Eliminate Specific",
+          "contractor": "Gremio de cazarrecompensas",
+          "missionTitles": [
+            "Eliminar a …"
+          ],
           "weight": 1.0
         }
       ],
@@ -19496,6 +20441,10 @@
         {
           "poolFile": "bp_missionreward_bhg_asdfacilitydelving_researchwing_eliminatespecific",
           "missionName": "BHG › ASD Facility Delving › Research Wing › Eliminate Specific",
+          "contractor": "Gremio de cazarrecompensas",
+          "missionTitles": [
+            "Recompensa verificada: … en …"
+          ],
           "weight": 1.0
         }
       ],
@@ -19543,6 +20492,10 @@
         {
           "poolFile": "bp_missionreward_bountyhuntersguild_paf_eliminatespecific",
           "missionName": "Bounty Hunters Guild › PAF › Eliminate Specific",
+          "contractor": "Gremio de cazarrecompensas",
+          "missionTitles": [
+            "Eliminar a …"
+          ],
           "weight": 1.0
         }
       ],
@@ -19590,6 +20543,10 @@
         {
           "poolFile": "bp_missionreward_bhg_asdfacilitydelving_engineeringwing_eliminatespecific",
           "missionName": "BHG › ASD Facility Delving › Engineering Wing › Eliminate Specific",
+          "contractor": "Gremio de cazarrecompensas",
+          "missionTitles": [
+            "Recompensa verificada: … en …"
+          ],
           "weight": 1.0
         }
       ],
@@ -19637,6 +20594,10 @@
         {
           "poolFile": "bp_missionreward_bhg_asdfacilitydelving_researchwing_eliminatespecific",
           "missionName": "BHG › ASD Facility Delving › Research Wing › Eliminate Specific",
+          "contractor": "Gremio de cazarrecompensas",
+          "missionTitles": [
+            "Recompensa verificada: … en …"
+          ],
           "weight": 1.0
         }
       ],
@@ -19684,6 +20645,10 @@
         {
           "poolFile": "bp_missionreward_bountyhuntersguild_paf_eliminatespecific",
           "missionName": "Bounty Hunters Guild › PAF › Eliminate Specific",
+          "contractor": "Gremio de cazarrecompensas",
+          "missionTitles": [
+            "Eliminar a …"
+          ],
           "weight": 1.0
         }
       ],
@@ -19731,6 +20696,10 @@
         {
           "poolFile": "bp_missionreward_bhg_asdfacilitydelving_researchwing_eliminatespecific",
           "missionName": "BHG › ASD Facility Delving › Research Wing › Eliminate Specific",
+          "contractor": "Gremio de cazarrecompensas",
+          "missionTitles": [
+            "Recompensa verificada: … en …"
+          ],
           "weight": 1.0
         }
       ],
@@ -19778,6 +20747,10 @@
         {
           "poolFile": "bp_missionreward_bountyhuntersguild_paf_eliminatespecific",
           "missionName": "Bounty Hunters Guild › PAF › Eliminate Specific",
+          "contractor": "Gremio de cazarrecompensas",
+          "missionTitles": [
+            "Eliminar a …"
+          ],
           "weight": 1.0
         }
       ],
@@ -19825,6 +20798,10 @@
         {
           "poolFile": "bp_missionreward_bhg_asdfacilitydelving_engineeringwing_eliminatespecific",
           "missionName": "BHG › ASD Facility Delving › Engineering Wing › Eliminate Specific",
+          "contractor": "Gremio de cazarrecompensas",
+          "missionTitles": [
+            "Recompensa verificada: … en …"
+          ],
           "weight": 1.0
         }
       ],
@@ -19872,6 +20849,10 @@
         {
           "poolFile": "bp_missionreward_bhg_asdfacilitydelving_researchwing_eliminatespecific",
           "missionName": "BHG › ASD Facility Delving › Research Wing › Eliminate Specific",
+          "contractor": "Gremio de cazarrecompensas",
+          "missionTitles": [
+            "Recompensa verificada: … en …"
+          ],
           "weight": 1.0
         }
       ],
@@ -19919,6 +20900,10 @@
         {
           "poolFile": "bp_missionreward_bountyhuntersguild_paf_eliminatespecific",
           "missionName": "Bounty Hunters Guild › PAF › Eliminate Specific",
+          "contractor": "Gremio de cazarrecompensas",
+          "missionTitles": [
+            "Eliminar a …"
+          ],
           "weight": 1.0
         }
       ],
@@ -20007,6 +20992,10 @@
         {
           "poolFile": "bp_missionreward_bhg_asdfacilitydelving_researchwing_eliminatespecific",
           "missionName": "BHG › ASD Facility Delving › Research Wing › Eliminate Specific",
+          "contractor": "Gremio de cazarrecompensas",
+          "missionTitles": [
+            "Recompensa verificada: … en …"
+          ],
           "weight": 1.0
         }
       ],
@@ -20046,6 +21035,8 @@
         {
           "poolFile": "bp_missionreward_northrockfpskill_eliminateboss",
           "missionName": "North Rock FPS Kill › Eliminate Boss",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -20118,6 +21109,8 @@
         {
           "poolFile": "bp_missionreward_northrockfpskill_eliminateboss",
           "missionName": "North Rock FPS Kill › Eliminate Boss",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -20190,6 +21183,8 @@
         {
           "poolFile": "bp_missionreward_northrockfpskill_eliminateboss",
           "missionName": "North Rock FPS Kill › Eliminate Boss",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -20262,6 +21257,8 @@
         {
           "poolFile": "bp_missionreward_northrockfpskill_eliminateboss",
           "missionName": "North Rock FPS Kill › Eliminate Boss",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -20334,6 +21331,14 @@
         {
           "poolFile": "bp_missionreward_citizensforprosperitydestroyitems_cd",
           "missionName": "Citizens For Prosperity Destroy Items › CD",
+          "contractor": "Citizens for Prosperity",
+          "missionTitles": [
+            "Represalia contra centro de datos",
+            "Destruir inteligencia de seguridad",
+            "Destruir registros robados",
+            "Eliminar dossier letal",
+            "Destruir información sensible"
+          ],
           "weight": 1.0
         }
       ],
@@ -21000,6 +22005,14 @@
         {
           "poolFile": "bp_missionreward_citizensforprosperitydestroyitems_cd",
           "missionName": "Citizens For Prosperity Destroy Items › CD",
+          "contractor": "Citizens for Prosperity",
+          "missionTitles": [
+            "Represalia contra centro de datos",
+            "Destruir inteligencia de seguridad",
+            "Destruir registros robados",
+            "Eliminar dossier letal",
+            "Destruir información sensible"
+          ],
           "weight": 1.0
         }
       ],
@@ -21633,6 +22646,14 @@
         {
           "poolFile": "bp_missionreward_citizensforprosperitydestroyitems_cd",
           "missionName": "Citizens For Prosperity Destroy Items › CD",
+          "contractor": "Citizens for Prosperity",
+          "missionTitles": [
+            "Represalia contra centro de datos",
+            "Destruir inteligencia de seguridad",
+            "Destruir registros robados",
+            "Eliminar dossier letal",
+            "Destruir información sensible"
+          ],
           "weight": 1.0
         }
       ],
@@ -22332,6 +23353,14 @@
         {
           "poolFile": "bp_missionreward_citizensforprosperitydestroyitems_cd",
           "missionName": "Citizens For Prosperity Destroy Items › CD",
+          "contractor": "Citizens for Prosperity",
+          "missionTitles": [
+            "Represalia contra centro de datos",
+            "Destruir inteligencia de seguridad",
+            "Destruir registros robados",
+            "Eliminar dossier letal",
+            "Destruir información sensible"
+          ],
           "weight": 1.0
         }
       ],
@@ -22998,6 +24027,8 @@
         {
           "poolFile": "bp_missionreward_shubin_resourcegathering_fpsmining_pyro",
           "missionName": "Shubin › Resource Gathering › FPS Mining › Pyro",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -23037,6 +24068,8 @@
         {
           "poolFile": "bp_missionreward_shubin_resourcegathering_fpsmining_pyro",
           "missionName": "Shubin › Resource Gathering › FPS Mining › Pyro",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -23142,6 +24175,8 @@
         {
           "poolFile": "bp_missionreward_shubin_resourcegathering_fpsmining_pyro",
           "missionName": "Shubin › Resource Gathering › FPS Mining › Pyro",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -23181,6 +24216,8 @@
         {
           "poolFile": "bp_missionreward_rayari_recoveritem_irradiated",
           "missionName": "Rayari › Recover Item › Irradiated",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -23220,6 +24257,8 @@
         {
           "poolFile": "bp_missionreward_shubin_resourcegathering_fpsmining_pyro",
           "missionName": "Shubin › Resource Gathering › FPS Mining › Pyro",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -23259,6 +24298,11 @@
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminateboss",
           "missionName": "Head Hunters › Mercenary FPS › Eliminate Boss",
+          "contractor": "Headhunters",
+          "missionTitles": [
+            "Eliminar a un pez gordo",
+            "Ajuste de cuentas"
+          ],
           "weight": 1.0
         }
       ],
@@ -23306,6 +24350,11 @@
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminateboss",
           "missionName": "Head Hunters › Mercenary FPS › Eliminate Boss",
+          "contractor": "Headhunters",
+          "missionTitles": [
+            "Eliminar a un pez gordo",
+            "Ajuste de cuentas"
+          ],
           "weight": 1.0
         }
       ],
@@ -23353,6 +24402,11 @@
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminateboss",
           "missionName": "Head Hunters › Mercenary FPS › Eliminate Boss",
+          "contractor": "Headhunters",
+          "missionTitles": [
+            "Eliminar a un pez gordo",
+            "Ajuste de cuentas"
+          ],
           "weight": 1.0
         }
       ],
@@ -23400,6 +24454,11 @@
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminateboss",
           "missionName": "Head Hunters › Mercenary FPS › Eliminate Boss",
+          "contractor": "Headhunters",
+          "missionTitles": [
+            "Eliminar a un pez gordo",
+            "Ajuste de cuentas"
+          ],
           "weight": 1.0
         }
       ],
@@ -23439,6 +24498,8 @@
         {
           "poolFile": "bp_missionreward_vaughngenerator_eliminatespecific",
           "missionName": "Vaughn Generator › Eliminate Specific",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -23610,6 +24671,8 @@
         {
           "poolFile": "bp_missionreward_vaughngenerator_eliminatespecific",
           "missionName": "Vaughn Generator › Eliminate Specific",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -23649,6 +24712,8 @@
         {
           "poolFile": "bp_missionreward_vaughngenerator_eliminatespecific",
           "missionName": "Vaughn Generator › Eliminate Specific",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -23688,6 +24753,8 @@
         {
           "poolFile": "bp_missionreward_vaughngenerator_eliminatespecific",
           "missionName": "Vaughn Generator › Eliminate Specific",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -23785,6 +24852,15 @@
         {
           "poolFile": "bp_missionreward_foxwell_defendentitiesandescort",
           "missionName": "Foxwell › Defend Entities And Escort",
+          "contractor": "Foxwell Enforcement",
+          "missionTitles": [
+            "Contrato de Nivel Amarillo: Nave Bajo Ataque",
+            "Contrato de Nivel Naranja: … Necesita Ayuda",
+            "Contrato de Nivel Rojo: Nave Bajo Ataque",
+            "Contrato de Nivel Amarillo: Haz frente a los agresores",
+            "Contrato de Nivel Amarillo: Defender …",
+            "Contrato de Nivel Naranja: Necesaria protección de naves"
+          ],
           "weight": 1.0
         }
       ],
@@ -23832,6 +24908,13 @@
         {
           "poolFile": "bp_missionreward_foxwellenforcement_escortships",
           "missionName": "Foxwell Enforcement › Escort Ships",
+          "contractor": "Foxwell Enforcement",
+          "missionTitles": [
+            "Contrato nivel amarillo: Limpiar grupo de secuestradores de naves",
+            "Contrato nivel amarillo: Neutralizar banda de secuestradores de naves",
+            "Contrato nivel naranja: Destruir amenaza de forajidos",
+            "Contrato nivel naranja: Eliminar flota criminal"
+          ],
           "weight": 1.0
         }
       ],
@@ -23879,6 +24962,15 @@
         {
           "poolFile": "bp_missionreward_foxwellenforcement_ambush",
           "missionName": "Foxwell Enforcement › Ambush",
+          "contractor": "Foxwell Enforcement",
+          "missionTitles": [
+            "Contrato Nivel Amarillo: Embosca a un Novato",
+            "Contrato de Nivel Amarillo: Golpe Sorpresa",
+            "Contrato Nivel Naranja: Tender la Trampa",
+            "Contrato Nivel Naranja: Devolver el Favor",
+            "Contrato Nivel Rojo: Ataque Sorpresa",
+            "Contrato de Nivel Rojo: Emboscar a un Escuadrón de Ataque"
+          ],
           "weight": 1.0
         }
       ],
@@ -23926,6 +25018,15 @@
         {
           "poolFile": "bp_missionreward_foxwellenforcement_generator",
           "missionName": "Foxwell Enforcement › Generator",
+          "contractor": "Foxwell Enforcement",
+          "missionTitles": [
+            "Contrato nivel amarillo: Limitar amenaza potencial",
+            "Contrato nivel amarillo: Interrumpir operaciones",
+            "Contrato nivel naranja: Destruir suministros de combustible",
+            "Contrato nivel naranja: Destruir infraestructura de forajidos",
+            "Contrato nivel rojo: Destruir infraestructura de forajidos",
+            "Contrato nivel rojo: Demolición de contenedores de combustible"
+          ],
           "weight": 1.0
         }
       ],
@@ -23973,6 +25074,15 @@
         {
           "poolFile": "bp_missionreward_foxwellenforcement_patrol",
           "missionName": "Foxwell Enforcement › Patrol",
+          "contractor": "Foxwell Enforcement",
+          "missionTitles": [
+            "Contrato de Nivel Amarillo: Patrulla de Rutina",
+            "Contrato de Nivel Amarillo: Barrido de Seguridad",
+            "Contrato de Nivel Naranja: Patrulla de Seguridad",
+            "Contrato de Nivel Naranja: Amenaza de Seguridad Potencial",
+            "Contrato de Nivel Rojo: Asegurar Espacio Amenazado",
+            "Contrato Nivel Rojo: Patrulla de Seguridad de Alto Riesgo"
+          ],
           "weight": 1.0
         }
       ],
@@ -24020,6 +25130,15 @@
         {
           "poolFile": "bp_missionreward_foxwellenforcement_generator",
           "missionName": "Foxwell Enforcement › Generator",
+          "contractor": "Foxwell Enforcement",
+          "missionTitles": [
+            "Contrato nivel amarillo: Limitar amenaza potencial",
+            "Contrato nivel amarillo: Interrumpir operaciones",
+            "Contrato nivel naranja: Destruir suministros de combustible",
+            "Contrato nivel naranja: Destruir infraestructura de forajidos",
+            "Contrato nivel rojo: Destruir infraestructura de forajidos",
+            "Contrato nivel rojo: Demolición de contenedores de combustible"
+          ],
           "weight": 1.0
         }
       ],
@@ -24108,6 +25227,15 @@
         {
           "poolFile": "bp_missionreward_foxwell_defendentitiesandescort",
           "missionName": "Foxwell › Defend Entities And Escort",
+          "contractor": "Foxwell Enforcement",
+          "missionTitles": [
+            "Contrato de Nivel Amarillo: Nave Bajo Ataque",
+            "Contrato de Nivel Naranja: … Necesita Ayuda",
+            "Contrato de Nivel Rojo: Nave Bajo Ataque",
+            "Contrato de Nivel Amarillo: Haz frente a los agresores",
+            "Contrato de Nivel Amarillo: Defender …",
+            "Contrato de Nivel Naranja: Necesaria protección de naves"
+          ],
           "weight": 1.0
         }
       ],
@@ -24155,6 +25283,13 @@
         {
           "poolFile": "bp_missionreward_foxwellenforcement_escortships",
           "missionName": "Foxwell Enforcement › Escort Ships",
+          "contractor": "Foxwell Enforcement",
+          "missionTitles": [
+            "Contrato nivel amarillo: Limpiar grupo de secuestradores de naves",
+            "Contrato nivel amarillo: Neutralizar banda de secuestradores de naves",
+            "Contrato nivel naranja: Destruir amenaza de forajidos",
+            "Contrato nivel naranja: Eliminar flota criminal"
+          ],
           "weight": 1.0
         }
       ],
@@ -24202,6 +25337,15 @@
         {
           "poolFile": "bp_missionreward_foxwellenforcement_ambush",
           "missionName": "Foxwell Enforcement › Ambush",
+          "contractor": "Foxwell Enforcement",
+          "missionTitles": [
+            "Contrato Nivel Amarillo: Embosca a un Novato",
+            "Contrato de Nivel Amarillo: Golpe Sorpresa",
+            "Contrato Nivel Naranja: Tender la Trampa",
+            "Contrato Nivel Naranja: Devolver el Favor",
+            "Contrato Nivel Rojo: Ataque Sorpresa",
+            "Contrato de Nivel Rojo: Emboscar a un Escuadrón de Ataque"
+          ],
           "weight": 1.0
         }
       ],
@@ -24249,6 +25393,15 @@
         {
           "poolFile": "bp_missionreward_foxwellenforcement_generator",
           "missionName": "Foxwell Enforcement › Generator",
+          "contractor": "Foxwell Enforcement",
+          "missionTitles": [
+            "Contrato nivel amarillo: Limitar amenaza potencial",
+            "Contrato nivel amarillo: Interrumpir operaciones",
+            "Contrato nivel naranja: Destruir suministros de combustible",
+            "Contrato nivel naranja: Destruir infraestructura de forajidos",
+            "Contrato nivel rojo: Destruir infraestructura de forajidos",
+            "Contrato nivel rojo: Demolición de contenedores de combustible"
+          ],
           "weight": 1.0
         }
       ],
@@ -24296,6 +25449,15 @@
         {
           "poolFile": "bp_missionreward_foxwellenforcement_patrol",
           "missionName": "Foxwell Enforcement › Patrol",
+          "contractor": "Foxwell Enforcement",
+          "missionTitles": [
+            "Contrato de Nivel Amarillo: Patrulla de Rutina",
+            "Contrato de Nivel Amarillo: Barrido de Seguridad",
+            "Contrato de Nivel Naranja: Patrulla de Seguridad",
+            "Contrato de Nivel Naranja: Amenaza de Seguridad Potencial",
+            "Contrato de Nivel Rojo: Asegurar Espacio Amenazado",
+            "Contrato Nivel Rojo: Patrulla de Seguridad de Alto Riesgo"
+          ],
           "weight": 1.0
         }
       ],
@@ -24343,6 +25505,15 @@
         {
           "poolFile": "bp_missionreward_foxwellenforcement_generator",
           "missionName": "Foxwell Enforcement › Generator",
+          "contractor": "Foxwell Enforcement",
+          "missionTitles": [
+            "Contrato nivel amarillo: Limitar amenaza potencial",
+            "Contrato nivel amarillo: Interrumpir operaciones",
+            "Contrato nivel naranja: Destruir suministros de combustible",
+            "Contrato nivel naranja: Destruir infraestructura de forajidos",
+            "Contrato nivel rojo: Destruir infraestructura de forajidos",
+            "Contrato nivel rojo: Demolición de contenedores de combustible"
+          ],
           "weight": 1.0
         }
       ],
@@ -24431,6 +25602,15 @@
         {
           "poolFile": "bp_missionreward_foxwell_defendentitiesandescort",
           "missionName": "Foxwell › Defend Entities And Escort",
+          "contractor": "Foxwell Enforcement",
+          "missionTitles": [
+            "Contrato de Nivel Amarillo: Nave Bajo Ataque",
+            "Contrato de Nivel Naranja: … Necesita Ayuda",
+            "Contrato de Nivel Rojo: Nave Bajo Ataque",
+            "Contrato de Nivel Amarillo: Haz frente a los agresores",
+            "Contrato de Nivel Amarillo: Defender …",
+            "Contrato de Nivel Naranja: Necesaria protección de naves"
+          ],
           "weight": 1.0
         }
       ],
@@ -24478,6 +25658,13 @@
         {
           "poolFile": "bp_missionreward_foxwellenforcement_escortships",
           "missionName": "Foxwell Enforcement › Escort Ships",
+          "contractor": "Foxwell Enforcement",
+          "missionTitles": [
+            "Contrato nivel amarillo: Limpiar grupo de secuestradores de naves",
+            "Contrato nivel amarillo: Neutralizar banda de secuestradores de naves",
+            "Contrato nivel naranja: Destruir amenaza de forajidos",
+            "Contrato nivel naranja: Eliminar flota criminal"
+          ],
           "weight": 1.0
         }
       ],
@@ -24525,6 +25712,15 @@
         {
           "poolFile": "bp_missionreward_foxwellenforcement_ambush",
           "missionName": "Foxwell Enforcement › Ambush",
+          "contractor": "Foxwell Enforcement",
+          "missionTitles": [
+            "Contrato Nivel Amarillo: Embosca a un Novato",
+            "Contrato de Nivel Amarillo: Golpe Sorpresa",
+            "Contrato Nivel Naranja: Tender la Trampa",
+            "Contrato Nivel Naranja: Devolver el Favor",
+            "Contrato Nivel Rojo: Ataque Sorpresa",
+            "Contrato de Nivel Rojo: Emboscar a un Escuadrón de Ataque"
+          ],
           "weight": 1.0
         }
       ],
@@ -24572,6 +25768,15 @@
         {
           "poolFile": "bp_missionreward_foxwellenforcement_generator",
           "missionName": "Foxwell Enforcement › Generator",
+          "contractor": "Foxwell Enforcement",
+          "missionTitles": [
+            "Contrato nivel amarillo: Limitar amenaza potencial",
+            "Contrato nivel amarillo: Interrumpir operaciones",
+            "Contrato nivel naranja: Destruir suministros de combustible",
+            "Contrato nivel naranja: Destruir infraestructura de forajidos",
+            "Contrato nivel rojo: Destruir infraestructura de forajidos",
+            "Contrato nivel rojo: Demolición de contenedores de combustible"
+          ],
           "weight": 1.0
         }
       ],
@@ -24619,6 +25824,15 @@
         {
           "poolFile": "bp_missionreward_foxwellenforcement_patrol",
           "missionName": "Foxwell Enforcement › Patrol",
+          "contractor": "Foxwell Enforcement",
+          "missionTitles": [
+            "Contrato de Nivel Amarillo: Patrulla de Rutina",
+            "Contrato de Nivel Amarillo: Barrido de Seguridad",
+            "Contrato de Nivel Naranja: Patrulla de Seguridad",
+            "Contrato de Nivel Naranja: Amenaza de Seguridad Potencial",
+            "Contrato de Nivel Rojo: Asegurar Espacio Amenazado",
+            "Contrato Nivel Rojo: Patrulla de Seguridad de Alto Riesgo"
+          ],
           "weight": 1.0
         }
       ],
@@ -24666,6 +25880,15 @@
         {
           "poolFile": "bp_missionreward_foxwellenforcement_generator",
           "missionName": "Foxwell Enforcement › Generator",
+          "contractor": "Foxwell Enforcement",
+          "missionTitles": [
+            "Contrato nivel amarillo: Limitar amenaza potencial",
+            "Contrato nivel amarillo: Interrumpir operaciones",
+            "Contrato nivel naranja: Destruir suministros de combustible",
+            "Contrato nivel naranja: Destruir infraestructura de forajidos",
+            "Contrato nivel rojo: Destruir infraestructura de forajidos",
+            "Contrato nivel rojo: Demolición de contenedores de combustible"
+          ],
           "weight": 1.0
         }
       ],
@@ -24754,6 +25977,15 @@
         {
           "poolFile": "bp_missionreward_foxwell_defendentitiesandescort",
           "missionName": "Foxwell › Defend Entities And Escort",
+          "contractor": "Foxwell Enforcement",
+          "missionTitles": [
+            "Contrato de Nivel Amarillo: Nave Bajo Ataque",
+            "Contrato de Nivel Naranja: … Necesita Ayuda",
+            "Contrato de Nivel Rojo: Nave Bajo Ataque",
+            "Contrato de Nivel Amarillo: Haz frente a los agresores",
+            "Contrato de Nivel Amarillo: Defender …",
+            "Contrato de Nivel Naranja: Necesaria protección de naves"
+          ],
           "weight": 1.0
         }
       ],
@@ -24801,6 +26033,13 @@
         {
           "poolFile": "bp_missionreward_foxwellenforcement_escortships",
           "missionName": "Foxwell Enforcement › Escort Ships",
+          "contractor": "Foxwell Enforcement",
+          "missionTitles": [
+            "Contrato nivel amarillo: Limpiar grupo de secuestradores de naves",
+            "Contrato nivel amarillo: Neutralizar banda de secuestradores de naves",
+            "Contrato nivel naranja: Destruir amenaza de forajidos",
+            "Contrato nivel naranja: Eliminar flota criminal"
+          ],
           "weight": 1.0
         }
       ],
@@ -24848,6 +26087,15 @@
         {
           "poolFile": "bp_missionreward_foxwellenforcement_ambush",
           "missionName": "Foxwell Enforcement › Ambush",
+          "contractor": "Foxwell Enforcement",
+          "missionTitles": [
+            "Contrato Nivel Amarillo: Embosca a un Novato",
+            "Contrato de Nivel Amarillo: Golpe Sorpresa",
+            "Contrato Nivel Naranja: Tender la Trampa",
+            "Contrato Nivel Naranja: Devolver el Favor",
+            "Contrato Nivel Rojo: Ataque Sorpresa",
+            "Contrato de Nivel Rojo: Emboscar a un Escuadrón de Ataque"
+          ],
           "weight": 1.0
         }
       ],
@@ -24895,6 +26143,15 @@
         {
           "poolFile": "bp_missionreward_foxwellenforcement_generator",
           "missionName": "Foxwell Enforcement › Generator",
+          "contractor": "Foxwell Enforcement",
+          "missionTitles": [
+            "Contrato nivel amarillo: Limitar amenaza potencial",
+            "Contrato nivel amarillo: Interrumpir operaciones",
+            "Contrato nivel naranja: Destruir suministros de combustible",
+            "Contrato nivel naranja: Destruir infraestructura de forajidos",
+            "Contrato nivel rojo: Destruir infraestructura de forajidos",
+            "Contrato nivel rojo: Demolición de contenedores de combustible"
+          ],
           "weight": 1.0
         }
       ],
@@ -24942,6 +26199,15 @@
         {
           "poolFile": "bp_missionreward_foxwellenforcement_patrol",
           "missionName": "Foxwell Enforcement › Patrol",
+          "contractor": "Foxwell Enforcement",
+          "missionTitles": [
+            "Contrato de Nivel Amarillo: Patrulla de Rutina",
+            "Contrato de Nivel Amarillo: Barrido de Seguridad",
+            "Contrato de Nivel Naranja: Patrulla de Seguridad",
+            "Contrato de Nivel Naranja: Amenaza de Seguridad Potencial",
+            "Contrato de Nivel Rojo: Asegurar Espacio Amenazado",
+            "Contrato Nivel Rojo: Patrulla de Seguridad de Alto Riesgo"
+          ],
           "weight": 1.0
         }
       ],
@@ -24989,6 +26255,15 @@
         {
           "poolFile": "bp_missionreward_foxwellenforcement_generator",
           "missionName": "Foxwell Enforcement › Generator",
+          "contractor": "Foxwell Enforcement",
+          "missionTitles": [
+            "Contrato nivel amarillo: Limitar amenaza potencial",
+            "Contrato nivel amarillo: Interrumpir operaciones",
+            "Contrato nivel naranja: Destruir suministros de combustible",
+            "Contrato nivel naranja: Destruir infraestructura de forajidos",
+            "Contrato nivel rojo: Destruir infraestructura de forajidos",
+            "Contrato nivel rojo: Demolición de contenedores de combustible"
+          ],
           "weight": 1.0
         }
       ],
@@ -25110,6 +26385,14 @@
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminatespecific_regionab",
           "missionName": "Head Hunters › Mercenary FPS › Eliminate Specific › Region AB",
+          "contractor": "Headhunters",
+          "missionTitles": [
+            "Mata al rey",
+            "Disparo en el caos",
+            "Necesito que elimines a un CFP",
+            "Objetivo pagado en CFP",
+            "Hablar rápidamente"
+          ],
           "weight": 1.0
         }
       ],
@@ -25198,6 +26481,13 @@
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminatespecific_regioncd",
           "missionName": "Head Hunters › Mercenary FPS › Eliminate Specific › Region CD",
+          "contractor": "Headhunters",
+          "missionTitles": [
+            "Mata al rey",
+            "Disparo en el caos",
+            "Necesito que elimines a un CFP",
+            "Objetivo pagado en CFP"
+          ],
           "weight": 1.0
         }
       ],
@@ -25368,6 +26658,14 @@
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminatespecific_regionab",
           "missionName": "Head Hunters › Mercenary FPS › Eliminate Specific › Region AB",
+          "contractor": "Headhunters",
+          "missionTitles": [
+            "Mata al rey",
+            "Disparo en el caos",
+            "Necesito que elimines a un CFP",
+            "Objetivo pagado en CFP",
+            "Hablar rápidamente"
+          ],
           "weight": 1.0
         }
       ],
@@ -25456,6 +26754,13 @@
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminatespecific_regioncd",
           "missionName": "Head Hunters › Mercenary FPS › Eliminate Specific › Region CD",
+          "contractor": "Headhunters",
+          "missionTitles": [
+            "Mata al rey",
+            "Disparo en el caos",
+            "Necesito que elimines a un CFP",
+            "Objetivo pagado en CFP"
+          ],
           "weight": 1.0
         }
       ],
@@ -25626,6 +26931,14 @@
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminatespecific_regionab",
           "missionName": "Head Hunters › Mercenary FPS › Eliminate Specific › Region AB",
+          "contractor": "Headhunters",
+          "missionTitles": [
+            "Mata al rey",
+            "Disparo en el caos",
+            "Necesito que elimines a un CFP",
+            "Objetivo pagado en CFP",
+            "Hablar rápidamente"
+          ],
           "weight": 1.0
         }
       ],
@@ -25714,6 +27027,13 @@
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminatespecific_regioncd",
           "missionName": "Head Hunters › Mercenary FPS › Eliminate Specific › Region CD",
+          "contractor": "Headhunters",
+          "missionTitles": [
+            "Mata al rey",
+            "Disparo en el caos",
+            "Necesito que elimines a un CFP",
+            "Objetivo pagado en CFP"
+          ],
           "weight": 1.0
         }
       ],
@@ -25925,6 +27245,14 @@
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminatespecific_regionab",
           "missionName": "Head Hunters › Mercenary FPS › Eliminate Specific › Region AB",
+          "contractor": "Headhunters",
+          "missionTitles": [
+            "Mata al rey",
+            "Disparo en el caos",
+            "Necesito que elimines a un CFP",
+            "Objetivo pagado en CFP",
+            "Hablar rápidamente"
+          ],
           "weight": 1.0
         }
       ],
@@ -26013,6 +27341,13 @@
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminatespecific_regioncd",
           "missionName": "Head Hunters › Mercenary FPS › Eliminate Specific › Region CD",
+          "contractor": "Headhunters",
+          "missionTitles": [
+            "Mata al rey",
+            "Disparo en el caos",
+            "Necesito que elimines a un CFP",
+            "Objetivo pagado en CFP"
+          ],
           "weight": 1.0
         }
       ],
@@ -26249,6 +27584,12 @@
         {
           "poolFile": "bp_missionreward_bitzeros_recoveritem_pyronyx",
           "missionName": "Bit Zeros › Recover Item › Pyro Nyx",
+          "contractor": "BitZeros",
+          "missionTitles": [
+            "Tecnología de vanguardia",
+            "Volverles la jugada",
+            "Recogida de mejora"
+          ],
           "weight": 1.0
         }
       ],
@@ -26288,6 +27629,12 @@
         {
           "poolFile": "bp_missionreward_bitzeros_recoveritem_pyronyx",
           "missionName": "Bit Zeros › Recover Item › Pyro Nyx",
+          "contractor": "BitZeros",
+          "missionTitles": [
+            "Tecnología de vanguardia",
+            "Volverles la jugada",
+            "Recogida de mejora"
+          ],
           "weight": 1.0
         }
       ],
@@ -26327,6 +27674,12 @@
         {
           "poolFile": "bp_missionreward_bitzeros_recoveritem_pyronyx",
           "missionName": "Bit Zeros › Recover Item › Pyro Nyx",
+          "contractor": "BitZeros",
+          "missionTitles": [
+            "Tecnología de vanguardia",
+            "Volverles la jugada",
+            "Recogida de mejora"
+          ],
           "weight": 1.0
         }
       ],
@@ -26366,6 +27719,12 @@
         {
           "poolFile": "bp_missionreward_bitzeros_recoveritem_pyronyx",
           "missionName": "Bit Zeros › Recover Item › Pyro Nyx",
+          "contractor": "BitZeros",
+          "missionTitles": [
+            "Tecnología de vanguardia",
+            "Volverles la jugada",
+            "Recogida de mejora"
+          ],
           "weight": 1.0
         }
       ],
@@ -26823,6 +28182,12 @@
         {
           "poolFile": "bp_missionreward_bitzeros_recoveritem_stanton",
           "missionName": "Bit Zeros › Recover Item › Stanton",
+          "contractor": "BitZeros",
+          "missionTitles": [
+            "Tecnología de vanguardia",
+            "Volverles la jugada",
+            "Recogida de mejora"
+          ],
           "weight": 1.0
         }
       ],
@@ -26870,6 +28235,12 @@
         {
           "poolFile": "bp_missionreward_bitzeros_recoveritem_stanton",
           "missionName": "Bit Zeros › Recover Item › Stanton",
+          "contractor": "BitZeros",
+          "missionTitles": [
+            "Tecnología de vanguardia",
+            "Volverles la jugada",
+            "Recogida de mejora"
+          ],
           "weight": 1.0
         }
       ],
@@ -27655,6 +29026,12 @@
         {
           "poolFile": "bp_missionreward_bitzeros_recoveritem_stanton",
           "missionName": "Bit Zeros › Recover Item › Stanton",
+          "contractor": "BitZeros",
+          "missionTitles": [
+            "Tecnología de vanguardia",
+            "Volverles la jugada",
+            "Recogida de mejora"
+          ],
           "weight": 1.0
         }
       ],
@@ -27702,6 +29079,12 @@
         {
           "poolFile": "bp_missionreward_bitzeros_recoveritem_stanton",
           "missionName": "Bit Zeros › Recover Item › Stanton",
+          "contractor": "BitZeros",
+          "missionTitles": [
+            "Tecnología de vanguardia",
+            "Volverles la jugada",
+            "Recogida de mejora"
+          ],
           "weight": 1.0
         }
       ],
@@ -28528,6 +29911,12 @@
         {
           "poolFile": "bp_missionreward_bitzeros_recoveritem_stanton",
           "missionName": "Bit Zeros › Recover Item › Stanton",
+          "contractor": "BitZeros",
+          "missionTitles": [
+            "Tecnología de vanguardia",
+            "Volverles la jugada",
+            "Recogida de mejora"
+          ],
           "weight": 1.0
         }
       ],
@@ -28575,6 +29964,12 @@
         {
           "poolFile": "bp_missionreward_bitzeros_recoveritem_stanton",
           "missionName": "Bit Zeros › Recover Item › Stanton",
+          "contractor": "BitZeros",
+          "missionTitles": [
+            "Tecnología de vanguardia",
+            "Volverles la jugada",
+            "Recogida de mejora"
+          ],
           "weight": 1.0
         }
       ],
@@ -28983,6 +30378,12 @@
         {
           "poolFile": "bp_missionreward_bitzeros_recoveritem_stanton",
           "missionName": "Bit Zeros › Recover Item › Stanton",
+          "contractor": "BitZeros",
+          "missionTitles": [
+            "Tecnología de vanguardia",
+            "Volverles la jugada",
+            "Recogida de mejora"
+          ],
           "weight": 1.0
         }
       ],
@@ -29194,6 +30595,8 @@
         {
           "poolFile": "bp_missionreward_shubin_resourcegathering_fpsmining_stanton",
           "missionName": "Shubin › Resource Gathering › FPS Mining › Stanton",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -29569,6 +30972,8 @@
         {
           "poolFile": "bp_missionreward_shubin_resourcegathering_fpsmining_stanton",
           "missionName": "Shubin › Resource Gathering › FPS Mining › Stanton",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -29813,6 +31218,8 @@
         {
           "poolFile": "bp_missionreward_shubin_resourcegathering_fpsmining_stanton",
           "missionName": "Shubin › Resource Gathering › FPS Mining › Stanton",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -30024,6 +31431,8 @@
         {
           "poolFile": "bp_missionreward_shubin_resourcegathering_fpsmining_stanton",
           "missionName": "Shubin › Resource Gathering › FPS Mining › Stanton",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -30310,6 +31719,8 @@
         {
           "poolFile": "bp_missionreward_rayari_recoveritem_irradiated",
           "missionName": "Rayari › Recover Item › Irradiated",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -30390,6 +31801,8 @@
         {
           "poolFile": "bp_missionreward_shubin_resourcegathering_shipmining_stanton",
           "missionName": "Shubin › Resource Gathering › Ship Mining › Stanton",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -30470,6 +31883,8 @@
         {
           "poolFile": "bp_missionreward_shubin_resourcegathering_shipmining_stanton",
           "missionName": "Shubin › Resource Gathering › Ship Mining › Stanton",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -30517,6 +31932,8 @@
         {
           "poolFile": "bp_missionreward_shubin_resourcegathering_shipmining_stanton",
           "missionName": "Shubin › Resource Gathering › Ship Mining › Stanton",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -30564,6 +31981,8 @@
         {
           "poolFile": "bp_missionreward_shubin_resourcegathering_shipmining_stanton",
           "missionName": "Shubin › Resource Gathering › Ship Mining › Stanton",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -30644,6 +32063,15 @@
         {
           "poolFile": "bp_missionreward_asd2b",
           "missionName": "ASD2 B",
+          "contractor": "ASD Facility Delving",
+          "missionTitles": [
+            "Núcleo de energía",
+            "Lecturas Sísmicas",
+            "Control de Esclusa",
+            "Lecturas del Sensor de Energía",
+            "Registros de Seguridad",
+            "Registros de Personal"
+          ],
           "weight": 1.0
         }
       ],
@@ -30691,6 +32119,15 @@
         {
           "poolFile": "bp_missionreward_asd2d",
           "missionName": "ASD2 D",
+          "contractor": "ASD Facility Delving",
+          "missionTitles": [
+            "Núcleo de energía",
+            "Lecturas Sísmicas",
+            "Control de Esclusa",
+            "Lecturas del Sensor de Energía",
+            "Registros de Seguridad",
+            "Registros de Personal"
+          ],
           "weight": 1.0
         }
       ],
@@ -30738,11 +32175,29 @@
         {
           "poolFile": "bp_missionreward_asd2c",
           "missionName": "ASD2 C",
+          "contractor": "ASD Facility Delving",
+          "missionTitles": [
+            "Núcleo de energía",
+            "Lecturas Sísmicas",
+            "Control de Esclusa",
+            "Lecturas del Sensor de Energía",
+            "Registros de Seguridad",
+            "Registros de Personal"
+          ],
           "weight": 1.0
         },
         {
           "poolFile": "bp_missionreward_asd2d",
           "missionName": "ASD2 D",
+          "contractor": "ASD Facility Delving",
+          "missionTitles": [
+            "Núcleo de energía",
+            "Lecturas Sísmicas",
+            "Control de Esclusa",
+            "Lecturas del Sensor de Energía",
+            "Registros de Seguridad",
+            "Registros de Personal"
+          ],
           "weight": 1.0
         }
       ],
@@ -30790,6 +32245,15 @@
         {
           "poolFile": "bp_missionreward_asd2c",
           "missionName": "ASD2 C",
+          "contractor": "ASD Facility Delving",
+          "missionTitles": [
+            "Núcleo de energía",
+            "Lecturas Sísmicas",
+            "Control de Esclusa",
+            "Lecturas del Sensor de Energía",
+            "Registros de Seguridad",
+            "Registros de Personal"
+          ],
           "weight": 1.0
         }
       ],
@@ -30837,6 +32301,15 @@
         {
           "poolFile": "bp_missionreward_asd2a",
           "missionName": "ASD2 A",
+          "contractor": "ASD Facility Delving",
+          "missionTitles": [
+            "Núcleo de energía",
+            "Lecturas Sísmicas",
+            "Control de Esclusa",
+            "Lecturas del Sensor de Energía",
+            "Registros de Seguridad",
+            "Registros de Personal"
+          ],
           "weight": 1.0
         }
       ],
@@ -30884,6 +32357,15 @@
         {
           "poolFile": "bp_missionreward_asd3",
           "missionName": "ASD3",
+          "contractor": "ASD Facility Delving",
+          "missionTitles": [
+            "Núcleo de energía",
+            "Lecturas Sísmicas",
+            "Control de Esclusa",
+            "Lecturas del Sensor de Energía",
+            "Registros de Seguridad",
+            "Registros de Personal"
+          ],
           "weight": 1.0
         }
       ],
@@ -30972,6 +32454,15 @@
         {
           "poolFile": "bp_missionreward_asd2b",
           "missionName": "ASD2 B",
+          "contractor": "ASD Facility Delving",
+          "missionTitles": [
+            "Núcleo de energía",
+            "Lecturas Sísmicas",
+            "Control de Esclusa",
+            "Lecturas del Sensor de Energía",
+            "Registros de Seguridad",
+            "Registros de Personal"
+          ],
           "weight": 1.0
         }
       ],
@@ -31019,6 +32510,15 @@
         {
           "poolFile": "bp_missionreward_asd2d",
           "missionName": "ASD2 D",
+          "contractor": "ASD Facility Delving",
+          "missionTitles": [
+            "Núcleo de energía",
+            "Lecturas Sísmicas",
+            "Control de Esclusa",
+            "Lecturas del Sensor de Energía",
+            "Registros de Seguridad",
+            "Registros de Personal"
+          ],
           "weight": 1.0
         }
       ],
@@ -31066,11 +32566,29 @@
         {
           "poolFile": "bp_missionreward_asd2c",
           "missionName": "ASD2 C",
+          "contractor": "ASD Facility Delving",
+          "missionTitles": [
+            "Núcleo de energía",
+            "Lecturas Sísmicas",
+            "Control de Esclusa",
+            "Lecturas del Sensor de Energía",
+            "Registros de Seguridad",
+            "Registros de Personal"
+          ],
           "weight": 1.0
         },
         {
           "poolFile": "bp_missionreward_asd2d",
           "missionName": "ASD2 D",
+          "contractor": "ASD Facility Delving",
+          "missionTitles": [
+            "Núcleo de energía",
+            "Lecturas Sísmicas",
+            "Control de Esclusa",
+            "Lecturas del Sensor de Energía",
+            "Registros de Seguridad",
+            "Registros de Personal"
+          ],
           "weight": 1.0
         }
       ],
@@ -31118,6 +32636,15 @@
         {
           "poolFile": "bp_missionreward_asd2c",
           "missionName": "ASD2 C",
+          "contractor": "ASD Facility Delving",
+          "missionTitles": [
+            "Núcleo de energía",
+            "Lecturas Sísmicas",
+            "Control de Esclusa",
+            "Lecturas del Sensor de Energía",
+            "Registros de Seguridad",
+            "Registros de Personal"
+          ],
           "weight": 1.0
         }
       ],
@@ -31165,6 +32692,15 @@
         {
           "poolFile": "bp_missionreward_asd2a",
           "missionName": "ASD2 A",
+          "contractor": "ASD Facility Delving",
+          "missionTitles": [
+            "Núcleo de energía",
+            "Lecturas Sísmicas",
+            "Control de Esclusa",
+            "Lecturas del Sensor de Energía",
+            "Registros de Seguridad",
+            "Registros de Personal"
+          ],
           "weight": 1.0
         }
       ],
@@ -31212,6 +32748,15 @@
         {
           "poolFile": "bp_missionreward_asd3",
           "missionName": "ASD3",
+          "contractor": "ASD Facility Delving",
+          "missionTitles": [
+            "Núcleo de energía",
+            "Lecturas Sísmicas",
+            "Control de Esclusa",
+            "Lecturas del Sensor de Energía",
+            "Registros de Seguridad",
+            "Registros de Personal"
+          ],
           "weight": 1.0
         }
       ],
@@ -31300,6 +32845,15 @@
         {
           "poolFile": "bp_missionreward_asd2b",
           "missionName": "ASD2 B",
+          "contractor": "ASD Facility Delving",
+          "missionTitles": [
+            "Núcleo de energía",
+            "Lecturas Sísmicas",
+            "Control de Esclusa",
+            "Lecturas del Sensor de Energía",
+            "Registros de Seguridad",
+            "Registros de Personal"
+          ],
           "weight": 1.0
         }
       ],
@@ -31347,6 +32901,15 @@
         {
           "poolFile": "bp_missionreward_asd2d",
           "missionName": "ASD2 D",
+          "contractor": "ASD Facility Delving",
+          "missionTitles": [
+            "Núcleo de energía",
+            "Lecturas Sísmicas",
+            "Control de Esclusa",
+            "Lecturas del Sensor de Energía",
+            "Registros de Seguridad",
+            "Registros de Personal"
+          ],
           "weight": 1.0
         }
       ],
@@ -31394,11 +32957,29 @@
         {
           "poolFile": "bp_missionreward_asd2c",
           "missionName": "ASD2 C",
+          "contractor": "ASD Facility Delving",
+          "missionTitles": [
+            "Núcleo de energía",
+            "Lecturas Sísmicas",
+            "Control de Esclusa",
+            "Lecturas del Sensor de Energía",
+            "Registros de Seguridad",
+            "Registros de Personal"
+          ],
           "weight": 1.0
         },
         {
           "poolFile": "bp_missionreward_asd2d",
           "missionName": "ASD2 D",
+          "contractor": "ASD Facility Delving",
+          "missionTitles": [
+            "Núcleo de energía",
+            "Lecturas Sísmicas",
+            "Control de Esclusa",
+            "Lecturas del Sensor de Energía",
+            "Registros de Seguridad",
+            "Registros de Personal"
+          ],
           "weight": 1.0
         }
       ],
@@ -31446,6 +33027,15 @@
         {
           "poolFile": "bp_missionreward_asd2c",
           "missionName": "ASD2 C",
+          "contractor": "ASD Facility Delving",
+          "missionTitles": [
+            "Núcleo de energía",
+            "Lecturas Sísmicas",
+            "Control de Esclusa",
+            "Lecturas del Sensor de Energía",
+            "Registros de Seguridad",
+            "Registros de Personal"
+          ],
           "weight": 1.0
         }
       ],
@@ -31493,6 +33083,15 @@
         {
           "poolFile": "bp_missionreward_asd2a",
           "missionName": "ASD2 A",
+          "contractor": "ASD Facility Delving",
+          "missionTitles": [
+            "Núcleo de energía",
+            "Lecturas Sísmicas",
+            "Control de Esclusa",
+            "Lecturas del Sensor de Energía",
+            "Registros de Seguridad",
+            "Registros de Personal"
+          ],
           "weight": 1.0
         }
       ],
@@ -31540,6 +33139,15 @@
         {
           "poolFile": "bp_missionreward_asd3",
           "missionName": "ASD3",
+          "contractor": "ASD Facility Delving",
+          "missionTitles": [
+            "Núcleo de energía",
+            "Lecturas Sísmicas",
+            "Control de Esclusa",
+            "Lecturas del Sensor de Energía",
+            "Registros de Seguridad",
+            "Registros de Personal"
+          ],
           "weight": 1.0
         }
       ],
@@ -31628,6 +33236,15 @@
         {
           "poolFile": "bp_missionreward_asd2b",
           "missionName": "ASD2 B",
+          "contractor": "ASD Facility Delving",
+          "missionTitles": [
+            "Núcleo de energía",
+            "Lecturas Sísmicas",
+            "Control de Esclusa",
+            "Lecturas del Sensor de Energía",
+            "Registros de Seguridad",
+            "Registros de Personal"
+          ],
           "weight": 1.0
         }
       ],
@@ -31675,6 +33292,15 @@
         {
           "poolFile": "bp_missionreward_asd2d",
           "missionName": "ASD2 D",
+          "contractor": "ASD Facility Delving",
+          "missionTitles": [
+            "Núcleo de energía",
+            "Lecturas Sísmicas",
+            "Control de Esclusa",
+            "Lecturas del Sensor de Energía",
+            "Registros de Seguridad",
+            "Registros de Personal"
+          ],
           "weight": 1.0
         }
       ],
@@ -31722,11 +33348,29 @@
         {
           "poolFile": "bp_missionreward_asd2c",
           "missionName": "ASD2 C",
+          "contractor": "ASD Facility Delving",
+          "missionTitles": [
+            "Núcleo de energía",
+            "Lecturas Sísmicas",
+            "Control de Esclusa",
+            "Lecturas del Sensor de Energía",
+            "Registros de Seguridad",
+            "Registros de Personal"
+          ],
           "weight": 1.0
         },
         {
           "poolFile": "bp_missionreward_asd2d",
           "missionName": "ASD2 D",
+          "contractor": "ASD Facility Delving",
+          "missionTitles": [
+            "Núcleo de energía",
+            "Lecturas Sísmicas",
+            "Control de Esclusa",
+            "Lecturas del Sensor de Energía",
+            "Registros de Seguridad",
+            "Registros de Personal"
+          ],
           "weight": 1.0
         }
       ],
@@ -31774,6 +33418,15 @@
         {
           "poolFile": "bp_missionreward_asd2c",
           "missionName": "ASD2 C",
+          "contractor": "ASD Facility Delving",
+          "missionTitles": [
+            "Núcleo de energía",
+            "Lecturas Sísmicas",
+            "Control de Esclusa",
+            "Lecturas del Sensor de Energía",
+            "Registros de Seguridad",
+            "Registros de Personal"
+          ],
           "weight": 1.0
         }
       ],
@@ -31821,6 +33474,15 @@
         {
           "poolFile": "bp_missionreward_asd2a",
           "missionName": "ASD2 A",
+          "contractor": "ASD Facility Delving",
+          "missionTitles": [
+            "Núcleo de energía",
+            "Lecturas Sísmicas",
+            "Control de Esclusa",
+            "Lecturas del Sensor de Energía",
+            "Registros de Seguridad",
+            "Registros de Personal"
+          ],
           "weight": 1.0
         }
       ],
@@ -31868,6 +33530,15 @@
         {
           "poolFile": "bp_missionreward_asd3",
           "missionName": "ASD3",
+          "contractor": "ASD Facility Delving",
+          "missionTitles": [
+            "Núcleo de energía",
+            "Lecturas Sísmicas",
+            "Control de Esclusa",
+            "Lecturas del Sensor de Energía",
+            "Registros de Seguridad",
+            "Registros de Personal"
+          ],
           "weight": 1.0
         }
       ],
@@ -32448,6 +34119,12 @@
         {
           "poolFile": "bp_missionreward_cfp_outpost_regionab",
           "missionName": "CFP › Outpost › Region AB",
+          "contractor": "Citizens for Prosperity",
+          "missionTitles": [
+            "Entrega entre puestos de avanzada en …",
+            "Corregir error de entrega",
+            "Entrega de buenas noticias"
+          ],
           "weight": 1.0
         }
       ],
@@ -32536,6 +34213,12 @@
         {
           "poolFile": "bp_missionreward_cfp_outpost_regionc",
           "missionName": "CFP › Outpost › Region C",
+          "contractor": "Citizens for Prosperity",
+          "missionTitles": [
+            "Entrega entre puestos de avanzada en …",
+            "Corregir error de entrega",
+            "Entrega de buenas noticias"
+          ],
           "weight": 1.0
         }
       ],
@@ -32583,6 +34266,13 @@
         {
           "poolFile": "bp_missionreward_cfp_chainelim_1and2",
           "missionName": "CFP › Chain Elim › 1and2",
+          "contractor": "Citizens for Prosperity",
+          "missionTitles": [
+            "Alerta: … bajo ataque",
+            "Recuperando de los Headhunters",
+            "Ataque de forajidos en …",
+            "Recuperar puestos de avanzada de los Headhunters"
+          ],
           "weight": 1.0
         }
       ],
@@ -32630,6 +34320,12 @@
         {
           "poolFile": "bp_missionreward_cfp_outpost_regiond",
           "missionName": "CFP › Outpost › Region D",
+          "contractor": "Citizens for Prosperity",
+          "missionTitles": [
+            "Entrega entre puestos de avanzada en …",
+            "Corregir error de entrega",
+            "Entrega de buenas noticias"
+          ],
           "weight": 1.0
         }
       ],
@@ -32800,6 +34496,12 @@
         {
           "poolFile": "bp_missionreward_cfp_chainelim_3",
           "missionName": "CFP › Chain Elim › 3",
+          "contractor": "Citizens for Prosperity",
+          "missionTitles": [
+            "Se necesitan recuperar varios puestos de avanzada de CFP",
+            "Recuperando puestos de avanzada de Headhunters",
+            "Campaña para recuperar puestos de avanzada de los XenoThreat"
+          ],
           "weight": 1.0
         }
       ],
@@ -32888,6 +34590,12 @@
         {
           "poolFile": "bp_missionreward_cfp_outpost_regionab",
           "missionName": "CFP › Outpost › Region AB",
+          "contractor": "Citizens for Prosperity",
+          "missionTitles": [
+            "Entrega entre puestos de avanzada en …",
+            "Corregir error de entrega",
+            "Entrega de buenas noticias"
+          ],
           "weight": 1.0
         }
       ],
@@ -32976,6 +34684,12 @@
         {
           "poolFile": "bp_missionreward_cfp_outpost_regionc",
           "missionName": "CFP › Outpost › Region C",
+          "contractor": "Citizens for Prosperity",
+          "missionTitles": [
+            "Entrega entre puestos de avanzada en …",
+            "Corregir error de entrega",
+            "Entrega de buenas noticias"
+          ],
           "weight": 1.0
         }
       ],
@@ -33023,6 +34737,13 @@
         {
           "poolFile": "bp_missionreward_cfp_chainelim_1and2",
           "missionName": "CFP › Chain Elim › 1and2",
+          "contractor": "Citizens for Prosperity",
+          "missionTitles": [
+            "Alerta: … bajo ataque",
+            "Recuperando de los Headhunters",
+            "Ataque de forajidos en …",
+            "Recuperar puestos de avanzada de los Headhunters"
+          ],
           "weight": 1.0
         }
       ],
@@ -33070,6 +34791,12 @@
         {
           "poolFile": "bp_missionreward_cfp_outpost_regiond",
           "missionName": "CFP › Outpost › Region D",
+          "contractor": "Citizens for Prosperity",
+          "missionTitles": [
+            "Entrega entre puestos de avanzada en …",
+            "Corregir error de entrega",
+            "Entrega de buenas noticias"
+          ],
           "weight": 1.0
         }
       ],
@@ -33240,6 +34967,12 @@
         {
           "poolFile": "bp_missionreward_cfp_chainelim_3",
           "missionName": "CFP › Chain Elim › 3",
+          "contractor": "Citizens for Prosperity",
+          "missionTitles": [
+            "Se necesitan recuperar varios puestos de avanzada de CFP",
+            "Recuperando puestos de avanzada de Headhunters",
+            "Campaña para recuperar puestos de avanzada de los XenoThreat"
+          ],
           "weight": 1.0
         }
       ],
@@ -33328,6 +35061,12 @@
         {
           "poolFile": "bp_missionreward_cfp_outpost_regionab",
           "missionName": "CFP › Outpost › Region AB",
+          "contractor": "Citizens for Prosperity",
+          "missionTitles": [
+            "Entrega entre puestos de avanzada en …",
+            "Corregir error de entrega",
+            "Entrega de buenas noticias"
+          ],
           "weight": 1.0
         }
       ],
@@ -33416,6 +35155,12 @@
         {
           "poolFile": "bp_missionreward_cfp_outpost_regionc",
           "missionName": "CFP › Outpost › Region C",
+          "contractor": "Citizens for Prosperity",
+          "missionTitles": [
+            "Entrega entre puestos de avanzada en …",
+            "Corregir error de entrega",
+            "Entrega de buenas noticias"
+          ],
           "weight": 1.0
         }
       ],
@@ -33463,6 +35208,13 @@
         {
           "poolFile": "bp_missionreward_cfp_chainelim_1and2",
           "missionName": "CFP › Chain Elim › 1and2",
+          "contractor": "Citizens for Prosperity",
+          "missionTitles": [
+            "Alerta: … bajo ataque",
+            "Recuperando de los Headhunters",
+            "Ataque de forajidos en …",
+            "Recuperar puestos de avanzada de los Headhunters"
+          ],
           "weight": 1.0
         }
       ],
@@ -33510,6 +35262,12 @@
         {
           "poolFile": "bp_missionreward_cfp_outpost_regiond",
           "missionName": "CFP › Outpost › Region D",
+          "contractor": "Citizens for Prosperity",
+          "missionTitles": [
+            "Entrega entre puestos de avanzada en …",
+            "Corregir error de entrega",
+            "Entrega de buenas noticias"
+          ],
           "weight": 1.0
         }
       ],
@@ -33721,6 +35479,12 @@
         {
           "poolFile": "bp_missionreward_cfp_outpost_regionab",
           "missionName": "CFP › Outpost › Region AB",
+          "contractor": "Citizens for Prosperity",
+          "missionTitles": [
+            "Entrega entre puestos de avanzada en …",
+            "Corregir error de entrega",
+            "Entrega de buenas noticias"
+          ],
           "weight": 1.0
         }
       ],
@@ -33809,6 +35573,12 @@
         {
           "poolFile": "bp_missionreward_cfp_outpost_regionc",
           "missionName": "CFP › Outpost › Region C",
+          "contractor": "Citizens for Prosperity",
+          "missionTitles": [
+            "Entrega entre puestos de avanzada en …",
+            "Corregir error de entrega",
+            "Entrega de buenas noticias"
+          ],
           "weight": 1.0
         }
       ],
@@ -33856,6 +35626,13 @@
         {
           "poolFile": "bp_missionreward_cfp_chainelim_1and2",
           "missionName": "CFP › Chain Elim › 1and2",
+          "contractor": "Citizens for Prosperity",
+          "missionTitles": [
+            "Alerta: … bajo ataque",
+            "Recuperando de los Headhunters",
+            "Ataque de forajidos en …",
+            "Recuperar puestos de avanzada de los Headhunters"
+          ],
           "weight": 1.0
         }
       ],
@@ -33903,6 +35680,12 @@
         {
           "poolFile": "bp_missionreward_cfp_outpost_regiond",
           "missionName": "CFP › Outpost › Region D",
+          "contractor": "Citizens for Prosperity",
+          "missionTitles": [
+            "Entrega entre puestos de avanzada en …",
+            "Corregir error de entrega",
+            "Entrega de buenas noticias"
+          ],
           "weight": 1.0
         }
       ],
@@ -34514,6 +36297,14 @@
         {
           "poolFile": "bp_missionreward_citizensforprosperitydestroyitems_ab",
           "missionName": "Citizens For Prosperity Destroy Items › AB",
+          "contractor": "Citizens for Prosperity",
+          "missionTitles": [
+            "Represalia contra centro de datos",
+            "Destruir inteligencia de seguridad",
+            "Destruir registros robados",
+            "Eliminar dossier letal",
+            "Destruir información sensible"
+          ],
           "weight": 1.0
         }
       ],
@@ -34684,6 +36475,8 @@
         {
           "poolFile": "bp_missionreward_northrockfpskill_eliminateboss",
           "missionName": "North Rock FPS Kill › Eliminate Boss",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -34887,6 +36680,8 @@
         {
           "poolFile": "bp_missionreward_vaughngenerator_eliminateboss",
           "missionName": "Vaughn Generator › Eliminate Boss",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -34926,6 +36721,15 @@
         {
           "poolFile": "bp_missionreward_asd2a",
           "missionName": "ASD2 A",
+          "contractor": "ASD Facility Delving",
+          "missionTitles": [
+            "Núcleo de energía",
+            "Lecturas Sísmicas",
+            "Control de Esclusa",
+            "Lecturas del Sensor de Energía",
+            "Registros de Seguridad",
+            "Registros de Personal"
+          ],
           "weight": 1.0
         }
       ],
@@ -34965,6 +36769,15 @@
         {
           "poolFile": "bp_missionreward_asd3",
           "missionName": "ASD3",
+          "contractor": "ASD Facility Delving",
+          "missionTitles": [
+            "Núcleo de energía",
+            "Lecturas Sísmicas",
+            "Control de Esclusa",
+            "Lecturas del Sensor de Energía",
+            "Registros de Seguridad",
+            "Registros de Personal"
+          ],
           "weight": 1.0
         }
       ],
@@ -35004,6 +36817,15 @@
         {
           "poolFile": "bp_missionreward_asd2d",
           "missionName": "ASD2 D",
+          "contractor": "ASD Facility Delving",
+          "missionTitles": [
+            "Núcleo de energía",
+            "Lecturas Sísmicas",
+            "Control de Esclusa",
+            "Lecturas del Sensor de Energía",
+            "Registros de Seguridad",
+            "Registros de Personal"
+          ],
           "weight": 1.0
         }
       ],
@@ -35043,6 +36865,15 @@
         {
           "poolFile": "bp_missionreward_asd2b",
           "missionName": "ASD2 B",
+          "contractor": "ASD Facility Delving",
+          "missionTitles": [
+            "Núcleo de energía",
+            "Lecturas Sísmicas",
+            "Control de Esclusa",
+            "Lecturas del Sensor de Energía",
+            "Registros de Seguridad",
+            "Registros de Personal"
+          ],
           "weight": 1.0
         }
       ],
@@ -35172,6 +37003,8 @@
         {
           "poolFile": "bp_missionreward_northrockfpskill_eliminateboss",
           "missionName": "North Rock FPS Kill › Eliminate Boss",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -35662,6 +37495,8 @@
         {
           "poolFile": "bp_missionreward_shubin_resourcegathering_shipmining_pyronyx",
           "missionName": "Shubin › Resource Gathering › Ship Mining › Pyro Nyx",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -35701,6 +37536,8 @@
         {
           "poolFile": "bp_missionreward_shubin_resourcegathering_fpsmining_stanton",
           "missionName": "Shubin › Resource Gathering › FPS Mining › Stanton",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -35740,6 +37577,8 @@
         {
           "poolFile": "bp_missionreward_shubin_resourcegathering_shipmining_stanton",
           "missionName": "Shubin › Resource Gathering › Ship Mining › Stanton",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -35779,6 +37618,8 @@
         {
           "poolFile": "bp_missionreward_shubin_resourcegathering_fpsmining_pyro",
           "missionName": "Shubin › Resource Gathering › FPS Mining › Pyro",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -35851,6 +37692,8 @@
         {
           "poolFile": "bp_missionreward_shubin_resourcegathering_shipmining_stanton",
           "missionName": "Shubin › Resource Gathering › Ship Mining › Stanton",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -35890,6 +37733,8 @@
         {
           "poolFile": "bp_missionreward_shubin_resourcegathering_fpsmining_pyro",
           "missionName": "Shubin › Resource Gathering › FPS Mining › Pyro",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -35929,6 +37774,8 @@
         {
           "poolFile": "bp_missionreward_shubin_resourcegathering_shipmining_pyronyx",
           "missionName": "Shubin › Resource Gathering › Ship Mining › Pyro Nyx",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -35976,6 +37823,14 @@
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminatespecific_regionab",
           "missionName": "Head Hunters › Mercenary FPS › Eliminate Specific › Region AB",
+          "contractor": "Headhunters",
+          "missionTitles": [
+            "Mata al rey",
+            "Disparo en el caos",
+            "Necesito que elimines a un CFP",
+            "Objetivo pagado en CFP",
+            "Hablar rápidamente"
+          ],
           "weight": 1.0
         }
       ],
@@ -36023,6 +37878,14 @@
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminatespecific_regionab",
           "missionName": "Head Hunters › Mercenary FPS › Eliminate Specific › Region AB",
+          "contractor": "Headhunters",
+          "missionTitles": [
+            "Mata al rey",
+            "Disparo en el caos",
+            "Necesito que elimines a un CFP",
+            "Objetivo pagado en CFP",
+            "Hablar rápidamente"
+          ],
           "weight": 1.0
         }
       ],
@@ -36152,6 +38015,14 @@
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminatespecific_regionab",
           "missionName": "Head Hunters › Mercenary FPS › Eliminate Specific › Region AB",
+          "contractor": "Headhunters",
+          "missionTitles": [
+            "Mata al rey",
+            "Disparo en el caos",
+            "Necesito que elimines a un CFP",
+            "Objetivo pagado en CFP",
+            "Hablar rápidamente"
+          ],
           "weight": 1.0
         }
       ],
@@ -36191,6 +38062,15 @@
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminateall_regioncd",
           "missionName": "Head Hunters › Mercenary FPS › Eliminate ALL › Region CD",
+          "contractor": "Headhunters",
+          "missionTitles": [
+            "Se necesita un ejecutor",
+            "Atacar un sitio de CFP",
+            "… ha sido autorizado",
+            "Enviar un Mensaje",
+            "Eliminar …",
+            "Contrato Incompleto"
+          ],
           "weight": 1.0
         }
       ],
@@ -36263,6 +38143,15 @@
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminateall_regioncd",
           "missionName": "Head Hunters › Mercenary FPS › Eliminate ALL › Region CD",
+          "contractor": "Headhunters",
+          "missionTitles": [
+            "Se necesita un ejecutor",
+            "Atacar un sitio de CFP",
+            "… ha sido autorizado",
+            "Enviar un Mensaje",
+            "Eliminar …",
+            "Contrato Incompleto"
+          ],
           "weight": 1.0
         }
       ],
@@ -36302,6 +38191,15 @@
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminateall_regioncd",
           "missionName": "Head Hunters › Mercenary FPS › Eliminate ALL › Region CD",
+          "contractor": "Headhunters",
+          "missionTitles": [
+            "Se necesita un ejecutor",
+            "Atacar un sitio de CFP",
+            "… ha sido autorizado",
+            "Enviar un Mensaje",
+            "Eliminar …",
+            "Contrato Incompleto"
+          ],
           "weight": 1.0
         }
       ],
@@ -36349,6 +38247,8 @@
         {
           "poolFile": "bp_missionreward_vaughngenerator_eliminateboss",
           "missionName": "Vaughn Generator › Eliminate Boss",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -36388,11 +38288,18 @@
         {
           "poolFile": "bp_missionreward_intersec_resourcegathering",
           "missionName": "Inter Sec › Resource Gathering",
+          "contractor": "InterSec Defense Solutions",
+          "missionTitles": [
+            "Recuperar tecnología vanduul",
+            "Recuperar cadáveres vanduul"
+          ],
           "weight": 1.0
         },
         {
           "poolFile": "bp_missionreward_rayari_recoveritem_hathorloot",
           "missionName": "Rayari › Recover Item › Hathor Loot",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -36432,11 +38339,15 @@
         {
           "poolFile": "bp_missionreward_ids_recoverencrypteddata",
           "missionName": "IDS › Recover Encrypted Data",
+          "contractor": "IDS",
+          "missionTitles": [],
           "weight": 1.0
         },
         {
           "poolFile": "bp_missionreward_rayari_recoveritem_hathorloot",
           "missionName": "Rayari › Recover Item › Hathor Loot",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -36476,11 +38387,15 @@
         {
           "poolFile": "bp_missionreward_intersec_defendship",
           "missionName": "Inter Sec › Defend Ship",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         },
         {
           "poolFile": "bp_missionreward_rayari_recoveritem_hathorloot",
           "missionName": "Rayari › Recover Item › Hathor Loot",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -36733,6 +38648,10 @@
         {
           "poolFile": "bp_missionreward_bountyhuntersguild_paf_eliminatespecific",
           "missionName": "Bounty Hunters Guild › PAF › Eliminate Specific",
+          "contractor": "Gremio de cazarrecompensas",
+          "missionTitles": [
+            "Eliminar a …"
+          ],
           "weight": 1.0
         }
       ],
@@ -36780,6 +38699,15 @@
         {
           "poolFile": "bp_missionreward_citizensforprosperityrecovercargo_pyro",
           "missionName": "Citizens For Prosperity Recover Cargo › Pyro",
+          "contractor": "Citizens for Prosperity",
+          "missionTitles": [
+            "Recuperar nuestros suministros",
+            "Entrega de suministros interceptada",
+            "Recuperación de suministros valiosos",
+            "Es necesario recuperar suministros cruciales",
+            "Operación especial de recuperación",
+            "El envío de carga debe completarse"
+          ],
           "weight": 1.0
         }
       ],
@@ -36901,6 +38829,14 @@
         {
           "poolFile": "bp_missionreward_citizensforprosperitydestroyitems_ab",
           "missionName": "Citizens For Prosperity Destroy Items › AB",
+          "contractor": "Citizens for Prosperity",
+          "missionTitles": [
+            "Represalia contra centro de datos",
+            "Destruir inteligencia de seguridad",
+            "Destruir registros robados",
+            "Eliminar dossier letal",
+            "Destruir información sensible"
+          ],
           "weight": 1.0
         }
       ],
@@ -37171,6 +39107,12 @@
         {
           "poolFile": "bp_missionreward_cfp_outpost_regionab",
           "missionName": "CFP › Outpost › Region AB",
+          "contractor": "Citizens for Prosperity",
+          "missionTitles": [
+            "Entrega entre puestos de avanzada en …",
+            "Corregir error de entrega",
+            "Entrega de buenas noticias"
+          ],
           "weight": 1.0
         }
       ],
@@ -37210,6 +39152,12 @@
         {
           "poolFile": "bp_missionreward_cfp_outpost_regionc",
           "missionName": "CFP › Outpost › Region C",
+          "contractor": "Citizens for Prosperity",
+          "missionTitles": [
+            "Entrega entre puestos de avanzada en …",
+            "Corregir error de entrega",
+            "Entrega de buenas noticias"
+          ],
           "weight": 1.0
         }
       ],
@@ -37249,6 +39197,12 @@
         {
           "poolFile": "bp_missionreward_cfp_outpost_regiond",
           "missionName": "CFP › Outpost › Region D",
+          "contractor": "Citizens for Prosperity",
+          "missionTitles": [
+            "Entrega entre puestos de avanzada en …",
+            "Corregir error de entrega",
+            "Entrega de buenas noticias"
+          ],
           "weight": 1.0
         }
       ],
@@ -37288,6 +39242,12 @@
         {
           "poolFile": "bp_missionreward_cfp_chainelim_3",
           "missionName": "CFP › Chain Elim › 3",
+          "contractor": "Citizens for Prosperity",
+          "missionTitles": [
+            "Se necesitan recuperar varios puestos de avanzada de CFP",
+            "Recuperando puestos de avanzada de Headhunters",
+            "Campaña para recuperar puestos de avanzada de los XenoThreat"
+          ],
           "weight": 1.0
         }
       ],
@@ -37327,6 +39287,13 @@
         {
           "poolFile": "bp_missionreward_cfp_chainelim_1and2",
           "missionName": "CFP › Chain Elim › 1and2",
+          "contractor": "Citizens for Prosperity",
+          "missionTitles": [
+            "Alerta: … bajo ataque",
+            "Recuperando de los Headhunters",
+            "Ataque de forajidos en …",
+            "Recuperar puestos de avanzada de los Headhunters"
+          ],
           "weight": 1.0
         }
       ],
@@ -37407,6 +39374,8 @@
         {
           "poolFile": "bp_missionreward_vaughngenerator_eliminatespecific",
           "missionName": "Vaughn Generator › Eliminate Specific",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -37446,6 +39415,15 @@
         {
           "poolFile": "bp_missionreward_foxwell_defendentitiesandescort",
           "missionName": "Foxwell › Defend Entities And Escort",
+          "contractor": "Foxwell Enforcement",
+          "missionTitles": [
+            "Contrato de Nivel Amarillo: Nave Bajo Ataque",
+            "Contrato de Nivel Naranja: … Necesita Ayuda",
+            "Contrato de Nivel Rojo: Nave Bajo Ataque",
+            "Contrato de Nivel Amarillo: Haz frente a los agresores",
+            "Contrato de Nivel Amarillo: Defender …",
+            "Contrato de Nivel Naranja: Necesaria protección de naves"
+          ],
           "weight": 1.0
         }
       ],
@@ -37485,6 +39463,13 @@
         {
           "poolFile": "bp_missionreward_foxwellenforcement_escortships",
           "missionName": "Foxwell Enforcement › Escort Ships",
+          "contractor": "Foxwell Enforcement",
+          "missionTitles": [
+            "Contrato nivel amarillo: Limpiar grupo de secuestradores de naves",
+            "Contrato nivel amarillo: Neutralizar banda de secuestradores de naves",
+            "Contrato nivel naranja: Destruir amenaza de forajidos",
+            "Contrato nivel naranja: Eliminar flota criminal"
+          ],
           "weight": 1.0
         }
       ],
@@ -37524,6 +39509,15 @@
         {
           "poolFile": "bp_missionreward_foxwellenforcement_ambush",
           "missionName": "Foxwell Enforcement › Ambush",
+          "contractor": "Foxwell Enforcement",
+          "missionTitles": [
+            "Contrato Nivel Amarillo: Embosca a un Novato",
+            "Contrato de Nivel Amarillo: Golpe Sorpresa",
+            "Contrato Nivel Naranja: Tender la Trampa",
+            "Contrato Nivel Naranja: Devolver el Favor",
+            "Contrato Nivel Rojo: Ataque Sorpresa",
+            "Contrato de Nivel Rojo: Emboscar a un Escuadrón de Ataque"
+          ],
           "weight": 1.0
         }
       ],
@@ -37563,6 +39557,15 @@
         {
           "poolFile": "bp_missionreward_foxwellenforcement_patrol",
           "missionName": "Foxwell Enforcement › Patrol",
+          "contractor": "Foxwell Enforcement",
+          "missionTitles": [
+            "Contrato de Nivel Amarillo: Patrulla de Rutina",
+            "Contrato de Nivel Amarillo: Barrido de Seguridad",
+            "Contrato de Nivel Naranja: Patrulla de Seguridad",
+            "Contrato de Nivel Naranja: Amenaza de Seguridad Potencial",
+            "Contrato de Nivel Rojo: Asegurar Espacio Amenazado",
+            "Contrato Nivel Rojo: Patrulla de Seguridad de Alto Riesgo"
+          ],
           "weight": 1.0
         }
       ],
@@ -37610,6 +39613,14 @@
         {
           "poolFile": "bp_missionreward_citizensforprosperitydestroyitems_ab",
           "missionName": "Citizens For Prosperity Destroy Items › AB",
+          "contractor": "Citizens for Prosperity",
+          "missionTitles": [
+            "Represalia contra centro de datos",
+            "Destruir inteligencia de seguridad",
+            "Destruir registros robados",
+            "Eliminar dossier letal",
+            "Destruir información sensible"
+          ],
           "weight": 1.0
         }
       ],
@@ -37698,11 +39709,15 @@
         {
           "poolFile": "bp_missionreward_rdc_boss",
           "missionName": "RDC › Boss",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         },
         {
           "poolFile": "bp_missionreward_rdc_generic",
           "missionName": "RDC › Generic",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -37750,6 +39765,8 @@
         {
           "poolFile": "bp_missionreward_rdc_boss",
           "missionName": "RDC › Boss",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -37797,6 +39814,8 @@
         {
           "poolFile": "bp_missionreward_rdc_exclusive",
           "missionName": "RDC › Exclusive",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -37844,6 +39863,8 @@
         {
           "poolFile": "bp_missionreward_rdc_exclusive",
           "missionName": "RDC › Exclusive",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -37891,6 +39912,11 @@
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminateboss",
           "missionName": "Head Hunters › Mercenary FPS › Eliminate Boss",
+          "contractor": "Headhunters",
+          "missionTitles": [
+            "Eliminar a un pez gordo",
+            "Ajuste de cuentas"
+          ],
           "weight": 1.0
         }
       ],
@@ -37971,6 +39997,13 @@
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminatespecific_regioncd",
           "missionName": "Head Hunters › Mercenary FPS › Eliminate Specific › Region CD",
+          "contractor": "Headhunters",
+          "missionTitles": [
+            "Mata al rey",
+            "Disparo en el caos",
+            "Necesito que elimines a un CFP",
+            "Objetivo pagado en CFP"
+          ],
           "weight": 1.0
         }
       ],
@@ -38010,6 +40043,13 @@
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminatespecific_regioncd",
           "missionName": "Head Hunters › Mercenary FPS › Eliminate Specific › Region CD",
+          "contractor": "Headhunters",
+          "missionTitles": [
+            "Mata al rey",
+            "Disparo en el caos",
+            "Necesito que elimines a un CFP",
+            "Objetivo pagado en CFP"
+          ],
           "weight": 1.0
         }
       ],
@@ -38181,6 +40221,13 @@
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminatespecific_regioncd",
           "missionName": "Head Hunters › Mercenary FPS › Eliminate Specific › Region CD",
+          "contractor": "Headhunters",
+          "missionTitles": [
+            "Mata al rey",
+            "Disparo en el caos",
+            "Necesito que elimines a un CFP",
+            "Objetivo pagado en CFP"
+          ],
           "weight": 1.0
         }
       ],
@@ -38327,6 +40374,8 @@
         {
           "poolFile": "bp_missionreward_vaughngenerator_eliminatespecific",
           "missionName": "Vaughn Generator › Eliminate Specific",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -38366,6 +40415,8 @@
         {
           "poolFile": "bp_missionreward_rayari_recoveritem_irradiated",
           "missionName": "Rayari › Recover Item › Irradiated",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -38405,6 +40456,8 @@
         {
           "poolFile": "bp_missionreward_rayari_recoveritem_irradiated",
           "missionName": "Rayari › Recover Item › Irradiated",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -38444,6 +40497,8 @@
         {
           "poolFile": "bp_missionreward_rayari_recoveritem_irradiated",
           "missionName": "Rayari › Recover Item › Irradiated",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -38483,6 +40538,8 @@
         {
           "poolFile": "bp_missionreward_rayari_recoveritem_irradiated",
           "missionName": "Rayari › Recover Item › Irradiated",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -38530,6 +40587,15 @@
         {
           "poolFile": "bp_missionreward_citizensforprosperityrecovercargo_pyro",
           "missionName": "Citizens For Prosperity Recover Cargo › Pyro",
+          "contractor": "Citizens for Prosperity",
+          "missionTitles": [
+            "Recuperar nuestros suministros",
+            "Entrega de suministros interceptada",
+            "Recuperación de suministros valiosos",
+            "Es necesario recuperar suministros cruciales",
+            "Operación especial de recuperación",
+            "El envío de carga debe completarse"
+          ],
           "weight": 1.0
         }
       ],
@@ -38864,6 +40930,15 @@
         {
           "poolFile": "bp_missionreward_citizensforprosperityrecovercargo_pyro",
           "missionName": "Citizens For Prosperity Recover Cargo › Pyro",
+          "contractor": "Citizens for Prosperity",
+          "missionTitles": [
+            "Recuperar nuestros suministros",
+            "Entrega de suministros interceptada",
+            "Recuperación de suministros valiosos",
+            "Es necesario recuperar suministros cruciales",
+            "Operación especial de recuperación",
+            "El envío de carga debe completarse"
+          ],
           "weight": 1.0
         }
       ],
@@ -39026,11 +41101,26 @@
         {
           "poolFile": "bp_missionreward_bitzeros_blackboxrecovery",
           "missionName": "Bit Zeros › Black Box Recovery",
+          "contractor": "BitZeros",
+          "missionTitles": [
+            "Recoger y entregar",
+            "Llegando al fondo del asunto",
+            "Demasiado listos para nuestro bien",
+            "¿Información legendaria?",
+            "Malas despedidas",
+            "Nuestra versión de la verdad"
+          ],
           "weight": 1.0
         },
         {
           "poolFile": "bp_missionreward_bitzeros_recoveritem_stanton",
           "missionName": "Bit Zeros › Recover Item › Stanton",
+          "contractor": "BitZeros",
+          "missionTitles": [
+            "Tecnología de vanguardia",
+            "Volverles la jugada",
+            "Recogida de mejora"
+          ],
           "weight": 1.0
         }
       ],
@@ -39103,6 +41193,12 @@
         {
           "poolFile": "bp_missionreward_bitzeros_recoveritem_pyronyx",
           "missionName": "Bit Zeros › Recover Item › Pyro Nyx",
+          "contractor": "BitZeros",
+          "missionTitles": [
+            "Tecnología de vanguardia",
+            "Volverles la jugada",
+            "Recogida de mejora"
+          ],
           "weight": 1.0
         }
       ],
@@ -39142,6 +41238,12 @@
         {
           "poolFile": "bp_missionreward_bitzeros_recoveritem_pyronyx",
           "missionName": "Bit Zeros › Recover Item › Pyro Nyx",
+          "contractor": "BitZeros",
+          "missionTitles": [
+            "Tecnología de vanguardia",
+            "Volverles la jugada",
+            "Recogida de mejora"
+          ],
           "weight": 1.0
         }
       ],
@@ -39247,6 +41349,12 @@
         {
           "poolFile": "bp_missionreward_bitzeros_recoveritem_pyronyx",
           "missionName": "Bit Zeros › Recover Item › Pyro Nyx",
+          "contractor": "BitZeros",
+          "missionTitles": [
+            "Tecnología de vanguardia",
+            "Volverles la jugada",
+            "Recogida de mejora"
+          ],
           "weight": 1.0
         }
       ],
@@ -39451,6 +41559,11 @@
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminateboss",
           "missionName": "Head Hunters › Mercenary FPS › Eliminate Boss",
+          "contractor": "Headhunters",
+          "missionTitles": [
+            "Eliminar a un pez gordo",
+            "Ajuste de cuentas"
+          ],
           "weight": 1.0
         }
       ],
@@ -39490,11 +41603,15 @@
         {
           "poolFile": "bp_missionreward_ids_recoverencrypteddata",
           "missionName": "IDS › Recover Encrypted Data",
+          "contractor": "IDS",
+          "missionTitles": [],
           "weight": 1.0
         },
         {
           "poolFile": "bp_missionreward_rayari_recoveritem_hathorloot",
           "missionName": "Rayari › Recover Item › Hathor Loot",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -39534,11 +41651,15 @@
         {
           "poolFile": "bp_missionreward_intersec_patrol",
           "missionName": "Inter Sec › Patrol",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         },
         {
           "poolFile": "bp_missionreward_rayari_recoveritem_hathorloot",
           "missionName": "Rayari › Recover Item › Hathor Loot",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -39578,11 +41699,15 @@
         {
           "poolFile": "bp_missionreward_ids_recoverencrypteddata",
           "missionName": "IDS › Recover Encrypted Data",
+          "contractor": "IDS",
+          "missionTitles": [],
           "weight": 1.0
         },
         {
           "poolFile": "bp_missionreward_rayari_recoveritem_hathorloot",
           "missionName": "Rayari › Recover Item › Hathor Loot",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -39622,11 +41747,15 @@
         {
           "poolFile": "bp_missionreward_intersec_patrol",
           "missionName": "Inter Sec › Patrol",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         },
         {
           "poolFile": "bp_missionreward_rayari_recoveritem_hathorloot",
           "missionName": "Rayari › Recover Item › Hathor Loot",
+          "contractor": "",
+          "missionTitles": [],
           "weight": 1.0
         }
       ],
@@ -39674,6 +41803,14 @@
         {
           "poolFile": "bp_missionreward_citizensforprosperitydestroyitems_cd",
           "missionName": "Citizens For Prosperity Destroy Items › CD",
+          "contractor": "Citizens for Prosperity",
+          "missionTitles": [
+            "Represalia contra centro de datos",
+            "Destruir inteligencia de seguridad",
+            "Destruir registros robados",
+            "Eliminar dossier letal",
+            "Destruir información sensible"
+          ],
           "weight": 1.0
         }
       ],
@@ -39844,6 +41981,14 @@
         {
           "poolFile": "bp_missionreward_citizensforprosperitydestroyitems_cd",
           "missionName": "Citizens For Prosperity Destroy Items › CD",
+          "contractor": "Citizens for Prosperity",
+          "missionTitles": [
+            "Represalia contra centro de datos",
+            "Destruir inteligencia de seguridad",
+            "Destruir registros robados",
+            "Eliminar dossier letal",
+            "Destruir información sensible"
+          ],
           "weight": 1.0
         }
       ],
@@ -40047,6 +42192,15 @@
         {
           "poolFile": "bp_missionreward_bitzeros_blackboxrecovery",
           "missionName": "Bit Zeros › Black Box Recovery",
+          "contractor": "BitZeros",
+          "missionTitles": [
+            "Recoger y entregar",
+            "Llegando al fondo del asunto",
+            "Demasiado listos para nuestro bien",
+            "¿Información legendaria?",
+            "Malas despedidas",
+            "Nuestra versión de la verdad"
+          ],
           "weight": 1.0
         }
       ],
@@ -40391,6 +42545,14 @@
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminatespecific_regionab",
           "missionName": "Head Hunters › Mercenary FPS › Eliminate Specific › Region AB",
+          "contractor": "Headhunters",
+          "missionTitles": [
+            "Mata al rey",
+            "Disparo en el caos",
+            "Necesito que elimines a un CFP",
+            "Objetivo pagado en CFP",
+            "Hablar rápidamente"
+          ],
           "weight": 1.0
         }
       ],
@@ -40471,6 +42633,15 @@
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminateall_regionab",
           "missionName": "Head Hunters › Mercenary FPS › Eliminate ALL › Region AB",
+          "contractor": "Headhunters",
+          "missionTitles": [
+            "Se necesita un ejecutor",
+            "Atacar un sitio de CFP",
+            "… ha sido autorizado",
+            "Enviar un Mensaje",
+            "Eliminar …",
+            "Contrato Incompleto"
+          ],
           "weight": 1.0
         }
       ],
@@ -40543,6 +42714,15 @@
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminateall_regionab",
           "missionName": "Head Hunters › Mercenary FPS › Eliminate ALL › Region AB",
+          "contractor": "Headhunters",
+          "missionTitles": [
+            "Se necesita un ejecutor",
+            "Atacar un sitio de CFP",
+            "… ha sido autorizado",
+            "Enviar un Mensaje",
+            "Eliminar …",
+            "Contrato Incompleto"
+          ],
           "weight": 1.0
         }
       ],
@@ -40582,6 +42762,15 @@
         {
           "poolFile": "bp_missionreward_headhunters_mercenaryfps_eliminateall_regionab",
           "missionName": "Head Hunters › Mercenary FPS › Eliminate ALL › Region AB",
+          "contractor": "Headhunters",
+          "missionTitles": [
+            "Se necesita un ejecutor",
+            "Atacar un sitio de CFP",
+            "… ha sido autorizado",
+            "Enviar un Mensaje",
+            "Eliminar …",
+            "Contrato Incompleto"
+          ],
           "weight": 1.0
         }
       ],
@@ -40654,6 +42843,15 @@
         {
           "poolFile": "bp_missionreward_asd2a",
           "missionName": "ASD2 A",
+          "contractor": "ASD Facility Delving",
+          "missionTitles": [
+            "Núcleo de energía",
+            "Lecturas Sísmicas",
+            "Control de Esclusa",
+            "Lecturas del Sensor de Energía",
+            "Registros de Seguridad",
+            "Registros de Personal"
+          ],
           "weight": 1.0
         }
       ],
@@ -40726,6 +42924,15 @@
         {
           "poolFile": "bp_missionreward_asd3",
           "missionName": "ASD3",
+          "contractor": "ASD Facility Delving",
+          "missionTitles": [
+            "Núcleo de energía",
+            "Lecturas Sísmicas",
+            "Control de Esclusa",
+            "Lecturas del Sensor de Energía",
+            "Registros de Seguridad",
+            "Registros de Personal"
+          ],
           "weight": 1.0
         }
       ],
@@ -40765,6 +42972,15 @@
         {
           "poolFile": "bp_missionreward_asd2b",
           "missionName": "ASD2 B",
+          "contractor": "ASD Facility Delving",
+          "missionTitles": [
+            "Núcleo de energía",
+            "Lecturas Sísmicas",
+            "Control de Esclusa",
+            "Lecturas del Sensor de Energía",
+            "Registros de Seguridad",
+            "Registros de Personal"
+          ],
           "weight": 1.0
         }
       ],
@@ -40804,6 +43020,15 @@
         {
           "poolFile": "bp_missionreward_asd2c",
           "missionName": "ASD2 C",
+          "contractor": "ASD Facility Delving",
+          "missionTitles": [
+            "Núcleo de energía",
+            "Lecturas Sísmicas",
+            "Control de Esclusa",
+            "Lecturas del Sensor de Energía",
+            "Registros de Seguridad",
+            "Registros de Personal"
+          ],
           "weight": 1.0
         }
       ],

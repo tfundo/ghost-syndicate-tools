@@ -315,11 +315,20 @@ function renderBlueprintCard(bp, idx) {
     ? `<span class="bp-time">⏱ <span class="time-val">${formatTime(tier.craftTime)}</span></span>`
     : '';
 
+  // Show first Spanish title if available, otherwise pool name
+  const seenCardPools = new Set();
   const missionsHtml = bp.hasMissions
-    ? bp.missions.slice(0, 2).map(m => {
-        const name = m.missionName;
-        const display = name.length > 38 ? name.substring(0, 38) + '…' : name;
-        return `<span class="mission-tag">${escHtml(display)}</span>`;
+    ? bp.missions.filter(m => {
+        if (seenCardPools.has(m.poolFile)) return false;
+        seenCardPools.add(m.poolFile);
+        return true;
+      }).slice(0, 2).map(m => {
+        const label = (m.missionTitles && m.missionTitles.length > 0)
+          ? m.missionTitles[0]
+          : m.missionName;
+        const display = label.length > 40 ? label.substring(0, 40) + '…' : label;
+        const contractor = m.contractor ? `${m.contractor}: ` : '';
+        return `<span class="mission-tag" title="${escHtml(m.missionName)}">${escHtml(contractor)}${escHtml(display)}</span>`;
       }).join('')
     : `<span style="color:var(--text-muted);font-size:0.7rem">Sin misión asignada</span>`;
 
@@ -373,14 +382,34 @@ window.openBlueprintDetail = function(idx) {
       `).join('')
     : '<p class="modal-no-data">Sin ingredientes registrados</p>';
 
-  const missionsHtml = bp.missions.length > 0
-    ? bp.missions.map(m => `
-        <div class="modal-mission-item">
-          <span class="modal-mission-name">${escHtml(m.missionName)}</span>
-          <span class="modal-mission-pool">${escHtml(m.poolFile)}</span>
-          <span class="modal-weight">×${m.weight.toFixed(1)}</span>
-        </div>
-      `).join('')
+  // Deduplicate missions by poolFile
+  const uniqueMissions = [];
+  const seenPools = new Set();
+  bp.missions.forEach(m => {
+    if (!seenPools.has(m.poolFile)) {
+      seenPools.add(m.poolFile);
+      uniqueMissions.push(m);
+    }
+  });
+
+  const missionsHtml = uniqueMissions.length > 0
+    ? uniqueMissions.map(m => {
+        const titlesHtml = m.missionTitles && m.missionTitles.length > 0
+          ? `<ul class="modal-mission-titles">${m.missionTitles.map(t => `<li>${escHtml(t)}</li>`).join('')}</ul>`
+          : '';
+        const contractorBadge = m.contractor
+          ? `<span class="modal-contractor-badge">${escHtml(m.contractor)}</span>`
+          : '';
+        return `
+          <div class="modal-mission-item">
+            <div class="modal-mission-header">
+              ${contractorBadge}
+              <span class="modal-mission-name">${escHtml(m.missionName)}</span>
+            </div>
+            ${titlesHtml}
+          </div>
+        `;
+      }).join('')
     : '<p class="modal-no-data">Este plano no se obtiene como recompensa de misión. Puede estar en tiendas o ser desbloqueado de otra forma.</p>';
 
   // Craft times
