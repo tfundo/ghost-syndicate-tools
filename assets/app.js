@@ -116,7 +116,7 @@ window.showSection = function(sectionId) {
 // ============================================================
 async function loadDatabase() {
   try {
-    const resp = await fetch('../data/crafting_db.json');
+    const resp = await fetch('data/crafting_db.json');
     if (!resp.ok) throw new Error('HTTP ' + resp.status);
     db = await resp.json();
     initCraftingUI();
