@@ -224,23 +224,29 @@
     <div class="container">
       <div class="page-header">
         <h1 class="page-title">◈ WikeloData</h1>
-        <p class="page-subtitle">Base de datos Wikelo · Naves, armaduras, armas &amp; economía</p>
+        <p class="page-subtitle">Ítems Wikelo · Naves, armaduras, armas &amp; economía · SC 4.7.0</p>
       </div>
-      <div class="wikelo-portal">
-        <div class="wikelo-card">
-          <div class="wikelo-icon">◈</div>
-          <h2>Acceder a WikeloData</h2>
-          <p>La base de datos completa de ítems Wikelo está disponible en su propio portal dedicado.<br>Incluye naves exclusivas, armaduras, armas, equipo y tablas de economía y reputación.</p>
-          <div class="wikelo-features">
-            <span class="wikelo-feat">34 ítems fabricables</span>
-            <span class="wikelo-feat">Costes en materiales</span>
-            <span class="wikelo-feat">Sistema de reputación</span>
-            <span class="wikelo-feat">Economía &amp; conversión</span>
-          </div>
-          <a class="btn-primary" href="https://tfundo.github.io/WikeloData/" target="_blank" rel="noopener">
-            <span class="btn-icon">◈</span> Abrir WikeloData
-          </a>
+
+      <!-- Category tabs -->
+      <div class="wk-tabs" id="wkTabs"></div>
+
+      <!-- Search -->
+      <div class="wk-search-bar">
+        <div class="search-box">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="wkSearch" placeholder="Buscar ítem, material o misión..." autocomplete="off" />
+          <button class="search-clear" id="wkSearchClear" onclick="wkClearSearch()">✕</button>
         </div>
+        <span id="wkCount" class="wk-count"></span>
+      </div>
+
+      <!-- Content area -->
+      <div id="wkContent"></div>
+
+      <!-- Loading -->
+      <div class="loading-state" id="wkLoading">
+        <div class="loading-spinner"></div>
+        <p>Cargando base de datos Wikelo...</p>
       </div>
     </div>
   </section>

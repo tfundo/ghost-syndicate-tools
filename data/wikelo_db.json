@@ -1,0 +1,1262 @@
+{
+  "ships": {
+    "label": "Naves & Vehículos",
+    "icon": "rocket",
+    "type": "cards",
+    "items": [
+      {
+        "id": "s_polaris",
+        "name": "RSI Polaris Wikelo",
+        "cost": [
+          "50x Wikelo Favors",
+          "15x Polaris Bits",
+          "10x DCHS-05 Comp-Board",
+          "20x Carinite",
+          "20x Irradiated Valakkar Fang (Apex)",
+          "20x MG Scrip",
+          "15x Ace Interceptor Helmet",
+          "15x Irradiated Valakkar Pearl (Grade AAA)",
+          "15x UEE 6th Platoon Medal (Pristine)",
+          "15x Carinite (Pure)",
+          "15x ASD Secure Drive",
+          "1x RCMBNT-PWL-2",
+          "1x RCMBNT-RGL-2",
+          "1x RCMBNT-XTL-2",
+          "1x RCMBNT-PWL-3",
+          "1x RCMBNT-RGL-3",
+          "1x RCMBNT-XTL-3",
+          "1x RCMBNT-PWL-1",
+          "1x RCMBNT-RGL-1",
+          "1x RCMBNT-XTL-1"
+        ],
+        "comps": [
+          "Capital Power Plant",
+          "Capital Shield Gen",
+          "Capital Cooler",
+          "Capital Quantum"
+        ],
+        "desc": "Mission: 'Now make Polaris. Short Time Deal'. Recompensa masiva de Reputación (1000)."
+      },
+      {
+        "id": "s_idris",
+        "name": "Aegis Idris-P Wikelo War Special",
+        "cost": [
+          "50x Wikelo Favor",
+          "50x Polaris Bit",
+          "50x Carinite",
+          "30x Pearl AAA (Irradiated)",
+          "50x MG Scrip",
+          "50x Ace Interceptor Helmet",
+          "50x Irradiated Valakkar Fang (Apex)",
+          "30x UEE 6th Platoon Medal (Pristine)",
+          "30x ASD Secure Drive",
+          "50x DCHS-05 Comp-Board",
+          "5x RCMBNT-PWL-1",
+          "5x RCMBNT-PWL-2",
+          "5x RCMBNT-PWL-3",
+          "5x RCMBNT-RGL-1",
+          "5x RCMBNT-RGL-2",
+          "5x RCMBNT-RGL-3",
+          "50x DCHS-05 Comp-Board",
+          "5x RCMBNT-XTL-1",
+          "5x RCMBNT-XTL-2",
+          "5x RCMBNT-XTL-3"
+        ],
+        "comps": [
+          "Main Powerplant",
+          "Holdstrong (Shield)",
+          "Frontline (Shield)",
+          "Exotherm (Cooler)"
+        ],
+        "desc": "Requiere Reputación 999 (Very Best Customer). Misión: 'Special Idris For Killing'."
+      },
+      {
+        "id": "s_asgard",
+        "name": "Anvil Asgard Wikelo",
+        "cost": [
+          "50x Wikelo Favor",
+          "5x RCMBNT Sets (Helmet/Arms/Legs/Torso)",
+          "3x ASD Secure Drive",
+          "20x Vanduul Plating"
+        ],
+        "comps": [
+          "CoverAll (Shield)",
+          "Bolide (Power)",
+          "Permafrost (Cooler)",
+          "Yeager (Quantum)"
+        ],
+        "desc": "Misión: 'Asgard Fight Mod'."
+      },
+      {
+        "id": "s_a2",
+        "name": "Crusader Starlifter A2 War Mod",
+        "cost": [
+          "50x Wikelo Favor",
+          "20x Polaris Bit",
+          "20x MG Scrip",
+          "6x ASD Secure Drive",
+          "6x Pearl AAA (Irradiated)",
+          "6x Tevarin War Service Marker (Pristine)",
+          "6x Carinite (Pure)",
+          "6x DCHS-05 Comp-Board"
+        ],
+        "comps": [
+          "JS-500 (Power)",
+          "FR-86 (Shield)",
+          "Balandin (Quantum)",
+          "Mercury (Cooler)"
+        ],
+        "desc": "Misión: 'Starlifter A2 War Mod'."
+      },
+      {
+        "id": "s_sltac",
+        "name": "MISC Starlancer TAC",
+        "cost": [
+          "50x Wikelo Favor",
+          "30x ASD Secure Drive",
+          "15x Ace Interceptor Helmet",
+          "3x Irradiated Valakkar Pearl (Grade AAA)",
+          "3x Tevarin War Service Marker (Pristine)",
+          "3x Carinite (Pure)",
+          "x DCHS-05 Comp-Board"
+        ],
+        "comps": [
+          "Durango (Power)",
+          "FullBlock (Shield)",
+          "Yeager (Quantum)",
+          "Blizzard (Cooler)"
+        ],
+        "desc": "Misión: 'New Move Big Starlancer'."
+      },
+      {
+        "id": "s_f8c_m",
+        "name": "F8C Lightning Military",
+        "cost": [
+          "40x Wikelo Favor",
+          "4x Carinite (Pure)",
+          "4x Pearl AAA (Irradiated)",
+          "4x Tevarin War Service Marker (Pristine)"
+        ],
+        "comps": [
+          "LuxCore (Power)",
+          "FR-76 (Shield)",
+          "Colossus (Quantum)",
+          "Glacier (Cooler)"
+        ],
+        "desc": "Misión: 'F8 War Mod'."
+      },
+      {
+        "id": "s_f8c_s",
+        "name": "F8C Lightning Stealth",
+        "cost": [
+          "40x Wikelo Favor",
+          "15x DCHS-05 Comp-Board",
+          "3x Carinite (Pure)",
+          "3x Pearl AAA (Irradiated)"
+        ],
+        "comps": [
+          "Eclipse (Power)",
+          "Umbra (Shield)",
+          "Colossus (Quantum)",
+          "SnowBlind (Cooler)"
+        ],
+        "desc": "Misión: 'F8 War Mod'."
+      },
+      {
+        "id": "s_prowl",
+        "name": "Esperia Prowler Utility",
+        "cost": [
+          "40x Wikelo Favor",
+          "10x Yormandi Tongue",
+          "20x Yormandi Eye",
+          "3x Pearl AAA (Irradiated)",
+          "3x Carinite (Pure)"
+        ],
+        "comps": [
+          "Eclipse (Power)",
+          "Citadel (Shield)",
+          "Huracan (Quantum)",
+          "Snowfall (Cooler)"
+        ],
+        "desc": "Misión: 'Esperia Prowler Mod'."
+      },
+      {
+        "id": "s_slmax",
+        "name": "MISC Starlancer MAX",
+        "cost": [
+          "30x Wikelo Favor",
+          "10x Ace Helmet",
+          "3x Carinite (Pure)",
+          "3x Pearl AAA (Irradiated)"
+        ],
+        "comps": [
+          "Lotus (Power)",
+          "Parapet (Shield)",
+          "Hemera (Quantum)",
+          "Aufeis (Cooler)"
+        ],
+        "desc": "Misión: 'More than a Max'."
+      },
+      {
+        "id": "s_taur",
+        "name": "Constellation Taurus",
+        "cost": [
+          "30x Wikelo Favor",
+          "3x Carinite (Pure)",
+          "3x Pearl AAA (Irradiated)",
+          "3x Goverment Cartography Agency Medal (Pristine)"
+        ],
+        "comps": [
+          "QuadraCell MT (Power)",
+          "FR-86 (Shield)",
+          "XL-1 (Quantum)",
+          "Avalanche (Cooler)"
+        ],
+        "desc": "Misión: 'Constellation Taurus Mod'."
+      },
+      {
+        "id": "s_guard_mx",
+        "name": "Mirai Guardian MX",
+        "cost": [
+          "25x Wikelo Favor",
+          "2x Artifact (Large)",
+          "30x Vanduul Plating",
+          "30x Vanduul Metal",
+          "15x Ace Interceptor Helmet"
+        ],
+        "comps": [
+          "Bolide (Power)",
+          "CoverAll (Shield)",
+          "XL-1 (Quantum)",
+          "PermaFrost (Cooler)"
+        ],
+        "desc": "Misión: 'Guardian Mods'."
+      },
+      {
+        "id": "s_guard_qi",
+        "name": "Guardian QI",
+        "cost": [
+          "25x Wikelo Favor",
+          "15x DCHS-05 Comp-Board",
+          "15x Pearl AA (Standard)",
+          "2x UEE 6:th Platoon Medal (Pristine)"
+        ],
+        "comps": [
+          "LumaCore (Power)",
+          "Haltur (Shield)",
+          "SunFire (Quantum)",
+          "AbsoluteZero (Cooler)"
+        ],
+        "desc": "Misión: 'Guardian Mods'."
+      },
+      {
+        "id": "s_zeus_cl",
+        "name": "RSI Zeus CL",
+        "cost": [
+          "20x Wikelo Favor",
+          "15x Carinite (Pure)",
+          "10x Ace Helmet",
+          "2x Carinite (Pure)"
+        ],
+        "comps": [
+          "Genoa (Power)",
+          "Rampart (Shield)",
+          "Hemera (Quantum)",
+          "Snowpack (Cooler)"
+        ],
+        "desc": "Misión: 'Zeus Mod'."
+      },
+      {
+        "id": "s_guard",
+        "name": "Aegis Guardian",
+        "cost": [
+          "20x Wikelo Favor",
+          "15x Pearl AA",
+          "10x Ace Helmet",
+          "1x Tevarin War Service Marker (Pristine)"
+        ],
+        "comps": [
+          "QuadraCell (Power)",
+          "FR-76 (Shield)",
+          "VK-00 (Quantum)",
+          "Glacier (Cooler)"
+        ],
+        "desc": "Misión: 'Guardian Mods'."
+      },
+      {
+        "id": "s_shmk2",
+        "name": "Anvil Super Hornet Mk II",
+        "cost": [
+          "16x Wikelo Favor",
+          "3x DCHS-05 Comp-Board",
+          "5x Ace Helmet",
+          "1x Goverment Cartography Agency Medal (Pristine)"
+        ],
+        "comps": [
+          "JS-400 (Power)",
+          "FR-66 (Shield)",
+          "VK-00 (Quantum)",
+          "Glacier (Cooler)"
+        ],
+        "desc": "Misión: 'Super Hornet Mk II Mod'."
+      },
+      {
+        "id": "s_fireb",
+        "name": "Aegis Sabre Firebird",
+        "cost": [
+          "15x Wikelo Favor",
+          "4x DCHS-05 Comp-Board",
+          "3x Ace Helmet",
+          "1x Goverment Cartography Agency Medal (Pristine)"
+        ],
+        "comps": [
+          "QuadraCell (Power)",
+          "FR-66 (Shield)",
+          "VK-00 (Quantum)",
+          "Glacier (Cooler)"
+        ],
+        "desc": "Misión: 'Firebird Mod'."
+      },
+      {
+        "id": "s_scorp",
+        "name": "RSI Scorpius",
+        "cost": [
+          "15x Wikelo Favor",
+          "1x Tevarin War Service Medal (Pristine)",
+          "4x DCHS-05 Comp-Board"
+        ],
+        "comps": [
+          "Slipstream (Power)",
+          "Umbra (Shield)",
+          "Spectre (Quantum)",
+          "SnowBlind (Cooler)"
+        ],
+        "desc": "Misión: 'Build a Mod Scorpius'."
+      },
+      {
+        "id": "s_terra",
+        "name": "Anvil Terrapin Medic",
+        "cost": [
+          "15x Wikelo Favor",
+          "10x ASD Secure Drive",
+          "1x Tevarin War Service Marker (Pristine)"
+        ],
+        "comps": [
+          "IonSurge (Power)",
+          "BLOC (Shield)",
+          "Hyperion (Quantum)",
+          "Gelid (Cooler)"
+        ],
+        "desc": "Misión: 'Terrapin Medic Mod'."
+      },
+      {
+        "id": "s_wolf_s",
+        "name": "Kruger L-21 Wolf Stealth",
+        "cost": [
+          "10x Wikelo Favor",
+          "10x Vanduul Plating",
+          "10x Vanduul Metal",
+          "1x Large Artifact Fragment (Pristine)"
+        ],
+        "comps": [
+          "DeltaMax (Power)",
+          "Veil (Shield)",
+          "Zephyr (Quantum)",
+          "VaporBlock (Cooler)"
+        ],
+        "desc": "Misión: 'Wolf L-21 Stealth Mod'."
+      },
+      {
+        "id": "s_meteor",
+        "name": "RSI Meteor",
+        "cost": [
+          "10x Wikelo Favor",
+          "1x Large Artifact Fragment (Pristine)",
+          "10x Vanduul Plating",
+          "10x Vanduul Metal",
+          "5x Ace Helmet"
+        ],
+        "comps": [
+          "Slipstream (Power)",
+          "Mirage (Shield)",
+          "Zephyr (Quantum)",
+          "VaporBlock (Cooler)"
+        ],
+        "desc": "Misión: 'RSI Meteor Mod'."
+      },
+      {
+        "id": "s_ion",
+        "name": "Crusader Ares Ion",
+        "cost": [
+          "10x Wikelo Favor",
+          "10x Yormandi Eye",
+          "5x Ace Helmet",
+          "1x Tevarin War Service Marker (Pristine)"
+        ],
+        "comps": [
+          "GammaMax (Power)",
+          "Sheut (Shield)",
+          "Bolt (Quantum)",
+          "IceBox (Cooler)"
+        ],
+        "desc": "Misión: 'Ares Ion Mod'."
+      },
+      {
+        "id": "s_inferno",
+        "name": "Crusader Ares Inferno",
+        "cost": [
+          "10x Wikelo Favor",
+          "5x Yormandi Tongue",
+          "5x Ace Helmet",
+          "1x UEE 6th Platoon Medal (Pristine)"
+        ],
+        "comps": [
+          "Bolide (Power)",
+          "CoverAll (Shield)",
+          "Yeager (Quantum)",
+          "PermaFrost (Cooler)"
+        ],
+        "desc": "Misión: 'Ares Inferno Mod'."
+      },
+      {
+        "id": "s_zeus_es",
+        "name": "RSI Zeus ES",
+        "cost": [
+          "10x Wikelo Favor",
+          "1x UEE 6th Platoon Medal (Pristine)"
+        ],
+        "comps": [
+          "Genoa (Power)",
+          "Rampart (Shield)",
+          "Hemera (Quantum)",
+          "Snowpack (Cooler)"
+        ],
+        "desc": "Misión: 'Zeus Mod'."
+      },
+      {
+        "id": "s_raft",
+        "name": "Argo RAFT Wikelo",
+        "cost": [
+          "8x Wikelo Favor",
+          "10x Adult Valakkar Fang",
+          "20x Juv Valakkar Fang",
+          "5x Tundra Kopion Horn",
+          "1x Pearl AAA"
+        ],
+        "comps": [
+          "Sedulity (Power)",
+          "Citadel (Shield)",
+          "Huracan (Quantum)",
+          "Snowfall (Cooler)"
+        ],
+        "desc": "Misión: 'Argo RAFT Mod'."
+      },
+      {
+        "id": "s_c1",
+        "name": "Crusader C1 Spirit",
+        "cost": [
+          "8x Wikelo Favor",
+          "1x Tevarin War Service Marker (Pristine)"
+        ],
+        "comps": [
+          "Lotus (Power)",
+          "Lorica (Shield)",
+          "Hemera (Quantum)",
+          "Aufeis (Cooler)"
+        ],
+        "desc": "Misión: 'C1 Spirit Mod'."
+      },
+      {
+        "id": "s_prosp",
+        "name": "MISC Prospector Wikelo",
+        "cost": [
+          "6x Wikelo Favor",
+          "20x Carinite",
+          "30x Saldynium",
+          "40x Jaclium",
+          "1x Carinite (Pure)"
+        ],
+        "comps": [
+          "Guardian (Power)",
+          "Sedulity (Shield)",
+          "Snowpack (Cooler)",
+          "Colossus (Quantum)"
+        ],
+        "desc": "Misión: 'Prospector Mod'."
+      },
+      {
+        "id": "s_wolf_m",
+        "name": "Kruger L-21 Wolf Military",
+        "cost": [
+          "5x Wikelo Favor"
+        ],
+        "comps": [
+          "JS-300 (Power)",
+          "FR-66 (Shield)",
+          "VK-00 (Quantum)",
+          "Glacier (Cooler)"
+        ],
+        "desc": "Requiere 340 Rep (Very Good Customer). Misión: 'Most Special Wolf'."
+      },
+      {
+        "id": "s_peregr",
+        "name": "Aegis Sabre Peregrine",
+        "cost": [
+          "4x Wikelo Favor",
+          "1x DCHS-05 Comp-Board"
+        ],
+        "comps": [
+          "LumaCore (Power)",
+          "Jaghte (Shield)",
+          "FoxFire (Quantum)",
+          "ZeroRush (Cooler)"
+        ],
+        "desc": "Misión: 'Peregrine Mod'."
+      },
+      {
+        "id": "s_ursa",
+        "name": "RSI Ursa Medivac",
+        "cost": [
+          "4x Wikelo Favor",
+          "20x Saldynium",
+          "20x Jaclium"
+        ],
+        "comps": [
+          "MagnaBloom (Power)",
+          "Castra (Shield)",
+          "Kelvid (Cooler)"
+        ],
+        "desc": "Misión: 'Make a Ursa Mod'."
+      },
+      {
+        "id": "s_nox",
+        "name": "Aopoa Nox",
+        "cost": [
+          "4x Wikelo Favor"
+        ],
+        "comps": [
+          "IonWave (Power)",
+          "Tepilo (Cooler)"
+        ],
+        "desc": "Misión: 'Noxy Mod'."
+      },
+      {
+        "id": "s_pulse",
+        "name": "Mirai Pulse",
+        "cost": [
+          "4x Wikelo Favor"
+        ],
+        "comps": [
+          "Radix (Power)",
+          "Kelvid (Cooler)"
+        ],
+        "desc": "Misión: 'Pulse Plus'."
+      },
+      {
+        "id": "s_fortun",
+        "name": "RSI Fortune",
+        "cost": [
+          "3x Wikelo Favor",
+          "1x Carinite (Pure)"
+        ],
+        "comps": [
+          "Lotus (Power)",
+          "Concord (Shield)",
+          "Atlas (Quantum)",
+          "Aufeis (Cooler)"
+        ],
+        "desc": "Misión: 'Fortune ship for you'."
+      },
+      {
+        "id": "s_intrep",
+        "name": "Anvil Intrepid",
+        "cost": [
+          "3x Wikelo Favor",
+          "1x Government Cartography Agency Medal (Pristine)"
+        ],
+        "comps": [
+          "WhiteRose (Power)",
+          "Palisade (Shield)",
+          "Atlas (Quantum)",
+          "Ultra-Flow (Cooler)"
+        ],
+        "desc": "Misión: 'Upgrade Intrepid'."
+      },
+      {
+        "id": "s_golem",
+        "name": "Banu Golem",
+        "cost": [
+          "2x Wikelo Favor",
+          "15x ASD Secure Drive"
+        ],
+        "comps": [
+          "2x NN-13 Cannon (Weapons)"
+        ],
+        "desc": "Misión: 'Golem Rocks'."
+      }
+    ]
+  },
+  "armors": {
+    "label": "Armaduras",
+    "icon": "shield",
+    "type": "cards",
+    "items": [
+      {
+        "id": "a_bokto",
+        "name": "Bokto Armor (Glowy)",
+        "cost": [
+          "1x Pearl AAA (Irradiated)",
+          "1x Full Antium Set"
+        ],
+        "desc": "Nuclear green glow. Mission: Make glowy armor.",
+        "comps": []
+      },
+      {
+        "id": "a_testud",
+        "name": "Testudo Clanguard",
+        "cost": [
+          "15x Vanduul Plating",
+          "15x Vanduul Metal",
+          "1x Full Testudo Turfwar Set"
+        ],
+        "desc": "Vanduul styled. Mission: Armor with Vanduul.",
+        "comps": []
+      },
+      {
+        "id": "a_palat",
+        "name": "Palatino Mark I",
+        "cost": [
+          "14x Yormandi Eye",
+          "7x Yormandi Tongue",
+          "1x Full Palatino Base Set"
+        ],
+        "desc": "Mission: Test Armor.",
+        "comps": []
+      },
+      {
+        "id": "a_geist",
+        "name": "Geist Snow Camo",
+        "cost": [
+          "4x ASD Secure Drive",
+          "1x Full Geist ASD Set"
+        ],
+        "desc": "Mission: Hide Snow Suit.",
+        "comps": []
+      },
+      {
+        "id": "a_ana",
+        "name": "Ana Endro Armor",
+        "cost": [
+          "1x Carinite (Pure)",
+          "1x Full Antium Base Set"
+        ],
+        "desc": "Mission: Armor With Horn And String.",
+        "comps": []
+      },
+      {
+        "id": "a_corbel",
+        "name": "Corbel Crush",
+        "cost": [
+          "10x ASD Secure Drive",
+          "1x Corbel Mire Set",
+          "1x RCMBNT Set"
+        ],
+        "desc": "Mission: Shiny Builder Suit.",
+        "comps": []
+      },
+      {
+        "id": "a_hunter",
+        "name": "DCP Hunter Camo",
+        "cost": [
+          "1x Wikelo Favor",
+          "3x Ace Helmet",
+          "15x Juv Fang"
+        ],
+        "desc": "Mission: Look at desert but don't see you.",
+        "comps": []
+      },
+      {
+        "id": "a_cobalt",
+        "name": "DCP Cobalt Camo",
+        "cost": [
+          "1x Wikelo Favor",
+          "3x Ace Helmet",
+          "1x Medal"
+        ],
+        "desc": "Mission: Make space navy armor.",
+        "comps": []
+      },
+      {
+        "id": "a_jungle",
+        "name": "DCP Jungle Camo",
+        "cost": [
+          "1x Wikelo Favor",
+          "3x Ace Helmet",
+          "14x Eggs"
+        ],
+        "desc": "Mission: Want armor look like tree?",
+        "comps": []
+      },
+      {
+        "id": "a_novik",
+        "name": "Novikov Ascension",
+        "cost": [
+          "1x Novikov Suit",
+          "1x Novikov Helmet",
+          "30x Scrip",
+          "10x Adult Fang",
+          "1x Pearl AAA"
+        ],
+        "desc": "Mission: Walk in danger.",
+        "comps": []
+      },
+      {
+        "id": "a_xanth",
+        "name": "Xanthule Ascension",
+        "cost": [
+          "1x Xanthule Suit",
+          "1x Xanthule Helmet",
+          "10x Ace Helmet",
+          "1x Medal",
+          "20x Scrip"
+        ],
+        "desc": "Mission: Xi'an Xanthule Suit made better.",
+        "comps": []
+      },
+      {
+        "id": "a_vent",
+        "name": "Venture Ascension",
+        "cost": [
+          "1x Venture Set",
+          "30x Scrip",
+          "10x Saldynium",
+          "20x Jaclium",
+          "1x Carinite (Pure)"
+        ],
+        "desc": "Mission: Adventure a A-Venture.",
+        "comps": []
+      }
+    ]
+  },
+  "weapons": {
+    "label": "Armas",
+    "icon": "swords",
+    "type": "cards",
+    "items": [
+      {
+        "id": "w_animus",
+        "name": "Railgun Animus GP-33",
+        "cost": [
+          "10x Wikelo Favor",
+          "1x Animus Missile Launcher",
+          "20x Yormandi Eye",
+          "5x Yormandi Tongue"
+        ],
+        "desc": "Misión: 'Railgun Animus'.",
+        "comps": []
+      },
+      {
+        "id": "w_boom",
+        "name": "Boomtube Clanguard",
+        "cost": [
+          "1x Boomtube",
+          "2x Vanduul Plating",
+          "2x Vanduul Metal"
+        ],
+        "desc": "Misión: 'Curious Weapon'.",
+        "comps": []
+      },
+      {
+        "id": "w_fresy",
+        "name": "Fresnel Yormandi LMG",
+        "cost": [
+          "1x Fresnel LMG",
+          "6x Yormandi Eye",
+          "3x Yormandi Tongue"
+        ],
+        "desc": "Misión: 'Yormandi Gun'.",
+        "comps": []
+      },
+      {
+        "id": "w_zenith",
+        "name": "Zenith Snow Sniper",
+        "cost": [
+          "7x ASD Secure Drive",
+          "1x Zenith Sniper"
+        ],
+        "desc": "Misión: 'Snow Snipe'.",
+        "comps": []
+      },
+      {
+        "id": "w_prism",
+        "name": "Prism Irradiated",
+        "cost": [
+          "10x Adult Fang",
+          "5x Juv Fang",
+          "1x Prism Shotgun"
+        ],
+        "desc": "Misión: 'Make VOLT shotgun angier'.",
+        "comps": []
+      },
+      {
+        "id": "w_fresd",
+        "name": "Fresnel Deepwater",
+        "cost": [
+          "5x ASD Secure Drive",
+          "1x Fresnel LMG",
+          "15x RCMBNT Mats"
+        ],
+        "desc": "Misión: 'Heavy Volt Zapper'.",
+        "comps": []
+      },
+      {
+        "id": "w_parkop",
+        "name": "Parallax Skull (Kopion)",
+        "cost": [
+          "20x Jaclium",
+          "20x Horn",
+          "15x Saldynium",
+          "10x Carinite",
+          "1x Parallax AR"
+        ],
+        "desc": "Misión: 'Fun Kopion Skull Gun'.",
+        "comps": []
+      },
+      {
+        "id": "w_parmil",
+        "name": "Parallax Skull (Military)",
+        "cost": [
+          "20x Jaclium",
+          "20x Juv Fang",
+          "15x Saldynium",
+          "10x Carinite",
+          "1x Parallax AR"
+        ],
+        "desc": "Misión: 'Fun Military Skull Gun'.",
+        "comps": []
+      },
+      {
+        "id": "w_qhunt",
+        "name": "Quartz Hunter",
+        "cost": [
+          "1x Wikelo Favor",
+          "3x Ace Helmet",
+          "15x Juv Fang",
+          "1x Quartz SMG"
+        ],
+        "desc": "Misión: 'Make gun sandy'.",
+        "comps": []
+      },
+      {
+        "id": "w_qcob",
+        "name": "Quartz Cobalt",
+        "cost": [
+          "1x Wikelo Favor",
+          "3x Ace Helmet",
+          "1x Medal",
+          "1x Quartz SMG"
+        ],
+        "desc": "Misión: 'Volt gun more Navy-like'.",
+        "comps": []
+      },
+      {
+        "id": "w_qjun",
+        "name": "Quartz Jungle",
+        "cost": [
+          "1x Wikelo Favor",
+          "3x Ace Helmet",
+          "5x Eggs",
+          "1x Quartz SMG"
+        ],
+        "desc": "Misión: 'Zappy gun more woodlike'.",
+        "comps": []
+      },
+      {
+        "id": "w_asc_coda",
+        "name": "Coda Ascension",
+        "cost": [
+          "1x Coda Pistol",
+          "5x Ace Helmet",
+          "1x Medal",
+          "30x Scrip"
+        ],
+        "desc": "Misión: 'Fix up Coda gun'.",
+        "comps": []
+      },
+      {
+        "id": "w_asc_karna",
+        "name": "Karna Ascension",
+        "cost": [
+          "1x Karna Rifle",
+          "10x Juv Fang",
+          "10x Horn",
+          "10x Adult Fang",
+          "1x Pearl AAA"
+        ],
+        "desc": "Misión: 'Prettify Karna Gun'.",
+        "comps": []
+      },
+      {
+        "id": "w_asc_s71",
+        "name": "S71 Ascension",
+        "cost": [
+          "1x S71 Rifle",
+          "10x Carinite",
+          "10x Saldynium",
+          "10x Jaclium",
+          "1x Carinite (Pure)"
+        ],
+        "desc": "Misión: 'Built on S71 rifle'.",
+        "comps": []
+      },
+      {
+        "id": "w_f55",
+        "name": "F55 Mark I",
+        "cost": [
+          "1x F55 LMG",
+          "4x Yormandi Eye",
+          "2x Tongue",
+          "20x Carinite"
+        ],
+        "desc": "Misión: 'F55 Look Better'.",
+        "comps": []
+      }
+    ]
+  },
+  "misc": {
+    "label": "Equip. & Skins",
+    "icon": "construction",
+    "type": "cards",
+    "items": [
+      {
+        "id": "m_surprise",
+        "name": "Hangar Surprise Box",
+        "cost": [
+          "1x Wikelo Favor",
+          "10x Scrip"
+        ],
+        "desc": "Misión: 'Hangar Surprise'. Loot box aleatorio.",
+        "comps": []
+      },
+      {
+        "id": "m_akti",
+        "name": "ATLS IKTI",
+        "cost": [
+          "1x ATLS Suit",
+          "2x NN-13",
+          "5x Apex Fang",
+          "2x Wikelo Favor"
+        ],
+        "desc": "Misión: 'Make ATLS shoot'.",
+        "comps": []
+      },
+      {
+        "id": "m_ageo",
+        "name": "ATLS IKTI GEO",
+        "cost": [
+          "1x ATLS GEO",
+          "1x IKTI Module",
+          "2x NN-13",
+          "1x Wikelo Favor"
+        ],
+        "desc": "Misión: 'Make jumpy ATLS shoot'.",
+        "comps": []
+      },
+      {
+        "id": "m_askin_snow",
+        "name": "ATLS Snowland",
+        "cost": [
+          "1x Wikelo Favor",
+          "1x Pearl AAA",
+          "1x ATLS"
+        ],
+        "desc": "Skin. Misión: 'Turn ATLS Suit pretty (Selo)'.",
+        "comps": []
+      },
+      {
+        "id": "m_askin_orange",
+        "name": "ATLS Orange Line",
+        "cost": [
+          "1x Wikelo Favor",
+          "36 SCU Quantanium",
+          "1x ATLS"
+        ],
+        "desc": "Skin. Misión: 'Turn ATLS Suit pretty (Kinga)'.",
+        "comps": []
+      },
+      {
+        "id": "m_askin_cool",
+        "name": "ATLS Cool Metal",
+        "cost": [
+          "1x Wikelo Favor",
+          "1x Carinite (Pure)",
+          "1x ATLS"
+        ],
+        "desc": "Skin. Misión: 'Turn ATLS Suit pretty (Dasi)'.",
+        "comps": []
+      },
+      {
+        "id": "m_range",
+        "name": "XDL Mark I Rangefinder",
+        "cost": [
+          "1x Wikelo Favor",
+          "2x Yormandi Eye",
+          "1x Tongue"
+        ],
+        "desc": "Misión: 'Want Better Eyes?'.",
+        "comps": []
+      }
+    ]
+  },
+  "economy": {
+    "label": "Economía & Rep",
+    "icon": "currency_exchange",
+    "type": "tables",
+    "tables": [
+      {
+        "title": "Conversión de Divisas (Favors)",
+        "headers": [
+          "Entrada",
+          "Salida",
+          "Nota de Misión"
+        ],
+        "rows": [
+          [
+            "50x MG Scrip",
+            "1x Wikelo Favor",
+            "Misión: Scrip -> Favors"
+          ],
+          [
+            "50x Council Scrip",
+            "1x Wikelo Favor",
+            "Misión: Scrip -> Favors"
+          ],
+          [
+            "40x Carinite",
+            "1x Wikelo Favor",
+            "Misión: Carinite -> Favors"
+          ],
+          [
+            "12x Irradiated Apex Pearls (AA)",
+            "1x Wikelo Favor",
+            "Misión: Trade Worm Parts for Favors"
+          ]
+        ]
+      },
+      {
+        "title": "Recompensas de Reputación (LISTADO COMPLETO)",
+        "headers": [
+          "Item / Misión",
+          "Reputación Ganada"
+        ],
+        "rows": [
+          [
+            "Now make Polaris (Short Time)",
+            "1000 Rep"
+          ],
+          [
+            "Starlifter A2 War Mod",
+            "500 Rep"
+          ],
+          [
+            "Anvil Asgard Fight Mod",
+            "250 Rep"
+          ],
+          [
+            "F8 War Mod",
+            "250 Rep"
+          ],
+          [
+            "Starlancer TAC Mod",
+            "250 Rep"
+          ],
+          [
+            "Starlancer MAX Mod",
+            "250 Rep"
+          ],
+          [
+            "Constellation Taurus Mod",
+            "250 Rep"
+          ],
+          [
+            "Mirai Guardian MX Mod",
+            "250 Rep"
+          ],
+          [
+            "Aegis Guardian QI Mod",
+            "250 Rep"
+          ],
+          [
+            "Esperia Prowler Mod",
+            "250 Rep"
+          ],
+          [
+            "RSI Scorpius Mod",
+            "100 Rep"
+          ],
+          [
+            "Sabre Firebird Mod",
+            "100 Rep"
+          ],
+          [
+            "Aegis Guardian Mod",
+            "100 Rep"
+          ],
+          [
+            "Super Hornet Mk II Mod",
+            "100 Rep"
+          ],
+          [
+            "Anvil Terrapin Medic Mod",
+            "100 Rep"
+          ],
+          [
+            "Crusader Ares Ion Mod",
+            "100 Rep"
+          ],
+          [
+            "Crusader Ares Inferno Mod",
+            "100 Rep"
+          ],
+          [
+            "RSI Zeus CL Mod",
+            "30 Rep"
+          ],
+          [
+            "RSI Zeus ES Mod",
+            "30 Rep"
+          ],
+          [
+            "RSI Fortune (Ursa) Mod",
+            "30 Rep"
+          ],
+          [
+            "Banu Golem Mod",
+            "30 Rep"
+          ],
+          [
+            "Sabre Peregrine Mod",
+            "30 Rep"
+          ],
+          [
+            "MISC Prospector Mod",
+            "30 Rep"
+          ],
+          [
+            "Argo RAFT Mod",
+            "30 Rep"
+          ],
+          [
+            "Crusader C1 Spirit Mod",
+            "30 Rep"
+          ],
+          [
+            "Anvil Intrepid Mod",
+            "30 Rep"
+          ],
+          [
+            "RSI Meteor Mod",
+            "30 Rep"
+          ],
+          [
+            "Wolf L-21 Stealth Mod",
+            "30 Rep"
+          ],
+          [
+            "Bokto Armor Mission",
+            "25 Rep"
+          ],
+          [
+            "Testudo Clanguard Mission",
+            "25 Rep"
+          ],
+          [
+            "Palatino Mark I Mission",
+            "25 Rep"
+          ],
+          [
+            "Geist Snow Camo Mission",
+            "25 Rep"
+          ],
+          [
+            "Ana Endro Armor Mission",
+            "25 Rep"
+          ],
+          [
+            "Corbel Crush Mission",
+            "25 Rep"
+          ],
+          [
+            "DCP Hunter/Cobalt/Jungle Mission",
+            "25 Rep"
+          ],
+          [
+            "Novikov/Xanthule/Venture Ascension",
+            "25 Rep"
+          ],
+          [
+            "ATLS Missions",
+            "20 Rep"
+          ],
+          [
+            "Mirai Pulse Mod",
+            "20 Rep"
+          ],
+          [
+            "Aopoa Nox Mod",
+            "20 Rep"
+          ],
+          [
+            "RSI Ursa Medivac Mod",
+            "20 Rep"
+          ],
+          [
+            "Skins de Armas (Boomtube, Fresnel, etc)",
+            "10 Rep"
+          ]
+        ]
+      },
+      {
+        "title": "Requisitos de Reputación (Desbloqueo)",
+        "headers": [
+          "Item Restringido",
+          "Nivel Requerido"
+        ],
+        "rows": [
+          [
+            "Special Idris For Killing",
+            "999 (Very Best Customer)"
+          ],
+          [
+            "RSI Polaris Wikelo",
+            "1000 (O misión especial temporal)"
+          ],
+          [
+            "Most Special Wolf (L-21 Mil)",
+            "340 (Very Good Customer)"
+          ]
+        ]
+      },
+      {
+        "title": "Misiones Iniciales & Loop Diario",
+        "headers": [
+          "Misión",
+          "Requisitos",
+          "Recompensa"
+        ],
+        "rows": [
+          [
+            "Very Hungry (4.3.2)",
+            "1x Berry Blend Smoothie, 1x Fat Free Ice Cream",
+            "Acceso / Red Alert Gear"
+          ],
+          [
+            "Arrive To System",
+            "1x Vestal Water, 3x Tundra Kopion Horn",
+            "Desbloqueo Inicial"
+          ]
+        ]
+      }
+    ]
+  }
+}

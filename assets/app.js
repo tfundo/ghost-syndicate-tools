@@ -187,6 +187,9 @@ window.showSection = function(sectionId) {
   // Destroy crafting back-to-top FAB when leaving crafting
   if (sectionId !== 'crafting') destroyCraftingFab();
 
+  // Load WikeloData on first visit
+  if (sectionId === 'wikelodata') loadWikeloDb();
+
   // Scroll to top
   window.scrollTo({ top: 0, behavior: 'smooth' });
 };
@@ -716,4 +719,155 @@ function escHtml(str) {
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;');
+}
+
+// ============================================================
+// WIKELODATA SECTION
+// ============================================================
+const wkState = {
+  db: null,
+  activeTab: 'ships',
+  search: '',
+};
+
+const WK_ICONS = {
+  ships:   '🚀',
+  armors:  '🛡',
+  weapons: '⚔',
+  misc:    '🔧',
+  economy: '💱',
+};
+
+async function loadWikeloDb() {
+  if (wkState.db) return;
+  try {
+    const resp = await fetch('data/wikelo_db.json');
+    if (!resp.ok) throw new Error('HTTP ' + resp.status);
+    wkState.db = await resp.json();
+    initWikelo();
+  } catch (e) {
+    document.getElementById('wkLoading').innerHTML = '<p style="color:var(--accent)">Error cargando datos Wikelo.</p>';
+  }
+}
+
+function initWikelo() {
+  const db = wkState.db;
+  document.getElementById('wkLoading').classList.add('hidden');
+
+  // Build tabs
+  const tabsEl = document.getElementById('wkTabs');
+  tabsEl.innerHTML = Object.entries(db).map(([key, cat]) =>
+    `<button class="wk-tab${key === wkState.activeTab ? ' active' : ''}" onclick="wkSetTab('${key}')">
+      ${WK_ICONS[key] || '◈'} ${cat.label}
+    </button>`
+  ).join('');
+
+  // Search listener
+  const searchEl = document.getElementById('wkSearch');
+  searchEl.addEventListener('input', e => {
+    wkState.search = e.target.value.toLowerCase();
+    document.getElementById('wkSearchClear').classList.toggle('visible', wkState.search.length > 0);
+    renderWikelo();
+  });
+
+  renderWikelo();
+}
+
+window.wkSetTab = function(tab) {
+  wkState.activeTab = tab;
+  wkState.search = '';
+  document.getElementById('wkSearch').value = '';
+  document.getElementById('wkSearchClear').classList.remove('visible');
+  document.querySelectorAll('.wk-tab').forEach(b => b.classList.toggle('active', b.textContent.trim().includes(wkState.db[tab]?.label || tab)));
+  // Re-mark active tab reliably
+  document.querySelectorAll('.wk-tab').forEach((b, i) => {
+    const keys = Object.keys(wkState.db);
+    b.classList.toggle('active', keys[i] === tab);
+  });
+  renderWikelo();
+};
+
+window.wkClearSearch = function() {
+  wkState.search = '';
+  document.getElementById('wkSearch').value = '';
+  document.getElementById('wkSearchClear').classList.remove('visible');
+  renderWikelo();
+};
+
+function renderWikelo() {
+  const db = wkState.db;
+  const cat = db[wkState.activeTab];
+  const content = document.getElementById('wkContent');
+  const countEl = document.getElementById('wkCount');
+
+  if (cat.type === 'tables') {
+    countEl.textContent = '';
+    content.innerHTML = renderWikeloTables(cat);
+    return;
+  }
+
+  // Filter cards
+  const q = wkState.search;
+  const items = q
+    ? cat.items.filter(it =>
+        it.name.toLowerCase().includes(q) ||
+        (it.desc || '').toLowerCase().includes(q) ||
+        it.cost.some(c => c.toLowerCase().includes(q))
+      )
+    : cat.items;
+
+  countEl.textContent = `${items.length} ítems`;
+  content.innerHTML = items.length
+    ? `<div class="wk-grid">${items.map(renderWikeloCard).join('')}</div>`
+    : `<div class="empty-state"><div class="empty-icon">◈</div><p>No se encontraron ítems</p></div>`;
+}
+
+function renderWikeloCard(item) {
+  const costsHtml = item.cost.map(c =>
+    `<li class="wk-cost-item"><span class="wk-bullet">▸</span>${escHtml(c)}</li>`
+  ).join('');
+
+  const compsHtml = item.comps && item.comps.length
+    ? `<div class="wk-comps">
+        <span class="wk-comps-label">Componentes</span>
+        ${item.comps.map(c => `<span class="wk-comp-tag">${escHtml(c)}</span>`).join('')}
+       </div>`
+    : '';
+
+  const missionMatch = (item.desc || '').match(/[Mm]isi[oó]n[:\s]*['"]?([^'.]+)/);
+  const missionHtml = missionMatch
+    ? `<div class="wk-mission"><span class="wk-mission-icon">🎯</span>${escHtml(missionMatch[1].trim())}</div>`
+    : '';
+
+  const descClean = (item.desc || '').replace(/Misi[oó]n[:\s]*['"]?[^'.]+['"]?\.?\s*/i, '').trim();
+  const descHtml = descClean
+    ? `<p class="wk-desc">${escHtml(descClean)}</p>`
+    : '';
+
+  return `
+    <div class="wk-card">
+      <div class="wk-card-header">
+        <span class="wk-item-name">${escHtml(item.name)}</span>
+      </div>
+      ${missionHtml}
+      ${descHtml}
+      <ul class="wk-cost-list">${costsHtml}</ul>
+      ${compsHtml}
+    </div>`;
+}
+
+function renderWikeloTables(cat) {
+  return cat.tables.map(table => `
+    <div class="wk-table-block">
+      <h3 class="wk-table-title">${escHtml(table.title)}</h3>
+      <div class="wk-table-wrap">
+        <table class="wk-table">
+          <thead><tr>${table.headers.map(h => `<th>${escHtml(h)}</th>`).join('')}</tr></thead>
+          <tbody>${table.rows.map(row =>
+            `<tr>${row.map(cell => `<td>${escHtml(cell)}</td>`).join('')}</tr>`
+          ).join('')}</tbody>
+        </table>
+      </div>
+    </div>
+  `).join('');
 }
