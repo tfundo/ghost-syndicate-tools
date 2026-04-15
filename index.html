@@ -72,6 +72,10 @@
 
         <!-- Social links -->
         <div class="hero-social">
+          <a class="social-btn social-donate" href="https://www.paypal.com/donate/?hosted_button_id=KPS53TPR85EV8" target="_blank" rel="noopener" aria-label="Apoya el proyecto con una donación">
+            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.304 2.42 1.012 4.287-.023.143-.047.288-.077.437-.983 5.05-4.349 6.797-8.647 6.797h-2.19c-.524 0-.968.382-1.05.9l-1.12 7.106zm14.146-14.42a3.35 3.35 0 0 0-.607-.541c-.013.076-.026.175-.041.254-.93 4.778-4.005 7.201-9.138 7.201h-2.19a.563.563 0 0 0-.556.479l-1.187 7.527h-.506l-.24 1.516a.56.56 0 0 0 .554.647h3.882c.46 0 .85-.334.922-.788.06-.26.76-4.852.816-5.09a.932.932 0 0 1 .923-.788h.58c3.76 0 6.705-1.528 7.565-5.946.36-1.847.174-3.388-.777-4.471z"/></svg>
+            Donar
+          </a>
           <a class="social-btn social-yt" href="https://www.youtube.com/@tfundo" target="_blank" rel="noopener" aria-label="Canal de YouTube de TFundo">
             <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
             YouTube
@@ -267,11 +271,31 @@
     <div class="container">
       <div class="footer-logo">◈ GHOST SYNDICATE TOOLS</div>
       <p class="footer-note">
-        Datos extraídos directamente de Star Citizen 4.7.0. Uso no comercial.<br>
-        Star Citizen® es marca registrada de Cloud Imperium Games Corp.
+        Ghost Syndicate Tools es un proyecto de fans no oficial, no afiliado ni respaldado por Cloud Imperium Games.<br>
+        Star Citizen®, Roberts Space Industries® y Cloud Imperium® son marcas registradas de Cloud Imperium Rights LLC.<br>
+        Contenido creado bajo la <a class="footer-link" href="https://robertsspaceindustries.com/fan-content-policy" target="_blank" rel="noopener">Fan Content Policy de RSI</a>. Uso estrictamente no comercial.
       </p>
+      <div class="footer-links">
+        <button class="footer-link-btn" onclick="openLegal('aviso')">Aviso Legal</button>
+        <span class="footer-sep">·</span>
+        <button class="footer-link-btn" onclick="openLegal('privacidad')">Política de Privacidad</button>
+        <span class="footer-sep">·</span>
+        <a class="footer-link-btn" href="https://www.paypal.com/donate/?hosted_button_id=KPS53TPR85EV8" target="_blank" rel="noopener">♥ Donar</a>
+      </div>
+      <p class="footer-copy">© 2025 Ghost Syndicate Tools · TFundo · Proyecto de fans sin ánimo de lucro</p>
     </div>
   </footer>
+
+  <!-- ===== LEGAL MODAL ===== -->
+  <div class="legal-overlay" id="legalOverlay" onclick="closeLegal()"></div>
+  <div class="legal-modal" id="legalModal" role="dialog" aria-modal="true">
+    <button class="modal-close" onclick="closeLegal()">✕</button>
+    <div class="legal-tabs">
+      <button class="legal-tab active" id="legalTabAviso" onclick="switchLegalTab('aviso')">Aviso Legal</button>
+      <button class="legal-tab" id="legalTabPriv" onclick="switchLegalTab('privacidad')">Privacidad</button>
+    </div>
+    <div class="legal-body" id="legalBody"></div>
+  </div>
 
   <script src="assets/comparador.js"></script>
   <script src="assets/app.js"></script>

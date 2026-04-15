@@ -538,8 +538,76 @@ window.closeModal = function() {
 
 // Close with ESC
 document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') closeModal();
+  if (e.key === 'Escape') { closeModal(); closeLegal(); }
 });
+
+// ============================================================
+// LEGAL MODAL
+// ============================================================
+const LEGAL_CONTENT = {
+  aviso: `
+    <h2>Aviso Legal</h2>
+    <p><strong>Ghost Syndicate Tools</strong> es un proyecto personal sin ánimo de lucro creado por <strong>TFundo</strong>, creador de contenido de Star Citizen. No es una empresa ni entidad jurídica registrada.</p>
+    <p>Este sitio web es de acceso libre y gratuito. No se venden productos ni servicios. Las donaciones son voluntarias y no conllevan ninguna contraprestación.</p>
+
+    <h2>Propiedad Intelectual</h2>
+    <p>Ghost Syndicate Tools es contenido de fans no oficial. <strong>Star Citizen®, Roberts Space Industries® y Cloud Imperium®</strong> son marcas registradas de <strong>Cloud Imperium Rights LLC</strong>. Los datos, nombres e imágenes de naves, armas y elementos del juego pertenecen a Cloud Imperium Games Corp.</p>
+    <p>Este proyecto se acoge a la <a href="https://robertsspaceindustries.com/fan-content-policy" target="_blank" rel="noopener">Fan Content Policy de Roberts Space Industries</a> y no está afiliado, patrocinado ni respaldado por Cloud Imperium Games de ningún modo.</p>
+    <p>Las imágenes de naves se cargan directamente desde el CDN oficial de RSI y no son redistribuidas por este sitio.</p>
+
+    <h2>Exención de Responsabilidad</h2>
+    <p>La información contenida en esta web se ofrece "tal cual", sin garantías de exactitud o actualización. Los datos del juego pueden variar con cada parche. Ghost Syndicate Tools no se hace responsable de decisiones tomadas en base a la información aquí publicada.</p>
+
+    <h2>Contacto</h2>
+    <p>Para cualquier consulta puedes contactar a través del <a href="https://discord.com/invite/Ktfnbmj5s7" target="_blank" rel="noopener">Discord de Ghost Syndicate</a> o del canal de <a href="https://www.youtube.com/@tfundo" target="_blank" rel="noopener">YouTube de TFundo</a>.</p>
+  `,
+  privacidad: `
+    <h2>Política de Privacidad</h2>
+    <p>En Ghost Syndicate Tools nos tomamos tu privacidad en serio. A continuación explicamos qué datos se procesan al usar este sitio.</p>
+
+    <h2>Datos que NO recopilamos</h2>
+    <p>Este sitio <strong>no recoge, almacena ni procesa ningún dato personal</strong>. No hay formularios de registro, no hay cuentas de usuario, no hay analytics propios, no hay cookies propias.</p>
+
+    <h2>Servicios de terceros</h2>
+    <p><strong>Google Fonts</strong> — Este sitio carga tipografías desde los servidores de Google (fonts.googleapis.com). Al cargar la página, tu navegador realiza una solicitud a Google que puede registrar tu dirección IP según la <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">política de privacidad de Google</a>. Puedes evitarlo usando un bloqueador de fuentes externas.</p>
+    <p><strong>Roberts Space Industries CDN</strong> — Las imágenes de naves se cargan desde el CDN de RSI (media.robertsspaceindustries.com). RSI puede registrar las solicitudes según su propia política de privacidad.</p>
+    <p><strong>PayPal</strong> — El botón de donación redirige a una página de PayPal. Solo si decides realizar una donación, PayPal procesará los datos necesarios para completar el pago según su <a href="https://www.paypal.com/es/legalhub/privacy-full" target="_blank" rel="noopener">política de privacidad</a>. Este sitio no recibe ni almacena ninguno de esos datos.</p>
+
+    <h2>Cookies</h2>
+    <p>Este sitio no establece ninguna cookie propia. Las solicitudes a Google Fonts y al CDN de RSI pueden generar cookies de terceros gestionadas íntegramente por dichos servicios.</p>
+
+    <h2>Tus derechos (RGPD)</h2>
+    <p>Al no recopilar datos personales, no hay datos sobre los que ejercer derechos de acceso, rectificación o supresión. Para cuestiones relacionadas con los servicios de terceros mencionados, contacta directamente con Google, RSI o PayPal.</p>
+
+    <h2>Cambios en esta política</h2>
+    <p>Cualquier modificación se publicará en esta misma página. Última actualización: abril 2025.</p>
+  `
+};
+
+let _legalTab = 'aviso';
+
+window.openLegal = function(tab = 'aviso') {
+  _legalTab = tab;
+  _renderLegalTab(tab);
+  document.getElementById('legalOverlay').classList.add('open');
+  document.getElementById('legalModal').classList.add('open');
+};
+
+window.closeLegal = function() {
+  document.getElementById('legalOverlay').classList.remove('open');
+  document.getElementById('legalModal').classList.remove('open');
+};
+
+window.switchLegalTab = function(tab) {
+  _legalTab = tab;
+  _renderLegalTab(tab);
+};
+
+function _renderLegalTab(tab) {
+  document.getElementById('legalBody').innerHTML = LEGAL_CONTENT[tab] || '';
+  document.getElementById('legalTabAviso').classList.toggle('active', tab === 'aviso');
+  document.getElementById('legalTabPriv').classList.toggle('active', tab === 'privacidad');
+}
 
 // ============================================================
 // HELPERS
