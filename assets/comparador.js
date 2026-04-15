@@ -600,8 +600,8 @@
           <div class="comp-cmp-name">${escComp(ship.name)}</div>
           <div class="comp-cmp-sub">${escComp(ship.mfr)}</div>
           <div class="comp-cmp-badges">
-            <span class="comp-badge" style="background:${roleColor}20;border-color:${roleColor}60;color:#1a0f00">${escComp(ship.role)}</span>
-            <span class="comp-badge" style="background:${sizeColor}20;border-color:${sizeColor}60;color:#1a0f00">${escComp(ship.size)}</span>
+            <span class="comp-badge" style="background:${roleColor}18;border-color:${roleColor};color:${roleColor}">${escComp(ship.role)}</span>
+            <span class="comp-badge" style="background:${sizeColor}18;border-color:${sizeColor};color:${sizeColor}">${escComp(ship.size)}</span>
           </div>
         </div>
         <div class="comp-cmp-stats">
