@@ -264,6 +264,71 @@
     if (!root) return;
     root.innerHTML = buildLayout();
     attachEventListeners();
+    updateFloatingBtn();
+  }
+
+  function updateFloatingBtn() {
+    let fab = document.getElementById('comp-fab');
+    const count = compState.selected.length;
+
+    if (count === 0) {
+      if (fab) fab.style.opacity = '0';
+      return;
+    }
+
+    if (!fab) {
+      fab = document.createElement('button');
+      fab.id = 'comp-fab';
+      fab.style.cssText = [
+        'position:fixed',
+        'bottom:1.8rem',
+        'right:1.8rem',
+        'z-index:4000',
+        'display:flex',
+        'align-items:center',
+        'gap:0.5rem',
+        'padding:0.8rem 1.4rem',
+        'background:var(--accent)',
+        'color:#0c0a09',
+        'font-family:var(--font-hud)',
+        'font-size:0.82rem',
+        'font-weight:700',
+        'letter-spacing:0.1em',
+        'text-transform:uppercase',
+        'border:none',
+        'border-radius:4px',
+        'cursor:pointer',
+        'box-shadow:0 4px 20px rgba(245,158,11,0.5),0 0 40px rgba(245,158,11,0.2)',
+        'transition:all 0.25s ease',
+        'white-space:nowrap',
+      ].join(';');
+      fab.addEventListener('click', () => {
+        compState.tab = 'compare';
+        render();
+        document.querySelector('#compContentArea').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+      fab.addEventListener('mouseenter', () => {
+        fab.style.background = 'var(--accent-light)';
+        fab.style.transform = 'translateY(-2px)';
+        fab.style.boxShadow = '0 6px 28px rgba(245,158,11,0.65),0 0 50px rgba(245,158,11,0.25)';
+      });
+      fab.addEventListener('mouseleave', () => {
+        fab.style.background = 'var(--accent)';
+        fab.style.transform = '';
+        fab.style.boxShadow = '0 4px 20px rgba(245,158,11,0.5),0 0 40px rgba(245,158,11,0.2)';
+      });
+      document.body.appendChild(fab);
+    }
+
+    fab.innerHTML = `⚖ Comparar <span style="background:#0c0a09;color:var(--accent);border-radius:50%;width:1.3rem;height:1.3rem;display:inline-flex;align-items:center;justify-content:center;font-size:0.72rem;font-weight:900;">${count}</span>`;
+    fab.style.opacity = '1';
+    fab.style.pointerEvents = 'auto';
+  }
+
+  // Remove FAB when leaving comparador
+  function destroyFloatingBtn() {
+    const fab = document.getElementById('comp-fab');
+    if (fab) fab.remove();
   }
 
   // ============================================================
@@ -1341,6 +1406,7 @@
     switchTab,
     toggleSelect,
     clearSelection,
+    destroy: destroyFloatingBtn,
     // Internal helpers exposed for inline onclick handlers
     _clearSearchShips: function () {
       compState.searchShips = '';

@@ -110,9 +110,11 @@ window.showSection = function(sectionId) {
   // Update URL
   window.history.replaceState(null, '', '#' + sectionId);
 
-  // Init comparador on first visit
+  // Init comparador on first visit; destroy FAB when leaving
   if (sectionId === 'comparador' && window.Comp) {
     window.Comp.init();
+  } else if (sectionId !== 'comparador' && window.Comp && window.Comp.destroy) {
+    window.Comp.destroy();
   }
 
   // Scroll to top
