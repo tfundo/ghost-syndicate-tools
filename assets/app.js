@@ -59,6 +59,69 @@ function generateStars() {
 }
 
 // ============================================================
+// CRAFTING BACK-TO-TOP FAB
+// ============================================================
+function updateCraftingFab() {
+  if (currentSection !== 'crafting') return;
+
+  let fab = document.getElementById('crafting-top-fab');
+
+  if (window.scrollY < 400) {
+    if (fab) fab.style.opacity = '0';
+    return;
+  }
+
+  if (!fab) {
+    fab = document.createElement('button');
+    fab.id = 'crafting-top-fab';
+    fab.title = 'Volver al inicio de la lista';
+    fab.style.cssText = [
+      'position:fixed',
+      'bottom:1.8rem',
+      'right:1.8rem',
+      'z-index:4000',
+      'width:2.8rem',
+      'height:2.8rem',
+      'display:flex',
+      'align-items:center',
+      'justify-content:center',
+      'background:var(--accent)',
+      'color:#0c0a09',
+      'font-size:1.1rem',
+      'font-weight:900',
+      'border:none',
+      'border-radius:4px',
+      'cursor:pointer',
+      'box-shadow:0 4px 20px rgba(245,158,11,0.5),0 0 40px rgba(245,158,11,0.2)',
+      'transition:all 0.25s ease',
+      'opacity:0',
+    ].join(';');
+    fab.innerHTML = '↑';
+    fab.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    fab.addEventListener('mouseenter', () => {
+      fab.style.background = 'var(--accent-light)';
+      fab.style.transform = 'translateY(-2px)';
+      fab.style.boxShadow = '0 6px 28px rgba(245,158,11,0.65),0 0 50px rgba(245,158,11,0.25)';
+    });
+    fab.addEventListener('mouseleave', () => {
+      fab.style.background = 'var(--accent)';
+      fab.style.transform = '';
+      fab.style.boxShadow = '0 4px 20px rgba(245,158,11,0.5),0 0 40px rgba(245,158,11,0.2)';
+    });
+    document.body.appendChild(fab);
+  }
+
+  fab.style.opacity = '1';
+}
+
+function destroyCraftingFab() {
+  const fab = document.getElementById('crafting-top-fab');
+  if (fab) fab.remove();
+}
+
+// ============================================================
 // NAVIGATION
 // ============================================================
 function setupNavigation() {
@@ -69,6 +132,7 @@ function setupNavigation() {
   // Scroll effect
   window.addEventListener('scroll', () => {
     navbar.classList.toggle('scrolled', window.scrollY > 20);
+    updateCraftingFab();
   });
 
   // Mobile hamburger
@@ -116,6 +180,9 @@ window.showSection = function(sectionId) {
   } else if (sectionId !== 'comparador' && window.Comp && window.Comp.destroy) {
     window.Comp.destroy();
   }
+
+  // Destroy crafting back-to-top FAB when leaving crafting
+  if (sectionId !== 'crafting') destroyCraftingFab();
 
   // Scroll to top
   window.scrollTo({ top: 0, behavior: 'smooth' });

@@ -377,8 +377,8 @@
           <div class="comp-mfr">${escComp(ship.mfr)}</div>
         </div>
         <div class="comp-badges">
-          <span class="comp-badge comp-badge-role" style="background:${roleColor}20;border-color:${roleColor}60;color:#1a0f00">${escComp(ship.role)}</span>
-          <span class="comp-badge comp-badge-size" style="background:${sizeColor}20;border-color:${sizeColor}60;color:#1a0f00">${escComp(ship.size)}</span>
+          <span class="comp-badge comp-badge-role" style="background:${roleColor}18;border-color:${roleColor};color:${roleColor}">${escComp(ship.role)}</span>
+          <span class="comp-badge comp-badge-size" style="background:${sizeColor}18;border-color:${sizeColor};color:${sizeColor}">${escComp(ship.size)}</span>
         </div>
         <div class="comp-stats-row">
           <div class="comp-stat">
@@ -470,8 +470,8 @@
           <div class="comp-mfr comp-weapon-size" title="Tamaño ${weapon.size}">${sizeDots}</div>
         </div>
         <div class="comp-badges">
-          <span class="comp-badge" style="background:${typeColor}20;border-color:${typeColor}60;color:#1a0f00">${escComp(weapon.type)}</span>
-          <span class="comp-badge comp-badge-size" style="color:#1a0f00;border-color:var(--border)">S${weapon.size}</span>
+          <span class="comp-badge" style="background:${typeColor}18;border-color:${typeColor};color:${typeColor}">${escComp(weapon.type)}</span>
+          <span class="comp-badge comp-badge-size" style="color:var(--text-dim);border-color:var(--border)">S${weapon.size}</span>
         </div>
         ${weapon.note ? `<div class="comp-weapon-note">${escComp(weapon.note)}</div>` : ''}
         <div class="comp-stats-row">
@@ -633,7 +633,7 @@
           <div class="comp-cmp-name">${escComp(weapon.name)}</div>
           <div class="comp-cmp-sub">S${weapon.size} · ${escComp(weapon.type)}</div>
           <div class="comp-cmp-badges">
-            <span class="comp-badge" style="background:${typeColor}20;border-color:${typeColor}60;color:#1a0f00">${escComp(weapon.type)}</span>
+            <span class="comp-badge" style="background:${typeColor}18;border-color:${typeColor};color:${typeColor}">${escComp(weapon.type)}</span>
           </div>
         </div>
         <div class="comp-cmp-stats">
