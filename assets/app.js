@@ -12,6 +12,15 @@ let db = null;
 let filtered = [];
 let currentView = 'grid';
 let currentSection = 'home';
+let itemImages = {};   // base_entity → image URL
+
+function baseEntity(entity) {
+  return (entity || '').replace(/(_\d{2})+$/, '');
+}
+
+function getItemImage(entity) {
+  return itemImages[baseEntity(entity)] || itemImages[entity] || '';
+}
 
 const state = {
   search: '',
@@ -193,9 +202,13 @@ window.showSection = function(sectionId) {
 // ============================================================
 async function loadDatabase() {
   try {
-    const resp = await fetch('data/crafting_db.json');
-    if (!resp.ok) throw new Error('HTTP ' + resp.status);
-    db = await resp.json();
+    const [dbResp, imgResp] = await Promise.all([
+      fetch('data/crafting_db.json'),
+      fetch('data/item_images.json').catch(() => null),
+    ]);
+    if (!dbResp.ok) throw new Error('HTTP ' + dbResp.status);
+    db = await dbResp.json();
+    if (imgResp && imgResp.ok) itemImages = await imgResp.json();
     initCraftingUI();
     updateHomeStats();
   } catch (err) {
@@ -432,6 +445,12 @@ function renderBlueprintCard(bp, idx) {
     ? `<span class="bp-time">⏱ <span class="time-val">${formatTime(tier.craftTime)}</span></span>`
     : '';
 
+  // Item image
+  const imgUrl = getItemImage(bp.itemEntity);
+  const imgHtml = imgUrl
+    ? `<div class="bp-item-img"><img src="${escHtml(imgUrl)}" alt="${escHtml(bp.name)}" loading="lazy" onerror="this.parentElement.style.display='none'"></div>`
+    : '';
+
   // Show first Spanish title if available, otherwise pool name
   const seenCardPools = new Set();
   const missionsHtml = bp.hasMissions
@@ -454,6 +473,7 @@ function renderBlueprintCard(bp, idx) {
 
   return `
     <div class="bp-card" onclick="openBlueprintDetail(${idx})" style="animation-delay:${Math.min(idx * 0.02, 0.5)}s">
+      ${imgHtml}
       <div class="bp-header">
         <span class="bp-name">${escHtml(bp.name)}</span>
         ${missionBadge}
