@@ -25,7 +25,7 @@ function getItemImage(entity) {
 const state = {
   search: '',
   category: '',
-  missionFilter: '',
+  missionFilter: 'mission',
   sort: 'name',
 };
 
@@ -323,6 +323,12 @@ function initCraftingUI() {
     state.sort = e.target.value;
     applyFilters();
   });
+
+  // Sync UI controls with initial state
+  document.getElementById('missionFilter').value = state.missionFilter;
+  if (state.missionFilter === 'mission') {
+    document.getElementById('missionToggle').classList.add('active');
+  }
 
   // Hide loading, show data
   document.getElementById('loadingState').classList.add('hidden');
