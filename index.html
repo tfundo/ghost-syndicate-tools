@@ -29,7 +29,7 @@
       <li><a href="#wikelodata" class="nav-link" data-section="wikelodata">WikeloData</a></li>
       <li><a href="#hangar" class="nav-link" data-section="hangar">Hangar Ejecutivo</a></li>
       <li><a href="#locations" class="nav-link nav-coming" data-section="locations">Localizaciones <span class="badge">Próx.</span></a></li>
-      <li><a href="#trading" class="nav-link nav-coming" data-section="trading">Comercio <span class="badge">Próx.</span></a></li>
+      <li><a href="#mining" class="nav-link" data-section="mining">Minería</a></li>
     </ul>
     <div class="nav-version">SC 4.7.0</div>
   </nav>
@@ -120,11 +120,11 @@
             <p>Puntos de interés, zonas de aterrizaje y rutas en Stanton y Pyro.</p>
             <span class="feature-coming">En desarrollo</span>
           </div>
-          <div class="feature-card coming-soon">
-            <div class="feature-icon">📦</div>
-            <h3>Comercio</h3>
-            <p>Calculadora de rutas y análisis de márgenes por carga.</p>
-            <span class="feature-coming">En desarrollo</span>
+          <div class="feature-card" onclick="showSection('mining')">
+            <div class="feature-icon">⛏</div>
+            <h3>Minería</h3>
+            <p>Minerales, localizaciones y configurador de nave minera.</p>
+            <span class="feature-link">Acceder →</span>
           </div>
           <div class="feature-card coming-soon">
             <div class="feature-icon">🎯</div>
@@ -305,12 +305,19 @@
       <button class="btn-ghost" onclick="showSection('home')">← Volver al inicio</button>
     </div>
   </section>
-  <section class="section" id="trading">
-    <div class="coming-soon-page container">
-      <div class="cs-icon">📦</div>
-      <h2>Comercio</h2>
-      <p>Calculadora de rutas comerciales en desarrollo.</p>
-      <button class="btn-ghost" onclick="showSection('home')">← Volver al inicio</button>
+  <!-- ===== MINING SECTION ===== -->
+  <section class="section" id="mining">
+    <div class="container">
+      <div class="page-header">
+        <h1 class="page-title">⛏ Minería</h1>
+        <p class="page-subtitle">Minerales · Localizaciones · Configurador · SC 4.7.0</p>
+      </div>
+      <div class="mn-tabs" id="mnTabs"></div>
+      <div id="mnContent"></div>
+      <div class="loading-state hidden" id="mnLoading">
+        <div class="loading-spinner"></div>
+        <p>Cargando datos de minería...</p>
+      </div>
     </div>
   </section>
 
@@ -352,6 +359,7 @@
     <div class="legal-body" id="legalBody"></div>
   </div>
 
+  <script src="assets/mining.js"></script>
   <script src="assets/comparador.js"></script>
   <script src="assets/app.js"></script>
 </body>

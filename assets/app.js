@@ -190,6 +190,9 @@ window.showSection = function(sectionId) {
   // Load WikeloData on first visit
   if (sectionId === 'wikelodata') loadWikeloDb();
 
+  // Load Mining on first visit
+  if (sectionId === 'mining' && window.Mining) Mining.load();
+
   // Hangar Ejecutivo: start/stop ticker
   if (sectionId === 'hangar') HNG.start();
   else HNG.stop();
