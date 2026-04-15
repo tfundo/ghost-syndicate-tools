@@ -33640,6 +33640,14 @@
               "quantity_scu": 0.06,
               "slot": "Revestimiento aislante",
               "minQuality": 0
+            },
+            {
+              "resource": "harvestable_ore_1h_saldyniumore",
+              "resourceName": "Ore Saldyniumore",
+              "resourceRecordId": "",
+              "quantity_scu": 5.0,
+              "slot": "Filtro",
+              "minQuality": 0
             }
           ]
         }
@@ -33672,6 +33680,14 @@
               "resourceRecordId": "fde0cd65-8827-4b23-804d-cc8845dfa7ac",
               "quantity_scu": 0.1,
               "slot": "Revestimiento aislante",
+              "minQuality": 0
+            },
+            {
+              "resource": "harvestable_ore_1h_saldyniumore",
+              "resourceName": "Ore Saldyniumore",
+              "resourceRecordId": "",
+              "quantity_scu": 5.0,
+              "slot": "Filtro",
               "minQuality": 0
             }
           ]
@@ -33718,6 +33734,14 @@
               "quantity_scu": 0.06,
               "slot": "Revestimiento aislante",
               "minQuality": 500
+            },
+            {
+              "resource": "harvestable_ore_1h_saldyniumore",
+              "resourceName": "Ore Saldyniumore",
+              "resourceRecordId": "",
+              "quantity_scu": 5.0,
+              "slot": "Filtro",
+              "minQuality": 0
             }
           ]
         }
@@ -38843,6 +38867,14 @@
               "quantity_scu": 0.02,
               "slot": "Cableado",
               "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_hadanite",
+              "resourceName": "Hadanite",
+              "resourceRecordId": "",
+              "quantity_scu": 1.0,
+              "slot": "Lentes",
+              "minQuality": 0
             }
           ]
         }
@@ -38929,6 +38961,14 @@
               "quantity_scu": 0.02,
               "slot": "Cableado",
               "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_janalite",
+              "resourceName": "Janalite",
+              "resourceRecordId": "",
+              "quantity_scu": 1.0,
+              "slot": "Regulador de energía",
+              "minQuality": 0
             }
           ]
         }
@@ -38980,6 +39020,14 @@
               "resourceRecordId": "21825507-7923-4683-9bf3-9cfe316940e3",
               "quantity_scu": 0.02,
               "slot": "Cableado",
+              "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_janalite",
+              "resourceName": "Janalite",
+              "resourceRecordId": "",
+              "quantity_scu": 1.0,
+              "slot": "Regulador de energía",
               "minQuality": 0
             }
           ]
@@ -39033,6 +39081,14 @@
               "quantity_scu": 0.02,
               "slot": "Cableado",
               "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_janalite",
+              "resourceName": "Janalite",
+              "resourceRecordId": "",
+              "quantity_scu": 1.0,
+              "slot": "Regulador de energía",
+              "minQuality": 0
             }
           ]
         }
@@ -39084,6 +39140,14 @@
               "resourceRecordId": "21825507-7923-4683-9bf3-9cfe316940e3",
               "quantity_scu": 0.02,
               "slot": "Cableado",
+              "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_janalite",
+              "resourceName": "Janalite",
+              "resourceRecordId": "",
+              "quantity_scu": 1.0,
+              "slot": "Regulador de energía",
               "minQuality": 0
             }
           ]
@@ -39723,6 +39787,14 @@
               "quantity_scu": 0.01,
               "slot": "Cableado",
               "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_dolivine",
+              "resourceName": "Dolivine",
+              "resourceRecordId": "",
+              "quantity_scu": 4.0,
+              "slot": "Lentes",
+              "minQuality": 0
             }
           ]
         }
@@ -39767,6 +39839,14 @@
               "resourceRecordId": "a789f57a-e12b-4bcd-8132-e0c03d84fc89",
               "quantity_scu": 0.01,
               "slot": "Cableado",
+              "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_dolivine",
+              "resourceName": "Dolivine",
+              "resourceRecordId": "",
+              "quantity_scu": 4.0,
+              "slot": "Lentes",
               "minQuality": 0
             }
           ]
@@ -39813,6 +39893,14 @@
               "quantity_scu": 0.01,
               "slot": "Cableado",
               "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_dolivine",
+              "resourceName": "Dolivine",
+              "resourceRecordId": "",
+              "quantity_scu": 4.0,
+              "slot": "Lentes",
+              "minQuality": 0
             }
           ]
         }
@@ -39857,6 +39945,14 @@
               "resourceRecordId": "a789f57a-e12b-4bcd-8132-e0c03d84fc89",
               "quantity_scu": 0.01,
               "slot": "Cableado",
+              "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_dolivine",
+              "resourceName": "Dolivine",
+              "resourceRecordId": "",
+              "quantity_scu": 4.0,
+              "slot": "Lentes",
               "minQuality": 0
             }
           ]
@@ -39903,6 +39999,14 @@
               "quantity_scu": 0.01,
               "slot": "Cableado",
               "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_dolivine",
+              "resourceName": "Dolivine",
+              "resourceRecordId": "",
+              "quantity_scu": 4.0,
+              "slot": "Lentes",
+              "minQuality": 0
             }
           ]
         }
@@ -39935,6 +40039,14 @@
               "resourceRecordId": "a789f57a-e12b-4bcd-8132-e0c03d84fc89",
               "quantity_scu": 0.01,
               "slot": "Cableado",
+              "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_dolivine",
+              "resourceName": "Dolivine",
+              "resourceRecordId": "",
+              "quantity_scu": 4.0,
+              "slot": "Lentes",
               "minQuality": 0
             }
           ]
@@ -39981,6 +40093,14 @@
               "quantity_scu": 0.01,
               "slot": "Cableado",
               "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_dolivine",
+              "resourceName": "Dolivine",
+              "resourceRecordId": "",
+              "quantity_scu": 4.0,
+              "slot": "Lentes",
+              "minQuality": 0
             }
           ]
         }
@@ -40025,6 +40145,14 @@
               "resourceRecordId": "a789f57a-e12b-4bcd-8132-e0c03d84fc89",
               "quantity_scu": 0.01,
               "slot": "Cableado",
+              "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_dolivine",
+              "resourceName": "Dolivine",
+              "resourceRecordId": "",
+              "quantity_scu": 4.0,
+              "slot": "Lentes",
               "minQuality": 0
             }
           ]
@@ -40336,6 +40464,14 @@
               "quantity_scu": 0.01,
               "slot": "Cableado",
               "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_dolivine",
+              "resourceName": "Dolivine",
+              "resourceRecordId": "",
+              "quantity_scu": 4.0,
+              "slot": "Lentes",
+              "minQuality": 0
             }
           ]
         }
@@ -40388,6 +40524,14 @@
               "quantity_scu": 0.01,
               "slot": "Cableado",
               "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_dolivine",
+              "resourceName": "Dolivine",
+              "resourceRecordId": "",
+              "quantity_scu": 4.0,
+              "slot": "Lentes",
+              "minQuality": 0
             }
           ]
         }
@@ -40420,6 +40564,14 @@
               "resourceRecordId": "a789f57a-e12b-4bcd-8132-e0c03d84fc89",
               "quantity_scu": 0.01,
               "slot": "Cableado",
+              "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_dolivine",
+              "resourceName": "Dolivine",
+              "resourceRecordId": "",
+              "quantity_scu": 4.0,
+              "slot": "Lentes",
               "minQuality": 0
             }
           ]
@@ -40472,6 +40624,14 @@
               "resourceRecordId": "a789f57a-e12b-4bcd-8132-e0c03d84fc89",
               "quantity_scu": 0.01,
               "slot": "Cableado",
+              "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_dolivine",
+              "resourceName": "Dolivine",
+              "resourceRecordId": "",
+              "quantity_scu": 4.0,
+              "slot": "Lentes",
               "minQuality": 0
             }
           ]
@@ -40578,6 +40738,14 @@
               "quantity_scu": 0.01,
               "slot": "Cableado",
               "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_janalite",
+              "resourceName": "Janalite",
+              "resourceRecordId": "",
+              "quantity_scu": 1.0,
+              "slot": "Regulador de energía",
+              "minQuality": 0
             }
           ]
         }
@@ -40637,6 +40805,14 @@
               "quantity_scu": 0.01,
               "slot": "Cableado",
               "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_janalite",
+              "resourceName": "Janalite",
+              "resourceRecordId": "",
+              "quantity_scu": 1.0,
+              "slot": "Regulador de energía",
+              "minQuality": 0
             }
           ]
         }
@@ -40692,6 +40868,14 @@
               "resourceRecordId": "21825507-7923-4683-9bf3-9cfe316940e3",
               "quantity_scu": 0.01,
               "slot": "Cableado",
+              "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_janalite",
+              "resourceName": "Janalite",
+              "resourceRecordId": "",
+              "quantity_scu": 1.0,
+              "slot": "Regulador de energía",
               "minQuality": 0
             }
           ]
@@ -41163,6 +41347,14 @@
               "quantity_scu": 0.02,
               "slot": "Cableado",
               "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_dolivine",
+              "resourceName": "Dolivine",
+              "resourceRecordId": "",
+              "quantity_scu": 1.0,
+              "slot": "Lentes",
+              "minQuality": 0
             }
           ]
         }
@@ -41216,6 +41408,14 @@
               "quantity_scu": 0.02,
               "slot": "Cableado",
               "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_dolivine",
+              "resourceName": "Dolivine",
+              "resourceRecordId": "",
+              "quantity_scu": 1.0,
+              "slot": "Lentes",
+              "minQuality": 0
             }
           ]
         }
@@ -41248,6 +41448,14 @@
               "resourceRecordId": "a789f57a-e12b-4bcd-8132-e0c03d84fc89",
               "quantity_scu": 0.02,
               "slot": "Cableado",
+              "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_dolivine",
+              "resourceName": "Dolivine",
+              "resourceRecordId": "",
+              "quantity_scu": 1.0,
+              "slot": "Lentes",
               "minQuality": 0
             }
           ]
@@ -41282,6 +41490,14 @@
               "quantity_scu": 0.02,
               "slot": "Cableado",
               "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_dolivine",
+              "resourceName": "Dolivine",
+              "resourceRecordId": "",
+              "quantity_scu": 1.0,
+              "slot": "Lentes",
+              "minQuality": 0
             }
           ]
         }
@@ -41314,6 +41530,14 @@
               "resourceRecordId": "a789f57a-e12b-4bcd-8132-e0c03d84fc89",
               "quantity_scu": 0.02,
               "slot": "Cableado",
+              "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_dolivine",
+              "resourceName": "Dolivine",
+              "resourceRecordId": "",
+              "quantity_scu": 1.0,
+              "slot": "Lentes",
               "minQuality": 0
             }
           ]
@@ -41348,6 +41572,14 @@
               "quantity_scu": 0.02,
               "slot": "Cableado",
               "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_dolivine",
+              "resourceName": "Dolivine",
+              "resourceRecordId": "",
+              "quantity_scu": 1.0,
+              "slot": "Lentes",
+              "minQuality": 0
             }
           ]
         }
@@ -41380,6 +41612,14 @@
               "resourceRecordId": "a789f57a-e12b-4bcd-8132-e0c03d84fc89",
               "quantity_scu": 0.02,
               "slot": "Cableado",
+              "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_dolivine",
+              "resourceName": "Dolivine",
+              "resourceRecordId": "",
+              "quantity_scu": 1.0,
+              "slot": "Lentes",
               "minQuality": 0
             }
           ]
@@ -41414,6 +41654,14 @@
               "quantity_scu": 0.02,
               "slot": "Cableado",
               "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_dolivine",
+              "resourceName": "Dolivine",
+              "resourceRecordId": "",
+              "quantity_scu": 1.0,
+              "slot": "Lentes",
+              "minQuality": 0
             }
           ]
         }
@@ -41446,6 +41694,14 @@
               "resourceRecordId": "93c8b7df-d6ac-4b4f-a115-b0e3afc238b8",
               "quantity_scu": 0.02,
               "slot": "Conducto",
+              "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_beradom",
+              "resourceName": "Beradom",
+              "resourceRecordId": "",
+              "quantity_scu": 3.0,
+              "slot": "Estabilizador",
               "minQuality": 0
             }
           ]
@@ -41498,6 +41754,14 @@
               "quantity_scu": 0.02,
               "slot": "Conducto",
               "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_beradom",
+              "resourceName": "Beradom",
+              "resourceRecordId": "",
+              "quantity_scu": 3.0,
+              "slot": "Estabilizador",
+              "minQuality": 0
             }
           ]
         }
@@ -41548,6 +41812,14 @@
               "resourceRecordId": "93c8b7df-d6ac-4b4f-a115-b0e3afc238b8",
               "quantity_scu": 0.02,
               "slot": "Conducto",
+              "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_beradom",
+              "resourceName": "Beradom",
+              "resourceRecordId": "",
+              "quantity_scu": 3.0,
+              "slot": "Estabilizador",
               "minQuality": 0
             }
           ]
@@ -41600,6 +41872,14 @@
               "quantity_scu": 0.02,
               "slot": "Conducto",
               "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_beradom",
+              "resourceName": "Beradom",
+              "resourceRecordId": "",
+              "quantity_scu": 3.0,
+              "slot": "Estabilizador",
+              "minQuality": 0
             }
           ]
         }
@@ -41650,6 +41930,14 @@
               "resourceRecordId": "93c8b7df-d6ac-4b4f-a115-b0e3afc238b8",
               "quantity_scu": 0.02,
               "slot": "Conducto",
+              "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_beradom",
+              "resourceName": "Beradom",
+              "resourceRecordId": "",
+              "quantity_scu": 3.0,
+              "slot": "Estabilizador",
               "minQuality": 0
             }
           ]
@@ -41702,6 +41990,14 @@
               "resourceRecordId": "93c8b7df-d6ac-4b4f-a115-b0e3afc238b8",
               "quantity_scu": 0.02,
               "slot": "Conducto",
+              "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_beradom",
+              "resourceName": "Beradom",
+              "resourceRecordId": "",
+              "quantity_scu": 3.0,
+              "slot": "Estabilizador",
               "minQuality": 0
             }
           ]
@@ -41792,6 +42088,14 @@
               "quantity_scu": 0.02,
               "slot": "Cableado",
               "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_carinite",
+              "resourceName": "Carinite",
+              "resourceRecordId": "",
+              "quantity_scu": 1.0,
+              "slot": "Regulador de energía",
+              "minQuality": 0
             }
           ]
         }
@@ -41860,6 +42164,14 @@
               "quantity_scu": 0.02,
               "slot": "Cableado",
               "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_carinite",
+              "resourceName": "Carinite",
+              "resourceRecordId": "",
+              "quantity_scu": 1.0,
+              "slot": "Regulador de energía",
+              "minQuality": 0
             }
           ]
         }
@@ -41926,6 +42238,14 @@
               "resourceRecordId": "21825507-7923-4683-9bf3-9cfe316940e3",
               "quantity_scu": 0.02,
               "slot": "Cableado",
+              "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_carinite",
+              "resourceName": "Carinite",
+              "resourceRecordId": "",
+              "quantity_scu": 1.0,
+              "slot": "Regulador de energía",
               "minQuality": 0
             }
           ]
@@ -41995,6 +42315,14 @@
               "resourceRecordId": "21825507-7923-4683-9bf3-9cfe316940e3",
               "quantity_scu": 0.02,
               "slot": "Cableado",
+              "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_carinite",
+              "resourceName": "Carinite",
+              "resourceRecordId": "",
+              "quantity_scu": 1.0,
+              "slot": "Regulador de energía",
               "minQuality": 0
             }
           ]
@@ -42504,6 +42832,14 @@
               "quantity_scu": 0.02,
               "slot": "Cableado",
               "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_dolivine",
+              "resourceName": "Dolivine",
+              "resourceRecordId": "",
+              "quantity_scu": 2.0,
+              "slot": "Lentes",
+              "minQuality": 0
             }
           ]
         }
@@ -42555,6 +42891,14 @@
               "resourceRecordId": "a789f57a-e12b-4bcd-8132-e0c03d84fc89",
               "quantity_scu": 0.02,
               "slot": "Cableado",
+              "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_dolivine",
+              "resourceName": "Dolivine",
+              "resourceRecordId": "",
+              "quantity_scu": 2.0,
+              "slot": "Lentes",
               "minQuality": 0
             }
           ]
@@ -42608,6 +42952,14 @@
               "quantity_scu": 0.02,
               "slot": "Cableado",
               "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_dolivine",
+              "resourceName": "Dolivine",
+              "resourceRecordId": "",
+              "quantity_scu": 2.0,
+              "slot": "Lentes",
+              "minQuality": 0
             }
           ]
         }
@@ -42640,6 +42992,14 @@
               "resourceRecordId": "a789f57a-e12b-4bcd-8132-e0c03d84fc89",
               "quantity_scu": 0.02,
               "slot": "Cableado",
+              "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_dolivine",
+              "resourceName": "Dolivine",
+              "resourceRecordId": "",
+              "quantity_scu": 2.0,
+              "slot": "Lentes",
               "minQuality": 0
             }
           ]
@@ -42674,6 +43034,14 @@
               "quantity_scu": 0.02,
               "slot": "Cableado",
               "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_dolivine",
+              "resourceName": "Dolivine",
+              "resourceRecordId": "",
+              "quantity_scu": 2.0,
+              "slot": "Lentes",
+              "minQuality": 0
             }
           ]
         }
@@ -42707,6 +43075,14 @@
               "quantity_scu": 0.02,
               "slot": "Cableado",
               "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_dolivine",
+              "resourceName": "Dolivine",
+              "resourceRecordId": "",
+              "quantity_scu": 2.0,
+              "slot": "Lentes",
+              "minQuality": 0
             }
           ]
         }
@@ -42739,6 +43115,14 @@
               "resourceRecordId": "a789f57a-e12b-4bcd-8132-e0c03d84fc89",
               "quantity_scu": 0.02,
               "slot": "Cableado",
+              "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_dolivine",
+              "resourceName": "Dolivine",
+              "resourceRecordId": "",
+              "quantity_scu": 2.0,
+              "slot": "Lentes",
               "minQuality": 0
             }
           ]
@@ -42792,6 +43176,14 @@
               "quantity_scu": 0.02,
               "slot": "Cableado",
               "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_dolivine",
+              "resourceName": "Dolivine",
+              "resourceRecordId": "",
+              "quantity_scu": 2.0,
+              "slot": "Lentes",
+              "minQuality": 0
             }
           ]
         }
@@ -42825,6 +43217,14 @@
               "quantity_scu": 0.02,
               "slot": "Cableado",
               "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_dolivine",
+              "resourceName": "Dolivine",
+              "resourceRecordId": "",
+              "quantity_scu": 2.0,
+              "slot": "Lentes",
+              "minQuality": 0
             }
           ]
         }
@@ -42857,6 +43257,14 @@
               "resourceRecordId": "a789f57a-e12b-4bcd-8132-e0c03d84fc89",
               "quantity_scu": 0.02,
               "slot": "Cableado",
+              "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_dolivine",
+              "resourceName": "Dolivine",
+              "resourceRecordId": "",
+              "quantity_scu": 2.0,
+              "slot": "Lentes",
               "minQuality": 0
             }
           ]
@@ -42947,6 +43355,14 @@
               "quantity_scu": 0.01,
               "slot": "Cableado",
               "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_janalite",
+              "resourceName": "Janalite",
+              "resourceRecordId": "",
+              "quantity_scu": 1.0,
+              "slot": "Regulador de energía",
+              "minQuality": 0
             }
           ]
         }
@@ -42991,6 +43407,14 @@
               "resourceRecordId": "21825507-7923-4683-9bf3-9cfe316940e3",
               "quantity_scu": 0.01,
               "slot": "Cableado",
+              "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_janalite",
+              "resourceName": "Janalite",
+              "resourceRecordId": "",
+              "quantity_scu": 1.0,
+              "slot": "Regulador de energía",
               "minQuality": 0
             }
           ]
@@ -43037,6 +43461,14 @@
               "quantity_scu": 0.01,
               "slot": "Cableado",
               "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_janalite",
+              "resourceName": "Janalite",
+              "resourceRecordId": "",
+              "quantity_scu": 1.0,
+              "slot": "Regulador de energía",
+              "minQuality": 0
             }
           ]
         }
@@ -43081,6 +43513,14 @@
               "resourceRecordId": "21825507-7923-4683-9bf3-9cfe316940e3",
               "quantity_scu": 0.01,
               "slot": "Cableado",
+              "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_janalite",
+              "resourceName": "Janalite",
+              "resourceRecordId": "",
+              "quantity_scu": 1.0,
+              "slot": "Regulador de energía",
               "minQuality": 0
             }
           ]
@@ -43661,6 +44101,14 @@
               "quantity_scu": 0.01,
               "slot": "Cableado",
               "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_aphorite",
+              "resourceName": "Aphorite",
+              "resourceRecordId": "",
+              "quantity_scu": 2.0,
+              "slot": "Lentes",
+              "minQuality": 0
             }
           ]
         }
@@ -43739,6 +44187,14 @@
               "quantity_scu": 0.01,
               "slot": "Cableado",
               "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_aphorite",
+              "resourceName": "Aphorite",
+              "resourceRecordId": "",
+              "quantity_scu": 2.0,
+              "slot": "Lentes",
+              "minQuality": 0
             }
           ]
         }
@@ -43771,6 +44227,14 @@
               "resourceRecordId": "a789f57a-e12b-4bcd-8132-e0c03d84fc89",
               "quantity_scu": 0.01,
               "slot": "Cableado",
+              "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_aphorite",
+              "resourceName": "Aphorite",
+              "resourceRecordId": "",
+              "quantity_scu": 2.0,
+              "slot": "Lentes",
               "minQuality": 0
             }
           ]
@@ -43823,6 +44287,14 @@
               "quantity_scu": 0.01,
               "slot": "Cableado",
               "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_aphorite",
+              "resourceName": "Aphorite",
+              "resourceRecordId": "",
+              "quantity_scu": 2.0,
+              "slot": "Lentes",
+              "minQuality": 0
             }
           ]
         }
@@ -43874,6 +44346,14 @@
               "quantity_scu": 0.01,
               "slot": "Cableado",
               "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_aphorite",
+              "resourceName": "Aphorite",
+              "resourceRecordId": "",
+              "quantity_scu": 2.0,
+              "slot": "Lentes",
+              "minQuality": 0
             }
           ]
         }
@@ -43907,6 +44387,14 @@
               "quantity_scu": 0.01,
               "slot": "Cableado",
               "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_aphorite",
+              "resourceName": "Aphorite",
+              "resourceRecordId": "",
+              "quantity_scu": 2.0,
+              "slot": "Lentes",
+              "minQuality": 0
             }
           ]
         }
@@ -43939,6 +44427,14 @@
               "resourceRecordId": "a789f57a-e12b-4bcd-8132-e0c03d84fc89",
               "quantity_scu": 0.01,
               "slot": "Cableado",
+              "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_aphorite",
+              "resourceName": "Aphorite",
+              "resourceRecordId": "",
+              "quantity_scu": 2.0,
+              "slot": "Lentes",
               "minQuality": 0
             }
           ]
@@ -43991,6 +44487,14 @@
               "quantity_scu": 0.01,
               "slot": "Cableado",
               "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_aphorite",
+              "resourceName": "Aphorite",
+              "resourceRecordId": "",
+              "quantity_scu": 2.0,
+              "slot": "Lentes",
+              "minQuality": 0
             }
           ]
         }
@@ -44023,6 +44527,14 @@
               "resourceRecordId": "a789f57a-e12b-4bcd-8132-e0c03d84fc89",
               "quantity_scu": 0.01,
               "slot": "Cableado",
+              "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_aphorite",
+              "resourceName": "Aphorite",
+              "resourceRecordId": "",
+              "quantity_scu": 2.0,
+              "slot": "Lentes",
               "minQuality": 0
             }
           ]
@@ -44057,6 +44569,14 @@
               "quantity_scu": 0.01,
               "slot": "Cableado",
               "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_aphorite",
+              "resourceName": "Aphorite",
+              "resourceRecordId": "",
+              "quantity_scu": 2.0,
+              "slot": "Lentes",
+              "minQuality": 0
             }
           ]
         }
@@ -44089,6 +44609,14 @@
               "resourceRecordId": "a789f57a-e12b-4bcd-8132-e0c03d84fc89",
               "quantity_scu": 0.01,
               "slot": "Cableado",
+              "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_aphorite",
+              "resourceName": "Aphorite",
+              "resourceRecordId": "",
+              "quantity_scu": 2.0,
+              "slot": "Lentes",
               "minQuality": 0
             }
           ]
@@ -44123,6 +44651,14 @@
               "quantity_scu": 0.01,
               "slot": "Cableado",
               "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_aphorite",
+              "resourceName": "Aphorite",
+              "resourceRecordId": "",
+              "quantity_scu": 2.0,
+              "slot": "Lentes",
+              "minQuality": 0
             }
           ]
         }
@@ -44155,6 +44691,14 @@
               "resourceRecordId": "a789f57a-e12b-4bcd-8132-e0c03d84fc89",
               "quantity_scu": 0.01,
               "slot": "Cableado",
+              "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_aphorite",
+              "resourceName": "Aphorite",
+              "resourceRecordId": "",
+              "quantity_scu": 2.0,
+              "slot": "Lentes",
               "minQuality": 0
             }
           ]
@@ -44203,6 +44747,14 @@
               "resourceRecordId": "21825507-7923-4683-9bf3-9cfe316940e3",
               "quantity_scu": 0.01,
               "slot": "Cableado",
+              "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_carinite",
+              "resourceName": "Carinite",
+              "resourceRecordId": "",
+              "quantity_scu": 1.0,
+              "slot": "Regulador de energía",
               "minQuality": 0
             }
           ]
@@ -44259,6 +44811,14 @@
               "resourceRecordId": "21825507-7923-4683-9bf3-9cfe316940e3",
               "quantity_scu": 0.01,
               "slot": "Cableado",
+              "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_carinite",
+              "resourceName": "Carinite",
+              "resourceRecordId": "",
+              "quantity_scu": 1.0,
+              "slot": "Regulador de energía",
               "minQuality": 0
             }
           ]
@@ -44326,6 +44886,14 @@
               "quantity_scu": 0.01,
               "slot": "Cableado",
               "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_carinite",
+              "resourceName": "Carinite",
+              "resourceRecordId": "",
+              "quantity_scu": 1.0,
+              "slot": "Regulador de energía",
+              "minQuality": 0
             }
           ]
         }
@@ -44381,6 +44949,14 @@
               "resourceRecordId": "21825507-7923-4683-9bf3-9cfe316940e3",
               "quantity_scu": 0.01,
               "slot": "Cableado",
+              "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_carinite",
+              "resourceName": "Carinite",
+              "resourceRecordId": "",
+              "quantity_scu": 1.0,
+              "slot": "Regulador de energía",
               "minQuality": 0
             }
           ]
@@ -44456,6 +45032,14 @@
               "quantity_scu": 0.03,
               "slot": "Cañón",
               "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_hadanite",
+              "resourceName": "Hadanite",
+              "resourceRecordId": "",
+              "quantity_scu": 1.0,
+              "slot": "Piezas de precisión",
+              "minQuality": 0
             }
           ]
         }
@@ -44517,6 +45101,14 @@
               "quantity_scu": 0.03,
               "slot": "Cañón",
               "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_hadanite",
+              "resourceName": "Hadanite",
+              "resourceRecordId": "",
+              "quantity_scu": 1.0,
+              "slot": "Piezas de precisión",
+              "minQuality": 0
             }
           ]
         }
@@ -44557,6 +45149,14 @@
               "resourceRecordId": "f386a33c-ac9a-400a-a7b8-fe1fc7c8d270",
               "quantity_scu": 0.03,
               "slot": "Cañón",
+              "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_hadanite",
+              "resourceName": "Hadanite",
+              "resourceRecordId": "",
+              "quantity_scu": 1.0,
+              "slot": "Piezas de precisión",
               "minQuality": 0
             }
           ]
@@ -44599,6 +45199,14 @@
               "quantity_scu": 0.03,
               "slot": "Cañón",
               "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_hadanite",
+              "resourceName": "Hadanite",
+              "resourceRecordId": "",
+              "quantity_scu": 1.0,
+              "slot": "Piezas de precisión",
+              "minQuality": 0
             }
           ]
         }
@@ -44639,6 +45247,14 @@
               "resourceRecordId": "f386a33c-ac9a-400a-a7b8-fe1fc7c8d270",
               "quantity_scu": 0.03,
               "slot": "Cañón",
+              "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_hadanite",
+              "resourceName": "Hadanite",
+              "resourceRecordId": "",
+              "quantity_scu": 1.0,
+              "slot": "Piezas de precisión",
               "minQuality": 0
             }
           ]
@@ -44701,6 +45317,14 @@
               "quantity_scu": 0.03,
               "slot": "Cañón",
               "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_hadanite",
+              "resourceName": "Hadanite",
+              "resourceRecordId": "",
+              "quantity_scu": 1.0,
+              "slot": "Piezas de precisión",
+              "minQuality": 0
             }
           ]
         }
@@ -44741,6 +45365,14 @@
               "resourceRecordId": "f386a33c-ac9a-400a-a7b8-fe1fc7c8d270",
               "quantity_scu": 0.03,
               "slot": "Cañón",
+              "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_hadanite",
+              "resourceName": "Hadanite",
+              "resourceRecordId": "",
+              "quantity_scu": 1.0,
+              "slot": "Piezas de precisión",
               "minQuality": 0
             }
           ]
@@ -44783,6 +45415,14 @@
               "quantity_scu": 0.03,
               "slot": "Cañón",
               "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_hadanite",
+              "resourceName": "Hadanite",
+              "resourceRecordId": "",
+              "quantity_scu": 1.0,
+              "slot": "Piezas de precisión",
+              "minQuality": 0
             }
           ]
         }
@@ -44824,6 +45464,14 @@
               "quantity_scu": 0.03,
               "slot": "Cañón",
               "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_hadanite",
+              "resourceName": "Hadanite",
+              "resourceRecordId": "",
+              "quantity_scu": 1.0,
+              "slot": "Piezas de precisión",
+              "minQuality": 0
             }
           ]
         }
@@ -44856,6 +45504,22 @@
               "resourceRecordId": "a789f57a-e12b-4bcd-8132-e0c03d84fc89",
               "quantity_scu": 0.02,
               "slot": "Cableado",
+              "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_aphorite",
+              "resourceName": "Aphorite",
+              "resourceRecordId": "",
+              "quantity_scu": 2.0,
+              "slot": "Lentes",
+              "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_sadaryx",
+              "resourceName": "Sadaryx",
+              "resourceRecordId": "",
+              "quantity_scu": 1.0,
+              "slot": "Piezas de precisión",
               "minQuality": 0
             }
           ]
@@ -44918,6 +45582,22 @@
               "quantity_scu": 0.02,
               "slot": "Cableado",
               "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_aphorite",
+              "resourceName": "Aphorite",
+              "resourceRecordId": "",
+              "quantity_scu": 2.0,
+              "slot": "Lentes",
+              "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_sadaryx",
+              "resourceName": "Sadaryx",
+              "resourceRecordId": "",
+              "quantity_scu": 1.0,
+              "slot": "Piezas de precisión",
+              "minQuality": 0
             }
           ]
         }
@@ -44950,6 +45630,22 @@
               "resourceRecordId": "a789f57a-e12b-4bcd-8132-e0c03d84fc89",
               "quantity_scu": 0.02,
               "slot": "Cableado",
+              "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_aphorite",
+              "resourceName": "Aphorite",
+              "resourceRecordId": "",
+              "quantity_scu": 2.0,
+              "slot": "Lentes",
+              "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_sadaryx",
+              "resourceName": "Sadaryx",
+              "resourceRecordId": "",
+              "quantity_scu": 1.0,
+              "slot": "Piezas de precisión",
               "minQuality": 0
             }
           ]
@@ -44984,6 +45680,22 @@
               "quantity_scu": 0.02,
               "slot": "Cableado",
               "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_aphorite",
+              "resourceName": "Aphorite",
+              "resourceRecordId": "",
+              "quantity_scu": 2.0,
+              "slot": "Lentes",
+              "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_sadaryx",
+              "resourceName": "Sadaryx",
+              "resourceRecordId": "",
+              "quantity_scu": 1.0,
+              "slot": "Piezas de precisión",
+              "minQuality": 0
             }
           ]
         }
@@ -45016,6 +45728,22 @@
               "resourceRecordId": "a789f57a-e12b-4bcd-8132-e0c03d84fc89",
               "quantity_scu": 0.02,
               "slot": "Cableado",
+              "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_aphorite",
+              "resourceName": "Aphorite",
+              "resourceRecordId": "",
+              "quantity_scu": 2.0,
+              "slot": "Lentes",
+              "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_sadaryx",
+              "resourceName": "Sadaryx",
+              "resourceRecordId": "",
+              "quantity_scu": 1.0,
+              "slot": "Piezas de precisión",
               "minQuality": 0
             }
           ]
@@ -45050,6 +45778,22 @@
               "quantity_scu": 0.02,
               "slot": "Cableado",
               "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_aphorite",
+              "resourceName": "Aphorite",
+              "resourceRecordId": "",
+              "quantity_scu": 2.0,
+              "slot": "Lentes",
+              "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_sadaryx",
+              "resourceName": "Sadaryx",
+              "resourceRecordId": "",
+              "quantity_scu": 1.0,
+              "slot": "Piezas de precisión",
+              "minQuality": 0
             }
           ]
         }
@@ -45082,6 +45826,22 @@
               "resourceRecordId": "a789f57a-e12b-4bcd-8132-e0c03d84fc89",
               "quantity_scu": 0.02,
               "slot": "Cableado",
+              "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_aphorite",
+              "resourceName": "Aphorite",
+              "resourceRecordId": "",
+              "quantity_scu": 2.0,
+              "slot": "Lentes",
+              "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_sadaryx",
+              "resourceName": "Sadaryx",
+              "resourceRecordId": "",
+              "quantity_scu": 1.0,
+              "slot": "Piezas de precisión",
               "minQuality": 0
             }
           ]
@@ -45116,6 +45876,22 @@
               "quantity_scu": 0.02,
               "slot": "Cableado",
               "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_aphorite",
+              "resourceName": "Aphorite",
+              "resourceRecordId": "",
+              "quantity_scu": 2.0,
+              "slot": "Lentes",
+              "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_sadaryx",
+              "resourceName": "Sadaryx",
+              "resourceRecordId": "",
+              "quantity_scu": 1.0,
+              "slot": "Piezas de precisión",
+              "minQuality": 0
             }
           ]
         }
@@ -45149,6 +45925,22 @@
               "quantity_scu": 0.02,
               "slot": "Cableado",
               "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_aphorite",
+              "resourceName": "Aphorite",
+              "resourceRecordId": "",
+              "quantity_scu": 2.0,
+              "slot": "Lentes",
+              "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_sadaryx",
+              "resourceName": "Sadaryx",
+              "resourceRecordId": "",
+              "quantity_scu": 1.0,
+              "slot": "Piezas de precisión",
+              "minQuality": 0
             }
           ]
         }
@@ -45181,6 +45973,22 @@
               "resourceRecordId": "a789f57a-e12b-4bcd-8132-e0c03d84fc89",
               "quantity_scu": 0.02,
               "slot": "Cableado",
+              "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_aphorite",
+              "resourceName": "Aphorite",
+              "resourceRecordId": "",
+              "quantity_scu": 2.0,
+              "slot": "Lentes",
+              "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_sadaryx",
+              "resourceName": "Sadaryx",
+              "resourceRecordId": "",
+              "quantity_scu": 1.0,
+              "slot": "Piezas de precisión",
               "minQuality": 0
             }
           ]
@@ -45222,6 +46030,14 @@
               "resourceRecordId": "f386a33c-ac9a-400a-a7b8-fe1fc7c8d270",
               "quantity_scu": 0.03,
               "slot": "Cañón",
+              "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_hadanite",
+              "resourceName": "Hadanite",
+              "resourceRecordId": "",
+              "quantity_scu": 1.0,
+              "slot": "Piezas de precisión",
               "minQuality": 0
             }
           ]
@@ -45284,6 +46100,14 @@
               "quantity_scu": 0.03,
               "slot": "Cañón",
               "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_hadanite",
+              "resourceName": "Hadanite",
+              "resourceRecordId": "",
+              "quantity_scu": 1.0,
+              "slot": "Piezas de precisión",
+              "minQuality": 0
             }
           ]
         }
@@ -45316,6 +46140,22 @@
               "resourceRecordId": "a789f57a-e12b-4bcd-8132-e0c03d84fc89",
               "quantity_scu": 0.02,
               "slot": "Cableado",
+              "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_dolivine",
+              "resourceName": "Dolivine",
+              "resourceRecordId": "",
+              "quantity_scu": 2.0,
+              "slot": "Lentes",
+              "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_hadanite",
+              "resourceName": "Hadanite",
+              "resourceRecordId": "",
+              "quantity_scu": 1.0,
+              "slot": "Piezas de precisión",
               "minQuality": 0
             }
           ]
@@ -45369,6 +46209,22 @@
               "quantity_scu": 0.02,
               "slot": "Cableado",
               "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_dolivine",
+              "resourceName": "Dolivine",
+              "resourceRecordId": "",
+              "quantity_scu": 2.0,
+              "slot": "Lentes",
+              "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_hadanite",
+              "resourceName": "Hadanite",
+              "resourceRecordId": "",
+              "quantity_scu": 1.0,
+              "slot": "Piezas de precisión",
+              "minQuality": 0
             }
           ]
         }
@@ -45401,6 +46257,22 @@
               "resourceRecordId": "a789f57a-e12b-4bcd-8132-e0c03d84fc89",
               "quantity_scu": 0.02,
               "slot": "Cableado",
+              "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_dolivine",
+              "resourceName": "Dolivine",
+              "resourceRecordId": "",
+              "quantity_scu": 2.0,
+              "slot": "Lentes",
+              "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_hadanite",
+              "resourceName": "Hadanite",
+              "resourceRecordId": "",
+              "quantity_scu": 1.0,
+              "slot": "Piezas de precisión",
               "minQuality": 0
             }
           ]
@@ -45454,6 +46326,22 @@
               "quantity_scu": 0.02,
               "slot": "Cableado",
               "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_dolivine",
+              "resourceName": "Dolivine",
+              "resourceRecordId": "",
+              "quantity_scu": 2.0,
+              "slot": "Lentes",
+              "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_hadanite",
+              "resourceName": "Hadanite",
+              "resourceRecordId": "",
+              "quantity_scu": 1.0,
+              "slot": "Piezas de precisión",
+              "minQuality": 0
             }
           ]
         }
@@ -45506,6 +46394,22 @@
               "quantity_scu": 0.02,
               "slot": "Cableado",
               "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_dolivine",
+              "resourceName": "Dolivine",
+              "resourceRecordId": "",
+              "quantity_scu": 2.0,
+              "slot": "Lentes",
+              "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_hadanite",
+              "resourceName": "Hadanite",
+              "resourceRecordId": "",
+              "quantity_scu": 1.0,
+              "slot": "Piezas de precisión",
+              "minQuality": 0
             }
           ]
         }
@@ -45538,6 +46442,22 @@
               "resourceRecordId": "21825507-7923-4683-9bf3-9cfe316940e3",
               "quantity_scu": 0.02,
               "slot": "Cableado",
+              "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_janalite",
+              "resourceName": "Janalite",
+              "resourceRecordId": "",
+              "quantity_scu": 1.0,
+              "slot": "Regulador de energía",
+              "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_sadaryx",
+              "resourceName": "Sadaryx",
+              "resourceRecordId": "",
+              "quantity_scu": 1.0,
+              "slot": "Piezas de precisión",
               "minQuality": 0
             }
           ]
@@ -45591,6 +46511,22 @@
               "quantity_scu": 0.02,
               "slot": "Cableado",
               "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_janalite",
+              "resourceName": "Janalite",
+              "resourceRecordId": "",
+              "quantity_scu": 1.0,
+              "slot": "Regulador de energía",
+              "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_sadaryx",
+              "resourceName": "Sadaryx",
+              "resourceRecordId": "",
+              "quantity_scu": 1.0,
+              "slot": "Piezas de precisión",
+              "minQuality": 0
             }
           ]
         }
@@ -45623,6 +46559,22 @@
               "resourceRecordId": "21825507-7923-4683-9bf3-9cfe316940e3",
               "quantity_scu": 0.02,
               "slot": "Cableado",
+              "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_janalite",
+              "resourceName": "Janalite",
+              "resourceRecordId": "",
+              "quantity_scu": 1.0,
+              "slot": "Regulador de energía",
+              "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_sadaryx",
+              "resourceName": "Sadaryx",
+              "resourceRecordId": "",
+              "quantity_scu": 1.0,
+              "slot": "Piezas de precisión",
               "minQuality": 0
             }
           ]
@@ -45676,6 +46628,22 @@
               "quantity_scu": 0.02,
               "slot": "Cableado",
               "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_janalite",
+              "resourceName": "Janalite",
+              "resourceRecordId": "",
+              "quantity_scu": 1.0,
+              "slot": "Regulador de energía",
+              "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_sadaryx",
+              "resourceName": "Sadaryx",
+              "resourceRecordId": "",
+              "quantity_scu": 1.0,
+              "slot": "Piezas de precisión",
+              "minQuality": 0
             }
           ]
         }
@@ -45727,6 +46695,22 @@
               "resourceRecordId": "21825507-7923-4683-9bf3-9cfe316940e3",
               "quantity_scu": 0.02,
               "slot": "Cableado",
+              "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_janalite",
+              "resourceName": "Janalite",
+              "resourceRecordId": "",
+              "quantity_scu": 1.0,
+              "slot": "Regulador de energía",
+              "minQuality": 0
+            },
+            {
+              "resource": "harvestable_mineral_1h_sadaryx",
+              "resourceName": "Sadaryx",
+              "resourceRecordId": "",
+              "quantity_scu": 1.0,
+              "slot": "Piezas de precisión",
               "minQuality": 0
             }
           ]
