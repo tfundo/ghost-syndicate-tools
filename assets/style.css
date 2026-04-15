@@ -1994,6 +1994,9 @@ body::after {
   border: 1px solid var(--border);
   border-radius: 6px;
   padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
   backdrop-filter: blur(8px);
   transition: border-color 0.4s, box-shadow 0.4s;
