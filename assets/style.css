@@ -42,13 +42,13 @@
   --font-mono:  'Share Tech Mono', monospace;
 
   /* Layout */
-  --nav-h:      80px;
+  --nav-h:      96px;
   --transition: 0.25s ease;
 }
 
 /* ===== RESET ===== */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; font-size: 16px; }
+html { scroll-behavior: smooth; font-size: 18px; }
 body {
   background: var(--bg-dark);
   color: var(--text-primary);
@@ -117,12 +117,12 @@ body::after {
   flex-shrink: 0;
 }
 .logo-img {
-  width: 52px;
-  height: 52px;
+  width: 68px;
+  height: 68px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid rgba(245,158,11,0.4);
-  box-shadow: 0 0 12px rgba(245,158,11,0.25), 0 0 24px rgba(245,158,11,0.1);
+  border: 2px solid rgba(245,158,11,0.45);
+  box-shadow: 0 0 14px rgba(245,158,11,0.3), 0 0 28px rgba(245,158,11,0.12);
   flex-shrink: 0;
   transition: box-shadow var(--transition);
 }
@@ -136,7 +136,7 @@ body::after {
 }
 .logo-text {
   font-family: var(--font-hud);
-  font-size: 0.88rem;
+  font-size: 1.05rem;
   font-weight: 700;
   letter-spacing: 0.14em;
   color: var(--text-primary);
@@ -146,7 +146,7 @@ body::after {
 }
 .logo-sub {
   font-family: var(--font-mono);
-  font-size: 0.6rem;
+  font-size: 0.7rem;
   color: var(--text-muted);
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -163,10 +163,10 @@ body::after {
   display: flex;
   align-items: center;
   gap: 0.4rem;
-  padding: 0.5rem 1rem;
+  padding: 0.6rem 1.1rem;
   border-left: 3px solid transparent;
   font-family: var(--font-hud);
-  font-size: 0.72rem;
+  font-size: 0.82rem;
   font-weight: 600;
   letter-spacing: 0.1em;
   color: var(--text-secondary);
@@ -185,8 +185,8 @@ body::after {
   border-left-color: var(--accent);
 }
 .nav-coming .badge {
-  font-size: 0.58rem;
-  padding: 0.1rem 0.4rem;
+  font-size: 0.65rem;
+  padding: 0.1rem 0.45rem;
   background: rgba(180,83,9,0.15);
   border: 1px solid rgba(180,83,9,0.4);
   border-radius: 2px;
@@ -197,7 +197,7 @@ body::after {
 
 .nav-version {
   font-family: var(--font-mono);
-  font-size: 0.72rem;
+  font-size: 0.8rem;
   color: var(--text-muted);
   flex-shrink: 0;
   border-left: 1px solid var(--border);
@@ -308,12 +308,12 @@ body::after {
   line-height: 1;
 }
 .hero-logo-img {
-  width: 110px;
-  height: 110px;
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid rgba(245,158,11,0.5);
-  box-shadow: 0 0 30px rgba(245,158,11,0.35), 0 0 60px rgba(245,158,11,0.15);
+  border: 3px solid rgba(245,158,11,0.55);
+  box-shadow: 0 0 40px rgba(245,158,11,0.4), 0 0 80px rgba(245,158,11,0.18);
   animation: pulse-glow 4s ease-in-out infinite;
   display: block;
 }
@@ -392,7 +392,7 @@ body::after {
 .stat-label {
   display: block;
   font-family: var(--font-mono);
-  font-size: 0.72rem;
+  font-size: 0.82rem;
   color: var(--text-muted);
   margin-top: 0.25rem;
   letter-spacing: 0.05em;
@@ -621,7 +621,7 @@ body::after {
 }
 .page-title {
   font-family: var(--font-hud);
-  font-size: 1.4rem;
+  font-size: 1.7rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   color: var(--text-primary);
@@ -629,7 +629,7 @@ body::after {
 }
 .page-subtitle {
   font-family: var(--font-mono);
-  font-size: 0.82rem;
+  font-size: 0.92rem;
   color: var(--text-muted);
   margin-top: 0.3rem;
 }
@@ -667,8 +667,8 @@ body::after {
   border: none;
   outline: none;
   color: var(--text-primary);
-  font-size: 0.95rem;
-  padding: 0.75rem 0;
+  font-size: 1.05rem;
+  padding: 0.85rem 0;
 }
 .search-box input::placeholder { color: var(--text-muted); }
 .search-clear {
@@ -689,13 +689,13 @@ body::after {
   display: flex;
   align-items: center;
   gap: 0.45rem;
-  padding: 0.6rem 1rem;
+  padding: 0.65rem 1.1rem;
   background: var(--bg-glass);
   border: 1px solid var(--border);
   border-radius: 4px;
   color: var(--text-secondary);
   font-family: var(--font-body);
-  font-size: 0.82rem;
+  font-size: 0.95rem;
   font-weight: 600;
   letter-spacing: 0.03em;
   cursor: pointer;
@@ -719,8 +719,8 @@ body::after {
   border: 1px solid var(--border);
   border-radius: 4px;
   color: var(--text-primary);
-  font-size: 0.82rem;
-  padding: 0.6rem 0.9rem;
+  font-size: 0.92rem;
+  padding: 0.65rem 1rem;
   outline: none;
   cursor: pointer;
   transition: border-color var(--transition);
@@ -735,7 +735,7 @@ body::after {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1.2rem;
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: var(--text-muted);
   font-family: var(--font-mono);
 }
@@ -805,7 +805,7 @@ body::after {
 }
 .bp-name {
   font-family: var(--font-hud);
-  font-size: 0.88rem;
+  font-size: 1rem;
   font-weight: 600;
   letter-spacing: 0.06em;
   color: var(--text-primary);
@@ -818,7 +818,7 @@ body::after {
   background: rgba(245,158,11,0.12);
   border: 1px solid rgba(245,158,11,0.35);
   color: var(--accent);
-  font-size: 0.62rem;
+  font-size: 0.72rem;
   font-family: var(--font-mono);
   padding: 0.15rem 0.5rem;
   border-radius: 2px;
@@ -828,7 +828,7 @@ body::after {
 }
 
 .bp-category {
-  font-size: 0.75rem;
+  font-size: 0.82rem;
   color: var(--text-muted);
   font-family: var(--font-mono);
   margin-bottom: 0.8rem;
@@ -864,11 +864,11 @@ body::after {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 0.92rem;
+  font-size: 1rem;
 }
 .ing-qty {
   font-family: var(--font-mono);
-  font-size: 0.78rem;
+  font-size: 0.85rem;
   color: var(--accent);
   background: var(--accent-glow);
   border: 1px solid rgba(245,158,11,0.3);
@@ -883,13 +883,13 @@ body::after {
   flex: 1;
 }
 .ing-slot {
-  font-size: 0.72rem;
+  font-size: 0.8rem;
   color: var(--text-muted);
   font-style: italic;
 }
 
 .bp-more-ingredients {
-  font-size: 0.78rem;
+  font-size: 0.88rem;
   color: var(--text-muted);
   font-style: italic;
 }
@@ -906,12 +906,12 @@ body::after {
 }
 .bp-time {
   font-family: var(--font-mono);
-  font-size: 0.78rem;
+  font-size: 0.88rem;
   color: var(--text-muted);
 }
 .bp-time .time-val { color: var(--gold); }
 .bp-missions-label {
-  font-size: 0.78rem;
+  font-size: 0.86rem;
   color: var(--text-secondary);
   display: flex;
   align-items: center;
@@ -922,7 +922,7 @@ body::after {
   background: rgba(180,83,9,0.12);
   border: 1px solid rgba(180,83,9,0.35);
   color: var(--gold);
-  font-size: 0.7rem;
+  font-size: 0.78rem;
   font-family: var(--font-mono);
   padding: 0.15rem 0.5rem;
   border-radius: 2px;
@@ -1091,7 +1091,7 @@ body::after {
 
 .modal-title {
   font-family: var(--font-hud);
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   color: var(--text-primary);
@@ -1101,7 +1101,7 @@ body::after {
 }
 .modal-category {
   font-family: var(--font-mono);
-  font-size: 0.78rem;
+  font-size: 0.88rem;
   color: var(--text-muted);
   margin-bottom: 1.5rem;
   text-transform: uppercase;
@@ -1117,7 +1117,7 @@ body::after {
 
 .modal-section-title {
   font-family: var(--font-hud);
-  font-size: 0.78rem;
+  font-size: 0.9rem;
   font-weight: 700;
   letter-spacing: 0.18em;
   color: var(--accent);
@@ -1133,13 +1133,13 @@ body::after {
   gap: 0.75rem;
   padding: 0.6rem 0;
   border-bottom: 1px solid rgba(180,83,9,0.06);
-  font-size: 0.95rem;
+  font-size: 1.05rem;
 }
 .modal-ingredient-row:last-child { border-bottom: none; }
 
 .modal-qty {
   font-family: var(--font-mono);
-  font-size: 0.82rem;
+  font-size: 0.92rem;
   color: var(--accent);
   background: var(--accent-glow);
   border: 1px solid rgba(245,158,11,0.3);
@@ -1150,7 +1150,7 @@ body::after {
   white-space: nowrap;
 }
 .modal-res-name { flex: 1; color: var(--text-primary); font-weight: 500; }
-.modal-slot { font-size: 0.8rem; color: var(--text-muted); font-style: italic; }
+.modal-slot { font-size: 0.88rem; color: var(--text-muted); font-style: italic; }
 .modal-quality {
   font-size: 0.68rem;
   color: var(--gold);
