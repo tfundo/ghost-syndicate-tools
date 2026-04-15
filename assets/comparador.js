@@ -843,7 +843,7 @@
       }
       .comp-tab-btn {
         font-family: var(--font-hud);
-        font-size: 0.92rem;
+        font-size: 1rem;
         font-weight: 600;
         letter-spacing: 0.1em;
         text-transform: uppercase;
@@ -949,12 +949,12 @@
       }
       .comp-count {
         font-family: var(--font-mono);
-        font-size: 0.92rem;
+        font-size: 1rem;
         color: var(--accent);
         letter-spacing: 0.06em;
       }
       .comp-hint {
-        font-size: 0.9rem;
+        font-size: 0.96rem;
         color: var(--text-muted);
         font-style: italic;
       }
@@ -1004,7 +1004,7 @@
       .comp-card-header { margin-bottom: 0.6rem; }
       .comp-ship-name {
         font-family: var(--font-hud);
-        font-size: 1.1rem;
+        font-size: 1.2rem;
         font-weight: 700;
         letter-spacing: 0.08em;
         text-transform: uppercase;
@@ -1014,7 +1014,7 @@
       }
       .comp-mfr {
         font-family: var(--font-mono);
-        font-size: 0.84rem;
+        font-size: 0.92rem;
         color: var(--text-muted);
         letter-spacing: 0.05em;
         text-transform: uppercase;
@@ -1092,7 +1092,7 @@
       }
       .comp-badge {
         font-family: var(--font-mono);
-        font-size: 0.76rem;
+        font-size: 0.84rem;
         letter-spacing: 0.05em;
         text-transform: uppercase;
         border: 1px solid;
@@ -1114,14 +1114,14 @@
       }
       .comp-stat-label {
         font-family: var(--font-mono);
-        font-size: 0.76rem;
+        font-size: 0.84rem;
         color: var(--text-muted);
         letter-spacing: 0.06em;
         text-transform: uppercase;
       }
       .comp-stat-val {
         font-family: var(--font-mono);
-        font-size: 1rem;
+        font-size: 1.08rem;
         color: var(--text-primary);
         font-weight: 600;
       }
@@ -1198,7 +1198,7 @@
       }
       .comp-cmp-name {
         font-family: var(--font-hud);
-        font-size: 1.12rem;
+        font-size: 1.25rem;
         font-weight: 700;
         letter-spacing: 0.08em;
         text-transform: uppercase;
@@ -1207,7 +1207,7 @@
       }
       .comp-cmp-sub {
         font-family: var(--font-mono);
-        font-size: 0.84rem;
+        font-size: 0.92rem;
         color: var(--text-muted);
         letter-spacing: 0.05em;
         text-transform: uppercase;
@@ -1228,7 +1228,7 @@
       .comp-stat-row:last-child { border-bottom: none; }
       .comp-stat-row-label {
         font-family: var(--font-mono);
-        font-size: 0.84rem;
+        font-size: 0.92rem;
         color: var(--text-muted);
         letter-spacing: 0.05em;
         text-transform: uppercase;
@@ -1248,7 +1248,7 @@
       }
       .comp-stat-row-val {
         font-family: var(--font-mono);
-        font-size: 0.92rem;
+        font-size: 1rem;
         color: var(--text-primary);
         text-align: right;
         white-space: nowrap;
