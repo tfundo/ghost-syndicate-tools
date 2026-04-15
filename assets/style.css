@@ -998,9 +998,10 @@ body::after {
   font-family: var(--font-mono);
   padding: 0.15rem 0.5rem;
   border-radius: 2px;
-  white-space: nowrap;
+  white-space: normal;
+  word-break: break-word;
   display: inline-flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 0.3rem;
 }
 
