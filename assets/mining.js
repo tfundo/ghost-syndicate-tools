@@ -1,7 +1,7 @@
 /* ===================================================
    GHOST SYNDICATE TOOLS — Mining Module
    Minerales · Localizaciones · Configurador
-   SC 4.7.0
+   SC 4.7.0 — Real game data from Data.p4k
    =================================================== */
 
 'use strict';
@@ -21,7 +21,8 @@ const Mining = (() => {
     // Configurador
     ship: null,
     lasers: [null, null, null],
-    modules: [[null, null], [null, null], [null, null]],
+    // 3D: [slot_idx][module_slot_idx] — up to 3 module slots per laser
+    modules: [[null, null, null], [null, null, null], [null, null, null]],
     gadget: null,
     mineral: null,
     rockMassKg: 3000,
@@ -96,7 +97,6 @@ const Mining = (() => {
     else if (mState.tab === 'localizaciones') el.innerHTML = renderLocalizaciones();
     else if (mState.tab === 'configurador') el.innerHTML = renderConfigurador();
 
-    // Wire events after DOM insertion
     wireEvents();
   }
 
@@ -211,7 +211,7 @@ const Mining = (() => {
       const mineralChips = loc.minerals.map(mn => {
         const mObj = mState.db.minerals.find(m =>
           m.name === mn || m.name.toLowerCase() === mn.toLowerCase() ||
-          mn.toLowerCase().includes(m.id.replace(/_/g,' '))
+          mn.toLowerCase().includes(m.id.replace(/_/g, ' '))
         );
         const color = mObj ? mObj.color : '#888';
         return `<span class="mn-mineral-chip" style="border-color:${color};color:${color}">${mn}</span>`;
@@ -288,38 +288,58 @@ const Mining = (() => {
       const slotCount = mState.ship.laserSlots;
       const laserSize = mState.ship.laserSize;
       const compatLasers = laserHeads.filter(l => l.size === laserSize);
-      const activeModules = modules.filter(m => m.type === 'active');
-      const passiveModules = modules.filter(m => m.type === 'passive');
 
       const slotCols = slotCount === 3 ? 'mn-laser-cols-3' : slotCount === 2 ? 'mn-laser-cols-2' : '';
 
       const slots = Array.from({ length: slotCount }, (_, i) => {
         const selLaser = mState.lasers[i];
-        const selActive = mState.modules[i][0];
-        const selPassive = mState.modules[i][1];
+        const moduleSlotCount = selLaser ? selLaser.moduleSlots : 0;
 
         const laserOpts = `<option value="">— Seleccionar láser —</option>` +
-          compatLasers.map(l =>
-            `<option value="${l.id}"${selLaser && selLaser.id === l.id ? ' selected' : ''}>${l.name} (${l.powerMW} MW · Rng ${l.rangem}m)</option>`
-          ).join('');
+          compatLasers.map(l => {
+            const rng = l.rangeMin === l.rangeMax ? `${l.rangeMin}m` : `${l.rangeMin}–${l.rangeMax}m`;
+            return `<option value="${l.id}"${selLaser && selLaser.id === l.id ? ' selected' : ''}>${l.name} (${l.powerMax} · Rng ${rng})</option>`;
+          }).join('');
 
-        const activeOpts = `<option value="">— Módulo activo —</option>` +
-          activeModules.map(m =>
-            `<option value="${m.id}"${selActive && selActive.id === m.id ? ' selected' : ''}>${m.name}</option>`
-          ).join('');
+        // Module dropdowns — dynamic count based on selected laser's moduleSlots
+        let modulesHtml = '';
+        if (selLaser === null) {
+          modulesHtml = `<div class="mn-module-hint">Selecciona un láser para ver sus ranuras de módulo.</div>`;
+        } else if (moduleSlotCount === 0) {
+          modulesHtml = `<div class="mn-module-hint mn-module-none">Este láser no tiene ranuras de módulo.</div>`;
+        } else {
+          const modOpts = `<option value="">— Sin módulo —</option>` +
+            modules.map(m =>
+              `<option value="${m.id}">${m.name}${m.filterOnly ? ' (filtro)' : ''}</option>`
+            ).join('');
 
-        const passiveOpts = `<option value="">— Módulo pasivo —</option>` +
-          passiveModules.map(m =>
-            `<option value="${m.id}"${selPassive && selPassive.id === m.id ? ' selected' : ''}>${m.name}</option>`
-          ).join('');
+          modulesHtml = Array.from({ length: moduleSlotCount }, (_, mi) => {
+            const selMod = mState.modules[i][mi];
+            const curOpts = `<option value="">— Sin módulo —</option>` +
+              modules.map(m =>
+                `<option value="${m.id}"${selMod && selMod.id === m.id ? ' selected' : ''}>${m.name}${m.filterOnly ? ' (filtro)' : ''}</option>`
+              ).join('');
+            return `<select class="mn-select mn-select-sm" data-action="module" data-slot="${i}" data-modslot="${mi}">${curOpts}</select>`;
+          }).join('');
+        }
+
+        // Show laser stats if selected
+        let laserStatsHtml = '';
+        if (selLaser) {
+          const signFmt = (v) => v > 0 ? `+${v}%` : v < 0 ? `${v}%` : '0%';
+          laserStatsHtml = `<div class="mn-laser-stats">
+            <span title="Inestabilidad modificada">Instab: <b>${signFmt(selLaser.instabMod)}</b></span>
+            <span title="Tamaño de ventana óptima modificado">Ventana: <b>${signFmt(selLaser.windowSizeMod)}</b></span>
+            <span title="Resistencia modificada">Resist: <b>${signFmt(selLaser.resMod)}</b></span>
+            <span title="Velocidad de carga en ventana modificada">Carga: <b>${signFmt(selLaser.windowRateMod)}</b></span>
+          </div>`;
+        }
 
         return `<div class="mn-slot-card">
           <div class="mn-slot-label">Láser ${i + 1}</div>
           <select class="mn-select" data-action="laser" data-slot="${i}">${laserOpts}</select>
-          <div class="mn-module-row">
-            <select class="mn-select mn-select-sm" data-action="module-active" data-slot="${i}">${activeOpts}</select>
-            <select class="mn-select mn-select-sm" data-action="module-passive" data-slot="${i}">${passiveOpts}</select>
-          </div>
+          ${laserStatsHtml}
+          <div class="mn-module-row">${modulesHtml}</div>
         </div>`;
       }).join('');
 
@@ -327,7 +347,7 @@ const Mining = (() => {
         <div class="mn-laser-slots ${slotCols}">${slots}</div>`;
     }
 
-    // Gadget (1 solo)
+    // Gadget (1 per rock)
     const gadgetOpts = gadgets.map(g =>
       `<option value="${g.id}"${mState.gadget && mState.gadget.id === g.id ? ' selected' : ''}>${g.name}</option>`
     ).join('');
@@ -344,7 +364,7 @@ const Mining = (() => {
       { label: 'Masiva', kg: 50000 },
     ];
     const presetBtns = presets.map(p =>
-      `<button class="mn-preset-btn${mState.rockMassKg === p.kg ? ' active' : ''}" onclick="Mining._setRockMass(${p.kg})">${p.label}<br><small>${p.kg >= 1000 ? (p.kg/1000)+'t' : p.kg+'kg'}</small></button>`
+      `<button class="mn-preset-btn${mState.rockMassKg === p.kg ? ' active' : ''}" onclick="Mining._setRockMass(${p.kg})">${p.label}<br><small>${p.kg >= 1000 ? (p.kg / 1000) + 't' : p.kg + 'kg'}</small></button>`
     ).join('');
 
     const mineralOpts = `<option value="">— Seleccionar mineral —</option>` +
@@ -360,7 +380,6 @@ const Mining = (() => {
         <input type="number" id="mnCustomMass" class="mn-input" value="${mState.rockMassKg}" min="100" max="500000" step="100" />
       </div>`;
 
-    // Results panel
     const results = renderResults();
 
     return `<div class="mn-config-layout">
@@ -377,6 +396,9 @@ const Mining = (() => {
     </div>`;
   }
 
+  // ============================================================
+  // RESULTS PANEL
+  // ============================================================
   function renderResults() {
     const sim = simulate();
 
@@ -399,7 +421,7 @@ const Mining = (() => {
 
     const estTime = sim.estimatedTimeSec;
     const timeStr = estTime >= 60
-      ? `${Math.floor(estTime/60)}m ${estTime%60}s`
+      ? `${Math.floor(estTime / 60)}m ${estTime % 60}s`
       : `${estTime}s`;
 
     return `
@@ -409,30 +431,30 @@ const Mining = (() => {
         <div class="mn-throttle-section">
           <div class="mn-throttle-label">Throttle recomendado</div>
           <div class="mn-throttle-gauge">
-            <div class="mn-throttle-fill" style="width:${Math.min(100,sim.recommendedThrottle)}%;background:${throttleColor}"></div>
+            <div class="mn-throttle-fill" style="width:${Math.min(100, sim.recommendedThrottle)}%;background:${throttleColor}"></div>
           </div>
           <div class="mn-throttle-value" style="color:${throttleColor}">${sim.recommendedThrottle}%</div>
         </div>
         <div class="mn-stat-grid">
           <div class="mn-stat">
-            <div class="mn-stat-val">${sim.effectivePowerMW.toLocaleString('es-ES')} MW</div>
-            <div class="mn-stat-label">Potencia efectiva</div>
+            <div class="mn-stat-val">${sim.totalPower.toLocaleString('es-ES')}</div>
+            <div class="mn-stat-label">Potencia total</div>
           </div>
           <div class="mn-stat">
-            <div class="mn-stat-val">${sim.chargeRateAtThrottle}%/s</div>
-            <div class="mn-stat-label">Vel. carga</div>
+            <div class="mn-stat-val">${sim.chargeRate100}%/s</div>
+            <div class="mn-stat-label">Vel. carga (100%)</div>
           </div>
           <div class="mn-stat">
-            <div class="mn-stat-val">${sim.windowWidth.toFixed(1)}%</div>
+            <div class="mn-stat-val">${sim.effectiveWindowSize.toFixed(1)}%</div>
             <div class="mn-stat-label">Ancho ventana</div>
           </div>
           <div class="mn-stat">
-            <div class="mn-stat-val">${sim.adjustedInstability.toFixed(1)}</div>
+            <div class="mn-stat-val">${sim.effectiveInstability.toFixed(1)}</div>
             <div class="mn-stat-label">Inestabilidad</div>
           </div>
           <div class="mn-stat">
-            <div class="mn-stat-val">${sim.totalExtrRate}/s</div>
-            <div class="mn-stat-label">Extracción</div>
+            <div class="mn-stat-val">${sim.effectiveResistance.toFixed(1)}</div>
+            <div class="mn-stat-label">Resistencia efect.</div>
           </div>
           <div class="mn-stat">
             <div class="mn-stat-val">${timeStr}</div>
@@ -456,16 +478,16 @@ const Mining = (() => {
       <div class="mn-window-meter">
         <div class="mn-window-zone" style="left:${optMin}%;width:${optMax - optMin}%;background:${color}33;border-color:${color}88"></div>
         <div class="mn-window-cursor" style="left:${throttlePct}%" title="Throttle recomendado: ${throttlePct}%"></div>
-        <div class="mn-meter-tick" style="left:${optMin}%"><span>${optMin}%</span></div>
-        <div class="mn-meter-tick mn-meter-tick-r" style="left:${optMax}%"><span>${optMax}%</span></div>
+        <div class="mn-meter-tick" style="left:${optMin}%"><span>${optMin.toFixed(0)}%</span></div>
+        <div class="mn-meter-tick mn-meter-tick-r" style="left:${optMax}%"><span>${optMax.toFixed(0)}%</span></div>
       </div>
     </div>`;
   }
 
   // ============================================================
-  // SIMULATION
+  // SIMULATION (new model from real game data)
   // ============================================================
-  const CALIB_K = 10;
+  const CALIB_K = 40;
 
   function simulate() {
     const ship = mState.ship;
@@ -474,86 +496,118 @@ const Mining = (() => {
 
     if (!ship || !mineral) return null;
 
-    let totalPowerMW = 0;
-    let totalExtrRate = 0;
-    let totalInstabAdd = 0;
-    let totalWindowMod = 0;
-
     const activeLasers = mState.lasers.slice(0, ship.laserSlots).filter(l => l !== null);
-
     if (activeLasers.length === 0) return null;
 
+    // Gadget effects
+    const g = mState.gadget && mState.gadget.id !== 'none' ? mState.gadget : null;
+    const gadgetPowerMod   = g ? g.powerMod       : 1.0;
+    const gadgetInstabMod  = g ? g.instabilityMod  : 0;   // percentage additive
+    const gadgetResMod     = g ? g.resistanceMod   : 0;   // percentage additive
+
+    // Accumulate per-slot power and modifiers
+    let totalPower = 0;
+    let sumLaserInstabMod  = 0;  // laser instab % modifier (averaged)
+    let sumLaserResMod     = 0;  // laser resistance % modifier (averaged)
+    let sumLaserWindowMod  = 0;  // laser window size % modifier (averaged)
+    let sumLaserRateMod    = 0;  // laser window rate % modifier (averaged)
+    let sumModWindowMod    = 0;  // sum of module window size mods across all slots
+    let sumModRateMod      = 0;  // sum of module window rate mods across all slots
+
     activeLasers.forEach((laser, slotIdx) => {
-      const slotModules = mState.modules[slotIdx].filter(m => m !== null);
-      let slotPower = laser.powerMW;
-      let slotExtr = laser.extrRate;
-      let slotInstab = laser.instabilityAdd;
-      let slotWindow = 0;
+      // Module power multiplier for this slot
+      let slotPowerMod = 1.0;
+      let slotModWindowMod = 0;
+      let slotModRateMod = 0;
 
-      slotModules.forEach(mod => {
-        slotPower *= mod.powerMod;
-        slotExtr *= mod.extrMod;
-        slotInstab += (mod.instabMod - 1) * 40;
-        slotWindow += (mod.windowMod || 0);
-      });
+      const modSlotCount = laser.moduleSlots;
+      for (let mi = 0; mi < modSlotCount; mi++) {
+        const mod = mState.modules[slotIdx][mi];
+        if (mod && !mod.filterOnly) {
+          slotPowerMod   *= mod.powerMod;
+          slotModWindowMod += (mod.windowSizeMod || 0);
+          slotModRateMod   += (mod.windowRateMod || 0);
+        }
+      }
 
-      totalPowerMW += slotPower;
-      totalExtrRate += slotExtr;
-      totalInstabAdd += slotInstab / activeLasers.length;
-      totalWindowMod += slotWindow / activeLasers.length;
+      // Slot power at 100% throttle, with modules applied
+      const slotPower = laser.powerMax * slotPowerMod * gadgetPowerMod;
+      totalPower += slotPower;
+
+      sumLaserInstabMod += laser.instabMod;
+      sumLaserResMod    += laser.resMod;
+      sumLaserWindowMod += laser.windowSizeMod;
+      sumLaserRateMod   += laser.windowRateMod;
+      sumModWindowMod   += slotModWindowMod;
+      sumModRateMod     += slotModRateMod;
     });
 
-    // Gadget effects (1 solo)
-    const g = mState.gadget && mState.gadget.id !== 'none' ? mState.gadget : null;
-    const gadgetPowerMod = g ? g.powerMod : 1.0;
-    const gadgetInstabMod = g ? g.instabMod : 1.0;
-    const gadgetWindowMod = g ? g.windowMod : 0;
-    const gadgetResistMod = g ? g.resistMod : 1.0;
+    const n = activeLasers.length;
+    const avgLaserInstabMod = sumLaserInstabMod / n;
+    const avgLaserResMod    = sumLaserResMod / n;
+    const avgLaserWindowMod = sumLaserWindowMod / n;
+    const avgLaserRateMod   = sumLaserRateMod / n;
 
-    const effectivePower = totalPowerMW * gadgetPowerMod;
-    const adjustedResistance = mineral.resistance * gadgetResistMod;
-    const adjustedInstability = mineral.instability * gadgetInstabMod * (1 + totalInstabAdd / 100);
-    const adjustedOptMin = mineral.optMin;
-    const adjustedOptMax = Math.min(95, Math.max(mineral.optMin + 5, mineral.optMax + gadgetWindowMod + totalWindowMod));
-    const windowWidth = adjustedOptMax - adjustedOptMin;
+    // Effective stats
+    const effectiveResistance  = mineral.resistance * (1 + (avgLaserResMod + gadgetResMod) / 100);
+    const effectiveInstability = mineral.instability * (1 + (avgLaserInstabMod + gadgetInstabMod) / 100);
 
-    const chargeRate100 = effectivePower / (adjustedResistance * CALIB_K);
+    const baseWindowSize = mineral.optMax - mineral.optMin;
+    const totalWindowMod = avgLaserWindowMod + sumModWindowMod; // module mods are NOT averaged — stacked
+    const effectiveWindowSize = Math.max(3, baseWindowSize * (1 + totalWindowMod / 100));
 
-    const TARGET_FILL_S = 5;
-    const targetRate = windowWidth / TARGET_FILL_S;
-    const recommendedThrottle = Math.min(1.0, targetRate / Math.max(0.001, chargeRate100));
+    const windowRateMultiplier = 1 + (avgLaserRateMod + sumModRateMod) / 100;
 
-    const difficultyRatio = adjustedInstability / Math.max(1, windowWidth);
+    // Adjusted window position (centered around mineral optMin, widened/narrowed)
+    const windowCenter = (mineral.optMin + mineral.optMax) / 2;
+    const halfNew = effectiveWindowSize / 2;
+    const adjustedOptMin = Math.max(0, windowCenter - halfNew);
+    const adjustedOptMax = Math.min(100, windowCenter + halfNew);
 
-    const chargeRateAtThrottle = chargeRate100 * recommendedThrottle;
-    const windowCenter = (adjustedOptMin + adjustedOptMax) / 2;
-    const timeToChargeSec = windowCenter / Math.max(0.1, chargeRateAtThrottle);
-    const timeToExtractSec = (rockMass / 1000) / Math.max(0.01, totalExtrRate);
-    const estimatedTotalSec = (timeToChargeSec + timeToExtractSec) * 1.8;
+    // Charge rate at 100% throttle (% of bar per second)
+    const chargeRate100 = totalPower / (Math.max(1, effectiveResistance) * CALIB_K);
 
+    // Recommended throttle: aim to fill the window in ~4 seconds
+    const targetRate = effectiveWindowSize / 4;  // % per second
+    let recommendedThrottleFrac = Math.min(1.0, targetRate / Math.max(0.001, chargeRate100));
+    // Enforce all active lasers' minimum throttle
+    const maxThrottleMin = Math.max(...activeLasers.map(l => l.throttleMin));
+    recommendedThrottleFrac = Math.max(recommendedThrottleFrac, maxThrottleMin);
+    recommendedThrottleFrac = Math.min(1.0, recommendedThrottleFrac);
+
+    const chargeRateAtThrottle = chargeRate100 * recommendedThrottleFrac;
+    const difficultyRatio = effectiveInstability / Math.max(1, effectiveWindowSize);
+
+    // Estimated time: fill window + drain (simplified: ~window / chargeRate fill, then extraction
+    // For ROC-scale rocks we use rockMass as a proxy: ~1 cycle per 100kg
+    const fillTimeSec = effectiveWindowSize / Math.max(0.01, chargeRateAtThrottle);
+    const cycles = Math.max(1, Math.round(rockMass / 500));
+    const estimatedTotalSec = Math.round(fillTimeSec * cycles * 0.5 + cycles * 3);
+
+    // Verdict
     let verdict, verdictClass, tips = [];
 
-    if (recommendedThrottle > 1.8) {
+    if (chargeRate100 < 0.3) {
       verdict = 'INSUFICIENTE';
       verdictClass = 'insufficient';
-      tips.push('Necesitas más potencia. Prueba un láser más potente o usa módulos Surge.');
-      tips.push('También puedes usar el gadget Surge Charge en la roca.');
-    } else if (chargeRate100 * 0.05 > windowWidth * 3) {
+      tips.push('La potencia combinada es demasiado baja para cargar la barra de forma efectiva.');
+      tips.push('Prueba un láser más potente, usa módulos Rieger o el gadget Surge en la roca.');
+    } else if (chargeRate100 * (maxThrottleMin) > effectiveWindowSize * 2) {
       verdict = 'EXCESIVA';
       verdictClass = 'excess';
-      tips.push('Incluso al 5% de potencia el láser llena la barra demasiado rápido.');
-      tips.push('Usa módulos de estabilidad (Lifeline, Rime) o cambia a un láser menos potente.');
-    } else if (difficultyRatio > 1.2) {
+      tips.push('Incluso al mínimo de throttle, el láser supera la ventana óptima con demasiada rapidez.');
+      tips.push('Usa módulos Focus o XTR para ampliar la ventana, o cambia a un láser menos potente.');
+    } else if (difficultyRatio > 1.5) {
       verdict = 'CRÍTICO';
       verdictClass = 'critical';
-      tips.push('La inestabilidad supera la ventana óptima. Muy difícil de controlar.');
-      tips.push('Añade módulos Rime o Focus, y usa el gadget Optimum Charge en la roca.');
+      tips.push('La inestabilidad supera ampliamente la ventana óptima. Muy difícil de controlar.');
+      tips.push('Usa módulos Focus para ampliar ventana, o gadget Lifeline/Optimum en la roca.');
       if (mineral.explosive) tips.push('⚠️ Mineral explosivo: un error puede destruir la roca.');
-    } else if (difficultyRatio > 0.7) {
+    } else if (difficultyRatio > 0.8) {
       verdict = 'DIFÍCIL';
       verdictClass = 'hard';
-      tips.push('Manejable con experiencia. La ventana óptima es estrecha respecto a la inestabilidad.');
-      if (mineral.explosive) tips.push('⚠️ Mineral explosivo: ten cuidado de no sobrepasar la ventana.');
+      tips.push('Manejable con experiencia. La ventana es estrecha respecto a la inestabilidad.');
+      if (mineral.explosive) tips.push('⚠️ Mineral explosivo: mantén control constante del throttle.');
     } else if (difficultyRatio > 0.4) {
       verdict = 'MODERADO';
       verdictClass = 'medium';
@@ -563,25 +617,26 @@ const Mining = (() => {
       verdict = 'FACTIBLE';
       verdictClass = 'easy';
       tips.push('Configuración óptima. Deberías poder romper la roca sin problemas.');
-      if (mineral.explosive) tips.push('⚠️ Cuantanio explosivo: mantén siempre control del throttle aunque sea fácil.');
+      if (mineral.explosive) tips.push('⚠️ Mineral explosivo: aunque es fácil, mantén siempre control del throttle.');
     }
 
     return {
       verdict,
       verdictClass,
-      effectivePowerMW: Math.round(effectivePower),
+      totalPower: Math.round(totalPower),
       chargeRate100: Math.round(chargeRate100 * 10) / 10,
       chargeRateAtThrottle: Math.round(chargeRateAtThrottle * 10) / 10,
-      recommendedThrottle: Math.round(recommendedThrottle * 100),
-      windowWidth: Math.round(windowWidth * 10) / 10,
+      recommendedThrottle: Math.round(recommendedThrottleFrac * 100),
+      effectiveWindowSize: Math.round(effectiveWindowSize * 10) / 10,
       adjustedOptMin: Math.round(adjustedOptMin * 10) / 10,
       adjustedOptMax: Math.round(adjustedOptMax * 10) / 10,
-      adjustedInstability: Math.round(adjustedInstability * 10) / 10,
+      effectiveInstability: Math.round(effectiveInstability * 10) / 10,
+      effectiveResistance: Math.round(effectiveResistance * 10) / 10,
       difficultyRatio: Math.round(difficultyRatio * 100) / 100,
-      estimatedTimeSec: Math.round(estimatedTotalSec),
-      totalExtrRate: Math.round(totalExtrRate * 100) / 100,
-      tips,
+      windowRateMultiplier: Math.round(windowRateMultiplier * 100) / 100,
+      estimatedTimeSec: estimatedTotalSec,
       activeLaserCount: activeLasers.length,
+      tips,
     };
   }
 
@@ -617,22 +672,27 @@ const Mining = (() => {
       sel.addEventListener('change', () => {
         const action = sel.dataset.action;
         const slot = parseInt(sel.dataset.slot || 0);
+        const modSlot = parseInt(sel.dataset.modslot || 0);
         const val = sel.value;
         const { laserHeads, modules, gadgets } = mState.db;
 
         if (action === 'laser') {
-          mState.lasers[slot] = val ? laserHeads.find(l => l.id === val) : null;
-        } else if (action === 'module-active') {
-          mState.modules[slot][0] = val ? modules.find(m => m.id === val) : null;
-        } else if (action === 'module-passive') {
-          mState.modules[slot][1] = val ? modules.find(m => m.id === val) : null;
+          const newLaser = val ? laserHeads.find(l => l.id === val) : null;
+          mState.lasers[slot] = newLaser;
+          // Clear module selections for this slot when laser changes
+          mState.modules[slot] = [null, null, null];
+          // Full re-render to update module dropdowns for this slot
+          renderContent();
+          return;
+        } else if (action === 'module') {
+          mState.modules[slot][modSlot] = val ? modules.find(m => m.id === val) : null;
         } else if (action === 'gadget') {
           mState.gadget = val ? gadgets.find(g => g.id === val) : null;
         } else if (action === 'mineral') {
           mState.mineral = val ? mState.db.minerals.find(m => m.id === val) : null;
         }
 
-        // Re-render only results panel
+        // Re-render only results panel for non-laser changes
         const resultsPanel = document.querySelector('.mn-results-panel');
         if (resultsPanel) {
           resultsPanel.innerHTML = renderResults();
@@ -660,9 +720,9 @@ const Mining = (() => {
   function _selectShip(shipId) {
     const ship = mState.db.ships.find(s => s.id === shipId);
     mState.ship = ship || null;
-    // Clear laser/module selections (gadget stays)
+    // Clear laser/module/gadget selections
     mState.lasers = [null, null, null];
-    mState.modules = [[null, null], [null, null], [null, null]];
+    mState.modules = [[null, null, null], [null, null, null], [null, null, null]];
     mState.gadget = null;
     renderContent();
   }
@@ -674,16 +734,13 @@ const Mining = (() => {
 
   function _setRockMass(kg) {
     mState.rockMassKg = kg;
-    // Update custom input if visible
     const inp = document.getElementById('mnCustomMass');
     if (inp) inp.value = kg;
-    // Update preset buttons
     document.querySelectorAll('.mn-preset-btn').forEach(btn => {
       btn.classList.toggle('active', btn.textContent.includes(
-        kg >= 1000 ? (kg/1000)+'t' : kg+'kg'
+        kg >= 1000 ? (kg / 1000) + 't' : kg + 'kg'
       ));
     });
-    // Re-render presets + results
     renderContent();
   }
 
@@ -696,7 +753,7 @@ const Mining = (() => {
   // UTILITIES
   // ============================================================
   function escHtml(str) {
-    return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+    return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
   }
 
   // ============================================================
