@@ -972,11 +972,26 @@ body::after {
   flex-shrink: 0;
 }
 
-.bp-more-ingredients {
-  font-size: 0.76rem;
-  color: var(--text-muted);
-  font-style: italic;
+.bp-extra-ingredients { margin-top: 0.2rem; }
+.bp-extra-ingredients.hidden { display: none; }
+
+.bp-more-btn {
+  display: block;
+  width: 100%;
+  margin-top: 0.3rem;
+  padding: 0.2rem 0;
+  background: none;
+  border: none;
+  border-top: 1px dashed rgba(245,158,11,0.2);
+  color: var(--accent-dim);
+  font-size: 0.72rem;
+  font-family: var(--font-mono);
+  cursor: pointer;
+  text-align: left;
+  transition: color var(--transition);
 }
+.bp-more-btn:hover { color: var(--accent); }
+.bp-more-btn.expanded { border-top-style: solid; }
 
 .bp-footer {
   display: flex;

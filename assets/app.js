@@ -425,15 +425,21 @@ function renderBlueprintCard(bp, idx) {
   const tier = bp.tiers[0];
   const ingredients = tier?.ingredients || [];
   const previewIngredients = ingredients.slice(0, 3);
-  const extraCount = ingredients.length - previewIngredients.length;
+  const extraIngredients = ingredients.slice(3);
+  const extraCount = extraIngredients.length;
 
-  const ingHtml = previewIngredients.map(ing => `
+  const renderIng = ing => `
     <div class="bp-ingredient">
       <span class="ing-qty">${formatSCU(ing.quantity_scu)}</span>
       <span class="ing-name">${escHtml(ing.resourceName)}</span>
       <span class="ing-slot">${escHtml(ing.slot || '')}</span>
-    </div>
-  `).join('');
+    </div>`;
+
+  const ingHtml = previewIngredients.map(renderIng).join('');
+  const extraHtml = extraCount > 0
+    ? `<div class="bp-extra-ingredients hidden">${extraIngredients.map(renderIng).join('')}</div>
+       <button class="bp-more-btn" onclick="event.stopPropagation();this.previousElementSibling.classList.toggle('hidden');this.classList.toggle('expanded');this.textContent=this.classList.contains('expanded')?'▲ Ver menos':'▼ +${extraCount} materiales más'">▼ +${extraCount} materiales más</button>`
+    : '';
 
   const catInfo = getCatInfo(bp.categoryPath);
   const missionBadge = bp.hasMissions
@@ -476,7 +482,7 @@ function renderBlueprintCard(bp, idx) {
       </div>
       <div class="bp-ingredients">
         ${ingHtml}
-        ${extraCount > 0 ? `<span class="bp-more-ingredients">+${extraCount} materiales más...</span>` : ''}
+        ${extraHtml}
       </div>
       <div class="bp-footer">
         ${timeHtml}
