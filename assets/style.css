@@ -570,6 +570,17 @@ body::after {
   box-shadow: 0 0 16px rgba(114,137,218,0.3);
   transform: translateY(-1px);
 }
+.social-org {
+  color: #e8a020;
+  border-color: rgba(232,160,32,0.45);
+  background: rgba(232,160,32,0.08);
+}
+.social-org:hover {
+  background: rgba(232,160,32,0.18);
+  border-color: #e8a020;
+  box-shadow: 0 0 16px rgba(232,160,32,0.35);
+  transform: translateY(-1px);
+}
 
 /* ========================================
    FEATURES / HOME MODULES
