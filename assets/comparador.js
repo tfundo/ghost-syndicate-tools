@@ -390,8 +390,8 @@
             <span class="comp-stat-val">${fmtNum(ship.nav)} <span class="comp-stat-unit">m/s</span></span>
           </div>
           <div class="comp-stat">
-            <span class="comp-stat-label">Crew</span>
-            <span class="comp-stat-val">${ship.crew}</span>
+            <span class="comp-stat-label">HP</span>
+            <span class="comp-stat-val">${fmtNum(ship.hp)}</span>
           </div>
           <div class="comp-stat">
             <span class="comp-stat-label">Cargo</span>
@@ -545,7 +545,7 @@
     `;
   }
 
-  const SHIP_STAT_KEYS   = ['scm','nav','crew','cargo'];
+  const SHIP_STAT_KEYS   = ['scm','nav','pitch','yaw','roll','hp','crew','cargo'];
   const WEAPON_STAT_KEYS = ['dps','alpha','range','armorPen'];
 
   function computeMaxima(items, keys) {
@@ -581,10 +581,14 @@
         </div>`;
 
     const stats = [
-      { label: 'SCM Speed',  key: 'scm',   unit: 'm/s', higher: true },
-      { label: 'NAV Speed',  key: 'nav',   unit: 'm/s', higher: true },
-      { label: 'Tripulación',key: 'crew',  unit: '',    higher: true },
-      { label: 'Cargo',      key: 'cargo', unit: 'SCU', higher: true }
+      { label: 'SCM Speed',   key: 'scm',   unit: 'm/s', higher: true },
+      { label: 'NAV Speed',   key: 'nav',   unit: 'm/s', higher: true },
+      { label: 'Pitch (°/s)', key: 'pitch', unit: '°/s', higher: true },
+      { label: 'Yaw (°/s)',   key: 'yaw',   unit: '°/s', higher: true },
+      { label: 'Roll (°/s)',  key: 'roll',  unit: '°/s', higher: true },
+      { label: 'Blindaje HP', key: 'hp',    unit: '',    higher: true },
+      { label: 'Tripulación', key: 'crew',  unit: '',    higher: true },
+      { label: 'Cargo',       key: 'cargo', unit: 'SCU', higher: true }
     ];
 
     const rows = stats.map(s => buildStatRow(ship[s.key], maxima[s.key], s.label, s.unit, s.higher)).join('');
