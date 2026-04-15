@@ -34,6 +34,7 @@ const state = {
 // ============================================================
 document.addEventListener('DOMContentLoaded', () => {
   setupNavigation();
+  setupLightboxDelegation();
   generateStars();
   loadDatabase();
 
@@ -128,6 +129,52 @@ function updateCraftingFab() {
 function destroyCraftingFab() {
   const fab = document.getElementById('crafting-top-fab');
   if (fab) fab.remove();
+}
+
+// ============================================================
+// ITEM IMAGE LIGHTBOX
+// ============================================================
+function openLightbox(src, title) {
+  let overlay = document.getElementById('img-lightbox');
+  if (!overlay) {
+    overlay = document.createElement('div');
+    overlay.id = 'img-lightbox';
+    overlay.innerHTML = `
+      <div class="lb-backdrop"></div>
+      <div class="lb-panel">
+        <button class="lb-close" title="Cerrar">✕</button>
+        <div class="lb-title"></div>
+        <img class="lb-img" alt="">
+      </div>`;
+    overlay.querySelector('.lb-backdrop').addEventListener('click', closeLightbox);
+    overlay.querySelector('.lb-close').addEventListener('click', closeLightbox);
+    document.addEventListener('keydown', _lbKey);
+    document.body.appendChild(overlay);
+  }
+  overlay.querySelector('.lb-img').src = src;
+  overlay.querySelector('.lb-img').alt = title;
+  overlay.querySelector('.lb-title').textContent = title;
+  overlay.classList.add('lb-open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  const overlay = document.getElementById('img-lightbox');
+  if (overlay) overlay.classList.remove('lb-open');
+  document.body.style.overflow = '';
+}
+
+function _lbKey(e) {
+  if (e.key === 'Escape') closeLightbox();
+}
+
+function setupLightboxDelegation() {
+  document.addEventListener('click', e => {
+    const el = e.target.closest('[data-lightbox]');
+    if (!el) return;
+    e.stopPropagation();
+    openLightbox(el.dataset.lightbox, el.dataset.lightboxTitle || '');
+  });
 }
 
 // ============================================================
@@ -448,7 +495,7 @@ function renderBlueprintCard(bp, idx) {
   // Item image
   const imgUrl = getItemImage(bp.itemEntity);
   const imgHtml = imgUrl
-    ? `<div class="bp-item-img"><img src="${escHtml(imgUrl)}" alt="${escHtml(bp.name)}" loading="lazy" onerror="this.parentElement.style.display='none'"></div>`
+    ? `<div class="bp-item-img" data-lightbox="${escHtml(imgUrl)}" data-lightbox-title="${escHtml(bp.name)}" title="Click para ampliar"><img src="${escHtml(imgUrl)}" alt="${escHtml(bp.name)}" loading="lazy" onerror="this.parentElement.style.display='none'"></div>`
     : '';
 
   // Show first Spanish title if available, otherwise pool name
