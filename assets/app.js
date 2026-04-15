@@ -12,15 +12,6 @@ let db = null;
 let filtered = [];
 let currentView = 'grid';
 let currentSection = 'home';
-let itemImages = {};   // base_entity → image URL
-
-function baseEntity(entity) {
-  return (entity || '').replace(/(_\d{2})+$/, '');
-}
-
-function getItemImage(entity) {
-  return itemImages[baseEntity(entity)] || itemImages[entity] || '';
-}
 
 const state = {
   search: '',
@@ -34,7 +25,6 @@ const state = {
 // ============================================================
 document.addEventListener('DOMContentLoaded', () => {
   setupNavigation();
-  setupLightboxDelegation();
   generateStars();
   loadDatabase();
 
@@ -134,49 +124,6 @@ function destroyCraftingFab() {
 // ============================================================
 // ITEM IMAGE LIGHTBOX
 // ============================================================
-function openLightbox(src, title) {
-  let overlay = document.getElementById('img-lightbox');
-  if (!overlay) {
-    overlay = document.createElement('div');
-    overlay.id = 'img-lightbox';
-    overlay.innerHTML = `
-      <div class="lb-backdrop"></div>
-      <div class="lb-panel">
-        <button class="lb-close" title="Cerrar">✕</button>
-        <div class="lb-title"></div>
-        <img class="lb-img" alt="">
-      </div>`;
-    overlay.querySelector('.lb-backdrop').addEventListener('click', closeLightbox);
-    overlay.querySelector('.lb-close').addEventListener('click', closeLightbox);
-    document.addEventListener('keydown', _lbKey);
-    document.body.appendChild(overlay);
-  }
-  overlay.querySelector('.lb-img').src = src;
-  overlay.querySelector('.lb-img').alt = title;
-  overlay.querySelector('.lb-title').textContent = title;
-  overlay.classList.add('lb-open');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeLightbox() {
-  const overlay = document.getElementById('img-lightbox');
-  if (overlay) overlay.classList.remove('lb-open');
-  document.body.style.overflow = '';
-}
-
-function _lbKey(e) {
-  if (e.key === 'Escape') closeLightbox();
-}
-
-function setupLightboxDelegation() {
-  document.addEventListener('click', e => {
-    const el = e.target.closest('[data-lightbox]');
-    if (!el) return;
-    e.stopPropagation();
-    openLightbox(el.dataset.lightbox, el.dataset.lightboxTitle || '');
-  });
-}
-
 // ============================================================
 // NAVIGATION
 // ============================================================
@@ -249,13 +196,9 @@ window.showSection = function(sectionId) {
 // ============================================================
 async function loadDatabase() {
   try {
-    const [dbResp, imgResp] = await Promise.all([
-      fetch('data/crafting_db.json'),
-      fetch('data/item_images.json').catch(() => null),
-    ]);
+    const dbResp = await fetch('data/crafting_db.json');
     if (!dbResp.ok) throw new Error('HTTP ' + dbResp.status);
     db = await dbResp.json();
-    if (imgResp && imgResp.ok) itemImages = await imgResp.json();
     initCraftingUI();
     updateHomeStats();
   } catch (err) {
@@ -498,12 +441,6 @@ function renderBlueprintCard(bp, idx) {
     ? `<span class="bp-time">⏱ <span class="time-val">${formatTime(tier.craftTime)}</span></span>`
     : '';
 
-  // Item image
-  const imgUrl = getItemImage(bp.itemEntity);
-  const imgHtml = imgUrl
-    ? `<div class="bp-item-img" data-lightbox="${escHtml(imgUrl)}" data-lightbox-title="${escHtml(bp.name)}" title="Click para ampliar"><img src="${escHtml(imgUrl)}" alt="${escHtml(bp.name)}" loading="lazy" onerror="this.parentElement.style.display='none'"></div>`
-    : '';
-
   // Show first Spanish title if available, otherwise pool name
   const seenCardPools = new Set();
   const missionsHtml = bp.hasMissions
@@ -526,7 +463,6 @@ function renderBlueprintCard(bp, idx) {
 
   return `
     <div class="bp-card" onclick="openBlueprintDetail(${idx})" style="animation-delay:${Math.min(idx * 0.02, 0.5)}s">
-      ${imgHtml}
       <div class="bp-header">
         <span class="bp-name">${escHtml(bp.name)}</span>
         ${missionBadge}
