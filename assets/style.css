@@ -1972,3 +1972,141 @@ body::after {
 }
 .wk-table tr:hover td { background: rgba(255,255,255,0.03); }
 .wk-table td:first-child { color: var(--text-primary); }
+
+/* ===== HANGAR EJECUTIVO ===== */
+:root {
+  --hng-green: #4caf50;
+  --hng-red:   #f44336;
+}
+.hng-layout {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+@media (max-width: 768px) {
+  .hng-layout { grid-template-columns: 1fr; }
+}
+
+/* Status card */
+.hng-status-card {
+  background: var(--bg-glass);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  backdrop-filter: blur(8px);
+  transition: border-color 0.4s, box-shadow 0.4s;
+}
+.hng-card-online {
+  border-color: rgba(76,175,80,0.5);
+  box-shadow: 0 0 30px rgba(76,175,80,0.12);
+}
+.hng-card-offline {
+  border-color: rgba(244,67,54,0.4);
+  box-shadow: 0 0 30px rgba(244,67,54,0.08);
+}
+.hng-status-label {
+  font-family: var(--font-hud);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+.hng-status-value {
+  font-family: var(--font-hud);
+  font-size: 2.4rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.2rem;
+  transition: color 0.4s;
+}
+.hng-online  { color: var(--hng-green); text-shadow: 0 0 20px rgba(76,175,80,0.5); }
+.hng-offline { color: var(--hng-red);   text-shadow: 0 0 20px rgba(244,67,54,0.4); }
+
+.hng-countdown-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-family: var(--font-hud);
+  margin-bottom: 0.3rem;
+}
+.hng-countdown {
+  font-family: var(--font-mono);
+  font-size: 2rem;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  margin-bottom: 1.5rem;
+}
+
+/* Circles */
+.hng-circles {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+.hng-circle {
+  width: 1.1rem;
+  height: 1.1rem;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: transparent;
+  transition: background 0.4s, border-color 0.4s;
+}
+.hng-cycle-info {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+
+/* Schedule card */
+.hng-schedule-card {
+  background: var(--bg-glass);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1.5rem;
+  backdrop-filter: blur(8px);
+}
+.hng-schedule-title {
+  font-family: var(--font-hud);
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(245,158,11,0.2);
+}
+.hng-table-wrap { overflow-x: auto; }
+.hng-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+}
+.hng-table th {
+  font-family: var(--font-hud);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding: 0.4rem 0.8rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.hng-table td {
+  padding: 0.45rem 0.8rem;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  color: var(--text-secondary);
+}
+.hng-table tr:hover td { background: rgba(255,255,255,0.02); }
+.hng-td-cycle {
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  vertical-align: middle;
+}
+.hng-td-online  { color: var(--hng-green); font-family: var(--font-hud); letter-spacing: 0.06em; }
+.hng-td-offline { color: var(--hng-red);   font-family: var(--font-hud); letter-spacing: 0.06em; }

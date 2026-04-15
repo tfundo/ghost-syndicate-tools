@@ -190,6 +190,10 @@ window.showSection = function(sectionId) {
   // Load WikeloData on first visit
   if (sectionId === 'wikelodata') loadWikeloDb();
 
+  // Hangar Ejecutivo: start/stop ticker
+  if (sectionId === 'hangar') HNG.start();
+  else HNG.stop();
+
   // Scroll to top
   window.scrollTo({ top: 0, behavior: 'smooth' });
 };
@@ -877,3 +881,158 @@ function renderWikeloTables(cat) {
     </div>
   `).join('');
 }
+
+// ============================================================
+// HANGAR EJECUTIVO — PYAM STATUS TRACKER
+// Based on exec.xyxyll.com by Xyxyll (MIT License)
+// ============================================================
+const HNG = (() => {
+  const OPEN_DURATION  = 3900338;
+  const CLOSE_DURATION = 7200623;
+  const CYCLE_DURATION = OPEN_DURATION + CLOSE_DURATION;
+  const INITIAL_OPEN   = new Date('2026-03-26T01:11:56.500-04:00');
+
+  const CIRCLES_THRESHOLDS = [
+    { min: 0,           max: 12*60*1000,  colors: ['green','green','green','green','green'] },
+    { min: 12*60*1000,  max: 24*60*1000,  colors: ['green','green','green','green','empty'] },
+    { min: 24*60*1000,  max: 36*60*1000,  colors: ['green','green','green','empty','empty'] },
+    { min: 36*60*1000,  max: 48*60*1000,  colors: ['green','green','empty','empty','empty'] },
+    { min: 48*60*1000,  max: 60*60*1000,  colors: ['green','empty','empty','empty','empty'] },
+    { min: 60*60*1000,  max: 65*60*1000,  colors: ['empty','empty','empty','empty','empty'] },
+    { min: 65*60*1000,  max: 89*60*1000,  colors: ['red',  'red',  'red',  'red',  'red'  ] },
+    { min: 89*60*1000,  max: 113*60*1000, colors: ['green','red',  'red',  'red',  'red'  ] },
+    { min: 113*60*1000, max: 137*60*1000, colors: ['green','green','red',  'red',  'red'  ] },
+    { min: 137*60*1000, max: 161*60*1000, colors: ['green','green','green','red',  'red'  ] },
+    { min: 161*60*1000, max: 185*60*1000, colors: ['green','green','green','green','red'  ] },
+  ];
+
+  let _intervalId = null;
+  let _circles = null;
+
+  function getStatus(now) {
+    const elapsed = now - INITIAL_OPEN;
+    const timeInCycle = ((elapsed % CYCLE_DURATION) + CYCLE_DURATION) % CYCLE_DURATION;
+    if (timeInCycle < OPEN_DURATION) {
+      return { online: true,  remaining: OPEN_DURATION  - timeInCycle, timeInCycle };
+    } else {
+      return { online: false, remaining: CYCLE_DURATION - timeInCycle, timeInCycle };
+    }
+  }
+
+  function fmt(ms) {
+    const total = Math.max(0, Math.floor(ms / 1000));
+    const m = Math.floor(total / 60);
+    const s = total % 60;
+    return `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+  }
+
+  function updateUI() {
+    const now = new Date();
+    const { online, remaining, timeInCycle } = getStatus(now);
+
+    const card    = document.getElementById('hngStatusCard');
+    const statusEl = document.getElementById('hngStatus');
+    const cdEl    = document.getElementById('hngCountdown');
+    const infoEl  = document.getElementById('hngCycleInfo');
+    if (!statusEl) return;
+
+    const isOnline = online;
+    statusEl.textContent = isOnline ? 'ABIERTO' : 'CERRADO';
+    statusEl.className   = 'hng-status-value ' + (isOnline ? 'hng-online' : 'hng-offline');
+    card.className       = 'hng-status-card ' + (isOnline ? 'hng-card-online' : 'hng-card-offline');
+    cdEl.textContent     = fmt(remaining);
+
+    // Duration info
+    const openMin  = Math.round(OPEN_DURATION  / 60000);
+    const closeMin = Math.round(CLOSE_DURATION / 60000);
+    infoEl.textContent = `Abierto ${openMin} min · Cerrado ${closeMin} min por ciclo`;
+
+    // Circles
+    if (_circles) {
+      const match = CIRCLES_THRESHOLDS.find(t => timeInCycle >= t.min && timeInCycle < t.max);
+      if (match) {
+        _circles.forEach((c, i) => {
+          const col = match.colors[i];
+          c.style.background = col === 'green' ? 'var(--hng-green)' : col === 'red' ? 'var(--hng-red)' : 'transparent';
+          c.style.borderColor = col === 'empty' ? 'rgba(255,255,255,0.15)' : 'transparent';
+        });
+      }
+    }
+  }
+
+  function buildSchedule() {
+    const tbody = document.getElementById('hngSchedule');
+    if (!tbody) return;
+    const now = new Date();
+    const events = [];
+    const { online, remaining } = getStatus(now);
+
+    let t = new Date(now.getTime() + remaining);
+    let nextOnline = !online;
+    const endTime = new Date(now.getTime() + 3 * 24 * 60 * 60 * 1000);
+
+    // If currently online, first upcoming event is going offline
+    if (online) {
+      events.push({ online: false, time: t });
+      t = new Date(t.getTime() + CLOSE_DURATION);
+      nextOnline = true;
+    } else {
+      events.push({ online: true, time: t });
+      t = new Date(t.getTime() + OPEN_DURATION);
+      nextOnline = false;
+    }
+
+    while (t < endTime) {
+      if (nextOnline) {
+        events.push({ online: true, time: t });
+        t = new Date(t.getTime() + OPEN_DURATION);
+        nextOnline = false;
+      } else {
+        events.push({ online: false, time: t });
+        t = new Date(t.getTime() + CLOSE_DURATION);
+        nextOnline = true;
+      }
+    }
+
+    const getCycle = (evtTime) => Math.floor((evtTime - INITIAL_OPEN) / CYCLE_DURATION) + 3;
+
+    let html = '';
+    let i = 0;
+    while (i < events.length) {
+      const ev = events[i];
+      if (ev.online && i + 1 < events.length && !events[i+1].online) {
+        const cycle = getCycle(events[i+1].time);
+        html += `<tr><td class="hng-td-cycle" rowspan="2">${cycle}</td>
+          <td class="hng-td-online">ABIERTO</td>
+          <td>${ev.time.toLocaleString('es-ES',{weekday:'short',hour:'2-digit',minute:'2-digit'})}</td></tr>
+          <tr><td class="hng-td-offline">CERRADO</td>
+          <td>${events[i+1].time.toLocaleString('es-ES',{weekday:'short',hour:'2-digit',minute:'2-digit'})}</td></tr>`;
+        i += 2;
+      } else {
+        const cycle = getCycle(ev.time);
+        html += `<tr><td class="hng-td-cycle">${cycle}</td>
+          <td class="${ev.online ? 'hng-td-online' : 'hng-td-offline'}">${ev.online ? 'ABIERTO' : 'CERRADO'}</td>
+          <td>${ev.time.toLocaleString('es-ES',{weekday:'short',hour:'2-digit',minute:'2-digit'})}</td></tr>`;
+        i++;
+      }
+    }
+    tbody.innerHTML = html;
+  }
+
+  function start() {
+    _circles = [1,2,3,4,5].map(n => document.getElementById('hngC' + n));
+    updateUI();
+    buildSchedule();
+    _intervalId = setInterval(() => {
+      updateUI();
+      // Rebuild schedule every minute
+      if (new Date().getSeconds() === 0) buildSchedule();
+    }, 1000);
+  }
+
+  function stop() {
+    if (_intervalId) { clearInterval(_intervalId); _intervalId = null; }
+  }
+
+  return { start, stop };
+})();

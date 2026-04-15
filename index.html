@@ -27,6 +27,7 @@
       <li><a href="#crafting" class="nav-link" data-section="crafting">Fabricación</a></li>
       <li><a href="#comparador" class="nav-link" data-section="comparador">Comparador</a></li>
       <li><a href="#wikelodata" class="nav-link" data-section="wikelodata">WikeloData</a></li>
+      <li><a href="#hangar" class="nav-link" data-section="hangar">Hangar Ejecutivo</a></li>
       <li><a href="#locations" class="nav-link nav-coming" data-section="locations">Localizaciones <span class="badge">Próx.</span></a></li>
       <li><a href="#trading" class="nav-link nav-coming" data-section="trading">Comercio <span class="badge">Próx.</span></a></li>
     </ul>
@@ -247,6 +248,50 @@
       <div class="loading-state" id="wkLoading">
         <div class="loading-spinner"></div>
         <p>Cargando base de datos Wikelo...</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HANGAR EJECUTIVO SECTION ===== -->
+  <section class="section" id="hangar">
+    <div class="container">
+      <div class="page-header">
+        <h1 class="page-title">🛬 Hangar Ejecutivo</h1>
+        <p class="page-subtitle">Estado del PYAM Ejecutivo en tiempo real · SC 4.7.0</p>
+      </div>
+
+      <div class="hng-layout">
+
+        <!-- Estado principal -->
+        <div class="hng-status-card" id="hngStatusCard">
+          <div class="hng-status-label">Estado actual</div>
+          <div class="hng-status-value" id="hngStatus">—</div>
+          <div class="hng-countdown-label">Próximo cambio en</div>
+          <div class="hng-countdown" id="hngCountdown">--:--</div>
+          <!-- Indicador de círculos -->
+          <div class="hng-circles" id="hngCircles">
+            <div class="hng-circle" id="hngC1"></div>
+            <div class="hng-circle" id="hngC2"></div>
+            <div class="hng-circle" id="hngC3"></div>
+            <div class="hng-circle" id="hngC4"></div>
+            <div class="hng-circle" id="hngC5"></div>
+          </div>
+          <div class="hng-cycle-info" id="hngCycleInfo"></div>
+        </div>
+
+        <!-- Próximos ciclos -->
+        <div class="hng-schedule-card">
+          <div class="hng-schedule-title">Próximos ciclos</div>
+          <div class="hng-table-wrap">
+            <table class="hng-table">
+              <thead>
+                <tr><th>Ciclo</th><th>Estado</th><th>Hora local</th></tr>
+              </thead>
+              <tbody id="hngSchedule"></tbody>
+            </table>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
