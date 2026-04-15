@@ -12,128 +12,10 @@
   // DATA
   // ============================================================
 
-  const SHIPS = [
-    { name:"100i", mfr:"Origin", role:"Starter", size:"Small", scm:210, nav:1000, pitch:48, yaw:48, roll:135, hp:4500, armorHp:2000, cargo:2 },
-    { name:"125a", mfr:"Origin", role:"Combat", size:"Small", scm:230, nav:1150, pitch:52, yaw:52, roll:145, hp:4800, armorHp:2500, cargo:2 },
-    { name:"135c", mfr:"Origin", role:"Transport", size:"Small", scm:190, nav:950, pitch:45, yaw:45, roll:125, hp:4500, armorHp:2000, cargo:6 },
-    { name:"300i", mfr:"Origin", role:"Touring", size:"Small", scm:204, nav:1100, pitch:48, yaw:48, roll:130, hp:6000, armorHp:2800, cargo:8 },
-    { name:"315p", mfr:"Origin", role:"Pathfinder", size:"Small", scm:210, nav:1100, pitch:48, yaw:48, roll:130, hp:6000, armorHp:2800, cargo:12 },
-    { name:"325a", mfr:"Origin", role:"Combat", size:"Small", scm:225, nav:1200, pitch:50, yaw:50, roll:140, hp:6800, armorHp:3500, cargo:4 },
-    { name:"350r", mfr:"Origin", role:"Racing", size:"Small", scm:258, nav:1350, pitch:55, yaw:55, roll:160, hp:5500, armorHp:2200, cargo:0 },
-    { name:"400i", mfr:"Origin", role:"Pathfinder", size:"Large", scm:184, nav:1250, pitch:32, yaw:32, roll:95, hp:45000, armorHp:28000, cargo:42 },
-    { name:"600i Explorer", mfr:"Origin", role:"Expedition", size:"Large", scm:145, nav:980, pitch:26, yaw:26, roll:65, hp:85000, armorHp:42000, cargo:40 },
-    { name:"600i Touring", mfr:"Origin", role:"Touring", size:"Large", scm:145, nav:980, pitch:26, yaw:26, roll:65, hp:85000, armorHp:42000, cargo:16 },
-    { name:"85X", mfr:"Origin", role:"Touring", size:"Snub", scm:255, nav:1150, pitch:50, yaw:50, roll:130, hp:3000, armorHp:1200, cargo:0 },
-    { name:"890 Jump", mfr:"Origin", role:"Capital Touring", size:"Capital", scm:80, nav:900, pitch:12, yaw:12, roll:25, hp:450000, armorHp:150000, cargo:484 },
-    { name:"A2 Hercules", mfr:"Crusader", role:"Gunship/Bomber", size:"Large", scm:135, nav:950, pitch:22, yaw:22, roll:45, hp:120000, armorHp:65000, cargo:216 },
-    { name:"Apollo Medivac", mfr:"RSI", role:"Medical", size:"Medium", scm:195, nav:1100, pitch:35, yaw:35, roll:90, hp:25000, armorHp:12000, cargo:28 },
-    { name:"Ares Inferno", mfr:"Crusader", role:"Heavy Fighter", size:"Medium", scm:170, nav:1150, pitch:38, yaw:38, roll:105, hp:18000, armorHp:12500, cargo:0 },
-    { name:"Ares Ion", mfr:"Crusader", role:"Heavy Fighter", size:"Medium", scm:170, nav:1150, pitch:38, yaw:38, roll:105, hp:18000, armorHp:12500, cargo:0 },
-    { name:"Arrow", mfr:"Anvil", role:"Light Fighter", size:"Small", scm:270, nav:1235, pitch:58, yaw:58, roll:180, hp:3500, armorHp:1800, cargo:0 },
-    { name:"Aurora CL", mfr:"RSI", role:"Freight", size:"Small", scm:185, nav:1050, pitch:42, yaw:42, roll:105, hp:4000, armorHp:1500, cargo:6 },
-    { name:"Aurora ES", mfr:"RSI", role:"Starter", size:"Small", scm:190, nav:1050, pitch:44, yaw:44, roll:110, hp:4000, armorHp:1500, cargo:3 },
-    { name:"Aurora LN", mfr:"RSI", role:"Combat", size:"Small", scm:185, nav:1050, pitch:44, yaw:44, roll:110, hp:4500, armorHp:2000, cargo:3 },
-    { name:"Aurora LX", mfr:"RSI", role:"Pathfinder", size:"Small", scm:190, nav:1050, pitch:44, yaw:44, roll:110, hp:4000, armorHp:1600, cargo:3 },
-    { name:"Aurora MR", mfr:"RSI", role:"Interdiction", size:"Small", scm:195, nav:1060, pitch:44, yaw:44, roll:110, hp:4200, armorHp:1800, cargo:3 },
-    { name:"Avenger Stalker", mfr:"Aegis", role:"Interdiction", size:"Small", scm:250, nav:1300, pitch:48, yaw:48, roll:130, hp:8000, armorHp:4000, cargo:0 },
-    { name:"Avenger Titan", mfr:"Aegis", role:"Freight", size:"Small", scm:188, nav:1115, pitch:48, yaw:48, roll:130, hp:8000, armorHp:4000, cargo:8 },
-    { name:"Avenger Warlock", mfr:"Aegis", role:"EMP", size:"Small", scm:240, nav:1280, pitch:48, yaw:48, roll:130, hp:8000, armorHp:4000, cargo:0 },
-    { name:"Ballista", mfr:"Anvil", role:"Ground AA", size:"Ground", scm:35, nav:0, pitch:0, yaw:0, roll:0, hp:15000, armorHp:10000, cargo:0 },
-    { name:"Blade", mfr:"Esperia", role:"Light Fighter", size:"Small", scm:290, nav:1300, pitch:62, yaw:62, roll:190, hp:3800, armorHp:2200, cargo:0 },
-    { name:"Buccaneer", mfr:"Drake", role:"Interdiction", size:"Small", scm:280, nav:1290, pitch:54, yaw:54, roll:165, hp:3200, armorHp:1500, cargo:0 },
-    { name:"C1 Spirit", mfr:"Crusader", role:"Freight", size:"Medium", scm:204, nav:1120, pitch:32, yaw:32, roll:105, hp:22000, armorHp:11000, cargo:64 },
-    { name:"C2 Hercules", mfr:"Crusader", role:"Transport", size:"Large", scm:135, nav:960, pitch:22, yaw:22, roll:45, hp:100000, armorHp:55000, cargo:696 },
-    { name:"C8 Pisces", mfr:"Anvil", role:"Snub", size:"Snub", scm:140, nav:1050, pitch:50, yaw:50, roll:130, hp:3000, armorHp:1200, cargo:4 },
-    { name:"C8R Pisces Rescue", mfr:"Anvil", role:"Medical", size:"Snub", scm:164, nav:1100, pitch:50, yaw:50, roll:130, hp:3000, armorHp:1200, cargo:0 },
-    { name:"Carrack", mfr:"Anvil", role:"Exploration", size:"Large", scm:152, nav:1050, pitch:20, yaw:20, roll:40, hp:98000, armorHp:62000, cargo:456 },
-    { name:"Caterpillar", mfr:"Drake", role:"Transport", size:"Large", scm:90, nav:900, pitch:18, yaw:18, roll:30, hp:85000, armorHp:45000, cargo:576 },
-    { name:"Centurion", mfr:"Anvil", role:"Ground AA", size:"Ground", scm:30, nav:0, pitch:0, yaw:0, roll:0, hp:18000, armorHp:14000, cargo:0 },
-    { name:"Constellation Andromeda", mfr:"RSI", role:"Gunship", size:"Large", scm:140, nav:911, pitch:25, yaw:25, roll:60, hp:55000, armorHp:28000, cargo:96 },
-    { name:"Constellation Aquila", mfr:"RSI", role:"Exploration", size:"Large", scm:140, nav:911, pitch:25, yaw:25, roll:60, hp:55000, armorHp:28000, cargo:96 },
-    { name:"Constellation Phoenix", mfr:"RSI", role:"Touring", size:"Large", scm:140, nav:911, pitch:25, yaw:25, roll:60, hp:52000, armorHp:26000, cargo:80 },
-    { name:"Constellation Taurus", mfr:"RSI", role:"Freight", size:"Large", scm:140, nav:911, pitch:25, yaw:25, roll:60, hp:55000, armorHp:28000, cargo:174 },
-    { name:"Corsair", mfr:"Drake", role:"Exploration", size:"Large", scm:150, nav:950, pitch:28, yaw:28, roll:55, hp:48000, armorHp:22000, cargo:72 },
-    { name:"Cutlass Black", mfr:"Drake", role:"Medium Fighter", size:"Medium", scm:165, nav:1115, pitch:36, yaw:36, roll:90, hp:18500, armorHp:8500, cargo:46 },
-    { name:"Cutlass Blue", mfr:"Drake", role:"Police", size:"Medium", scm:175, nav:1150, pitch:36, yaw:36, roll:90, hp:21000, armorHp:11000, cargo:12 },
-    { name:"Cutlass Red", mfr:"Drake", role:"Medical", size:"Medium", scm:165, nav:1115, pitch:36, yaw:36, roll:90, hp:18500, armorHp:8500, cargo:12 },
-    { name:"Cutlass Steel", mfr:"Drake", role:"Dropship", size:"Medium", scm:160, nav:1100, pitch:36, yaw:36, roll:90, hp:22000, armorHp:12000, cargo:0 },
-    { name:"Cutter", mfr:"Drake", role:"Starter", size:"Small", scm:165, nav:1050, pitch:38, yaw:38, roll:85, hp:4500, armorHp:2000, cargo:4 },
-    { name:"Cyclone", mfr:"Tumbril", role:"Ground", size:"Ground", scm:45, nav:0, pitch:0, yaw:0, roll:0, hp:2000, armorHp:800, cargo:1 },
-    { name:"Defender", mfr:"Banu", role:"Light Fighter", size:"Small", scm:205, nav:1200, pitch:52, yaw:52, roll:140, hp:4500, armorHp:2000, cargo:0 },
-    { name:"Dragonfly Black", mfr:"Drake", role:"Hover", size:"Snub", scm:55, nav:0, pitch:40, yaw:40, roll:60, hp:800, armorHp:300, cargo:0 },
-    { name:"Eclipse", mfr:"Aegis", role:"Stealth Bomber", size:"Medium", scm:235, nav:1250, pitch:40, yaw:40, roll:110, hp:8500, armorHp:4000, cargo:0 },
-    { name:"F7C Hornet", mfr:"Anvil", role:"Medium Fighter", size:"Small", scm:225, nav:1225, pitch:50, yaw:50, roll:135, hp:7500, armorHp:4500, cargo:2 },
-    { name:"F7C-M Super Hornet", mfr:"Anvil", role:"Medium Fighter", size:"Small", scm:220, nav:1220, pitch:48, yaw:48, roll:130, hp:8500, armorHp:5500, cargo:0 },
-    { name:"F7C-R Tracker", mfr:"Anvil", role:"Pathfinder", size:"Small", scm:225, nav:1225, pitch:50, yaw:50, roll:135, hp:7500, armorHp:4500, cargo:0 },
-    { name:"F7C-S Ghost", mfr:"Anvil", role:"Stealth", size:"Small", scm:225, nav:1225, pitch:50, yaw:50, roll:135, hp:7000, armorHp:4000, cargo:0 },
-    { name:"F8C Lightning", mfr:"Anvil", role:"Heavy Fighter", size:"Medium", scm:240, nav:1300, pitch:45, yaw:45, roll:120, hp:15000, armorHp:9000, cargo:0 },
-    { name:"Freelancer", mfr:"MISC", role:"Freight", size:"Medium", scm:175, nav:1000, pitch:30, yaw:30, roll:65, hp:28000, armorHp:14000, cargo:66 },
-    { name:"Freelancer DUR", mfr:"MISC", role:"Exploration", size:"Medium", scm:175, nav:1000, pitch:30, yaw:30, roll:65, hp:28000, armorHp:14000, cargo:28 },
-    { name:"Freelancer MAX", mfr:"MISC", role:"Freight", size:"Medium", scm:165, nav:980, pitch:28, yaw:28, roll:60, hp:32000, armorHp:16000, cargo:120 },
-    { name:"Freelancer MIS", mfr:"MISC", role:"Gunship", size:"Medium", scm:170, nav:1000, pitch:30, yaw:30, roll:65, hp:30000, armorHp:18000, cargo:36 },
-    { name:"Fury", mfr:"Mirai", role:"Snub Fighter", size:"Snub", scm:240, nav:1200, pitch:60, yaw:60, roll:180, hp:1500, armorHp:600, cargo:0 },
-    { name:"Fury LX", mfr:"Mirai", role:"Racing", size:"Snub", scm:280, nav:1300, pitch:65, yaw:65, roll:190, hp:1200, armorHp:500, cargo:0 },
-    { name:"Gladiator", mfr:"Anvil", role:"Bomber", size:"Medium", scm:185, nav:1100, pitch:42, yaw:42, roll:110, hp:18000, armorHp:9500, cargo:0 },
-    { name:"Gladius", mfr:"Aegis", role:"Light Fighter", size:"Small", scm:280, nav:1235, pitch:58, yaw:58, roll:160, hp:5500, armorHp:2800, cargo:0 },
-    { name:"Glaive", mfr:"Esperia", role:"Medium Fighter", size:"Medium", scm:240, nav:1250, pitch:52, yaw:52, roll:140, hp:12000, armorHp:6500, cargo:0 },
-    { name:"Hammerhead", mfr:"Aegis", role:"Gunship", size:"Large", scm:105, nav:900, pitch:18, yaw:18, roll:40, hp:185000, armorHp:110000, cargo:40 },
-    { name:"Hawk", mfr:"Anvil", role:"Light Fighter", size:"Small", scm:220, nav:1200, pitch:54, yaw:54, roll:150, hp:3800, armorHp:1900, cargo:0 },
-    { name:"Herald", mfr:"Drake", role:"Data", size:"Small", scm:295, nav:1360, pitch:55, yaw:55, roll:140, hp:4500, armorHp:2000, cargo:0 },
-    { name:"Hull A", mfr:"MISC", role:"Freight", size:"Small", scm:160, nav:950, pitch:35, yaw:35, roll:70, hp:8000, armorHp:4500, cargo:64 },
-    { name:"Hull C", mfr:"MISC", role:"Freight", size:"Large", scm:110, nav:900, pitch:15, yaw:15, roll:25, hp:65000, armorHp:32000, cargo:4608 },
-    { name:"Hurricane", mfr:"Anvil", role:"Heavy Fighter", size:"Small", scm:235, nav:1225, pitch:45, yaw:45, roll:130, hp:6000, armorHp:3200, cargo:0 },
-    { name:"Khartu-Al", mfr:"Xi'an", role:"Light Fighter", size:"Small", scm:260, nav:1320, pitch:65, yaw:65, roll:200, hp:2800, armorHp:1200, cargo:0 },
-    { name:"M2 Hercules", mfr:"Crusader", role:"Transport", size:"Large", scm:135, nav:960, pitch:22, yaw:22, roll:45, hp:115000, armorHp:62000, cargo:522 },
-    { name:"M50", mfr:"Origin", role:"Racing", size:"Small", scm:285, nav:1345, pitch:60, yaw:60, roll:180, hp:1800, armorHp:800, cargo:0 },
-    { name:"Mantis", mfr:"RSI", role:"Interdiction", size:"Medium", scm:245, nav:1220, pitch:50, yaw:50, roll:140, hp:6500, armorHp:3500, cargo:0 },
-    { name:"Merchantman", mfr:"Banu", role:"Heavy Freight", size:"Capital", scm:95, nav:900, pitch:15, yaw:15, roll:30, hp:220000, armorHp:120000, cargo:2880 },
-    { name:"Mercury Star Runner", mfr:"Crusader", role:"Data/Freight", size:"Medium", scm:215, nav:1285, pitch:42, yaw:42, roll:90, hp:32000, armorHp:16000, cargo:114 },
-    { name:"Mole", mfr:"Argo", role:"Mining", size:"Medium", scm:95, nav:900, pitch:22, yaw:22, roll:40, hp:45000, armorHp:28000, cargo:96 },
-    { name:"MPUV Cargo", mfr:"Argo", role:"Snub Transport", size:"Snub", scm:120, nav:900, pitch:40, yaw:40, roll:80, hp:2000, armorHp:1100, cargo:2 },
-    { name:"MPUV Personnel", mfr:"Argo", role:"Snub Transport", size:"Snub", scm:120, nav:900, pitch:40, yaw:40, roll:80, hp:2000, armorHp:1100, cargo:0 },
-    { name:"Mustang Alpha", mfr:"Consolidated Outland", role:"Starter", size:"Small", scm:215, nav:1160, pitch:52, yaw:52, roll:145, hp:3800, armorHp:1600, cargo:4 },
-    { name:"Mustang Beta", mfr:"Consolidated Outland", role:"Pathfinder", size:"Small", scm:215, nav:1160, pitch:52, yaw:52, roll:145, hp:3800, armorHp:1600, cargo:0 },
-    { name:"Mustang Delta", mfr:"Consolidated Outland", role:"Light Fighter", size:"Small", scm:220, nav:1200, pitch:54, yaw:54, roll:150, hp:4200, armorHp:2100, cargo:0 },
-    { name:"Mustang Gamma", mfr:"Consolidated Outland", role:"Racing", size:"Small", scm:255, nav:1300, pitch:58, yaw:58, roll:165, hp:3500, armorHp:1400, cargo:0 },
-    { name:"Nomad", mfr:"Consolidated Outland", role:"Freight", size:"Small", scm:195, nav:1170, pitch:40, yaw:40, roll:110, hp:8500, armorHp:4200, cargo:24 },
-    { name:"Nova Tank", mfr:"Tumbril", role:"Ground", size:"Ground", scm:35, nav:0, pitch:0, yaw:0, roll:0, hp:25000, armorHp:18000, cargo:0 },
-    { name:"Nox", mfr:"Aopoa", role:"Hover", size:"Snub", scm:65, nav:0, pitch:45, yaw:45, roll:70, hp:600, armorHp:250, cargo:0 },
-    { name:"P-52 Merlin", mfr:"Kruger", role:"Snub Fighter", size:"Snub", scm:245, nav:1200, pitch:60, yaw:60, roll:160, hp:1200, armorHp:600, cargo:0 },
-    { name:"P-72 Archimedes", mfr:"Kruger", role:"Snub Racer", size:"Snub", scm:275, nav:1300, pitch:65, yaw:65, roll:170, hp:1000, armorHp:500, cargo:0 },
-    { name:"Prowler", mfr:"Esperia", role:"Dropship", size:"Medium", scm:185, nav:1115, pitch:38, yaw:38, roll:115, hp:18000, armorHp:9000, cargo:0 },
-    { name:"Prospector", mfr:"MISC", role:"Mining", size:"Small", scm:145, nav:1000, pitch:35, yaw:35, roll:85, hp:8500, armorHp:4200, cargo:32 },
-    { name:"Raft", mfr:"Argo", role:"Freight", size:"Medium", scm:130, nav:950, pitch:25, yaw:25, roll:60, hp:35000, armorHp:18000, cargo:96 },
-    { name:"Razor", mfr:"MISC", role:"Racing", size:"Small", scm:275, nav:1345, pitch:62, yaw:62, roll:175, hp:2000, armorHp:900, cargo:0 },
-    { name:"Razor EX", mfr:"MISC", role:"Stealth", size:"Small", scm:265, nav:1300, pitch:60, yaw:60, roll:170, hp:1800, armorHp:800, cargo:0 },
-    { name:"Razor LX", mfr:"MISC", role:"Racing", size:"Small", scm:290, nav:1360, pitch:64, yaw:64, roll:180, hp:1600, armorHp:750, cargo:0 },
-    { name:"Reclaimer", mfr:"Aegis", role:"Salvage", size:"Capital", scm:85, nav:920, pitch:12, yaw:12, roll:20, hp:150000, armorHp:85000, cargo:180 },
-    { name:"Redeemer", mfr:"Aegis", role:"Gunship", size:"Medium", scm:140, nav:960, pitch:28, yaw:28, roll:65, hp:55000, armorHp:32000, cargo:2 },
-    { name:"Reliant Kore", mfr:"MISC", role:"Freight", size:"Small", scm:175, nav:1140, pitch:40, yaw:40, roll:120, hp:4500, armorHp:2200, cargo:6 },
-    { name:"Reliant Mako", mfr:"MISC", role:"Media", size:"Small", scm:175, nav:1140, pitch:40, yaw:40, roll:120, hp:4500, armorHp:2200, cargo:0 },
-    { name:"Reliant Sen", mfr:"MISC", role:"Science", size:"Small", scm:175, nav:1140, pitch:40, yaw:40, roll:120, hp:4500, armorHp:2200, cargo:0 },
-    { name:"Reliant Tana", mfr:"MISC", role:"Combat", size:"Small", scm:175, nav:1140, pitch:40, yaw:40, roll:120, hp:5200, armorHp:2800, cargo:0 },
-    { name:"Retaliator", mfr:"Aegis", role:"Bomber", size:"Large", scm:125, nav:980, pitch:24, yaw:24, roll:50, hp:68000, armorHp:38000, cargo:0 },
-    { name:"ROC", mfr:"Greycat", role:"Ground Mining", size:"Ground", scm:30, nav:0, pitch:0, yaw:0, roll:0, hp:1500, armorHp:700, cargo:0.8 },
-    { name:"Sabre", mfr:"Aegis", role:"Stealth Fighter", size:"Medium", scm:220, nav:1235, pitch:48, yaw:48, roll:145, hp:7500, armorHp:4200, cargo:0 },
-    { name:"Sabre Comet", mfr:"Aegis", role:"Stealth Fighter", size:"Medium", scm:220, nav:1235, pitch:48, yaw:48, roll:145, hp:7800, armorHp:4400, cargo:0 },
-    { name:"San'tok.yāi", mfr:"Aopoa", role:"Medium Fighter", size:"Medium", scm:240, nav:1250, pitch:58, yaw:58, roll:190, hp:8000, armorHp:4100, cargo:0 },
-    { name:"Scorpius", mfr:"RSI", role:"Heavy Fighter", size:"Medium", scm:205, nav:1220, pitch:42, yaw:42, roll:120, hp:16000, armorHp:8500, cargo:0 },
-    { name:"Scythe", mfr:"Vanduul", role:"Medium Fighter", size:"Medium", scm:235, nav:1250, pitch:55, yaw:55, roll:150, hp:11000, armorHp:5800, cargo:0 },
-    { name:"Spartan", mfr:"Anvil", role:"Ground APC", size:"Ground", scm:32, nav:0, pitch:0, yaw:0, roll:0, hp:16000, armorHp:11000, cargo:0 },
-    { name:"Starfarer", mfr:"MISC", role:"Refuel", size:"Large", scm:105, nav:900, pitch:18, yaw:18, roll:35, hp:85000, armorHp:48000, cargo:291 },
-    { name:"Starfarer Gemini", mfr:"MISC", role:"Refuel", size:"Large", scm:105, nav:900, pitch:16, yaw:16, roll:32, hp:98000, armorHp:55000, cargo:291 },
-    { name:"SRV", mfr:"Argo", role:"Tractor", size:"Medium", scm:125, nav:1000, pitch:28, yaw:28, roll:60, hp:28000, armorHp:14000, cargo:10 },
-    { name:"Talon", mfr:"Esperia", role:"Light Fighter", size:"Small", scm:260, nav:1250, pitch:56, yaw:56, roll:160, hp:3500, armorHp:1800, cargo:0 },
-    { name:"Talon Shrike", mfr:"Esperia", role:"Light Fighter", size:"Small", scm:260, nav:1250, pitch:56, yaw:56, roll:160, hp:3500, armorHp:1800, cargo:0 },
-    { name:"Terrapin", mfr:"Anvil", role:"Pathfinder", size:"Small", scm:165, nav:1050, pitch:35, yaw:35, roll:90, hp:35000, armorHp:22000, cargo:0 },
-    { name:"Ursa Rover", mfr:"RSI", role:"Ground", size:"Ground", scm:35, nav:0, pitch:0, yaw:0, roll:0, hp:2500, armorHp:1400, cargo:4 },
-    { name:"Valkyrie", mfr:"Anvil", role:"Dropship", size:"Large", scm:155, nav:1000, pitch:28, yaw:28, roll:75, hp:45000, armorHp:25000, cargo:30 },
-    { name:"Vanguard Harbinger", mfr:"Aegis", role:"Bomber", size:"Medium", scm:185, nav:1100, pitch:32, yaw:32, roll:85, hp:32000, armorHp:18000, cargo:0 },
-    { name:"Vanguard Hoplite", mfr:"Aegis", role:"Dropship", size:"Medium", scm:195, nav:1115, pitch:35, yaw:35, roll:90, hp:32000, armorHp:18000, cargo:0 },
-    { name:"Vanguard Sentinel", mfr:"Aegis", role:"E-War", size:"Medium", scm:195, nav:1115, pitch:35, yaw:35, roll:90, hp:31000, armorHp:17000, cargo:0 },
-    { name:"Vanguard Warden", mfr:"Aegis", role:"Heavy Fighter", size:"Medium", scm:195, nav:1115, pitch:35, yaw:35, roll:90, hp:32000, armorHp:18000, cargo:0 },
-    { name:"Vulture", mfr:"Drake", role:"Salvage", size:"Medium", scm:165, nav:1000, pitch:30, yaw:30, roll:80, hp:12500, armorHp:6500, cargo:12 }
-  ];
+  // Ships loaded dynamically from data/ships.json
+  // Updated each patch by running: python extract_ship_data.py
+  let SHIPS = [];
+
 
   function buildWeapons() {
     const w = [];
@@ -164,7 +46,8 @@
     filterType: '',
     selected: [],  // [{type:'ship'|'weapon', name:string}]
     shipImages: {},
-    _imagesLoaded: false
+    _imagesLoaded: false,
+    _shipsLoaded: false
   };
 
   // ============================================================
@@ -185,6 +68,7 @@
   }
 
   function getShip(name) { return SHIPS.find(s => s.name === name); }
+
   function getWeapon(name) { return WEAPONS.find(w => w.name === name); }
 
   function fmtNum(n) {
@@ -1388,6 +1272,19 @@
   function init() {
     injectStyles();
     render();
+    // Load ship data from JSON (updated each game patch)
+    if (!compState._shipsLoaded) {
+      compState._shipsLoaded = true;
+      fetch('data/ships.json')
+        .then(r => r.ok ? r.json() : [])
+        .then(data => {
+          SHIPS.length = 0;
+          data.forEach(s => SHIPS.push(s));
+          render();
+        })
+        .catch(() => {});
+    }
+    // Load ship images
     if (!compState._imagesLoaded) {
       compState._imagesLoaded = true;
       fetch('data/ship_images.json')
