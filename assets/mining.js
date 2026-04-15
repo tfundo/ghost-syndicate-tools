@@ -22,7 +22,7 @@ const Mining = (() => {
     ship: null,
     lasers: [null, null, null],
     modules: [[null, null], [null, null], [null, null]],
-    gadgets: [null, null],
+    gadget: null,
     mineral: null,
     rockMassKg: 3000,
   };
@@ -327,19 +327,13 @@ const Mining = (() => {
         <div class="mn-laser-slots ${slotCols}">${slots}</div>`;
     }
 
-    // Gadgets
+    // Gadget (1 solo)
     const gadgetOpts = gadgets.map(g =>
-      `<option value="${g.id}"${mState.gadgets[0] && mState.gadgets[0].id === g.id ? ' selected' : ''}>${g.name}</option>`
-    ).join('');
-    const gadgetOpts2 = gadgets.map(g =>
-      `<option value="${g.id}"${mState.gadgets[1] && mState.gadgets[1].id === g.id ? ' selected' : ''}>${g.name}</option>`
+      `<option value="${g.id}"${mState.gadget && mState.gadget.id === g.id ? ' selected' : ''}>${g.name}</option>`
     ).join('');
 
-    const gadgetSection = `<div class="mn-section-title">Gadgets de Roca</div>
-      <div class="mn-gadget-row">
-        <select class="mn-select" data-action="gadget" data-slot="0">${gadgetOpts}</select>
-        <select class="mn-select" data-action="gadget" data-slot="1">${gadgetOpts2}</select>
-      </div>`;
+    const gadgetSection = `<div class="mn-section-title">Gadget de Roca <span class="mn-section-hint">(1 por roca)</span></div>
+      <select class="mn-select" data-action="gadget">${gadgetOpts}</select>`;
 
     // Rock section
     const presets = [
@@ -509,19 +503,12 @@ const Mining = (() => {
       totalWindowMod += slotWindow / activeLasers.length;
     });
 
-    // Gadget effects
-    const activeGadgets = mState.gadgets.filter(g => g && g.id !== 'none');
-    let gadgetPowerMod = 1.0;
-    let gadgetInstabMod = 1.0;
-    let gadgetWindowMod = 0;
-    let gadgetResistMod = 1.0;
-
-    activeGadgets.forEach(g => {
-      gadgetPowerMod *= g.powerMod;
-      gadgetInstabMod *= g.instabMod;
-      gadgetWindowMod += g.windowMod;
-      gadgetResistMod *= g.resistMod;
-    });
+    // Gadget effects (1 solo)
+    const g = mState.gadget && mState.gadget.id !== 'none' ? mState.gadget : null;
+    const gadgetPowerMod = g ? g.powerMod : 1.0;
+    const gadgetInstabMod = g ? g.instabMod : 1.0;
+    const gadgetWindowMod = g ? g.windowMod : 0;
+    const gadgetResistMod = g ? g.resistMod : 1.0;
 
     const effectivePower = totalPowerMW * gadgetPowerMod;
     const adjustedResistance = mineral.resistance * gadgetResistMod;
@@ -640,7 +627,7 @@ const Mining = (() => {
         } else if (action === 'module-passive') {
           mState.modules[slot][1] = val ? modules.find(m => m.id === val) : null;
         } else if (action === 'gadget') {
-          mState.gadgets[slot] = val ? gadgets.find(g => g.id === val) : null;
+          mState.gadget = val ? gadgets.find(g => g.id === val) : null;
         } else if (action === 'mineral') {
           mState.mineral = val ? mState.db.minerals.find(m => m.id === val) : null;
         }
@@ -673,9 +660,10 @@ const Mining = (() => {
   function _selectShip(shipId) {
     const ship = mState.db.ships.find(s => s.id === shipId);
     mState.ship = ship || null;
-    // Clear laser/module selections
+    // Clear laser/module selections (gadget stays)
     mState.lasers = [null, null, null];
     mState.modules = [[null, null], [null, null], [null, null]];
+    mState.gadget = null;
     renderContent();
   }
 

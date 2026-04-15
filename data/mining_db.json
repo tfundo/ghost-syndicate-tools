@@ -43,34 +43,67 @@
       "cargoSCU": 2,
       "type": "ground",
       "notes": "Variante doble del ROC"
+    },
+    {
+      "id": "golem",
+      "name": "Greycat Golem",
+      "mfr": "Greycat",
+      "laserSlots": 1,
+      "laserSize": 0,
+      "moduleSlots": 2,
+      "cargoSCU": 4,
+      "type": "ground",
+      "notes": "Vehículo terrestre minero avanzado"
     }
   ],
   "laserHeads": [
     {
       "id": "roc_default",
-      "name": "ROC Default",
+      "name": "ROC Default Laser",
       "mfr": "Greycat",
       "size": 0,
-      "powerMW": 750,
+      "powerMW": 700,
       "rangem": 15,
       "extrRate": 0.18,
       "instabilityAdd": 0,
       "notes": "Láser integrado del ROC"
     },
     {
-      "id": "fltr_l",
-      "name": "FLTR-L",
+      "id": "arbor_mh1",
+      "name": "Arbor MH1 Mining Laser",
       "mfr": "Thermyte",
       "size": 1,
       "powerMW": 1500,
       "rangem": 25,
       "extrRate": 0.35,
       "instabilityAdd": 0,
-      "notes": "Láser básico equilibrado"
+      "notes": "Láser básico equilibrado, muy estable"
+    },
+    {
+      "id": "helix_i",
+      "name": "Helix I Mining Laser",
+      "mfr": "Shubin",
+      "size": 1,
+      "powerMW": 1800,
+      "rangem": 30,
+      "extrRate": 0.40,
+      "instabilityAdd": 5,
+      "notes": "Buen equilibrio potencia/estabilidad"
+    },
+    {
+      "id": "fltr_l",
+      "name": "FLTR-L Mining Laser",
+      "mfr": "Thermyte",
+      "size": 1,
+      "powerMW": 1600,
+      "rangem": 25,
+      "extrRate": 0.38,
+      "instabilityAdd": 2,
+      "notes": "Alta estabilidad, recomendado para principiantes"
     },
     {
       "id": "hofstede_s1",
-      "name": "Hofstede-S1",
+      "name": "Hofstede-S1 Mining Laser",
       "mfr": "Hofstede",
       "size": 1,
       "powerMW": 1950,
@@ -80,41 +113,52 @@
       "notes": "Buen alcance y extracción"
     },
     {
-      "id": "herc_m",
-      "name": "Herc-M",
-      "mfr": "Musashi",
-      "size": 1,
-      "powerMW": 2500,
-      "rangem": 20,
-      "extrRate": 0.55,
-      "instabilityAdd": 18,
-      "notes": "Alta potencia pero inestable"
-    },
-    {
       "id": "impact_i",
-      "name": "Impact I",
+      "name": "Impact I Mining Laser",
       "mfr": "Shubin",
       "size": 1,
-      "powerMW": 1750,
-      "rangem": 30,
-      "extrRate": 0.40,
-      "instabilityAdd": 5,
-      "notes": "Buen balance potencia/estabilidad"
+      "powerMW": 2100,
+      "rangem": 20,
+      "extrRate": 0.48,
+      "instabilityAdd": 15,
+      "notes": "Alta potencia, alta inestabilidad"
     },
     {
-      "id": "lancet_m",
-      "name": "Lancet-M",
-      "mfr": "Lancet",
+      "id": "lancet_mh1",
+      "name": "Lancet MH1 Mining Laser",
+      "mfr": "Musashi",
       "size": 1,
-      "powerMW": 2100,
+      "powerMW": 2000,
       "rangem": 50,
-      "extrRate": 0.48,
+      "extrRate": 0.46,
       "instabilityAdd": 8,
       "notes": "Mayor alcance de talla 1"
     },
     {
+      "id": "arbor_mh2",
+      "name": "Arbor MH2 Mining Laser",
+      "mfr": "Thermyte",
+      "size": 2,
+      "powerMW": 2800,
+      "rangem": 25,
+      "extrRate": 0.62,
+      "instabilityAdd": 0,
+      "notes": "Láser talla 2 básico y estable"
+    },
+    {
+      "id": "helix_ii",
+      "name": "Helix II Mining Laser",
+      "mfr": "Shubin",
+      "size": 2,
+      "powerMW": 3400,
+      "rangem": 30,
+      "extrRate": 0.75,
+      "instabilityAdd": 5,
+      "notes": "Versión talla 2 del Helix"
+    },
+    {
       "id": "hofstede_s2",
-      "name": "Hofstede-S2",
+      "name": "Hofstede-S2 Mining Laser",
       "mfr": "Hofstede",
       "size": 2,
       "powerMW": 3200,
@@ -124,9 +168,9 @@
       "notes": "Versión talla 2 del Hofstede"
     },
     {
-      "id": "herc_l",
-      "name": "Herc-L",
-      "mfr": "Musashi",
+      "id": "impact_ii",
+      "name": "Impact II Mining Laser",
+      "mfr": "Shubin",
       "size": 2,
       "powerMW": 4200,
       "rangem": 22,
@@ -135,20 +179,9 @@
       "notes": "Máxima potencia, alta inestabilidad"
     },
     {
-      "id": "impact_ii",
-      "name": "Impact II",
-      "mfr": "Shubin",
-      "size": 2,
-      "powerMW": 2900,
-      "rangem": 30,
-      "extrRate": 0.68,
-      "instabilityAdd": 6,
-      "notes": "Buena extracción con baja inestabilidad"
-    },
-    {
-      "id": "lancet_l",
-      "name": "Lancet-L",
-      "mfr": "Lancet",
+      "id": "lancet_mh2",
+      "name": "Lancet MH2 Mining Laser",
+      "mfr": "Musashi",
       "size": 2,
       "powerMW": 3600,
       "rangem": 50,
@@ -163,8 +196,8 @@
       "name": "Surge I",
       "type": "active",
       "category": "Potencia",
-      "powerMod": 1.25,
-      "instabMod": 1.20,
+      "powerMod": 1.20,
+      "instabMod": 1.15,
       "extrMod": 1.0,
       "windowMod": 0,
       "resistMod": 1.0,
@@ -175,12 +208,24 @@
       "name": "Surge II",
       "type": "active",
       "category": "Potencia",
-      "powerMod": 1.40,
-      "instabMod": 1.35,
+      "powerMod": 1.35,
+      "instabMod": 1.28,
       "extrMod": 1.0,
       "windowMod": 0,
       "resistMod": 1.0,
       "notes": "Mayor aumento de potencia"
+    },
+    {
+      "id": "surge_iii",
+      "name": "Surge III",
+      "type": "active",
+      "category": "Potencia",
+      "powerMod": 1.50,
+      "instabMod": 1.45,
+      "extrMod": 1.0,
+      "windowMod": 0,
+      "resistMod": 1.0,
+      "notes": "Máximo aumento de potencia, muy inestable"
     },
     {
       "id": "stampede_i",
@@ -188,8 +233,8 @@
       "type": "active",
       "category": "Extracción",
       "powerMod": 1.0,
-      "instabMod": 1.12,
-      "extrMod": 1.30,
+      "instabMod": 1.10,
+      "extrMod": 1.25,
       "windowMod": 0,
       "resistMod": 1.0,
       "notes": "Aumenta velocidad de extracción"
@@ -200,11 +245,23 @@
       "type": "active",
       "category": "Extracción",
       "powerMod": 1.0,
-      "instabMod": 1.20,
-      "extrMod": 1.50,
+      "instabMod": 1.18,
+      "extrMod": 1.45,
       "windowMod": 0,
       "resistMod": 1.0,
       "notes": "Mayor aumento de extracción"
+    },
+    {
+      "id": "stampede_iii",
+      "name": "Stampede III",
+      "type": "active",
+      "category": "Extracción",
+      "powerMod": 1.0,
+      "instabMod": 1.28,
+      "extrMod": 1.65,
+      "windowMod": 0,
+      "resistMod": 1.0,
+      "notes": "Máxima velocidad de extracción"
     },
     {
       "id": "focus_i",
@@ -212,11 +269,11 @@
       "type": "active",
       "category": "Ventana",
       "powerMod": 1.0,
-      "instabMod": 0.80,
+      "instabMod": 0.82,
       "extrMod": 1.0,
-      "windowMod": -8,
+      "windowMod": -6,
       "resistMod": 1.0,
-      "notes": "Reduce inestabilidad ampliando ventana"
+      "notes": "Reduce inestabilidad, estrecha ligeramente la ventana"
     },
     {
       "id": "focus_ii",
@@ -224,31 +281,43 @@
       "type": "active",
       "category": "Ventana",
       "powerMod": 1.0,
-      "instabMod": 0.65,
+      "instabMod": 0.68,
       "extrMod": 1.0,
-      "windowMod": -12,
+      "windowMod": -10,
       "resistMod": 1.0,
       "notes": "Mayor reducción de inestabilidad"
+    },
+    {
+      "id": "focus_iii",
+      "name": "Focus III",
+      "type": "active",
+      "category": "Ventana",
+      "powerMod": 1.0,
+      "instabMod": 0.55,
+      "extrMod": 1.0,
+      "windowMod": -14,
+      "resistMod": 1.0,
+      "notes": "Máxima reducción de inestabilidad"
     },
     {
       "id": "lifeline",
       "name": "Lifeline",
       "type": "passive",
       "category": "Seguridad",
-      "powerMod": 0.92,
-      "instabMod": 0.75,
+      "powerMod": 0.90,
+      "instabMod": 0.72,
       "extrMod": 1.0,
       "windowMod": 0,
-      "resistMod": 0.92,
-      "notes": "Gran reducción de inestabilidad y resistencia"
+      "resistMod": 0.90,
+      "notes": "Reducción significativa de inestabilidad y resistencia"
     },
     {
       "id": "rime_i",
       "name": "Rime I",
       "type": "passive",
       "category": "Estabilidad",
-      "powerMod": 0.96,
-      "instabMod": 0.82,
+      "powerMod": 0.97,
+      "instabMod": 0.85,
       "extrMod": 1.0,
       "windowMod": 0,
       "resistMod": 1.0,
@@ -259,12 +328,24 @@
       "name": "Rime II",
       "type": "passive",
       "category": "Estabilidad",
-      "powerMod": 0.92,
-      "instabMod": 0.70,
+      "powerMod": 0.93,
+      "instabMod": 0.72,
       "extrMod": 1.0,
       "windowMod": 0,
       "resistMod": 1.0,
       "notes": "Mayor reducción de inestabilidad"
+    },
+    {
+      "id": "rime_iii",
+      "name": "Rime III",
+      "type": "passive",
+      "category": "Estabilidad",
+      "powerMod": 0.88,
+      "instabMod": 0.60,
+      "extrMod": 1.0,
+      "windowMod": 0,
+      "resistMod": 1.0,
+      "notes": "Máxima reducción de inestabilidad pasiva"
     },
     {
       "id": "optimum_i",
@@ -274,9 +355,9 @@
       "powerMod": 1.0,
       "instabMod": 0.95,
       "extrMod": 1.0,
-      "windowMod": 6,
+      "windowMod": 5,
       "resistMod": 1.0,
-      "notes": "Amplía ventana óptima"
+      "notes": "Amplía ventana óptima ligeramente"
     },
     {
       "id": "optimum_ii",
@@ -286,9 +367,21 @@
       "powerMod": 1.0,
       "instabMod": 0.92,
       "extrMod": 1.0,
-      "windowMod": 10,
+      "windowMod": 9,
       "resistMod": 1.0,
       "notes": "Mayor ampliación de ventana"
+    },
+    {
+      "id": "optimum_iii",
+      "name": "Optimum III",
+      "type": "passive",
+      "category": "Ventana",
+      "powerMod": 1.0,
+      "instabMod": 0.90,
+      "extrMod": 1.0,
+      "windowMod": 14,
+      "resistMod": 1.0,
+      "notes": "Máxima ampliación de ventana óptima"
     },
     {
       "id": "blossom",
@@ -308,8 +401,8 @@
       "type": "passive",
       "category": "Extracción",
       "powerMod": 1.0,
-      "instabMod": 1.08,
-      "extrMod": 1.20,
+      "instabMod": 1.07,
+      "extrMod": 1.18,
       "windowMod": 0,
       "resistMod": 1.0,
       "notes": "Aumenta extracción pasivamente"
@@ -321,10 +414,22 @@
       "category": "Extracción",
       "powerMod": 1.0,
       "instabMod": 1.12,
-      "extrMod": 1.35,
+      "extrMod": 1.32,
       "windowMod": 0,
       "resistMod": 1.0,
       "notes": "Mayor extracción pasiva"
+    },
+    {
+      "id": "torrent_iii",
+      "name": "Torrent III",
+      "type": "passive",
+      "category": "Extracción",
+      "powerMod": 1.0,
+      "instabMod": 1.18,
+      "extrMod": 1.48,
+      "windowMod": 0,
+      "resistMod": 1.0,
+      "notes": "Máxima extracción pasiva"
     }
   ],
   "gadgets": [
