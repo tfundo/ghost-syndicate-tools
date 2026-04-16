@@ -348,8 +348,9 @@ const Mining = (() => {
     }
 
     // Gadget (1 per rock)
+    const selGadgetId = mState.gadget ? mState.gadget.id : 'none';
     const gadgetOpts = gadgets.map(g =>
-      `<option value="${g.id}"${mState.gadget && mState.gadget.id === g.id ? ' selected' : ''}>${g.name}</option>`
+      `<option value="${g.id}"${g.id === selGadgetId ? ' selected' : ''}>${g.name}${g.mfr ? ' (' + g.mfr + ')' : ''}</option>`
     ).join('');
 
     const gadgetSection = `<div class="mn-section-title">Gadget de Roca <span class="mn-section-hint">(1 por roca)</span></div>
@@ -485,7 +486,7 @@ const Mining = (() => {
   }
 
   // ============================================================
-  // SIMULATION (new model from real game data)
+  // SIMULATION (real game data model)
   // ============================================================
   const CALIB_K = 40;
 
@@ -499,23 +500,23 @@ const Mining = (() => {
     const activeLasers = mState.lasers.slice(0, ship.laserSlots).filter(l => l !== null);
     if (activeLasers.length === 0) return null;
 
-    // Gadget effects
+    // Gadget effects — multiplicative modifiers applied on top of laser-modified values
     const g = mState.gadget && mState.gadget.id !== 'none' ? mState.gadget : null;
-    const gadgetPowerMod   = g ? g.powerMod       : 1.0;
-    const gadgetInstabMod  = g ? g.instabilityMod  : 0;   // percentage additive
-    const gadgetResMod     = g ? g.resistanceMod   : 0;   // percentage additive
+    const gadgetInstabMult  = g ? (1 + (g.instabilityMult || 0) / 100) : 1.0;
+    const gadgetResMult     = g ? (1 + (g.resistanceMult  || 0) / 100) : 1.0;
+    const gadgetWindowMult  = g ? (1 + (g.windowSizeMult  || 0) / 100) : 1.0;
+    const gadgetRateMult    = g ? (1 + (g.windowRateMult  || 0) / 100) : 1.0;
 
     // Accumulate per-slot power and modifiers
     let totalPower = 0;
-    let sumLaserInstabMod  = 0;  // laser instab % modifier (averaged)
-    let sumLaserResMod     = 0;  // laser resistance % modifier (averaged)
-    let sumLaserWindowMod  = 0;  // laser window size % modifier (averaged)
-    let sumLaserRateMod    = 0;  // laser window rate % modifier (averaged)
-    let sumModWindowMod    = 0;  // sum of module window size mods across all slots
-    let sumModRateMod      = 0;  // sum of module window rate mods across all slots
+    let sumLaserInstabMod = 0;
+    let sumLaserResMod    = 0;
+    let sumLaserWindowMod = 0;
+    let sumLaserRateMod   = 0;
+    let sumModWindowMod   = 0;
+    let sumModRateMod     = 0;
 
     activeLasers.forEach((laser, slotIdx) => {
-      // Module power multiplier for this slot
       let slotPowerMod = 1.0;
       let slotModWindowMod = 0;
       let slotModRateMod = 0;
@@ -524,15 +525,13 @@ const Mining = (() => {
       for (let mi = 0; mi < modSlotCount; mi++) {
         const mod = mState.modules[slotIdx][mi];
         if (mod && !mod.filterOnly) {
-          slotPowerMod   *= mod.powerMod;
+          slotPowerMod     *= mod.powerMod;
           slotModWindowMod += (mod.windowSizeMod || 0);
           slotModRateMod   += (mod.windowRateMod || 0);
         }
       }
 
-      // Slot power at 100% throttle, with modules applied
-      const slotPower = laser.powerMax * slotPowerMod * gadgetPowerMod;
-      totalPower += slotPower;
+      totalPower += laser.powerMax * slotPowerMod;
 
       sumLaserInstabMod += laser.instabMod;
       sumLaserResMod    += laser.resMod;
@@ -548,29 +547,28 @@ const Mining = (() => {
     const avgLaserWindowMod = sumLaserWindowMod / n;
     const avgLaserRateMod   = sumLaserRateMod / n;
 
-    // Effective stats
-    const effectiveResistance  = mineral.resistance * (1 + (avgLaserResMod + gadgetResMod) / 100);
-    const effectiveInstability = mineral.instability * (1 + (avgLaserInstabMod + gadgetInstabMod) / 100);
+    // Effective stats: laser mods additive, gadget mods multiplicative on top
+    const effectiveResistance  = Math.max(1, mineral.resistance * (1 + avgLaserResMod / 100) * gadgetResMult);
+    const effectiveInstability = Math.max(0, mineral.instability * (1 + avgLaserInstabMod / 100) * gadgetInstabMult);
 
     const baseWindowSize = mineral.optMax - mineral.optMin;
-    const totalWindowMod = avgLaserWindowMod + sumModWindowMod; // module mods are NOT averaged — stacked
-    const effectiveWindowSize = Math.max(3, baseWindowSize * (1 + totalWindowMod / 100));
+    const laserWindowMod = avgLaserWindowMod + sumModWindowMod; // module mods stacked (not averaged)
+    const effectiveWindowSize = Math.max(3, baseWindowSize * (1 + laserWindowMod / 100) * gadgetWindowMult);
 
-    const windowRateMultiplier = 1 + (avgLaserRateMod + sumModRateMod) / 100;
+    const windowRateMultiplier = (1 + (avgLaserRateMod + sumModRateMod) / 100) * gadgetRateMult;
 
-    // Adjusted window position (centered around mineral optMin, widened/narrowed)
+    // Adjusted window position
     const windowCenter = (mineral.optMin + mineral.optMax) / 2;
     const halfNew = effectiveWindowSize / 2;
     const adjustedOptMin = Math.max(0, windowCenter - halfNew);
     const adjustedOptMax = Math.min(100, windowCenter + halfNew);
 
-    // Charge rate at 100% throttle (% of bar per second)
-    const chargeRate100 = totalPower / (Math.max(1, effectiveResistance) * CALIB_K);
+    // Charge rate at 100% throttle (%/s)
+    const chargeRate100 = totalPower / (effectiveResistance * CALIB_K);
 
-    // Recommended throttle: aim to fill the window in ~4 seconds
-    const targetRate = effectiveWindowSize / 4;  // % per second
+    // Recommended throttle: aim to traverse the window in ~4 s
+    const targetRate = effectiveWindowSize / 4;
     let recommendedThrottleFrac = Math.min(1.0, targetRate / Math.max(0.001, chargeRate100));
-    // Enforce all active lasers' minimum throttle
     const maxThrottleMin = Math.max(...activeLasers.map(l => l.throttleMin));
     recommendedThrottleFrac = Math.max(recommendedThrottleFrac, maxThrottleMin);
     recommendedThrottleFrac = Math.min(1.0, recommendedThrottleFrac);
@@ -578,8 +576,6 @@ const Mining = (() => {
     const chargeRateAtThrottle = chargeRate100 * recommendedThrottleFrac;
     const difficultyRatio = effectiveInstability / Math.max(1, effectiveWindowSize);
 
-    // Estimated time: fill window + drain (simplified: ~window / chargeRate fill, then extraction
-    // For ROC-scale rocks we use rockMass as a proxy: ~1 cycle per 100kg
     const fillTimeSec = effectiveWindowSize / Math.max(0.01, chargeRateAtThrottle);
     const cycles = Math.max(1, Math.round(rockMass / 500));
     const estimatedTotalSec = Math.round(fillTimeSec * cycles * 0.5 + cycles * 3);
@@ -587,21 +583,30 @@ const Mining = (() => {
     // Verdict
     let verdict, verdictClass, tips = [];
 
-    if (chargeRate100 < 0.3) {
-      verdict = 'INSUFICIENTE';
-      verdictClass = 'insufficient';
-      tips.push('La potencia combinada es demasiado baja para cargar la barra de forma efectiva.');
-      tips.push('Prueba un láser más potente, usa módulos Rieger o el gadget Surge en la roca.');
-    } else if (chargeRate100 * (maxThrottleMin) > effectiveWindowSize * 2) {
-      verdict = 'EXCESIVA';
-      verdictClass = 'excess';
-      tips.push('Incluso al mínimo de throttle, el láser supera la ventana óptima con demasiada rapidez.');
-      tips.push('Usa módulos Focus o XTR para ampliar la ventana, o cambia a un láser menos potente.');
+    if (chargeRate100 < 0.35) {
+      // Power too low — bar barely moves, effectively cannot break the rock
+      verdict = 'IMPOSIBLE';
+      verdictClass = 'impossible';
+      tips.push('La potencia es insuficiente para fracturar esta roca.');
+      tips.push('Necesitas un láser más potente, módulos Rieger, o el gadget Sabir/OptiMax en la roca.');
+    } else if (chargeRate100 * maxThrottleMin > effectiveWindowSize * 2) {
+      // Even at min throttle the bar shoots past the window — cannot control
+      verdict = 'IMPOSIBLE';
+      verdictClass = 'impossible';
+      tips.push('Incluso al mínimo de throttle la barra supera la ventana. No es posible controlarlo.');
+      tips.push('Usa módulos Focus/XTR para ampliar la ventana, o cambia a un láser menos potente.');
+    } else if (difficultyRatio > 4.0) {
+      // Instability overwhelms window — uncontrollable in practice
+      verdict = 'IMPOSIBLE';
+      verdictClass = 'impossible';
+      tips.push('La inestabilidad supera en exceso la ventana óptima. Imposible de controlar.');
+      tips.push('Usa gadget Waveshift o Boremax en la roca para reducir inestabilidad.');
+      if (mineral.explosive) tips.push('⚠️ Mineral explosivo: explosión casi garantizada.');
     } else if (difficultyRatio > 1.5) {
       verdict = 'CRÍTICO';
       verdictClass = 'critical';
-      tips.push('La inestabilidad supera ampliamente la ventana óptima. Muy difícil de controlar.');
-      tips.push('Usa módulos Focus para ampliar ventana, o gadget Lifeline/Optimum en la roca.');
+      tips.push('La inestabilidad supera la ventana óptima. Solo viable con mucha experiencia.');
+      tips.push('Usa módulos Focus o el gadget Waveshift/Boremax para mejorar el control.');
       if (mineral.explosive) tips.push('⚠️ Mineral explosivo: un error puede destruir la roca.');
     } else if (difficultyRatio > 0.8) {
       verdict = 'DIFÍCIL';

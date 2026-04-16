@@ -478,74 +478,71 @@
     {
       "id": "none",
       "name": "Sin gadget",
-      "powerMod": 1.0,
-      "instabilityMod": 0,
-      "resistanceMod": 0,
+      "instabilityMult": 0,
+      "windowSizeMult": 0,
+      "resistanceMult": 0,
+      "windowRateMult": 0,
       "notes": ""
     },
     {
-      "id": "surge",
-      "name": "Surge",
-      "powerMod": 1.50,
-      "instabilityMod": 10,
-      "resistanceMod": -15.5,
-      "notes": "Gran aumento de potencia, más inestabilidad, mejor resistencia"
+      "id": "optimax",
+      "name": "OptiMax",
+      "mfr": "GRIN",
+      "instabilityMult": 0,
+      "windowSizeMult": -30,
+      "resistanceMult": -25,
+      "windowRateMult": 0,
+      "notes": "Ventana -30%, resistencia -25% — útil contra rocas muy resistentes"
     },
     {
-      "id": "stampede",
-      "name": "Stampede",
-      "powerMod": 1.35,
-      "instabilityMod": -10,
-      "resistanceMod": 0,
-      "notes": "Más potencia, menos inestabilidad"
+      "id": "waveshift",
+      "name": "Waveshift",
+      "mfr": "GRIN",
+      "instabilityMult": -35,
+      "windowSizeMult": 100,
+      "resistanceMult": 0,
+      "windowRateMult": -30,
+      "notes": "Inestabilidad -35%, ventana x2, carga más lenta — ideal para minerales muy inestables"
     },
     {
-      "id": "optimum",
-      "name": "Optimum",
-      "powerMod": 0.85,
-      "instabilityMod": -10,
-      "resistanceMod": 0,
-      "notes": "Menos potencia pero mucho más seguro"
+      "id": "okunis",
+      "name": "Okunis",
+      "mfr": "Shin",
+      "instabilityMult": 0,
+      "windowSizeMult": 50,
+      "resistanceMult": 0,
+      "windowRateMult": 100,
+      "notes": "Ventana +50%, carga x2 — más velocidad dentro de la ventana"
     },
     {
-      "id": "rime",
-      "name": "Rime",
-      "powerMod": 0.85,
-      "instabilityMod": 0,
-      "resistanceMod": -24.8,
-      "notes": "Menos potencia pero reduce mucho la resistencia"
+      "id": "sabir",
+      "name": "Sabir",
+      "mfr": "Shin",
+      "instabilityMult": 15,
+      "windowSizeMult": 50,
+      "resistanceMult": -50,
+      "windowRateMult": 0,
+      "notes": "Resistencia -50%, ventana +50% — rompe rocas muy duras pero más inestable"
     },
     {
-      "id": "lifeline",
-      "name": "Lifeline",
-      "powerMod": 1.0,
-      "instabilityMod": -20,
-      "resistanceMod": -15.5,
-      "notes": "Gadget de estabilidad puro — reduce inestabilidad y resistencia"
+      "id": "boremax",
+      "name": "Boremax",
+      "mfr": "Thermyte",
+      "instabilityMult": -70,
+      "windowSizeMult": 0,
+      "resistanceMult": 10,
+      "windowRateMult": 0,
+      "notes": "Inestabilidad -70% — elimina casi toda inestabilidad, pequeño aumento de resistencia"
     },
     {
-      "id": "brandt",
-      "name": "Brandt",
-      "powerMod": 1.35,
-      "instabilityMod": 0,
-      "resistanceMod": 15.5,
-      "notes": "Más potencia, pero la roca se vuelve más dura"
-    },
-    {
-      "id": "forel",
-      "name": "Forel",
-      "powerMod": 1.0,
-      "instabilityMod": 0,
-      "resistanceMod": 15.5,
-      "notes": "Roca más dura, pero zona catastrófica más segura"
-    },
-    {
-      "id": "torpid",
-      "name": "Torpid",
-      "powerMod": 1.0,
-      "instabilityMod": 0,
-      "resistanceMod": 0,
-      "notes": "Afecta mecánicas de fractura — sin efecto directo en la simulación"
+      "id": "stalwart",
+      "name": "Stalwart",
+      "mfr": "Thermyte",
+      "instabilityMult": -35,
+      "windowSizeMult": -30,
+      "resistanceMult": 0,
+      "windowRateMult": 50,
+      "notes": "Inestabilidad -35%, carga más rápida — mayor control a costa de ventana más estrecha"
     }
   ],
   "minerals": [

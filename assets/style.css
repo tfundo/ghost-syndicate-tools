@@ -2677,8 +2677,7 @@ body::after {
 .mn-verdict-medium     { color: #fbbf24; border-color: rgba(251,191,36,0.5); background: rgba(251,191,36,0.08); }
 .mn-verdict-hard       { color: #f97316; border-color: rgba(249,115,22,0.5); background: rgba(249,115,22,0.08); }
 .mn-verdict-critical   { color: #ef4444; border-color: rgba(239,68,68,0.5);  background: rgba(239,68,68,0.08); }
-.mn-verdict-insufficient { color: #ef4444; border-color: rgba(239,68,68,0.5); background: rgba(239,68,68,0.08); }
-.mn-verdict-excess     { color: #f97316; border-color: rgba(249,115,22,0.5); background: rgba(249,115,22,0.08); }
+.mn-verdict-impossible { color: #ff2020; border-color: rgba(255,32,32,0.7);  background: rgba(255,32,32,0.13); font-weight: 700; }
 
 /* Window meter */
 .mn-window-meter-wrap { margin-bottom: 1rem; }
