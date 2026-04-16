@@ -1,5 +1,5 @@
 /* Ghost Syndicate Tools — Service Worker */
-const CACHE   = 'gst-v3';
+const CACHE   = 'gst-v4';
 const STATIC  = [
   '/assets/ghostlogo.png',
 ];
@@ -36,8 +36,7 @@ self.addEventListener('fetch', e => {
         if (cached) return cached;
         return fetch(e.request).then(res => {
           if (res && res.status === 200) {
-            const clone = res.clone();
-            caches.open(CACHE).then(c => c.put(e.request, clone));
+            caches.open(CACHE).then(c => c.put(e.request, res.clone()));
           }
           return res;
         });
@@ -47,13 +46,14 @@ self.addEventListener('fetch', e => {
   }
 
   // HTML, JS, CSS, JSON → network-first
-  // Siempre intenta la red; si falla (offline) usa caché
+  // cache: 'no-cache' fuerza revalidación con el servidor,
+  // ignorando el caché HTTP del navegador
+  const freshReq = new Request(e.request, { cache: 'no-cache' });
   e.respondWith(
-    fetch(e.request)
+    fetch(freshReq)
       .then(res => {
         if (res && res.status === 200) {
-          const clone = res.clone();
-          caches.open(CACHE).then(c => c.put(e.request, clone));
+          caches.open(CACHE).then(c => c.put(e.request, res.clone()));
         }
         return res;
       })
