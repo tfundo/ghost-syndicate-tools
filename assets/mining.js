@@ -1,7 +1,7 @@
 /* ===================================================
    GHOST SYNDICATE TOOLS — Mining Module
    Minerales · Localizaciones
-   SC 4.7.0 — Real game data from Data.p4k
+   SC 4.7.1 — Real game data from Data.p4k
    =================================================== */
 
 'use strict';
@@ -179,7 +179,7 @@ const Mining = (() => {
         </table>
       </div>
       <p class="mn-table-note">
-        Haz clic en los encabezados para ordenar. Los precios son aproximados en SC 4.7.0.<br>
+        Haz clic en los encabezados para ordenar. Los precios son aproximados en SC 4.7.1.<br>
         <strong>Escáner:</strong> valor base (×1) del ping. El número sube con la concentración del mineral en la roca (×2–6 según rareza).
       </p>
     `;
@@ -343,7 +343,7 @@ const Mining = (() => {
       </div>
 
       <p class="mn-table-note" style="margin-top:1rem">
-        Valores de emisión del escáner según concentración (×1 mínimo → ×N máximo para esa rareza). Datos: Data.p4k SC 4.7.0.
+        Valores de emisión del escáner según concentración (×1 mínimo → ×N máximo para esa rareza). Datos: Data.p4k SC 4.7.1.
       </p>
     `;
   }

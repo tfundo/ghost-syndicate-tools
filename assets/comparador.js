@@ -1,6 +1,6 @@
 /* ===================================================
    GHOST SYNDICATE TOOLS — Ship & Weapon Comparator
-   Star Citizen Companion — SC 4.7.0
+   Star Citizen Companion — SC 4.7.1
    Namespace: Comp
    =================================================== */
 
@@ -239,7 +239,7 @@
     return `
       <div class="page-header">
         <h1 class="page-title">◈ Comparador</h1>
-        <p class="page-subtitle">Naves y armas · SC 4.7.0</p>
+        <p class="page-subtitle">Naves y armas · SC 4.7.1</p>
       </div>
 
       <div class="comp-tabs">
