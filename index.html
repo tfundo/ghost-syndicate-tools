@@ -34,7 +34,7 @@
       <li><a href="#comparador" class="nav-link" data-section="comparador">Comparador</a></li>
       <li><a href="#wikelodata" class="nav-link" data-section="wikelodata">WikeloData</a></li>
       <li><a href="#hangar" class="nav-link" data-section="hangar">Hangar Ejecutivo</a></li>
-      <li><a href="#mining" class="nav-link nav-coming" data-section="mining">Minería <span class="badge">Próx.</span></a></li>
+      <li><a href="#mining" class="nav-link" data-section="mining">Minería</a></li>
     </ul>
     <div class="nav-social-bar">
       <a class="nav-social-btn nav-social-dc" href="https://discord.com/invite/Ktfnbmj5s7" target="_blank" rel="noopener" title="Discord Ghost Syndicate">
@@ -325,11 +325,17 @@
 
   <!-- ===== MINERÍA (próximamente) ===== -->
   <section class="section" id="mining">
-    <div class="coming-soon-page container">
-      <div class="cs-icon">⛏</div>
-      <h2>Minería</h2>
-      <p>Minerales, localizaciones y datos del escáner. En desarrollo.</p>
-      <button class="btn-ghost" onclick="showSection('home')">← Volver al inicio</button>
+    <div class="container">
+      <div class="page-header">
+        <h1 class="page-title">⛏ Minería</h1>
+        <p class="page-subtitle">Minerales · Localizaciones · Escáner · Recursos · SC 4.7.1</p>
+      </div>
+      <div id="mnTabs" class="mn-tabs hidden"></div>
+      <div id="mnLoading" class="loading-state">
+        <div class="loading-spinner"></div>
+        <p>Cargando datos de minería...</p>
+      </div>
+      <div id="mnContent" class="hidden"></div>
     </div>
   </section>
 
@@ -396,6 +402,7 @@
   </nav>
 
   <script src="assets/comparador.js"></script>
+  <script src="assets/mining.js"></script>
   <script src="assets/app.js"></script>
   <script>
     if ('serviceWorker' in navigator) {
