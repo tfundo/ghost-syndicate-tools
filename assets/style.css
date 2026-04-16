@@ -1729,25 +1729,38 @@ body::after {
   .feature-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
-/* Intermediate breakpoint: shrink nav before switching to mobile */
-@media (max-width: 1250px) {
-  .nav-social-btn span { display: none; }
-  .nav-social-btn { padding: 0.3rem 0.4rem; }
-  .nav-version { font-size: 0.75rem; }
+/* ── Responsive nav: shrinks progressively, never disappears until true mobile ── */
+
+/* Step 1 — 1280px: drop social text + logo subtitle */
+@media (max-width: 1280px) {
   .logo-sub { display: none; }
+  .nav-social-btn span { display: none; }
+  .nav-social-btn { padding: 0.28rem 0.4rem; }
+  .nav-version { font-size: 0.75rem; }
 }
 
+/* Step 2 — 1100px: compact link padding + smaller font */
 @media (max-width: 1100px) {
-  /* Hide top nav links — bottom nav takes over */
+  .nav-link { padding: 0.55rem 0.75rem; font-size: 0.8rem; letter-spacing: 0.07em; }
+  .logo-img { width: 66px; height: 66px; }
+  .logo-text { font-size: 1rem; }
+  .nav-version { display: none; }
+}
+
+/* Step 3 — 950px: shrink further, hide social bar entirely */
+@media (max-width: 950px) {
+  .nav-link { padding: 0.45rem 0.45rem; font-size: 0.7rem; letter-spacing: 0.04em; }
+  .nav-social-bar { display: none; }
+  .logo-img { width: 54px; height: 54px; }
+  .logo-text { font-size: 0.88rem; }
+}
+
+/* Step 4 — 750px: switch to bottom nav (phones) */
+@media (max-width: 750px) {
   .nav-links { display: none !important; }
   .nav-hamburger { display: none !important; }
-  .nav-version { display: none; }
-  .nav-social-bar { border-left: none; padding-left: 0; margin-right: 0; }
-
-  /* Show bottom nav */
+  .nav-social-bar { display: none; }
   .nav-bottom { display: flex; }
-
-  /* Sections need bottom padding so content isn't hidden behind bottom nav */
   .section { padding-bottom: calc(var(--nav-bottom-h) + 0.5rem); }
 }
 
