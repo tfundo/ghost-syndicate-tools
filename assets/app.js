@@ -915,6 +915,120 @@ const HNG = (() => {
   let _intervalId = null;
   let _circles = null;
 
+  // ── Alert system ──────────────────────────────────────────
+  const ALERT_OPEN_MS  = 25 * 60 * 1000;  // 25 min before opening
+  const ALERT_CLOSE_MS = 15 * 60 * 1000;  // 15 min before closing
+
+  let _alertEnabled = false;
+  let _alertFiredOpen  = false;  // fired "25 min to open" this cycle
+  let _alertFiredClose = false;  // fired "15 min to close" this cycle
+  let _audioCtx = null;
+
+  function getAudioCtx() {
+    if (!_audioCtx) {
+      _audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    }
+    // Resume if suspended (browser autoplay policy)
+    if (_audioCtx.state === 'suspended') _audioCtx.resume();
+    return _audioCtx;
+  }
+
+  // Play a synthesized alert tone
+  // type: 'open' (ascending, hopeful) | 'close' (descending, warning)
+  function playAlert(type) {
+    try {
+      const ctx = getAudioCtx();
+      const now = ctx.currentTime;
+
+      const notes = type === 'open'
+        ? [523.25, 659.25, 783.99, 1046.50]   // C5 E5 G5 C6 — ascending
+        : [1046.50, 783.99, 523.25, 392.00];   // C6 G5 C5 G4 — descending warning
+
+      notes.forEach((freq, i) => {
+        const osc  = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+
+        osc.type = 'sine';
+        osc.frequency.value = freq;
+
+        const t0 = now + i * 0.22;
+        gain.gain.setValueAtTime(0, t0);
+        gain.gain.linearRampToValueAtTime(0.35, t0 + 0.05);
+        gain.gain.exponentialRampToValueAtTime(0.001, t0 + 0.45);
+
+        osc.start(t0);
+        osc.stop(t0 + 0.5);
+      });
+    } catch (e) {
+      console.warn('HNG alert sound error:', e);
+    }
+  }
+
+  function checkAlerts(online, remaining) {
+    if (!_alertEnabled) return;
+
+    if (!online) {
+      // Hangar is CLOSED — check if 25 min to opening
+      if (remaining <= ALERT_OPEN_MS && !_alertFiredOpen) {
+        _alertFiredOpen = true;
+        playAlert('open');
+        showAlertToast('🔔 El hangar abre en ~25 minutos');
+      }
+      // Reset close-alert flag when hangar is closed
+      _alertFiredClose = false;
+    } else {
+      // Hangar is OPEN — check if 15 min to closing
+      if (remaining <= ALERT_CLOSE_MS && !_alertFiredClose) {
+        _alertFiredClose = true;
+        playAlert('close');
+        showAlertToast('⚠️ El hangar cierra en ~15 minutos');
+      }
+      // Reset open-alert flag when hangar is open
+      _alertFiredOpen = false;
+    }
+  }
+
+  function showAlertToast(msg) {
+    let toast = document.getElementById('hngToast');
+    if (!toast) {
+      toast = document.createElement('div');
+      toast.id = 'hngToast';
+      toast.className = 'hng-toast';
+      document.body.appendChild(toast);
+    }
+    toast.textContent = msg;
+    toast.classList.add('hng-toast-show');
+    clearTimeout(toast._timeout);
+    toast._timeout = setTimeout(() => toast.classList.remove('hng-toast-show'), 5000);
+  }
+
+  function toggleAlert() {
+    // On first activation, resume AudioContext (required by browsers)
+    try { getAudioCtx(); } catch(e) {}
+
+    _alertEnabled = !_alertEnabled;
+    _alertFiredOpen  = false;
+    _alertFiredClose = false;
+
+    const btn    = document.getElementById('hngAlertBtn');
+    const label  = document.getElementById('hngAlertLabel');
+    const status = document.getElementById('hngAlertStatus');
+
+    if (_alertEnabled) {
+      btn.classList.add('hng-alert-active');
+      label.textContent = 'Alertas activadas';
+      status.textContent = '🔔 Sonará 25 min antes de abrir · 15 min antes de cerrar';
+      // Play a short confirmation beep
+      playAlert('open');
+    } else {
+      btn.classList.remove('hng-alert-active');
+      label.textContent = 'Activar alertas';
+      status.textContent = '';
+    }
+  }
+
   function getStatus(now) {
     const elapsed = now - INITIAL_OPEN;
     const timeInCycle = ((elapsed % CYCLE_DURATION) + CYCLE_DURATION) % CYCLE_DURATION;
@@ -952,6 +1066,9 @@ const HNG = (() => {
     const openMin  = Math.round(OPEN_DURATION  / 60000);
     const closeMin = Math.round(CLOSE_DURATION / 60000);
     infoEl.textContent = `Abierto ${openMin} min · Cerrado ${closeMin} min por ciclo`;
+
+    // Alert check
+    checkAlerts(isOnline, remaining);
 
     // Circles
     if (_circles) {
@@ -1040,5 +1157,5 @@ const HNG = (() => {
     if (_intervalId) { clearInterval(_intervalId); _intervalId = null; }
   }
 
-  return { start, stop };
+  return { start, stop, toggleAlert };
 })();
