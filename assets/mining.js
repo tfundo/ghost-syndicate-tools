@@ -25,9 +25,33 @@ const Mining = (() => {
     locFilterDiff: 'all',     // 'all' | 'easy' | 'medium' | 'hard'
     // Escáner tab
     scanInput: '',
+    // Recursos tab
+    resDb:      null,
+    resLoaded:  false,
+    resMineral: null,   // mineral name or null = hotspots view
+    resSystem:  'all',  // 'all' | 'Stanton' | 'Pyro' | 'Nyx'
+    resMethod:  'all',  // 'all' | 'ship' | 'ground' | 'fps' | 'both'
   };
 
   let loaded = false;
+
+  // ============================================================
+  // LAZY LOAD — Recursos data
+  // ============================================================
+  async function loadResources() {
+    if (mState.resLoaded && mState.resDb) return true;
+    try {
+      const res = await fetch('data/mining_resources.json');
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      mState.resDb     = await res.json();
+      mState.resLoaded = true;
+      return true;
+    } catch (e) {
+      const el = document.getElementById('mnContent');
+      if (el) el.innerHTML = '<div class="mn-error">Error cargando recursos: ' + e.message + '</div>';
+      return false;
+    }
+  }
 
   // ============================================================
   // LOAD
@@ -72,6 +96,7 @@ const Mining = (() => {
       { id: 'minerales',      label: 'Minerales' },
       { id: 'localizaciones', label: 'Localizaciones' },
       { id: 'escaner',        label: 'Escáner' },
+      { id: 'recursos',       label: 'Recursos' },
     ].map(t =>
       `<button class="mn-tab${mState.tab === t.id ? ' active' : ''}" onclick="Mining.setTab('${t.id}')">${t.label}</button>`
     ).join('');
@@ -83,6 +108,7 @@ const Mining = (() => {
     if (mState.tab === 'minerales')           el.innerHTML = renderMinerales();
     else if (mState.tab === 'localizaciones') el.innerHTML = renderLocalizaciones();
     else if (mState.tab === 'escaner')        el.innerHTML = renderEscaner();
+    else if (mState.tab === 'recursos')       { renderRecursosAsync(el); return; }
     wireEvents();
   }
 
@@ -592,6 +618,203 @@ const Mining = (() => {
   function _setScanInput(v) { mState.scanInput = v; renderContent(); }
 
   // ============================================================
+  // PUBLIC HELPERS — Recursos
+  // ============================================================
+  function _setResMineral(mn) { mState.resMineral = mn; renderContent(); }
+  function _setResSystem(sys) { mState.resSystem  = sys; renderContent(); }
+  function _setResMethod(m)   { mState.resMethod   = m;  renderContent(); }
+
+  // ============================================================
+  // TAB: RECURSOS
+  // ============================================================
+
+  async function renderRecursosAsync(el) {
+    if (!mState.resLoaded) {
+      el.innerHTML = '<div class="mn-res-loading"><div class="spinner"></div>Cargando datos de recursos…</div>';
+    }
+    const ok = await loadResources();
+    if (!ok) return;
+    el.innerHTML = renderRecursos();
+  }
+
+  function renderRecursos() {
+    const { minerals, hotspots } = mState.resDb;
+
+    // ── Mineral chips sorted by rarity tier then name
+    const rarityOrder = { legendary: 0, epic: 1, rare: 2, uncommon: 3, common: 4 };
+    const mineralNames = Object.keys(minerals).sort((a, b) => {
+      const ra = rarityOrder[minerals[a].rarity] ?? 5;
+      const rb = rarityOrder[minerals[b].rarity] ?? 5;
+      return ra !== rb ? ra - rb : a.localeCompare(b);
+    });
+
+    const chips = mineralNames.map(mn => {
+      const rc     = rarityClass(minerals[mn].rarity || 'common');
+      const active = mState.resMineral === mn;
+      return `<button class="mn-res-chip mn-res-chip-${rc}${active ? ' active' : ''}"
+        onclick="Mining._setResMineral(${active ? 'null' : `'${mn.replace(/'/g, "\\'")}'`})">${mn}</button>`;
+    }).join('');
+
+    // ── System filter
+    const sysList = [
+      { val: 'all', label: 'Todos' },
+      { val: 'Stanton', label: 'Stanton', dot: 'mn-sys-stanton' },
+      { val: 'Pyro',    label: 'Pyro',    dot: 'mn-sys-pyro' },
+      { val: 'Nyx',     label: 'Nyx',     dot: 'mn-sys-nyx' },
+    ];
+    const sysBtns = sysList.map(s =>
+      `<button class="mn-filter-btn${mState.resSystem === s.val ? ' active' : ''}"
+        onclick="Mining._setResSystem('${s.val}')">
+        ${s.dot ? `<span class="mn-sys-dot ${s.dot}"></span>` : ''}${s.label}
+      </button>`
+    ).join('');
+
+    // ── Method filter
+    const methodList = [
+      { val: 'all',    label: 'Todos' },
+      { val: 'ship',   label: '🚀 Nave' },
+      { val: 'both',   label: '🚀🚗 Nave+ROC' },
+      { val: 'ground', label: '🚗 ROC' },
+      { val: 'fps',    label: '🔫 FPS' },
+    ];
+    const methodBtns = methodList.map(m =>
+      `<button class="mn-filter-btn${mState.resMethod === m.val ? ' active' : ''}"
+        onclick="Mining._setResMethod('${m.val}')">${m.label}</button>`
+    ).join('');
+
+    const content = mState.resMineral
+      ? renderResLocations()
+      : renderResHotspots(hotspots);
+
+    return `
+      <div class="mn-res-layout">
+        <div class="mn-res-mineral-panel">
+          <span class="mn-filter-label">Seleccionar mineral</span>
+          <div class="mn-res-chips">${chips}</div>
+        </div>
+        <div class="mn-res-controls">
+          <div class="mn-filter-group">
+            <span class="mn-filter-label">Sistema</span>
+            <div class="mn-filter-btns">${sysBtns}</div>
+          </div>
+          <div class="mn-filter-group">
+            <span class="mn-filter-label">Método</span>
+            <div class="mn-filter-btns">${methodBtns}</div>
+          </div>
+        </div>
+        <div class="mn-res-content">${content}</div>
+      </div>`;
+  }
+
+  function renderResLocations() {
+    const { minerals } = mState.resDb;
+    const mn   = mState.resMineral;
+    const data = minerals[mn];
+    if (!data) return '<div class="mn-no-results">Mineral no encontrado.</div>';
+
+    let locs = data.locations;
+    if (mState.resSystem !== 'all') locs = locs.filter(l => l.system === mState.resSystem);
+    if (mState.resMethod !== 'all') locs = locs.filter(l => l.method === mState.resMethod);
+
+    const rc  = rarityClass(data.rarity || 'common');
+    const header = `
+      <div class="mn-res-mineral-header">
+        <span class="mn-rarity mn-rarity-${rc}">${data.rarity || '—'}</span>
+        <span class="mn-res-mineral-name">${mn}</span>
+        <span class="mn-res-loc-count">${locs.length} de ${data.locations.length} localizaciones</span>
+        <button class="mn-res-chip mn-res-chip-${rc} active" style="margin-left:auto"
+          onclick="Mining._setResMineral(null)">✕ Limpiar</button>
+      </div>`;
+
+    if (!locs.length) {
+      return header + '<div class="mn-no-results">Sin localizaciones con los filtros activos.</div>';
+    }
+
+    const cards = locs.map(loc => {
+      const pct = data.maxConc > 0 ? (loc.concentration / data.maxConc * 100) : 0;
+      return `<div class="mn-res-loc-card">
+        <div class="mn-res-loc-top">
+          <span class="mn-res-type-icon">${resTypeIcon(loc.type)}</span>
+          <div class="mn-res-loc-info">
+            <div class="mn-res-loc-name">${loc.location}</div>
+            <div class="mn-res-loc-meta">
+              <span class="mn-res-sys-badge ${resSysClass(loc.system)}">${loc.system}</span>
+              <span class="mn-res-method-badge">${resMethodIcon(loc.method)} ${resMethodLabel(loc.method)}</span>
+            </div>
+          </div>
+          <div class="mn-res-conc-label">${(loc.concentration * 100).toFixed(2)}%</div>
+        </div>
+        <div class="mn-res-bar-wrap">
+          <div class="mn-res-bar-fill mn-res-bar-${rc}" style="width:${pct.toFixed(1)}%"></div>
+        </div>
+      </div>`;
+    }).join('');
+
+    return header + `<div class="mn-res-loc-list">${cards}</div>`;
+  }
+
+  function renderResHotspots(hotspots) {
+    let filtered = hotspots;
+    if (mState.resSystem !== 'all') filtered = filtered.filter(h => h.system === mState.resSystem);
+    if (mState.resMethod !== 'all') filtered = filtered.filter(h => h.method === mState.resMethod);
+
+    if (!filtered.length) return '<div class="mn-no-results">Sin localizaciones con esos filtros.</div>';
+
+    const { minerals } = mState.resDb;
+
+    const cards = filtered.map(h => {
+      const mineralBars = h.topMinerals.map(tm => {
+        const mData  = minerals[tm.mineral];
+        const maxConc = mData ? mData.maxConc : tm.concentration;
+        const pct    = maxConc > 0 ? (tm.concentration / maxConc * 100) : 0;
+        const rc     = rarityClass(mData?.rarity || 'common');
+        return `<div class="mn-res-hotspot-mineral">
+          <span class="mn-res-hs-name mn-res-chip-${rc}">${tm.mineral}</span>
+          <div class="mn-res-bar-wrap mn-res-bar-sm">
+            <div class="mn-res-bar-fill mn-res-bar-${rc}" style="width:${pct.toFixed(1)}%"></div>
+          </div>
+          <span class="mn-res-hs-conc">${(tm.concentration * 100).toFixed(2)}%</span>
+        </div>`;
+      }).join('');
+
+      return `<div class="mn-res-hotspot-card">
+        <div class="mn-res-loc-top">
+          <span class="mn-res-type-icon">${resTypeIcon(h.type)}</span>
+          <div class="mn-res-loc-info">
+            <div class="mn-res-loc-name">${h.location}</div>
+            <div class="mn-res-loc-meta">
+              <span class="mn-res-sys-badge ${resSysClass(h.system)}">${h.system}</span>
+              <span class="mn-res-method-badge">${resMethodIcon(h.method)} ${resMethodLabel(h.method)}</span>
+            </div>
+          </div>
+        </div>
+        <div class="mn-res-hotspot-minerals">${mineralBars}</div>
+      </div>`;
+    }).join('');
+
+    return `
+      <div class="mn-res-hotspot-header">
+        Distribución por localización
+        <span class="mn-res-hs-hint">Selecciona un mineral para ver su distribución completa en todas las zonas.</span>
+      </div>
+      <div class="mn-res-hotspot-grid">${cards}</div>`;
+  }
+
+  // ── Helpers
+  function resTypeIcon(t) {
+    return { belt:'⬡', moon:'🌙', planet:'🪐', cluster:'✦', cave:'⛰', lagrange:'⬦', event:'⚡', special:'⊕' }[t] || '◈';
+  }
+  function resMethodIcon(m) {
+    return { ship:'🚀', ground:'🚗', fps:'🔫', both:'🚀🚗', salvage:'🔧' }[m] || '';
+  }
+  function resMethodLabel(m) {
+    return { ship:'Nave', ground:'ROC', fps:'FPS', both:'Nave+ROC', salvage:'Salvage' }[m] || m;
+  }
+  function resSysClass(s) {
+    return { Stanton:'mn-res-sys-stanton', Pyro:'mn-res-sys-pyro', Nyx:'mn-res-sys-nyx' }[s] || '';
+  }
+
+  // ============================================================
   // UTILITIES
   // ============================================================
   function escHtml(str) {
@@ -601,7 +824,7 @@ const Mining = (() => {
   // ============================================================
   // PUBLIC API
   // ============================================================
-  return { load, setTab, _setLocSystem, _setLocMineral, _setLocMethod, _setLocDiff, _resetLocFilters, _clearMineralSearch, _setScanInput };
+  return { load, setTab, _setLocSystem, _setLocMineral, _setLocMethod, _setLocDiff, _resetLocFilters, _clearMineralSearch, _setScanInput, _setResMineral, _setResSystem, _setResMethod };
 
 })();
 

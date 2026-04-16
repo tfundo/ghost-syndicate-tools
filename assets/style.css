@@ -3016,6 +3016,284 @@ body::after {
 }
 
 /* =====================================================
+   RECURSOS TAB
+   ===================================================== */
+
+/* Nyx system color */
+:root { --nyx: #a855f7; }
+
+.mn-res-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* ── Mineral selector chips panel */
+.mn-res-mineral-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.mn-res-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.mn-res-chip {
+  font-size: 0.67rem;
+  font-family: var(--font-hud);
+  letter-spacing: 0.04em;
+  padding: 0.22em 0.6em;
+  border-radius: 4px;
+  border: 1px solid;
+  background: rgba(0,0,0,0.45);
+  cursor: pointer;
+  transition: all var(--transition);
+  opacity: 0.55;
+  white-space: nowrap;
+}
+.mn-res-chip:hover { opacity: 0.85; transform: translateY(-1px); }
+.mn-res-chip.active { opacity: 1; transform: translateY(-1px); box-shadow: 0 0 7px currentColor; }
+
+.mn-res-chip-legendary { color: #ff6b35; border-color: rgba(255,107,53,0.4); }
+.mn-res-chip-legendary.active { background: rgba(255,107,53,0.12); }
+.mn-res-chip-epic      { color: #9b59b6; border-color: rgba(155,89,182,0.4); }
+.mn-res-chip-epic.active      { background: rgba(155,89,182,0.12); }
+.mn-res-chip-rare      { color: #3498db; border-color: rgba(52,152,219,0.4); }
+.mn-res-chip-rare.active      { background: rgba(52,152,219,0.12); }
+.mn-res-chip-uncommon  { color: #2ecc71; border-color: rgba(46,204,113,0.4); }
+.mn-res-chip-uncommon.active  { background: rgba(46,204,113,0.12); }
+.mn-res-chip-common    { color: var(--text-secondary); border-color: var(--border); }
+.mn-res-chip-common.active    { background: rgba(168,139,74,0.12); }
+
+/* ── Controls row */
+.mn-res-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+
+/* ── Nyx system dot */
+.mn-sys-nyx { background: var(--nyx); box-shadow: 0 0 5px var(--nyx); }
+
+/* ── System badges on cards */
+.mn-res-sys-badge {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.1em 0.4em;
+  border-radius: 2px;
+  border: 1px solid;
+}
+.mn-res-sys-stanton { color: var(--stanton); border-color: rgba(0,212,255,0.35); background: rgba(0,212,255,0.07); }
+.mn-res-sys-pyro    { color: var(--pyro);    border-color: rgba(255,140,66,0.35); background: rgba(255,140,66,0.07); }
+.mn-res-sys-nyx     { color: var(--nyx);     border-color: rgba(168,85,247,0.35); background: rgba(168,85,247,0.07); }
+
+.mn-res-method-badge {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  font-family: var(--font-body);
+}
+
+/* ── Mineral selected header */
+.mn-res-mineral-header {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+  padding: 0.5rem 0 0.7rem;
+  margin-bottom: 0.6rem;
+  border-bottom: 1px solid rgba(245,158,11,0.15);
+}
+.mn-res-mineral-name {
+  font-family: var(--font-hud);
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  letter-spacing: 0.04em;
+  flex: 1;
+}
+.mn-res-loc-count {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-muted);
+}
+
+/* ── Location cards */
+.mn-res-loc-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.mn-res-loc-card {
+  background: var(--bg-glass);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.65rem 0.85rem;
+  transition: border-color var(--transition), background var(--transition);
+}
+.mn-res-loc-card:hover {
+  border-color: rgba(245,158,11,0.28);
+  background: var(--bg-card-hover);
+}
+
+.mn-res-loc-top {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.4rem;
+}
+.mn-res-type-icon {
+  font-size: 1rem;
+  flex-shrink: 0;
+  width: 1.4rem;
+  text-align: center;
+  opacity: 0.8;
+}
+.mn-res-loc-info { flex: 1; min-width: 0; }
+.mn-res-loc-name {
+  font-family: var(--font-hud);
+  font-size: 0.82rem;
+  color: var(--text-primary);
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.mn-res-loc-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 0.18rem;
+  flex-wrap: wrap;
+}
+.mn-res-conc-label {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  flex-shrink: 0;
+  min-width: 4rem;
+  text-align: right;
+}
+
+/* ── Concentration bars */
+.mn-res-bar-wrap {
+  width: 100%;
+  height: 5px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.mn-res-bar-sm { height: 4px; }
+
+.mn-res-bar-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.35s ease;
+}
+.mn-res-bar-legendary { background: linear-gradient(90deg, #ff6b35, #ff9500); }
+.mn-res-bar-epic      { background: linear-gradient(90deg, #9b59b6, #bf5af2); }
+.mn-res-bar-rare      { background: linear-gradient(90deg, #3498db, #00d4ff); }
+.mn-res-bar-uncommon  { background: linear-gradient(90deg, #2ecc71, #30d158); }
+.mn-res-bar-common    { background: linear-gradient(90deg, #b45309, #f59e0b); }
+
+/* ── Hotspots grid */
+.mn-res-hotspot-header {
+  font-family: var(--font-hud);
+  font-size: 0.7rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+}
+.mn-res-hs-hint {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  text-transform: none;
+  letter-spacing: 0;
+  font-family: var(--font-body);
+}
+
+.mn-res-hotspot-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(255px, 1fr));
+  gap: 0.7rem;
+}
+
+.mn-res-hotspot-card {
+  background: var(--bg-glass);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.65rem 0.85rem;
+  transition: border-color var(--transition);
+}
+.mn-res-hotspot-card:hover { border-color: rgba(245,158,11,0.28); }
+
+.mn-res-hotspot-minerals {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-top: 0.45rem;
+}
+.mn-res-hotspot-mineral {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+.mn-res-hs-name {
+  font-family: var(--font-hud);
+  font-size: 0.6rem;
+  letter-spacing: 0.02em;
+  width: 138px;
+  flex-shrink: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  /* inherits text color from mn-res-chip-* without border/bg */
+  border: none !important;
+  background: transparent !important;
+  opacity: 0.85;
+  cursor: default;
+  padding: 0;
+  transform: none !important;
+  box-shadow: none !important;
+}
+.mn-res-hs-conc {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  min-width: 3.2rem;
+  text-align: right;
+}
+
+/* ── Loading state */
+.mn-res-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 3rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+}
+
+@media (max-width: 640px) {
+  .mn-res-hotspot-grid { grid-template-columns: 1fr; }
+  .mn-res-hs-name { width: 100px; }
+  .mn-res-conc-label { min-width: 3rem; }
+}
+
+/* =====================================================
    CONFIGURADOR TAB
    ===================================================== */
 
