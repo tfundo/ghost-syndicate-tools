@@ -653,33 +653,6 @@ const Mining = (() => {
         onclick="Mining._setResMineral(${active ? 'null' : `'${mn.replace(/'/g, "\\'")}'`})">${mn}</button>`;
     }).join('');
 
-    // ── System filter
-    const sysList = [
-      { val: 'all', label: 'Todos' },
-      { val: 'Stanton', label: 'Stanton', dot: 'mn-sys-stanton' },
-      { val: 'Pyro',    label: 'Pyro',    dot: 'mn-sys-pyro' },
-      { val: 'Nyx',     label: 'Nyx',     dot: 'mn-sys-nyx' },
-    ];
-    const sysBtns = sysList.map(s =>
-      `<button class="mn-filter-btn${mState.resSystem === s.val ? ' active' : ''}"
-        onclick="Mining._setResSystem('${s.val}')">
-        ${s.dot ? `<span class="mn-sys-dot ${s.dot}"></span>` : ''}${s.label}
-      </button>`
-    ).join('');
-
-    // ── Method filter
-    const methodList = [
-      { val: 'all',    label: 'Todos' },
-      { val: 'ship',   label: '🚀 Nave' },
-      { val: 'both',   label: '🚀🚗 Nave+ROC' },
-      { val: 'ground', label: '🚗 ROC' },
-      { val: 'fps',    label: '🔫 FPS' },
-    ];
-    const methodBtns = methodList.map(m =>
-      `<button class="mn-filter-btn${mState.resMethod === m.val ? ' active' : ''}"
-        onclick="Mining._setResMethod('${m.val}')">${m.label}</button>`
-    ).join('');
-
     const content = mState.resMineral
       ? renderResLocations()
       : renderResHotspots(hotspots);
@@ -689,16 +662,6 @@ const Mining = (() => {
         <div class="mn-res-mineral-panel">
           <span class="mn-filter-label">Seleccionar mineral</span>
           <div class="mn-res-chips">${chips}</div>
-        </div>
-        <div class="mn-res-controls">
-          <div class="mn-filter-group">
-            <span class="mn-filter-label">Sistema</span>
-            <div class="mn-filter-btns">${sysBtns}</div>
-          </div>
-          <div class="mn-filter-group">
-            <span class="mn-filter-label">Método</span>
-            <div class="mn-filter-btns">${methodBtns}</div>
-          </div>
         </div>
         <div class="mn-res-content">${content}</div>
       </div>`;
