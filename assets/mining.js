@@ -93,10 +93,9 @@ const Mining = (() => {
     const tabsEl = document.getElementById('mnTabs');
     if (!tabsEl) return;
     tabsEl.innerHTML = [
-      { id: 'minerales',      label: 'Minerales' },
-      { id: 'localizaciones', label: 'Localizaciones' },
-      { id: 'escaner',        label: 'Escáner' },
-      { id: 'recursos',       label: 'Recursos' },
+      { id: 'minerales', label: 'Minerales' },
+      { id: 'escaner',   label: 'Escáner' },
+      { id: 'recursos',  label: 'Ubicaciones' },
     ].map(t =>
       `<button class="mn-tab${mState.tab === t.id ? ' active' : ''}" onclick="Mining.setTab('${t.id}')">${t.label}</button>`
     ).join('');
@@ -105,10 +104,9 @@ const Mining = (() => {
   function renderContent() {
     const el = document.getElementById('mnContent');
     if (!el || !mState.db) return;
-    if (mState.tab === 'minerales')           el.innerHTML = renderMinerales();
-    else if (mState.tab === 'localizaciones') el.innerHTML = renderLocalizaciones();
-    else if (mState.tab === 'escaner')        el.innerHTML = renderEscaner();
-    else if (mState.tab === 'recursos')       { renderRecursosAsync(el); return; }
+    if (mState.tab === 'minerales') el.innerHTML = renderMinerales();
+    else if (mState.tab === 'escaner')  el.innerHTML = renderEscaner();
+    else if (mState.tab === 'recursos') { renderRecursosAsync(el); return; }
     wireEvents();
   }
 
