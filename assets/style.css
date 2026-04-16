@@ -195,6 +195,44 @@ body::after {
   text-transform: uppercase;
 }
 
+.nav-social-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex-shrink: 0;
+  border-left: 1px solid var(--border);
+  padding-left: 1rem;
+  margin-right: 0.75rem;
+}
+
+.nav-social-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.65rem;
+  border-radius: 4px;
+  font-family: var(--font-hud);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  border: 1px solid transparent;
+  transition: all var(--transition);
+  text-decoration: none;
+}
+
+.nav-social-btn span { display: inline; }
+
+.nav-social-dc  { color: #7289da; border-color: rgba(114,137,218,0.3); background: rgba(114,137,218,0.08); }
+.nav-social-dc:hover  { background: rgba(114,137,218,0.2); border-color: rgba(114,137,218,0.6); }
+
+.nav-social-yt  { color: #ff4444; border-color: rgba(255,68,68,0.3); background: rgba(255,68,68,0.08); }
+.nav-social-yt:hover  { background: rgba(255,68,68,0.2); border-color: rgba(255,68,68,0.6); }
+
+.nav-social-donate { color: #f59e0b; border-color: rgba(245,158,11,0.3); background: rgba(245,158,11,0.08); }
+.nav-social-donate:hover { background: rgba(245,158,11,0.2); border-color: rgba(245,158,11,0.6); }
+
 .nav-version {
   font-family: var(--font-mono);
   font-size: 0.88rem;
@@ -1623,6 +1661,9 @@ body::after {
   .nav-links.open { display: flex; }
   .nav-hamburger { display: flex; }
   .nav-version { display: none; }
+  .nav-social-bar { border-left: none; padding-left: 0; margin-right: 0; }
+  .nav-social-btn span { display: none; }
+  .nav-social-btn { padding: 0.35rem 0.45rem; }
 
   /* Home stacks vertically on tablet/mobile */
   .home-layout {
