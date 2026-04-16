@@ -2651,6 +2651,184 @@ body::after {
 }
 
 /* =====================================================
+   SCAN VALUE BADGE (Minerales table)
+   ===================================================== */
+.mn-scan-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.2em 0.55em;
+  border-radius: 3px;
+  border: 1px solid currentColor;
+  white-space: nowrap;
+}
+.mn-scan-mult {
+  font-size: 0.6rem;
+  opacity: 0.7;
+  font-weight: 400;
+}
+.mn-scan-na {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+/* Scan badge colours per rarity */
+.mn-scan-legendary { color: #ff9500; background: rgba(255,149,0,0.1);   border-color: rgba(255,149,0,0.4); }
+.mn-scan-epic      { color: #bf5af2; background: rgba(191,90,242,0.1);  border-color: rgba(191,90,242,0.4); }
+.mn-scan-rare      { color: #00d4ff; background: rgba(0,212,255,0.08);  border-color: rgba(0,212,255,0.35); }
+.mn-scan-uncommon  { color: #30d158; background: rgba(48,209,88,0.08);  border-color: rgba(48,209,88,0.35); }
+.mn-scan-common    { color: #8e8e93; background: rgba(142,142,147,0.08);border-color: rgba(142,142,147,0.3); }
+
+/* =====================================================
+   LOCALIZACIONES — FILTERS
+   ===================================================== */
+.mn-loc-controls {
+  margin-bottom: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.mn-filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.mn-filter-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.mn-filter-label {
+  font-size: 0.68rem;
+  font-family: var(--font-hud);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+.mn-filter-btns {
+  display: flex;
+  gap: 0.3rem;
+  flex-wrap: wrap;
+}
+.mn-filter-btn {
+  font-size: 0.72rem;
+  font-family: var(--font-hud);
+  padding: 0.3rem 0.7rem;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  background: var(--bg-glass);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition);
+  white-space: nowrap;
+}
+.mn-filter-btn:hover { border-color: rgba(245,158,11,0.4); color: var(--text-primary); }
+.mn-filter-btn.active {
+  background: rgba(245,158,11,0.1);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* Mineral filter chips */
+.mn-filter-minerals {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.mn-filter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+.mn-filter-chip {
+  font-size: 0.65rem;
+  font-family: var(--font-hud);
+  padding: 0.2em 0.6em;
+  border-radius: 3px;
+  border: 1px solid var(--chip-color, #888);
+  background: rgba(0,0,0,0.3);
+  color: var(--chip-color, #888);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+  transition: all var(--transition);
+  opacity: 0.65;
+}
+.mn-filter-chip:hover { opacity: 1; }
+.mn-filter-chip.active {
+  opacity: 1;
+  background: color-mix(in srgb, var(--chip-color, #888) 18%, transparent);
+  box-shadow: 0 0 6px color-mix(in srgb, var(--chip-color, #888) 40%, transparent);
+}
+.mn-filter-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* Mineral chips inside card — clickable */
+.mn-mineral-chip {
+  cursor: pointer;
+  transition: opacity var(--transition), box-shadow var(--transition);
+}
+.mn-mineral-chip:hover { opacity: 0.85; }
+.mn-mineral-chip.highlighted {
+  box-shadow: 0 0 6px currentColor;
+  opacity: 1;
+}
+
+/* Filter summary bar */
+.mn-filter-summary {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+.mn-filter-reset {
+  font-size: 0.68rem;
+  font-family: var(--font-hud);
+  padding: 0.15em 0.55em;
+  border: 1px solid rgba(239,68,68,0.4);
+  background: rgba(239,68,68,0.07);
+  color: #ef4444;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+.mn-filter-reset:hover { background: rgba(239,68,68,0.15); }
+
+/* Profit badge on location cards */
+.mn-loc-badges {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.3rem;
+  flex-shrink: 0;
+}
+.mn-profit-badge {
+  font-size: 0.75rem;
+  line-height: 1;
+}
+.mn-profit-low { opacity: 0.3; }
+
+/* No results */
+.mn-no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  padding: 2rem;
+}
+
+/* =====================================================
    CONFIGURADOR TAB
    ===================================================== */
 
