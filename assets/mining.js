@@ -46,6 +46,8 @@ const Mining = (() => {
       mState.db = await res.json();
       loaded = true;
       if (loadingEl) loadingEl.classList.add('hidden');
+      if (contentEl) contentEl.classList.remove('hidden');
+      if (tabsEl)    tabsEl.classList.remove('hidden');
       render();
     } catch (e) {
       if (loadingEl) loadingEl.classList.add('hidden');

@@ -34,7 +34,7 @@
       <li><a href="#comparador" class="nav-link" data-section="comparador">Comparador</a></li>
       <li><a href="#wikelodata" class="nav-link" data-section="wikelodata">WikeloData</a></li>
       <li><a href="#hangar" class="nav-link" data-section="hangar">Hangar Ejecutivo</a></li>
-      <li><a href="#locations" class="nav-link nav-coming" data-section="locations">Localizaciones <span class="badge">Próx.</span></a></li>
+      <li><a href="#mining" class="nav-link" data-section="mining">Minería</a></li>
     </ul>
     <div class="nav-social-bar">
       <a class="nav-social-btn nav-social-dc" href="https://discord.com/invite/Ktfnbmj5s7" target="_blank" rel="noopener" title="Discord Ghost Syndicate">
@@ -323,13 +323,16 @@
     </div>
   </section>
 
-  <!-- ===== COMING SOON SECTIONS ===== -->
-  <section class="section" id="locations">
-    <div class="coming-soon-page container">
-      <div class="cs-icon">🗺</div>
-      <h2>Localizaciones</h2>
-      <p>Mapa interactivo y guías de localizaciones en desarrollo.</p>
-      <button class="btn-ghost" onclick="showSection('home')">← Volver al inicio</button>
+  <!-- ===== MINERÍA ===== -->
+  <section class="section" id="mining">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Minería</h2>
+        <p class="section-desc">Minerales, valores del escáner y localizaciones por sistema.</p>
+      </div>
+      <div id="mnLoading" class="mn-loading">Cargando datos de minería...</div>
+      <div id="mnTabs" class="mn-tabs hidden"></div>
+      <div id="mnContent" class="hidden"></div>
     </div>
   </section>
 
@@ -385,9 +388,9 @@
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3L2 12h3v9h6v-5h2v5h6v-9h3L12 3zm0 12.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/><path d="M17 8.5l-5-4.5-5 4.5"/></svg>
       <span>Naves</span>
     </button>
-    <button class="nav-bottom-item" data-section="wikelodata" onclick="showSection('wikelodata')">
-      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 3h18v2H3zm0 4h18v2H3zm0 4h12v2H3zm0 4h12v2H3zm0 4h18v2H3z"/></svg>
-      <span>Wikelo</span>
+    <button class="nav-bottom-item" data-section="mining" onclick="showSection('mining')">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11 21l-4-4 9-9 4 4-9 9zm9.5-14.5L17 10l-3-3 3.5-3.5C16.5 2.5 15 2 13 2c-3.9 0-7 3.1-7 7 0 1.2.3 2.4.9 3.4L2 17l5 5 4.9-4.9c1 .6 2.1.9 3.4.9 3.8 0 7-3.1 7-7 0-2-.5-3.5-1.8-4.5z"/></svg>
+      <span>Minería</span>
     </button>
     <button class="nav-bottom-item" data-section="hangar" onclick="showSection('hangar')">
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21 9l-9-7-9 7v2h2v9h5v-5h4v5h5v-9h2V9zm-9 6.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
@@ -395,6 +398,7 @@
     </button>
   </nav>
 
+  <script src="assets/mining.js"></script>
   <script src="assets/comparador.js"></script>
   <script src="assets/app.js"></script>
   <script>

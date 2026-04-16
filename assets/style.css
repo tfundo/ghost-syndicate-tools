@@ -1729,24 +1729,19 @@ body::after {
   .feature-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
-/* Intermediate breakpoint: shrink nav before mobile kicks in */
-@media (max-width: 1150px) {
+/* Intermediate breakpoint: shrink nav before switching to mobile */
+@media (max-width: 1250px) {
   .nav-social-btn span { display: none; }
   .nav-social-btn { padding: 0.3rem 0.4rem; }
-  .nav-version { font-size: 0.75rem; padding-left: 0.5rem; }
-  .nav-link { padding: 0.65rem 0.7rem; font-size: 0.8rem; }
+  .nav-version { font-size: 0.75rem; }
   .logo-sub { display: none; }
 }
 
-@media (max-width: 1000px) {
-  .nav-version { display: none; }
-  .nav-link { padding: 0.65rem 0.5rem; font-size: 0.75rem; letter-spacing: 0.06em; }
-}
-
-@media (max-width: 900px) {
-  /* Hide top nav links and hamburger — replaced by bottom nav */
+@media (max-width: 1100px) {
+  /* Hide top nav links — bottom nav takes over */
   .nav-links { display: none !important; }
   .nav-hamburger { display: none !important; }
+  .nav-version { display: none; }
   .nav-social-bar { border-left: none; padding-left: 0; margin-right: 0; }
 
   /* Show bottom nav */
@@ -1754,7 +1749,9 @@ body::after {
 
   /* Sections need bottom padding so content isn't hidden behind bottom nav */
   .section { padding-bottom: calc(var(--nav-bottom-h) + 0.5rem); }
+}
 
+@media (max-width: 900px) {
   /* Home stacks vertically on tablet/mobile */
   .home-layout {
     grid-template-columns: 1fr;
