@@ -471,12 +471,12 @@ function renderBlueprintCard(bp, idx) {
         const label = (m.missionTitles && m.missionTitles.length > 0)
           ? m.missionTitles[0]
           : m.missionName;
-        const display = label.length > 36 ? label.substring(0, 36) + '…' : label;
-        const contractor = m.contractor ? `${m.contractor}: ` : '';
+        const display = label.length > 40 ? label.substring(0, 40) + '…' : label;
+        const tooltip = (m.contractor ? m.contractor + ': ' : '') + m.missionName;
         const sysBadges = (m.systems && m.systems.length > 0)
           ? m.systems.map(s => `<span class="card-system-badge card-system-${s.toLowerCase()}">${s}</span>`).join('')
           : '';
-        return `<span class="mission-tag" title="${escHtml(m.missionName)}"><span class="mission-tag-text">${escHtml(contractor)}${escHtml(display)}</span>${sysBadges}</span>`;
+        return `<span class="mission-tag" title="${escHtml(tooltip)}"><span class="mission-tag-text">${escHtml(display)}</span>${sysBadges}</span>`;
       }).join('')
     : `<span style="color:var(--text-muted);font-size:0.7rem">Sin misión asignada</span>`;
 
