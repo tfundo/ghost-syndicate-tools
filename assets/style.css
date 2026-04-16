@@ -101,8 +101,8 @@ body::after {
   border-bottom: 1px solid rgba(180, 83, 9, 0.3);
   display: flex;
   align-items: center;
-  padding: 0 1.5rem;
-  gap: 2rem;
+  padding: 0 1rem;
+  gap: 1rem;
   z-index: 1000;
   transition: box-shadow var(--transition);
 }
@@ -198,23 +198,23 @@ body::after {
 .nav-social-bar {
   display: flex;
   align-items: center;
-  gap: 0.35rem;
+  gap: 0.25rem;
   flex-shrink: 0;
   border-left: 1px solid var(--border);
-  padding-left: 1rem;
-  margin-right: 0.75rem;
+  padding-left: 0.75rem;
+  margin-right: 0.5rem;
 }
 
 .nav-social-btn {
   display: flex;
   align-items: center;
-  gap: 0.35rem;
-  padding: 0.35rem 0.65rem;
-  border-radius: 4px;
+  gap: 0.25rem;
+  padding: 0.25rem 0.45rem;
+  border-radius: 3px;
   font-family: var(--font-hud);
-  font-size: 0.75rem;
+  font-size: 0.65rem;
   font-weight: 600;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   white-space: nowrap;
   border: 1px solid transparent;
@@ -222,6 +222,7 @@ body::after {
   text-decoration: none;
 }
 
+.nav-social-btn svg { width: 13px; height: 13px; }
 .nav-social-btn span { display: inline; }
 
 .nav-social-dc  { color: #7289da; border-color: rgba(114,137,218,0.3); background: rgba(114,137,218,0.08); }
