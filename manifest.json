@@ -1,0 +1,24 @@
+{
+  "name": "Ghost Syndicate Tools",
+  "short_name": "GS Tools",
+  "description": "Companion app para Star Citizen — Fabricación, comparador de naves, Hangar Ejecutivo y más.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0c0a09",
+  "theme_color": "#b45309",
+  "lang": "es",
+  "icons": [
+    {
+      "src": "/assets/ghostlogo.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [],
+  "categories": ["games", "utilities"],
+  "related_applications": [],
+  "prefer_related_applications": false
+}
