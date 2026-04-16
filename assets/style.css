@@ -95,7 +95,7 @@ body::after {
 .navbar {
   position: fixed;
   top: 0; left: 0; right: 0;
-  height: var(--nav-h);
+  min-height: var(--nav-h);
   background: rgba(12, 10, 9, 0.96);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(180, 83, 9, 0.3);
@@ -1729,14 +1729,25 @@ body::after {
   .feature-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
+/* Intermediate breakpoint: shrink nav before mobile kicks in */
+@media (max-width: 1150px) {
+  .nav-social-btn span { display: none; }
+  .nav-social-btn { padding: 0.3rem 0.4rem; }
+  .nav-version { font-size: 0.75rem; padding-left: 0.5rem; }
+  .nav-link { padding: 0.65rem 0.7rem; font-size: 0.8rem; }
+  .logo-sub { display: none; }
+}
+
+@media (max-width: 1000px) {
+  .nav-version { display: none; }
+  .nav-link { padding: 0.65rem 0.5rem; font-size: 0.75rem; letter-spacing: 0.06em; }
+}
+
 @media (max-width: 900px) {
   /* Hide top nav links and hamburger — replaced by bottom nav */
   .nav-links { display: none !important; }
   .nav-hamburger { display: none !important; }
-  .nav-version { display: none; }
   .nav-social-bar { border-left: none; padding-left: 0; margin-right: 0; }
-  .nav-social-btn span { display: none; }
-  .nav-social-btn { padding: 0.3rem 0.4rem; }
 
   /* Show bottom nav */
   .nav-bottom { display: flex; }
