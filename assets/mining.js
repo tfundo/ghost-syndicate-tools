@@ -23,6 +23,8 @@ const Mining = (() => {
     locFilterMineral: null,   // mineral name or null = todos
     locFilterMethod: 'all',   // 'all' | 'ship' | 'ground' | 'both'
     locFilterDiff: 'all',     // 'all' | 'easy' | 'medium' | 'hard'
+    // Escáner tab
+    scanInput: '',
   };
 
   let loaded = false;
@@ -69,6 +71,7 @@ const Mining = (() => {
     tabsEl.innerHTML = [
       { id: 'minerales',      label: 'Minerales' },
       { id: 'localizaciones', label: 'Localizaciones' },
+      { id: 'escaner',        label: 'Escáner' },
     ].map(t =>
       `<button class="mn-tab${mState.tab === t.id ? ' active' : ''}" onclick="Mining.setTab('${t.id}')">${t.label}</button>`
     ).join('');
@@ -77,8 +80,9 @@ const Mining = (() => {
   function renderContent() {
     const el = document.getElementById('mnContent');
     if (!el || !mState.db) return;
-    if (mState.tab === 'minerales')      el.innerHTML = renderMinerales();
+    if (mState.tab === 'minerales')           el.innerHTML = renderMinerales();
     else if (mState.tab === 'localizaciones') el.innerHTML = renderLocalizaciones();
+    else if (mState.tab === 'escaner')        el.innerHTML = renderEscaner();
     wireEvents();
   }
 
@@ -153,6 +157,169 @@ const Mining = (() => {
       <p class="mn-table-note">
         Haz clic en los encabezados para ordenar. Los precios son aproximados en SC 4.7.0.<br>
         <strong>Escáner:</strong> valor base (×1) del ping. El número sube con la concentración del mineral en la roca (×2–6 según rareza).
+      </p>
+    `;
+  }
+
+  // ============================================================
+  // TAB: ESCÁNER
+  // ============================================================
+  function renderEscaner() {
+    const { scanData } = mState.db;
+    if (!scanData) return '<div class="mn-error">Sin datos de escáner en la base de datos.</div>';
+
+    // ── Build lookup map: value → [{name, mult, catId, catRarity, catName}]
+    const lookup = {};
+    for (const cat of scanData.categories) {
+      for (const min of cat.minerals) {
+        for (let i = 1; i <= cat.maxMult; i++) {
+          const val = min.scanBase * i;
+          if (!lookup[val]) lookup[val] = [];
+          lookup[val].push({ name: min.name, mult: i, catId: cat.id, catRarity: cat.rarity, catName: cat.name });
+        }
+      }
+    }
+    for (const sp of scanData.special) {
+      sp.values.forEach((v, i) => {
+        if (!lookup[v]) lookup[v] = [];
+        lookup[v].push({ name: sp.name, mult: i + 1, catId: 'special', catRarity: null, catName: 'Especial' });
+      });
+    }
+
+    // ── Lookup result
+    let lookupResult = '';
+    const raw = mState.scanInput.trim();
+    if (raw) {
+      const inputVal = parseInt(raw, 10);
+      if (isNaN(inputVal)) {
+        lookupResult = `<div class="mn-scan-result"><span class="mn-scan-result-none">Introduce un número válido.</span></div>`;
+      } else {
+        const exact = lookup[inputVal];
+        if (exact && exact.length) {
+          const cards = exact.map(m => {
+            const rc = m.catId === 'special' ? 'special' : rarityClass(m.catRarity);
+            return `<div class="mn-scan-match-big mn-scan-result-${rc}">
+              <span class="mn-scan-match-name">${m.name}</span>
+              <span class="mn-scan-match-mult">×${m.mult}</span>
+              <span class="mn-scan-match-rarity">${m.catName}</span>
+            </div>`;
+          }).join('');
+          lookupResult = `<div class="mn-scan-result mn-scan-result-found">${cards}</div>`;
+        } else {
+          // Closest ±200
+          const close = Object.keys(lookup)
+            .map(k => ({ k: +k, diff: Math.abs(+k - inputVal) }))
+            .filter(x => x.diff > 0 && x.diff <= 200)
+            .sort((a, b) => a.diff - b.diff)
+            .slice(0, 5);
+          if (close.length) {
+            const items = close.map(c => {
+              const ms = lookup[c.k];
+              const badges = ms.map(m => {
+                const rc = m.catId === 'special' ? 'special' : rarityClass(m.catRarity);
+                return `<span class="mn-scan-badge mn-scan-${rc}">${m.name} ×${m.mult}</span>`;
+              }).join(' ');
+              return `<div class="mn-scan-close-item">
+                <span class="mn-scan-close-val">${c.k.toLocaleString('es-ES')}</span>
+                <span class="mn-scan-close-diff">(${c.diff > 0 ? '+' : ''}${+k - inputVal > 0 ? '+' : ''}${c.k - inputVal})</span>
+                ${badges}
+              </div>`;
+            }).join('');
+            lookupResult = `<div class="mn-scan-result mn-scan-result-close">
+              <span class="mn-scan-result-none">Valor exacto ${inputVal.toLocaleString('es-ES')} no encontrado.</span>
+              <span class="mn-scan-close-hint">Valores más cercanos:</span>
+              ${items}
+            </div>`;
+          } else {
+            lookupResult = `<div class="mn-scan-result">
+              <span class="mn-scan-result-none">Sin coincidencias para ${inputVal.toLocaleString('es-ES')}.</span>
+            </div>`;
+          }
+        }
+      }
+    }
+
+    // ── Reference table (categories)
+    const maxLvl = Math.max(...scanData.categories.map(c => c.maxMult));
+    const lvlHeaders = Array.from({ length: maxLvl }, (_, i) =>
+      `<th class="mn-scan-th mn-scan-th-lvl">×${i + 1}</th>`
+    ).join('');
+
+    const catRows = scanData.categories.map(cat => {
+      const rc = rarityClass(cat.rarity);
+      const header = `<tr class="mn-scan-cat-header">
+        <td colspan="${maxLvl + 1}" class="mn-scan-cat-title">
+          <span class="mn-rarity mn-rarity-${rc}">${cat.name}</span>
+          <span class="mn-scan-cat-maxmult">máx ×${cat.maxMult}</span>
+        </td>
+      </tr>`;
+      const rows = cat.minerals.map(min => {
+        const cells = Array.from({ length: maxLvl }, (_, i) => {
+          const lvl = i + 1;
+          if (lvl > cat.maxMult) return `<td class="mn-scan-cell mn-scan-cell-empty"></td>`;
+          return `<td class="mn-scan-cell mn-scan-cell-${rc}">${(min.scanBase * lvl).toLocaleString('es-ES')}</td>`;
+        }).join('');
+        return `<tr class="mn-scan-mineral-row"><td class="mn-scan-mineral-name">${min.name}</td>${cells}</tr>`;
+      }).join('');
+      return header + rows;
+    }).join('');
+
+    // ── Special table
+    const maxSp = Math.max(...scanData.special.map(s => s.values.length));
+    const spHeaders = Array.from({ length: maxSp }, (_, i) =>
+      `<th class="mn-scan-th mn-scan-th-lvl">×${i + 1}</th>`
+    ).join('');
+    const spRows = scanData.special.map(sp => {
+      const cells = Array.from({ length: maxSp }, (_, i) => {
+        const v = sp.values[i];
+        return v !== undefined
+          ? `<td class="mn-scan-cell mn-scan-cell-special">${v.toLocaleString('es-ES')}</td>`
+          : `<td class="mn-scan-cell mn-scan-cell-empty"></td>`;
+      }).join('');
+      return `<tr class="mn-scan-mineral-row"><td class="mn-scan-mineral-name">${sp.name}</td>${cells}</tr>`;
+    }).join('');
+
+    return `
+      <div class="mn-scan-lookup">
+        <div class="mn-scan-lookup-label">Identificar valor de escáner</div>
+        <div class="mn-scan-lookup-row">
+          <input type="number" id="mnScanInput" class="mn-scan-input"
+            placeholder="p.ej. 7110" value="${escHtml(raw)}"
+            oninput="Mining._setScanInput(this.value)" />
+          ${raw ? `<button class="mn-scan-input-clear" onclick="Mining._setScanInput('')">✕</button>` : ''}
+        </div>
+        ${lookupResult}
+      </div>
+
+      <div class="mn-scan-section">
+        <div class="mn-scan-section-title">Tabla de emisiones — minerales nave</div>
+        <div class="mn-table-wrap">
+          <table class="mn-table mn-scan-table">
+            <thead><tr>
+              <th class="mn-scan-th mn-scan-th-name">Mineral</th>
+              ${lvlHeaders}
+            </tr></thead>
+            <tbody>${catRows}</tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="mn-scan-section">
+        <div class="mn-scan-section-title">Categorías especiales</div>
+        <p class="mn-table-note" style="margin-bottom:0.6rem">ROC, FPS y Salvage tienen rangos propios. El valor sube con el nivel de concentración de la roca.</p>
+        <div class="mn-table-wrap">
+          <table class="mn-table mn-scan-table">
+            <thead><tr>
+              <th class="mn-scan-th mn-scan-th-name">Tipo</th>
+              ${spHeaders}
+            </tr></thead>
+            <tbody>${spRows}</tbody>
+          </table>
+        </div>
+      </div>
+
+      <p class="mn-table-note" style="margin-top:1rem">
+        Valores de emisión del escáner según concentración (×1 mínimo → ×N máximo para esa rareza). Datos: Data.p4k SC 4.7.0.
       </p>
     `;
   }
@@ -422,6 +589,7 @@ const Mining = (() => {
     renderContent();
   }
   function _clearMineralSearch() { mState.mineralSearch = ''; renderContent(); }
+  function _setScanInput(v) { mState.scanInput = v; renderContent(); }
 
   // ============================================================
   // UTILITIES
@@ -433,7 +601,7 @@ const Mining = (() => {
   // ============================================================
   // PUBLIC API
   // ============================================================
-  return { load, setTab, _setLocSystem, _setLocMineral, _setLocMethod, _setLocDiff, _resetLocFilters, _clearMineralSearch };
+  return { load, setTab, _setLocSystem, _setLocMineral, _setLocMethod, _setLocDiff, _resetLocFilters, _clearMineralSearch, _setScanInput };
 
 })();
 

@@ -2703,6 +2703,172 @@ body::after {
 .mn-scan-common    { color: #8e8e93; background: rgba(142,142,147,0.08);border-color: rgba(142,142,147,0.3); }
 
 /* =====================================================
+   ESCÁNER TAB
+   ===================================================== */
+
+/* Lookup box */
+.mn-scan-lookup {
+  background: var(--bg-glass);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.1rem 1.3rem;
+  margin-bottom: 1.6rem;
+}
+.mn-scan-lookup-label {
+  font-family: var(--font-hud);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.6rem;
+}
+.mn-scan-lookup-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.8rem;
+}
+.mn-scan-input {
+  font-family: var(--font-mono);
+  font-size: 1.05rem;
+  background: var(--bg-dark);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text-primary);
+  padding: 0.45rem 0.85rem;
+  width: 180px;
+  outline: none;
+  transition: border-color var(--transition);
+}
+.mn-scan-input:focus { border-color: rgba(245,158,11,0.6); }
+.mn-scan-input-clear {
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 0.75rem;
+  padding: 0.35rem 0.6rem;
+  transition: all var(--transition);
+}
+.mn-scan-input-clear:hover { border-color: var(--accent); color: var(--accent); }
+
+/* Result area */
+.mn-scan-result {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.mn-scan-result-none {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+.mn-scan-result-found {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.mn-scan-match-big {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.45rem 0.9rem;
+  border-radius: 7px;
+  border: 1px solid currentColor;
+}
+.mn-scan-match-name   { font-weight: 700; font-size: 0.95rem; }
+.mn-scan-match-mult   { font-family: var(--font-mono); font-size: 0.8rem; opacity: 0.8; }
+.mn-scan-match-rarity { font-size: 0.7rem; opacity: 0.65; }
+
+/* Coloured match cards — reuse scan badge palette */
+.mn-scan-result-legendary { color: #ff9500; background: rgba(255,149,0,0.1);   border-color: rgba(255,149,0,0.4); }
+.mn-scan-result-epic      { color: #bf5af2; background: rgba(191,90,242,0.1);  border-color: rgba(191,90,242,0.4); }
+.mn-scan-result-rare      { color: #00d4ff; background: rgba(0,212,255,0.08);  border-color: rgba(0,212,255,0.35); }
+.mn-scan-result-uncommon  { color: #30d158; background: rgba(48,209,88,0.08);  border-color: rgba(48,209,88,0.35); }
+.mn-scan-result-common    { color: #8e8e93; background: rgba(142,142,147,0.08);border-color: rgba(142,142,147,0.3); }
+.mn-scan-result-special   { color: #f0b030; background: rgba(240,176,48,0.08); border-color: rgba(240,176,48,0.3); }
+
+/* Close matches */
+.mn-scan-result-close { gap: 0.3rem; }
+.mn-scan-close-hint   { font-size: 0.75rem; color: var(--text-secondary); margin-top: 0.2rem; }
+.mn-scan-close-item   { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+.mn-scan-close-val    { font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-primary); min-width: 55px; }
+.mn-scan-close-diff   { font-size: 0.7rem; color: var(--text-muted); min-width: 38px; }
+
+/* Section title */
+.mn-scan-section { margin-bottom: 1.6rem; }
+.mn-scan-section-title {
+  font-family: var(--font-hud);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.6rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--border);
+}
+
+/* Scanner table */
+.mn-scan-table { width: 100%; }
+.mn-scan-th {
+  background: var(--bg-panel);
+  color: var(--text-muted);
+  font-family: var(--font-hud);
+  font-size: 0.68rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding: 0.45rem 0.7rem;
+  text-align: center;
+  white-space: nowrap;
+}
+.mn-scan-th-name { text-align: left; min-width: 130px; }
+.mn-scan-th-lvl  { min-width: 72px; }
+
+/* Category header row */
+.mn-scan-cat-header td { padding: 0; }
+.mn-scan-cat-title {
+  padding: 0.4rem 0.7rem 0.3rem;
+  background: rgba(255,255,255,0.03);
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.mn-scan-cat-maxmult {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+
+/* Mineral rows */
+.mn-scan-mineral-row:hover { background: rgba(255,255,255,0.03); }
+.mn-scan-mineral-name {
+  padding: 0.38rem 0.7rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+/* Value cells */
+.mn-scan-cell {
+  padding: 0.38rem 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  text-align: center;
+  white-space: nowrap;
+  border-left: 1px solid rgba(255,255,255,0.04);
+}
+.mn-scan-cell-empty    { background: transparent; }
+.mn-scan-cell-legendary{ color: #ff9500; background: rgba(255,149,0,0.06); }
+.mn-scan-cell-epic     { color: #bf5af2; background: rgba(191,90,242,0.06); }
+.mn-scan-cell-rare     { color: #00d4ff; background: rgba(0,212,255,0.05); }
+.mn-scan-cell-uncommon { color: #30d158; background: rgba(48,209,88,0.05); }
+.mn-scan-cell-common   { color: #8e8e93; }
+.mn-scan-cell-special  { color: #f0b030; background: rgba(240,176,48,0.05); }
+.mn-scan-special       { color: #f0b030; background: rgba(240,176,48,0.1); border-color: rgba(240,176,48,0.35); }
+
+/* =====================================================
    LOCALIZACIONES — FILTERS
    ===================================================== */
 .mn-loc-controls {
