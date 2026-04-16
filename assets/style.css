@@ -263,6 +263,73 @@ body::after {
 .nav-hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
 /* ========================================
+   BOTTOM NAV (mobile only)
+   ======================================== */
+:root { --nav-bottom-h: 58px; }
+
+.nav-bottom {
+  display: none;
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  height: var(--nav-bottom-h);
+  background: rgba(10, 8, 7, 0.98);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(180, 83, 9, 0.35);
+  z-index: 1001;
+  justify-content: space-around;
+  align-items: stretch;
+  /* Force GPU layer — fixes iOS Safari fixed positioning flicker */
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  /* Safe area for notched iPhones */
+  padding-bottom: env(safe-area-inset-bottom, 0);
+}
+
+.nav-bottom-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  flex: 1;
+  padding: 0.4rem 0.2rem;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-family: var(--font-hud);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color 0.15s ease;
+  position: relative;
+}
+
+.nav-bottom-item svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  transition: transform 0.15s ease;
+}
+
+.nav-bottom-item:hover { color: var(--text-secondary); }
+
+.nav-bottom-item.active {
+  color: var(--accent);
+}
+
+.nav-bottom-item.active::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 20%; right: 20%;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 0 0 2px 2px;
+}
+
+/* ========================================
    SECTIONS
    ======================================== */
 .section {
@@ -1663,25 +1730,19 @@ body::after {
 }
 
 @media (max-width: 900px) {
-  /* Nav mobile */
-  .nav-links {
-    display: none;
-    position: fixed;
-    top: var(--nav-h);
-    left: 0; right: 0;
-    background: rgba(12,10,9,0.98);
-    backdrop-filter: blur(12px);
-    flex-direction: column;
-    padding: 1rem;
-    border-bottom: 1px solid var(--border);
-    gap: 0.15rem;
-  }
-  .nav-links.open { display: flex; }
-  .nav-hamburger { display: flex; }
+  /* Hide top nav links and hamburger — replaced by bottom nav */
+  .nav-links { display: none !important; }
+  .nav-hamburger { display: none !important; }
   .nav-version { display: none; }
   .nav-social-bar { border-left: none; padding-left: 0; margin-right: 0; }
   .nav-social-btn span { display: none; }
-  .nav-social-btn { padding: 0.35rem 0.45rem; }
+  .nav-social-btn { padding: 0.3rem 0.4rem; }
+
+  /* Show bottom nav */
+  .nav-bottom { display: flex; }
+
+  /* Sections need bottom padding so content isn't hidden behind bottom nav */
+  .section { padding-bottom: calc(var(--nav-bottom-h) + 0.5rem); }
 
   /* Home stacks vertically on tablet/mobile */
   .home-layout {

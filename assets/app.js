@@ -169,9 +169,12 @@ window.showSection = function(sectionId) {
   const target = document.getElementById(sectionId);
   if (target) target.classList.add('active');
 
-  // Update nav active state
+  // Update nav active state (top nav + bottom nav)
   document.querySelectorAll('.nav-link').forEach(l => {
     l.classList.toggle('active', l.dataset.section === sectionId);
+  });
+  document.querySelectorAll('.nav-bottom-item').forEach(b => {
+    b.classList.toggle('active', b.dataset.section === sectionId);
   });
 
   // Update URL

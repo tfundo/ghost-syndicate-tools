@@ -357,6 +357,30 @@
     <div class="legal-body" id="legalBody"></div>
   </div>
 
+  <!-- ===== BOTTOM NAV (mobile only) ===== -->
+  <nav class="nav-bottom" id="navBottom">
+    <button class="nav-bottom-item active" data-section="home" onclick="showSection('home')">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+      <span>Inicio</span>
+    </button>
+    <button class="nav-bottom-item" data-section="crafting" onclick="showSection('crafting')">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 15.5A3.5 3.5 0 018.5 12 3.5 3.5 0 0112 8.5a3.5 3.5 0 013.5 3.5 3.5 3.5 0 01-3.5 3.5m7.43-2.92c.04-.3.07-.62.07-.93 0-.31-.03-.62-.07-.93l2.03-1.58a.49.49 0 00.12-.61l-1.92-3.32a.488.488 0 00-.59-.22l-2.39.96a6.86 6.86 0 00-1.62-.95l-.36-2.54a.484.484 0 00-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.58.24-1.13.56-1.62.95l-2.39-.96a.47.47 0 00-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.04.31-.07.63-.07.94s.03.63.07.94l-2.03 1.58a.49.49 0 00-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.37 1.04.69 1.62.95l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.58-.26 1.12-.58 1.62-.95l2.39.96c.22.07.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58z"/></svg>
+      <span>Fabricar</span>
+    </button>
+    <button class="nav-bottom-item" data-section="comparador" onclick="showSection('comparador')">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3L2 12h3v9h6v-5h2v5h6v-9h3L12 3zm0 12.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/><path d="M17 8.5l-5-4.5-5 4.5"/></svg>
+      <span>Naves</span>
+    </button>
+    <button class="nav-bottom-item" data-section="wikelodata" onclick="showSection('wikelodata')">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 3h18v2H3zm0 4h18v2H3zm0 4h12v2H3zm0 4h12v2H3zm0 4h18v2H3z"/></svg>
+      <span>Wikelo</span>
+    </button>
+    <button class="nav-bottom-item" data-section="hangar" onclick="showSection('hangar')">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21 9l-9-7-9 7v2h2v9h5v-5h4v5h5v-9h2V9zm-9 6.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+      <span>Hangar</span>
+    </button>
+  </nav>
+
   <script src="assets/comparador.js"></script>
   <script src="assets/app.js"></script>
 </body>
