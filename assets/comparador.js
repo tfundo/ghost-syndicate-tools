@@ -16,22 +16,9 @@
   // Updated each patch by running: python extract_ship_data.py
   let SHIPS = [];
 
-
-  function buildWeapons() {
-    const w = [];
-    const cfNames = ["Bulldog","Badger","Panther","Rhino","Galdereen"];
-    cfNames.forEach((n,i) => w.push({name:`CF-${117+(i*110)} ${n}`,type:"Laser Repeater",size:i+1,dps:200*(i+1),alpha:40*(i+1),range:1200+(i*400),armorPen:2}));
-    [1,2,3,4,5,6].forEach(s => w.push({name:`Attrition-${s}`,type:"Laser Repeater",size:s,dps:220*s,alpha:35*s,range:600+(s*300),armorPen:3}));
-    ["M3A","M4A","M5A","M6A","M7A"].forEach((n,i) => w.push({name:n,type:"Laser Cannon",size:i+1,dps:180*(i+1),alpha:90*(i+1),range:1800+(i*600),armorPen:5}));
-    ["III","VI","IX","XII","XV"].forEach((n,i) => w.push({name:`Omnisky ${n}`,type:"Laser Cannon",size:i+1,dps:190*(i+1),alpha:100*(i+1),range:1900+(i*500),armorPen:5}));
-    ["GT-215 Scorpion","GT-220 Mantis","AD4B","AD5B"].forEach((n,i) => {const sz=i+2; w.push({name:n,type:"Ballistic Gatling",size:sz,dps:350*sz,alpha:25*sz,range:1500+(sz*200),armorPen:50});});
-    w.push({name:"C-788 Combine",type:"Ballistic Cannon",size:4,dps:450,alpha:280,range:2500,armorPen:55});
-    [1,2,3].forEach(s => w.push({name:`Sledge ${s} Mass Driver`,type:"Mass Driver",size:s,dps:150*s,alpha:180*s,range:2200,armorPen:60}));
-    ["Suckerpunch","Suckerpunch-XL"].forEach((n,i) => w.push({name:n,type:"Distortion Cannon",size:i+1,dps:0,alpha:0,range:1000+(i*500),armorPen:0,note:"Subsistemas"}));
-    return w;
-  }
-
-  const WEAPONS = buildWeapons();
+  // Weapons loaded dynamically from data/weapons.json
+  // Updated each patch by running: python extract_weapon_data.py
+  let WEAPONS = [];
 
   // ============================================================
   // STATE
@@ -47,7 +34,8 @@
     selected: [],  // [{type:'ship'|'weapon', name:string}]
     shipImages: {},
     _imagesLoaded: false,
-    _shipsLoaded: false
+    _shipsLoaded: false,
+    _weaponsLoaded: false
   };
 
   // ============================================================
@@ -69,7 +57,7 @@
 
   function getShip(name) { return SHIPS.find(s => s.name === name); }
 
-  function getWeapon(name) { return WEAPONS.find(w => w.name === name); }
+  function getWeapon(name) { return WEAPONS.find(w => w.name === name || w.entity === name); }
 
   function fmtNum(n) {
     if (n === 0) return '—';
@@ -397,6 +385,14 @@
             <span class="comp-stat-label">Cargo</span>
             <span class="comp-stat-val">${ship.cargo > 0 ? ship.cargo + ' <span class="comp-stat-unit">SCU</span>' : '—'}</span>
           </div>
+          <div class="comp-stat">
+            <span class="comp-stat-label">Trip.</span>
+            <span class="comp-stat-val">${ship.minCrew > 0 && ship.minCrew < ship.crew ? ship.minCrew + '-' + ship.crew : ship.crew}</span>
+          </div>
+          <div class="comp-stat">
+            <span class="comp-stat-label">Long.</span>
+            <span class="comp-stat-val">${ship.length > 0 ? ship.length + ' <span class="comp-stat-unit">m</span>' : '—'}</span>
+          </div>
         </div>
       </div>
     `;
@@ -473,23 +469,22 @@
           <span class="comp-badge" style="background:${typeColor}18;border-color:${typeColor};color:${typeColor}">${escComp(weapon.type)}</span>
           <span class="comp-badge comp-badge-size" style="color:var(--text-dim);border-color:var(--border)">S${weapon.size}</span>
         </div>
-        ${weapon.note ? `<div class="comp-weapon-note">${escComp(weapon.note)}</div>` : ''}
         <div class="comp-stats-row">
           <div class="comp-stat">
             <span class="comp-stat-label">DPS</span>
-            <span class="comp-stat-val">${fmtNum(weapon.dps)}</span>
+            <span class="comp-stat-val">${fmtNum(Math.round(weapon.dps))}</span>
           </div>
           <div class="comp-stat">
             <span class="comp-stat-label">Alpha</span>
-            <span class="comp-stat-val">${fmtNum(weapon.alpha)}</span>
+            <span class="comp-stat-val">${fmtNum(Math.round(weapon.alpha))}</span>
           </div>
           <div class="comp-stat">
             <span class="comp-stat-label">Alcance</span>
             <span class="comp-stat-val">${fmtNum(weapon.range)} <span class="comp-stat-unit">m</span></span>
           </div>
           <div class="comp-stat">
-            <span class="comp-stat-label">Pen. Arm.</span>
-            <span class="comp-stat-val">${weapon.armorPen}%</span>
+            <span class="comp-stat-label">Cad.</span>
+            <span class="comp-stat-val">${fmtNum(weapon.fireRate)} <span class="comp-stat-unit">rpm</span></span>
           </div>
         </div>
       </div>
@@ -545,8 +540,8 @@
     `;
   }
 
-  const SHIP_STAT_KEYS   = ['scm','nav','pitch','yaw','roll','hp','crew','cargo'];
-  const WEAPON_STAT_KEYS = ['dps','alpha','range','armorPen'];
+  const SHIP_STAT_KEYS   = ['scm','nav','pitch','yaw','roll','hp','shields','crew','minCrew','cargo','mass','length','beam','height','weapons','missiles'];
+  const WEAPON_STAT_KEYS = ['dps','alpha','fireRate','range','speed','physical','energy','distortion','heatPerShot'];
 
   function computeMaxima(items, keys) {
     const maxima = {};
@@ -581,14 +576,22 @@
         </div>`;
 
     const stats = [
-      { label: 'SCM Speed',   key: 'scm',   unit: 'm/s', higher: true },
-      { label: 'NAV Speed',   key: 'nav',   unit: 'm/s', higher: true },
-      { label: 'Pitch (°/s)', key: 'pitch', unit: '°/s', higher: true },
-      { label: 'Yaw (°/s)',   key: 'yaw',   unit: '°/s', higher: true },
-      { label: 'Roll (°/s)',  key: 'roll',  unit: '°/s', higher: true },
-      { label: 'Blindaje HP', key: 'hp',    unit: '',    higher: true },
-      { label: 'Tripulación', key: 'crew',  unit: '',    higher: true },
-      { label: 'Cargo',       key: 'cargo', unit: 'SCU', higher: true }
+      { label: 'SCM Speed',    key: 'scm',     unit: 'm/s', higher: true },
+      { label: 'NAV Speed',    key: 'nav',     unit: 'm/s', higher: true },
+      { label: 'Pitch (°/s)', key: 'pitch',   unit: '°/s', higher: true },
+      { label: 'Yaw (°/s)',   key: 'yaw',     unit: '°/s', higher: true },
+      { label: 'Roll (°/s)',  key: 'roll',    unit: '°/s', higher: true },
+      { label: 'Blindaje HP',  key: 'hp',      unit: '',    higher: true },
+      { label: 'Escudos',      key: 'shields', unit: '',    higher: true },
+      { label: 'Trip. máx.',   key: 'crew',    unit: '',    higher: true },
+      { label: 'Trip. mín.',   key: 'minCrew', unit: '',    higher: false },
+      { label: 'Cargo',        key: 'cargo',   unit: 'SCU', higher: true },
+      { label: 'Armas slots',  key: 'weapons', unit: '',    higher: true },
+      { label: 'Misiles slots',key: 'missiles',unit: '',    higher: true },
+      { label: 'Masa',         key: 'mass',    unit: 'kg',  higher: false },
+      { label: 'Longitud',     key: 'length',  unit: 'm',   higher: false },
+      { label: 'Anchura',      key: 'beam',    unit: 'm',   higher: false },
+      { label: 'Altura',       key: 'height',  unit: 'm',   higher: false },
     ];
 
     const rows = stats.map(s => buildStatRow(ship[s.key], maxima[s.key], s.label, s.unit, s.higher)).join('');
@@ -618,14 +621,22 @@
   function buildCompareWeaponCard(weapon, maxima) {
     const typeColor = getWeaponTypeColor(weapon.type);
 
+    const dmgClass = weapon.dmgClass || '';
+    const dmgBadgeColor = dmgClass === 'physical' ? '#ef4444' : dmgClass === 'distortion' ? '#06b6d4' : '#fbbf24';
+
     const stats = [
-      { label: 'DPS',             key: 'dps',      unit: '',  higher: true },
-      { label: 'Alpha Damage',    key: 'alpha',    unit: '',  higher: true },
-      { label: 'Range',           key: 'range',    unit: 'm', higher: true },
-      { label: 'Armor Pen.',      key: 'armorPen', unit: '%', higher: true }
+      { label: 'DPS',             key: 'dps',         unit: '',    higher: true },
+      { label: 'Alpha Damage',    key: 'alpha',       unit: '',    higher: true },
+      { label: 'Cadencia',        key: 'fireRate',    unit: 'rpm', higher: true },
+      { label: 'Alcance',         key: 'range',       unit: 'm',   higher: true },
+      { label: 'Vel. Proyectil',  key: 'speed',       unit: 'm/s', higher: true },
+      { label: 'Daño Físico',     key: 'physical',    unit: '',    higher: true },
+      { label: 'Daño Energía',    key: 'energy',      unit: '',    higher: true },
+      { label: 'Distorsión',      key: 'distortion',  unit: '',    higher: true },
+      { label: 'Calor/Disparo',   key: 'heatPerShot', unit: '',    higher: false },
     ];
 
-    const rows = stats.map(s => buildStatRow(weapon[s.key], maxima[s.key], s.label, s.unit, s.higher)).join('');
+    const rows = stats.map(s => buildStatRow(weapon[s.key] || 0, maxima[s.key], s.label, s.unit, s.higher)).join('');
 
     return `
       <div class="comp-compare-card">
@@ -634,6 +645,7 @@
           <div class="comp-cmp-sub">S${weapon.size} · ${escComp(weapon.type)}</div>
           <div class="comp-cmp-badges">
             <span class="comp-badge" style="background:${typeColor}18;border-color:${typeColor};color:${typeColor}">${escComp(weapon.type)}</span>
+            ${dmgClass ? `<span class="comp-badge" style="background:${dmgBadgeColor}18;border-color:${dmgBadgeColor};color:${dmgBadgeColor}">${dmgClass}</span>` : ''}
           </div>
         </div>
         <div class="comp-cmp-stats">
@@ -711,12 +723,20 @@
 
   function getWeaponTypeColor(type) {
     const t = (type || '').toLowerCase();
-    if (t.includes('laser repeater'))  return '#f59e0b';
-    if (t.includes('laser cannon'))    return '#fbbf24';
+    if (t.includes('laser repeater'))    return '#f59e0b';
+    if (t.includes('laser cannon'))      return '#fbbf24';
+    if (t.includes('laser gatling'))     return '#fcd34d';
+    if (t.includes('laser scatter'))     return '#fde68a';
+    if (t.includes('laser beam'))        return '#fef3c7';
     if (t.includes('ballistic gatling')) return '#ef4444';
-    if (t.includes('ballistic cannon')) return '#dc2626';
-    if (t.includes('mass driver'))     return '#8b5cf6';
-    if (t.includes('distortion'))      return '#06b6d4';
+    if (t.includes('ballistic cannon'))  return '#dc2626';
+    if (t.includes('ballistic repeater'))return '#f87171';
+    if (t.includes('ballistic scatter')) return '#fca5a5';
+    if (t.includes('mass driver'))       return '#8b5cf6';
+    if (t.includes('distortion'))        return '#06b6d4';
+    if (t.includes('neutron'))           return '#10b981';
+    if (t.includes('plasma'))            return '#a855f7';
+    if (t.includes('tachyon'))           return '#e879f9';
     return '#a88b4a';
   }
 
@@ -1280,6 +1300,18 @@
         .then(data => {
           SHIPS.length = 0;
           data.forEach(s => SHIPS.push(s));
+          render();
+        })
+        .catch(() => {});
+    }
+    // Load weapon data from JSON
+    if (!compState._weaponsLoaded) {
+      compState._weaponsLoaded = true;
+      fetch('data/weapons.json')
+        .then(r => r.ok ? r.json() : [])
+        .then(data => {
+          WEAPONS.length = 0;
+          data.forEach(w => WEAPONS.push(w));
           render();
         })
         .catch(() => {});
