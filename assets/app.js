@@ -919,12 +919,16 @@ const HNG = (() => {
   let _circles = null;
 
   // ── Alert system ──────────────────────────────────────────
-  const ALERT_OPEN_MS  = 25 * 60 * 1000;  // 25 min before opening
-  const ALERT_CLOSE_MS = 15 * 60 * 1000;  // 15 min before closing
+  const ALERT_OPEN_MS   = 25 * 60 * 1000;  // 25 min before opening
+  const ALERT_CLOSE_MS  = 15 * 60 * 1000;  // 15 min before closing
+  const ALERT_REPEAT_MS =  5 * 60 * 1000;  // repeat interval
 
   let _alertEnabled = false;
-  let _alertFiredOpen  = false;  // fired "25 min to open" this cycle
-  let _alertFiredClose = false;  // fired "15 min to close" this cycle
+  let _alertFiredOpen     = false;
+  let _alertFiredClose    = false;
+  let _lastOpenAlertTime  = 0;
+  let _lastCloseAlertTime = 0;
+  let _prevOnline         = null;
   let _audioCtx = null;
 
   function getAudioCtx() {
@@ -937,11 +941,29 @@ const HNG = (() => {
   }
 
   // Play a synthesized alert tone
-  // type: 'open' (ascending, hopeful) | 'close' (descending, warning)
+  // type: 'open' (ascending seq) | 'close' (descending seq) | 'opened' (triumphant chord)
   function playAlert(type) {
     try {
       const ctx = getAudioCtx();
       const now = ctx.currentTime;
+
+      if (type === 'opened') {
+        // Triumphant chord: all notes simultaneously, long sustain
+        [523.25, 659.25, 783.99, 1046.50].forEach(freq => {
+          const osc  = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+          osc.type = 'sine';
+          osc.frequency.value = freq;
+          gain.gain.setValueAtTime(0, now);
+          gain.gain.linearRampToValueAtTime(0.22, now + 0.04);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + 2.2);
+          osc.start(now);
+          osc.stop(now + 2.3);
+        });
+        return;
+      }
 
       const notes = type === 'open'
         ? [523.25, 659.25, 783.99, 1046.50]   // C5 E5 G5 C6 — ascending
@@ -971,25 +993,39 @@ const HNG = (() => {
 
   function checkAlerts(online, remaining) {
     if (!_alertEnabled) return;
+    const nowMs = Date.now();
+
+    // Fire special sound exactly when hangar transitions to open
+    if (_prevOnline === false && online) {
+      playAlert('opened');
+      showAlertToast(t('dyn.alert.toast.opened'));
+    }
+    _prevOnline = online;
 
     if (!online) {
-      // Hangar is CLOSED — check if 25 min to opening
-      if (remaining <= ALERT_OPEN_MS && !_alertFiredOpen) {
-        _alertFiredOpen = true;
-        playAlert('open');
-        showAlertToast(t('dyn.alert.toast.open'));
+      // Hangar CLOSED — alert 25 min before opening, repeat every 5 min
+      if (remaining <= ALERT_OPEN_MS) {
+        if (!_alertFiredOpen || (nowMs - _lastOpenAlertTime) >= ALERT_REPEAT_MS) {
+          _alertFiredOpen = true;
+          _lastOpenAlertTime = nowMs;
+          playAlert('open');
+          showAlertToast(t('dyn.alert.toast.open'));
+        }
       }
-      // Reset close-alert flag when hangar is closed
       _alertFiredClose = false;
+      _lastCloseAlertTime = 0;
     } else {
-      // Hangar is OPEN — check if 15 min to closing
-      if (remaining <= ALERT_CLOSE_MS && !_alertFiredClose) {
-        _alertFiredClose = true;
-        playAlert('close');
-        showAlertToast(t('dyn.alert.toast.close'));
+      // Hangar OPEN — alert 15 min before closing, repeat every 5 min
+      if (remaining <= ALERT_CLOSE_MS) {
+        if (!_alertFiredClose || (nowMs - _lastCloseAlertTime) >= ALERT_REPEAT_MS) {
+          _alertFiredClose = true;
+          _lastCloseAlertTime = nowMs;
+          playAlert('close');
+          showAlertToast(t('dyn.alert.toast.close'));
+        }
       }
-      // Reset open-alert flag when hangar is open
       _alertFiredOpen = false;
+      _lastOpenAlertTime = 0;
     }
   }
 
