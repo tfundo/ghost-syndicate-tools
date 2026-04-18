@@ -32,12 +32,12 @@
       <span></span><span></span><span></span>
     </button>
     <ul class="nav-links" id="navLinks">
-      <li><a href="#home" class="nav-link active" data-section="home">Inicio</a></li>
-      <li><a href="#crafting" class="nav-link" data-section="crafting">Fabricación</a></li>
-      <li><a href="#comparador" class="nav-link" data-section="comparador">Comparador</a></li>
-      <li><a href="#wikelodata" class="nav-link" data-section="wikelodata">WikeloData</a></li>
-      <li><a href="#hangar" class="nav-link" data-section="hangar">Hangar Ejecutivo</a></li>
-      <li><a href="#mining" class="nav-link" data-section="mining">Minería</a></li>
+      <li><a href="#home" class="nav-link active" data-section="home" data-i18n="nav.home">Inicio</a></li>
+      <li><a href="#crafting" class="nav-link" data-section="crafting" data-i18n="nav.crafting">Fabricación</a></li>
+      <li><a href="#comparador" class="nav-link" data-section="comparador" data-i18n="nav.comparador">Comparador</a></li>
+      <li><a href="#wikelodata" class="nav-link" data-section="wikelodata" data-i18n="nav.wikelodata">WikeloData</a></li>
+      <li><a href="#hangar" class="nav-link" data-section="hangar" data-i18n="nav.hangar">Hangar Ejecutivo</a></li>
+      <li><a href="#mining" class="nav-link" data-section="mining" data-i18n="nav.mining">Minería</a></li>
     </ul>
     <div class="nav-social-bar">
       <a class="nav-social-btn nav-social-dc" href="https://discord.com/invite/Ktfnbmj5s7" target="_blank" rel="noopener" title="Discord Ghost Syndicate">
@@ -53,7 +53,13 @@
         <span>Donar</span>
       </a>
     </div>
-    <div class="nav-version">SC 4.7.1</div>
+    <div class="nav-version">
+      SC 4.7.1
+      <div class="nav-lang">
+        <button class="lang-btn" data-lang="es" onclick="setLang('es')" title="Español">🇪🇸</button>
+        <button class="lang-btn" data-lang="en" onclick="setLang('en')" title="English">🇬🇧</button>
+      </div>
+    </div>
   </nav>
 
   <!-- ===== HOME SECTION ===== -->
@@ -66,7 +72,7 @@
 
       <!-- LEFT: identity + social -->
       <div class="hero-content">
-        <div class="hero-badge">Star Citizen 4.7.1 · Base de datos activa</div>
+        <div class="hero-badge" data-i18n="home.badge">Star Citizen 4.7.1 · Base de datos activa</div>
         <div class="hero-logo-big">
           <img src="assets/ghostlogo.png" alt="Ghost Syndicate" class="hero-logo-img">
         </div>
@@ -74,22 +80,22 @@
           Ghost Syndicate<br>
           <span class="hero-sub">Tools</span>
         </h1>
-        <p class="hero-desc">
+        <p class="hero-desc" data-i18n="home.desc">
           Herramienta para acompañarte en tus partidas de <strong>STAR CITIZEN</strong>
         </p>
 
         <div class="hero-stats">
           <div class="stat-card" id="stat-blueprints">
             <span class="stat-num">—</span>
-            <span class="stat-label">Planos</span>
+            <span class="stat-label" data-i18n="home.stat.blueprints">Planos</span>
           </div>
           <div class="stat-card" id="stat-materials">
             <span class="stat-num">—</span>
-            <span class="stat-label">Materiales</span>
+            <span class="stat-label" data-i18n="home.stat.materials">Materiales</span>
           </div>
           <div class="stat-card" id="stat-missions">
             <span class="stat-num">—</span>
-            <span class="stat-label">Con misión</span>
+            <span class="stat-label" data-i18n="home.stat.missions">Con misión</span>
           </div>
         </div>
 
@@ -109,50 +115,50 @@
           </a>
           <a class="social-btn social-org" href="https://robertsspaceindustries.com/en/orgs/GHOSTSYND" target="_blank" rel="noopener" aria-label="Únete a Ghost Syndicate en RSI">
             <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5c-.8 0-1.5.3-2.1.8L3.3 9.7C2.5 10.4 2 11.4 2 12.5v1c0 2.2 1.8 4 4 4h.5l1 3h9l1-3H18c2.2 0 4-1.8 4-4v-1c0-1.1-.5-2.1-1.3-2.8L14.1 3.3C13.5 2.8 12.8 2.5 12 2.5zm0 2c.4 0 .8.2 1.1.4l6.6 6.4c.4.4.7.9.7 1.4v1c0 1.1-.9 2-2 2h-1.1l-1 3H7.6l-1-3H6c-1.1 0-2-.9-2-2v-1c0-.6.2-1.1.6-1.5l6.4-6.4c.3-.3.6-.3 1-.3zm0 3c-2.2 0-4 1.8-4 4s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4zm0 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2z"/></svg>
-            Únete a la ORG
+            <span data-i18n="social.join">Únete a la ORG</span>
           </a>
         </div>
       </div>
 
       <!-- RIGHT: modules grid -->
       <div class="home-modules">
-        <h2 class="section-title">Módulos Disponibles</h2>
+        <h2 class="section-title" data-i18n="home.modules.title">Módulos Disponibles</h2>
         <div class="feature-grid">
           <div class="feature-card" onclick="showSection('crafting')">
             <div class="feature-icon">⚙</div>
-            <h3>Fabricación</h3>
-            <p>1.044 planos con ingredientes, misiones y recompensas de scrip.</p>
-            <span class="feature-link">Acceder →</span>
+            <h3 data-i18n="home.crafting.title">Fabricación</h3>
+            <p data-i18n="home.crafting.desc">1.044 planos con ingredientes, misiones y recompensas de scrip.</p>
+            <span class="feature-link" data-i18n="home.access">Acceder →</span>
           </div>
           <div class="feature-card" onclick="showSection('comparador')">
             <div class="feature-icon">⚖</div>
-            <h3>Comparador</h3>
-            <p>250+ naves con datos reales del juego. Filtra y compara hasta 4 lado a lado.</p>
-            <span class="feature-link">Acceder →</span>
+            <h3 data-i18n="home.comparador.title">Comparador</h3>
+            <p data-i18n="home.comparador.desc">250+ naves con datos reales del juego. Filtra y compara hasta 4 lado a lado.</p>
+            <span class="feature-link" data-i18n="home.access">Acceder →</span>
           </div>
           <div class="feature-card" onclick="showSection('wikelodata')">
             <div class="feature-icon">◈</div>
-            <h3>WikeloData</h3>
-            <p>Ítems Wikelo: costes de fabricación, reputación y economía.</p>
-            <span class="feature-link">Acceder →</span>
+            <h3 data-i18n="home.wikelodata.title">WikeloData</h3>
+            <p data-i18n="home.wikelodata.desc">Ítems Wikelo: costes de fabricación, reputación y economía.</p>
+            <span class="feature-link" data-i18n="home.access">Acceder →</span>
           </div>
           <div class="feature-card" onclick="showSection('hangar')">
             <div class="feature-icon">🏢</div>
-            <h3>Hangar Ejecutivo</h3>
-            <p>Horarios de apertura en tiempo real con alerta sonora configurable.</p>
-            <span class="feature-link">Acceder →</span>
+            <h3 data-i18n="home.hangar.title">Hangar Ejecutivo</h3>
+            <p data-i18n="home.hangar.desc">Horarios de apertura en tiempo real con alerta sonora configurable.</p>
+            <span class="feature-link" data-i18n="home.access">Acceder →</span>
           </div>
           <div class="feature-card" onclick="showSection('mining')">
             <div class="feature-icon">⛏</div>
-            <h3>Minería</h3>
-            <p>31 minerales, escáner de emisiones y ubicaciones por concentración.</p>
-            <span class="feature-link">Acceder →</span>
+            <h3 data-i18n="home.mining.title">Minería</h3>
+            <p data-i18n="home.mining.desc">31 minerales, escáner de emisiones y ubicaciones por concentración.</p>
+            <span class="feature-link" data-i18n="home.access">Acceder →</span>
           </div>
           <div class="feature-card coming-soon">
             <div class="feature-icon">🎯</div>
-            <h3>Misiones</h3>
-            <p>Contratos, reputación y guías de facciones del universo.</p>
-            <span class="feature-coming">En desarrollo</span>
+            <h3 data-i18n="home.missions.title">Misiones</h3>
+            <p data-i18n="home.missions.desc">Contratos, reputación y guías de facciones del universo.</p>
+            <span class="feature-coming" data-i18n="home.coming">En desarrollo</span>
           </div>
         </div>
       </div>
@@ -163,34 +169,34 @@
   <section class="section" id="crafting">
     <div class="container">
       <div class="page-header">
-        <h1 class="page-title">⚙ Fabricación</h1>
-        <p class="page-subtitle">Base de datos de planos · SC 4.7.1</p>
+        <h1 class="page-title" data-i18n="crafting.title">⚙ Fabricación</h1>
+        <p class="page-subtitle" data-i18n="crafting.subtitle">Base de datos de planos · SC 4.7.1</p>
       </div>
 
       <!-- Controls -->
       <div class="controls-bar">
         <div class="search-box">
           <span class="search-icon">🔍</span>
-          <input type="text" id="searchInput" placeholder="Buscar por nombre, material o categoría..." autocomplete="off" />
+          <input type="text" id="searchInput" data-i18n-ph="crafting.search.ph" placeholder="Buscar por nombre, material o categoría..." autocomplete="off" />
           <button class="search-clear" id="searchClear" onclick="clearSearch()">✕</button>
         </div>
         <div class="filters">
           <button class="btn-mission-toggle" id="missionToggle" onclick="toggleMissionOnly()" title="Mostrar solo planos que se obtienen como recompensa de misión">
             <span class="mission-toggle-icon">🎯</span>
-            <span class="mission-toggle-label">Solo con misión</span>
+            <span class="mission-toggle-label" data-i18n="crafting.btn.mission">Solo con misión</span>
           </button>
           <select id="categoryFilter" class="filter-select">
-            <option value="">Todas las categorías</option>
+            <option value="" data-i18n="crafting.filter.all">Todas las categorías</option>
           </select>
           <select id="missionFilter" class="filter-select" style="display:none">
-            <option value="">Todas las fuentes</option>
-            <option value="mission">Solo con misión</option>
-            <option value="no-mission">Sin misión</option>
+            <option value="" data-i18n="crafting.filter.all.src">Todas las fuentes</option>
+            <option value="mission" data-i18n="crafting.filter.mission">Solo con misión</option>
+            <option value="no-mission" data-i18n="crafting.filter.no.mission">Sin misión</option>
           </select>
           <select id="sortSelect" class="filter-select">
-            <option value="name">Ordenar: Nombre</option>
-            <option value="category">Ordenar: Categoría</option>
-            <option value="ingredients">Ordenar: Ingredientes</option>
+            <option value="name" data-i18n="crafting.sort.name">Ordenar: Nombre</option>
+            <option value="category" data-i18n="crafting.sort.category">Ordenar: Categoría</option>
+            <option value="ingredients" data-i18n="crafting.sort.ingredients">Ordenar: Ingredientes</option>
           </select>
         </div>
       </div>
@@ -210,12 +216,12 @@
       <!-- Loading / empty state -->
       <div class="loading-state" id="loadingState">
         <div class="loading-spinner"></div>
-        <p>Cargando base de datos...</p>
+        <p data-i18n="crafting.loading">Cargando base de datos...</p>
       </div>
       <div class="empty-state hidden" id="emptyState">
         <div class="empty-icon">◈</div>
-        <p>No se encontraron planos con ese criterio</p>
-        <button class="btn-ghost" onclick="clearSearch()">Limpiar búsqueda</button>
+        <p data-i18n="crafting.empty.msg">No se encontraron planos con ese criterio</p>
+        <button class="btn-ghost" onclick="clearSearch()" data-i18n="crafting.empty.btn">Limpiar búsqueda</button>
       </div>
     </div>
   </section>
@@ -226,10 +232,10 @@
 
       <!-- Tabs -->
       <div class="comp-tabs">
-        <button class="comp-tab active" id="compTabShips" onclick="Comp.switchTab('ships')">Naves</button>
-        <button class="comp-tab" id="compTabWeapons" onclick="Comp.switchTab('weapons')">Armas</button>
+        <button class="comp-tab active" id="compTabShips" onclick="Comp.switchTab('ships')"><span data-i18n="comp.ships">Naves</span></button>
+        <button class="comp-tab" id="compTabWeapons" onclick="Comp.switchTab('weapons')"><span data-i18n="comp.weapons">Armas</span></button>
         <button class="comp-tab" id="compTabCompare" onclick="Comp.switchTab('compare')">
-          Comparar <span class="comp-badge" id="compBadge">0</span>
+          <span data-i18n="comp.compare">Comparar</span> <span class="comp-badge" id="compBadge">0</span>
         </button>
       </div>
 
@@ -242,8 +248,8 @@
   <section class="section" id="wikelodata">
     <div class="container">
       <div class="page-header">
-        <h1 class="page-title">◈ WikeloData</h1>
-        <p class="page-subtitle">Ítems Wikelo · Naves, armaduras, armas &amp; economía · SC 4.7.1</p>
+        <h1 class="page-title" data-i18n="wk.title">◈ WikeloData</h1>
+        <p class="page-subtitle" data-i18n="wk.subtitle">Ítems Wikelo · Naves, armaduras, armas &amp; economía · SC 4.7.1</p>
       </div>
 
       <!-- Category tabs -->
@@ -253,7 +259,7 @@
       <div class="wk-search-bar">
         <div class="search-box">
           <span class="search-icon">🔍</span>
-          <input type="text" id="wkSearch" placeholder="Buscar ítem, material o misión..." autocomplete="off" />
+          <input type="text" id="wkSearch" data-i18n-ph="wk.search.ph" placeholder="Buscar ítem, material o misión..." autocomplete="off" />
           <button class="search-clear" id="wkSearchClear" onclick="wkClearSearch()">✕</button>
         </div>
         <span id="wkCount" class="wk-count"></span>
@@ -265,7 +271,7 @@
       <!-- Loading -->
       <div class="loading-state" id="wkLoading">
         <div class="loading-spinner"></div>
-        <p>Cargando base de datos Wikelo...</p>
+        <p data-i18n="crafting.loading">Cargando base de datos...</p>
       </div>
     </div>
   </section>
@@ -274,17 +280,17 @@
   <section class="section" id="hangar">
     <div class="container">
       <div class="page-header">
-        <h1 class="page-title">🛬 Hangar Ejecutivo</h1>
-        <p class="page-subtitle">Estado del PYAM Ejecutivo en tiempo real · SC 4.7.1</p>
+        <h1 class="page-title" data-i18n="hng.title">🛬 Hangar Ejecutivo</h1>
+        <p class="page-subtitle" data-i18n="hng.subtitle">Estado del PYAM Ejecutivo en tiempo real · SC 4.7.1</p>
       </div>
 
       <div class="hng-layout">
 
         <!-- Estado principal -->
         <div class="hng-status-card" id="hngStatusCard">
-          <div class="hng-status-label">Estado actual</div>
+          <div class="hng-status-label" data-i18n="hng.status.label">Estado actual</div>
           <div class="hng-status-value" id="hngStatus">—</div>
-          <div class="hng-countdown-label">Próximo cambio en</div>
+          <div class="hng-countdown-label" data-i18n="hng.next.label">Próximo cambio en</div>
           <div class="hng-countdown" id="hngCountdown">--:--</div>
           <!-- Indicador de círculos -->
           <div class="hng-circles" id="hngCircles">
@@ -300,18 +306,18 @@
             <svg class="hng-alert-icon" id="hngAlertIcon" viewBox="0 0 24 24" fill="currentColor">
               <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/>
             </svg>
-            <span id="hngAlertLabel">Activar alertas</span>
+            <span id="hngAlertLabel" data-i18n="hng.alert.btn">Activar alertas</span>
           </button>
           <div class="hng-alert-status" id="hngAlertStatus"></div>
         </div>
 
         <!-- Próximos ciclos -->
         <div class="hng-schedule-card">
-          <div class="hng-schedule-title">Próximos ciclos</div>
+          <div class="hng-schedule-title" data-i18n="hng.schedule.title">Próximos ciclos</div>
           <div class="hng-table-wrap">
             <table class="hng-table">
               <thead>
-                <tr><th>Ciclo</th><th>Estado</th><th>Hora local</th></tr>
+                <tr><th data-i18n="hng.table.cycle">Ciclo</th><th data-i18n="hng.table.status">Estado</th><th data-i18n="hng.table.time">Hora local</th></tr>
               </thead>
               <tbody id="hngSchedule"></tbody>
             </table>
@@ -326,13 +332,13 @@
   <section class="section" id="mining">
     <div class="container">
       <div class="page-header">
-        <h1 class="page-title">⛏ Minería</h1>
-        <p class="page-subtitle">Minerales · Escáner · Ubicaciones · SC 4.7.1</p>
+        <h1 class="page-title" data-i18n="mining.title">⛏ Minería</h1>
+        <p class="page-subtitle" data-i18n="mining.subtitle">Minerales · Escáner · Ubicaciones · SC 4.7.1</p>
       </div>
       <div id="mnTabs" class="mn-tabs hidden"></div>
       <div id="mnLoading" class="loading-state">
         <div class="loading-spinner"></div>
-        <p>Cargando datos de minería...</p>
+        <p data-i18n="mining.loading">Cargando datos de minería...</p>
       </div>
       <div id="mnContent" class="hidden"></div>
     </div>
@@ -349,19 +355,19 @@
   <footer class="footer">
     <div class="container">
       <div class="footer-logo">◈ GHOST SYNDICATE TOOLS</div>
-      <p class="footer-note">
+      <p class="footer-note" data-i18n="footer.note">
         Ghost Syndicate Tools es un proyecto de fans no oficial, no afiliado ni respaldado por Cloud Imperium Games.<br>
         Star Citizen®, Roberts Space Industries® y Cloud Imperium® son marcas registradas de Cloud Imperium Rights LLC.<br>
         Contenido creado bajo la <a class="footer-link" href="https://robertsspaceindustries.com/fan-content-policy" target="_blank" rel="noopener">Fan Content Policy de RSI</a>. Uso estrictamente no comercial.
       </p>
       <div class="footer-links">
-        <button class="footer-link-btn" onclick="openLegal('aviso')">Aviso Legal</button>
+        <button class="footer-link-btn" onclick="openLegal('aviso')" data-i18n="footer.legal">Aviso Legal</button>
         <span class="footer-sep">·</span>
-        <button class="footer-link-btn" onclick="openLegal('privacidad')">Política de Privacidad</button>
+        <button class="footer-link-btn" onclick="openLegal('privacidad')" data-i18n="footer.privacy">Política de Privacidad</button>
         <span class="footer-sep">·</span>
-        <a class="footer-link-btn" href="https://www.paypal.com/donate/?hosted_button_id=KPS53TPR85EV8" target="_blank" rel="noopener">♥ Donar</a>
+        <a class="footer-link-btn" href="https://www.paypal.com/donate/?hosted_button_id=KPS53TPR85EV8" target="_blank" rel="noopener" data-i18n="footer.donate">♥ Donar</a>
       </div>
-      <p class="footer-copy">© 2025 Ghost Syndicate Tools · TFundo · Proyecto de fans sin ánimo de lucro</p>
+      <p class="footer-copy" data-i18n="footer.copy">© 2025 Ghost Syndicate Tools · TFundo · Proyecto de fans sin ánimo de lucro</p>
     </div>
   </footer>
 
@@ -370,8 +376,8 @@
   <div class="legal-modal" id="legalModal" role="dialog" aria-modal="true">
     <button class="modal-close" onclick="closeLegal()">✕</button>
     <div class="legal-tabs">
-      <button class="legal-tab active" id="legalTabAviso" onclick="switchLegalTab('aviso')">Aviso Legal</button>
-      <button class="legal-tab" id="legalTabPriv" onclick="switchLegalTab('privacidad')">Privacidad</button>
+      <button class="legal-tab active" id="legalTabAviso" onclick="switchLegalTab('aviso')" data-i18n="legal.tab.aviso">Aviso Legal</button>
+      <button class="legal-tab" id="legalTabPriv" onclick="switchLegalTab('privacidad')" data-i18n="legal.tab.priv">Privacidad</button>
     </div>
     <div class="legal-body" id="legalBody"></div>
   </div>
@@ -380,26 +386,27 @@
   <nav class="nav-bottom" id="navBottom">
     <button class="nav-bottom-item active" data-section="home" onclick="showSection('home')">
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
-      <span>Inicio</span>
+      <span data-i18n="nav.bottom.home">Inicio</span>
     </button>
     <button class="nav-bottom-item" data-section="crafting" onclick="showSection('crafting')">
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 15.5A3.5 3.5 0 018.5 12 3.5 3.5 0 0112 8.5a3.5 3.5 0 013.5 3.5 3.5 3.5 0 01-3.5 3.5m7.43-2.92c.04-.3.07-.62.07-.93 0-.31-.03-.62-.07-.93l2.03-1.58a.49.49 0 00.12-.61l-1.92-3.32a.488.488 0 00-.59-.22l-2.39.96a6.86 6.86 0 00-1.62-.95l-.36-2.54a.484.484 0 00-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.58.24-1.13.56-1.62.95l-2.39-.96a.47.47 0 00-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.04.31-.07.63-.07.94s.03.63.07.94l-2.03 1.58a.49.49 0 00-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.37 1.04.69 1.62.95l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.58-.26 1.12-.58 1.62-.95l2.39.96c.22.07.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58z"/></svg>
-      <span>Fabricar</span>
+      <span data-i18n="nav.bottom.crafting">Fabricar</span>
     </button>
     <button class="nav-bottom-item" data-section="comparador" onclick="showSection('comparador')">
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3L2 12h3v9h6v-5h2v5h6v-9h3L12 3zm0 12.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/><path d="M17 8.5l-5-4.5-5 4.5"/></svg>
-      <span>Naves</span>
+      <span data-i18n="nav.bottom.ships">Naves</span>
     </button>
     <button class="nav-bottom-item" data-section="wikelodata" onclick="showSection('wikelodata')">
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 3h18v2H3zm0 4h18v2H3zm0 4h12v2H3zm0 4h12v2H3zm0 4h18v2H3z"/></svg>
-      <span>Wikelo</span>
+      <span data-i18n="nav.bottom.wikelo">Wikelo</span>
     </button>
     <button class="nav-bottom-item" data-section="hangar" onclick="showSection('hangar')">
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21 9l-9-7-9 7v2h2v9h5v-5h4v5h5v-9h2V9zm-9 6.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
-      <span>Hangar</span>
+      <span data-i18n="nav.bottom.hangar">Hangar</span>
     </button>
   </nav>
 
+  <script src="assets/i18n.js"></script>
   <script src="assets/comparador.js"></script>
   <script src="assets/mining.js"></script>
   <script src="assets/app.js"></script>

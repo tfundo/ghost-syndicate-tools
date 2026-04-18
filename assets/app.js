@@ -12,6 +12,7 @@ let db = null;
 let filtered = [];
 let currentView = 'grid';
 let currentSection = 'home';
+window.currentSection = currentSection;
 
 const state = {
   search: '',
@@ -74,7 +75,7 @@ function updateCraftingFab() {
   if (!fab) {
     fab = document.createElement('button');
     fab.id = 'crafting-top-fab';
-    fab.title = 'Volver al inicio de la lista';
+    fab.title = t('dyn.scroll.title');
     fab.style.cssText = [
       'position:fixed',
       'bottom:1.8rem',
@@ -162,6 +163,7 @@ window.showSection = function(sectionId) {
   if (sectionId === 'ships' || sectionId === 'weapons') sectionId = 'comparador';
 
   currentSection = sectionId;
+  window.currentSection = sectionId;
 
   // Hide all sections
   document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
@@ -219,7 +221,7 @@ async function loadDatabase() {
     document.getElementById('loadingState').innerHTML = `
       <div style="text-align:center; padding: 3rem; color: var(--text-secondary)">
         <div style="font-size:2rem; margin-bottom:1rem;">⚠</div>
-        <p>Error al cargar la base de datos.</p>
+        <p>${t('dyn.loading.error')}</p>
         <p style="font-size:0.8rem; color:var(--text-muted); margin-top:0.5rem">${err.message}</p>
       </div>
     `;
@@ -240,7 +242,7 @@ function animateCounter(id, target) {
   const step = Math.ceil(target / 40);
   const timer = setInterval(() => {
     current = Math.min(current + step, target);
-    el.textContent = current.toLocaleString('es');
+    el.textContent = current.toLocaleString(t('locale'));
     if (current >= target) clearInterval(timer);
   }, 30);
 }
@@ -347,8 +349,8 @@ function applyFilters() {
   // Sort
   filtered.sort((a, b) => {
     switch (state.sort) {
-      case 'name': return a.name.localeCompare(b.name, 'es');
-      case 'category': return a.categoryPath.localeCompare(b.categoryPath, 'es');
+      case 'name': return a.name.localeCompare(b.name, currentLang);
+      case 'category': return a.categoryPath.localeCompare(b.categoryPath, currentLang);
       case 'ingredients': {
         const countA = a.tiers[0]?.ingredients?.length || 0;
         const countB = b.tiers[0]?.ingredients?.length || 0;
@@ -367,7 +369,7 @@ function renderBlueprints() {
   const countEl = document.getElementById('resultsCount');
 
   // Update count
-  countEl.textContent = `${filtered.length.toLocaleString('es')} planos`;
+  countEl.textContent = `${filtered.length.toLocaleString(t('locale'))} ${t('dyn.blueprints')}`;
 
   if (filtered.length === 0) {
     grid.innerHTML = '';
@@ -386,7 +388,7 @@ function renderBlueprints() {
   if (filtered.length > 200) {
     grid.insertAdjacentHTML('beforeend', `
       <div style="grid-column:1/-1; text-align:center; padding:1.5rem 0; color:var(--text-muted); font-size:0.85rem">
-        Mostrando 200 de ${filtered.length.toLocaleString('es')} planos. Usa el buscador para filtrar.
+        ${t('dyn.showing', { n: filtered.length.toLocaleString(t('locale')) })}
       </div>
     `);
   }
@@ -395,40 +397,40 @@ function renderBlueprints() {
 function getCatInfo(catPath) {
   const p = (catPath || '').toLowerCase();
   if (p.includes('ammo')) {
-    if (p.includes('laser'))     return { abbr: 'LASER',    color: '#f59e0b' };
-    if (p.includes('ballistic')) return { abbr: 'BALÍSTICO', color: '#ef4444' };
-    if (p.includes('plasma'))    return { abbr: 'PLASMA',   color: '#8b5cf6' };
-    if (p.includes('electron'))  return { abbr: 'ELECTRÓN', color: '#06b6d4' };
-    if (p.includes('shotgun'))   return { abbr: 'ESCOPETA', color: '#f97316' };
-    return { abbr: 'MUNICIÓN', color: '#ef4444' };
+    if (p.includes('laser'))     return { abbr: t('cat.laser'),        color: '#f59e0b' };
+    if (p.includes('ballistic')) return { abbr: t('cat.ballistic'),    color: '#ef4444' };
+    if (p.includes('plasma'))    return { abbr: t('cat.plasma'),       color: '#8b5cf6' };
+    if (p.includes('electron'))  return { abbr: t('cat.electron'),     color: '#06b6d4' };
+    if (p.includes('shotgun'))   return { abbr: t('cat.shotgun.ammo'), color: '#f97316' };
+    return { abbr: t('cat.ammo'), color: '#ef4444' };
   }
   if (p.includes('armour') || p.includes('armor')) {
-    if (p.includes('combat'))      return { abbr: 'COMBATE',  color: '#3b82f6' };
-    if (p.includes('stealth'))     return { abbr: 'SIGILO',   color: '#6366f1' };
-    if (p.includes('explorer'))    return { abbr: 'EXPLORAC', color: '#10b981' };
-    if (p.includes('hunter'))      return { abbr: 'CAZADOR',  color: '#f97316' };
-    if (p.includes('medic'))       return { abbr: 'MÉDICO',   color: '#06b6d4' };
-    if (p.includes('miner'))       return { abbr: 'MINERO',   color: '#78716c' };
-    if (p.includes('engineer'))    return { abbr: 'INGENIERO',color: '#a78bfa' };
-    if (p.includes('salvager'))    return { abbr: 'SALVADOR', color: '#d97706' };
-    if (p.includes('flightsuit'))  return { abbr: 'PILOTO',   color: '#22c55e' };
-    if (p.includes('racer'))       return { abbr: 'PILOTO',   color: '#22c55e' };
-    if (p.includes('radiation'))   return { abbr: 'RADIACIÓN',color: '#84cc16' };
-    if (p.includes('environment')) return { abbr: 'AMBIENTAL',color: '#84cc16' };
-    if (p.includes('cosmonaut'))   return { abbr: 'COSMONAUTA',color:'#60a5fa' };
-    if (p.includes('undersuit'))   return { abbr: 'INTERIOR', color: '#94a3b8' };
-    return { abbr: 'ARMADURA', color: '#3b82f6' };
+    if (p.includes('combat'))      return { abbr: t('cat.combat'),     color: '#3b82f6' };
+    if (p.includes('stealth'))     return { abbr: t('cat.stealth'),    color: '#6366f1' };
+    if (p.includes('explorer'))    return { abbr: t('cat.explorer'),   color: '#10b981' };
+    if (p.includes('hunter'))      return { abbr: t('cat.hunter'),     color: '#f97316' };
+    if (p.includes('medic'))       return { abbr: t('cat.medic'),      color: '#06b6d4' };
+    if (p.includes('miner'))       return { abbr: t('cat.miner'),      color: '#78716c' };
+    if (p.includes('engineer'))    return { abbr: t('cat.engineer'),   color: '#a78bfa' };
+    if (p.includes('salvager'))    return { abbr: t('cat.salvager'),   color: '#d97706' };
+    if (p.includes('flightsuit'))  return { abbr: t('cat.pilot'),      color: '#22c55e' };
+    if (p.includes('racer'))       return { abbr: t('cat.pilot'),      color: '#22c55e' };
+    if (p.includes('radiation'))   return { abbr: t('cat.radiation'),  color: '#84cc16' };
+    if (p.includes('environment')) return { abbr: t('cat.environment'),color: '#84cc16' };
+    if (p.includes('cosmonaut'))   return { abbr: t('cat.cosmonaut'),  color: '#60a5fa' };
+    if (p.includes('undersuit'))   return { abbr: t('cat.undersuit'),  color: '#94a3b8' };
+    return { abbr: t('cat.armor'), color: '#3b82f6' };
   }
   if (p.includes('weapons') || p.includes('weapon')) {
-    if (p.includes('rifle'))   return { abbr: 'RIFLE',    color: '#f59e0b' };
-    if (p.includes('pistol'))  return { abbr: 'PISTOLA',  color: '#d97706' };
-    if (p.includes('sniper'))  return { abbr: 'FRANCOTIRADOR', color: '#8b5cf6' };
-    if (p.includes('smg'))     return { abbr: 'SMG',      color: '#ef4444' };
-    if (p.includes('lmg'))     return { abbr: 'LMG',      color: '#dc2626' };
-    if (p.includes('shotgun')) return { abbr: 'ESCOPETA', color: '#f97316' };
-    return { abbr: 'ARMA', color: '#f59e0b' };
+    if (p.includes('rifle'))   return { abbr: t('cat.rifle'),  color: '#f59e0b' };
+    if (p.includes('pistol'))  return { abbr: t('cat.pistol'), color: '#d97706' };
+    if (p.includes('sniper'))  return { abbr: t('cat.sniper'), color: '#8b5cf6' };
+    if (p.includes('smg'))     return { abbr: t('cat.smg'),    color: '#ef4444' };
+    if (p.includes('lmg'))     return { abbr: t('cat.lmg'),    color: '#dc2626' };
+    if (p.includes('shotgun')) return { abbr: t('cat.shotgun'),color: '#f97316' };
+    return { abbr: t('cat.weapon'), color: '#f59e0b' };
   }
-  return { abbr: 'OBJETO', color: '#8a7048' };
+  return { abbr: t('cat.item'), color: '#8a7048' };
 }
 
 function renderBlueprintCard(bp, idx) {
@@ -448,7 +450,7 @@ function renderBlueprintCard(bp, idx) {
   const ingHtml = previewIngredients.map(renderIng).join('');
   const extraHtml = extraCount > 0
     ? `<div class="bp-extra-ingredients hidden">${extraIngredients.map(renderIng).join('')}</div>
-       <button class="bp-more-btn" onclick="event.stopPropagation();this.previousElementSibling.classList.toggle('hidden');this.classList.toggle('expanded');this.textContent=this.classList.contains('expanded')?'▲ Ver menos':'▼ +${extraCount} materiales más'">▼ +${extraCount} materiales más</button>`
+       <button class="bp-more-btn" onclick="event.stopPropagation();this.previousElementSibling.classList.toggle('hidden');this.classList.toggle('expanded');this.textContent=this.classList.contains('expanded')?t('dyn.see.less'):t('dyn.more.materials',{n:${extraCount}})">${t('dyn.more.materials', { n: extraCount })}</button>`
     : '';
 
   const catInfo = getCatInfo(bp.categoryPath);
@@ -478,7 +480,7 @@ function renderBlueprintCard(bp, idx) {
           : '';
         return `<span class="mission-tag" title="${escHtml(tooltip)}"><span class="mission-tag-text">${escHtml(display)}</span>${sysBadges}</span>`;
       }).join('')
-    : `<span style="color:var(--text-muted);font-size:0.7rem">Sin misión asignada</span>`;
+    : `<span style="color:var(--text-muted);font-size:0.7rem">${t('dyn.no.mission')}</span>`;
 
   return `
     <div class="bp-card" onclick="openBlueprintDetail(${idx})" style="animation-delay:${Math.min(idx * 0.02, 0.5)}s">
@@ -528,10 +530,10 @@ window.openBlueprintDetail = function(idx) {
           <span class="modal-qty">${formatSCU(ing.quantity_scu)}</span>
           <span class="modal-res-name">${escHtml(ing.resourceName)}</span>
           <span class="modal-slot">${escHtml(ing.slot || '')}</span>
-          ${ing.minQuality > 0 ? `<span class="modal-quality">Min. calidad: ${ing.minQuality}</span>` : ''}
+          ${ing.minQuality > 0 ? `<span class="modal-quality">${t('dyn.min.quality')}: ${ing.minQuality}</span>` : ''}
         </div>
       `).join('')
-    : '<p class="modal-no-data">Sin ingredientes registrados</p>';
+    : `<p class="modal-no-data">${t('dyn.modal.no.ingredients')}</p>`;
 
   // Deduplicate missions by poolFile
   const uniqueMissions = [];
@@ -543,8 +545,8 @@ window.openBlueprintDetail = function(idx) {
     }
   });
 
-  const DIFF_ABBREV = { VeryEasy: 'MF', Easy: 'F', Medium: 'M', Hard: 'D', VeryHard: 'MD', Super: 'S' };
-  const DIFF_LABEL  = { VeryEasy: 'Muy Fácil', Easy: 'Fácil', Medium: 'Media', Hard: 'Difícil', VeryHard: 'Muy Difícil', Super: 'Súper' };
+  const DIFF_ABBREV = { VeryEasy: t('diff.abbr.VeryEasy'), Easy: t('diff.abbr.Easy'), Medium: t('diff.abbr.Medium'), Hard: t('diff.abbr.Hard'), VeryHard: t('diff.abbr.VeryHard'), Super: t('diff.abbr.Super') };
+  const DIFF_LABEL  = { VeryEasy: t('diff.VeryEasy'), Easy: t('diff.Easy'), Medium: t('diff.Medium'), Hard: t('diff.Hard'), VeryHard: t('diff.VeryHard'), Super: t('diff.Super') };
 
   const missionsHtml = uniqueMissions.length > 0
     ? uniqueMissions.map(m => {
@@ -574,7 +576,7 @@ window.openBlueprintDetail = function(idx) {
               return `<tr><td title="${escHtml(fullLabel)}">${escHtml(abbr)}</td><td>${m.scripPerDiff[d]} <span class="scrip-unit">${escHtml(label)}</span> <span class="scrip-auec">+ aUEC variable</span></td></tr>`;
             }).join('');
           if (rows) {
-            rewardsHtml = `<table class="mission-scrip-table"><thead><tr><th>Dificultad</th><th>Recompensa</th></tr></thead><tbody>${rows}</tbody></table>`;
+            rewardsHtml = `<table class="mission-scrip-table"><thead><tr><th>${t('dyn.difficulty')}</th><th>${t('dyn.reward')}</th></tr></thead><tbody>${rows}</tbody></table>`;
           }
         } else if (hasDiffs) {
           const diffBadges = m.difficulties.map(d => {
@@ -597,27 +599,27 @@ window.openBlueprintDetail = function(idx) {
           </div>
         `;
       }).join('')
-    : '<p class="modal-no-data">Este plano no se obtiene como recompensa de misión. Puede estar en tiendas o ser desbloqueado de otra forma.</p>';
+    : `<p class="modal-no-data">${t('dyn.modal.no.mission')}</p>`;
 
   // Craft times
   const timesHtml = bp.tiers
     .filter(t => t.craftTime != null)
-    .map((t, i) => `
-      <span class="modal-craft-time">⏱ Tier ${i+1}: <strong>${formatTime(t.craftTime)}</strong></span>
-    `).join(' ') || '<p class="modal-no-data">Tiempo no especificado</p>';
+    .map((tier, i) => `
+      <span class="modal-craft-time">⏱ Tier ${i+1}: <strong>${formatTime(tier.craftTime)}</strong></span>
+    `).join(' ') || `<p class="modal-no-data">${t('dyn.modal.no.time')}</p>`;
 
   modalContent.innerHTML = `
     <div class="modal-title">${escHtml(bp.name)}</div>
     <div class="modal-category">${escHtml(bp.categoryPath)}</div>
     ${bp.itemEntity ? `<div class="modal-entity">📦 ${escHtml(bp.itemEntity)}</div>` : ''}
 
-    <div class="modal-section-title">⏱ Tiempo de fabricación</div>
+    <div class="modal-section-title">${t('dyn.modal.craft.time')}</div>
     <div>${timesHtml}</div>
 
-    <div class="modal-section-title">🧪 Materiales necesarios</div>
+    <div class="modal-section-title">${t('dyn.modal.materials')}</div>
     ${ingredientsHtml}
 
-    <div class="modal-section-title">🎯 Misiones fuente</div>
+    <div class="modal-section-title">${t('dyn.modal.missions')}</div>
     ${missionsHtml}
   `;
 
@@ -762,12 +764,13 @@ async function loadWikeloDb() {
     wkState.db = await resp.json();
     initWikelo();
   } catch (e) {
-    document.getElementById('wkLoading').innerHTML = '<p style="color:var(--accent)">Error cargando datos Wikelo.</p>';
+    document.getElementById('wkLoading').innerHTML = `<p style="color:var(--accent)">${t('dyn.wk.error')}</p>`;
   }
 }
 
 function initWikelo() {
   const db = wkState.db;
+  window._wkReady = true;
   document.getElementById('wkLoading').classList.add('hidden');
 
   // Build tabs
@@ -832,10 +835,10 @@ function renderWikelo() {
       )
     : cat.items;
 
-  countEl.textContent = `${items.length} ítems`;
+  countEl.textContent = `${items.length} ${t('dyn.items')}`;
   content.innerHTML = items.length
     ? `<div class="wk-grid">${items.map(renderWikeloCard).join('')}</div>`
-    : `<div class="empty-state"><div class="empty-icon">◈</div><p>No se encontraron ítems</p></div>`;
+    : `<div class="empty-state"><div class="empty-icon">◈</div><p>${t('dyn.wk.no.items')}</p></div>`;
 }
 
 function renderWikeloCard(item) {
@@ -845,7 +848,7 @@ function renderWikeloCard(item) {
 
   const compsHtml = item.comps && item.comps.length
     ? `<div class="wk-comps">
-        <span class="wk-comps-label">Componentes</span>
+        <span class="wk-comps-label">${t('dyn.wk.comps')}</span>
         ${item.comps.map(c => `<span class="wk-comp-tag">${escHtml(c)}</span>`).join('')}
        </div>`
     : '';
@@ -974,7 +977,7 @@ const HNG = (() => {
       if (remaining <= ALERT_OPEN_MS && !_alertFiredOpen) {
         _alertFiredOpen = true;
         playAlert('open');
-        showAlertToast('🔔 El hangar abre en ~25 minutos');
+        showAlertToast(t('dyn.alert.toast.open'));
       }
       // Reset close-alert flag when hangar is closed
       _alertFiredClose = false;
@@ -983,7 +986,7 @@ const HNG = (() => {
       if (remaining <= ALERT_CLOSE_MS && !_alertFiredClose) {
         _alertFiredClose = true;
         playAlert('close');
-        showAlertToast('⚠️ El hangar cierra en ~15 minutos');
+        showAlertToast(t('dyn.alert.toast.close'));
       }
       // Reset open-alert flag when hangar is open
       _alertFiredOpen = false;
@@ -1018,13 +1021,13 @@ const HNG = (() => {
 
     if (_alertEnabled) {
       btn.classList.add('hng-alert-active');
-      label.textContent = 'Alertas activadas';
-      status.textContent = '🔔 Sonará 25 min antes de abrir · 15 min antes de cerrar';
+      label.textContent = t('dyn.alert.on');
+      status.textContent = t('dyn.alert.status');
       // Play a short confirmation beep
       playAlert('open');
     } else {
       btn.classList.remove('hng-alert-active');
-      label.textContent = 'Activar alertas';
+      label.textContent = t('dyn.alert.off');
       status.textContent = '';
     }
   }
@@ -1057,7 +1060,7 @@ const HNG = (() => {
     if (!statusEl) return;
 
     const isOnline = online;
-    statusEl.textContent = isOnline ? 'ABIERTO' : 'CERRADO';
+    statusEl.textContent = isOnline ? t('dyn.open') : t('dyn.closed');
     statusEl.className   = 'hng-status-value ' + (isOnline ? 'hng-online' : 'hng-offline');
     card.className       = 'hng-status-card ' + (isOnline ? 'hng-card-online' : 'hng-card-offline');
     cdEl.textContent     = fmt(remaining);
@@ -1065,7 +1068,7 @@ const HNG = (() => {
     // Duration info
     const openMin  = Math.round(OPEN_DURATION  / 60000);
     const closeMin = Math.round(CLOSE_DURATION / 60000);
-    infoEl.textContent = `Abierto ${openMin} min · Cerrado ${closeMin} min por ciclo`;
+    infoEl.textContent = t('dyn.cycle.info', { open: openMin, close: closeMin });
 
     // Alert check
     checkAlerts(isOnline, remaining);
@@ -1126,16 +1129,16 @@ const HNG = (() => {
       if (ev.online && i + 1 < events.length && !events[i+1].online) {
         const cycle = getCycle(events[i+1].time);
         html += `<tr><td class="hng-td-cycle" rowspan="2">${cycle}</td>
-          <td class="hng-td-online">ABIERTO</td>
-          <td>${ev.time.toLocaleString('es-ES',{weekday:'short',hour:'2-digit',minute:'2-digit'})}</td></tr>
-          <tr><td class="hng-td-offline">CERRADO</td>
-          <td>${events[i+1].time.toLocaleString('es-ES',{weekday:'short',hour:'2-digit',minute:'2-digit'})}</td></tr>`;
+          <td class="hng-td-online">${t('dyn.open')}</td>
+          <td>${ev.time.toLocaleString(t('locale'),{weekday:'short',hour:'2-digit',minute:'2-digit'})}</td></tr>
+          <tr><td class="hng-td-offline">${t('dyn.closed')}</td>
+          <td>${events[i+1].time.toLocaleString(t('locale'),{weekday:'short',hour:'2-digit',minute:'2-digit'})}</td></tr>`;
         i += 2;
       } else {
         const cycle = getCycle(ev.time);
         html += `<tr><td class="hng-td-cycle">${cycle}</td>
-          <td class="${ev.online ? 'hng-td-online' : 'hng-td-offline'}">${ev.online ? 'ABIERTO' : 'CERRADO'}</td>
-          <td>${ev.time.toLocaleString('es-ES',{weekday:'short',hour:'2-digit',minute:'2-digit'})}</td></tr>`;
+          <td class="${ev.online ? 'hng-td-online' : 'hng-td-offline'}">${ev.online ? t('dyn.open') : t('dyn.closed')}</td>
+          <td>${ev.time.toLocaleString(t('locale'),{weekday:'short',hour:'2-digit',minute:'2-digit'})}</td></tr>`;
         i++;
       }
     }
@@ -1157,5 +1160,6 @@ const HNG = (() => {
     if (_intervalId) { clearInterval(_intervalId); _intervalId = null; }
   }
 
-  return { start, stop, toggleAlert };
+  function rebuildAll() { updateUI(); buildSchedule(); }
+  return { start, stop, toggleAlert, rebuild: rebuildAll };
 })();
