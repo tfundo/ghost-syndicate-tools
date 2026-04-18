@@ -1093,29 +1093,29 @@ const HNG = (() => {
     const events = [];
     const { online, remaining } = getStatus(now);
 
-    let t = new Date(now.getTime() + remaining);
+    let cursor = new Date(now.getTime() + remaining);
     let nextOnline = !online;
     const endTime = new Date(now.getTime() + 3 * 24 * 60 * 60 * 1000);
 
     // If currently online, first upcoming event is going offline
     if (online) {
-      events.push({ online: false, time: t });
-      t = new Date(t.getTime() + CLOSE_DURATION);
+      events.push({ online: false, time: cursor });
+      cursor = new Date(cursor.getTime() + CLOSE_DURATION);
       nextOnline = true;
     } else {
-      events.push({ online: true, time: t });
-      t = new Date(t.getTime() + OPEN_DURATION);
+      events.push({ online: true, time: cursor });
+      cursor = new Date(cursor.getTime() + OPEN_DURATION);
       nextOnline = false;
     }
 
-    while (t < endTime) {
+    while (cursor < endTime) {
       if (nextOnline) {
-        events.push({ online: true, time: t });
-        t = new Date(t.getTime() + OPEN_DURATION);
+        events.push({ online: true, time: cursor });
+        cursor = new Date(cursor.getTime() + OPEN_DURATION);
         nextOnline = false;
       } else {
-        events.push({ online: false, time: t });
-        t = new Date(t.getTime() + CLOSE_DURATION);
+        events.push({ online: false, time: cursor });
+        cursor = new Date(cursor.getTime() + CLOSE_DURATION);
         nextOnline = true;
       }
     }
