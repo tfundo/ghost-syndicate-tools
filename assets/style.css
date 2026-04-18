@@ -243,30 +243,30 @@ body::after {
 }
 
 .lang-btn {
-  font-size: 1.1rem;
+  font-family: var(--font-hud);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
   line-height: 1;
-  padding: 0.15rem 0.2rem;
+  padding: 0.22rem 0.45rem;
   border-radius: 3px;
-  border: 1px solid transparent;
-  background: none;
+  border: 1px solid rgba(180,83,9,0.4);
+  background: rgba(180,83,9,0.1);
+  color: var(--text-muted);
   cursor: pointer;
-  opacity: 0.45;
-  transition: opacity var(--transition), border-color var(--transition), background var(--transition);
-  filter: grayscale(0.4);
+  transition: all var(--transition);
 }
 
 .lang-btn:hover {
-  opacity: 0.85;
-  background: rgba(245,158,11,0.08);
-  border-color: rgba(245,158,11,0.3);
-  filter: grayscale(0);
+  color: var(--accent);
+  background: rgba(245,158,11,0.15);
+  border-color: rgba(245,158,11,0.5);
 }
 
 .lang-btn.active {
-  opacity: 1;
-  filter: grayscale(0);
-  border-color: rgba(245,158,11,0.5);
-  background: rgba(245,158,11,0.1);
+  color: #0c0a09;
+  background: var(--accent);
+  border-color: var(--accent);
 }
 
 .nav-version {
