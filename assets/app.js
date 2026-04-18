@@ -899,7 +899,7 @@ const HNG = (() => {
   const OPEN_DURATION  = 3900338;
   const CLOSE_DURATION = 7200623;
   const CYCLE_DURATION = OPEN_DURATION + CLOSE_DURATION;
-  const INITIAL_OPEN   = new Date('2026-03-26T01:11:56.500-04:00');
+  const INITIAL_OPEN   = new Date('2026-03-26T01:08:56.500-04:00');
 
   const CIRCLES_THRESHOLDS = [
     { min: 0,           max: 12*60*1000,  colors: ['green','green','green','green','green'] },
