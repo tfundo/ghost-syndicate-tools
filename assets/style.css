@@ -42,13 +42,13 @@
   --font-mono:  'Share Tech Mono', monospace;
 
   /* Layout */
-  --nav-h:      110px;
+  --nav-h:      clamp(72px, 7.5vw, 110px);
   --transition: 0.25s ease;
 }
 
 /* ===== RESET ===== */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; font-size: 22px; }
+html { scroll-behavior: smooth; font-size: clamp(14px, 1.15vw, 20px); }
 body {
   background: var(--bg-dark);
   color: var(--text-primary);
