@@ -198,6 +198,9 @@ window.showSection = function(sectionId) {
   // Load Mining on first visit
   if (sectionId === 'mining' && window.Mining) Mining.load();
 
+  // Load Missions on first visit
+  if (sectionId === 'missions' && window.Missions) Missions.load();
+
   // Hangar Ejecutivo: start/stop ticker
   if (sectionId === 'hangar') HNG.start();
   else HNG.stop();
@@ -209,6 +212,8 @@ window.showSection = function(sectionId) {
 // ============================================================
 // DATABASE LOADING
 // ============================================================
+let missionsByPool = {};
+
 async function loadDatabase() {
   try {
     const dbResp = await fetch('data/crafting_db.json');
@@ -227,6 +232,14 @@ async function loadDatabase() {
     `;
   }
 }
+
+fetch('data/missions_db.json').then(r => r.ok ? r.json() : null).then(msDb => {
+  if (!msDb) return;
+  for (const m of (msDb.missions || [])) {
+    if (!missionsByPool[m.pool]) missionsByPool[m.pool] = [];
+    missionsByPool[m.pool].push(m);
+  }
+}).catch(() => {});
 
 function updateHomeStats() {
   if (!db) return;
@@ -545,56 +558,57 @@ window.openBlueprintDetail = function(idx) {
     }
   });
 
-  const DIFF_ABBREV = { VeryEasy: t('diff.abbr.VeryEasy'), Easy: t('diff.abbr.Easy'), Medium: t('diff.abbr.Medium'), Hard: t('diff.abbr.Hard'), VeryHard: t('diff.abbr.VeryHard'), Super: t('diff.abbr.Super') };
-  const DIFF_LABEL  = { VeryEasy: t('diff.VeryEasy'), Easy: t('diff.Easy'), Medium: t('diff.Medium'), Hard: t('diff.Hard'), VeryHard: t('diff.VeryHard'), Super: t('diff.Super') };
+  const TIER_COLOR = { VE:'yellow', E:'yellow', M:'orange', H:'orange', VH:'red', S:'red' };
 
   const missionsHtml = uniqueMissions.length > 0
     ? uniqueMissions.map(m => {
+        const msEntries = missionsByPool[m.poolFile] || [];
+        const msEntry   = msEntries[0] || null;
+        const faction   = msEntry ? msEntry.faction : (m.contractor || '');
+        const tier      = msEntry ? msEntry.tier : '';
+        const tierColor = TIER_COLOR[tier] || 'grey';
+
         const titlesHtml = m.missionTitles && m.missionTitles.length > 0
-          ? `<ul class="modal-mission-titles">${m.missionTitles.map(t => `<li>${escHtml(t)}</li>`).join('')}</ul>`
-          : '';
-        const contractorBadge = m.contractor
-          ? `<span class="modal-contractor-badge">${escHtml(m.contractor)}</span>`
+          ? m.missionTitles.map(title => {
+              const infoBtn = msEntry
+                ? `<button class="ms-info-btn" onclick="openMissionDetail('${escHtml(m.poolFile)}')" title="Ver detalle de misión">ⓘ</button>`
+                : '';
+              return `<li class="ms-mission-row">
+                <span class="ms-mission-title">${escHtml(title)}</span>
+                ${infoBtn}
+              </li>`;
+            }).join('')
           : '';
 
-        // Systems badges
+        const tierBadge = tier
+          ? `<span class="ms-tier-badge ms-tier--${tierColor}">${tier}</span>`
+          : '';
+        const factionBadge = faction
+          ? `<span class="modal-contractor-badge">${escHtml(faction)}</span>`
+          : '';
         const systemsHtml = (m.systems && m.systems.length > 0)
           ? m.systems.map(s => `<span class="mission-system-badge mission-system-${s.toLowerCase()}">${escHtml(s)}</span>`).join('')
           : '';
 
-        // Scrip table: if we have per-difficulty data show it; else just difficulty list
+        // Scrip table (existing logic)
         let rewardsHtml = '';
+        const DIFF_ABBREV = { VeryEasy:'VE', Easy:'E', Medium:'M', Hard:'H', VeryHard:'VH', Super:'S' };
         const hasScrip = m.scripPerDiff && Object.keys(m.scripPerDiff).length > 0;
-        const hasDiffs = m.difficulties && m.difficulties.length > 0;
         if (hasScrip) {
           const label = m.scripLabel || 'Scrip';
-          const rows = m.difficulties
+          const rows = (m.difficulties || [])
             .filter(d => m.scripPerDiff[d] != null)
-            .map(d => {
-              const abbr = DIFF_ABBREV[d] || d;
-              const fullLabel = DIFF_LABEL[d] || d;
-              return `<tr><td title="${escHtml(fullLabel)}">${escHtml(abbr)}</td><td>${m.scripPerDiff[d]} <span class="scrip-unit">${escHtml(label)}</span> <span class="scrip-auec">+ aUEC variable</span></td></tr>`;
-            }).join('');
-          if (rows) {
-            rewardsHtml = `<table class="mission-scrip-table"><thead><tr><th>${t('dyn.difficulty')}</th><th>${t('dyn.reward')}</th></tr></thead><tbody>${rows}</tbody></table>`;
-          }
-        } else if (hasDiffs) {
-          const diffBadges = m.difficulties.map(d => {
-            const abbr = DIFF_ABBREV[d] || d;
-            const fullLabel = DIFF_LABEL[d] || d;
-            return `<span class="mission-diff-badge" title="${escHtml(fullLabel)}">${escHtml(abbr)}</span>`;
-          }).join('');
-          rewardsHtml = `<div class="mission-diffs">${diffBadges}</div>`;
+            .map(d => `<tr><td>${DIFF_ABBREV[d]||d}</td><td>${m.scripPerDiff[d]} <span class="scrip-unit">${escHtml(label)}</span></td></tr>`)
+            .join('');
+          if (rows) rewardsHtml = `<table class="mission-scrip-table"><thead><tr><th>Dif.</th><th>Scrip</th></tr></thead><tbody>${rows}</tbody></table>`;
         }
 
         return `
           <div class="modal-mission-item">
             <div class="modal-mission-header">
-              ${contractorBadge}
-              <span class="modal-mission-name">${escHtml(m.missionName)}</span>
-              ${systemsHtml}
+              ${tierBadge}${factionBadge}${systemsHtml}
             </div>
-            ${titlesHtml}
+            ${titlesHtml ? `<ul class="modal-mission-titles">${titlesHtml}</ul>` : ''}
             ${rewardsHtml}
           </div>
         `;
@@ -637,6 +651,50 @@ window.closeModal = function() {
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') { closeModal(); closeLegal(); }
 });
+
+// ── Mission detail popup ───────────────────────────────────────────────────
+const TIER_COLOR_MAP = { VE:'yellow', E:'yellow', M:'orange', H:'orange', VH:'red', S:'red' };
+const TIER_LABEL_MAP = { VE:'Muy Fácil', E:'Fácil', M:'Medio', H:'Difícil', VH:'Muy Difícil', S:'Super' };
+
+window.openMissionDetail = function(poolFile) {
+  const entries = missionsByPool[poolFile] || [];
+  if (!entries.length) return;
+  const m = entries[0];
+  const tier  = m.tier || '';
+  const color = TIER_COLOR_MAP[tier] || 'grey';
+  const tierLabel = TIER_LABEL_MAP[tier] || tier;
+
+  const bpList = m.blueprints.length
+    ? m.blueprints.map(b => `<li>${escHtml(b.name)}</li>`).join('')
+    : '<li>Sin datos</li>';
+
+  const html = `
+    <div class="ms-detail-popup">
+      <div class="ms-detail-header">
+        <span class="ms-tier-badge ms-tier--${color}">${tier || '?'}</span>
+        <span class="ms-detail-faction">${escHtml(m.faction)}</span>
+        ${tier ? `<span class="ms-detail-tier-label">${escHtml(TIER_LABEL_MAP[tier] || tier)}</span>` : ''}
+      </div>
+      <div class="ms-detail-section">
+        <div class="ms-detail-label">Blueprints posibles (1 aleatorio)</div>
+        <ul class="ms-detail-bplist">${bpList}</ul>
+      </div>
+    </div>
+  `;
+
+  const modalContent = document.getElementById('modalContent');
+  // Inject as a sub-panel inside the already-open modal
+  let panel = document.getElementById('msMissionPanel');
+  if (!panel) {
+    panel = document.createElement('div');
+    panel.id = 'msMissionPanel';
+    panel.className = 'ms-mission-panel';
+    panel.innerHTML = `<button class="ms-panel-close" onclick="document.getElementById('msMissionPanel').remove()">✕</button><div id="msMissionPanelBody"></div>`;
+    modalContent.appendChild(panel);
+  }
+  document.getElementById('msMissionPanelBody').innerHTML = html;
+  panel.classList.add('open');
+};
 
 // ============================================================
 // LEGAL MODAL

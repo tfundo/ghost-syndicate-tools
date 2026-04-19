@@ -343,7 +343,7 @@ const Mining = (() => {
       </div>
 
       <p class="mn-table-note" style="margin-top:1rem">
-        Valores de emisión del escáner según concentración (×1 mínimo → ×N máximo para esa rareza). Datos: Data.p4k SC 4.7.1.
+        Valores de emisión del escáner según concentración (×1 mínimo → ×N máximo para esa rareza).
       </p>
     `;
   }

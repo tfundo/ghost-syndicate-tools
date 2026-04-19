@@ -3695,3 +3695,268 @@ body::after {
   left: 0;
   color: var(--accent);
 }
+
+/* ============================================================
+   MISSIONS MODULE
+   ============================================================ */
+
+.ms-color-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.ms-color-btn {
+  padding: 0.35rem 0.9rem;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.04);
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.ms-color-btn:hover,
+.ms-color-btn.active {
+  background: rgba(255,255,255,0.12);
+  color: var(--text-primary);
+  border-color: rgba(255,255,255,0.3);
+}
+.ms-color-btn--yellow.active { background: rgba(234,179,8,0.18); border-color: rgba(234,179,8,0.5); color: #fbbf24; }
+.ms-color-btn--orange.active { background: rgba(249,115,22,0.18); border-color: rgba(249,115,22,0.5); color: #fb923c; }
+.ms-color-btn--red.active    { background: rgba(239,68,68,0.18);  border-color: rgba(239,68,68,0.5);  color: #f87171; }
+
+.ms-content { display: none; }
+.ms-content:not(.hidden) { display: block; }
+
+.ms-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Faction group */
+.ms-faction-group { margin-bottom: 1.5rem; }
+.ms-faction-header {
+  font-family: 'Cinzel', serif;
+  font-size: 1rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.6rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid rgba(245,158,11,0.2);
+}
+.ms-faction-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 0.5rem;
+}
+
+/* Mission card */
+.ms-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  border-left-width: 3px;
+}
+.ms-card--yellow { border-left-color: #d97706; }
+.ms-card--orange { border-left-color: #ea580c; }
+.ms-card--red    { border-left-color: #dc2626; }
+.ms-card--grey   { border-left-color: #6b7280; }
+
+.ms-card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+.ms-tier-badge {
+  flex-shrink: 0;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  letter-spacing: 0.05em;
+  margin-top: 1px;
+}
+.ms-tier--yellow { background: rgba(217,119,6,0.2);  color: #fbbf24; }
+.ms-tier--orange { background: rgba(234,88,12,0.2);  color: #fb923c; }
+.ms-tier--red    { background: rgba(220,38,38,0.2);  color: #f87171; }
+.ms-tier--grey   { background: rgba(107,114,128,0.2);color: #9ca3af; }
+
+.ms-card-title {
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+.ms-card-faction {
+  font-size: 0.72rem;
+  color: var(--text-muted, var(--text-secondary));
+  margin-bottom: 0.5rem;
+  opacity: 0.7;
+}
+
+.ms-card-bps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  align-items: center;
+}
+.ms-bp-tag {
+  font-size: 0.7rem;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 4px;
+  padding: 0.1rem 0.4rem;
+  color: var(--text-secondary);
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.ms-pool-note {
+  font-size: 0.65rem;
+  color: var(--text-secondary);
+  opacity: 0.6;
+  font-style: italic;
+}
+.ms-bp-none {
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+  opacity: 0.5;
+  font-style: italic;
+}
+
+.ms-empty {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--text-secondary);
+  grid-column: 1 / -1;
+}
+.ms-empty-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+.ms-error {
+  text-align: center;
+  padding: 2rem;
+  color: #f87171;
+}
+
+@media (max-width: 600px) {
+  .ms-faction-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Mission enrichment in blueprint modal ─────────────────── */
+.ms-tier-badge {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+  letter-spacing: 0.05em;
+  vertical-align: middle;
+}
+.ms-tier--yellow { background: rgba(217,119,6,0.2);  color: #fbbf24; }
+.ms-tier--orange { background: rgba(234,88,12,0.2);  color: #fb923c; }
+.ms-tier--red    { background: rgba(220,38,38,0.2);  color: #f87171; }
+.ms-tier--grey   { background: rgba(107,114,128,0.2);color: #9ca3af; }
+
+.ms-mission-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.ms-mission-title { flex: 1; min-width: 0; }
+.ms-auec-inline {
+  font-size: 0.7rem;
+  color: #34d399;
+  font-weight: 600;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.ms-info-btn {
+  background: none;
+  border: none;
+  color: var(--accent);
+  cursor: pointer;
+  font-size: 0.85rem;
+  padding: 0 0.15rem;
+  opacity: 0.7;
+  flex-shrink: 0;
+}
+.ms-info-btn:hover { opacity: 1; }
+
+/* Mission detail side panel */
+.ms-mission-panel {
+  display: none;
+  margin-top: 1.2rem;
+  padding: 1rem;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(245,158,11,0.25);
+  border-radius: 8px;
+  position: relative;
+}
+.ms-mission-panel.open { display: block; }
+.ms-panel-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+.ms-panel-close:hover { color: var(--text-primary); }
+
+.ms-detail-popup {}
+.ms-detail-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.8rem;
+  flex-wrap: wrap;
+}
+.ms-detail-faction {
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+.ms-detail-tier-label {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  margin-left: auto;
+}
+.ms-detail-label {
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.4rem;
+}
+.ms-detail-bplist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.ms-detail-bplist li {
+  font-size: 0.78rem;
+  color: var(--text-primary);
+  padding: 0.2rem 0.5rem;
+  background: rgba(255,255,255,0.04);
+  border-radius: 4px;
+}
+.ms-detail-note {
+  font-size: 0.68rem;
+  color: var(--text-secondary);
+  opacity: 0.6;
+  margin-top: 0.8rem;
+  font-style: italic;
+}
