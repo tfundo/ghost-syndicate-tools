@@ -157,7 +157,7 @@ body::after {
   list-style: none;
   gap: 0.15rem;
   margin: 0;
-  flex: 1;
+  flex: 0 0 auto;
 }
 .nav-link {
   display: flex;
@@ -1770,8 +1770,8 @@ body::after {
 
 /* ── Responsive nav: shrinks progressively, never disappears until true mobile ── */
 
-/* Step 1 — 1280px: drop social text + logo subtitle */
-@media (max-width: 1280px) {
+/* Step 1 — 1920px: drop social text + logo subtitle on 1080p and below */
+@media (max-width: 1920px) {
   .logo-sub { display: none; }
   .nav-social-btn span { display: none; }
   .nav-social-btn { padding: 0.28rem 0.4rem; }
