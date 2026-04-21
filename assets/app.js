@@ -24,7 +24,7 @@ const state = {
 // lowerIsBetter: true = multiplier <1 is good (less recoil, less spread)
 const QUALITY_PROP_NAMES = {
   'gpp_armor_damagemitigation':     { es: 'Mitigación daño',    en: 'Damage Mitigation',    icon: '🛡', lowerIsBetter: false },
-  'gpp_armor_temperaturemin':       { es: 'Temperatura mín.',   en: 'Min Temperature',      icon: '🌡', lowerIsBetter: true  },
+  'gpp_armor_temperaturemin':       { es: 'Temperatura mín.',   en: 'Min Temperature',      icon: '🌡', lowerIsBetter: false },
   'gpp_armor_temperaturemax':       { es: 'Temperatura máx.',   en: 'Max Temperature',      icon: '🌡', lowerIsBetter: false },
   'gpp_armor_radiationdissipation': { es: 'Disipación rad.',    en: 'Radiation Dissipation', icon: '☢', lowerIsBetter: false },
   'gpp_armor_radiationcapacity':    { es: 'Capacidad rad.',     en: 'Radiation Capacity',   icon: '☢', lowerIsBetter: false },
