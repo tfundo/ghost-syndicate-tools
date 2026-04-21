@@ -21,6 +21,26 @@ const state = {
   sort: 'name',
 };
 
+const QUALITY_PROP_NAMES = {
+  'gpp_armor_damagemitigation':     { es: 'Mitigación daño',    en: 'Damage Mitigation',    icon: '🛡' },
+  'gpp_armor_temperaturemin':       { es: 'Temperatura mín.',   en: 'Min Temperature',      icon: '🌡' },
+  'gpp_armor_temperaturemax':       { es: 'Temperatura máx.',   en: 'Max Temperature',      icon: '🌡' },
+  'gpp_armor_radiationdissipation': { es: 'Disipación rad.',    en: 'Radiation Dissipation', icon: '☢' },
+  'gpp_armor_radiationcapacity':    { es: 'Capacidad rad.',     en: 'Radiation Capacity',   icon: '☢' },
+  'gpp_weapon_damage':              { es: 'Daño',               en: 'Damage',               icon: '⚔' },
+  'gpp_weapon_firerate':            { es: 'Cadencia fuego',     en: 'Fire Rate',            icon: '⚡' },
+  'gpp_weapon_recoil_handling':     { es: 'Control retroceso',  en: 'Recoil Handling',      icon: '🎯' },
+  'gpp_weapon_recoil_kick':         { es: 'Patada retroceso',   en: 'Recoil Kick',          icon: '↗' },
+  'gpp_weapon_recoil_smoothness':   { es: 'Suavidad retroceso', en: 'Recoil Smoothness',    icon: '〰' },
+  'gpp_weapon_reloadspeed':         { es: 'Vel. recarga',       en: 'Reload Speed',         icon: '⟳' },
+  'gpp_weapon_spread':              { es: 'Dispersión',         en: 'Spread',               icon: '◎' },
+  'gpp_crafter_craftspeed':         { es: 'Vel. fabricación',   en: 'Craft Speed',          icon: '⚙' },
+  'gpp_crafter_dismantleefficiency':{ es: 'Ef. desmantelado',   en: 'Dismantle Efficiency', icon: '🔧' },
+};
+
+let _modalQuality = 1000;
+let _modalQualityIngredients = [];
+
 // ============================================================
 // INIT
 // ============================================================
@@ -470,6 +490,8 @@ function renderBlueprintCard(bp, idx) {
   const missionBadge = bp.hasMissions
     ? `<span class="bp-mission-badge">✓ MISIÓN</span>`
     : '';
+  const hasQuality = ingredients.some(ing => ing.qualityModifiers && ing.qualityModifiers.length > 0);
+  const qualityBadge = hasQuality ? `<span class="bp-quality-badge" title="${window.currentLang === 'en' ? 'Quality bonuses available' : 'Bonificaciones por calidad disponibles'}">⬆</span>` : '';
 
   const timeHtml = tier?.craftTime != null
     ? `<span class="bp-time">⏱ <span class="time-val">${formatTime(tier.craftTime)}</span></span>`
@@ -499,7 +521,7 @@ function renderBlueprintCard(bp, idx) {
     <div class="bp-card" onclick="openBlueprintDetail(${idx})" style="animation-delay:${Math.min(idx * 0.02, 0.5)}s">
       <div class="bp-header">
         <span class="bp-name">${escHtml(bp.name)}</span>
-        ${missionBadge}
+        <div class="bp-badges">${qualityBadge}${missionBadge}</div>
       </div>
       <div class="bp-category">
         <span class="bp-cat-badge" style="color:${catInfo.color};border-color:${catInfo.color};background:${catInfo.color}18">${catInfo.abbr}</span>
@@ -622,6 +644,9 @@ window.openBlueprintDetail = function(idx) {
       <span class="modal-craft-time">⏱ Tier ${i+1}: <strong>${formatTime(tier.craftTime)}</strong></span>
     `).join(' ') || `<p class="modal-no-data">${t('dyn.modal.no.time')}</p>`;
 
+  _modalQualityIngredients = uniqueIngredients;
+  const qualitySectionHtml = buildQualitySection(uniqueIngredients);
+
   modalContent.innerHTML = `
     <div class="modal-title">${escHtml(bp.name)}</div>
     <div class="modal-category">${escHtml(bp.categoryPath)}</div>
@@ -633,9 +658,30 @@ window.openBlueprintDetail = function(idx) {
     <div class="modal-section-title">${t('dyn.modal.materials')}</div>
     ${ingredientsHtml}
 
+    ${qualitySectionHtml}
+
     <div class="modal-section-title">${t('dyn.modal.missions')}</div>
     ${missionsHtml}
   `;
+
+  // Quality slider event listener
+  const qSlider = document.getElementById('qSlider');
+  if (qSlider) {
+    qSlider.addEventListener('input', (e) => {
+      _modalQuality = parseInt(e.target.value);
+      const valDisplay = document.getElementById('qValDisplay');
+      if (valDisplay) valDisplay.textContent = `Q${_modalQuality}`;
+      document.querySelectorAll('.q-preset').forEach(btn => {
+        btn.classList.toggle('active', parseInt(btn.textContent.replace('Q', '')) === _modalQuality);
+      });
+      renderQualityMods(_modalQuality, _modalQualityIngredients);
+    });
+    // Initial render + active preset
+    renderQualityMods(_modalQuality, _modalQualityIngredients);
+    document.querySelectorAll('.q-preset').forEach(btn => {
+      btn.classList.toggle('active', parseInt(btn.textContent.replace('Q', '')) === _modalQuality);
+    });
+  }
 
   // Open modal
   document.getElementById('modalOverlay').classList.add('open');
@@ -796,6 +842,129 @@ function escHtml(str) {
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;');
 }
+
+// ============================================================
+// QUALITY MODIFIERS
+// ============================================================
+function interpolateMod(mod, quality) {
+  const q = Math.max(mod.startQuality, Math.min(mod.endQuality, quality));
+  const frac = mod.endQuality === mod.startQuality ? 1 : (q - mod.startQuality) / (mod.endQuality - mod.startQuality);
+  return mod.modifierAtStart + frac * (mod.modifierAtEnd - mod.modifierAtStart);
+}
+
+function getPropLabel(prop) {
+  const info = QUALITY_PROP_NAMES[prop];
+  if (!info) return prop.replace('gpp_', '').replace(/_/g, ' ');
+  return window.currentLang === 'en' ? info.en : info.es;
+}
+
+function getPropIcon(prop) {
+  return QUALITY_PROP_NAMES[prop]?.icon || '◈';
+}
+
+function hasQualityMods(ingredients) {
+  return ingredients.some(ing => ing.qualityModifiers && ing.qualityModifiers.length > 0);
+}
+
+function buildQualitySection(ingredients) {
+  if (!hasQualityMods(ingredients)) return '';
+  return `
+    <div class="modal-section-title">${t('dyn.quality.title')}</div>
+    <div class="quality-ctrl">
+      <div class="quality-slider-row">
+        <span class="quality-label-q">${t('dyn.quality.label')}</span>
+        <input type="range" id="qSlider" min="0" max="1000" value="${_modalQuality}" class="quality-range">
+        <span class="quality-val-display" id="qValDisplay">Q${_modalQuality}</span>
+      </div>
+      <div class="quality-presets">
+        <button class="q-preset" onclick="setModalQuality(0)">Q0</button>
+        <button class="q-preset" onclick="setModalQuality(500)">Q500</button>
+        <button class="q-preset" onclick="setModalQuality(750)">Q750</button>
+        <button class="q-preset" onclick="setModalQuality(1000)">Q1000</button>
+      </div>
+    </div>
+    <div id="qualityModsDisplay"></div>
+  `;
+}
+
+function renderQualityMods(quality, ingredients) {
+  const display = document.getElementById('qualityModsDisplay');
+  if (!display) return;
+
+  const slotMap = new Map();
+  for (const ing of ingredients) {
+    if (!ing.qualityModifiers || !ing.qualityModifiers.length) continue;
+    const slot = ing.slot || '—';
+    if (!slotMap.has(slot)) slotMap.set(slot, []);
+    slotMap.get(slot).push(ing);
+  }
+  if (!slotMap.size) { display.innerHTML = ''; return; }
+
+  let html = '<div class="q-slots-wrap">';
+  for (const [slot, ings] of slotMap) {
+    html += `<div class="q-slot-group"><div class="q-slot-name">${escHtml(slot)}</div>`;
+    for (const ing of ings) {
+      const accessible = ing.minQuality === 0 || quality >= ing.minQuality;
+      const lockedClass = accessible ? '' : ' q-resource-locked';
+      const minQBadge = ing.minQuality > 0 ? `<span class="q-minq-badge">mín. Q${ing.minQuality}</span>` : '';
+      const lockedWarn = !accessible ? `<span class="q-locked-warn">⚠ ${t('dyn.quality.req')} Q${ing.minQuality}</span>` : '';
+
+      const modsByProp = new Map();
+      for (const mod of ing.qualityModifiers) {
+        if (!modsByProp.has(mod.property)) modsByProp.set(mod.property, mod);
+      }
+
+      html += `<div class="q-resource-row${lockedClass}">
+        <div class="q-res-header">
+          <span class="q-res-dot"></span>
+          <span class="q-res-name">${escHtml(ing.resourceName)}</span>
+          ${minQBadge}${lockedWarn}
+        </div>
+        <div class="q-mods-list">`;
+
+      for (const [prop, mod] of modsByProp) {
+        const val = interpolateMod(mod, quality);
+        const pct = (val - 1) * 100;
+        const sign = pct >= 0 ? '+' : '';
+        const absPct = Math.abs(pct).toFixed(1);
+        const isPositive = pct >= 0;
+        const progress = mod.endQuality === mod.startQuality ? 1
+          : Math.max(0, Math.min(1, (quality - mod.startQuality) / (mod.endQuality - mod.startQuality)));
+        const barFill = (progress * 100).toFixed(1);
+        const barColor = isPositive ? 'var(--green)' : 'var(--accent)';
+        const valClass = isPositive ? 'q-val-pos' : 'q-val-neg';
+        const basePct = ((mod.modifierAtStart - 1) * 100).toFixed(1);
+        const maxPct  = ((mod.modifierAtEnd   - 1) * 100).toFixed(1);
+        const tooltip = `Q${mod.startQuality}: ${parseFloat(basePct) >= 0 ? '+' : ''}${basePct}% → Q${mod.endQuality}: ${parseFloat(maxPct) >= 0 ? '+' : ''}${maxPct}%`;
+
+        html += `<div class="q-mod-item" title="${escHtml(tooltip)}">
+          <span class="q-prop-icon">${getPropIcon(prop)}</span>
+          <span class="q-prop-name">${escHtml(getPropLabel(prop))}</span>
+          <div class="q-bar-track">
+            <div class="q-bar-fill" style="width:${barFill}%;background:${barColor}"></div>
+          </div>
+          <span class="q-mod-val ${valClass}">${sign}${absPct}%</span>
+        </div>`;
+      }
+      html += `</div></div>`;
+    }
+    html += `</div>`;
+  }
+  html += '</div>';
+  display.innerHTML = html;
+}
+
+window.setModalQuality = function(q) {
+  _modalQuality = q;
+  const slider = document.getElementById('qSlider');
+  const valDisplay = document.getElementById('qValDisplay');
+  if (slider) slider.value = q;
+  if (valDisplay) valDisplay.textContent = `Q${q}`;
+  document.querySelectorAll('.q-preset').forEach(btn => {
+    btn.classList.toggle('active', parseInt(btn.textContent.replace('Q', '')) === q);
+  });
+  renderQualityMods(_modalQuality, _modalQualityIngredients);
+};
 
 // ============================================================
 // WIKELODATA SECTION
