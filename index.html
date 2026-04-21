@@ -38,6 +38,7 @@
       <li><a href="#wikelodata" class="nav-link" data-section="wikelodata" data-i18n="nav.wikelodata">WikeloData</a></li>
       <li><a href="#hangar" class="nav-link" data-section="hangar" data-i18n="nav.hangar">Hangar Ejecutivo</a></li>
       <li><a href="#mining" class="nav-link" data-section="mining" data-i18n="nav.mining">Minería</a></li>
+      <li><a href="#trading" class="nav-link" data-section="trading">Comercio</a></li>
     </ul>
     <div class="nav-social-bar">
       <a class="nav-social-btn nav-social-dc" href="https://discord.com/invite/Ktfnbmj5s7" target="_blank" rel="noopener" title="Discord Ghost Syndicate">
@@ -152,6 +153,12 @@
             <div class="feature-icon">⛏</div>
             <h3 data-i18n="home.mining.title">Minería</h3>
             <p data-i18n="home.mining.desc">31 minerales, escáner de emisiones y ubicaciones por concentración.</p>
+            <span class="feature-link" data-i18n="home.access">Acceder →</span>
+          </div>
+          <div class="feature-card" onclick="showSection('trading')">
+            <div class="feature-icon">💹</div>
+            <h3>Comercio</h3>
+            <p>Rutas de comercio rentables con precios en tiempo real de UEX Corp.</p>
             <span class="feature-link" data-i18n="home.access">Acceder →</span>
           </div>
           <div class="feature-card coming-soon">
@@ -344,6 +351,17 @@
     </div>
   </section>
 
+  <!-- ===== TRADING SECTION ===== -->
+  <section class="section" id="trading">
+    <div class="container">
+      <div class="page-header">
+        <h1 class="page-title">💹 Comercio</h1>
+        <p class="page-subtitle">Rutas de trading · Precios UEX Corp · SC 4.7.1</p>
+      </div>
+      <div id="tradingContent"></div>
+    </div>
+  </section>
+
   <!-- ===== DETAIL MODAL ===== -->
   <div class="modal-overlay" id="modalOverlay" onclick="closeModal()"></div>
   <div class="modal" id="detailModal">
@@ -409,6 +427,7 @@
   <script src="assets/i18n.js"></script>
   <script src="assets/comparador.js"></script>
   <script src="assets/mining.js"></script>
+  <script src="assets/trading.js"></script>
   <script src="assets/app.js"></script>
   <script>
     if ('serviceWorker' in navigator) {

@@ -219,6 +219,9 @@ window.showSection = function(sectionId) {
   // Load Mining on first visit
   if (sectionId === 'mining' && window.Mining) Mining.load();
 
+  // Load Trading on first visit
+  if (sectionId === 'trading' && window.Trading) Trading.load();
+
   // Load Missions on first visit
   if (sectionId === 'missions' && window.Missions) Missions.load();
 
@@ -926,9 +929,10 @@ function renderQualityMods(quality, ingredients) {
       for (const [prop, mod] of modsByProp) {
         const val = interpolateMod(mod, quality);
         const pct = (val - 1) * 100;
-        const sign = pct >= 0 ? '+' : '';
-        const absPct = Math.abs(pct).toFixed(1);
         const lib = QUALITY_PROP_NAMES[prop]?.lowerIsBetter ?? false;
+        const effectivePct = lib ? -pct : pct;
+        const sign = effectivePct >= 0 ? '+' : '-';
+        const absPct = Math.abs(pct).toFixed(1);
         // isGood: multiplier going down is good for lowerIsBetter props (recoil, spread)
         const isGood = lib ? pct <= 0 : pct >= 0;
         const progress = mod.endQuality === mod.startQuality ? 1

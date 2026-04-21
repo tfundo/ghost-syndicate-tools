@@ -4183,3 +4183,145 @@ body::after {
   }
   .q-prop-name { font-size: 0.65rem; }
 }
+
+/* =============================================================
+   TRADING ROUTES
+   ============================================================= */
+
+/* Toolbar */
+.trd-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.trd-search {
+  flex: 1 1 260px;
+}
+
+.trd-refresh-btn {
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.trd-count {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-left: auto;
+}
+
+/* Table */
+.trd-table-wrap {
+  overflow-x: auto;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+
+.trd-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+}
+
+.trd-table thead {
+  background: var(--bg-mid);
+  border-bottom: 1px solid var(--border);
+}
+
+.trd-table th {
+  padding: 0.6rem 0.75rem;
+  text-align: left;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--accent);
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.trd-table td {
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  color: var(--text);
+  vertical-align: middle;
+}
+
+.trd-table tr:hover td {
+  background: rgba(180,83,9,0.06);
+}
+
+.trd-table tr:last-child td {
+  border-bottom: none;
+}
+
+.trd-rank {
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  width: 2rem;
+  text-align: center;
+}
+
+.trd-commodity {
+  font-weight: 600;
+  color: var(--text-bright);
+}
+
+.trd-num {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  white-space: nowrap;
+}
+
+.trd-profit {
+  font-weight: 700;
+  font-family: var(--font-mono);
+  white-space: nowrap;
+}
+
+.trd-hi  { color: var(--green); }
+.trd-mid { color: #86efac; }
+.trd-lo  { color: var(--text); }
+
+.trd-pct {
+  font-size: 0.7rem;
+  opacity: 0.75;
+}
+
+.trd-attribution {
+  margin-top: 0.75rem;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.trd-attribution a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.trd-attribution a:hover {
+  text-decoration: underline;
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .trd-table th:nth-child(5),
+  .trd-table td:nth-child(5),
+  .trd-table th:nth-child(6),
+  .trd-table td:nth-child(6) {
+    display: none;
+  }
+
+  .trd-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .trd-count {
+    margin-left: 0;
+    text-align: center;
+  }
+}
