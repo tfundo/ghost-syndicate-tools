@@ -21,21 +21,22 @@ const state = {
   sort: 'name',
 };
 
+// lowerIsBetter: true = multiplier <1 is good (less recoil, less spread)
 const QUALITY_PROP_NAMES = {
-  'gpp_armor_damagemitigation':     { es: 'Mitigación daño',    en: 'Damage Mitigation',    icon: '🛡' },
-  'gpp_armor_temperaturemin':       { es: 'Temperatura mín.',   en: 'Min Temperature',      icon: '🌡' },
-  'gpp_armor_temperaturemax':       { es: 'Temperatura máx.',   en: 'Max Temperature',      icon: '🌡' },
-  'gpp_armor_radiationdissipation': { es: 'Disipación rad.',    en: 'Radiation Dissipation', icon: '☢' },
-  'gpp_armor_radiationcapacity':    { es: 'Capacidad rad.',     en: 'Radiation Capacity',   icon: '☢' },
-  'gpp_weapon_damage':              { es: 'Daño',               en: 'Damage',               icon: '⚔' },
-  'gpp_weapon_firerate':            { es: 'Cadencia fuego',     en: 'Fire Rate',            icon: '⚡' },
-  'gpp_weapon_recoil_handling':     { es: 'Control retroceso',  en: 'Recoil Handling',      icon: '🎯' },
-  'gpp_weapon_recoil_kick':         { es: 'Patada retroceso',   en: 'Recoil Kick',          icon: '↗' },
-  'gpp_weapon_recoil_smoothness':   { es: 'Suavidad retroceso', en: 'Recoil Smoothness',    icon: '〰' },
-  'gpp_weapon_reloadspeed':         { es: 'Vel. recarga',       en: 'Reload Speed',         icon: '⟳' },
-  'gpp_weapon_spread':              { es: 'Dispersión',         en: 'Spread',               icon: '◎' },
-  'gpp_crafter_craftspeed':         { es: 'Vel. fabricación',   en: 'Craft Speed',          icon: '⚙' },
-  'gpp_crafter_dismantleefficiency':{ es: 'Ef. desmantelado',   en: 'Dismantle Efficiency', icon: '🔧' },
+  'gpp_armor_damagemitigation':     { es: 'Mitigación daño',    en: 'Damage Mitigation',    icon: '🛡', lowerIsBetter: false },
+  'gpp_armor_temperaturemin':       { es: 'Temperatura mín.',   en: 'Min Temperature',      icon: '🌡', lowerIsBetter: true  },
+  'gpp_armor_temperaturemax':       { es: 'Temperatura máx.',   en: 'Max Temperature',      icon: '🌡', lowerIsBetter: false },
+  'gpp_armor_radiationdissipation': { es: 'Disipación rad.',    en: 'Radiation Dissipation', icon: '☢', lowerIsBetter: false },
+  'gpp_armor_radiationcapacity':    { es: 'Capacidad rad.',     en: 'Radiation Capacity',   icon: '☢', lowerIsBetter: false },
+  'gpp_weapon_damage':              { es: 'Daño',               en: 'Damage',               icon: '⚔', lowerIsBetter: false },
+  'gpp_weapon_firerate':            { es: 'Cadencia fuego',     en: 'Fire Rate',            icon: '⚡', lowerIsBetter: false },
+  'gpp_weapon_recoil_handling':     { es: 'Retroceso control',  en: 'Recoil Handling',      icon: '🎯', lowerIsBetter: true  },
+  'gpp_weapon_recoil_kick':         { es: 'Retroceso patada',   en: 'Recoil Kick',          icon: '↗', lowerIsBetter: true  },
+  'gpp_weapon_recoil_smoothness':   { es: 'Retroceso suavidad', en: 'Recoil Smoothness',    icon: '〰', lowerIsBetter: true  },
+  'gpp_weapon_reloadspeed':         { es: 'Vel. recarga',       en: 'Reload Speed',         icon: '⟳', lowerIsBetter: false },
+  'gpp_weapon_spread':              { es: 'Dispersión',         en: 'Spread',               icon: '◎', lowerIsBetter: true  },
+  'gpp_crafter_craftspeed':         { es: 'Vel. fabricación',   en: 'Craft Speed',          icon: '⚙', lowerIsBetter: false },
+  'gpp_crafter_dismantleefficiency':{ es: 'Ef. desmantelado',   en: 'Dismantle Efficiency', icon: '🔧', lowerIsBetter: false },
 };
 
 let _modalQuality = 1000;
@@ -658,10 +659,10 @@ window.openBlueprintDetail = function(idx) {
     <div class="modal-section-title">${t('dyn.modal.materials')}</div>
     ${ingredientsHtml}
 
-    ${qualitySectionHtml}
-
     <div class="modal-section-title">${t('dyn.modal.missions')}</div>
     ${missionsHtml}
+
+    ${qualitySectionHtml}
   `;
 
   // Quality slider event listener
@@ -927,12 +928,14 @@ function renderQualityMods(quality, ingredients) {
         const pct = (val - 1) * 100;
         const sign = pct >= 0 ? '+' : '';
         const absPct = Math.abs(pct).toFixed(1);
-        const isPositive = pct >= 0;
+        const lib = QUALITY_PROP_NAMES[prop]?.lowerIsBetter ?? false;
+        // isGood: multiplier going down is good for lowerIsBetter props (recoil, spread)
+        const isGood = lib ? pct <= 0 : pct >= 0;
         const progress = mod.endQuality === mod.startQuality ? 1
           : Math.max(0, Math.min(1, (quality - mod.startQuality) / (mod.endQuality - mod.startQuality)));
         const barFill = (progress * 100).toFixed(1);
-        const barColor = isPositive ? 'var(--green)' : 'var(--accent)';
-        const valClass = isPositive ? 'q-val-pos' : 'q-val-neg';
+        const barColor = isGood ? 'var(--green)' : 'var(--accent)';
+        const valClass = isGood ? 'q-val-pos' : 'q-val-neg';
         const basePct = ((mod.modifierAtStart - 1) * 100).toFixed(1);
         const maxPct  = ((mod.modifierAtEnd   - 1) * 100).toFixed(1);
         const tooltip = `Q${mod.startQuality}: ${parseFloat(basePct) >= 0 ? '+' : ''}${basePct}% → Q${mod.endQuality}: ${parseFloat(maxPct) >= 0 ? '+' : ''}${maxPct}%`;
