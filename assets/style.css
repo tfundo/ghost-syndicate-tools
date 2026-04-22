@@ -135,17 +135,19 @@ body::after {
 .logo-text-block {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 0.1rem;
 }
 .logo-text {
   font-family: var(--font-hud);
-  font-size: 1.2rem;
+  font-size: 1.65rem;
   font-weight: 700;
   letter-spacing: 0.14em;
   color: var(--text-primary);
   white-space: nowrap;
   text-transform: uppercase;
   line-height: 1.2;
+  text-align: center;
 }
 .logo-sub {
   font-family: var(--font-mono);
@@ -153,6 +155,7 @@ body::after {
   color: var(--text-muted);
   letter-spacing: 0.1em;
   text-transform: uppercase;
+  text-align: center;
 }
 
 .nav-links {
@@ -1800,7 +1803,7 @@ body::after {
 
 /* Step 1 — desktop two-row height */
 @media (min-width: 751px) {
-  :root { --nav-h: 148px; }
+  :root { --nav-h: 158px; }
 }
 
 /* Step 1b — 1280px: drop logo subtitle */
@@ -1813,7 +1816,7 @@ body::after {
   :root { --nav-h: 118px; }
   .nav-link { padding: 0.55rem 0.75rem; font-size: 0.8rem; letter-spacing: 0.07em; }
   .logo-img { width: 66px; height: 66px; }
-  .logo-text { font-size: 1rem; }
+  .logo-text { font-size: 1.3rem; }
 }
 
 /* Step 3 — 950px: shrink further, hide social bar entirely */
@@ -1822,7 +1825,7 @@ body::after {
   .nav-link { padding: 0.45rem 0.45rem; font-size: 0.7rem; letter-spacing: 0.04em; }
   .nav-social-bar { display: none; }
   .logo-img { width: 54px; height: 54px; }
-  .logo-text { font-size: 0.88rem; }
+  .logo-text { font-size: 1.05rem; }
 }
 
 /* Step 4 — 750px: switch to bottom nav (phones) */
@@ -1873,7 +1876,7 @@ body::after {
 @media (max-width: 600px) {
   --nav-h: 80px;
   .logo-img { width: 56px; height: 56px; }
-  .logo-text { font-size: 0.85rem; }
+  .logo-text { font-size: 0.9rem; }
   .blueprint-grid { grid-template-columns: 1fr; }
   .stat-card { min-width: 80px; }
   .hero-stats { gap: 0.6rem; }
