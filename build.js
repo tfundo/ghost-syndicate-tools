@@ -17,6 +17,7 @@ const OBFUSCATE = [
   'assets/missions.js',
   'assets/i18n.js',
   'assets/trading.js',
+  'assets/market.js',
 ];
 
 const OBFUSCATE_OPTIONS = {
