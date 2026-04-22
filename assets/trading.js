@@ -34,12 +34,6 @@ window.Trading = (function () {
     // trade UI
     selCat: '', selComm: null, selRoute: null,
     view: 'routes', search: '', scuInput: 100,
-    // refinery data
-    ref: {
-      loaded: false, loading: false,
-      yields: [], methods: [], caps: new Map(),
-      selMineralId: null,
-    },
   };
 
   // ── Helpers ──────────────────────────────────────────────
@@ -70,9 +64,6 @@ window.Trading = (function () {
       }
       S.catColors.set(k, color || PALETTE[idx++ % PALETTE.length]);
     }
-  }
-  function stars(n, max = 3) {
-    return '★'.repeat(n) + '☆'.repeat(max - n);
   }
 
   // ── API ──────────────────────────────────────────────────
@@ -149,9 +140,8 @@ window.Trading = (function () {
 
   // ── Render: toolbar ──────────────────────────────────────
   function renderToolbar() {
-    const rA  = S.view === 'routes'     ? ' trd-tab-active' : '';
-    const pA  = S.view === 'prices'     ? ' trd-tab-active' : '';
-    const rfA = S.view === 'refineries' ? ' trd-tab-active' : '';
+    const rA = S.view === 'routes' ? ' trd-tab-active' : '';
+    const pA = S.view === 'prices' ? ' trd-tab-active' : '';
     return `
       <div class="trd-toolbar">
         <div class="search-box trd-search">
@@ -164,9 +154,8 @@ window.Trading = (function () {
           ${S.search ? `<button class="search-clear" onclick="Trading.setSearch('')">✕</button>` : ''}
         </div>
         <div class="trd-tabs">
-          <button class="trd-tab${rA}"  onclick="Trading.setView('routes')">📈 ${tr('Rutas','Routes')}</button>
-          <button class="trd-tab${pA}"  onclick="Trading.setView('prices')">📊 ${tr('Precios','Prices')}</button>
-          <button class="trd-tab${rfA}" onclick="Trading.setView('refineries')">⚗ ${tr('Refinerías','Refineries')}</button>
+          <button class="trd-tab${rA}" onclick="Trading.setView('routes')">📈 ${tr('Rutas','Routes')}</button>
+          <button class="trd-tab${pA}" onclick="Trading.setView('prices')">📊 ${tr('Precios','Prices')}</button>
         </div>
         <button class="btn-ghost trd-refresh-btn" onclick="Trading.refresh()">↺ ${tr('Actualizar','Refresh')}</button>
       </div>`;
@@ -174,7 +163,6 @@ window.Trading = (function () {
 
   // ── Render: category pills ───────────────────────────────
   function renderCats() {
-    if (S.view === 'refineries') return '';
     const cats = [...S.catColors.keys()].sort();
     const allA = !S.selCat ? ' active' : '';
     let html = `<div class="trd-cats">
@@ -194,7 +182,6 @@ window.Trading = (function () {
 
   // ── Render: commodity chips ──────────────────────────────
   function renderChips() {
-    if (S.view === 'refineries') return '';
     const comms = filteredComms();
     if (!comms.length) return '';
     let html = '<div class="trd-chips">';
@@ -384,150 +371,6 @@ window.Trading = (function () {
       <p class="trd-attribution">${tr('Precios de la comunidad vía','Community prices via')} <a href="https://uexcorp.space" target="_blank" rel="noopener">UEX Corp</a></p>`;
   }
 
-  // ── Render: refineries view ──────────────────────────────
-  function renderRefineries() {
-    const ref = S.ref;
-    if (ref.loading) return `<div class="loading-state"><div class="loading-spinner"></div>
-      <p>${tr('Cargando datos de refinerías...','Loading refinery data...')}</p></div>`;
-
-    if (!ref.loaded) return `<div class="empty-state"><div class="empty-icon">⚗</div>
-      <p>${tr('Error al cargar datos de refinerías','Error loading refinery data')}</p>
-      <button class="btn-ghost" onclick="Trading.loadRef()">↺ ${tr('Reintentar','Retry')}</button></div>`;
-
-    // Methods grid
-    const methodCards = ref.methods.map(m => {
-      const yld   = m.rating_yield;
-      const cost  = 4 - m.rating_cost;  // invert: cheaper = more stars
-      const speed = m.rating_speed;
-      const bestClass = (yld === 3 || speed === 3 || cost === 3) ? ' ref-method-top' : '';
-      return `<div class="ref-method-card${bestClass}">
-        <div class="ref-method-name">${esc(m.name)}</div>
-        <div class="ref-method-code">${esc(m.code)}</div>
-        <div class="ref-method-ratings">
-          <div class="ref-rating-row">
-            <span class="ref-rating-lbl">${tr('Rendimiento','Yield')}</span>
-            <span class="ref-stars ref-stars-yield">${stars(yld)}</span>
-          </div>
-          <div class="ref-rating-row">
-            <span class="ref-rating-lbl">${tr('Coste','Cost')}</span>
-            <span class="ref-stars ref-stars-cost">${stars(cost)}</span>
-          </div>
-          <div class="ref-rating-row">
-            <span class="ref-rating-lbl">${tr('Velocidad','Speed')}</span>
-            <span class="ref-stars ref-stars-speed">${stars(speed)}</span>
-          </div>
-        </div>
-      </div>`;
-    }).join('');
-
-    // Mineral chips (only those present in yields data)
-    const mineralIds = new Set(ref.yields.map(y => +y.id_commodity));
-    const mineralComms = [...S.comms.values()]
-      .filter(c => mineralIds.has(c.id))
-      .sort((a, b) => (a.name || '').localeCompare(b.name || ''));
-
-    const mineralChips = mineralComms.map(c => {
-      const color  = catColor(c.kind);
-      const active = ref.selMineralId === c.id ? ' trd-chip-active' : '';
-      return `<button class="trd-chip${active}" style="--cc:${color}"
-        onclick="Trading.selectRefMineral(${c.id})">
-        <span class="trd-chip-dot"></span>${esc(c.name)}
-      </button>`;
-    }).join('');
-
-    // Yields table
-    let yieldsHtml = '';
-    if (ref.selMineralId) {
-      const comm    = S.comms.get(ref.selMineralId);
-      const entries = ref.yields
-        .filter(y => +y.id_commodity === ref.selMineralId)
-        .sort((a, b) => +b.value - +a.value);
-
-      if (entries.length) {
-        const rows = entries.map(y => {
-          const val     = +y.value;
-          const cap     = ref.caps.get(+y.id_terminal);
-          const valCls  = val > 0 ? 'ref-yield-pos' : val < 0 ? 'ref-yield-neg' : 'ref-yield-neu';
-          const valStr  = val > 0 ? `+${val}%` : `${val}%`;
-          const loc     = [y.moon_name, y.planet_name, y.star_system_name].find(Boolean) || '';
-          return `<tr>
-            <td><span class="trd-term">${esc(y.terminal_name || '—')}</span>
-                ${loc ? `<span class="trd-loc">${esc(loc)}</span>` : ''}</td>
-            <td class="trd-num ${valCls} ref-yield-big">${valStr}</td>
-            <td class="trd-num trd-muted">${cap ? fmtInt(cap) + ' SCU' : '—'}</td>
-          </tr>`;
-        }).join('');
-
-        const color = comm ? catColor(comm.kind) : '#b45309';
-        yieldsHtml = `
-          <div class="ref-yields-header">
-            <span class="trd-comm-dot" style="background:${color}"></span>
-            <strong>${esc(comm ? comm.name : '')}</strong>
-            <span class="trd-muted" style="font-size:0.75rem">· ${entries.length} ${tr('refinerías con datos','refineries with data')}</span>
-            <button class="trd-clear-sel" onclick="Trading.selectRefMineral(null)">✕</button>
-          </div>
-          <div class="trd-table-wrap">
-            <table class="trd-table">
-              <thead><tr>
-                <th>${tr('Refinería','Refinery')}</th>
-                <th>${tr('Bonificación rendimiento','Yield bonus')}</th>
-                <th>${tr('Capacidad','Capacity')}</th>
-              </tr></thead>
-              <tbody>${rows}</tbody>
-            </table>
-          </div>`;
-      }
-    } else {
-      // Show overview: top bonuses across all minerals
-      const topEntries = [...ref.yields]
-        .sort((a, b) => +b.value - +a.value)
-        .slice(0, 30);
-
-      const rows = topEntries.map(y => {
-        const val    = +y.value;
-        const comm2  = S.comms.get(+y.id_commodity);
-        const color  = comm2 ? catColor(comm2.kind) : '#b45309';
-        const cap    = ref.caps.get(+y.id_terminal);
-        const valCls = val > 0 ? 'ref-yield-pos' : val < 0 ? 'ref-yield-neg' : 'ref-yield-neu';
-        const valStr = val > 0 ? `+${val}%` : `${val}%`;
-        const loc    = [y.moon_name, y.planet_name, y.star_system_name].find(Boolean) || '';
-        return `<tr>
-          <td><span class="trd-comm-dot" style="background:${color}"></span>${esc(y.commodity_name || '—')}</td>
-          <td><span class="trd-term">${esc(y.terminal_name || '—')}</span>
-              ${loc ? `<span class="trd-loc">${esc(loc)}</span>` : ''}</td>
-          <td class="trd-num ${valCls} ref-yield-big">${valStr}</td>
-          <td class="trd-num trd-muted">${cap ? fmtInt(cap) + ' SCU' : '—'}</td>
-        </tr>`;
-      }).join('');
-
-      yieldsHtml = `
-        <div class="trd-routes-info">${tr('Mejores bonificaciones (todos los minerales)','Best yield bonuses (all minerals)')}</div>
-        <div class="trd-table-wrap">
-          <table class="trd-table">
-            <thead><tr>
-              <th>${tr('Mineral','Mineral')}</th>
-              <th>${tr('Refinería','Refinery')}</th>
-              <th>${tr('Bonificación','Yield bonus')}</th>
-              <th>${tr('Capacidad','Capacity')}</th>
-            </tr></thead>
-            <tbody>${rows}</tbody>
-          </table>
-        </div>`;
-    }
-
-    return `
-      <div class="ref-methods-section">
-        <div class="ref-section-title">⚙ ${tr('Métodos de refinado','Refining methods')}</div>
-        <div class="ref-methods-grid">${methodCards}</div>
-      </div>
-      <div class="ref-yields-section">
-        <div class="ref-section-title">📊 ${tr('Bonificaciones por mineral — selecciona un mineral','Yield bonuses by mineral — select a mineral')}</div>
-        <div class="trd-chips ref-mineral-chips">${mineralChips}</div>
-        ${yieldsHtml}
-      </div>
-      <p class="trd-attribution">${tr('Datos de la comunidad vía','Community data via')} <a href="https://uexcorp.space" target="_blank" rel="noopener">UEX Corp</a></p>`;
-  }
-
   // ── Master render ────────────────────────────────────────
   function render() {
     const wrap = document.getElementById('tradingContent');
@@ -545,9 +388,7 @@ window.Trading = (function () {
     }
     if (!S.loaded) return;
 
-    const content = S.view === 'routes' ? renderRoutes()
-                  : S.view === 'prices' ? renderPrices()
-                  : renderRefineries();
+    const content = S.view === 'routes' ? renderRoutes() : renderPrices();
     wrap.innerHTML = renderToolbar() + renderCats() + renderChips() + `<div class="trd-content">${content}</div>`;
   }
 
@@ -581,34 +422,9 @@ window.Trading = (function () {
     S.loaded = false; S.loading = true; S.error = null;
     S.comms.clear(); S.terms.clear(); S.catColors.clear();
     S.prices = []; S.selRoute = null;
-    S.ref.loaded = false; S.ref.yields = []; S.ref.methods = [];
-    S.ref.caps.clear();
     render();
     try { await fetchTrade(); } catch (e) { S.error = e.message; }
     S.loading = false;
-    render();
-    if (S.loaded && S.view === 'refineries') loadRef();
-  }
-
-  // ── Load refinery data (lazy) ────────────────────────────
-  async function loadRef() {
-    if (S.ref.loaded || S.ref.loading) return;
-    S.ref.loading = true;
-    render();
-    try {
-      const [yieldsData, methodsData, capsData] = await Promise.all([
-        apiFetch('/refineries_yields/'),
-        apiFetch('/refineries_methods/'),
-        apiFetch('/refineries_capacities/'),
-      ]);
-      S.ref.yields  = yieldsData;
-      S.ref.methods = methodsData;
-      for (const c of capsData) S.ref.caps.set(+c.id_terminal, +c.value);
-      S.ref.loaded = true;
-    } catch (e) {
-      S.ref.loaded = false;
-    }
-    S.ref.loading = false;
     render();
   }
 
@@ -630,7 +446,6 @@ window.Trading = (function () {
 
   function setView(v) {
     S.view = v;
-    if (v === 'refineries' && !S.ref.loaded && !S.ref.loading) loadRef();
     render();
   }
 
@@ -655,12 +470,7 @@ window.Trading = (function () {
     render();
   }
 
-  function selectRefMineral(id) {
-    S.ref.selMineralId = id === null ? null : +id;
-    render();
-  }
-
-  return { load, refresh, loadRef, selectCat, selectComm, setView, setSearch,
-           pickRoute, clearRoute, setScu, adjScu, selectRefMineral };
+  return { load, refresh, selectCat, selectComm, setView, setSearch,
+           pickRoute, clearRoute, setScu, adjScu };
 
 })();

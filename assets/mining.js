@@ -1,12 +1,15 @@
 /* ===================================================
    GHOST SYNDICATE TOOLS — Mining Module
-   Minerales · Localizaciones
+   Minerales · Localizaciones · Refinado
    SC 4.7.1 — Real game data from Data.p4k
    =================================================== */
 
 'use strict';
 
 const Mining = (() => {
+
+  const UEX_BASE = 'https://api.uexcorp.space/2.0';
+  const UEX_KEY  = '4996aae707d9ff2f23e17ab42cb51c71e549fa92';
 
   // ============================================================
   // STATE
@@ -31,6 +34,13 @@ const Mining = (() => {
     resMineral: null,   // mineral name or null = hotspots view
     resSystem:  'all',  // 'all' | 'Stanton' | 'Pyro' | 'Nyx'
     resMethod:  'all',  // 'all' | 'ship' | 'ground' | 'fps' | 'both'
+    // Refinado tab
+    refLoaded:   false,
+    refLoading:  false,
+    refYields:   [],
+    refMethods:  [],
+    refCaps:     new Map(),
+    refSelMineral: null,
   };
 
   let loaded = false;
@@ -96,6 +106,7 @@ const Mining = (() => {
       { id: 'minerales', label: 'Minerales' },
       { id: 'escaner',   label: 'Escáner' },
       { id: 'recursos',  label: 'Ubicaciones' },
+      { id: 'refinado',  label: '⚗ Refinado' },
     ].map(t =>
       `<button class="mn-tab${mState.tab === t.id ? ' active' : ''}" onclick="Mining.setTab('${t.id}')">${t.label}</button>`
     ).join('');
@@ -107,6 +118,7 @@ const Mining = (() => {
     if (mState.tab === 'minerales') el.innerHTML = renderMinerales();
     else if (mState.tab === 'escaner')  el.innerHTML = renderEscaner();
     else if (mState.tab === 'recursos') { renderRecursosAsync(el); return; }
+    else if (mState.tab === 'refinado') { renderRefAsync(el); return; }
     wireEvents();
   }
 
@@ -783,9 +795,185 @@ const Mining = (() => {
   }
 
   // ============================================================
+  // TAB: REFINADO — UEX Corp API
+  // ============================================================
+  async function uexFetch(ep) {
+    const r = await fetch(UEX_BASE + ep, { headers: { Authorization: 'Bearer ' + UEX_KEY } });
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    const j = await r.json();
+    if (j.status !== 'ok') throw new Error(j.message || 'API error');
+    return j.data || [];
+  }
+
+  async function loadRefData() {
+    if (mState.refLoaded || mState.refLoading) return;
+    mState.refLoading = true;
+    const el = document.getElementById('mnContent');
+    if (el) el.innerHTML = '<div class="loading-state"><div class="loading-spinner"></div><p>Cargando datos de refinerías...</p></div>';
+    try {
+      const [yields, methods, caps] = await Promise.all([
+        uexFetch('/refineries_yields/'),
+        uexFetch('/refineries_methods/'),
+        uexFetch('/refineries_capacities/'),
+      ]);
+      mState.refYields  = yields;
+      mState.refMethods = methods;
+      mState.refCaps    = new Map();
+      for (const c of caps) mState.refCaps.set(+c.id_terminal, +c.value);
+      mState.refLoaded  = true;
+    } catch (e) {
+      if (el) el.innerHTML = '<div class="mn-error">Error cargando refinerías: ' + escHtml(e.message) +
+        ' <button class="btn-ghost" onclick="Mining._loadRef()">↺ Reintentar</button></div>';
+      mState.refLoading = false;
+      return;
+    }
+    mState.refLoading = false;
+    if (mState.tab === 'refinado') {
+      const el2 = document.getElementById('mnContent');
+      if (el2) { el2.innerHTML = renderRefinado(); }
+    }
+  }
+
+  function renderRefAsync(el) {
+    if (!mState.refLoaded) { loadRefData(); return; }
+    el.innerHTML = renderRefinado();
+  }
+
+  function renderRefinado() {
+    function starsHtml(n, max) {
+      return '★'.repeat(n) + '☆'.repeat((max||3) - n);
+    }
+    function fmtN(n) { return (+n).toLocaleString('en-US', { maximumFractionDigits: 0 }); }
+
+    // ── Methods grid ──
+    const methodCards = mState.refMethods.map(m => {
+      const yld   = m.rating_yield;
+      const cost  = 4 - m.rating_cost;  // invert: cheaper = more stars
+      const speed = m.rating_speed;
+      const topCls= (yld === 3 || speed === 3 || cost === 3) ? ' ref-method-top' : '';
+      return `<div class="ref-method-card${topCls}">
+        <div class="ref-method-name">${escHtml(m.name)}</div>
+        <div class="ref-method-code">${escHtml(m.code)}</div>
+        <div class="ref-method-ratings">
+          <div class="ref-rating-row">
+            <span class="ref-rating-lbl">Rendimiento</span>
+            <span class="ref-stars ref-stars-yield">${starsHtml(yld)}</span>
+          </div>
+          <div class="ref-rating-row">
+            <span class="ref-rating-lbl">Coste</span>
+            <span class="ref-stars ref-stars-cost">${starsHtml(cost)}</span>
+          </div>
+          <div class="ref-rating-row">
+            <span class="ref-rating-lbl">Velocidad</span>
+            <span class="ref-stars ref-stars-speed">${starsHtml(speed)}</span>
+          </div>
+        </div>
+      </div>`;
+    }).join('');
+
+    // ── Mineral chips ──
+    const mineralMap = new Map();
+    for (const y of mState.refYields) {
+      if (!mineralMap.has(+y.id_commodity)) {
+        mineralMap.set(+y.id_commodity, y.commodity_name || '—');
+      }
+    }
+    const mineralList = [...mineralMap.entries()].sort((a,b) => a[1].localeCompare(b[1]));
+
+    const chips = mineralList.map(([id, name]) => {
+      const active = mState.refSelMineral === id ? ' active' : '';
+      return `<button class="mn-tab ref-mineral-chip${active}" onclick="Mining._selectRefMineral(${id})">${escHtml(name)}</button>`;
+    }).join('');
+
+    // ── Yields table ──
+    let yieldsHtml = '';
+    if (mState.refSelMineral) {
+      const name    = mineralMap.get(mState.refSelMineral) || '—';
+      const entries = mState.refYields
+        .filter(y => +y.id_commodity === mState.refSelMineral)
+        .sort((a, b) => +b.value - +a.value);
+
+      const rows = entries.map(y => {
+        const val    = +y.value;
+        const cap    = mState.refCaps.get(+y.id_terminal);
+        const cls    = val > 0 ? 'ref-yield-pos' : val < 0 ? 'ref-yield-neg' : 'ref-yield-neu';
+        const str    = val > 0 ? `+${val}%` : `${val}%`;
+        const loc    = [y.moon_name, y.planet_name, y.star_system_name].find(Boolean) || '';
+        return `<tr>
+          <td>${escHtml(y.terminal_name||'—')}${loc?`<br><span class="mn-res-loc">${escHtml(loc)}</span>`:''}</td>
+          <td class="ref-yield-big ${cls}">${str}</td>
+          <td class="mn-res-num">${cap ? fmtN(cap)+' SCU' : '—'}</td>
+        </tr>`;
+      }).join('');
+
+      yieldsHtml = `
+        <div class="ref-yields-header">
+          <strong>${escHtml(name)}</strong>
+          <span class="mn-res-muted">· ${entries.length} refinerías con datos</span>
+          <button class="mn-tab" style="margin-left:auto;padding:0.2rem 0.6rem;font-size:0.7rem" onclick="Mining._selectRefMineral(null)">✕ Quitar</button>
+        </div>
+        <div class="trd-table-wrap">
+          <table class="trd-table">
+            <thead><tr>
+              <th>Refinería</th>
+              <th>Bonificación rendimiento</th>
+              <th>Capacidad</th>
+            </tr></thead>
+            <tbody>${rows}</tbody>
+          </table>
+        </div>`;
+    } else {
+      // Overview: top bonuses across all minerals
+      const topRows = [...mState.refYields]
+        .sort((a, b) => +b.value - +a.value)
+        .slice(0, 30)
+        .map(y => {
+          const val  = +y.value;
+          const cap  = mState.refCaps.get(+y.id_terminal);
+          const cls  = val > 0 ? 'ref-yield-pos' : val < 0 ? 'ref-yield-neg' : 'ref-yield-neu';
+          const str  = val > 0 ? `+${val}%` : `${val}%`;
+          const loc  = [y.moon_name, y.planet_name, y.star_system_name].find(Boolean) || '';
+          return `<tr>
+            <td>${escHtml(y.commodity_name||'—')}</td>
+            <td>${escHtml(y.terminal_name||'—')}${loc?`<br><span class="mn-res-loc">${escHtml(loc)}</span>`:''}</td>
+            <td class="ref-yield-big ${cls}">${str}</td>
+            <td class="mn-res-num">${cap ? fmtN(cap)+' SCU' : '—'}</td>
+          </tr>`;
+        }).join('');
+
+      yieldsHtml = `
+        <p class="ref-section-hint">Top 30 mejores bonificaciones de rendimiento · Selecciona un mineral para ver todas sus refinerías</p>
+        <div class="trd-table-wrap">
+          <table class="trd-table">
+            <thead><tr>
+              <th>Mineral</th><th>Refinería</th>
+              <th>Bonificación</th><th>Capacidad</th>
+            </tr></thead>
+            <tbody>${topRows}</tbody>
+          </table>
+        </div>`;
+    }
+
+    return `
+      <div class="ref-methods-section">
+        <div class="ref-section-title">⚙ Métodos de refinado</div>
+        <div class="ref-methods-grid">${methodCards}</div>
+      </div>
+      <div class="ref-yields-section">
+        <div class="ref-section-title">📊 Bonificación por mineral y refinería</div>
+        <div class="ref-mineral-chips-wrap">${chips}</div>
+        ${yieldsHtml}
+      </div>
+      <p class="trd-attribution">Datos de la comunidad vía <a href="https://uexcorp.space" target="_blank" rel="noopener">UEX Corp</a></p>`;
+  }
+
+  // ============================================================
   // PUBLIC API
   // ============================================================
-  return { load, setTab, _setLocSystem, _setLocMineral, _setLocMethod, _setLocDiff, _resetLocFilters, _clearMineralSearch, _setScanInput, _setResMineral, _setResSystem, _setResMethod };
+  return { load, setTab, _setLocSystem, _setLocMineral, _setLocMethod, _setLocDiff, _resetLocFilters, _clearMineralSearch, _setScanInput, _setResMineral, _setResSystem, _setResMethod,
+    _loadRef: loadRefData,
+    _selectRefMineral(id) { mState.refSelMineral = id === null ? null : +id; renderContent(); },
+  };
 
 })();
 
