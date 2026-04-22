@@ -100,9 +100,11 @@ body::after {
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(180, 83, 9, 0.3);
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
+  align-content: flex-start;
   padding: 0 1rem;
-  gap: 1rem;
+  gap: 0 0.75rem;
   z-index: 1000;
   transition: box-shadow var(--transition);
 }
@@ -114,7 +116,7 @@ body::after {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  flex-shrink: 0;
+  flex: 1;
 }
 .logo-img {
   width: 82px;
@@ -157,7 +159,11 @@ body::after {
   list-style: none;
   gap: 0.15rem;
   margin: 0;
-  flex: 0 0 auto;
+  flex: 0 0 100%;
+  order: 10;
+  justify-content: center;
+  border-top: 1px solid rgba(180, 83, 9, 0.2);
+  padding: 0.3rem 0;
 }
 .nav-link {
   display: flex;
@@ -1772,8 +1778,13 @@ body::after {
 
 /* ── Responsive nav: shrinks progressively, never disappears until true mobile ── */
 
-/* Step 1 — 1920px: drop social text + logo subtitle on 1080p and below */
-@media (max-width: 1920px) {
+/* Step 1 — desktop two-row height */
+@media (min-width: 751px) {
+  :root { --nav-h: 148px; }
+}
+
+/* Step 1b — 1280px: drop social text + logo subtitle */
+@media (max-width: 1280px) {
   .logo-sub { display: none; }
   .nav-social-btn span { display: none; }
   .nav-social-btn { padding: 0.28rem 0.4rem; }
@@ -1782,14 +1793,15 @@ body::after {
 
 /* Step 2 — 1100px: compact link padding + smaller font */
 @media (max-width: 1100px) {
+  :root { --nav-h: 118px; }
   .nav-link { padding: 0.55rem 0.75rem; font-size: 0.8rem; letter-spacing: 0.07em; }
   .logo-img { width: 66px; height: 66px; }
   .logo-text { font-size: 1rem; }
-  .nav-version { display: none; }
 }
 
 /* Step 3 — 950px: shrink further, hide social bar entirely */
 @media (max-width: 950px) {
+  :root { --nav-h: 105px; }
   .nav-link { padding: 0.45rem 0.45rem; font-size: 0.7rem; letter-spacing: 0.04em; }
   .nav-social-bar { display: none; }
   .logo-img { width: 54px; height: 54px; }
@@ -1798,9 +1810,11 @@ body::after {
 
 /* Step 4 — 750px: switch to bottom nav (phones) */
 @media (max-width: 750px) {
+  :root { --nav-h: clamp(72px, 7.5vw, 90px); }
   .nav-links { display: none !important; }
   .nav-hamburger { display: none !important; }
   .nav-social-bar { display: none; }
+  .nav-version { display: none; }
   .nav-bottom { display: flex; }
   .section { padding-bottom: calc(var(--nav-bottom-h) + 0.5rem); }
 }
