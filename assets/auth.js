@@ -26,7 +26,7 @@ window.Auth = (function () {
     sb.auth.onAuthStateChange(async (event, session) => {
       _session = session;
       _user    = session?.user ?? null;
-      if (event === 'SIGNED_IN' && _user) {
+      if (_user && (event === 'SIGNED_IN' || event === 'INITIAL_SESSION')) {
         await _loadResources();
       } else if (event === 'SIGNED_OUT') {
         _resources.clear();
@@ -35,12 +35,15 @@ window.Auth = (function () {
       _notify(_user);
     });
 
+    // Fallback: if onAuthStateChange fires before we register, pick up the session here
     sb.auth.getSession().then(async ({ data: { session } }) => {
-      _session = session;
-      _user    = session?.user ?? null;
-      if (_user) await _loadResources();
-      _renderWidget();
-      _notify(_user);
+      if (!_user && session?.user) {
+        _session = session;
+        _user    = session.user;
+        await _loadResources();
+        _renderWidget();
+        _notify(_user);
+      }
     });
 
     _renderWidget();
