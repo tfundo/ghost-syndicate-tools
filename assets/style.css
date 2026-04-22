@@ -4589,6 +4589,7 @@ body::after {
 @media (max-width: 768px) {
   .trd-price-tables { grid-template-columns: 1fr; }
   .trd-calc-results { grid-template-columns: 1fr 1fr; }
+  .ref-methods-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 600px) {
   .trd-toolbar { flex-direction: column; align-items: stretch; }
@@ -4598,4 +4599,97 @@ body::after {
   .trd-calc-row { flex-direction: column; }
   .trd-calc-results { grid-template-columns: 1fr 1fr; }
   .trd-price-stats { flex-direction: column; }
+  .ref-methods-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* =============================================================
+   REFINERY SECTION
+   ============================================================= */
+
+.ref-section-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+.ref-methods-section { margin-bottom: 1.75rem; }
+.ref-yields-section  { margin-bottom: 1rem; }
+
+/* Method cards grid */
+.ref-methods-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 0.65rem;
+  margin-bottom: 0.5rem;
+}
+
+.ref-method-card {
+  background: var(--bg-mid);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.75rem 0.85rem;
+  transition: border-color 0.15s;
+}
+.ref-method-card:hover { border-color: rgba(180,83,9,0.4); }
+.ref-method-card.ref-method-top {
+  border-color: rgba(180,83,9,0.5);
+  background: rgba(180,83,9,0.06);
+}
+
+.ref-method-name {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-bright);
+  margin-bottom: 0.1rem;
+}
+.ref-method-code {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  margin-bottom: 0.6rem;
+}
+.ref-method-ratings { display: flex; flex-direction: column; gap: 0.3rem; }
+.ref-rating-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+.ref-rating-lbl {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+.ref-stars {
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+}
+.ref-stars-yield { color: var(--green); }
+.ref-stars-cost  { color: #60a5fa; }
+.ref-stars-speed { color: #f59e0b; }
+
+/* Mineral chips for refineries */
+.ref-mineral-chips {
+  max-height: 140px;
+  margin-bottom: 1rem;
+}
+
+/* Yield values */
+.ref-yield-pos  { color: var(--green); }
+.ref-yield-neg  { color: var(--accent); }
+.ref-yield-neu  { color: var(--text-muted); }
+.ref-yield-big  { font-weight: 700; font-size: 0.88rem; }
+
+.ref-yields-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.6rem;
+  font-size: 0.85rem;
 }
