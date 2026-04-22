@@ -982,6 +982,17 @@ const wkState = {
   search: '',
 };
 
+function parseCost(str) {
+  const m = String(str).match(/^(\d+)x\s+(.+)$/);
+  return m ? { qty: parseInt(m[1], 10), resource: m[2].trim() } : null;
+}
+
+window.wkSetResource = function(resourceName, rawVal) {
+  const qty = Math.max(0, parseInt(rawVal, 10) || 0);
+  window.Auth?.setResource('wikelo', resourceName, qty);
+  renderWikelo();
+};
+
 const WK_ICONS = {
   ships:   '🚀',
   armors:  '🛡',
@@ -1024,6 +1035,8 @@ function initWikelo() {
   });
 
   renderWikelo();
+
+  window.Auth?.onUserChange(() => renderWikelo());
 }
 
 window.wkSetTab = function(tab) {
@@ -1076,9 +1089,36 @@ function renderWikelo() {
 }
 
 function renderWikeloCard(item) {
-  const costsHtml = item.cost.map(c =>
-    `<li class="wk-cost-item"><span class="wk-bullet">▸</span>${escHtml(c)}</li>`
-  ).join('');
+  const user = window.Auth?.getUser();
+
+  let allReady = true;
+  let hasParseable = false;
+
+  const costsHtml = item.cost.map(c => {
+    const parsed = parseCost(c);
+    if (!parsed || !user) {
+      if (!parsed) allReady = false;
+      return `<li class="wk-cost-item"><span class="wk-bullet">▸</span>${escHtml(c)}</li>`;
+    }
+    hasParseable = true;
+    const have = window.Auth.getResource('wikelo', parsed.resource);
+    const done = have >= parsed.qty;
+    if (!done) allReady = false;
+    return `<li class="wk-cost-item wk-trackable${done ? ' wk-cost-done' : ''}">
+      <span class="wk-track-check">${done ? '✓' : '✗'}</span>
+      <span class="wk-cost-label">${parsed.qty}x ${escHtml(parsed.resource)}</span>
+      <div class="wk-track-input">
+        <input type="number" class="wk-qty-input" min="0" max="99999"
+          value="${have || ''}"
+          placeholder="0"
+          onchange="wkSetResource(${JSON.stringify(parsed.resource)}, this.value)"
+          onclick="event.stopPropagation()">
+        <span class="wk-qty-sep">/ ${parsed.qty}</span>
+      </div>
+    </li>`;
+  }).join('');
+
+  const isReady = user && hasParseable && allReady;
 
   const compsHtml = item.comps && item.comps.length
     ? `<div class="wk-comps">
@@ -1098,9 +1138,10 @@ function renderWikeloCard(item) {
     : '';
 
   return `
-    <div class="wk-card">
+    <div class="wk-card${isReady ? ' wk-card-ready' : ''}">
       <div class="wk-card-header">
         <span class="wk-item-name">${escHtml(item.name)}</span>
+        ${isReady ? `<span class="wk-ready-badge">✓ ${t('dyn.wk.ready')}</span>` : ''}
       </div>
       ${missionHtml}
       ${descHtml}

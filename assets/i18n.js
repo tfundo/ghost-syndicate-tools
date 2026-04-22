@@ -120,6 +120,7 @@ const TRANSLATIONS = {
     'dyn.wk.no.items': 'No se encontraron ítems',
     'dyn.scroll.title': 'Volver al inicio de la lista',
     'dyn.wk.comps': 'Componentes',
+    'dyn.wk.ready': 'LISTO',
     // Category abbreviations
     'cat.laser': 'LASER',
     'cat.ballistic': 'BALÍSTICO',
@@ -376,6 +377,7 @@ const TRANSLATIONS = {
     'dyn.wk.no.items': 'No items found',
     'dyn.scroll.title': 'Back to top of list',
     'dyn.wk.comps': 'Components',
+    'dyn.wk.ready': 'READY',
     // Category abbreviations
     'cat.laser': 'LASER',
     'cat.ballistic': 'BALLISTIC',
