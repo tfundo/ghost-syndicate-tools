@@ -115,11 +115,24 @@ const Mining = (() => {
   function renderContent() {
     const el = document.getElementById('mnContent');
     if (!el || !mState.db) return;
+
+    const focusId  = document.activeElement?.id;
+    const selStart = document.activeElement?.selectionStart;
+    const selEnd   = document.activeElement?.selectionEnd;
+
     if (mState.tab === 'minerales') el.innerHTML = renderMinerales();
     else if (mState.tab === 'escaner')  el.innerHTML = renderEscaner();
     else if (mState.tab === 'recursos') { renderRecursosAsync(el); return; }
     else if (mState.tab === 'refinado') { renderRefAsync(el); return; }
     wireEvents();
+
+    if (focusId) {
+      const newEl = document.getElementById(focusId);
+      if (newEl && el.contains(newEl)) {
+        newEl.focus();
+        try { newEl.setSelectionRange(selStart, selEnd); } catch (_) {}
+      }
+    }
   }
 
   // ============================================================

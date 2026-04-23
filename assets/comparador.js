@@ -134,9 +134,22 @@
   function render() {
     const root = document.getElementById('compContentArea');
     if (!root) return;
+
+    const focusId  = document.activeElement?.id;
+    const selStart = document.activeElement?.selectionStart;
+    const selEnd   = document.activeElement?.selectionEnd;
+
     root.innerHTML = buildLayout();
     attachEventListeners();
     updateFloatingBtn();
+
+    if (focusId) {
+      const el = document.getElementById(focusId);
+      if (el && root.contains(el)) {
+        el.focus();
+        try { el.setSelectionRange(selStart, selEnd); } catch (_) {}
+      }
+    }
   }
 
   function updateFloatingBtn() {

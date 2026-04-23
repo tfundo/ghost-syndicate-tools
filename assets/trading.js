@@ -390,8 +390,20 @@ window.Trading = (function () {
 
     if (!S.loaded) return;
 
+    const focusId  = document.activeElement?.id;
+    const selStart = document.activeElement?.selectionStart;
+    const selEnd   = document.activeElement?.selectionEnd;
+
     const content = S.view === 'routes' ? renderRoutes() : renderPrices();
     wrap.innerHTML = renderToolbar() + renderCats() + renderChips() + `<div class="trd-content">${content}</div>`;
+
+    if (focusId) {
+      const el = document.getElementById(focusId);
+      if (el && wrap.contains(el)) {
+        el.focus();
+        try { el.setSelectionRange(selStart, selEnd); } catch (_) {}
+      }
+    }
   }
 
   // ── Load trade data ──────────────────────────────────────
