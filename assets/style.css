@@ -4233,20 +4233,23 @@ body::after {
 .trd-search { flex: 1 1 240px; }
 .trd-refresh-btn { padding: 0.45rem 0.9rem; font-size: 0.78rem; white-space: nowrap; }
 
-/* View tabs */
-.trd-tabs { display: flex; gap: 0.25rem; }
+/* View tabs — mismo estilo que .mn-tab de Minería */
+.trd-tabs { display: flex; gap: 0.5rem; }
 .trd-tab {
-  padding: 0.45rem 0.9rem;
-  background: var(--bg-mid);
+  background: var(--bg-glass);
   border: 1px solid var(--border);
-  border-radius: var(--radius);
-  color: var(--text-muted);
+  color: var(--text-secondary);
+  font-family: var(--font-hud);
   font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  padding: 0.45rem 1rem;
+  border-radius: 4px;
   cursor: pointer;
-  transition: all 0.15s;
+  transition: all var(--transition);
+  text-transform: uppercase;
 }
-.trd-tab:hover { border-color: var(--accent); color: var(--text); }
-.trd-tab.trd-tab-active { background: var(--accent); border-color: var(--accent); color: #fff; }
+.trd-tab:hover { border-color: rgba(245,158,11,0.4); color: var(--text-primary); }
+.trd-tab.trd-tab-active { background: rgba(245,158,11,0.12); border-color: var(--accent); color: var(--accent); }
 
 /* Category pills */
 .trd-cats {
