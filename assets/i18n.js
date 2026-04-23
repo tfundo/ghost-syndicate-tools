@@ -15,7 +15,7 @@ const TRANSLATIONS = {
     'nav.hangar': 'Hangar Ejecutivo',
     'nav.mining': 'Minería',
     // Home
-    'home.badge': 'Star Citizen 4.7.1 · Base de datos activa',
+    'home.badge': 'Star Citizen 4.7.2 · Base de datos activa',
     'home.desc': 'Herramienta para acompañarte en tus partidas de <strong>STAR CITIZEN</strong>',
     'home.stat.blueprints': 'Planos',
     'home.stat.materials': 'Materiales',
@@ -38,7 +38,7 @@ const TRANSLATIONS = {
     'social.join': 'Únete a la ORG',
     // Crafting
     'crafting.title': '⚙ Fabricación',
-    'crafting.subtitle': 'Base de datos de planos · SC 4.7.1',
+    'crafting.subtitle': 'Base de datos de planos · SC 4.7.2',
     'crafting.search.ph': 'Buscar por nombre, material o categoría...',
     'crafting.btn.mission': 'Solo con misión',
     'crafting.filter.all': 'Todas las categorías',
@@ -57,11 +57,11 @@ const TRANSLATIONS = {
     'comp.compare': 'Comparar',
     // WikeloData
     'wk.title': '◈ WikeloData',
-    'wk.subtitle': 'Ítems Wikelo · Naves, armaduras, armas &amp; economía · SC 4.7.1',
+    'wk.subtitle': 'Ítems Wikelo · Naves, armaduras, armas &amp; economía · SC 4.7.2',
     'wk.search.ph': 'Buscar ítem, material o misión...',
     // Hangar
     'hng.title': '🛬 Hangar Ejecutivo',
-    'hng.subtitle': 'Estado del PYAM Ejecutivo en tiempo real · SC 4.7.1',
+    'hng.subtitle': 'Estado del PYAM Ejecutivo en tiempo real · SC 4.7.2',
     'hng.status.label': 'Estado actual',
     'hng.next.label': 'Próximo cambio en',
     'hng.alert.btn': 'Activar alertas',
@@ -71,7 +71,7 @@ const TRANSLATIONS = {
     'hng.table.time': 'Hora local',
     // Mining
     'mining.title': '⛏ Minería',
-    'mining.subtitle': 'Minerales · Escáner · Ubicaciones · SC 4.7.1',
+    'mining.subtitle': 'Minerales · Escáner · Ubicaciones · SC 4.7.2',
     'mining.loading': 'Cargando datos de minería...',
     // Footer
     'footer.note': 'Ghost Syndicate Tools es un proyecto de fans no oficial, no afiliado ni respaldado por Cloud Imperium Games.<br>Star Citizen®, Roberts Space Industries® y Cloud Imperium® son marcas registradas de Cloud Imperium Rights LLC.<br>Contenido creado bajo la <a class="footer-link" href="https://robertsspaceindustries.com/fan-content-policy" target="_blank" rel="noopener">Fan Content Policy de RSI</a>. Uso estrictamente no comercial.',
@@ -167,7 +167,7 @@ const TRANSLATIONS = {
     'locale': 'es-ES',
     // Comparador
     'comp.page.title': '◈ Comparador',
-    'comp.page.subtitle': 'Naves y armas · SC 4.7.1',
+    'comp.page.subtitle': 'Naves y armas · SC 4.7.2',
     'comp.max4': 'Máximo 4 elementos para comparar',
     'comp.fab': '⚖ Comparar',
     'comp.clear.title': 'Limpiar selección',
@@ -272,7 +272,7 @@ const TRANSLATIONS = {
     'nav.hangar': 'Executive Hangar',
     'nav.mining': 'Mining',
     // Home
-    'home.badge': 'Star Citizen 4.7.1 · Active database',
+    'home.badge': 'Star Citizen 4.7.2 · Active database',
     'home.desc': 'Tool to accompany you in your <strong>STAR CITIZEN</strong> sessions',
     'home.stat.blueprints': 'Blueprints',
     'home.stat.materials': 'Materials',
@@ -295,7 +295,7 @@ const TRANSLATIONS = {
     'social.join': 'Join the ORG',
     // Crafting
     'crafting.title': '⚙ Crafting',
-    'crafting.subtitle': 'Blueprint database · SC 4.7.1',
+    'crafting.subtitle': 'Blueprint database · SC 4.7.2',
     'crafting.search.ph': 'Search by name, material or category...',
     'crafting.btn.mission': 'Mission only',
     'crafting.filter.all': 'All categories',
@@ -314,11 +314,11 @@ const TRANSLATIONS = {
     'comp.compare': 'Compare',
     // WikeloData
     'wk.title': '◈ WikeloData',
-    'wk.subtitle': 'Wikelo Items · Ships, armor, weapons &amp; economy · SC 4.7.1',
+    'wk.subtitle': 'Wikelo Items · Ships, armor, weapons &amp; economy · SC 4.7.2',
     'wk.search.ph': 'Search item, material or mission...',
     // Hangar
     'hng.title': '🛬 Executive Hangar',
-    'hng.subtitle': 'PYAM Executive status in real time · SC 4.7.1',
+    'hng.subtitle': 'PYAM Executive status in real time · SC 4.7.2',
     'hng.status.label': 'Current status',
     'hng.next.label': 'Next change in',
     'hng.alert.btn': 'Enable alerts',
@@ -328,7 +328,7 @@ const TRANSLATIONS = {
     'hng.table.time': 'Local time',
     // Mining
     'mining.title': '⛏ Mining',
-    'mining.subtitle': 'Minerals · Scanner · Locations · SC 4.7.1',
+    'mining.subtitle': 'Minerals · Scanner · Locations · SC 4.7.2',
     'mining.loading': 'Loading mining data...',
     // Footer
     'footer.note': 'Ghost Syndicate Tools is an unofficial fan project, not affiliated with or endorsed by Cloud Imperium Games.<br>Star Citizen®, Roberts Space Industries® and Cloud Imperium® are registered trademarks of Cloud Imperium Rights LLC.<br>Content created under the <a class="footer-link" href="https://robertsspaceindustries.com/fan-content-policy" target="_blank" rel="noopener">RSI Fan Content Policy</a>. Strictly non-commercial use.',
@@ -424,7 +424,7 @@ const TRANSLATIONS = {
     'locale': 'en-US',
     // Comparador
     'comp.page.title': '◈ Comparator',
-    'comp.page.subtitle': 'Ships and weapons · SC 4.7.1',
+    'comp.page.subtitle': 'Ships and weapons · SC 4.7.2',
     'comp.max4': 'Maximum 4 elements to compare',
     'comp.fab': '⚖ Compare',
     'comp.clear.title': 'Clear selection',
