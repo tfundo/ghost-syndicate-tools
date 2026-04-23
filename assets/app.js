@@ -1089,36 +1089,11 @@ function renderWikelo() {
 }
 
 function renderWikeloCard(item) {
-  const user = window.Auth?.getUser();
+  const costsHtml = item.cost.map(c =>
+    `<li class="wk-cost-item"><span class="wk-bullet">▸</span>${escHtml(c)}</li>`
+  ).join('');
 
-  let allReady = true;
-  let hasParseable = false;
-
-  const costsHtml = item.cost.map(c => {
-    const parsed = parseCost(c);
-    if (!parsed || !user) {
-      if (!parsed) allReady = false;
-      return `<li class="wk-cost-item"><span class="wk-bullet">▸</span>${escHtml(c)}</li>`;
-    }
-    hasParseable = true;
-    const have = window.Auth.getResource('wikelo', parsed.resource);
-    const done = have >= parsed.qty;
-    if (!done) allReady = false;
-    return `<li class="wk-cost-item wk-trackable${done ? ' wk-cost-done' : ''}">
-      <span class="wk-track-check">${done ? '✓' : '✗'}</span>
-      <span class="wk-cost-label">${parsed.qty}x ${escHtml(parsed.resource)}</span>
-      <div class="wk-track-input">
-        <input type="number" class="wk-qty-input" min="0" max="99999"
-          value="${have || ''}"
-          placeholder="0"
-          onchange="wkSetResource(${JSON.stringify(parsed.resource)}, this.value)"
-          onclick="event.stopPropagation()">
-        <span class="wk-qty-sep">/ ${parsed.qty}</span>
-      </div>
-    </li>`;
-  }).join('');
-
-  const isReady = user && hasParseable && allReady;
+  const isReady = false;
 
   const compsHtml = item.comps && item.comps.length
     ? `<div class="wk-comps">

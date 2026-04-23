@@ -142,11 +142,9 @@ window.Trading = (function () {
   function renderToolbar() {
     const rA = S.view === 'routes' ? ' trd-tab-active' : '';
     const pA = S.view === 'prices' ? ' trd-tab-active' : '';
-    const mA = S.view === 'market' ? ' trd-tab-active' : '';
-    const isMarket = S.view === 'market';
     return `
       <div class="trd-toolbar">
-        ${!isMarket ? `<div class="search-box trd-search">
+        <div class="search-box trd-search">
           <span class="search-icon">🔍</span>
           <input type="text" id="trdSearch"
             placeholder="${tr('Buscar mercancía...','Search commodity...')}"
@@ -154,13 +152,12 @@ window.Trading = (function () {
             oninput="Trading.setSearch(this.value)"
             autocomplete="off">
           ${S.search ? `<button class="search-clear" onclick="Trading.setSearch('')">✕</button>` : ''}
-        </div>` : '<div></div>'}
+        </div>
         <div class="trd-tabs">
           <button class="trd-tab${rA}" onclick="Trading.setView('routes')">📈 ${tr('Rutas','Routes')}</button>
           <button class="trd-tab${pA}" onclick="Trading.setView('prices')">📊 ${tr('Precios','Prices')}</button>
-          <button class="trd-tab${mA}" onclick="Trading.setView('market')">🏪 ${tr('Mercado','Market')}</button>
         </div>
-        ${!isMarket ? `<button class="btn-ghost trd-refresh-btn" onclick="Trading.refresh()">↺ ${tr('Actualizar','Refresh')}</button>` : '<div></div>'}
+        <button class="btn-ghost trd-refresh-btn" onclick="Trading.refresh()">↺ ${tr('Actualizar','Refresh')}</button>
       </div>`;
   }
 
@@ -378,12 +375,6 @@ window.Trading = (function () {
   function render() {
     const wrap = document.getElementById('tradingContent');
     if (!wrap) return;
-
-    if (S.view === 'market') {
-      wrap.innerHTML = renderToolbar() + '<div id="marketContent"></div>';
-      window.Market?.mount('marketContent');
-      return;
-    }
 
     if (S.loading) {
       wrap.innerHTML = `<div class="loading-state"><div class="loading-spinner"></div>
