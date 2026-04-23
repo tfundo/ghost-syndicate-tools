@@ -120,8 +120,8 @@ body::after {
   flex-shrink: 0;
 }
 .logo-img {
-  width: 82px;
-  height: 82px;
+  width: 132px;
+  height: 132px;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid rgba(245,158,11,0.45);
@@ -1815,7 +1815,7 @@ body::after {
 @media (max-width: 1100px) {
   :root { --nav-h: 118px; }
   .nav-link { padding: 0.55rem 0.75rem; font-size: 0.8rem; letter-spacing: 0.07em; }
-  .logo-img { width: 66px; height: 66px; }
+  .logo-img { width: 98px; height: 98px; }
   .logo-text { font-size: 1.3rem; }
 }
 
@@ -1824,7 +1824,7 @@ body::after {
   :root { --nav-h: 105px; }
   .nav-link { padding: 0.45rem 0.45rem; font-size: 0.7rem; letter-spacing: 0.04em; }
   .nav-social-bar { display: none; }
-  .logo-img { width: 54px; height: 54px; }
+  .logo-img { width: 78px; height: 78px; }
   .logo-text { font-size: 1.05rem; }
 }
 
@@ -1875,7 +1875,7 @@ body::after {
 
 @media (max-width: 600px) {
   --nav-h: 80px;
-  .logo-img { width: 56px; height: 56px; }
+  .logo-img { width: 62px; height: 62px; }
   .logo-text { font-size: 0.9rem; }
   .blueprint-grid { grid-template-columns: 1fr; }
   .stat-card { min-width: 80px; }
