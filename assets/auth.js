@@ -65,12 +65,18 @@ window.Auth = (function () {
   // ── Resources ─────────────────────────────────────────────
   async function _loadResources() {
     if (!sb || !_user) return;
-    const { data } = await sb
+    const { data, error } = await sb
       .from('user_resources')
       .select('category, resource_key, quantity')
       .eq('user_id', _user.id);
+    if (error) {
+      console.error('[Auth] Error cargando recursos:', error.message, error);
+      _showSaveStatus('error', 'Error al cargar datos guardados');
+      return;
+    }
     _resources.clear();
     if (data) data.forEach(r => _resources.set(`${r.category}:${r.resource_key}`, +r.quantity));
+    console.log(`[Auth] Recursos cargados: ${_resources.size} entradas`);
   }
 
   function getResource(category, key) {
@@ -86,16 +92,47 @@ window.Auth = (function () {
     clearTimeout(_saveTimers[mapKey]);
     _saveTimers[mapKey] = setTimeout(async () => {
       if (!_user || !sb) return;
+      let error;
       if (val <= 0) {
-        await sb.from('user_resources').delete()
-          .eq('user_id', _user.id).eq('category', category).eq('resource_key', nKey);
+        ({ error } = await sb.from('user_resources').delete()
+          .eq('user_id', _user.id).eq('category', category).eq('resource_key', nKey));
       } else {
-        await sb.from('user_resources').upsert(
+        ({ error } = await sb.from('user_resources').upsert(
           { user_id: _user.id, category, resource_key: nKey, quantity: val, updated_at: new Date().toISOString() },
           { onConflict: 'user_id,category,resource_key' }
-        );
+        ));
+      }
+      if (error) {
+        console.error('[Auth] Error guardando recurso:', error.message, error);
+        _showSaveStatus('error', 'Error al guardar: ' + error.message);
+      } else {
+        _showSaveStatus('ok');
       }
     }, 700);
+  }
+
+  // ── Save status indicator ──────────────────────────────────
+  let _saveStatusTimer = null;
+  function _showSaveStatus(type, msg) {
+    let el = document.getElementById('authSaveStatus');
+    if (!el) {
+      el = document.createElement('div');
+      el.id = 'authSaveStatus';
+      el.style.cssText = 'position:fixed;bottom:1rem;right:1rem;z-index:9999;padding:0.4rem 0.9rem;border-radius:6px;font-size:0.8rem;font-family:monospace;transition:opacity 0.4s;pointer-events:none';
+      document.body.appendChild(el);
+    }
+    if (type === 'ok') {
+      el.style.background = 'rgba(16,185,129,0.9)';
+      el.style.color = '#fff';
+      el.textContent = '✓ Guardado';
+    } else {
+      el.style.background = 'rgba(239,68,68,0.95)';
+      el.style.color = '#fff';
+      el.textContent = msg || '✗ Error al guardar';
+    }
+    el.style.opacity = '1';
+    clearTimeout(_saveStatusTimer);
+    _saveStatusTimer = setTimeout(() => { el.style.opacity = '0'; }, type === 'ok' ? 2000 : 5000);
   }
 
   function normalizeKey(str) {
