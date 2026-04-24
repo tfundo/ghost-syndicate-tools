@@ -521,11 +521,23 @@ function renderBlueprintCard(bp, idx) {
       }).join('')
     : `<span style="color:var(--text-muted);font-size:0.7rem">${t('dyn.no.mission')}</span>`;
 
+  const bpUser      = window.Auth?.getUser();
+  const bpKey       = String(bp.id);
+  const bpObtained  = bpUser ? (window.Auth?.getResource('bp_have', bpKey) > 0) : false;
+  const obtainedBadge = bpObtained ? `<span class="bp-obtained-badge">✓ Tengo</span>` : '';
+  const obtainedBtn = bpUser
+    ? `<button class="bp-have-btn${bpObtained ? ' obtained' : ''}"
+         onclick="event.stopPropagation();toggleBpHave(${JSON.stringify(bpKey)})"
+         title="${bpObtained ? 'Marcar como no obtenido' : 'Marcar como obtenido'}">
+         ${bpObtained ? '✓ Tengo' : '+ Tengo'}
+       </button>`
+    : '';
+
   return `
-    <div class="bp-card" onclick="openBlueprintDetail(${idx})" style="animation-delay:${Math.min(idx * 0.02, 0.5)}s">
+    <div class="bp-card${bpObtained ? ' bp-card-obtained' : ''}" onclick="openBlueprintDetail(${idx})" style="animation-delay:${Math.min(idx * 0.02, 0.5)}s">
       <div class="bp-header">
         <span class="bp-name">${escHtml(bp.name)}</span>
-        <div class="bp-badges">${qualityBadge}${missionBadge}</div>
+        <div class="bp-badges">${qualityBadge}${missionBadge}${obtainedBadge}</div>
       </div>
       <div class="bp-category">
         <span class="bp-cat-badge" style="color:${catInfo.color};border-color:${catInfo.color};background:${catInfo.color}18">${catInfo.abbr}</span>
@@ -538,10 +550,19 @@ function renderBlueprintCard(bp, idx) {
       <div class="bp-footer">
         ${timeHtml}
         <div class="bp-missions-label">${missionsHtml}</div>
+        ${obtainedBtn}
       </div>
     </div>
   `;
 }
+
+window.toggleBpHave = function(bpKey) {
+  const user = window.Auth?.getUser();
+  if (!user) return;
+  const cur = window.Auth?.getResource('bp_have', bpKey) || 0;
+  window.Auth?.setResource('bp_have', bpKey, cur > 0 ? 0 : 1);
+  renderBlueprints();
+};
 
 // ============================================================
 // BLUEPRINT DETAIL MODAL
@@ -1093,7 +1114,9 @@ function renderWikeloCard(item) {
     `<li class="wk-cost-item"><span class="wk-bullet">▸</span>${escHtml(c)}</li>`
   ).join('');
 
-  const isReady = false;
+  const user        = window.Auth?.getUser();
+  const itemKey     = item.id ? String(item.id) : window.Auth?.normalizeKey(item.name) || item.name;
+  const isCollected = user ? (window.Auth?.getResource('wk_have', itemKey) > 0) : false;
 
   const compsHtml = item.comps && item.comps.length
     ? `<div class="wk-comps">
@@ -1112,18 +1135,35 @@ function renderWikeloCard(item) {
     ? `<p class="wk-desc">${escHtml(descClean)}</p>`
     : '';
 
+  const collectBtn = user
+    ? `<button class="wk-collect-btn${isCollected ? ' collected' : ''}"
+         onclick="toggleWkCollect(${JSON.stringify(itemKey)})"
+         title="${isCollected ? 'Marcar como no obtenido' : 'Marcar como obtenido'}">
+         ${isCollected ? '✓ Tengo' : '+ Tengo'}
+       </button>`
+    : '';
+
   return `
-    <div class="wk-card${isReady ? ' wk-card-ready' : ''}">
+    <div class="wk-card${isCollected ? ' wk-card-collected' : ''}">
       <div class="wk-card-header">
         <span class="wk-item-name">${escHtml(item.name)}</span>
-        ${isReady ? `<span class="wk-ready-badge">✓ ${t('dyn.wk.ready')}</span>` : ''}
+        ${isCollected ? `<span class="wk-ready-badge">✓ Obtenido</span>` : ''}
       </div>
       ${missionHtml}
       ${descHtml}
       <ul class="wk-cost-list">${costsHtml}</ul>
       ${compsHtml}
+      ${collectBtn}
     </div>`;
 }
+
+window.toggleWkCollect = function(itemKey) {
+  const user = window.Auth?.getUser();
+  if (!user) return;
+  const cur = window.Auth?.getResource('wk_have', itemKey) || 0;
+  window.Auth?.setResource('wk_have', itemKey, cur > 0 ? 0 : 1);
+  renderWikelo();
+};
 
 function renderWikeloTables(cat) {
   return cat.tables.map(table => `

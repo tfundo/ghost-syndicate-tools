@@ -367,6 +367,10 @@
           <span class="comp-banner-mfr" style="color:${mfrColor}">${escComp(ship.mfr)}</span>
         </div>`;
 
+    const buildsBtn = `<button class="ship-builds-btn"
+      onclick="event.stopPropagation();window.Builds&&Builds.openModal('${nameEncoded}')"
+      title="Ver builds de miembros para esta nave">⚙ BUILDS</button>`;
+
     return `
       <div class="bp-card comp-card${selClass}"
            onclick="Comp.toggleSelect('ship','${nameEncoded}')"
@@ -407,6 +411,7 @@
             <span class="comp-stat-val">${ship.length > 0 ? ship.length + ' <span class="comp-stat-unit">m</span>' : '—'}</span>
           </div>
         </div>
+        ${buildsBtn}
       </div>
     `;
   }
