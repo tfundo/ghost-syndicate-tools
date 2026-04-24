@@ -30,8 +30,12 @@ window.Auth = (function () {
         await _loadResources();
         // Tras login OAuth redirigir al home (la URL tiene tokens de Supabase en el hash/params)
         if (event === 'SIGNED_IN') {
-          history.replaceState(null, '', window.location.pathname);
-          window.showSection?.('home');
+          try {
+            history.replaceState(null, '', window.location.pathname);
+            window.showSection?.('home');
+          } catch(e) {
+            console.warn('[Auth] showSection error:', e);
+          }
         }
       } else if (event === 'SIGNED_OUT') {
         _resources.clear();

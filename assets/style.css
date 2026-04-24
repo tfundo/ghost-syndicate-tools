@@ -5172,9 +5172,13 @@ body::after {
 /* ========================================
    AUTH WIDGET (navbar)
    ======================================== */
-#navAuthWidget {
+/* Auth widget — siempre visible, fuera de logo-meta-bar */
+.nav-auth-widget-wrap {
   display: flex;
   align-items: center;
+  flex-shrink: 0;
+  margin-left: auto;
+  order: 10;
 }
 .nav-auth-login {
   display: inline-flex;
