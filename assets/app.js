@@ -50,11 +50,12 @@ document.addEventListener('DOMContentLoaded', () => {
   generateStars();
   loadDatabase();
 
-  // Handle initial hash — ignore Supabase OAuth tokens in hash
-  const rawHash = window.location.hash.replace('#', '');
-  const isOAuthHash = rawHash.includes('access_token=') || rawHash.includes('type=');
-  const hash = (!rawHash || isOAuthHash) ? 'home' : rawHash;
-  if (isOAuthHash) history.replaceState(null, '', window.location.pathname);
+  // Handle initial hash — ignorar tokens OAuth de Supabase (hash o query params PKCE)
+  const rawHash    = window.location.hash.replace('#', '');
+  const rawSearch  = window.location.search;
+  const isOAuth    = rawHash.includes('access_token=') || rawHash.includes('type=') || rawSearch.includes('code=');
+  const hash       = (!rawHash || isOAuth) ? 'home' : rawHash;
+  if (isOAuth) history.replaceState(null, '', window.location.pathname);
   showSection(hash);
 });
 

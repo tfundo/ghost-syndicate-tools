@@ -28,6 +28,11 @@ window.Auth = (function () {
       _user    = session?.user ?? null;
       if (_user && (event === 'SIGNED_IN' || event === 'INITIAL_SESSION')) {
         await _loadResources();
+        // Tras login OAuth redirigir al home (la URL tiene tokens de Supabase en el hash/params)
+        if (event === 'SIGNED_IN') {
+          history.replaceState(null, '', window.location.pathname);
+          window.showSection?.('home');
+        }
       } else if (event === 'SIGNED_OUT') {
         _resources.clear();
       }
