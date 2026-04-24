@@ -35,7 +35,8 @@
     shipImages: {},
     _imagesLoaded: false,
     _shipsLoaded: false,
-    _weaponsLoaded: false
+    _weaponsLoaded: false,
+    createBuildShip: null,
   };
 
   // ============================================================
@@ -99,9 +100,23 @@
   // TAB SWITCHING
   // ============================================================
 
-  function switchTab(tab) {
+  function switchTab(tab, shipName) {
+    if (tab === 'create-build' && shipName) compState.createBuildShip = shipName;
     compState.tab = tab;
     render();
+    document.getElementById('compContentArea')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function openCreateBuild(shipName) {
+    const user = window.Auth?.getUser();
+    if (!user) {
+      showToast('Inicia sesión con Discord para crear una build');
+      return;
+    }
+    compState.createBuildShip = shipName;
+    compState.tab = 'create-build';
+    render();
+    document.getElementById('compContentArea')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
   // ============================================================
@@ -222,9 +237,11 @@
 
   function buildLayout() {
     const selCount = compState.selected.length;
-    const tabShips    = compState.tab === 'ships'   ? 'comp-tab-btn active' : 'comp-tab-btn';
-    const tabWeapons  = compState.tab === 'weapons' ? 'comp-tab-btn active' : 'comp-tab-btn';
-    const tabCompare  = compState.tab === 'compare' ? 'comp-tab-btn active' : 'comp-tab-btn';
+    const tabShips   = compState.tab === 'ships'        ? 'comp-tab-btn active' : 'comp-tab-btn';
+    const tabWeapons = compState.tab === 'weapons'      ? 'comp-tab-btn active' : 'comp-tab-btn';
+    const tabCompare = compState.tab === 'compare'      ? 'comp-tab-btn active' : 'comp-tab-btn';
+    const tabBuilds  = (compState.tab === 'builds' || compState.tab === 'create-build')
+                       ? 'comp-tab-btn comp-tab-builds active' : 'comp-tab-btn comp-tab-builds';
 
     const badge = selCount > 0
       ? `<span class="comp-sel-badge">${selCount}</span>`
@@ -233,9 +250,11 @@
     const selectionBar = selCount > 0 ? buildSelectionBar() : '';
 
     let content = '';
-    if (compState.tab === 'ships')   content = buildShipsPane();
-    if (compState.tab === 'weapons') content = buildWeaponsPane();
-    if (compState.tab === 'compare') content = buildComparePane();
+    if (compState.tab === 'ships')         content = buildShipsPane();
+    if (compState.tab === 'weapons')       content = buildWeaponsPane();
+    if (compState.tab === 'compare')       content = buildComparePane();
+    if (compState.tab === 'builds')        content = buildBuildsPane();
+    if (compState.tab === 'create-build')  content = buildCreateBuildPane(compState.createBuildShip);
 
     return `
       <div class="page-header">
@@ -249,12 +268,44 @@
         <button class="${tabCompare}"  onclick="Comp.switchTab('compare')">
           Comparar ${badge}
         </button>
+        <button class="${tabBuilds}"   onclick="Comp.switchTab('builds')">★ BUILDS</button>
         ${selCount > 0 ? `<button class="comp-clear-btn" onclick="Comp.clearSelection()" title="Limpiar selección">✕ Limpiar</button>` : ''}
       </div>
 
       ${selectionBar}
       ${content}
     `;
+  }
+
+  function buildBuildsPane() {
+    return `
+      <div class="btab-pane">
+        <div class="btab-topbar">
+          <p class="btab-intro">Builds de la comunidad · vota las que más te gusten (1–5 ★)</p>
+          <button class="btab-go-ships" onclick="Comp.switchTab('ships')">← Ir a Naves</button>
+        </div>
+        <div id="buildsTabList" class="btab-list">
+          <div class="builds-loading">Cargando builds…</div>
+        </div>
+      </div>`;
+  }
+
+  function buildCreateBuildPane(shipName) {
+    if (!shipName) {
+      compState.tab = 'ships';
+      return buildShipsPane();
+    }
+    return `
+      <div class="bcreate-pane">
+        <div class="bcreate-pane-header">
+          <button class="bcreate-back" onclick="Comp.switchTab('ships')">← Volver a Naves</button>
+          <div class="bcreate-pane-title">
+            <span class="bcreate-pane-icon">⚙</span>
+            Crear Build · <span class="bcreate-ship-name">${escComp(shipName)}</span>
+          </div>
+        </div>
+        ${window.Builds?.getCreateFormHTML(shipName) || '<div class="builds-error">Error al cargar el formulario.</div>'}
+      </div>`;
   }
 
   // ============================================================
@@ -368,8 +419,8 @@
         </div>`;
 
     const buildsBtn = `<button class="ship-builds-btn"
-      onclick="event.stopPropagation();window.Builds&&Builds.openModal('${nameEncoded}')"
-      title="Ver builds de miembros para esta nave">⚙ BUILDS</button>`;
+      onclick="event.stopPropagation();Comp.openCreateBuild('${nameEncoded}')"
+      title="Crear una build para esta nave">✏ Crear Build</button>`;
 
     return `
       <div class="bp-card comp-card${selClass}"
@@ -806,6 +857,11 @@
         compState.filterType = e.target.value;
         render();
       });
+    }
+
+    // Load builds async when BUILDS tab is active
+    if (compState.tab === 'builds') {
+      window.Builds?.loadAllBuilds('buildsTabList');
     }
   }
 
@@ -1353,8 +1409,8 @@
     switchTab,
     toggleSelect,
     clearSelection,
+    openCreateBuild,
     destroy: destroyFloatingBtn,
-    // Internal helpers exposed for inline onclick handlers
     _clearSearchShips: function () {
       compState.searchShips = '';
       render();

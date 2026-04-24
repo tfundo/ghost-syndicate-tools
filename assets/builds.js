@@ -1,313 +1,269 @@
 /* ===================================================
    GHOST SYNDICATE TOOLS — Ship Builds Module
-   Builds de naves por miembros + votación por estrellas
+   Tab BUILDS en comparador + creación de builds
    =================================================== */
 'use strict';
 
 window.Builds = (function () {
 
-  const COMPONENT_SLOTS = [
-    { key: 'power_plant', label: 'Planta de Energía' },
-    { key: 'shield',      label: 'Generador de Escudos' },
-    { key: 'cooler_1',   label: 'Enfriador 1' },
-    { key: 'cooler_2',   label: 'Enfriador 2' },
-    { key: 'jump_drive', label: 'Motor de Salto' },
-    { key: 'radar',      label: 'Radar' },
+  const SLOTS = [
+    { key: 'power_plant', label: 'Planta de Energía',     icon: '⚡' },
+    { key: 'shield',      label: 'Generador de Escudos',  icon: '🛡' },
+    { key: 'cooler_1',   label: 'Enfriador 1',            icon: '❄' },
+    { key: 'cooler_2',   label: 'Enfriador 2',            icon: '❄' },
+    { key: 'jump_drive', label: 'Motor de Salto',          icon: '🌀' },
+    { key: 'radar',      label: 'Radar',                   icon: '📡' },
   ];
 
-  let _sb        = null;
-  let _shipName  = null;
-  let _builds    = [];
+  const DC_SVG = `<svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>`;
+
+  let _allBuilds = [];
   let _userVotes = {};
 
-  function _getSb() {
-    if (!_sb) _sb = window.Auth?.getSupabase();
-    return _sb;
-  }
+  function _getSb() { return window.Auth?.getSupabase(); }
 
-  // ── Public: open modal for a ship ───────────────────
-  async function openModal(shipName) {
-    _shipName = shipName;
-    _ensureModalDOM();
-    _setOverlay(true);
-    _renderModalShell();
-    await _loadBuilds();
-  }
+  // ── BUILDS TAB: load all builds ──────────────────────
+  async function loadAllBuilds(containerId) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
 
-  function closeModal() {
-    _setOverlay(false);
-    _shipName = null;
-  }
-
-  // ── DOM helpers ──────────────────────────────────────
-  function _ensureModalDOM() {
-    if (!document.getElementById('buildsOverlay')) {
-      const ov = document.createElement('div');
-      ov.id = 'buildsOverlay';
-      ov.className = 'modal-overlay';
-      ov.onclick = closeModal;
-      document.body.appendChild(ov);
-    }
-    if (!document.getElementById('buildsModal')) {
-      const m = document.createElement('div');
-      m.id = 'buildsModal';
-      m.className = 'modal builds-modal';
-      document.body.appendChild(m);
-    }
-  }
-
-  function _setOverlay(open) {
-    const ov = document.getElementById('buildsOverlay');
-    const m  = document.getElementById('buildsModal');
-    if (ov) ov.style.display = open ? 'block' : 'none';
-    if (m)  m.style.display  = open ? 'flex'  : 'none';
-  }
-
-  function _renderModalShell() {
-    const modal = document.getElementById('buildsModal');
-    if (!modal) return;
-    const user = window.Auth?.getUser();
-    modal.innerHTML = `
-      <button class="modal-close" onclick="Builds.closeModal()">✕</button>
-      <div class="modal-content builds-modal-content">
-        <div class="builds-header">
-          <h2 class="builds-title">
-            <span class="builds-icon">⚙</span>
-            Builds · ${esc(_shipName)}
-          </h2>
-          ${user
-            ? `<button class="builds-create-btn" onclick="Builds.showCreateForm()">+ Nueva Build</button>`
-            : `<span class="builds-login-hint">Inicia sesión con Discord para crear builds</span>`}
-        </div>
-        <div id="buildsFormArea"></div>
-        <div id="buildsList"><div class="builds-loading">Cargando builds…</div></div>
-      </div>`;
-  }
-
-  // ── Load builds from Supabase ────────────────────────
-  async function _loadBuilds() {
     const sb = _getSb();
-    const listEl = document.getElementById('buildsList');
-
     if (!sb) {
-      if (listEl) listEl.innerHTML = '<div class="builds-error">No se pudo conectar con la base de datos.</div>';
+      container.innerHTML = '<div class="builds-error">No se pudo conectar con la base de datos.</div>';
       return;
     }
 
-    // Fetch builds for this ship
+    container.innerHTML = '<div class="builds-loading">Cargando builds…</div>';
+
     const { data: builds, error } = await sb
       .from('ship_builds')
       .select('*')
-      .eq('ship_name', _shipName)
       .order('created_at', { ascending: false });
 
     if (error) {
-      if (listEl) listEl.innerHTML = '<div class="builds-error">Error al cargar builds.</div>';
+      container.innerHTML = '<div class="builds-error">Error al cargar builds.</div>';
       return;
     }
 
-    _builds = builds || [];
+    _allBuilds = builds || [];
 
-    if (_builds.length === 0) {
-      if (listEl) listEl.innerHTML = '<div class="builds-empty">No hay builds para esta nave. ¡Sé el primero en crearla!</div>';
+    if (_allBuilds.length === 0) {
+      container.innerHTML = `
+        <div class="builds-empty">
+          <div style="font-size:2rem;margin-bottom:.7rem">⚙</div>
+          No hay builds todavía.<br>
+          <span style="font-size:.8rem;color:var(--text-muted)">Ve a la pestaña Naves y pulsa "Crear Build" en cualquier nave.</span>
+        </div>`;
       return;
     }
 
-    const buildIds = _builds.map(b => b.id);
-
-    // Fetch all votes for these builds
+    // Aggregate all votes
+    const buildIds = _allBuilds.map(b => b.id);
     const { data: allVotes } = await sb
       .from('ship_build_votes')
-      .select('build_id, stars')
+      .select('build_id,stars')
       .in('build_id', buildIds);
 
-    // Aggregate votes per build
     const voteMap = {};
     (allVotes || []).forEach(v => {
       if (!voteMap[v.build_id]) voteMap[v.build_id] = { total: 0, count: 0 };
       voteMap[v.build_id].total += v.stars;
       voteMap[v.build_id].count++;
     });
-    _builds.forEach(b => {
+
+    _allBuilds.forEach(b => {
       const vm = voteMap[b.id] || { total: 0, count: 0 };
       b._votes_count = vm.count;
       b._avg_stars   = vm.count > 0 ? vm.total / vm.count : 0;
     });
 
-    // Sort: best rated first (Wilson-style: avg × log(count+1))
-    _builds.sort((a, b) =>
+    _allBuilds.sort((a, b) =>
       (b._avg_stars * Math.log(b._votes_count + 2)) -
       (a._avg_stars * Math.log(a._votes_count + 2))
     );
 
-    // Fetch current user's votes
+    // Load user votes
     const user = window.Auth?.getUser();
     _userVotes = {};
-    if (user) {
+    if (user && buildIds.length > 0) {
       const { data: myVotes } = await sb
         .from('ship_build_votes')
-        .select('build_id, stars')
+        .select('build_id,stars')
         .eq('user_id', user.id)
         .in('build_id', buildIds);
       (myVotes || []).forEach(v => { _userVotes[v.build_id] = v.stars; });
     }
 
-    _renderBuildsList();
-  }
-
-  function _renderBuildsList() {
-    const listEl = document.getElementById('buildsList');
-    if (!listEl) return;
-    const user = window.Auth?.getUser();
-    listEl.innerHTML = _builds.map((b, i) => _buildCard(b, user, i)).join('');
+    container.innerHTML = _allBuilds.map((b, i) => _buildCard(b, user, i)).join('');
   }
 
   function _buildCard(build, user, rank) {
-    const comps    = build.components || {};
-    const myVote   = _userVotes[build.id] || 0;
-    const avg      = build._avg_stars || 0;
-    const cnt      = build._votes_count || 0;
-    const isOwner  = user && user.id === build.user_id;
+    const comps   = build.components || {};
+    const myVote  = _userVotes[build.id] || 0;
+    const avg     = build._avg_stars || 0;
+    const cnt     = build._votes_count || 0;
+    const isOwner = user && user.id === build.user_id;
 
-    // Stars voting row
     const starsHtml = [1, 2, 3, 4, 5].map(s => `
       <button class="build-star-btn${myVote >= s ? ' lit' : ''}"
-              onclick="Builds.vote('${build.id}',${s})"
+              onclick="Builds.vote('${build.id}',${s},'buildsTabList')"
               ${!user ? 'disabled' : ''}
               title="${s} estrella${s > 1 ? 's' : ''}">★</button>`).join('');
 
-    // Components
-    const slotRows = COMPONENT_SLOTS
-      .filter(sl => comps[sl.key])
-      .map(sl => `<div class="build-comp-row">
-        <span class="build-comp-lbl">${sl.label}</span>
-        <span class="build-comp-val">${esc(comps[sl.key])}</span>
+    const slotRows = SLOTS.filter(sl => comps[sl.key]).map(sl => `
+      <div class="btab-comp-row">
+        <span class="btab-comp-lbl">${sl.icon} ${sl.label}</span>
+        <span class="btab-comp-val">${esc(comps[sl.key])}</span>
       </div>`).join('');
 
-    const weapons = (comps.weapons || []);
+    const weapons = comps.weapons || [];
     const weaponsHtml = weapons.length
-      ? `<div class="build-comp-row build-comp-weapons">
-           <span class="build-comp-lbl">Armas</span>
-           <span class="build-comp-val">${weapons.map(w => `<span class="build-weapon-tag">${esc(w)}</span>`).join('')}</span>
+      ? `<div class="btab-comp-row">
+           <span class="btab-comp-lbl">⚔ Armas</span>
+           <span class="btab-comp-val btab-weapons-val">
+             ${weapons.map(w => `<span class="btab-weapon-tag">${esc(w)}</span>`).join('')}
+           </span>
          </div>`
       : '';
 
-    const avgDisplay = cnt > 0 ? `${avg.toFixed(1)}★ <span class="build-vote-cnt">(${cnt} voto${cnt !== 1 ? 's' : ''})</span>` : `<span class="build-novotes">Sin votos</span>`;
+    const avgTxt = cnt > 0
+      ? `${avg.toFixed(1)}★ <span class="btab-vote-cnt">(${cnt} voto${cnt !== 1 ? 's' : ''})</span>`
+      : '<span class="btab-no-votes">Sin votos aún</span>';
+
+    const loginMsg = `<span class="btab-login-note">${DC_SVG} Inicia sesión con Discord para votar</span>`;
 
     return `
-      <div class="build-card" id="bcard-${build.id}">
-        <div class="build-card-top">
-          <div class="build-rank">#${rank + 1}</div>
-          <div class="build-author-info">
-            ${build.author_avatar ? `<img src="${esc(build.author_avatar)}" class="build-avatar" alt="" loading="lazy">` : ''}
-            <span class="build-author-name">${esc(build.author_name)}</span>
+      <div class="btab-build-card">
+        <div class="btab-card-top">
+          <span class="btab-rank">#${rank + 1}</span>
+          <div class="btab-ship-badge">${esc(build.ship_name)}</div>
+          <div class="btab-build-name">${esc(build.build_name)}</div>
+          <div class="btab-author">
+            ${build.author_avatar ? `<img src="${esc(build.author_avatar)}" class="btab-avatar" loading="lazy" alt="">` : ''}
+            <span>${esc(build.author_name)}</span>
           </div>
-          <div class="build-rating">${avgDisplay}</div>
-          ${isOwner ? `<button class="build-delete-btn" onclick="Builds.deleteBuild('${build.id}')" title="Eliminar build">✕</button>` : ''}
+          ${isOwner ? `<button class="btab-delete-btn" onclick="Builds.deleteBuild('${build.id}','buildsTabList')" title="Eliminar build">✕</button>` : ''}
         </div>
-        <div class="build-name">${esc(build.build_name)}</div>
-        ${build.description ? `<div class="build-desc">${esc(build.description)}</div>` : ''}
-        ${slotRows || weaponsHtml ? `<div class="build-components">${slotRows}${weaponsHtml}</div>` : ''}
-        <div class="build-vote-row">
+
+        ${build.description ? `<div class="btab-desc">${esc(build.description)}</div>` : ''}
+
+        ${slotRows || weaponsHtml ? `<div class="btab-comps">${slotRows}${weaponsHtml}</div>` : ''}
+
+        <div class="btab-vote-row">
+          <div class="btab-avg">${avgTxt}</div>
           ${user
-            ? `<span class="build-vote-label">Tu voto:</span>
-               <div class="build-stars">${starsHtml}</div>
-               ${myVote ? `<button class="build-unvote" onclick="Builds.vote('${build.id}',0)">Quitar</button>` : ''}`
-            : `<span class="build-login-note">Inicia sesión para votar</span>`}
+            ? `<div class="btab-stars-wrap">
+                 <div class="build-stars">${starsHtml}</div>
+                 ${myVote ? `<button class="build-unvote" onclick="Builds.vote('${build.id}',0,'buildsTabList')">Quitar voto</button>` : ''}
+               </div>`
+            : loginMsg}
         </div>
       </div>`;
   }
 
-  // ── Create form ──────────────────────────────────────
-  function showCreateForm() {
-    const area = document.getElementById('buildsFormArea');
-    if (!area) return;
+  // ── CREATE BUILD: HTML for the pane ─────────────────
+  function getCreateFormHTML(shipName) {
+    const user = window.Auth?.getUser();
 
-    const slotFields = COMPONENT_SLOTS.map(sl => `
-      <div class="bf-field bf-field-inline">
-        <label class="bf-label">${sl.label}</label>
-        <input class="bf-input" type="text" id="bf_${sl.key}" placeholder="Nombre del componente…" maxlength="80">
+    if (!user) {
+      return `
+        <div class="bcreate-login-gate">
+          <div class="bcreate-lock-icon">🔒</div>
+          <p class="bcreate-login-msg">Necesitas iniciar sesión con Discord para crear una build.</p>
+          <button class="bcreate-discord-btn" onclick="Auth.login()">
+            ${DC_SVG} Iniciar sesión con Discord
+          </button>
+        </div>`;
+    }
+
+    const slotFields = SLOTS.map(sl => `
+      <div class="bcreate-field">
+        <label class="bcreate-label">${sl.icon} ${sl.label}</label>
+        <input class="bcreate-input" type="text" id="bcf_${sl.key}"
+               placeholder="Nombre del componente…" maxlength="80" autocomplete="off">
       </div>`).join('');
 
-    area.innerHTML = `
-      <div class="build-form">
-        <div class="bf-form-title">Nueva Build · ${esc(_shipName)}</div>
-        <div class="bf-field">
-          <label class="bf-label">Nombre de la build <span class="bf-req">*</span></label>
-          <input class="bf-input" type="text" id="bfBuildName" placeholder="Ej: PvP agresivo, Exploración long-range…" maxlength="60">
+    return `
+      <div class="bcreate-form">
+        <div class="bcreate-section-lbl">Información de la build</div>
+        <div class="bcreate-field">
+          <label class="bcreate-label">Nombre de la build <span class="bcreate-req">*</span></label>
+          <input class="bcreate-input" type="text" id="bcfBuildName"
+                 placeholder="Ej: PvP agresivo, Exploración, Minería…" maxlength="60" autocomplete="off">
         </div>
-        <div class="bf-field">
-          <label class="bf-label">Descripción (opcional)</label>
-          <textarea class="bf-input bf-textarea" id="bfDesc" placeholder="Para qué está orientada esta build…" rows="2" maxlength="300"></textarea>
+        <div class="bcreate-field">
+          <label class="bcreate-label">Descripción <span class="bcreate-opt">(opcional)</span></label>
+          <textarea class="bcreate-input bcreate-ta" id="bcfDesc"
+                    placeholder="Para qué está orientada esta build…" rows="2" maxlength="300"></textarea>
         </div>
-        <div class="bf-section-title">Componentes</div>
+        <div class="bcreate-section-lbl">Componentes</div>
         ${slotFields}
-        <div class="bf-field">
-          <label class="bf-label">Armas (una por línea)</label>
-          <textarea class="bf-input bf-textarea" id="bfWeapons" placeholder="CF-117 Badger Repeater&#10;Attrition-3 Laser Cannon" rows="3" maxlength="500"></textarea>
+        <div class="bcreate-field">
+          <label class="bcreate-label">⚔ Armas <span class="bcreate-opt">(una por línea)</span></label>
+          <textarea class="bcreate-input bcreate-ta" id="bcfWeapons"
+                    placeholder="CF-117 Badger Repeater&#10;Attrition-3 Laser Cannon" rows="3" maxlength="500"></textarea>
         </div>
-        <div class="bf-actions">
-          <button class="bf-cancel" onclick="Builds.cancelForm()">Cancelar</button>
-          <button class="bf-submit" onclick="Builds.submitBuild()">Publicar Build</button>
+        <div class="bcreate-actions">
+          <button class="bcreate-cancel" onclick="Comp.switchTab('ships')">Cancelar</button>
+          <button class="bcreate-submit" onclick="Builds.submitBuild(${JSON.stringify(shipName)})">Publicar Build</button>
         </div>
       </div>`;
-
-    area.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
-  function cancelForm() {
-    const area = document.getElementById('buildsFormArea');
-    if (area) area.innerHTML = '';
-  }
-
-  async function submitBuild() {
+  // ── Submit ───────────────────────────────────────────
+  async function submitBuild(shipName) {
     const sb   = _getSb();
     const user = window.Auth?.getUser();
     if (!sb || !user) return;
 
-    const buildName = (document.getElementById('bfBuildName')?.value || '').trim();
+    const buildName = (document.getElementById('bcfBuildName')?.value || '').trim();
     if (!buildName) { _toast('El nombre de la build es obligatorio'); return; }
 
-    const desc = (document.getElementById('bfDesc')?.value || '').trim();
+    const desc = (document.getElementById('bcfDesc')?.value || '').trim();
     const components = {};
-
-    COMPONENT_SLOTS.forEach(sl => {
-      const v = (document.getElementById(`bf_${sl.key}`)?.value || '').trim();
+    SLOTS.forEach(sl => {
+      const v = (document.getElementById(`bcf_${sl.key}`)?.value || '').trim();
       if (v) components[sl.key] = v;
     });
-
-    const weaponsRaw = (document.getElementById('bfWeapons')?.value || '').trim();
-    if (weaponsRaw) {
-      components.weapons = weaponsRaw.split('\n').map(w => w.trim()).filter(Boolean);
-    }
+    const wRaw = (document.getElementById('bcfWeapons')?.value || '').trim();
+    if (wRaw) components.weapons = wRaw.split('\n').map(w => w.trim()).filter(Boolean);
 
     const meta = user.user_metadata || {};
+    const btn  = document.querySelector('.bcreate-submit');
+    if (btn) { btn.disabled = true; btn.textContent = 'Publicando…'; }
+
     const { error } = await sb.from('ship_builds').insert({
       user_id:       user.id,
       author_name:   meta.full_name || meta.user_name || 'Miembro',
       author_avatar: meta.avatar_url || '',
-      ship_name:     _shipName,
+      ship_name:     shipName,
       build_name:    buildName,
       description:   desc,
       components,
     });
 
-    if (error) { _toast('Error al publicar: ' + error.message); return; }
+    if (error) {
+      _toast('Error al publicar: ' + error.message);
+      if (btn) { btn.disabled = false; btn.textContent = 'Publicar Build'; }
+      return;
+    }
 
-    cancelForm();
     _toast('¡Build publicada!');
-    await _loadBuilds();
+    window.Comp?.switchTab('builds');
   }
 
-  // ── Voting ───────────────────────────────────────────
-  async function vote(buildId, stars) {
+  // ── Vote ─────────────────────────────────────────────
+  async function vote(buildId, stars, containerId) {
     const sb   = _getSb();
     const user = window.Auth?.getUser();
-    if (!sb || !user) return;
+    if (!user) {
+      _toast('Inicia sesión con Discord para votar');
+      return;
+    }
+    if (!sb) return;
 
     if (stars === 0) {
-      await sb.from('ship_build_votes').delete()
-        .eq('user_id', user.id).eq('build_id', buildId);
+      await sb.from('ship_build_votes').delete().eq('user_id', user.id).eq('build_id', buildId);
       delete _userVotes[buildId];
     } else {
       await sb.from('ship_build_votes').upsert(
@@ -317,12 +273,12 @@ window.Builds = (function () {
       _userVotes[buildId] = stars;
     }
 
-    await _loadBuilds();
+    await loadAllBuilds(containerId);
   }
 
-  // ── Delete own build ─────────────────────────────────
-  async function deleteBuild(buildId) {
-    if (!confirm('¿Eliminar esta build?')) return;
+  // ── Delete ───────────────────────────────────────────
+  async function deleteBuild(buildId, containerId) {
+    if (!confirm('¿Eliminar esta build? Esta acción no se puede deshacer.')) return;
     const sb   = _getSb();
     const user = window.Auth?.getUser();
     if (!sb || !user) return;
@@ -332,7 +288,7 @@ window.Builds = (function () {
       .eq('id', buildId).eq('user_id', user.id);
 
     if (error) { _toast('Error al eliminar: ' + error.message); return; }
-    await _loadBuilds();
+    await loadAllBuilds(containerId);
   }
 
   // ── Helpers ──────────────────────────────────────────
@@ -345,14 +301,22 @@ window.Builds = (function () {
     if (!el) {
       el = document.createElement('div');
       el.id = 'buildsToast';
-      el.style.cssText = 'position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%);z-index:10000;padding:.5rem 1.2rem;border-radius:8px;font-size:.85rem;font-family:monospace;background:rgba(245,158,11,.95);color:#1c1917;font-weight:700;pointer-events:none;transition:opacity .4s';
+      el.style.cssText = [
+        'position:fixed', 'bottom:1.5rem', 'left:50%', 'transform:translateX(-50%)',
+        'z-index:10000', 'padding:.5rem 1.4rem', 'border-radius:8px',
+        'font-size:.85rem', 'font-family:monospace', 'font-weight:700',
+        'background:rgba(245,158,11,.96)', 'color:#1c1917',
+        'pointer-events:none', 'transition:opacity .4s',
+        'box-shadow:0 4px 20px rgba(0,0,0,.4)'
+      ].join(';');
       document.body.appendChild(el);
     }
     el.textContent = msg;
     el.style.opacity = '1';
-    setTimeout(() => { el.style.opacity = '0'; }, 2500);
+    clearTimeout(el._t);
+    el._t = setTimeout(() => { el.style.opacity = '0'; }, 2800);
   }
 
-  return { openModal, closeModal, showCreateForm, cancelForm, submitBuild, vote, deleteBuild };
+  return { loadAllBuilds, getCreateFormHTML, submitBuild, vote, deleteBuild };
 
 })();
