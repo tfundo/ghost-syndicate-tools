@@ -1833,7 +1833,11 @@ body::after {
   :root { --nav-h: clamp(72px, 7.5vw, 90px); }
   .nav-links { display: none !important; }
   .nav-hamburger { display: none !important; }
-  .logo-meta-bar { display: none; }
+  /* Ocultamos botones sociales y lang pero mantenemos el widget de auth */
+  .logo-meta-bar .nav-social-btn,
+  .logo-meta-bar .nav-lang,
+  .logo-meta-bar .logo-meta-sep,
+  .logo-meta-bar .logo-meta-version { display: none; }
   .logo-sub { display: none; }
   .nav-bottom { display: flex; }
   .section { padding-bottom: calc(var(--nav-bottom-h) + 0.5rem); }
@@ -5172,14 +5176,6 @@ body::after {
 /* ========================================
    AUTH WIDGET (navbar)
    ======================================== */
-/* Auth widget — siempre visible, fuera de logo-meta-bar */
-.nav-auth-widget-wrap {
-  display: flex;
-  align-items: center;
-  flex-shrink: 0;
-  margin-left: auto;
-  order: 10;
-}
 .nav-auth-login {
   display: inline-flex;
   align-items: center;
