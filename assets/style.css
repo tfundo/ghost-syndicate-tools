@@ -6118,3 +6118,29 @@ body::after {
   .bcreate-field { grid-template-columns: 1fr; }
   .btab-comp-lbl { min-width: 80px; }
 }
+
+/* ── Component select dropdown ── */
+.bcreate-select {
+  background: rgba(12,10,9,.85);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 4px;
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: .78rem;
+  padding: .38rem .6rem;
+  transition: border-color .18s;
+  width: 100%;
+  box-sizing: border-box;
+  cursor: pointer;
+  appearance: auto;
+}
+.bcreate-select:focus { outline: none; border-color: rgba(245,158,11,.5); }
+.bcreate-select option { background: #1c1917; color: var(--text-primary); }
+.bcreate-field-full { grid-template-columns: 1fr; }
+.bcreate-loading {
+  text-align: center;
+  padding: 1.5rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: .8rem;
+}

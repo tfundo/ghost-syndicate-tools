@@ -863,6 +863,10 @@
     if (compState.tab === 'builds') {
       window.Builds?.loadAllBuilds('buildsTabList');
     }
+    // Fill component dropdowns async when create-build tab is active
+    if (compState.tab === 'create-build' && compState.createBuildShip) {
+      window.Builds?.fillCreateForm(compState.createBuildShip);
+    }
   }
 
   // ============================================================
