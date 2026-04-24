@@ -1,5 +1,5 @@
 /* Ghost Syndicate Tools — Service Worker */
-const CACHE   = 'gst-v4';
+const CACHE   = 'gst-v5';
 const STATIC  = [
   '/assets/ghostlogo.png',
 ];
