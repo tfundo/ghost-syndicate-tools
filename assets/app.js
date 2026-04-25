@@ -1012,10 +1012,35 @@ function parseCost(str) {
   return m ? { qty: parseInt(m[1], 10), resource: m[2].trim() } : null;
 }
 
-window.wkSetResource = function(resourceName, rawVal) {
+window.wkSetResource = function(resourceName, rawVal, inputEl) {
   const qty = Math.max(0, parseInt(rawVal, 10) || 0);
   window.Auth?.setResource('wikelo', resourceName, qty);
-  renderWikelo();
+  // DOM-only update — no full re-render so the focused input keeps focus
+  if (!inputEl) return;
+  const li = inputEl.closest('.wk-cost-item');
+  if (li) {
+    const need = parseInt(li.querySelector('.wk-qty-sep')?.dataset.need || '0', 10);
+    const done = qty >= need;
+    li.classList.toggle('wk-cost-done', done);
+    const check = li.querySelector('.wk-track-check');
+    if (check) check.textContent = done ? '✓' : '✗';
+  }
+  const card = inputEl.closest('.wk-card');
+  if (card) {
+    const trackable = [...card.querySelectorAll('.wk-cost-item.wk-trackable')];
+    const allDone = trackable.length > 0 && trackable.every(el => el.classList.contains('wk-cost-done'));
+    card.classList.toggle('wk-card-ready', allDone);
+    const header = card.querySelector('.wk-card-header');
+    const autoBadge = header?.querySelector('.wk-ready-auto');
+    if (allDone && !autoBadge && header) {
+      const b = document.createElement('span');
+      b.className = 'wk-ready-badge wk-ready-auto';
+      b.textContent = '✓ Listo';
+      header.appendChild(b);
+    } else if (!allDone && autoBadge) {
+      autoBadge.remove();
+    }
+  }
 };
 
 const WK_ICONS = {
@@ -1114,13 +1139,39 @@ function renderWikelo() {
 }
 
 function renderWikeloCard(item) {
-  const costsHtml = item.cost.map(c =>
-    `<li class="wk-cost-item"><span class="wk-bullet">▸</span>${escHtml(c)}</li>`
-  ).join('');
-
-  const user        = window.Auth?.getUser();
-  const itemKey     = item.id ? String(item.id) : window.Auth?.normalizeKey(item.name) || item.name;
+  const user    = window.Auth?.getUser();
+  const itemKey = item.id ? String(item.id) : window.Auth?.normalizeKey(item.name) || item.name;
   const isCollected = user ? (window.Auth?.getResource('wk_have', itemKey) > 0) : false;
+
+  // Build cost list — trackable inputs for logged-in users
+  let allMet = !!user;
+  const costsHtml = item.cost.map(c => {
+    if (!user) {
+      return `<li class="wk-cost-item"><span class="wk-bullet">▸</span>${escHtml(c)}</li>`;
+    }
+    const parsed = parseCost(c);
+    if (!parsed) {
+      allMet = false;
+      return `<li class="wk-cost-item"><span class="wk-bullet">▸</span>${escHtml(c)}</li>`;
+    }
+    const rKey = window.Auth?.normalizeKey(parsed.resource) || parsed.resource;
+    const have = window.Auth?.getResource('wikelo', rKey) || 0;
+    const done = have >= parsed.qty;
+    if (!done) allMet = false;
+    return `<li class="wk-cost-item wk-trackable${done ? ' wk-cost-done' : ''}">
+      <span class="wk-track-check">${done ? '✓' : '✗'}</span>
+      <span class="wk-cost-label" title="${escHtml(parsed.resource)}">${escHtml(parsed.resource)}</span>
+      <span class="wk-track-input">
+        <input type="number" class="wk-qty-input" min="0" max="9999" value="${have}"
+          data-rkey="${escHtml(rKey)}"
+          oninput="wkSetResource(this.dataset.rkey,this.value,this)"
+          onclick="event.stopPropagation()">
+        <span class="wk-qty-sep" data-need="${parsed.qty}">/ ${parsed.qty}</span>
+      </span>
+    </li>`;
+  }).join('');
+
+  const isReady = user && allMet && !isCollected;
 
   const compsHtml = item.comps && item.comps.length
     ? `<div class="wk-comps">
@@ -1147,11 +1198,21 @@ function renderWikeloCard(item) {
        </button>`
     : '';
 
+  const badgeHtml = isCollected
+    ? `<span class="wk-ready-badge">✓ Obtenido</span>`
+    : isReady
+    ? `<span class="wk-ready-badge wk-ready-auto">✓ Listo</span>`
+    : '';
+
+  let cardClass = 'wk-card';
+  if (isCollected) cardClass += ' wk-card-collected';
+  else if (isReady) cardClass += ' wk-card-ready';
+
   return `
-    <div class="wk-card${isCollected ? ' wk-card-collected' : ''}">
+    <div class="${cardClass}">
       <div class="wk-card-header">
         <span class="wk-item-name">${escHtml(item.name)}</span>
-        ${isCollected ? `<span class="wk-ready-badge">✓ Obtenido</span>` : ''}
+        ${badgeHtml}
       </div>
       ${missionHtml}
       ${descHtml}
