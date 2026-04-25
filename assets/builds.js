@@ -586,6 +586,36 @@ window.Builds = (function () {
     el._t = setTimeout(() => { el.style.opacity = '0'; }, 2800);
   }
 
-  return { loadAllBuilds, getCreateFormHTML, fillCreateForm, submitBuild, vote, deleteBuild, onCompChange };
+  // ── Search / filter ──────────────────────────────────
+  function filterBuilds(query) {
+    const q = (query || '').toLowerCase().trim();
+    const clearBtn = document.getElementById('buildsSearchClear');
+    if (clearBtn) clearBtn.style.display = q ? 'flex' : 'none';
+
+    const container = document.getElementById('buildsTabList');
+    if (!container || !_allBuilds.length) return;
+
+    const user = window.Auth?.getUser();
+    const filtered = q
+      ? _allBuilds.filter(b =>
+          b.ship_name?.toLowerCase().includes(q) ||
+          b.author_name?.toLowerCase().includes(q) ||
+          b.build_name?.toLowerCase().includes(q))
+      : _allBuilds;
+
+    if (!filtered.length) {
+      container.innerHTML = `<div class="builds-empty">No se encontraron builds para "<strong>${esc(query)}</strong>".</div>`;
+      return;
+    }
+    container.innerHTML = filtered.map((b, i) => _buildCard(b, user, i)).join('');
+  }
+
+  function clearSearch() {
+    const input = document.getElementById('buildsSearch');
+    if (input) { input.value = ''; input.focus(); }
+    filterBuilds('');
+  }
+
+  return { loadAllBuilds, getCreateFormHTML, fillCreateForm, submitBuild, vote, deleteBuild, onCompChange, filterBuilds, clearSearch };
 
 })();

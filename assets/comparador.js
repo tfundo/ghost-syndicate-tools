@@ -280,9 +280,23 @@
   function buildBuildsPane() {
     return `
       <div class="btab-pane">
+        <div class="btab-wip-banner">
+          <span class="btab-wip-icon">🚧</span>
+          <span>Este módulo está en desarrollo y puede contener errores. Agradecemos tu paciencia.</span>
+        </div>
         <div class="btab-topbar">
           <p class="btab-intro">Builds de la comunidad · vota las que más te gusten (1–5 ★)</p>
           <button class="btab-go-ships" onclick="Comp.switchTab('ships')">← Ir a Naves</button>
+        </div>
+        <div class="btab-search-bar">
+          <div class="btab-search-wrap">
+            <span class="btab-search-icon">⌕</span>
+            <input class="btab-search-input" id="buildsSearch" type="text"
+              placeholder="Buscar por nave o usuario…"
+              oninput="Builds.filterBuilds(this.value)">
+            <button class="btab-search-clear" id="buildsSearchClear"
+              onclick="Builds.clearSearch()" title="Limpiar">✕</button>
+          </div>
         </div>
         <div id="buildsTabList" class="btab-list">
           <div class="builds-loading">Cargando builds…</div>
@@ -297,6 +311,10 @@
     }
     return `
       <div class="bcreate-pane">
+        <div class="btab-wip-banner">
+          <span class="btab-wip-icon">🚧</span>
+          <span>Este módulo está en desarrollo y puede contener errores. Agradecemos tu paciencia.</span>
+        </div>
         <div class="bcreate-pane-header">
           <button class="bcreate-back" onclick="Comp.switchTab('ships')">← Volver a Naves</button>
           <div class="bcreate-pane-title">
