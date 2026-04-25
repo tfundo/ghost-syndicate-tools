@@ -21,38 +21,30 @@ window.Auth = (function () {
   // ── Init ─────────────────────────────────────────────────
   function init() {
     if (!window.supabase) return;
-    sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON);
+    // implicit flow: tokens come back in the URL hash, no PKCE round-trip needed
+    sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON, {
+      auth: {
+        flowType: 'implicit',
+        detectSessionInUrl: true,
+        persistSession: true,
+        autoRefreshToken: true,
+      }
+    });
 
     sb.auth.onAuthStateChange(async (event, session) => {
       _session = session;
       _user    = session?.user ?? null;
-      if (_user && (event === 'SIGNED_IN' || event === 'INITIAL_SESSION')) {
+      if (_user && (event === 'SIGNED_IN' || event === 'INITIAL_SESSION' || event === 'TOKEN_REFRESHED')) {
         await _loadResources();
-        // Tras login OAuth redirigir al home (la URL tiene tokens de Supabase en el hash/params)
         if (event === 'SIGNED_IN') {
-          try {
-            history.replaceState(null, '', window.location.pathname);
-            window.showSection?.('home');
-          } catch(e) {
-            console.warn('[Auth] showSection error:', e);
-          }
+          // Limpiar tokens del hash/query para que la URL quede limpia
+          try { history.replaceState(null, '', window.location.pathname); } catch(e) {}
         }
       } else if (event === 'SIGNED_OUT') {
         _resources.clear();
       }
       _renderWidget();
       _notify(_user);
-    });
-
-    // Fallback: if onAuthStateChange fires before we register, pick up the session here
-    sb.auth.getSession().then(async ({ data: { session } }) => {
-      if (!_user && session?.user) {
-        _session = session;
-        _user    = session.user;
-        await _loadResources();
-        _renderWidget();
-        _notify(_user);
-      }
     });
 
     _renderWidget();
@@ -63,7 +55,7 @@ window.Auth = (function () {
     const base = window.location.href.split('?')[0].split('#')[0];
     await sb.auth.signInWithOAuth({
       provider: 'discord',
-      options: { scopes: 'identify email guilds', redirectTo: base }
+      options: { scopes: 'identify email', redirectTo: base }
     });
   }
 
