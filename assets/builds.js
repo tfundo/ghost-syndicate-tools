@@ -175,7 +175,7 @@ window.Builds = (function () {
         </div>
         <div class="bcreate-actions">
           <button class="bcreate-cancel" onclick="Comp.switchTab('ships')">Cancelar</button>
-          <button class="bcreate-submit" onclick="Builds.submitBuild(${JSON.stringify(shipName)})">Publicar Build</button>
+          <button class="bcreate-submit" data-ship="${esc(shipName)}" onclick="Builds.submitBuild(this.dataset.ship)">Publicar Build</button>
         </div>
       </div>`;
   }
