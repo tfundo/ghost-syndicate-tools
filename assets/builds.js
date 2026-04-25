@@ -19,11 +19,22 @@ window.Builds = (function () {
     Weapon:      { label: 'Arma',               icon: '⚔' },
   };
 
+  const SUPABASE_URL  = 'https://hsluuuhnkhdqrmkfpehv.supabase.co';
+  const SUPABASE_ANON = 'sb_publishable_PMu9nPqwiPUK7mKH5RniQA_GKX1BL6U';
+
   let _allBuilds  = [];
   let _userVotes  = {};
-  let _compDB     = null;   // loaded from components_db.json
+  let _compDB     = null;
+  let _publicSb   = null;   // cliente público, siempre disponible sin sesión
 
-  function _getSb() { return window.Auth?.getSupabase(); }
+  // Cliente autenticado (para votar/crear) o público (para leer builds)
+  function _getSb()       { return window.Auth?.getSupabase() || _getPublicSb(); }
+  function _getPublicSb() {
+    if (_publicSb) return _publicSb;
+    if (!window.supabase) return null;
+    _publicSb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON);
+    return _publicSb;
+  }
 
   // ── Load components DB ───────────────────────────────
   async function _loadCompDB() {
@@ -388,86 +399,86 @@ window.Builds = (function () {
   }
 
   // ── BUILDS TAB: load all builds ──────────────────────
-  let _loadingBuilds = false;
+  let _loadToken = 0;  // cancela cargas obsoletas cuando el usuario navega
 
   async function loadAllBuilds(containerId) {
-    // Avoid duplicate concurrent loads
-    if (_loadingBuilds) return;
-    _loadingBuilds = true;
-
-    const live = () => document.getElementById(containerId);  // always fetch current DOM el
+    const myToken = ++_loadToken;                              // token único para esta carga
+    const live    = () => document.getElementById(containerId); // siempre el elemento actual del DOM
+    const stale   = () => myToken !== _loadToken;              // ¿hay una carga más reciente?
 
     const sb = _getSb();
     if (!sb) {
-      const el = live(); if (el) el.innerHTML = '<div class="builds-error">No se pudo conectar con la base de datos.</div>';
-      _loadingBuilds = false; return;
+      const el = live();
+      if (el) el.innerHTML = '<div class="builds-error">No se pudo conectar con la base de datos.</div>';
+      return;
     }
 
     { const el = live(); if (el) el.innerHTML = '<div class="builds-loading">Cargando builds…</div>'; }
 
-    try {
-      const { data: builds, error } = await sb
-        .from('ship_builds')
-        .select('*')
-        .order('created_at', { ascending: false });
+    const { data: builds, error } = await sb
+      .from('ship_builds')
+      .select('*')
+      .order('created_at', { ascending: false });
 
-      if (error) {
-        const el = live(); if (el) el.innerHTML = '<div class="builds-error">Error al cargar builds.</div>';
-        return;
-      }
+    if (stale()) return;  // otra carga más reciente tomó el relevo
 
-      _allBuilds = builds || [];
+    if (error) {
+      const el = live(); if (el) el.innerHTML = '<div class="builds-error">Error al cargar builds.</div>';
+      return;
+    }
 
-      if (_allBuilds.length === 0) {
-        const el = live();
-        if (el) el.innerHTML = `
-          <div class="builds-empty">
-            <div style="font-size:2rem;margin-bottom:.7rem">⚙</div>
-            No hay builds todavía.<br>
-            <span style="font-size:.8rem;color:var(--text-muted)">Ve a la pestaña Naves y pulsa "Crear Build" en cualquier nave.</span>
-          </div>`;
-        return;
-      }
+    _allBuilds = builds || [];
 
-      const buildIds = _allBuilds.map(b => b.id);
-      const { data: allVotes } = await sb
+    if (_allBuilds.length === 0) {
+      const el = live();
+      if (el) el.innerHTML = `
+        <div class="builds-empty">
+          <div style="font-size:2rem;margin-bottom:.7rem">⚙</div>
+          No hay builds todavía.<br>
+          <span style="font-size:.8rem;color:var(--text-muted)">Ve a la pestaña Naves y pulsa "Crear Build" en cualquier nave.</span>
+        </div>`;
+      return;
+    }
+
+    const buildIds = _allBuilds.map(b => b.id);
+    const { data: allVotes } = await sb
+      .from('ship_build_votes')
+      .select('build_id,stars')
+      .in('build_id', buildIds);
+
+    if (stale()) return;
+
+    const voteMap = {};
+    (allVotes || []).forEach(v => {
+      if (!voteMap[v.build_id]) voteMap[v.build_id] = { total: 0, count: 0 };
+      voteMap[v.build_id].total += v.stars;
+      voteMap[v.build_id].count++;
+    });
+    _allBuilds.forEach(b => {
+      const vm = voteMap[b.id] || { total: 0, count: 0 };
+      b._votes_count = vm.count;
+      b._avg_stars   = vm.count > 0 ? vm.total / vm.count : 0;
+    });
+    _allBuilds.sort((a, b) =>
+      (b._avg_stars * Math.log(b._votes_count + 2)) -
+      (a._avg_stars * Math.log(a._votes_count + 2))
+    );
+
+    const user = window.Auth?.getUser();
+    _userVotes = {};
+    if (user && buildIds.length > 0) {
+      const { data: myVotes } = await sb
         .from('ship_build_votes')
         .select('build_id,stars')
+        .eq('user_id', user.id)
         .in('build_id', buildIds);
-
-      const voteMap = {};
-      (allVotes || []).forEach(v => {
-        if (!voteMap[v.build_id]) voteMap[v.build_id] = { total: 0, count: 0 };
-        voteMap[v.build_id].total += v.stars;
-        voteMap[v.build_id].count++;
-      });
-      _allBuilds.forEach(b => {
-        const vm = voteMap[b.id] || { total: 0, count: 0 };
-        b._votes_count = vm.count;
-        b._avg_stars   = vm.count > 0 ? vm.total / vm.count : 0;
-      });
-      _allBuilds.sort((a, b) =>
-        (b._avg_stars * Math.log(b._votes_count + 2)) -
-        (a._avg_stars * Math.log(a._votes_count + 2))
-      );
-
-      const user = window.Auth?.getUser();
-      _userVotes = {};
-      if (user && buildIds.length > 0) {
-        const { data: myVotes } = await sb
-          .from('ship_build_votes')
-          .select('build_id,stars')
-          .eq('user_id', user.id)
-          .in('build_id', buildIds);
-        (myVotes || []).forEach(v => { _userVotes[v.build_id] = v.stars; });
-      }
-
-      // Re-fetch the live container — renders may have happened during awaits
-      const el = live();
-      if (el) el.innerHTML = _allBuilds.map((b, i) => _buildCard(b, user, i)).join('');
-    } finally {
-      _loadingBuilds = false;
+      if (!stale()) (myVotes || []).forEach(v => { _userVotes[v.build_id] = v.stars; });
     }
+
+    if (stale()) return;
+
+    const el = live();
+    if (el) el.innerHTML = _allBuilds.map((b, i) => _buildCard(b, user, i)).join('');
   }
 
   function _buildCard(build, user, rank) {
