@@ -60,7 +60,13 @@ window.Auth = (function () {
   }
 
   async function logout() {
-    await sb.auth.signOut();
+    try { await sb.auth.signOut(); } catch(e) { console.warn('[Auth] signOut error:', e); }
+    // Limpiar estado inmediatamente por si onAuthStateChange no dispara
+    _user = null;
+    _session = null;
+    _resources.clear();
+    _renderWidget();
+    _notify(null);
   }
 
   // ── Resources ─────────────────────────────────────────────
