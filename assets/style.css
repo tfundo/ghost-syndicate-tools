@@ -6022,7 +6022,7 @@ body::after {
   padding-bottom: .3rem;
   margin-top: .3rem;
 }
-.bcreate-field { display: grid; grid-template-columns: 140px 1fr; align-items: center; gap: .5rem; }
+.bcreate-field { display: flex; flex-direction: column; gap: .3rem; }
 .bcreate-label {
   font-family: var(--font-mono);
   font-size: .72rem;
