@@ -6011,7 +6011,6 @@ body::after {
   display: flex;
   flex-direction: column;
   gap: .7rem;
-  max-width: 640px;
 }
 .bcreate-section-lbl {
   font-family: var(--font-mono);
@@ -6084,7 +6083,7 @@ body::after {
 /* Two-column build form layout */
 .bcreate-two-col {
   display: grid;
-  grid-template-columns: 1fr 300px;
+  grid-template-columns: 1fr 1fr;
   gap: 1.5rem;
   align-items: start;
 }
