@@ -104,6 +104,9 @@
     if (tab === 'create-build' && shipName) compState.createBuildShip = shipName;
     compState.tab = tab;
     render();
+    if (tab === 'builds') {
+      window.Builds?.loadAllBuilds('buildsTabList');
+    }
     document.getElementById('compContentArea')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
@@ -877,10 +880,6 @@
       });
     }
 
-    // Load builds async when BUILDS tab is active
-    if (compState.tab === 'builds') {
-      window.Builds?.loadAllBuilds('buildsTabList');
-    }
     // Fill component dropdowns async when create-build tab is active
     if (compState.tab === 'create-build' && compState.createBuildShip) {
       window.Builds?.fillCreateForm(compState.createBuildShip);
@@ -1388,6 +1387,9 @@
   function init() {
     injectStyles();
     render();
+    if (compState.tab === 'builds') {
+      window.Builds?.loadAllBuilds('buildsTabList');
+    }
     // Load ship data from JSON (updated each game patch)
     if (!compState._shipsLoaded) {
       compState._shipsLoaded = true;
