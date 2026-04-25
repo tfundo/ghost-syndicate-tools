@@ -48,7 +48,7 @@
 
 /* ===== RESET ===== */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; font-size: clamp(14px, 1.15vw, 20px); }
+html { scroll-behavior: smooth; font-size: clamp(16px, 1.25vw, 22px); }
 body {
   background: var(--bg-dark);
   color: var(--text-primary);
