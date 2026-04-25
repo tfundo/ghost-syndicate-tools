@@ -51,12 +51,10 @@ document.addEventListener('DOMContentLoaded', () => {
   loadDatabase();
 
   // Handle initial hash — ignorar tokens OAuth de Supabase (hash o query params PKCE)
-  const rawHash    = window.location.hash.replace('#', '');
-  const rawSearch  = window.location.search;
-  const isOAuth    = rawHash.includes('access_token=') || rawHash.includes('type=') || rawSearch.includes('code=');
-  const hash       = (!rawHash || isOAuth) ? 'home' : rawHash;
-  if (isOAuth) history.replaceState(null, '', window.location.pathname);
-  showSection(hash);
+  const rawHash = window.location.hash.replace('#', '');
+  const isOAuth = rawHash.includes('access_token=') || rawHash.includes('type=') || window.location.search.includes('code=');
+  // No limpiar el hash aquí — auth.js lo hace en SIGNED_IN, así Supabase puede leerlo primero
+  showSection(isOAuth || !rawHash ? 'home' : rawHash);
 });
 
 // ============================================================
