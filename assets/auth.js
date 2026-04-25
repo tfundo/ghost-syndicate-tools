@@ -60,13 +60,14 @@ window.Auth = (function () {
   }
 
   async function logout() {
-    try { await sb.auth.signOut(); } catch(e) { console.warn('[Auth] signOut error:', e); }
-    // Limpiar estado inmediatamente por si onAuthStateChange no dispara
+    // Limpiar estado local primero — UI responde al instante
     _user = null;
     _session = null;
     _resources.clear();
     _renderWidget();
     _notify(null);
+    // Invalidar sesión en Supabase en segundo plano
+    try { await sb?.auth.signOut(); } catch(e) {}
   }
 
   // ── Resources ─────────────────────────────────────────────
