@@ -259,17 +259,34 @@ window.Builds = (function () {
   }
 
   // ── CREATE BUILD: outer shell (sync) ─────────────────
-  function getCreateFormHTML(shipName) {
-    const user = window.Auth?.getUser();
-    if (!user) {
-      return `
-        <div class="bcreate-login-gate">
-          <div class="bcreate-lock-icon">🔒</div>
-          <p class="bcreate-login-msg">Necesitas iniciar sesión con Discord para crear una build.</p>
-          <button class="bcreate-discord-btn" onclick="Auth.login()">
+  function _showLoginModal() {
+    let el = document.getElementById('buildsLoginModal');
+    if (!el) {
+      el = document.createElement('div');
+      el.id = 'buildsLoginModal';
+      el.innerHTML = `
+        <div class="blm-box">
+          <button class="blm-close" onclick="document.getElementById('buildsLoginModal').remove()" title="Cerrar">✕</button>
+          <div class="blm-lock">🔒</div>
+          <h3 class="blm-title">Sesión requerida</h3>
+          <p class="blm-msg">Inicia sesión con Discord para poder crear y publicar builds de naves.</p>
+          <button class="blm-btn" onclick="Auth.login()">
             ${DC_SVG} Iniciar sesión con Discord
           </button>
         </div>`;
+      el.className = 'blm-overlay';
+      el.addEventListener('click', e => { if (e.target === el) el.remove(); });
+      document.body.appendChild(el);
+    }
+    el.style.display = 'flex';
+  }
+
+  function getCreateFormHTML(shipName) {
+    const user = window.Auth?.getUser();
+    if (!user) {
+      // Mostrar modal centrado y devolver vacío para no romper el panel
+      setTimeout(_showLoginModal, 0);
+      return '';
     }
 
     return `

@@ -6160,36 +6160,82 @@ body::after {
 .bc-same   { color: var(--text-muted); }
 
 /* Login gate */
-.bcreate-login-gate {
-  text-align: center;
-  padding: 3rem 1.5rem;
+/* ── Login modal (builds) ─────────────────────────────── */
+.blm-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+  background: rgba(0,0,0,0.72);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+  animation: blm-in .18s ease;
+}
+@keyframes blm-in {
+  from { opacity: 0; transform: scale(.96); }
+  to   { opacity: 1; transform: scale(1);   }
+}
+.blm-box {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid rgba(245,158,11,.3);
+  border-radius: 14px;
+  padding: 2.5rem 2.8rem;
+  max-width: 400px;
+  width: 90%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: .8rem;
+  gap: 1rem;
+  box-shadow: 0 8px 40px rgba(0,0,0,.6);
+  text-align: center;
 }
-.bcreate-lock-icon { font-size: 2.5rem; }
-.bcreate-login-msg {
-  font-family: var(--font-mono);
-  font-size: .85rem;
+.blm-close {
+  position: absolute;
+  top: .8rem; right: .9rem;
+  background: none;
+  border: none;
   color: var(--text-muted);
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 4px;
+  transition: color .15s;
 }
-.bcreate-discord-btn {
+.blm-close:hover { color: var(--text-primary); }
+.blm-lock { font-size: 2.8rem; }
+.blm-title {
+  font-family: var(--font-hud);
+  font-size: 1.1rem;
+  letter-spacing: .08em;
+  color: var(--text-primary);
+  margin: 0;
+}
+.blm-msg {
+  font-family: var(--font-mono);
+  font-size: .82rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+.blm-btn {
   display: inline-flex;
   align-items: center;
   gap: .5rem;
-  padding: .55rem 1.4rem;
-  border-radius: 6px;
-  border: 1px solid rgba(88,101,242,.5);
-  background: rgba(88,101,242,.12);
+  padding: .65rem 1.6rem;
+  border-radius: 8px;
+  border: 1px solid rgba(88,101,242,.6);
+  background: rgba(88,101,242,.15);
   color: #7289da;
   font-family: var(--font-mono);
-  font-size: .82rem;
+  font-size: .85rem;
   font-weight: 700;
   cursor: pointer;
   transition: all .18s;
+  margin-top: .3rem;
 }
-.bcreate-discord-btn:hover { background: rgba(88,101,242,.22); border-color: #7289da; }
+.blm-btn:hover { background: rgba(88,101,242,.28); border-color: #7289da; color: #fff; }
 
 @media (max-width: 860px) {
   .bcreate-two-col { grid-template-columns: 1fr; }
