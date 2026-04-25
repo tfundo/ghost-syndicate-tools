@@ -163,19 +163,19 @@ window.Builds = (function () {
           <span class="bc-stat-base">${fmt(base, unit)}</span>
           <span class="bc-stat-arrow">→</span>
           <span class="bc-stat-sel">${fmt(sel, unit)}</span>
-          <span class="bc-stat-delta ${dcls}">${dtxt}</span>
+          ${dtxt ? `<span class="bc-stat-delta ${dcls}">${dtxt}</span>` : ''}
         </div>`;
       }
     }
 
     if (!hasAny) return '';
     return `<div class="bc-stats-panel">
+      <div class="bc-stats-panel-title">Comparativa vs serie</div>
       <div class="bc-stats-hdr">
-        <span class="bc-stat-lbl">Stat</span>
-        <span class="bc-stat-base">De serie</span>
+        <span>Stat</span>
+        <span style="text-align:right">Serie</span>
         <span></span>
-        <span class="bc-stat-sel">Tu build</span>
-        <span class="bc-stat-delta">Delta</span>
+        <span style="text-align:right">Build</span>
       </div>
       ${rows}
     </div>`;
@@ -219,15 +219,9 @@ window.Builds = (function () {
           </div>`);
       });
     });
-    if (compSection.length) {
-      sections.push(`
-        <div class="bcreate-section-lbl">Componentes</div>
-        ${compSection.join('')}
-        <div id="bcStatsPanel"></div>`);
-    }
-
     // Weapon slots
     const weaponSlots = slots['Weapon'] || [];
+    let weaponHTML = '';
     if (weaponSlots.length > 0) {
       const wRows = weaponSlots.map((slot, i) => {
         const defName  = slot.default || '';
@@ -241,21 +235,27 @@ window.Builds = (function () {
             </select>
           </div>`;
       }).join('');
-      sections.push(`
-        <div class="bcreate-section-lbl">Armamento</div>
-        ${wRows}`);
+      weaponHTML = `<div class="bcreate-section-lbl">Armamento</div>${wRows}`;
     } else if (!shipData) {
-      // No ship data — show text area fallback
-      sections.push(`
+      weaponHTML = `
         <div class="bcreate-section-lbl">Armamento</div>
         <div class="bcreate-field bcreate-field-full">
           <label class="bcreate-label">⚔ Armas (una por línea)</label>
           <textarea class="bcreate-input bcreate-ta" id="bcf_weapons_text"
                     placeholder="CF-117 Badger Repeater&#10;Attrition-3 Laser Cannon" rows="3" maxlength="500"></textarea>
-        </div>`);
+        </div>`;
     }
 
-    return sections.join('');
+    // Two-column layout: slots left, stats right
+    return `<div class="bcreate-two-col">
+      <div class="bcreate-slots-col">
+        ${compSection.length ? `<div class="bcreate-section-lbl">Componentes</div>${compSection.join('')}` : ''}
+        ${weaponHTML}
+      </div>
+      <div class="bcreate-stats-col">
+        <div id="bcStatsPanel"></div>
+      </div>
+    </div>`;
   }
 
   // ── CREATE BUILD: outer shell (sync) ─────────────────
