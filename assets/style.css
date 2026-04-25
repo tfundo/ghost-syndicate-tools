@@ -6081,6 +6081,58 @@ body::after {
 .bcreate-submit:hover { background: rgba(245,158,11,.22); border-color: var(--accent); }
 .bcreate-submit:disabled { opacity: .5; cursor: default; }
 
+/* Stock component tag */
+.bcf-stock-tag {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--text-muted);
+  margin-left: 0.5rem;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--border);
+  padding: 1px 6px;
+  border-radius: 3px;
+  vertical-align: middle;
+}
+
+/* Build stats comparison panel */
+.bc-stats-panel {
+  margin: 0.75rem 0 0.5rem;
+  background: rgba(0,0,0,0.25);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.85rem 1rem;
+  font-size: 0.78rem;
+}
+.bc-stats-hdr {
+  display: grid;
+  grid-template-columns: 160px 90px 18px 90px 1fr;
+  gap: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  padding-bottom: 0.4rem;
+  margin-bottom: 0.2rem;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+.bc-stat-row {
+  display: grid;
+  grid-template-columns: 160px 90px 18px 90px 1fr;
+  gap: 0.4rem;
+  align-items: center;
+  padding: 0.22rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+.bc-stat-lbl   { color: var(--text-secondary); white-space: nowrap; }
+.bc-stat-base  { font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted); text-align: right; }
+.bc-stat-arrow { color: var(--text-muted); text-align: center; font-size: 0.7rem; }
+.bc-stat-sel   { font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-primary); text-align: right; font-weight: 600; }
+.bc-stat-delta { font-family: var(--font-mono); font-size: 0.68rem; padding-left: 0.4rem; }
+.bc-better { color: #22c55e; }
+.bc-worse  { color: #ef4444; }
+.bc-same   { color: var(--text-muted); }
+
 /* Login gate */
 .bcreate-login-gate {
   text-align: center;

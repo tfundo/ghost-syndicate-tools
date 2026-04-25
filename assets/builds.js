@@ -57,12 +57,11 @@ window.Builds = (function () {
   }
 
   // ── Build option list for a component type+size ──────
-  function _buildOptions(compType, size) {
+  function _buildOptions(compType, size, defaultName = '') {
     if (!_compDB) return '<option value="">— Sin datos —</option>';
     const sizeKey = String(size);
     const items   = (_compDB.components[compType] || {})[sizeKey] || [];
     if (items.length === 0) {
-      // Try adjacent sizes ±1
       const adj = [String(size - 1), String(size + 1)];
       adj.forEach(s => {
         const extra = (_compDB.components[compType] || {})[s] || [];
@@ -73,9 +72,118 @@ window.Builds = (function () {
       const grade = item.grade ? ` · ${item.grade}` : '';
       const mfr   = item.mfr   ? ` — ${item.mfr}` : '';
       const label = `${item.name}${mfr}${grade}`;
-      return `<option value="${esc(item.name)}">${esc(label)}</option>`;
+      const sel   = defaultName && item.name === defaultName ? ' selected' : '';
+      return `<option value="${esc(item.name)}"${sel}>${esc(label)}</option>`;
     }).join('');
     return `<option value="">— Sin equipar —</option>${opts}`;
+  }
+
+  // ── Lookup stats for a named component ───────────────
+  function _findCompStats(compType, name, size) {
+    if (!name || !_compDB) return null;
+    const sizeKey = String(size);
+    const items = (_compDB.components[compType] || {})[sizeKey] || [];
+    const found = items.find(i => i.name === name);
+    if (found) return found;
+    // Try adjacent sizes
+    for (const s of [String(size-1), String(size+1)]) {
+      const adj = (_compDB.components[compType] || {})[s] || [];
+      const f   = adj.find(i => i.name === name);
+      if (f) return f;
+    }
+    return null;
+  }
+
+  // ── Stats comparison panel ────────────────────────────
+  const STAT_DEFS = {
+    PowerPlant:   [{ key:'power',     label:'⚡ Potencia',       unit:'EU/s', hb:true  }],
+    Cooler:       [{ key:'cooling',   label:'❄ Enfriamiento',   unit:'',     hb:true  },
+                   { key:'power',     label:'  · Consumo',      unit:'EU',   hb:false }],
+    Shield:       [{ key:'hp',        label:'🛡 HP Escudo',      unit:'',     hb:true  },
+                   { key:'regen',     label:'  · Regen/s',      unit:'',     hb:true  },
+                   { key:'delay',     label:'  · Delay caída',  unit:'s',    hb:false },
+                   { key:'power',     label:'  · Consumo',      unit:'EU',   hb:false }],
+    QuantumDrive: [{ key:'speed',     label:'🌀 QD Velocidad',   unit:'Mm/s', hb:true  },
+                   { key:'spool',     label:'  · Spool',        unit:'s',    hb:false },
+                   { key:'cooldown',  label:'  · Cooldown',     unit:'s',    hb:false }],
+  };
+
+  function _buildStatsPanelHTML() {
+    const selects = [...document.querySelectorAll('.bcreate-select[data-comptype]')];
+    if (!selects.length || !_compDB) return '';
+
+    const byType = {};
+    selects.forEach(sel => {
+      const ct = sel.dataset.comptype;
+      if (ct === 'Weapon' || ct === 'Radar') return;
+      if (!byType[ct]) byType[ct] = [];
+      byType[ct].push({ selected: sel.value, def: sel.dataset.default, size: +sel.dataset.size });
+    });
+
+    const fmt = (v, unit) => {
+      if (v === null || v === undefined) return '—';
+      const n = v >= 10000 ? Math.round(v/1000)+'k' : v >= 1000 ? (v/1000).toFixed(1)+'k' : v % 1 === 0 ? v : v.toFixed(1);
+      return unit ? `${n} ${unit}` : String(n);
+    };
+
+    let rows = '';
+    let hasAny = false;
+
+    for (const [ct, defs] of Object.entries(STAT_DEFS)) {
+      const slots = byType[ct];
+      if (!slots?.length) continue;
+
+      for (const { key, label, unit, hb } of defs) {
+        let baseSum = 0, selSum = 0, baseN = 0, selN = 0;
+        slots.forEach(({ selected, def, size }) => {
+          const bs = _findCompStats(ct, def, size);
+          const ss = _findCompStats(ct, selected, size);
+          if (bs?.[key] != null) { baseSum += bs[key]; baseN++; }
+          if (ss?.[key] != null) { selSum  += ss[key]; selN++;  }
+        });
+        if (!baseN && !selN) continue;
+        hasAny = true;
+
+        const base = baseN ? baseSum : null;
+        const sel  = selN  ? selSum  : null;
+
+        let dcls = '', dtxt = '';
+        if (base !== null && sel !== null && base !== sel) {
+          const diff   = sel - base;
+          const better = hb ? diff > 0 : diff < 0;
+          const pct    = base !== 0 ? Math.abs(diff / base * 100).toFixed(0) : '—';
+          dcls = better ? 'bc-better' : 'bc-worse';
+          dtxt = `${better ? '▲' : '▼'} ${diff > 0 ? '+' : ''}${fmt(diff, unit)} (${diff>0?'+':''}${pct}%)`;
+        } else if (base !== null && sel !== null) {
+          dcls = 'bc-same'; dtxt = '= igual';
+        }
+
+        rows += `<div class="bc-stat-row">
+          <span class="bc-stat-lbl">${label}</span>
+          <span class="bc-stat-base">${fmt(base, unit)}</span>
+          <span class="bc-stat-arrow">→</span>
+          <span class="bc-stat-sel">${fmt(sel, unit)}</span>
+          <span class="bc-stat-delta ${dcls}">${dtxt}</span>
+        </div>`;
+      }
+    }
+
+    if (!hasAny) return '';
+    return `<div class="bc-stats-panel">
+      <div class="bc-stats-hdr">
+        <span class="bc-stat-lbl">Stat</span>
+        <span class="bc-stat-base">De serie</span>
+        <span></span>
+        <span class="bc-stat-sel">Tu build</span>
+        <span class="bc-stat-delta">Delta</span>
+      </div>
+      ${rows}
+    </div>`;
+  }
+
+  function onCompChange() {
+    const panel = document.getElementById('bcStatsPanel');
+    if (panel) panel.innerHTML = _buildStatsPanelHTML();
   }
 
   // ── Generate form HTML (sync, called after DB load) ──
@@ -94,15 +202,19 @@ window.Builds = (function () {
         slotList.push({ size: 1 });
       }
       slotList.forEach((slot, i) => {
-        const label = slotList.length > 1
+        const label    = slotList.length > 1
           ? `${meta.icon} ${meta.label} ${i + 1} (S${slot.size})`
           : `${meta.icon} ${meta.label} (S${slot.size})`;
+        const defName  = slot.default || '';
+        const stockTag = defName ? `<span class="bcf-stock-tag">stock: ${esc(defName)}</span>` : '';
         const id = `bcf_${type}_${i}`;
         compSection.push(`
           <div class="bcreate-field">
-            <label class="bcreate-label">${label}</label>
-            <select class="bcreate-select" id="${id}">
-              ${_buildOptions(type, slot.size)}
+            <label class="bcreate-label">${label}${stockTag}</label>
+            <select class="bcreate-select" id="${id}"
+              data-comptype="${type}" data-size="${slot.size}" data-default="${esc(defName)}"
+              onchange="Builds.onCompChange()">
+              ${_buildOptions(type, slot.size, defName)}
             </select>
           </div>`);
       });
@@ -110,19 +222,22 @@ window.Builds = (function () {
     if (compSection.length) {
       sections.push(`
         <div class="bcreate-section-lbl">Componentes</div>
-        ${compSection.join('')}`);
+        ${compSection.join('')}
+        <div id="bcStatsPanel"></div>`);
     }
 
     // Weapon slots
     const weaponSlots = slots['Weapon'] || [];
     if (weaponSlots.length > 0) {
       const wRows = weaponSlots.map((slot, i) => {
+        const defName  = slot.default || '';
+        const stockTag = defName ? `<span class="bcf-stock-tag">stock: ${esc(defName)}</span>` : '';
         const id = `bcf_Weapon_${i}`;
         return `
           <div class="bcreate-field">
-            <label class="bcreate-label">⚔ Arma ${i + 1} (S${slot.size})</label>
+            <label class="bcreate-label">⚔ Arma ${i + 1} (S${slot.size})${stockTag}</label>
             <select class="bcreate-select" id="${id}">
-              ${_buildOptions('Weapon', slot.size)}
+              ${_buildOptions('Weapon', slot.size, defName)}
             </select>
           </div>`;
       }).join('');
@@ -187,6 +302,7 @@ window.Builds = (function () {
     await _loadCompDB();
     const shipData = _findShipData(shipName);
     container.innerHTML = _buildFormHTML(shipName, shipData);
+    onCompChange();  // render initial stats panel with stock values
   }
 
   // ── Submit ───────────────────────────────────────────
@@ -453,6 +569,6 @@ window.Builds = (function () {
     el._t = setTimeout(() => { el.style.opacity = '0'; }, 2800);
   }
 
-  return { loadAllBuilds, getCreateFormHTML, fillCreateForm, submitBuild, vote, deleteBuild };
+  return { loadAllBuilds, getCreateFormHTML, fillCreateForm, submitBuild, vote, deleteBuild, onCompChange };
 
 })();
