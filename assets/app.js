@@ -53,8 +53,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // Handle initial hash — ignorar tokens OAuth de Supabase (hash o query params PKCE)
   const rawHash = window.location.hash.replace('#', '');
   const isOAuth = rawHash.includes('access_token=') || rawHash.includes('type=') || window.location.search.includes('code=');
-  // No limpiar el hash aquí — auth.js lo hace en SIGNED_IN, así Supabase puede leerlo primero
-  showSection(isOAuth || !rawHash ? 'home' : rawHash);
+  // Si es callback OAuth: mostrar home SIN tocar el hash, para que Supabase pueda leerlo
+  showSection(isOAuth || !rawHash ? 'home' : rawHash, isOAuth);
 });
 
 // ============================================================
@@ -181,7 +181,7 @@ function setupNavigation() {
   });
 }
 
-window.showSection = function(sectionId) {
+window.showSection = function(sectionId, skipUrlUpdate = false) {
   // Redirect legacy section IDs that were merged into comparador
   if (sectionId === 'ships' || sectionId === 'weapons') sectionId = 'comparador';
 
@@ -202,8 +202,8 @@ window.showSection = function(sectionId) {
     b.classList.toggle('active', b.dataset.section === sectionId);
   });
 
-  // Update URL
-  window.history.replaceState(null, '', '#' + sectionId);
+  // Update URL (skip when OAuth hash must be preserved for Supabase to read)
+  if (!skipUrlUpdate) window.history.replaceState(null, '', '#' + sectionId);
 
   // Init comparador on first visit; destroy FAB when leaving
   if (sectionId === 'comparador' && window.Comp) {
