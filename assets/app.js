@@ -691,10 +691,10 @@ window.openBlueprintDetail = function(idx) {
     ${qualitySectionHtml}
   `;
 
-  // Quality slider event listener
+  // Quality slider event listener — use named handler to avoid duplicates on re-open
   const qSlider = document.getElementById('qSlider');
   if (qSlider) {
-    qSlider.addEventListener('input', (e) => {
+    function _qSliderHandler(e) {
       _modalQuality = parseInt(e.target.value);
       const valDisplay = document.getElementById('qValDisplay');
       if (valDisplay) valDisplay.textContent = `Q${_modalQuality}`;
@@ -702,7 +702,10 @@ window.openBlueprintDetail = function(idx) {
         btn.classList.toggle('active', parseInt(btn.textContent.replace('Q', '')) === _modalQuality);
       });
       renderQualityMods(_modalQuality, _modalQualityIngredients);
-    });
+    }
+    qSlider.removeEventListener('input', qSlider._qHandler);
+    qSlider._qHandler = _qSliderHandler;
+    qSlider.addEventListener('input', _qSliderHandler);
     // Initial render + active preset
     renderQualityMods(_modalQuality, _modalQualityIngredients);
     document.querySelectorAll('.q-preset').forEach(btn => {
@@ -1084,7 +1087,9 @@ function initWikelo() {
 
   renderWikelo();
 
-  window.Auth?.onUserChange(() => renderWikelo());
+  // Unsubscribe previous listener before registering a new one (prevents accumulation)
+  if (window._wkAuthUnsub) window._wkAuthUnsub();
+  window._wkAuthUnsub = window.Auth?.onUserChange(() => renderWikelo());
 }
 
 window.wkSetTab = function(tab) {

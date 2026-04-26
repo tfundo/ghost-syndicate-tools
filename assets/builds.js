@@ -403,15 +403,22 @@ window.Builds = (function () {
   // ── BUILDS TAB: load all builds ──────────────────────
   let _loadToken = 0;  // cancela cargas obsoletas cuando el usuario navega
 
-  async function loadAllBuilds(containerId) {
+  async function loadAllBuilds(containerId, _retries = 0) {
     const myToken = ++_loadToken;                              // token único para esta carga
     const live    = () => document.getElementById(containerId); // siempre el elemento actual del DOM
     const stale   = () => myToken !== _loadToken;              // ¿hay una carga más reciente?
 
     const sb = _getSb();
     if (!sb) {
-      const el = live();
-      if (el) el.innerHTML = '<div class="builds-error">No se pudo conectar con la base de datos.</div>';
+      // Supabase may still be initializing (CDN race) — retry up to 5×
+      if (_retries < 5) {
+        const el = live();
+        if (el) el.innerHTML = '<div class="builds-loading">Conectando…</div>';
+        setTimeout(() => { if (!stale() && live()) loadAllBuilds(containerId, _retries + 1); }, 300);
+      } else {
+        const el = live();
+        if (el) el.innerHTML = '<div class="builds-error">No se pudo conectar con la base de datos.</div>';
+      }
       return;
     }
 

@@ -148,8 +148,11 @@ window.Auth = (function () {
   }
 
   // ── Listeners ─────────────────────────────────────────────
-  function onUserChange(cb) { _listeners.push(cb); }
-  function _notify(user)    { _listeners.forEach(cb => cb(user)); }
+  function onUserChange(cb) {
+    _listeners.push(cb);
+    return () => { _listeners = _listeners.filter(fn => fn !== cb); };  // returns unsubscribe fn
+  }
+  function _notify(user) { _listeners.forEach(cb => cb(user)); }
 
   // ── Getters ───────────────────────────────────────────────
   function getUser()     { return _user; }
@@ -180,7 +183,11 @@ window.Auth = (function () {
     return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
   }
 
-  document.addEventListener('DOMContentLoaded', init);
+  // Retry until Supabase CDN script has executed (race condition on cached pages)
+  document.addEventListener('DOMContentLoaded', function tryInit() {
+    if (!window.supabase) { setTimeout(tryInit, 60); return; }
+    init();
+  });
 
   return { login, logout, getUser, getSession, getSupabase, getResource, setResource, onUserChange, normalizeKey };
 

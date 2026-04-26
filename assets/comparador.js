@@ -881,8 +881,12 @@
     }
 
     // Fill component dropdowns async when create-build tab is active
+    // Guard: only fill if the slot container is still empty (avoid re-filling on re-renders)
     if (compState.tab === 'create-build' && compState.createBuildShip) {
-      window.Builds?.fillCreateForm(compState.createBuildShip);
+      const slotsEl = document.getElementById('bcreateCompSlots');
+      if (slotsEl && slotsEl.querySelector('.bcreate-loading')) {
+        window.Builds?.fillCreateForm(compState.createBuildShip);
+      }
     }
   }
 
@@ -1388,7 +1392,8 @@
     injectStyles();
     render();
     if (compState.tab === 'builds') {
-      window.Builds?.loadAllBuilds('buildsTabList');
+      // Small delay ensures render() has committed the DOM before Builds tries to fill it
+      setTimeout(() => window.Builds?.loadAllBuilds('buildsTabList'), 0);
     }
     // Load ship data from JSON (updated each game patch)
     if (!compState._shipsLoaded) {
