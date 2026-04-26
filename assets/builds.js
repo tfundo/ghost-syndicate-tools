@@ -75,10 +75,11 @@ window.Builds = (function () {
   }
 
   // ── Build option list for a component type+size ──────
-  function _buildOptions(compType, size, defaultName = '') {
+  // typeFilter: optional fn(item) => bool to restrict entries
+  function _buildOptions(compType, size, defaultName = '', typeFilter = null) {
     if (!_compDB) return '<option value="">— Sin datos —</option>';
     const sizeKey = String(size);
-    const items   = (_compDB.components[compType] || {})[sizeKey] || [];
+    let items = [...((_compDB.components[compType] || {})[sizeKey] || [])];
     if (items.length === 0) {
       const adj = [String(size - 1), String(size + 1)];
       adj.forEach(s => {
@@ -86,6 +87,7 @@ window.Builds = (function () {
         extra.forEach(i => items.push(i));
       });
     }
+    if (typeFilter) items = items.filter(typeFilter);
     const opts = items.map(item => {
       const grade = item.grade ? ` · ${item.grade}` : '';
       const mfr   = item.mfr   ? ` — ${item.mfr}` : '';
@@ -94,6 +96,37 @@ window.Builds = (function () {
       return `<option value="${esc(item.name)}"${sel}>${esc(label)}</option>`;
     }).join('');
     return `<option value="">— Sin equipar —</option>${opts}`;
+  }
+
+  // ── All missiles across sizes (for rack sub-slots) ───
+  function _buildMissileOptions() {
+    if (!_compDB) return '<option value="">— Sin datos —</option>';
+    const weapComps = _compDB.components.Weapon || {};
+    const missiles  = [];
+    const seen      = new Set();
+    Object.entries(weapComps)
+      .sort((a, b) => parseInt(a[0]) - parseInt(b[0]))
+      .forEach(([, items]) => {
+        items.filter(i => i.type === 'Misil').forEach(i => {
+          if (!seen.has(i.name)) { seen.add(i.name); missiles.push(i); }
+        });
+      });
+    const opts = missiles.map(i => {
+      const mfr = i.mfr ? ` — ${i.mfr}` : '';
+      return `<option value="${esc(i.name)}">${esc(i.name + mfr)}</option>`;
+    }).join('');
+    return `<option value="">— Sin equipar —</option>${opts}`;
+  }
+
+  // ── Get gun sizes from a turret module name ───────────
+  function _getGunSizes(turretName, fallbackSize) {
+    if (!turretName || !_compDB) return [fallbackSize];
+    const turretComps = _compDB.components.TurretModule || {};
+    for (const items of Object.values(turretComps)) {
+      const found = items.find(i => i.name === turretName);
+      if (found?.guns) return found.guns;
+    }
+    return [fallbackSize];
   }
 
   // ── Lookup stats for a named component ───────────────
@@ -207,29 +240,24 @@ window.Builds = (function () {
   // ── Generate form HTML (sync, called after DB load) ──
   function _buildFormHTML(shipName, shipData) {
     const slots = shipData?.slots || {};
-    const sections = [];
 
-    // Non-weapon slots (PP, Cooler, Shield, QD, Radar)
-    const baseTypes = ['PowerPlant', 'Cooler', 'Shield', 'QuantumDrive', 'Radar', 'TurretModule', 'MissileRack'];
+    // ── Core components (PP, Cooler, Shield, QD, Radar) ──
+    const coreTypes = ['PowerPlant', 'Cooler', 'Shield', 'QuantumDrive', 'Radar'];
     const compSection = [];
-    baseTypes.forEach(type => {
+    coreTypes.forEach(type => {
       const slotList = slots[type] || [];
       const meta = SLOT_LABELS[type];
-      if (slotList.length === 0) {
-        // Show a generic size-1 slot if ship not in DB
-        slotList.push({ size: 1 });
-      }
+      if (slotList.length === 0) slotList.push({ size: 1 });
       slotList.forEach((slot, i) => {
         const label    = slotList.length > 1
           ? `${meta.icon} ${meta.label} ${i + 1} (S${slot.size})`
           : `${meta.icon} ${meta.label} (S${slot.size})`;
         const defName  = slot.default || '';
         const stockTag = defName ? `<span class="bcf-stock-tag">stock: ${esc(defName)}</span>` : '';
-        const id = `bcf_${type}_${i}`;
         compSection.push(`
           <div class="bcreate-field">
             <label class="bcreate-label">${label}${stockTag}</label>
-            <select class="bcreate-select" id="${id}"
+            <select class="bcreate-select" id="bcf_${type}_${i}"
               data-comptype="${type}" data-size="${slot.size}" data-default="${esc(defName)}"
               onchange="Builds.onCompChange()">
               ${_buildOptions(type, slot.size, defName)}
@@ -237,23 +265,25 @@ window.Builds = (function () {
           </div>`);
       });
     });
-    // Weapon slots
+
+    // ── Fixed weapon slots (no missiles here) ────────────
     const weaponSlots = slots['Weapon'] || [];
     let weaponHTML = '';
+    const noMisil = i => i.type !== 'Misil';
     if (weaponSlots.length > 0) {
       const wRows = weaponSlots.map((slot, i) => {
         const defName  = slot.default || '';
         const stockTag = defName ? `<span class="bcf-stock-tag">stock: ${esc(defName)}</span>` : '';
-        const id = `bcf_Weapon_${i}`;
         return `
           <div class="bcreate-field">
             <label class="bcreate-label">⚔ Arma ${i + 1} (S${slot.size})${stockTag}</label>
-            <select class="bcreate-select" id="${id}">
-              ${_buildOptions('Weapon', slot.size, defName)}
+            <select class="bcreate-select" id="bcf_Weapon_${i}"
+              data-comptype="Weapon" data-size="${slot.size}" data-default="${esc(defName)}">
+              ${_buildOptions('Weapon', slot.size, defName, noMisil)}
             </select>
           </div>`;
       }).join('');
-      weaponHTML = `<div class="bcreate-section-lbl">Armamento</div>${wRows}`;
+      weaponHTML = `<div class="bcreate-section-lbl">Armamento fijo</div>${wRows}`;
     } else if (!shipData) {
       weaponHTML = `
         <div class="bcreate-section-lbl">Armamento</div>
@@ -264,11 +294,74 @@ window.Builds = (function () {
         </div>`;
     }
 
+    // ── Turret module slots with weapon sub-slots ─────────
+    const turretSlots = slots['TurretModule'] || [];
+    let turretHTML = '';
+    if (turretSlots.length > 0) {
+      const tRows = turretSlots.map((slot, i) => {
+        const defName  = slot.default || '';
+        const stockTag = defName ? `<span class="bcf-stock-tag">stock: ${esc(defName)}</span>` : '';
+        const gunSizes = _getGunSizes(defName, slot.size - 1 || 1);
+        const gunDrops = gunSizes.map((gSize, j) => `
+          <div class="bcreate-field bcreate-sub-field">
+            <label class="bcreate-label-sub">⚔ Arma ${j + 1} (S${gSize})</label>
+            <select class="bcreate-select" id="bcf_TurretWeapon_${i}_${j}"
+              data-comptype="Weapon" data-size="${gSize}" data-default="">
+              ${_buildOptions('Weapon', gSize, '', noMisil)}
+            </select>
+          </div>`).join('');
+        return `
+          <div class="bcreate-group">
+            <div class="bcreate-field">
+              <label class="bcreate-label">🎯 Torreta ${i + 1} (S${slot.size})${stockTag}</label>
+              <select class="bcreate-select" id="bcf_TurretModule_${i}"
+                data-comptype="TurretModule" data-size="${slot.size}" data-default="${esc(defName)}"
+                onchange="Builds.onCompChange()">
+                ${_buildOptions('TurretModule', slot.size, defName)}
+              </select>
+            </div>
+            ${gunSizes.length ? `<div class="bcreate-sub-slots">${gunDrops}</div>` : ''}
+          </div>`;
+      }).join('');
+      turretHTML = `<div class="bcreate-section-lbl">Torretas</div>${tRows}`;
+    }
+
+    // ── Missile rack slots with missile sub-slot ──────────
+    const rackSlots = slots['MissileRack'] || [];
+    let rackHTML = '';
+    if (rackSlots.length > 0) {
+      const rRows = rackSlots.map((slot, i) => {
+        const defName  = slot.default || '';
+        const stockTag = defName ? `<span class="bcf-stock-tag">stock: ${esc(defName)}</span>` : '';
+        return `
+          <div class="bcreate-group">
+            <div class="bcreate-field">
+              <label class="bcreate-label">🚀 Rack de Misiles ${i + 1} (S${slot.size})${stockTag}</label>
+              <select class="bcreate-select" id="bcf_MissileRack_${i}"
+                data-comptype="MissileRack" data-size="${slot.size}" data-default="${esc(defName)}">
+                ${_buildOptions('MissileRack', slot.size, defName)}
+              </select>
+            </div>
+            <div class="bcreate-sub-slots">
+              <div class="bcreate-field bcreate-sub-field">
+                <label class="bcreate-label-sub">🚀 Misil cargado</label>
+                <select class="bcreate-select" id="bcf_Missile_${i}_0">
+                  ${_buildMissileOptions()}
+                </select>
+              </div>
+            </div>
+          </div>`;
+      }).join('');
+      rackHTML = `<div class="bcreate-section-lbl">Racks de Misiles</div>${rRows}`;
+    }
+
     // Two-column layout: slots left, stats right
     return `<div class="bcreate-two-col">
       <div class="bcreate-slots-col">
         ${compSection.length ? `<div class="bcreate-section-lbl">Componentes</div>${compSection.join('')}` : ''}
         ${weaponHTML}
+        ${turretHTML}
+        ${rackHTML}
       </div>
       <div class="bcreate-stats-col">
         <div id="bcStatsPanel"></div>
@@ -352,9 +445,8 @@ window.Builds = (function () {
     const desc = (document.getElementById('bcfDesc')?.value || '').trim();
     const components = {};
 
-    // Read component dropdowns
-    const baseTypes = ['PowerPlant', 'Cooler', 'Shield', 'QuantumDrive', 'Radar', 'TurretModule', 'MissileRack'];
-    baseTypes.forEach(type => {
+    // ── Core components ──────────────────────────────────
+    ['PowerPlant', 'Cooler', 'Shield', 'QuantumDrive', 'Radar'].forEach(type => {
       const values = [];
       for (let i = 0; i < 10; i++) {
         const el = document.getElementById(`bcf_${type}_${i}`);
@@ -366,7 +458,7 @@ window.Builds = (function () {
       else if (values.length > 1) components[type] = values;
     });
 
-    // Weapon slots
+    // ── Fixed weapons ────────────────────────────────────
     const weapons = [];
     for (let i = 0; i < 30; i++) {
       const el = document.getElementById(`bcf_Weapon_${i}`);
@@ -374,12 +466,45 @@ window.Builds = (function () {
       const v = el.value.trim();
       if (v) weapons.push(v);
     }
-    // Weapon text fallback
     const wText = document.getElementById('bcf_weapons_text');
     if (wText) {
       wText.value.split('\n').map(w => w.trim()).filter(Boolean).forEach(w => weapons.push(w));
     }
     if (weapons.length) components['Weapon'] = weapons;
+
+    // ── Turret modules with nested weapon slots ───────────
+    const turrets = [];
+    for (let i = 0; i < 20; i++) {
+      const el = document.getElementById(`bcf_TurretModule_${i}`);
+      if (!el) break;
+      const module = el.value.trim();
+      const turretWeapons = [];
+      for (let j = 0; j < 10; j++) {
+        const wel = document.getElementById(`bcf_TurretWeapon_${i}_${j}`);
+        if (!wel) break;
+        const w = wel.value.trim();
+        if (w) turretWeapons.push(w);
+      }
+      if (module || turretWeapons.length) turrets.push({ module, weapons: turretWeapons });
+    }
+    if (turrets.length) components['TurretModule'] = turrets;
+
+    // ── Missile racks with nested missile slots ───────────
+    const racks = [];
+    for (let i = 0; i < 20; i++) {
+      const el = document.getElementById(`bcf_MissileRack_${i}`);
+      if (!el) break;
+      const rack = el.value.trim();
+      const missiles = [];
+      for (let j = 0; j < 10; j++) {
+        const mel = document.getElementById(`bcf_Missile_${i}_${j}`);
+        if (!mel) break;
+        const m = mel.value.trim();
+        if (m) missiles.push(m);
+      }
+      if (rack || missiles.length) racks.push({ rack, missiles });
+    }
+    if (racks.length) components['MissileRack'] = racks;
 
     const meta = user.user_metadata || {};
     const btn  = document.querySelector('.bcreate-submit');
@@ -515,9 +640,43 @@ window.Builds = (function () {
     const typeOrder = ['PowerPlant','Shield','Cooler','QuantumDrive','Radar','Weapon','TurretModule','MissileRack'];
     typeOrder.forEach(type => {
       const meta = SLOT_LABELS[type];
-      const val = comps[type];
+      const val  = comps[type];
       if (!val) return;
-      if (Array.isArray(val)) {
+
+      if (type === 'TurretModule' && Array.isArray(val) && val.length > 0 && typeof val[0] === 'object') {
+        // New nested format: [{module, weapons}]
+        val.forEach((t, i) => {
+          if (t.module) compRows.push(`
+            <div class="btab-comp-row">
+              <span class="btab-comp-lbl">🎯 Torreta ${val.length > 1 ? i+1 : ''}</span>
+              <span class="btab-comp-val">${esc(t.module)}</span>
+            </div>`);
+          (t.weapons || []).forEach((w, j) => {
+            if (w) compRows.push(`
+              <div class="btab-comp-row btab-comp-sub">
+                <span class="btab-comp-lbl">⚔ Arma ${j+1}</span>
+                <span class="btab-comp-val">${esc(w)}</span>
+              </div>`);
+          });
+        });
+      } else if (type === 'MissileRack' && Array.isArray(val) && val.length > 0 && typeof val[0] === 'object') {
+        // New nested format: [{rack, missiles}]
+        val.forEach((r, i) => {
+          if (r.rack) compRows.push(`
+            <div class="btab-comp-row">
+              <span class="btab-comp-lbl">🚀 Rack ${val.length > 1 ? i+1 : ''}</span>
+              <span class="btab-comp-val">${esc(r.rack)}</span>
+            </div>`);
+          (r.missiles || []).forEach((m, j) => {
+            if (m) compRows.push(`
+              <div class="btab-comp-row btab-comp-sub">
+                <span class="btab-comp-lbl">🚀 Misil</span>
+                <span class="btab-comp-val">${esc(m)}</span>
+              </div>`);
+          });
+        });
+      } else if (Array.isArray(val)) {
+        // Legacy flat array or simple array
         val.forEach((v, i) => {
           if (v) compRows.push(`
             <div class="btab-comp-row">

@@ -6105,6 +6105,8 @@ body::after {
 }
 .btab-comp-lbl { color: var(--text-muted); min-width: 120px; flex-shrink: 0; }
 .btab-comp-val { color: var(--text-secondary); }
+.btab-comp-sub { padding-left: 1.1rem; opacity: .85; }
+.btab-comp-sub .btab-comp-lbl { color: var(--text-muted); font-size: .7rem; }
 .btab-weapons-val { display: flex; flex-wrap: wrap; gap: .25rem; }
 .btab-weapon-tag {
   background: rgba(245,158,11,.08);
@@ -6178,6 +6180,35 @@ body::after {
   flex-direction: column;
   gap: .7rem;
 }
+/* Turret/rack group with indented sub-slots */
+.bcreate-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid rgba(255,255,255,.07);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.bcreate-group > .bcreate-field {
+  padding: .5rem .65rem .4rem;
+  background: rgba(255,255,255,.02);
+}
+.bcreate-sub-slots {
+  padding: .4rem .65rem .5rem 1.3rem;
+  display: flex;
+  flex-direction: column;
+  gap: .35rem;
+  background: rgba(0,0,0,.12);
+  border-top: 1px solid rgba(255,255,255,.05);
+}
+.bcreate-sub-field { gap: .2rem; }
+.bcreate-label-sub {
+  font-family: var(--font-mono);
+  font-size: .67rem;
+  color: var(--text-muted);
+  opacity: .8;
+}
+
 .bcreate-section-lbl {
   font-family: var(--font-mono);
   font-size: .68rem;
