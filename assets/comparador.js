@@ -161,9 +161,19 @@
     attachEventListeners();
     updateFloatingBtn();
 
-    // After DOM rebuild, re-render cached builds so clearSelection() etc. don't wipe the list
+    // Restore builds after DOM rebuild (clearSelection, JSON loads, etc.)
     if (compState.tab === 'builds') {
-      window.Builds?.filterBuilds('');
+      const listEl = document.getElementById('buildsTabList');
+      if (listEl) {
+        if (window.Builds?.hasBuilds()) {
+          // Cache available → render immediately
+          window.Builds.filterBuilds('');
+        } else if (!listEl.innerHTML.trim()) {
+          // No cache and container is empty → trigger a fresh load
+          window.Builds?.loadAllBuilds('buildsTabList');
+        }
+        // If container already has content (spinner or error from active load) → leave it alone
+      }
     }
 
     if (focusId) {
@@ -306,9 +316,7 @@
               onclick="Builds.clearSearch()" title="Limpiar">✕</button>
           </div>
         </div>
-        <div id="buildsTabList" class="btab-list">
-          <div class="builds-loading">Cargando builds…</div>
-        </div>
+        <div id="buildsTabList" class="btab-list"></div>
       </div>`;
   }
 

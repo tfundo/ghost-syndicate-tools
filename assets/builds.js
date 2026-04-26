@@ -573,7 +573,7 @@ window.Builds = (function () {
       return;
     }
 
-    { const el = live(); if (el) el.innerHTML = '<div class="builds-loading">Cargando builds…</div>'; }
+    { const el = live(); if (el && !el.innerHTML.trim()) el.innerHTML = '<div class="builds-loading">Cargando builds…</div>'; }
 
     const { data: builds, error } = await sb
       .from('ship_builds')
@@ -848,6 +848,8 @@ window.Builds = (function () {
     filterBuilds('');
   }
 
-  return { loadAllBuilds, getCreateFormHTML, fillCreateForm, submitBuild, vote, deleteBuild, onCompChange, filterBuilds, clearSearch };
+  function hasBuilds() { return _allBuilds.length > 0; }
+
+  return { loadAllBuilds, getCreateFormHTML, fillCreateForm, submitBuild, vote, deleteBuild, onCompChange, filterBuilds, clearSearch, hasBuilds };
 
 })();
