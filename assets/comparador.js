@@ -161,6 +161,11 @@
     attachEventListeners();
     updateFloatingBtn();
 
+    // After DOM rebuild, re-render cached builds so clearSelection() etc. don't wipe the list
+    if (compState.tab === 'builds') {
+      window.Builds?.filterBuilds('');
+    }
+
     if (focusId) {
       const el = document.getElementById(focusId);
       if (el && root.contains(el)) {
