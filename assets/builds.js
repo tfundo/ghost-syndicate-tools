@@ -75,7 +75,8 @@ window.Builds = (function () {
   }
 
   // ── Build option list for a component type+size ──────
-  // typeFilter: optional fn(item) => bool to restrict entries
+  // typeFilter: optional fn(item) => bool to restrict entries.
+  // The defaultName item is always included even if filtered out.
   function _buildOptions(compType, size, defaultName = '', typeFilter = null) {
     if (!_compDB) return '<option value="">— Sin datos —</option>';
     const sizeKey = String(size);
@@ -87,7 +88,7 @@ window.Builds = (function () {
         extra.forEach(i => items.push(i));
       });
     }
-    if (typeFilter) items = items.filter(typeFilter);
+    if (typeFilter) items = items.filter(i => typeFilter(i) || i.name === defaultName);
     const opts = items.map(item => {
       const grade = item.grade ? ` · ${item.grade}` : '';
       const mfr   = item.mfr   ? ` — ${item.mfr}` : '';
@@ -325,7 +326,8 @@ window.Builds = (function () {
     // ── Fixed weapon slots (no missiles here) ────────────
     const weaponSlots = slots['Weapon'] || [];
     let weaponHTML = '';
-    const noMisil = i => i.type !== 'Misil';
+    const noMisil          = i => i.type !== 'Misil' && !i.ship_specific;
+    const noShipSpecific   = i => !i.ship_specific;
     if (weaponSlots.length > 0) {
       const wRows = weaponSlots.map((slot, i) => {
         const defName  = slot.default || '';
@@ -363,7 +365,7 @@ window.Builds = (function () {
             <label class="bcreate-label-sub">⚔ Arma ${j + 1} (S${gSize})</label>
             <select class="bcreate-select" id="bcf_TurretWeapon_${i}_${j}"
               data-comptype="Weapon" data-size="${gSize}" data-default="">
-              ${_buildOptions('Weapon', gSize, '', noMisil)}
+              ${_buildOptions('Weapon', gSize, '', noShipSpecific)}
             </select>
           </div>`).join('');
         return `
