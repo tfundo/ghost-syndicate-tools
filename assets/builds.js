@@ -11,12 +11,14 @@ window.Builds = (function () {
 
   // Labels for slot types
   const SLOT_LABELS = {
-    PowerPlant:  { label: 'Planta de Energía', icon: '⚡' },
-    Cooler:      { label: 'Enfriador',          icon: '❄' },
-    Shield:      { label: 'Escudo',             icon: '🛡' },
-    QuantumDrive:{ label: 'Motor de Salto',     icon: '🌀' },
-    Radar:       { label: 'Radar',              icon: '📡' },
-    Weapon:      { label: 'Arma',               icon: '⚔' },
+    PowerPlant:   { label: 'Planta de Energía', icon: '⚡' },
+    Cooler:       { label: 'Enfriador',          icon: '❄' },
+    Shield:       { label: 'Escudo',             icon: '🛡' },
+    QuantumDrive: { label: 'Motor de Salto',     icon: '🌀' },
+    Radar:        { label: 'Radar',              icon: '📡' },
+    Weapon:       { label: 'Arma',               icon: '⚔' },
+    TurretModule: { label: 'Módulo Torreta',     icon: '🎯' },
+    MissileRack:  { label: 'Rack Misiles',       icon: '🚀' },
   };
 
   const SUPABASE_URL  = 'https://hsluuuhnkhdqrmkfpehv.supabase.co';
@@ -126,7 +128,7 @@ window.Builds = (function () {
     const byType = {};
     selects.forEach(sel => {
       const ct = sel.dataset.comptype;
-      if (ct === 'Weapon' || ct === 'Radar') return;
+      if (ct === 'Weapon' || ct === 'Radar' || ct === 'TurretModule' || ct === 'MissileRack') return;
       if (!byType[ct]) byType[ct] = [];
       byType[ct].push({ selected: sel.value, def: sel.dataset.default, size: +sel.dataset.size });
     });
@@ -203,7 +205,7 @@ window.Builds = (function () {
     const sections = [];
 
     // Non-weapon slots (PP, Cooler, Shield, QD, Radar)
-    const baseTypes = ['PowerPlant', 'Cooler', 'Shield', 'QuantumDrive', 'Radar'];
+    const baseTypes = ['PowerPlant', 'Cooler', 'Shield', 'QuantumDrive', 'Radar', 'TurretModule', 'MissileRack'];
     const compSection = [];
     baseTypes.forEach(type => {
       const slotList = slots[type] || [];
@@ -346,7 +348,7 @@ window.Builds = (function () {
     const components = {};
 
     // Read component dropdowns
-    const baseTypes = ['PowerPlant', 'Cooler', 'Shield', 'QuantumDrive', 'Radar'];
+    const baseTypes = ['PowerPlant', 'Cooler', 'Shield', 'QuantumDrive', 'Radar', 'TurretModule', 'MissileRack'];
     baseTypes.forEach(type => {
       const values = [];
       for (let i = 0; i < 10; i++) {
@@ -496,7 +498,7 @@ window.Builds = (function () {
 
     // Format components
     const compRows = [];
-    const typeOrder = ['PowerPlant','Shield','Cooler','QuantumDrive','Radar','Weapon'];
+    const typeOrder = ['PowerPlant','Shield','Cooler','QuantumDrive','Radar','Weapon','TurretModule','MissileRack'];
     typeOrder.forEach(type => {
       const meta = SLOT_LABELS[type];
       const val = comps[type];
