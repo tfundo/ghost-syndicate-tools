@@ -62,14 +62,25 @@ window.Auth = (function () {
   }
 
   async function logout() {
-    // Limpiar estado local primero — UI responde al instante
     _user = null;
     _session = null;
     _resources.clear();
     _renderWidget();
     _notify(null);
-    // Invalidar sesión en Supabase en segundo plano
-    try { await sb?.auth.signOut(); } catch(e) {}
+    // Borrar todas las claves de Supabase de localStorage/sessionStorage
+    // (garantiza limpieza aunque signOut falle por red)
+    try {
+      ['localStorage', 'sessionStorage'].forEach(store => {
+        const s = window[store];
+        Object.keys(s).forEach(k => {
+          if (k.startsWith('sb-') || k.includes('supabase') || k.includes('-auth-token')) {
+            s.removeItem(k);
+          }
+        });
+      });
+    } catch(e) {}
+    // scope:'local' limpia la sesión local sin necesitar red
+    try { await sb?.auth.signOut({ scope: 'local' }); } catch(e) {}
   }
 
   // ── Resources ─────────────────────────────────────────────

@@ -103,10 +103,7 @@
   function switchTab(tab, shipName) {
     if (tab === 'create-build' && shipName) compState.createBuildShip = shipName;
     compState.tab = tab;
-    render();
-    if (tab === 'builds') {
-      window.Builds?.loadAllBuilds('buildsTabList');
-    }
+    render();  // render() handles loadAllBuilds when needed (empty container + no cache)
     document.getElementById('compContentArea')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
@@ -1404,16 +1401,19 @@
   function init() {
     injectStyles();
     render();
-    if (compState.tab === 'builds') {
-      setTimeout(() => window.Builds?.loadAllBuilds('buildsTabList'), 0);
-    }
-    // Recarga builds cuando cambia la sesión (login/logout) para actualizar votos
+    // Recarga builds cuando cambia la sesión (login/logout) para actualizar votos.
+    // Debounce para que TOKEN_REFRESHED u otros eventos rápidos no anulen cargas en curso.
     if (!compState._authListened) {
       compState._authListened = true;
+      let _authBuildsTimer = null;
       window.Auth?.onUserChange(() => {
-        if (compState.tab === 'builds' && document.getElementById('buildsTabList')) {
-          window.Builds?.loadAllBuilds('buildsTabList');
-        }
+        clearTimeout(_authBuildsTimer);
+        _authBuildsTimer = setTimeout(() => {
+          if (compState.tab === 'builds') {
+            const el = document.getElementById('buildsTabList');
+            if (el) window.Builds?.loadAllBuilds('buildsTabList');
+          }
+        }, 200);
       });
     }
     // Load ship data from JSON (updated each game patch)
