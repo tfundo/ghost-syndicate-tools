@@ -255,6 +255,26 @@ window.Builds = (function () {
     if (panel) panel.innerHTML = _buildStatsPanelHTML();
   }
 
+  // ── Update missile sub-slots when user changes rack ───
+  function onRackChange(rackIdx) {
+    const rackSel = document.getElementById(`bcf_MissileRack_${rackIdx}`);
+    const container = document.getElementById(`bcf_RackMissiles_${rackIdx}`);
+    if (!rackSel || !container) return;
+    const rackName  = rackSel.value || rackSel.dataset.default || '';
+    const rackSize  = +rackSel.dataset.size || 0;
+    const info      = _getMissileInfo(rackName, rackSize);
+    const sizeLabel = info.missile_size ? ` (S${info.missile_size})` : '';
+    const countNote = info.missile_count > 1
+      ? ` <span class="bcf-stock-tag">${info.missile_count} unidades</span>` : '';
+    container.innerHTML = `
+      <div class="bcreate-field bcreate-sub-field">
+        <label class="bcreate-label-sub">🚀 Misil${sizeLabel}${countNote}</label>
+        <select class="bcreate-select" id="bcf_Missile_${rackIdx}_0">
+          ${_buildMissileOptions(info.missile_size)}
+        </select>
+      </div>`;
+  }
+
   // ── Generate form HTML (sync, called after DB load) ──
   function _buildFormHTML(shipName, shipData) {
     const slots = shipData?.slots || {};
@@ -359,11 +379,12 @@ window.Builds = (function () {
             <div class="bcreate-field">
               <label class="bcreate-label">🚀 Rack de Misiles ${i + 1} (S${slot.size})${stockTag}</label>
               <select class="bcreate-select" id="bcf_MissileRack_${i}"
-                data-comptype="MissileRack" data-size="${slot.size}" data-default="${esc(defName)}">
+                data-comptype="MissileRack" data-size="${slot.size}" data-default="${esc(defName)}"
+                onchange="Builds.onRackChange(${i})">
                 ${_buildOptions('MissileRack', slot.size, defName)}
               </select>
             </div>
-            <div class="bcreate-sub-slots">
+            <div id="bcf_RackMissiles_${i}" class="bcreate-sub-slots">
               <div class="bcreate-field bcreate-sub-field">
                 <label class="bcreate-label-sub">🚀 Misil${sizeLabel}${countNote}</label>
                 <select class="bcreate-select" id="bcf_Missile_${i}_0">
@@ -868,6 +889,6 @@ window.Builds = (function () {
 
   function hasBuilds() { return _allBuilds.length > 0; }
 
-  return { loadAllBuilds, getCreateFormHTML, fillCreateForm, submitBuild, vote, deleteBuild, onCompChange, filterBuilds, clearSearch, hasBuilds };
+  return { loadAllBuilds, getCreateFormHTML, fillCreateForm, submitBuild, vote, deleteBuild, onCompChange, onRackChange, filterBuilds, clearSearch, hasBuilds };
 
 })();
