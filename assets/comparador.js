@@ -103,7 +103,11 @@
   function switchTab(tab, shipName) {
     if (tab === 'create-build' && shipName) compState.createBuildShip = shipName;
     compState.tab = tab;
-    render();  // render() handles loadAllBuilds when needed (empty container + no cache)
+    render();
+    if (tab === 'builds') {
+      // loadAllBuilds is idempotent (_isLoading flag prevents duplicate fetches)
+      window.Builds?.loadAllBuilds('buildsTabList');
+    }
     document.getElementById('compContentArea')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 

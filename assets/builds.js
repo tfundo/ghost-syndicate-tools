@@ -552,24 +552,33 @@ window.Builds = (function () {
   }
 
   // ── BUILDS TAB: load all builds ──────────────────────
-  let _loadToken = 0;  // cancela cargas obsoletas cuando el usuario navega
+  // Simple flag instead of token system: concurrent calls are ignored,
+  // preventing the staling chain that left the spinner forever.
+  let _isLoading = false;
 
-  async function loadAllBuilds(containerId, _retries = 0) {
-    const myToken = ++_loadToken;                              // token único para esta carga
-    const live    = () => document.getElementById(containerId); // siempre el elemento actual del DOM
-    const stale   = () => myToken !== _loadToken;              // ¿hay una carga más reciente?
+  async function loadAllBuilds(containerId) {
+    if (_isLoading) return;
+    _isLoading = true;
+    try {
+      await _doLoadBuilds(containerId, 0);
+    } finally {
+      _isLoading = false;
+    }
+  }
+
+  async function _doLoadBuilds(containerId, retries) {
+    const live = () => document.getElementById(containerId);
 
     const sb = _getSb();
     if (!sb) {
-      // Supabase may still be initializing (CDN race) — retry up to 5×
-      if (_retries < 5) {
+      if (retries < 5) {
         const el = live();
-        if (el) el.innerHTML = '<div class="builds-loading">Conectando…</div>';
-        setTimeout(() => { if (!stale() && live()) loadAllBuilds(containerId, _retries + 1); }, 300);
-      } else {
-        const el = live();
-        if (el) el.innerHTML = '<div class="builds-error">No se pudo conectar con la base de datos.</div>';
+        if (el && !el.innerHTML.trim()) el.innerHTML = '<div class="builds-loading">Conectando…</div>';
+        await new Promise(r => setTimeout(r, 400));
+        return _doLoadBuilds(containerId, retries + 1);
       }
+      const el = live();
+      if (el) el.innerHTML = '<div class="builds-error">No se pudo conectar. Recarga la página.</div>';
       return;
     }
 
@@ -580,10 +589,9 @@ window.Builds = (function () {
       .select('*')
       .order('created_at', { ascending: false });
 
-    if (stale()) return;  // otra carga más reciente tomó el relevo
-
     if (error) {
-      const el = live(); if (el) el.innerHTML = '<div class="builds-error">Error al cargar builds.</div>';
+      const el = live();
+      if (el) el.innerHTML = '<div class="builds-error">Error al cargar builds. Recarga la página.</div>';
       return;
     }
 
@@ -605,8 +613,6 @@ window.Builds = (function () {
       .from('ship_build_votes')
       .select('build_id,stars')
       .in('build_id', buildIds);
-
-    if (stale()) return;
 
     const voteMap = {};
     (allVotes || []).forEach(v => {
@@ -632,15 +638,20 @@ window.Builds = (function () {
         .select('build_id,stars')
         .eq('user_id', user.id)
         .in('build_id', buildIds);
-      if (!stale()) (myVotes || []).forEach(v => { _userVotes[v.build_id] = v.stars; });
+      (myVotes || []).forEach(v => { _userVotes[v.build_id] = v.stars; });
     }
-
-    if (stale()) return;
 
     await _loadShipImages();
 
     const el = live();
-    if (el) el.innerHTML = _allBuilds.map((b, i) => _buildCard(b, user, i)).join('');
+    if (el) {
+      try {
+        el.innerHTML = _allBuilds.map((b, i) => _buildCard(b, user, i)).join('');
+      } catch (e) {
+        console.error('[Builds] Error renderizando builds:', e);
+        el.innerHTML = '<div class="builds-error">Error al mostrar builds. Recarga la página.</div>';
+      }
+    }
   }
 
   function _buildCard(build, user, rank) {
@@ -839,7 +850,14 @@ window.Builds = (function () {
       container.innerHTML = `<div class="builds-empty">No se encontraron builds para "<strong>${esc(query)}</strong>".</div>`;
       return;
     }
-    container.innerHTML = filtered.map((b, i) => _buildCard(b, user, i)).join('');
+    try {
+      container.innerHTML = filtered.map((b, i) => _buildCard(b, user, i)).join('');
+    } catch (e) {
+      console.error('[Builds] filterBuilds render error:', e);
+      // Si hay error renderizando desde cache, recarga desde Supabase
+      _isLoading = false;
+      loadAllBuilds('buildsTabList');
+    }
   }
 
   function clearSearch() {
