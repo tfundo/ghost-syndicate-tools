@@ -6001,8 +6001,33 @@ body::after {
   flex-direction: column;
   gap: .6rem;
   transition: border-color .18s;
+  overflow: hidden;
 }
 .btab-build-card:hover { border-color: rgba(245,158,11,.2); }
+.btab-ship-banner {
+  height: 88px;
+  margin: -1rem -1.1rem .2rem;
+  overflow: hidden;
+  position: relative;
+  background: rgba(0,0,0,.35);
+  flex-shrink: 0;
+}
+.btab-ship-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+  display: block;
+  transition: transform .4s ease;
+}
+.btab-build-card:hover .btab-ship-banner img { transform: scale(1.04); }
+.btab-ship-banner::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 45%, rgba(12,10,9,.75) 100%);
+  pointer-events: none;
+}
 .btab-card-top {
   display: flex;
   align-items: center;

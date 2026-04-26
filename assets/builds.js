@@ -27,10 +27,21 @@ window.Builds = (function () {
   let _allBuilds  = [];
   let _userVotes  = {};
   let _compDB     = null;
+  let _shipImages = {};
+  let _imgLoaded  = false;
 
   // Un único cliente Supabase: el de Auth (creado en auth.js).
   // Puede leer tablas públicas incluso sin sesión iniciada (clave anon).
   function _getSb() { return window.Auth?.getSupabase() ?? null; }
+
+  async function _loadShipImages() {
+    if (_imgLoaded) return;
+    _imgLoaded = true;
+    try {
+      const r = await fetch('data/ship_images.json');
+      _shipImages = r.ok ? await r.json() : {};
+    } catch (_) { _shipImages = {}; }
+  }
 
   // ── Load components DB ───────────────────────────────
   async function _loadCompDB() {
@@ -480,6 +491,8 @@ window.Builds = (function () {
 
     if (stale()) return;
 
+    await _loadShipImages();
+
     const el = live();
     if (el) el.innerHTML = _allBuilds.map((b, i) => _buildCard(b, user, i)).join('');
   }
@@ -527,8 +540,17 @@ window.Builds = (function () {
 
     const loginMsg = `<span class="btab-login-note">${DC_SVG} Inicia sesión para votar</span>`;
 
+    const imgUrl = _shipImages[build.ship_name] || '';
+    const bannerHtml = imgUrl
+      ? `<div class="btab-ship-banner">
+           <img src="${esc(imgUrl)}" alt="${esc(build.ship_name)}" loading="lazy"
+                onerror="this.parentElement.remove()">
+         </div>`
+      : '';
+
     return `
       <div class="btab-build-card">
+        ${bannerHtml}
         <div class="btab-card-top">
           <span class="btab-rank">#${rank + 1}</span>
           <div class="btab-ship-badge">${esc(build.ship_name)}</div>
