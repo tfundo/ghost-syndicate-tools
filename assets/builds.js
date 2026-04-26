@@ -98,6 +98,24 @@ window.Builds = (function () {
     return `<option value="">— Sin equipar —</option>${opts}`;
   }
 
+  // ── Rack options: standard purchasable racks + always include default ─
+  function _buildRackOptions(size, defaultName = '') {
+    if (!_compDB) return '<option value="">— Sin datos —</option>';
+    const sizeKey = String(size);
+    const allItems = (_compDB.components.MissileRack || {})[sizeKey] || [];
+    // Show standard racks (not ship_specific) + always include the ship's stock rack
+    const items = allItems.filter(i => !i.ship_specific || i.name === defaultName);
+    const list = items.length ? items : allItems;  // safety: show all if nothing qualifies
+    const opts = list.map(item => {
+      const mfr  = item.mfr ? ` — ${item.mfr}` : '';
+      const cap  = item.missile_count && item.missile_size
+        ? ` (×${item.missile_count} S${item.missile_size})` : '';
+      const sel  = defaultName && item.name === defaultName ? ' selected' : '';
+      return `<option value="${esc(item.name)}"${sel}>${esc(item.name + mfr + cap)}</option>`;
+    }).join('');
+    return `<option value="">— Sin equipar —</option>${opts}`;
+  }
+
   // ── Missile options filtered by size (0 = all sizes) ─
   function _buildMissileOptions(missileSize = 0) {
     if (!_compDB) return '<option value="">— Sin datos —</option>';
@@ -381,7 +399,7 @@ window.Builds = (function () {
               <select class="bcreate-select" id="bcf_MissileRack_${i}"
                 data-comptype="MissileRack" data-size="${slot.size}" data-default="${esc(defName)}"
                 onchange="Builds.onRackChange(${i})">
-                ${_buildOptions('MissileRack', slot.size, defName)}
+                ${_buildRackOptions(slot.size, defName)}
               </select>
             </div>
             <div id="bcf_RackMissiles_${i}" class="bcreate-sub-slots">
