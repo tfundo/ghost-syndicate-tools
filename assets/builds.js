@@ -98,19 +98,21 @@ window.Builds = (function () {
     return `<option value="">— Sin equipar —</option>${opts}`;
   }
 
-  // ── All missiles across sizes (for rack sub-slots) ───
-  function _buildMissileOptions() {
+  // ── Missile options filtered by size (0 = all sizes) ─
+  function _buildMissileOptions(missileSize = 0) {
     if (!_compDB) return '<option value="">— Sin datos —</option>';
     const weapComps = _compDB.components.Weapon || {};
     const missiles  = [];
     const seen      = new Set();
     Object.entries(weapComps)
       .sort((a, b) => parseInt(a[0]) - parseInt(b[0]))
-      .forEach(([, items]) => {
+      .forEach(([sz, items]) => {
+        if (missileSize && parseInt(sz) !== missileSize) return;
         items.filter(i => i.type === 'Misil').forEach(i => {
           if (!seen.has(i.name)) { seen.add(i.name); missiles.push(i); }
         });
       });
+    if (!missiles.length && missileSize) return _buildMissileOptions(0);
     const opts = missiles.map(i => {
       const mfr = i.mfr ? ` — ${i.mfr}` : '';
       return `<option value="${esc(i.name)}">${esc(i.name + mfr)}</option>`;
@@ -118,15 +120,31 @@ window.Builds = (function () {
     return `<option value="">— Sin equipar —</option>${opts}`;
   }
 
+  // ── Lookup missile_size and missile_count for a rack ──
+  function _getMissileInfo(rackName, rackHardpointSize) {
+    if (!_compDB) return { missile_size: 0, missile_count: 0 };
+    const rackComps = _compDB.components.MissileRack || {};
+    // Try exact name match first, then search all sizes
+    const search = (items) => items?.find(i => i.name === rackName);
+    const hit = search(rackComps[String(rackHardpointSize)])
+             || Object.values(rackComps).flatMap(v => v).find(i => i.name === rackName);
+    return { missile_size: hit?.missile_size || 0, missile_count: hit?.missile_count || 0 };
+  }
+
   // ── Get gun sizes from a turret module name ───────────
-  function _getGunSizes(turretName, fallbackSize) {
-    if (!turretName || !_compDB) return [fallbackSize];
+  function _getGunSizes(turretName, hardpointSize) {
+    if (!_compDB) return null;
     const turretComps = _compDB.components.TurretModule || {};
+    // 1) Exact name match
     for (const items of Object.values(turretComps)) {
       const found = items.find(i => i.name === turretName);
       if (found?.guns) return found.guns;
     }
-    return [fallbackSize];
+    // 2) Fallback: first turret of the same size with guns data
+    const sameSize = (turretComps[String(hardpointSize)] || []).find(i => i.guns);
+    if (sameSize) return sameSize.guns;
+    // 3) Last resort: one gun slot at hardpointSize - 1
+    return [Math.max(1, hardpointSize - 1)];
   }
 
   // ── Lookup stats for a named component ───────────────
@@ -333,6 +351,9 @@ window.Builds = (function () {
       const rRows = rackSlots.map((slot, i) => {
         const defName  = slot.default || '';
         const stockTag = defName ? `<span class="bcf-stock-tag">stock: ${esc(defName)}</span>` : '';
+        const { missile_size, missile_count } = _getMissileInfo(defName, slot.size);
+        const countNote = missile_count > 1 ? ` <span class="bcf-stock-tag">${missile_count} unidades</span>` : '';
+        const sizeLabel = missile_size ? ` (S${missile_size})` : '';
         return `
           <div class="bcreate-group">
             <div class="bcreate-field">
@@ -344,9 +365,9 @@ window.Builds = (function () {
             </div>
             <div class="bcreate-sub-slots">
               <div class="bcreate-field bcreate-sub-field">
-                <label class="bcreate-label-sub">🚀 Misil cargado</label>
+                <label class="bcreate-label-sub">🚀 Misil${sizeLabel}${countNote}</label>
                 <select class="bcreate-select" id="bcf_Missile_${i}_0">
-                  ${_buildMissileOptions()}
+                  ${_buildMissileOptions(missile_size)}
                 </select>
               </div>
             </div>
@@ -662,12 +683,16 @@ window.Builds = (function () {
       } else if (type === 'MissileRack' && Array.isArray(val) && val.length > 0 && typeof val[0] === 'object') {
         // New nested format: [{rack, missiles}]
         val.forEach((r, i) => {
-          if (r.rack) compRows.push(`
-            <div class="btab-comp-row">
-              <span class="btab-comp-lbl">🚀 Rack ${val.length > 1 ? i+1 : ''}</span>
-              <span class="btab-comp-val">${esc(r.rack)}</span>
-            </div>`);
-          (r.missiles || []).forEach((m, j) => {
+          if (r.rack) {
+            const info = _getMissileInfo(r.rack, 0);
+            const cntTag = info.missile_count > 1 ? ` <span style="opacity:.65;font-size:.65rem">×${info.missile_count}</span>` : '';
+            compRows.push(`
+              <div class="btab-comp-row">
+                <span class="btab-comp-lbl">🚀 Rack ${val.length > 1 ? i+1 : ''}</span>
+                <span class="btab-comp-val">${esc(r.rack)}${cntTag}</span>
+              </div>`);
+          }
+          (r.missiles || []).forEach((m) => {
             if (m) compRows.push(`
               <div class="btab-comp-row btab-comp-sub">
                 <span class="btab-comp-lbl">🚀 Misil</span>
