@@ -27,16 +27,37 @@ window.Builds = (function () {
   let _allBuilds  = [];
   let _userVotes  = {};
   let _compDB     = null;
-  let _publicSb   = null;   // cliente público, siempre disponible sin sesión
+  let _publicSb   = null;   // cliente anon para LEER builds (siempre disponible)
+  let _authUnsub  = null;   // unsubscribe de Auth.onUserChange
 
-  // Cliente autenticado (para votar/crear) o público (para leer builds)
-  function _getSb()       { return window.Auth?.getSupabase() || _getPublicSb(); }
+  // Cliente anon (lectura pública): siempre usa la clave anon, nunca sesión
   function _getPublicSb() {
     if (_publicSb) return _publicSb;
+    // Espera a que el CDN de Supabase esté listo
     if (!window.supabase) return null;
-    _publicSb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON);
+    _publicSb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON, {
+      auth: { persistSession: false, autoRefreshToken: false }
+    });
     return _publicSb;
   }
+
+  // Para lectura de builds → siempre cliente público (no depende de sesión)
+  // Para escritura (votar, crear) → cliente autenticado de Auth
+  function _getReadSb()  { return _getPublicSb() || window.Auth?.getSupabase(); }
+  function _getSb()      { return window.Auth?.getSupabase() || _getPublicSb(); }
+
+  // Recarga builds cuando el usuario inicia o cierra sesión (actualiza estado de votos)
+  function _initAuthListener() {
+    if (_authUnsub) return;  // ya registrado
+    if (!window.Auth) { setTimeout(_initAuthListener, 200); return; }
+    _authUnsub = window.Auth.onUserChange(() => {
+      // Solo recarga si la tab de builds está activa en el DOM
+      if (document.getElementById('buildsTabList')) {
+        loadAllBuilds('buildsTabList');
+      }
+    });
+  }
+  _initAuthListener();
 
   // ── Load components DB ───────────────────────────────
   async function _loadCompDB() {
@@ -408,7 +429,7 @@ window.Builds = (function () {
     const live    = () => document.getElementById(containerId); // siempre el elemento actual del DOM
     const stale   = () => myToken !== _loadToken;              // ¿hay una carga más reciente?
 
-    const sb = _getSb();
+    const sb = _getReadSb();   // usa cliente público — no requiere login para leer
     if (!sb) {
       // Supabase may still be initializing (CDN race) — retry up to 5×
       if (_retries < 5) {
