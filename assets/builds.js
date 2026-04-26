@@ -696,9 +696,12 @@ window.Builds = (function () {
       const val  = comps[type];
       if (!val) return;
 
-      if (type === 'TurretModule' && Array.isArray(val) && val.length > 0 && typeof val[0] === 'object') {
+      // typeof null === 'object' in JS, so guard explicitly with !== null
+      if (type === 'TurretModule' && Array.isArray(val) && val.length > 0
+          && val[0] !== null && typeof val[0] === 'object') {
         // New nested format: [{module, weapons}]
         val.forEach((t, i) => {
+          if (!t || typeof t !== 'object') return;  // null/primitive guard
           if (t.module) compRows.push(`
             <div class="btab-comp-row">
               <span class="btab-comp-lbl">🎯 Torreta ${val.length > 1 ? i+1 : ''}</span>
@@ -712,9 +715,11 @@ window.Builds = (function () {
               </div>`);
           });
         });
-      } else if (type === 'MissileRack' && Array.isArray(val) && val.length > 0 && typeof val[0] === 'object') {
+      } else if (type === 'MissileRack' && Array.isArray(val) && val.length > 0
+                 && val[0] !== null && typeof val[0] === 'object') {
         // New nested format: [{rack, missiles}]
         val.forEach((r, i) => {
+          if (!r || typeof r !== 'object') return;  // null/primitive guard
           if (r.rack) {
             const info = _getMissileInfo(r.rack, 0);
             const cntTag = info.missile_count > 1 ? ` <span style="opacity:.65;font-size:.65rem">×${info.missile_count}</span>` : '';
@@ -875,9 +880,8 @@ window.Builds = (function () {
       container.innerHTML = filtered.map((b, i) => _buildCard(b, user, i)).join('');
     } catch (e) {
       console.error('[Builds] filterBuilds render error:', e);
-      // Si hay error renderizando desde cache, recarga desde Supabase
-      _isLoading = false;
-      loadAllBuilds('buildsTabList');
+      // Muestra error sin llamar loadAllBuilds (evita loop render→crash→reload→crash)
+      container.innerHTML = '<div class="builds-error">Error mostrando builds. <a href="" style="color:var(--accent)">Recarga la página</a>.</div>';
     }
   }
 
