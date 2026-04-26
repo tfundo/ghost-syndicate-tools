@@ -793,25 +793,53 @@ const LEGAL_CONTENT = {
     <p>Para cualquier consulta puedes contactar a través del <a href="https://discord.com/invite/Ktfnbmj5s7" target="_blank" rel="noopener">Discord de Ghost Syndicate</a> o del canal de <a href="https://www.youtube.com/@tfundo" target="_blank" rel="noopener">YouTube de TFundo</a>.</p>
   `,
   privacidad: `
-    <h2>Política de Privacidad</h2>
-    <p>En Ghost Syndicate Tools nos tomamos tu privacidad en serio. A continuación explicamos qué datos se procesan al usar este sitio.</p>
+    <h2>Política de Privacidad y Cookies</h2>
+    <p>Última actualización: <strong>abril 2026</strong>. En Ghost Syndicate Tools nos tomamos tu privacidad en serio. Este documento explica qué datos se procesan al usar este sitio, qué almacenamos y con qué finalidad.</p>
 
-    <h2>Datos que NO recopilamos</h2>
-    <p>Este sitio <strong>no recoge, almacena ni procesa ningún dato personal</strong>. No hay formularios de registro, no hay cuentas de usuario, no hay analytics propios, no hay cookies propias.</p>
+    <h2>1. Responsable del tratamiento</h2>
+    <p><strong>TFundo</strong> — proyecto personal sin ánimo de lucro. Contacto: <a href="https://discord.com/invite/Ktfnbmj5s7" target="_blank" rel="noopener">Discord de Ghost Syndicate</a>.</p>
 
-    <h2>Servicios de terceros</h2>
-    <p><strong>Google Fonts</strong> — Este sitio carga tipografías desde los servidores de Google (fonts.googleapis.com). Al cargar la página, tu navegador realiza una solicitud a Google que puede registrar tu dirección IP según la <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">política de privacidad de Google</a>. Puedes evitarlo usando un bloqueador de fuentes externas.</p>
-    <p><strong>Roberts Space Industries CDN</strong> — Las imágenes de naves se cargan desde el CDN de RSI (media.robertsspaceindustries.com). RSI puede registrar las solicitudes según su propia política de privacidad.</p>
-    <p><strong>PayPal</strong> — El botón de donación redirige a una página de PayPal. Solo si decides realizar una donación, PayPal procesará los datos necesarios para completar el pago según su <a href="https://www.paypal.com/es/legalhub/privacy-full" target="_blank" rel="noopener">política de privacidad</a>. Este sitio no recibe ni almacena ninguno de esos datos.</p>
+    <h2>2. Qué almacenamos y por qué</h2>
+    <p>Este sitio <strong>no usa cookies de rastreo, publicidad ni analíticas</strong>. No hay Google Analytics ni ningún sistema de seguimiento de comportamiento.</p>
+    <p>Sí usamos <strong>almacenamiento local del navegador (localStorage)</strong> para:</p>
+    <ul>
+      <li><strong>Preferencia de idioma</strong> (<code>gs-lang</code>) — guarda si prefieres español o inglés. Sin caducidad definida. Puramente funcional.</li>
+      <li><strong>Preferencia de cookies</strong> (<code>gst-cookie-consent</code>) — guarda si aceptaste o no este aviso para no mostrarlo de nuevo.</li>
+      <li><strong>Sesión de Discord</strong> (<code>sb-*</code>) — si inicias sesión con Discord, Supabase almacena el token de sesión en localStorage para mantenerte conectado entre visitas. Solo se activa si tú decides iniciar sesión.</li>
+    </ul>
 
-    <h2>Cookies</h2>
-    <p>Este sitio no establece ninguna cookie propia. Las solicitudes a Google Fonts y al CDN de RSI pueden generar cookies de terceros gestionadas íntegramente por dichos servicios.</p>
+    <h2>3. Inicio de sesión con Discord (opcional)</h2>
+    <p>El inicio de sesión es <strong>completamente voluntario</strong>. Si decides hacerlo, a través del proveedor de identidad Discord y la plataforma <strong>Supabase</strong> (Supabase Inc., San Francisco, CA, EEUU) se procesa:</p>
+    <ul>
+      <li>Tu <strong>nombre de usuario y avatar de Discord</strong> (mostrados en tus builds publicadas).</li>
+      <li>Tu <strong>dirección de correo electrónico</strong> asociada a Discord (guardada en Supabase, no visible públicamente).</li>
+      <li>Tu <strong>ID de usuario de Discord</strong> (usado internamente para identificar tus recursos y builds).</li>
+    </ul>
+    <p>Con estos datos puedes:</p>
+    <ul>
+      <li>Guardar y sincronizar tus <strong>materiales de fabricación</strong> (WikeloData) entre dispositivos.</li>
+      <li>Crear, publicar y votar <strong>builds de naves</strong>.</li>
+    </ul>
+    <p>Supabase actúa como encargado del tratamiento bajo su <a href="https://supabase.com/privacy" target="_blank" rel="noopener">política de privacidad</a>. Los datos se almacenan en servidores de AWS en Europa (eu-west-1, Irlanda) según la configuración del proyecto.</p>
+    <p>Puedes <strong>eliminar tu sesión en cualquier momento</strong> usando el botón de cierre de sesión. Para solicitar la eliminación completa de tus datos (builds, votos, materiales) contacta por Discord.</p>
 
-    <h2>Tus derechos (RGPD)</h2>
-    <p>Al no recopilar datos personales, no hay datos sobre los que ejercer derechos de acceso, rectificación o supresión. Para cuestiones relacionadas con los servicios de terceros mencionados, contacta directamente con Google, RSI o PayPal.</p>
+    <h2>4. Servicios de terceros que reciben tu IP</h2>
+    <p><strong>Google Fonts</strong> — Las tipografías se cargan desde fonts.googleapis.com. Tu navegador realiza una solicitud que puede incluir tu dirección IP según la <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">política de privacidad de Google</a>. Puedes bloquearlo con extensiones como uBlock Origin.</p>
+    <p><strong>Roberts Space Industries CDN</strong> — Las imágenes de naves se sirven desde el CDN oficial de RSI. RSI puede registrar las solicitudes según su política de privacidad.</p>
+    <p><strong>PayPal</strong> — El botón de donación redirige a PayPal. Solo si haces una donación, PayPal procesará tus datos de pago. Este sitio no recibe ni almacena esa información.</p>
+    <p><strong>Discord CDN</strong> — Los avatares de los usuarios se cargan directamente desde cdn.discordapp.com cuando hay builds publicadas.</p>
 
-    <h2>Cambios en esta política</h2>
-    <p>Cualquier modificación se publicará en esta misma página. Última actualización: abril 2025.</p>
+    <h2>5. Base legal (RGPD)</h2>
+    <ul>
+      <li><strong>Almacenamiento funcional</strong> (idioma, consentimiento): interés legítimo / necesario para el funcionamiento.</li>
+      <li><strong>Datos de sesión y cuenta</strong>: consentimiento explícito del usuario al iniciar sesión voluntariamente.</li>
+    </ul>
+
+    <h2>6. Tus derechos</h2>
+    <p>Tienes derecho a acceder, rectificar y suprimir tus datos. Para ejercerlos contacta a través del <a href="https://discord.com/invite/Ktfnbmj5s7" target="_blank" rel="noopener">Discord de Ghost Syndicate</a>. Responderemos en un plazo máximo de 30 días.</p>
+
+    <h2>7. Cambios en esta política</h2>
+    <p>Cualquier modificación relevante se publicará en esta página con la fecha de actualización.</p>
   `
 };
 
@@ -839,6 +867,37 @@ function _renderLegalTab(tab) {
   document.getElementById('legalTabAviso').classList.toggle('active', tab === 'aviso');
   document.getElementById('legalTabPriv').classList.toggle('active', tab === 'privacidad');
 }
+
+// ============================================================
+// COOKIE CONSENT BANNER
+// ============================================================
+const COOKIE_KEY = 'gst-cookie-consent';
+
+window.cookieConsent = function(choice) {
+  if (choice === 'reset') {
+    localStorage.removeItem(COOKIE_KEY);
+    _showCookieBanner();
+    return;
+  }
+  localStorage.setItem(COOKIE_KEY, choice);
+  _hideCookieBanner();
+};
+
+function _showCookieBanner() {
+  const el = document.getElementById('cookieBanner');
+  if (el) { el.style.display = ''; requestAnimationFrame(() => el.classList.add('visible')); }
+}
+
+function _hideCookieBanner() {
+  const el = document.getElementById('cookieBanner');
+  if (!el) return;
+  el.classList.remove('visible');
+  setTimeout(() => { el.style.display = 'none'; }, 400);
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  if (!localStorage.getItem(COOKIE_KEY)) _showCookieBanner();
+});
 
 // ============================================================
 // HELPERS

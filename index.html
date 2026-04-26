@@ -401,11 +401,28 @@
         <span class="footer-sep">·</span>
         <button class="footer-link-btn" onclick="openLegal('privacidad')" data-i18n="footer.privacy">Política de Privacidad</button>
         <span class="footer-sep">·</span>
+        <button class="footer-link-btn" onclick="cookieConsent('reset')" data-i18n="footer.cookies">Gestionar cookies</button>
+        <span class="footer-sep">·</span>
         <a class="footer-link-btn" href="https://www.paypal.com/donate/?hosted_button_id=KPS53TPR85EV8" target="_blank" rel="noopener" data-i18n="footer.donate">♥ Donar</a>
       </div>
       <p class="footer-copy" data-i18n="footer.copy">© 2025 Ghost Syndicate Tools · TFundo · Proyecto de fans sin ánimo de lucro</p>
     </div>
   </footer>
+
+  <!-- ===== COOKIE BANNER ===== -->
+  <div id="cookieBanner" class="cookie-banner" role="dialog" aria-label="Aviso de cookies" aria-live="polite" style="display:none">
+    <div class="cookie-banner-inner">
+      <div class="cookie-banner-text">
+        <span class="cookie-banner-icon">🍪</span>
+        <span>Usamos <strong>localStorage</strong> para guardar tu sesión de Discord, preferencia de idioma y tus materiales. Si inicias sesión, <strong>Supabase</strong> almacena tus builds y votos. Sin cookies de rastreo ni publicidad.
+        <button class="cookie-link-btn" onclick="openLegal('privacidad')">Ver política completa</button></span>
+      </div>
+      <div class="cookie-banner-actions">
+        <button class="cookie-btn-accept" onclick="cookieConsent('all')">Aceptar y continuar</button>
+        <button class="cookie-btn-reject" onclick="cookieConsent('essential')">Solo esenciales</button>
+      </div>
+    </div>
+  </div>
 
   <!-- ===== LEGAL MODAL ===== -->
   <div class="legal-overlay" id="legalOverlay" onclick="closeLegal()"></div>
