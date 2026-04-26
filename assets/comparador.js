@@ -1392,8 +1392,16 @@
     injectStyles();
     render();
     if (compState.tab === 'builds') {
-      // Small delay ensures render() has committed the DOM before Builds tries to fill it
       setTimeout(() => window.Builds?.loadAllBuilds('buildsTabList'), 0);
+    }
+    // Recarga builds cuando cambia la sesión (login/logout) para actualizar votos
+    if (!compState._authListened) {
+      compState._authListened = true;
+      window.Auth?.onUserChange(() => {
+        if (compState.tab === 'builds' && document.getElementById('buildsTabList')) {
+          window.Builds?.loadAllBuilds('buildsTabList');
+        }
+      });
     }
     // Load ship data from JSON (updated each game patch)
     if (!compState._shipsLoaded) {

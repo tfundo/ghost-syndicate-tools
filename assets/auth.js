@@ -34,17 +34,19 @@ window.Auth = (function () {
     sb.auth.onAuthStateChange(async (event, session) => {
       _session = session;
       _user    = session?.user ?? null;
+
+      // Actualiza UI y notifica ANTES del await para que el widget responda de inmediato
+      _renderWidget();
+      _notify(_user);
+
       if (_user && (event === 'SIGNED_IN' || event === 'INITIAL_SESSION' || event === 'TOKEN_REFRESHED')) {
-        await _loadResources();
         if (event === 'SIGNED_IN') {
-          // Limpiar tokens del hash/query para que la URL quede limpia
           try { history.replaceState(null, '', window.location.pathname); } catch(e) {}
         }
+        try { await _loadResources(); } catch(e) { console.error('[Auth] _loadResources:', e); }
       } else if (event === 'SIGNED_OUT') {
         _resources.clear();
       }
-      _renderWidget();
-      _notify(_user);
     });
 
     _renderWidget();

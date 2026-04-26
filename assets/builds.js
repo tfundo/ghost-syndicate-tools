@@ -27,21 +27,10 @@ window.Builds = (function () {
   let _allBuilds  = [];
   let _userVotes  = {};
   let _compDB     = null;
-  let _authUnsub  = null;
 
   // Un único cliente Supabase: el de Auth (creado en auth.js).
   // Puede leer tablas públicas incluso sin sesión iniciada (clave anon).
   function _getSb() { return window.Auth?.getSupabase() ?? null; }
-
-  // Recarga builds cuando el usuario inicia o cierra sesión (actualiza votos)
-  function _initAuthListener() {
-    if (_authUnsub) return;
-    if (!window.Auth) { setTimeout(_initAuthListener, 200); return; }
-    _authUnsub = window.Auth.onUserChange(() => {
-      if (document.getElementById('buildsTabList')) loadAllBuilds('buildsTabList');
-    });
-  }
-  _initAuthListener();
 
   // ── Load components DB ───────────────────────────────
   async function _loadCompDB() {
