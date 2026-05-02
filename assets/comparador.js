@@ -78,13 +78,35 @@
     return String(n);
   }
 
-  // Strip Spanish weapon-type prefixes from display names.
-  // The type is already shown as a badge, so we only want the weapon's own name.
+  // Strip Spanish weapon-type prefixes from ship weapon display names.
   const _WPN_PREFIX = /^(?:ca[nñ][oó]n de impulsor de masa\s+|ca[nñ][oó]n de dispersi[oó]n\s+|ca[nñ][oó]n\s+|repetidor de distorsi[oó]n\s+|repetidor l[aá]ser\s+|repetidor\s+|repeater de distorsi[oó]n\s+|repeater\s+|gatling bal[ií]stico\s+|gatling l[aá]ser\s+|gatling\s+|distorsi[oó]n de\s+)/i;
   function cleanWeaponName(name) {
     const stripped = name.replace(_WPN_PREFIX, '');
     if (!stripped || stripped === name) return name;
     return stripped.charAt(0).toUpperCase() + stripped.slice(1);
+  }
+
+  // Strip Spanish/English weapon-class words from FPS weapon names.
+  const _FPS_STRIPS = [
+    /^Pistola\s+de\s+fragmentaci[oó]n\s+/i,
+    /^Rifle\s+de\s+[Aa]salto\s+de\s+[Ee]nerg[ií]a\s+/i,
+    /^SMG\s+de\s+energ[ií]a\s+/i,
+    /^Subfusil\s+de\s+energ[ií]a\s+/i,
+    /^LMG\s+de\s+energ[ií]a\s+/i,
+    /^Pistola\s+l[aá]ser\s+/i,
+    /^Rifle\s+Francotirador\s+/i,
+    /^Escopeta\s+L[aá]ser\s+/i,
+    /^Escopeta\s+Doble\s+/i,
+    /^(?:Pistola|Pistol|Escopeta|Shotgun|Rifle|Subfusil|Fusil|SMG|LMG|Lanzagranadas|Lanzamisiles|Lanzacohetes|Railgun)\s+/i,
+    /\s+(?:Pistola|Pistol|Escopeta|SMG|LMG|Rifle)\s*$/i,
+    /\s+Rifle\s+Francotirador\s*$/i,
+  ];
+  function cleanFpsWeaponName(name) {
+    let s = (name || '').replace(/ /g, ' ');
+    for (const rx of _FPS_STRIPS) s = s.replace(rx, '');
+    s = s.replace(/\s{2,}/g, ' ').trim();
+    if (!s) return name;
+    return s.charAt(0).toUpperCase() + s.slice(1);
   }
 
   function showToast(msg) {
@@ -305,13 +327,10 @@
       </div>
 
       <div class="comp-tabs">
-        <button class="${tabShips}"    onclick="Comp.switchTab('ships')">Naves</button>
-        <button class="${tabWeapons}"  onclick="Comp.switchTab('weapons')">Armas Nave</button>
-        <button class="${tabFps}"      onclick="Comp.switchTab('fps')">Armas FPS</button>
-        <button class="${tabCompare}"  onclick="Comp.switchTab('compare')">
-          Comparar ${badge}
-        </button>
-        <button class="${tabBuilds}"   onclick="Comp.switchTab('builds')">★ BUILDS</button>
+        <button class="${tabShips}"   onclick="Comp.switchTab('ships')">Naves</button>
+        <button class="${tabFps}"     onclick="Comp.switchTab('fps')">FPS</button>
+        <button class="${tabBuilds}"  onclick="Comp.switchTab('builds')">Builds</button>
+        ${selCount > 0 ? `<button class="${tabCompare}" onclick="Comp.switchTab('compare')">Comparar ${badge}</button>` : ''}
         ${selCount > 0 ? `<button class="comp-clear-btn" onclick="Comp.clearSelection()" title="Limpiar selección">✕ Limpiar</button>` : ''}
       </div>
 
@@ -777,7 +796,7 @@
     return `
       <div class="bp-card comp-card comp-weapon-card">
         <div class="comp-card-header">
-          <div class="comp-ship-name">${escComp(w.name)}</div>
+          <div class="comp-ship-name">${escComp(cleanFpsWeaponName(w.name))}</div>
           <div class="comp-mfr">${escComp(w.mfr || '—')}</div>
         </div>
         <div class="comp-badges">
