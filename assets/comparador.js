@@ -70,6 +70,15 @@
     return String(n);
   }
 
+  // Strip Spanish weapon-type prefixes from display names.
+  // The type is already shown as a badge, so we only want the weapon's own name.
+  const _WPN_PREFIX = /^(?:ca[nñ][oó]n de impulsor de masa\s+|ca[nñ][oó]n de dispersi[oó]n\s+|ca[nñ][oó]n\s+|repetidor de distorsi[oó]n\s+|repetidor l[aá]ser\s+|repetidor\s+|repeater de distorsi[oó]n\s+|repeater\s+|gatling bal[ií]stico\s+|gatling l[aá]ser\s+|gatling\s+|distorsi[oó]n de\s+)/i;
+  function cleanWeaponName(name) {
+    const stripped = name.replace(_WPN_PREFIX, '');
+    if (!stripped || stripped === name) return name;
+    return stripped.charAt(0).toUpperCase() + stripped.slice(1);
+  }
+
   function showToast(msg) {
     let toast = document.getElementById('comp-toast');
     if (!toast) {
@@ -615,7 +624,7 @@
            title="${sel ? 'Quitar de comparación' : 'Añadir a comparación'}">
         ${sel ? '<div class="comp-selected-mark">&#10003;</div>' : ''}
         <div class="comp-card-header">
-          <div class="comp-ship-name">${escComp(weapon.name)}</div>
+          <div class="comp-ship-name">${escComp(cleanWeaponName(weapon.name))}</div>
           <div class="comp-mfr comp-weapon-size" title="Tamaño ${weapon.size}">${sizeDots}</div>
         </div>
         <div class="comp-badges">
@@ -798,7 +807,7 @@
     return `
       <div class="comp-compare-card">
         <div class="comp-cmp-header">
-          <div class="comp-cmp-name">${escComp(weapon.name)}</div>
+          <div class="comp-cmp-name">${escComp(cleanWeaponName(weapon.name))}</div>
           <div class="comp-cmp-sub">S${weapon.size} · ${escComp(weapon.type)}</div>
           <div class="comp-cmp-badges">
             <span class="comp-badge" style="background:${typeColor}18;border-color:${typeColor};color:${typeColor}">${escComp(weapon.type)}</span>
