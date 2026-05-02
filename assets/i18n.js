@@ -10,7 +10,7 @@ const TRANSLATIONS = {
     // Nav
     'nav.home': 'Inicio',
     'nav.crafting': 'Fabricación',
-    'nav.comparador': 'Naves/Builds',
+    'nav.comparador': 'Comparador',
     'nav.wikelodata': 'WikeloData',
     'nav.hangar': 'Hangar Ejecutivo',
     'nav.mining': 'Minería',
@@ -23,7 +23,7 @@ const TRANSLATIONS = {
     'home.modules.title': 'Módulos Disponibles',
     'home.crafting.title': 'Fabricación',
     'home.crafting.desc': '1.044 planos con ingredientes, misiones y recompensas de scrip.',
-    'home.comparador.title': 'Naves/Builds',
+    'home.comparador.title': 'Comparador',
     'home.comparador.desc': '250+ naves con datos reales del juego. Filtra, compara y crea builds.',
     'home.wikelodata.title': 'WikeloData',
     'home.wikelodata.desc': 'Ítems Wikelo: costes de fabricación, reputación y economía.',
@@ -167,7 +167,7 @@ const TRANSLATIONS = {
     // Hangar locale
     'locale': 'es-ES',
     // Comparador
-    'comp.page.title': '◈ Naves/Builds',
+    'comp.page.title': '◈ Comparador',
     'comp.page.subtitle': 'Naves y armas · SC 4.8.0 PTU',
     'comp.max4': 'Máximo 4 elementos para comparar',
     'comp.fab': '⚖ Comparar',
@@ -268,7 +268,7 @@ const TRANSLATIONS = {
     // Nav
     'nav.home': 'Home',
     'nav.crafting': 'Crafting',
-    'nav.comparador': 'Ships/Builds',
+    'nav.comparador': 'Comparador',
     'nav.wikelodata': 'WikeloData',
     'nav.hangar': 'Executive Hangar',
     'nav.mining': 'Mining',
@@ -281,7 +281,7 @@ const TRANSLATIONS = {
     'home.modules.title': 'Available Modules',
     'home.crafting.title': 'Crafting',
     'home.crafting.desc': '1,044 blueprints with ingredients, missions and scrip rewards.',
-    'home.comparador.title': 'Ships/Builds',
+    'home.comparador.title': 'Comparador',
     'home.comparador.desc': '250+ ships with real game data. Filter, compare and create builds.',
     'home.wikelodata.title': 'WikeloData',
     'home.wikelodata.desc': 'Wikelo items: crafting costs, reputation and economy.',
@@ -425,7 +425,7 @@ const TRANSLATIONS = {
     // Hangar locale
     'locale': 'en-US',
     // Comparador
-    'comp.page.title': '◈ Ships/Builds',
+    'comp.page.title': '◈ Comparador',
     'comp.page.subtitle': 'Ships and weapons · SC 4.8.0 PTU',
     'comp.max4': 'Maximum 4 elements to compare',
     'comp.fab': '⚖ Compare',
