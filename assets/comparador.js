@@ -1,6 +1,6 @@
 /* ===================================================
    GHOST SYNDICATE TOOLS — Ship & Weapon Comparator
-   Star Citizen Companion — SC 4.7.2
+   Star Citizen Companion — SC 4.8.0
    Namespace: Comp
    =================================================== */
 
@@ -30,7 +30,11 @@
     searchWeapons: '',
     filterRole: '',
     filterMfr: '',
+    filterSize: '',
     filterType: '',
+    filterSizeWeapon: '',
+    sortShips: 'name',
+    sortWeapons: 'dps',
     selected: [],  // [{type:'ship'|'weapon', name:string}]
     shipImages: {},
     _imagesLoaded: false,
@@ -368,26 +372,40 @@
   // ============================================================
 
   function buildShipsPane() {
-    // Build filter options
-    const roles = [...new Set(SHIPS.map(s => s.role))].sort();
-    const mfrs  = [...new Set(SHIPS.map(s => s.mfr))].sort();
+    const roles  = [...new Set(SHIPS.map(s => s.role))].sort();
+    const mfrs   = [...new Set(SHIPS.map(s => s.mfr))].sort();
+    const sizes  = ['Small','Snub','Medium','Large','Capital','Ground'];
 
     const roleOpts = roles.map(r =>
       `<option value="${escComp(r)}" ${compState.filterRole === r ? 'selected' : ''}>${escComp(r)}</option>`
     ).join('');
-
     const mfrOpts = mfrs.map(m =>
       `<option value="${escComp(m)}" ${compState.filterMfr === m ? 'selected' : ''}>${escComp(m)}</option>`
     ).join('');
+    const sizeOpts = sizes.map(sz =>
+      `<option value="${sz}" ${compState.filterSize === sz ? 'selected' : ''}>${sz}</option>`
+    ).join('');
 
-    // Filter ships
+    const SHIP_SORT_OPTS = [
+      ['name','Nombre'],['scm','SCM'],['nav','NAV'],['hp','HP Blindaje'],
+      ['cargo','Cargo'],['crew','Tripulación'],
+    ];
+    const sortOpts = SHIP_SORT_OPTS.map(([v,l]) =>
+      `<option value="${v}" ${compState.sortShips === v ? 'selected' : ''}>${l}</option>`
+    ).join('');
+
     let ships = SHIPS.filter(s => {
       const q = compState.searchShips.toLowerCase();
       if (q && !s.name.toLowerCase().includes(q) && !s.mfr.toLowerCase().includes(q) && !s.role.toLowerCase().includes(q)) return false;
       if (compState.filterRole && s.role !== compState.filterRole) return false;
       if (compState.filterMfr  && s.mfr  !== compState.filterMfr)  return false;
+      if (compState.filterSize && s.size !== compState.filterSize)  return false;
       return true;
     });
+
+    const sk = compState.sortShips;
+    if (sk === 'name') ships.sort((a, b) => a.name.localeCompare(b.name));
+    else ships.sort((a, b) => (b[sk] || 0) - (a[sk] || 0));
 
     const cards = ships.map(s => buildShipCard(s)).join('');
     const empty = ships.length === 0
@@ -411,6 +429,13 @@
           <select class="filter-select" id="compMfrFilter">
             <option value="">Todos los fabricantes</option>
             ${mfrOpts}
+          </select>
+          <select class="filter-select" id="compSizeFilter">
+            <option value="">Todos los tamaños</option>
+            ${sizeOpts}
+          </select>
+          <select class="filter-select" id="compSortShips">
+            ${sortOpts}
           </select>
         </div>
       </div>
@@ -508,17 +533,34 @@
 
   function buildWeaponsPane() {
     const types = [...new Set(WEAPONS.map(w => w.type))].sort();
+    const sizes = [...new Set(WEAPONS.map(w => w.size))].sort((a,b) => a-b);
 
     const typeOpts = types.map(t =>
       `<option value="${escComp(t)}" ${compState.filterType === t ? 'selected' : ''}>${escComp(t)}</option>`
+    ).join('');
+    const sizeWOpts = sizes.map(s =>
+      `<option value="${s}" ${compState.filterSizeWeapon == s ? 'selected' : ''}>S${s}</option>`
+    ).join('');
+
+    const WPN_SORT_OPTS = [
+      ['dps','DPS'],['alpha','Alpha'],['range','Alcance'],
+      ['speed','Vel. Proyectil'],['fireRate','Cadencia'],['name','Nombre'],['size','Tamaño'],
+    ];
+    const sortWOpts = WPN_SORT_OPTS.map(([v,l]) =>
+      `<option value="${v}" ${compState.sortWeapons === v ? 'selected' : ''}>${l}</option>`
     ).join('');
 
     let weapons = WEAPONS.filter(w => {
       const q = compState.searchWeapons.toLowerCase();
       if (q && !w.name.toLowerCase().includes(q) && !w.type.toLowerCase().includes(q)) return false;
       if (compState.filterType && w.type !== compState.filterType) return false;
+      if (compState.filterSizeWeapon !== '' && w.size != compState.filterSizeWeapon) return false;
       return true;
     });
+
+    const sw = compState.sortWeapons;
+    if (sw === 'name') weapons.sort((a, b) => a.name.localeCompare(b.name));
+    else weapons.sort((a, b) => (b[sw] || 0) - (a[sw] || 0));
 
     const cards = weapons.map(w => buildWeaponCard(w)).join('');
     const empty = weapons.length === 0
@@ -538,6 +580,13 @@
           <select class="filter-select" id="compTypeFilter">
             <option value="">Todos los tipos</option>
             ${typeOpts}
+          </select>
+          <select class="filter-select" id="compSizeWeaponFilter">
+            <option value="">Todos los tamaños</option>
+            ${sizeWOpts}
+          </select>
+          <select class="filter-select" id="compSortWeapons">
+            ${sortWOpts}
           </select>
         </div>
       </div>
@@ -589,6 +638,10 @@
           <div class="comp-stat">
             <span class="comp-stat-label">Cad.</span>
             <span class="comp-stat-val">${fmtNum(weapon.fireRate)} <span class="comp-stat-unit">rpm</span></span>
+          </div>
+          <div class="comp-stat">
+            <span class="comp-stat-label">Vel. Proy.</span>
+            <span class="comp-stat-val">${fmtNum(weapon.speed)} <span class="comp-stat-unit">m/s</span></span>
           </div>
         </div>
       </div>
@@ -885,6 +938,18 @@
       });
     }
 
+    // Ships size filter
+    const sizeFilter = document.getElementById('compSizeFilter');
+    if (sizeFilter) {
+      sizeFilter.addEventListener('change', e => { compState.filterSize = e.target.value; render(); });
+    }
+
+    // Ships sort
+    const sortShips = document.getElementById('compSortShips');
+    if (sortShips) {
+      sortShips.addEventListener('change', e => { compState.sortShips = e.target.value; render(); });
+    }
+
     // Weapons type filter
     const typeFilter = document.getElementById('compTypeFilter');
     if (typeFilter) {
@@ -892,6 +957,18 @@
         compState.filterType = e.target.value;
         render();
       });
+    }
+
+    // Weapons size filter
+    const sizeWeaponFilter = document.getElementById('compSizeWeaponFilter');
+    if (sizeWeaponFilter) {
+      sizeWeaponFilter.addEventListener('change', e => { compState.filterSizeWeapon = e.target.value; render(); });
+    }
+
+    // Weapons sort
+    const sortWeapons = document.getElementById('compSortWeapons');
+    if (sortWeapons) {
+      sortWeapons.addEventListener('change', e => { compState.sortWeapons = e.target.value; render(); });
     }
 
     // Fill component dropdowns async when create-build tab is active

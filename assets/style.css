@@ -2018,6 +2018,135 @@ body::after {
 .comp-badge:empty,
 .comp-badge[data-count="0"] { background: var(--bg-card); color: var(--text-muted); }
 
+/* ============================================================
+   SHIP & WEAPON COMPARATOR — Cards, Grid, Stats
+   ============================================================ */
+.comp-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 1rem;
+}
+.comp-card { user-select: none; }
+.comp-card.comp-selected {
+  border-color: var(--accent) !important;
+  background: rgba(245,158,11,0.06) !important;
+}
+.comp-selected-mark {
+  position: absolute; top: 0.55rem; right: 0.55rem;
+  width: 1.35rem; height: 1.35rem;
+  background: var(--accent); color: #0c0a09;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.68rem; font-weight: 900; z-index: 2;
+}
+.comp-ship-banner {
+  height: 90px;
+  margin: -1.2rem -1.2rem 0.85rem -1.2rem;
+  overflow: hidden; border-radius: 4px 4px 0 0;
+  background: var(--bg-card);
+}
+.comp-ship-banner img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+.comp-banner-placeholder { display: flex; align-items: center; justify-content: center; }
+.comp-banner-mfr {
+  font-family: var(--font-hud); font-size: 0.7rem;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  font-weight: 700; opacity: 0.45;
+}
+.comp-card-header { margin-bottom: 0.55rem; }
+.comp-ship-name {
+  font-family: var(--font-hud); font-size: 0.85rem; font-weight: 600;
+  letter-spacing: 0.06em; color: var(--text-primary); text-transform: uppercase;
+  line-height: 1.3; margin-bottom: 0.15rem;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.comp-mfr { font-size: 0.73rem; color: var(--text-muted); font-family: var(--font-mono); letter-spacing: 0.04em; }
+.comp-weapon-size { font-size: 0.68rem; color: var(--accent); letter-spacing: 0.04em; }
+.comp-badges { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-bottom: 0.65rem; }
+.comp-badge-role, .comp-badge-size {
+  font-family: var(--font-mono); font-size: 0.63rem;
+  padding: 0.12rem 0.42rem; border-radius: 3px;
+  white-space: nowrap; border: 1px solid; letter-spacing: 0.04em;
+}
+.comp-stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.35rem 0.7rem;
+  margin-top: 0.6rem;
+}
+.comp-stat { display: flex; flex-direction: column; gap: 0.08rem; }
+.comp-stat-label {
+  font-family: var(--font-mono); font-size: 0.6rem;
+  color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.07em;
+}
+.comp-stat-val {
+  font-family: var(--font-mono); font-size: 0.85rem;
+  font-weight: 700; color: var(--text-primary); white-space: nowrap;
+}
+.comp-stat-unit { font-size: 0.62rem; color: var(--text-muted); font-weight: 400; }
+.comp-results-bar {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 1rem; font-size: 0.8rem;
+}
+.comp-count { font-family: var(--font-mono); color: var(--accent); font-weight: 700; }
+.comp-hint { color: var(--text-muted); font-size: 0.72rem; }
+.comp-empty {
+  grid-column: 1 / -1; padding: 3rem; text-align: center;
+  color: var(--text-muted);
+}
+.comp-empty-icon { font-size: 2rem; color: var(--accent-dim); margin-bottom: 0.8rem; }
+.comp-empty-compare { padding: 4rem 2rem; }
+.comp-empty-title { font-family: var(--font-hud); font-size: 1rem; letter-spacing: 0.1em; color: var(--text-secondary); margin-bottom: 0.5rem; }
+.comp-empty-sub { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem; }
+.comp-empty-actions { display: flex; gap: 0.8rem; justify-content: center; }
+.comp-selection-bar { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.2rem; }
+.comp-chip {
+  display: flex; align-items: center; gap: 0.4rem;
+  background: rgba(245,158,11,0.1); border: 1px solid rgba(245,158,11,0.3);
+  padding: 0.25rem 0.6rem; border-radius: 3px;
+}
+.comp-chip-type { font-size: 0.6rem; font-family: var(--font-hud); color: var(--accent); letter-spacing: 0.08em; text-transform: uppercase; }
+.comp-chip-name { font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-primary); }
+.comp-chip-remove { background: none; border: none; color: var(--text-muted); cursor: pointer; font-size: 0.75rem; padding: 0; line-height: 1; transition: color var(--transition); }
+.comp-chip-remove:hover { color: #f87171; }
+.ship-builds-btn {
+  display: block; width: 100%; margin-top: 0.8rem;
+  background: rgba(245,158,11,0.08); border: 1px solid rgba(245,158,11,0.25);
+  color: var(--accent); font-family: var(--font-mono); font-size: 0.72rem;
+  letter-spacing: 0.04em; padding: 0.4rem 0.8rem; border-radius: 3px;
+  cursor: pointer; transition: all var(--transition); text-align: center;
+}
+.ship-builds-btn:hover { background: rgba(245,158,11,0.16); border-color: var(--accent); }
+/* Compare pane */
+.comp-compare-area {
+  display: grid;
+  grid-template-columns: repeat(var(--comp-cols, 2), 1fr);
+  gap: 1rem;
+}
+.comp-cmp-banner {
+  height: 80px; margin: -1.2rem -1.2rem 0.8rem -1.2rem;
+  overflow: hidden; border-radius: 4px 4px 0 0; background: var(--bg-card);
+}
+.comp-cmp-banner img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+.comp-cmp-header { margin-bottom: 0.6rem; }
+.comp-cmp-name {
+  font-family: var(--font-hud); font-size: 0.82rem; font-weight: 600;
+  letter-spacing: 0.06em; color: var(--text-primary); text-transform: uppercase;
+  line-height: 1.3; margin-bottom: 0.15rem;
+}
+.comp-cmp-sub { font-size: 0.72rem; color: var(--text-muted); font-family: var(--font-mono); }
+.comp-stat-row {
+  display: grid; grid-template-columns: 100px 1fr 80px;
+  align-items: center; gap: 0.5rem; padding: 0.25rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.comp-stat-row:last-child { border-bottom: none; }
+.comp-stat-row-label { font-size: 0.72rem; color: var(--text-muted); font-family: var(--font-mono); letter-spacing: 0.04em; }
+.comp-stat-row-bar-wrap { background: var(--bg-card); border-radius: 2px; height: 4px; overflow: hidden; }
+.comp-stat-row-bar { height: 100%; border-radius: 2px; transition: width 0.3s ease; }
+.comp-stat-row-val { font-family: var(--font-mono); font-size: 0.82rem; font-weight: 700; color: var(--text-primary); text-align: right; }
+/* Weapon card specific */
+.comp-weapon-card .comp-stats-row { grid-template-columns: repeat(3, 1fr); }
+
 /* ========================================
    WIKELODATA PORTAL
    ======================================== */
