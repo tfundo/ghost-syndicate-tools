@@ -68,7 +68,8 @@
     return compState.selected.some(s => s.type === type && s.name === name);
   }
 
-  function getShip(name) { return SHIPS.find(s => s.name === name); }
+  function getShip(name)      { return SHIPS.find(s => s.name === name); }
+  function getFpsWeapon(name) { return FPS_WEAPONS.find(w => w.name === name); }
 
   function getWeapon(name) { return WEAPONS.find(w => w.name === name || w.entity === name); }
 
@@ -394,7 +395,7 @@
   function buildSelectionBar() {
     const chips = compState.selected.map(s => {
       const label = escComp(s.name);
-      const typeLabel = s.type === 'ship' ? 'Nave' : 'Arma';
+      const typeLabel = s.type === 'ship' ? 'Nave' : s.type === 'fps' ? 'FPS' : 'Arma';
       return `<div class="comp-chip">
         <span class="comp-chip-type">${typeLabel}</span>
         <span class="comp-chip-name">${label}</span>
@@ -788,6 +789,9 @@
   }
 
   function buildFpsCard(w) {
+    const sel      = isSelected('fps', w.name);
+    const selClass = sel ? ' comp-selected' : '';
+    const nameEncoded = escComp(w.name).replace(/'/g, "\\'");
     const clsColor = getFpsClassColor(w.class);
     const dmgColor = getDmgTypeColor(w.dmgType);
     const modes    = (w.fireModes || []).map(m => m.mode).join(' / ');
@@ -795,7 +799,10 @@
     const rpmDisplay = w.fireRate > 0 ? fmtNum(w.fireRate) : (modes.includes('Beam') ? 'Rayo' : modes.includes('Charge') ? 'Carga' : '—');
 
     return `
-      <div class="bp-card comp-card comp-weapon-card">
+      <div class="bp-card comp-card comp-weapon-card${selClass}"
+           onclick="Comp.toggleSelect('fps','${nameEncoded}')"
+           title="${sel ? 'Quitar de comparación' : 'Añadir a comparación'}">
+        ${sel ? '<div class="comp-selected-mark">&#10003;</div>' : ''}
         <div class="comp-card-header">
           <div class="comp-ship-name">${escComp(cleanFpsWeaponName(w.name))}</div>
           <div class="comp-mfr">${escComp(w.mfr || '—')}</div>
@@ -847,8 +854,9 @@
           <p class="comp-empty-title">Sin elementos seleccionados</p>
           <p class="comp-empty-sub">Selecciona hasta 4 naves o armas para comparar</p>
           <div class="comp-empty-actions">
-            <button class="btn-primary" onclick="Comp.switchTab('ships')">Ver Naves</button>
-            <button class="btn-ghost"  onclick="Comp.switchTab('weapons')">Ver Armas</button>
+            <button class="btn-primary" onclick="Comp.switchTab('ships')">Naves</button>
+            <button class="btn-ghost"   onclick="Comp.switchTab('weapons')">Armas</button>
+            <button class="btn-ghost"   onclick="Comp.switchTab('fps')">FPS</button>
           </div>
         </div>
       `;
@@ -858,20 +866,24 @@
     const items = compState.selected.map(s => {
       if (s.type === 'ship')   return { type: 'ship',   data: getShip(s.name) };
       if (s.type === 'weapon') return { type: 'weapon', data: getWeapon(s.name) };
+      if (s.type === 'fps')    return { type: 'fps',    data: getFpsWeapon(s.name) };
       return null;
-    }).filter(Boolean);
+    }).filter(i => i && i.data);
 
-    // Separate ships and weapons for per-category maxima
-    const ships   = items.filter(i => i.type === 'ship').map(i => i.data);
-    const weapons = items.filter(i => i.type === 'weapon').map(i => i.data);
+    // Separate by type for per-category maxima
+    const ships      = items.filter(i => i.type === 'ship').map(i => i.data);
+    const weapons    = items.filter(i => i.type === 'weapon').map(i => i.data);
+    const fpsWeapons = items.filter(i => i.type === 'fps').map(i => i.data);
 
     // Compute maxima across ALL selected items of same type
-    const shipMaxima   = computeMaxima(ships,   SHIP_STAT_KEYS);
-    const weaponMaxima = computeMaxima(weapons, WEAPON_STAT_KEYS);
+    const shipMaxima   = computeMaxima(ships,      SHIP_STAT_KEYS);
+    const weaponMaxima = computeMaxima(weapons,    WEAPON_STAT_KEYS);
+    const fpsMaxima    = computeMaxima(fpsWeapons, FPS_STAT_KEYS);
 
     const cards = items.map(item => {
       if (item.type === 'ship')   return buildCompareShipCard(item.data, shipMaxima);
       if (item.type === 'weapon') return buildCompareWeaponCard(item.data, weaponMaxima);
+      if (item.type === 'fps')    return buildCompareFpsCard(item.data, fpsMaxima);
       return '';
     }).join('');
 
@@ -886,6 +898,7 @@
 
   const SHIP_STAT_KEYS   = ['scm','nav','pitch','yaw','roll','hp','shields','crew','minCrew','cargo','mass','length','beam','height','weapons','missiles'];
   const WEAPON_STAT_KEYS = ['dps','alpha','fireRate','range','speed','physical','energy','distortion','heatPerShot'];
+  const FPS_STAT_KEYS    = ['dps','alpha','fireRate','range','speed','magSize','physical','energy','distortion'];
 
   function computeMaxima(items, keys) {
     const maxima = {};
@@ -997,6 +1010,48 @@
         </div>
         <button class="comp-cmp-remove"
           onclick="Comp.toggleSelect('weapon','${escComp(weapon.name).replace(/'/g,"\\'")}')">
+          ✕ Quitar
+        </button>
+      </div>
+    `;
+  }
+
+  function buildCompareFpsCard(w, maxima) {
+    const clsColor = getFpsClassColor(w.class);
+    const dmgColor = getDmgTypeColor(w.dmgType);
+
+    const stats = [
+      { label: 'DPS',            key: 'dps',       unit: '',    higher: true },
+      { label: 'Daño/Disparo',   key: 'alpha',     unit: '',    higher: true },
+      { label: 'Cadencia',       key: 'fireRate',   unit: 'rpm', higher: true },
+      { label: 'Cargador',       key: 'magSize',    unit: '',    higher: true },
+      { label: 'Alcance',        key: 'range',      unit: 'm',   higher: true },
+      { label: 'Vel. Proyectil', key: 'speed',      unit: 'm/s', higher: true },
+      { label: 'Daño Físico',    key: 'physical',   unit: '',    higher: true },
+      { label: 'Daño Energía',   key: 'energy',     unit: '',    higher: true },
+      { label: 'Distorsión',     key: 'distortion', unit: '',    higher: true },
+    ];
+
+    const rows = stats.map(s => buildStatRow(w[s.key] || 0, maxima[s.key], s.label, s.unit, s.higher)).join('');
+    const nameEncoded = escComp(w.name).replace(/'/g, "\\'");
+    const modes = (w.fireModes || []).map(m => m.mode).join(' / ');
+
+    return `
+      <div class="comp-compare-card">
+        <div class="comp-cmp-header">
+          <div class="comp-cmp-name">${escComp(cleanFpsWeaponName(w.name))}</div>
+          <div class="comp-cmp-sub">${escComp(w.mfr || '')}${w.mfr && w.class ? ' · ' : ''}${escComp(w.class)}</div>
+          <div class="comp-cmp-badges">
+            <span class="comp-badge" style="background:${clsColor}18;border-color:${clsColor};color:${clsColor}">${escComp(w.class)}</span>
+            <span class="comp-badge" style="background:${dmgColor}18;border-color:${dmgColor};color:${dmgColor}">${escComp(w.dmgType)}</span>
+            ${modes ? `<span class="comp-badge" style="color:var(--text-muted);border-color:var(--border);font-size:0.6rem">${escComp(modes)}</span>` : ''}
+          </div>
+        </div>
+        <div class="comp-cmp-stats">
+          ${rows}
+        </div>
+        <button class="comp-cmp-remove"
+          onclick="Comp.toggleSelect('fps','${nameEncoded}')">
           ✕ Quitar
         </button>
       </div>
