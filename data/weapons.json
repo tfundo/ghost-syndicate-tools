@@ -11,8 +11,8 @@
     "energy": 0.0,
     "distortion": 0.0,
     "dps": 202.5,
-    "range": 2000,
-    "speed": 1600,
+    "range": 2496,
+    "speed": 1200,
     "heatPerShot": 2.4
   },
   {
@@ -27,8 +27,8 @@
     "energy": 0.0,
     "distortion": 0.0,
     "dps": 337.5,
-    "range": 1998,
-    "speed": 900,
+    "range": 2496,
+    "speed": 1200,
     "heatPerShot": 6.0
   },
   {
@@ -43,8 +43,8 @@
     "energy": 0.0,
     "distortion": 0.0,
     "dps": 202.5,
-    "range": 2000,
-    "speed": 1600,
+    "range": 2496,
+    "speed": 1200,
     "heatPerShot": 3.0
   },
   {
@@ -59,8 +59,8 @@
     "energy": 0.0,
     "distortion": 0.0,
     "dps": 304.1,
-    "range": 2304,
-    "speed": 1600,
+    "range": 2703,
+    "speed": 1196,
     "heatPerShot": 2.4
   },
   {
@@ -75,8 +75,8 @@
     "energy": 0.0,
     "distortion": 0.0,
     "dps": 505.5,
-    "range": 2304,
-    "speed": 900,
+    "range": 2703,
+    "speed": 1196,
     "heatPerShot": 6.0
   },
   {
@@ -91,8 +91,8 @@
     "energy": 0.0,
     "distortion": 0.0,
     "dps": 304.2,
-    "range": 2304,
-    "speed": 1600,
+    "range": 2703,
+    "speed": 1196,
     "heatPerShot": 3.0
   },
   {
@@ -107,8 +107,8 @@
     "energy": 0.0,
     "distortion": 0.0,
     "dps": 405.0,
-    "range": 2310,
-    "speed": 1320,
+    "range": 2703,
+    "speed": 1196,
     "heatPerShot": 4.0
   },
   {
@@ -123,8 +123,8 @@
     "energy": 0.0,
     "distortion": 0.0,
     "dps": 455.2,
-    "range": 2608,
-    "speed": 1600,
+    "range": 2996,
+    "speed": 1184,
     "heatPerShot": 2.4
   },
   {
@@ -139,8 +139,8 @@
     "energy": 0.0,
     "distortion": 0.0,
     "dps": 759.0,
-    "range": 2601,
-    "speed": 900,
+    "range": 2996,
+    "speed": 1184,
     "heatPerShot": 6.0
   },
   {
@@ -155,8 +155,8 @@
     "energy": 0.0,
     "distortion": 0.0,
     "dps": 455.4,
-    "range": 2608,
-    "speed": 1600,
+    "range": 2996,
+    "speed": 1184,
     "heatPerShot": 3.0
   },
   {
@@ -171,8 +171,8 @@
     "energy": 0.0,
     "distortion": 0.0,
     "dps": 1138.5,
-    "range": 2998,
-    "speed": 864,
+    "range": 3502,
+    "speed": 1152,
     "heatPerShot": 6.0
   },
   {
@@ -187,8 +187,8 @@
     "energy": 0.0,
     "distortion": 0.0,
     "dps": 270.8,
-    "range": 6525,
-    "speed": 900,
+    "range": 3502,
+    "speed": 1152,
     "heatPerShot": 12.0
   },
   {
@@ -203,8 +203,8 @@
     "energy": 0.0,
     "distortion": 0.0,
     "dps": 6000.0,
-    "range": 2814,
-    "speed": 840,
+    "range": 5004,
+    "speed": 1112,
     "heatPerShot": 6.0
   },
   {
@@ -219,8 +219,8 @@
     "energy": 0.0,
     "distortion": 0.0,
     "dps": 1707.0,
-    "range": 3304,
-    "speed": 828,
+    "range": 5004,
+    "speed": 1112,
     "heatPerShot": 6.0
   },
   {
@@ -235,8 +235,8 @@
     "energy": 0.0,
     "distortion": 0.0,
     "dps": 2700.0,
-    "range": 6148,
-    "speed": 564,
+    "range": 6003,
+    "speed": 973,
     "heatPerShot": 91125.0
   },
   {
@@ -251,8 +251,8 @@
     "energy": 0.0,
     "distortion": 0.0,
     "dps": 2562.0,
-    "range": 3604,
-    "speed": 792,
+    "range": 7495,
+    "speed": 1080,
     "heatPerShot": 6.0
   },
   {
@@ -267,8 +267,8 @@
     "energy": 0.0,
     "distortion": 0.0,
     "dps": 2833.3,
-    "range": 4895,
-    "speed": 890,
+    "range": 5004,
+    "speed": 1112,
     "heatPerShot": 6.7
   },
   {
@@ -283,8 +283,8 @@
     "energy": 0.0,
     "distortion": 0.0,
     "dps": 3333.3,
-    "range": 4496,
-    "speed": 850,
+    "range": 9097,
+    "speed": 1048,
     "heatPerShot": 5.0
   },
   {
@@ -299,8 +299,8 @@
     "energy": 0.0,
     "distortion": 0.0,
     "dps": 4271.0,
-    "range": 4500,
-    "speed": 720,
+    "range": 9097,
+    "speed": 1048,
     "heatPerShot": 6200.0
   },
   {
@@ -315,8 +315,8 @@
     "energy": 0.0,
     "distortion": 0.0,
     "dps": 6407.0,
-    "range": 4500,
-    "speed": 720,
+    "range": 9703,
+    "speed": 1016,
     "heatPerShot": 6200.0
   },
   {
@@ -331,8 +331,8 @@
     "energy": 0.0,
     "distortion": 0.0,
     "dps": 3700.0,
-    "range": 1561,
-    "speed": 612,
+    "range": 5004,
+    "speed": 1112,
     "heatPerShot": 91125.0
   },
   {
@@ -347,8 +347,8 @@
     "energy": 0.0,
     "distortion": 0.0,
     "dps": 4500.0,
-    "range": 5580,
-    "speed": 900,
+    "range": 9703,
+    "speed": 1016,
     "heatPerShot": 6.3
   },
   {
@@ -363,8 +363,8 @@
     "energy": 0.0,
     "distortion": 0.0,
     "dps": 201.6,
-    "range": 2000,
-    "speed": 1600,
+    "range": 1998,
+    "speed": 1350,
     "heatPerShot": 0.3
   },
   {
@@ -379,8 +379,8 @@
     "energy": 0.0,
     "distortion": 0.0,
     "dps": 201.6,
-    "range": 2000,
-    "speed": 1600,
+    "range": 1998,
+    "speed": 1350,
     "heatPerShot": 0.3
   },
   {
@@ -395,8 +395,8 @@
     "energy": 0.0,
     "distortion": 0.0,
     "dps": 201.6,
-    "range": 2000,
-    "speed": 1600,
+    "range": 1998,
+    "speed": 1350,
     "heatPerShot": 0.3
   },
   {
@@ -411,8 +411,8 @@
     "energy": 0.0,
     "distortion": 0.0,
     "dps": 66.7,
-    "range": 2000,
-    "speed": 1600,
+    "range": 1998,
+    "speed": 1350,
     "heatPerShot": 0.3
   },
   {
@@ -427,8 +427,8 @@
     "energy": 0.0,
     "distortion": 0.0,
     "dps": 201.6,
-    "range": 2000,
-    "speed": 1600,
+    "range": 1998,
+    "speed": 1350,
     "heatPerShot": 0.3
   },
   {
@@ -443,8 +443,8 @@
     "energy": 0.0,
     "distortion": 0.0,
     "dps": 338.7,
-    "range": 2304,
-    "speed": 1600,
+    "range": 2167,
+    "speed": 1346,
     "heatPerShot": 0.3
   },
   {
@@ -459,8 +459,8 @@
     "energy": 0.0,
     "distortion": 0.0,
     "dps": 450.0,
-    "range": 2304,
-    "speed": 1200,
+    "range": 2167,
+    "speed": 1346,
     "heatPerShot": 0.3
   },
   {
@@ -475,8 +475,8 @@
     "energy": 0.0,
     "distortion": 0.0,
     "dps": 1054.0,
-    "range": 2835,
-    "speed": 1050,
+    "range": 2167,
+    "speed": 1346,
     "heatPerShot": 0.4
   },
   {
@@ -491,8 +491,8 @@
     "energy": 0.0,
     "distortion": 0.0,
     "dps": 506.7,
-    "range": 2608,
-    "speed": 1600,
+    "range": 2398,
+    "speed": 1332,
     "heatPerShot": 0.5
   },
   {
@@ -507,8 +507,8 @@
     "energy": 0.0,
     "distortion": 0.0,
     "dps": 1266.0,
-    "range": 3000,
-    "speed": 1200,
+    "range": 2799,
+    "speed": 1296,
     "heatPerShot": 0.5
   },
   {
@@ -523,8 +523,8 @@
     "energy": 0.0,
     "distortion": 0.0,
     "dps": 953.3,
-    "range": 3001,
-    "speed": 1450,
+    "range": 2799,
+    "speed": 1296,
     "heatPerShot": 0.5
   },
   {
@@ -539,8 +539,8 @@
     "energy": 0.0,
     "distortion": 0.0,
     "dps": 1266.0,
-    "range": 2997,
-    "speed": 900,
+    "range": 2799,
+    "speed": 1296,
     "heatPerShot": 0.5
   },
   {
@@ -555,8 +555,8 @@
     "energy": 0.0,
     "distortion": 0.0,
     "dps": 1266.0,
-    "range": 3000,
-    "speed": 1200,
+    "range": 2799,
+    "speed": 1296,
     "heatPerShot": 0.5
   },
   {
@@ -571,8 +571,8 @@
     "energy": 0.0,
     "distortion": 0.0,
     "dps": 997.5,
-    "range": 3003,
-    "speed": 1650,
+    "range": 2799,
+    "speed": 1296,
     "heatPerShot": 0.9
   },
   {
@@ -587,8 +587,8 @@
     "energy": 0.0,
     "distortion": 0.0,
     "dps": 1897.5,
-    "range": 3303,
-    "speed": 900,
+    "range": 4003,
+    "speed": 1251,
     "heatPerShot": 0.6
   },
   {
@@ -603,8 +603,8 @@
     "energy": 0.0,
     "distortion": 0.0,
     "dps": 3250.0,
-    "range": 4000,
-    "speed": 1000,
+    "range": 4003,
+    "speed": 1251,
     "heatPerShot": 0.3
   },
   {
@@ -619,8 +619,8 @@
     "energy": 0.0,
     "distortion": 0.0,
     "dps": 2848.5,
-    "range": 3600,
-    "speed": 900,
+    "range": 6002,
+    "speed": 1215,
     "heatPerShot": 2.4
   },
   {
@@ -635,8 +635,8 @@
     "energy": 0.0,
     "distortion": 0.0,
     "dps": 2848.5,
-    "range": 3600,
-    "speed": 900,
+    "range": 6002,
+    "speed": 1215,
     "heatPerShot": 0.7
   },
   {
@@ -651,8 +651,8 @@
     "energy": 0.0,
     "distortion": 0.0,
     "dps": 2848.0,
-    "range": 3600,
-    "speed": 1200,
+    "range": 6002,
+    "speed": 1215,
     "heatPerShot": 0.7
   },
   {
@@ -667,8 +667,8 @@
     "energy": 0.0,
     "distortion": 0.0,
     "dps": 4380.0,
-    "range": 3996,
-    "speed": 900,
+    "range": 7274,
+    "speed": 1179,
     "heatPerShot": 0.5
   },
   {
@@ -683,8 +683,8 @@
     "energy": 0.0,
     "distortion": 0.0,
     "dps": 4380.0,
-    "range": 3996,
-    "speed": 900,
+    "range": 7274,
+    "speed": 1179,
     "heatPerShot": 0.5
   },
   {
@@ -699,8 +699,8 @@
     "energy": 0.0,
     "distortion": 0.0,
     "dps": 300.0,
-    "range": 2004,
-    "speed": 1200,
+    "range": 1995,
+    "speed": 1500,
     "heatPerShot": 0.7
   },
   {
@@ -715,8 +715,8 @@
     "energy": 0.0,
     "distortion": 0.0,
     "dps": 450.0,
-    "range": 2310,
-    "speed": 1320,
+    "range": 2153,
+    "speed": 1495,
     "heatPerShot": 0.7
   },
   {
@@ -731,8 +731,8 @@
     "energy": 0.0,
     "distortion": 0.0,
     "dps": 450.0,
-    "range": 2304,
-    "speed": 1200,
+    "range": 2153,
+    "speed": 1495,
     "heatPerShot": 0.7
   },
   {
@@ -747,8 +747,8 @@
     "energy": 0.0,
     "distortion": 0.0,
     "dps": 675.0,
-    "range": 2604,
-    "speed": 1200,
+    "range": 2398,
+    "speed": 1480,
     "heatPerShot": 0.8
   },
   {
@@ -763,8 +763,8 @@
     "energy": 0.0,
     "distortion": 0.0,
     "dps": 46.8,
-    "range": 2000,
-    "speed": 1000,
+    "range": 1251,
+    "speed": 900,
     "heatPerShot": 0.0
   },
   {
@@ -779,8 +779,8 @@
     "energy": 0.0,
     "distortion": 0.0,
     "dps": 46.8,
-    "range": 2000,
-    "speed": 1000,
+    "range": 1251,
+    "speed": 900,
     "heatPerShot": 0.0
   },
   {
@@ -795,8 +795,8 @@
     "energy": 0.0,
     "distortion": 0.0,
     "dps": 70.0,
-    "range": 2000,
-    "speed": 1000,
+    "range": 1354,
+    "speed": 897,
     "heatPerShot": 0.0
   },
   {
@@ -811,8 +811,8 @@
     "energy": 0.0,
     "distortion": 0.0,
     "dps": 70.0,
-    "range": 2000,
-    "speed": 1000,
+    "range": 1354,
+    "speed": 897,
     "heatPerShot": 0.0
   },
   {
@@ -827,8 +827,8 @@
     "energy": 0.0,
     "distortion": 0.0,
     "dps": 105.0,
-    "range": 2000,
-    "speed": 1000,
+    "range": 1501,
+    "speed": 888,
     "heatPerShot": 0.0
   },
   {
@@ -843,8 +843,8 @@
     "energy": 0.0,
     "distortion": 0.0,
     "dps": 105.0,
-    "range": 2000,
-    "speed": 1000,
+    "range": 1501,
+    "speed": 888,
     "heatPerShot": 0.0
   },
   {
@@ -859,8 +859,8 @@
     "energy": 0.0,
     "distortion": 0.0,
     "dps": 355.0,
-    "range": 7500,
-    "speed": 1000,
+    "range": 1251,
+    "speed": 900,
     "heatPerShot": 0.0
   },
   {
@@ -875,8 +875,8 @@
     "energy": 0.0,
     "distortion": 81.0,
     "dps": 135.0,
-    "range": 2000,
-    "speed": 1300,
+    "range": 1501,
+    "speed": 1080,
     "heatPerShot": 0.0
   },
   {
@@ -891,8 +891,8 @@
     "energy": 9.0,
     "distortion": 121.5,
     "dps": 217.5,
-    "range": 2301,
-    "speed": 1300,
+    "range": 1625,
+    "speed": 1076,
     "heatPerShot": 0.0
   },
   {
@@ -907,8 +907,8 @@
     "energy": 0.0,
     "distortion": 81.0,
     "dps": 202.5,
-    "range": 2301,
-    "speed": 1300,
+    "range": 1625,
+    "speed": 1076,
     "heatPerShot": 2000.0
   },
   {
@@ -923,8 +923,8 @@
     "energy": 0.0,
     "distortion": 182.52,
     "dps": 304.2,
-    "range": 2595,
-    "speed": 1300,
+    "range": 1802,
+    "speed": 1066,
     "heatPerShot": 0.0
   },
   {
@@ -939,8 +939,8 @@
     "energy": 0.0,
     "distortion": 25.7,
     "dps": 171.3,
-    "range": 2000,
-    "speed": 1300,
+    "range": 1202,
+    "speed": 1350,
     "heatPerShot": 0.0
   },
   {
@@ -955,8 +955,8 @@
     "energy": 0.0,
     "distortion": 27.0,
     "dps": 225.0,
-    "range": 2302,
-    "speed": 1430,
+    "range": 1292,
+    "speed": 1346,
     "heatPerShot": 400.0
   },
   {
@@ -971,8 +971,8 @@
     "energy": 0.0,
     "distortion": 38.5,
     "dps": 256.7,
-    "range": 2301,
-    "speed": 1300,
+    "range": 1292,
+    "speed": 1346,
     "heatPerShot": 0.0
   },
   {
@@ -987,8 +987,8 @@
     "energy": 0.0,
     "distortion": 57.9,
     "dps": 386.0,
-    "range": 2595,
-    "speed": 1300,
+    "range": 1439,
+    "speed": 1332,
     "heatPerShot": 0.0
   },
   {
@@ -1003,8 +1003,8 @@
     "energy": 0.0,
     "distortion": 60.0,
     "dps": 60.0,
-    "range": 1400,
-    "speed": 700,
+    "range": 1050,
+    "speed": 778,
     "heatPerShot": 0.0
   },
   {
@@ -1019,8 +1019,8 @@
     "energy": 0.0,
     "distortion": 90.0,
     "dps": 90.0,
-    "range": 1400,
-    "speed": 700,
+    "range": 1502,
+    "speed": 751,
     "heatPerShot": 0.0
   },
   {
@@ -1035,8 +1035,24 @@
     "energy": 0.0,
     "distortion": 130.0,
     "dps": 130.0,
-    "range": 1400,
-    "speed": 700,
+    "range": 2253,
+    "speed": 729,
+    "heatPerShot": 0.0
+  },
+  {
+    "name": "Gen2 LaserBeam S9",
+    "entity": "VNCL_Gen2_LaserBeam_S9",
+    "type": "Laser Beam",
+    "dmgClass": "energy",
+    "size": 9,
+    "fireRate": 0,
+    "alpha": 0.0,
+    "physical": 0.0,
+    "energy": 0.0,
+    "distortion": 0.0,
+    "dps": 0.0,
+    "range": 7924,
+    "speed": 1240,
     "heatPerShot": 0.0
   },
   {
@@ -1051,8 +1067,24 @@
     "energy": 0.0,
     "distortion": 0.0,
     "dps": 0.0,
-    "range": 2800,
-    "speed": 700,
+    "range": 8003,
+    "speed": 1220,
+    "heatPerShot": 0.0
+  },
+  {
+    "name": "Vanduul LaserBeam S12 TSG",
+    "entity": "Vanduul_LaserBeam_S12_TSG",
+    "type": "Laser Beam",
+    "dmgClass": "energy",
+    "size": 12,
+    "fireRate": 0,
+    "alpha": 0.0,
+    "physical": 0.0,
+    "energy": 0.0,
+    "distortion": 0.0,
+    "dps": 0.0,
+    "range": 8004,
+    "speed": 1200,
     "heatPerShot": 0.0
   },
   {
@@ -1067,8 +1099,8 @@
     "energy": 49.25,
     "distortion": 0.0,
     "dps": 205.2,
-    "range": 1998,
-    "speed": 1800,
+    "range": 2004,
+    "speed": 1200,
     "heatPerShot": 0.0
   },
   {
@@ -1083,8 +1115,8 @@
     "energy": 49.25,
     "distortion": 0.0,
     "dps": 205.2,
-    "range": 1998,
-    "speed": 1800,
+    "range": 2004,
+    "speed": 1200,
     "heatPerShot": 0.0
   },
   {
@@ -1099,8 +1131,8 @@
     "energy": 97.2,
     "distortion": 0.0,
     "dps": 243.0,
-    "range": 2002,
-    "speed": 1400,
+    "range": 2004,
+    "speed": 1200,
     "heatPerShot": 0.0
   },
   {
@@ -1115,8 +1147,8 @@
     "energy": 182.25,
     "distortion": 0.0,
     "dps": 303.8,
-    "range": 2000,
-    "speed": 1000,
+    "range": 2004,
+    "speed": 1200,
     "heatPerShot": 0.0
   },
   {
@@ -1131,8 +1163,24 @@
     "energy": 182.25,
     "distortion": 0.0,
     "dps": 303.8,
-    "range": 2000,
-    "speed": 1000,
+    "range": 2004,
+    "speed": 1200,
+    "heatPerShot": 0.0
+  },
+  {
+    "name": "Gen2 LaserCannon S1",
+    "entity": "VNCL_Gen2_LaserCannon_S1",
+    "type": "Laser Cannon",
+    "dmgClass": "energy",
+    "size": 1,
+    "fireRate": 60,
+    "alpha": 85.0,
+    "physical": 0.0,
+    "energy": 85.0,
+    "distortion": 0.0,
+    "dps": 85.0,
+    "range": 2004,
+    "speed": 1200,
     "heatPerShot": 0.0
   },
   {
@@ -1147,8 +1195,8 @@
     "energy": 8.0,
     "distortion": 0.0,
     "dps": 16.0,
-    "range": 2000,
-    "speed": 1000,
+    "range": 2004,
+    "speed": 1200,
     "heatPerShot": 0.0
   },
   {
@@ -1163,8 +1211,8 @@
     "energy": 72.9,
     "distortion": 0.0,
     "dps": 425.3,
-    "range": 1998,
-    "speed": 1800,
+    "range": 2004,
+    "speed": 1200,
     "heatPerShot": 0.0
   },
   {
@@ -1179,8 +1227,8 @@
     "energy": 74.03,
     "distortion": 0.0,
     "dps": 308.5,
-    "range": 2304,
-    "speed": 1800,
+    "range": 2165,
+    "speed": 1196,
     "heatPerShot": 0.0
   },
   {
@@ -1195,8 +1243,8 @@
     "energy": 74.03,
     "distortion": 0.0,
     "dps": 308.5,
-    "range": 2304,
-    "speed": 1800,
+    "range": 2165,
+    "speed": 1196,
     "heatPerShot": 0.0
   },
   {
@@ -1211,8 +1259,8 @@
     "energy": 145.8,
     "distortion": 0.0,
     "dps": 364.5,
-    "range": 2296,
-    "speed": 1400,
+    "range": 2165,
+    "speed": 1196,
     "heatPerShot": 0.0
   },
   {
@@ -1227,8 +1275,8 @@
     "energy": 273.38,
     "distortion": 0.0,
     "dps": 455.6,
-    "range": 2300,
-    "speed": 1000,
+    "range": 2165,
+    "speed": 1196,
     "heatPerShot": 0.0
   },
   {
@@ -1243,8 +1291,8 @@
     "energy": 273.38,
     "distortion": 0.0,
     "dps": 455.6,
-    "range": 2300,
-    "speed": 1000,
+    "range": 2165,
+    "speed": 1196,
     "heatPerShot": 0.0
   },
   {
@@ -1259,8 +1307,8 @@
     "energy": 272.97,
     "distortion": 0.0,
     "dps": 455.0,
-    "range": 2301,
-    "speed": 1300,
+    "range": 2165,
+    "speed": 1196,
     "heatPerShot": 1000.0
   },
   {
@@ -1275,8 +1323,8 @@
     "energy": 89.1,
     "distortion": 0.0,
     "dps": 519.7,
-    "range": 2304,
-    "speed": 1800,
+    "range": 2165,
+    "speed": 1196,
     "heatPerShot": 0.0
   },
   {
@@ -1291,8 +1339,8 @@
     "energy": 110.81,
     "distortion": 0.0,
     "dps": 461.7,
-    "range": 2592,
-    "speed": 1800,
+    "range": 2404,
+    "speed": 1184,
     "heatPerShot": 0.0
   },
   {
@@ -1307,8 +1355,8 @@
     "energy": 110.81,
     "distortion": 0.0,
     "dps": 461.7,
-    "range": 2592,
-    "speed": 1800,
+    "range": 2404,
+    "speed": 1184,
     "heatPerShot": 0.0
   },
   {
@@ -1323,8 +1371,8 @@
     "energy": 218.7,
     "distortion": 0.0,
     "dps": 546.8,
-    "range": 2604,
-    "speed": 1400,
+    "range": 2404,
+    "speed": 1184,
     "heatPerShot": 0.0
   },
   {
@@ -1339,8 +1387,8 @@
     "energy": 218.7,
     "distortion": 0.0,
     "dps": 546.8,
-    "range": 2604,
-    "speed": 1400,
+    "range": 2404,
+    "speed": 1184,
     "heatPerShot": 0.0
   },
   {
@@ -1355,8 +1403,8 @@
     "energy": 410.18,
     "distortion": 0.0,
     "dps": 683.6,
-    "range": 2600,
-    "speed": 1000,
+    "range": 2404,
+    "speed": 1184,
     "heatPerShot": 0.0
   },
   {
@@ -1371,8 +1419,8 @@
     "energy": 410.18,
     "distortion": 0.0,
     "dps": 683.6,
-    "range": 2600,
-    "speed": 1000,
+    "range": 2404,
+    "speed": 1184,
     "heatPerShot": 0.0
   },
   {
@@ -1387,8 +1435,8 @@
     "energy": 166.21,
     "distortion": 0.0,
     "dps": 692.5,
-    "range": 3007,
-    "speed": 1728,
+    "range": 2799,
+    "speed": 1152,
     "heatPerShot": 0.0
   },
   {
@@ -1403,8 +1451,8 @@
     "energy": 327.89,
     "distortion": 0.0,
     "dps": 819.7,
-    "range": 2997,
-    "speed": 1344,
+    "range": 2799,
+    "speed": 1152,
     "heatPerShot": 0.0
   },
   {
@@ -1419,8 +1467,8 @@
     "energy": 615.28,
     "distortion": 0.0,
     "dps": 1025.5,
-    "range": 3005,
-    "speed": 960,
+    "range": 2799,
+    "speed": 1152,
     "heatPerShot": 0.0
   },
   {
@@ -1435,8 +1483,8 @@
     "energy": 248.67,
     "distortion": 0.0,
     "dps": 1036.1,
-    "range": 3295,
-    "speed": 1656,
+    "range": 4003,
+    "speed": 1112,
     "heatPerShot": 0.0
   },
   {
@@ -1451,8 +1499,8 @@
     "energy": 492.16,
     "distortion": 0.0,
     "dps": 1230.4,
-    "range": 3310,
-    "speed": 1288,
+    "range": 4003,
+    "speed": 1112,
     "heatPerShot": 0.0
   },
   {
@@ -1467,8 +1515,8 @@
     "energy": 921.78,
     "distortion": 0.0,
     "dps": 1536.3,
-    "range": 3303,
-    "speed": 920,
+    "range": 4003,
+    "speed": 1112,
     "heatPerShot": 0.0
   },
   {
@@ -1483,8 +1531,8 @@
     "energy": 374.14,
     "distortion": 0.0,
     "dps": 1558.9,
-    "range": 3596,
-    "speed": 1584,
+    "range": 6005,
+    "speed": 1080,
     "heatPerShot": 0.0
   },
   {
@@ -1499,8 +1547,8 @@
     "energy": 738.4,
     "distortion": 0.0,
     "dps": 1846.0,
-    "range": 3597,
-    "speed": 1232,
+    "range": 6005,
+    "speed": 1080,
     "heatPerShot": 0.0
   },
   {
@@ -1515,8 +1563,8 @@
     "energy": 1383.48,
     "distortion": 0.0,
     "dps": 2305.8,
-    "range": 3599,
-    "speed": 880,
+    "range": 6005,
+    "speed": 1080,
     "heatPerShot": 0.0
   },
   {
@@ -1531,8 +1579,8 @@
     "energy": 900.0,
     "distortion": 0.0,
     "dps": 1800.0,
-    "range": 7802,
-    "speed": 1144,
+    "range": 6005,
+    "speed": 1080,
     "heatPerShot": 0.0
   },
   {
@@ -1547,8 +1595,8 @@
     "energy": 2075.71,
     "distortion": 0.0,
     "dps": 3459.5,
-    "range": 3998,
-    "speed": 840,
+    "range": 7284,
+    "speed": 1048,
     "heatPerShot": 0.0
   },
   {
@@ -1563,8 +1611,8 @@
     "energy": 14040.0,
     "distortion": 0.0,
     "dps": 14040.0,
-    "range": 3998,
-    "speed": 840,
+    "range": 7284,
+    "speed": 1048,
     "heatPerShot": 0.0
   },
   {
@@ -1579,8 +1627,8 @@
     "energy": 5150.0,
     "distortion": 0.0,
     "dps": 4720.8,
-    "range": 3999,
-    "speed": 860,
+    "range": 7284,
+    "speed": 1048,
     "heatPerShot": 0.0
   },
   {
@@ -1595,8 +1643,8 @@
     "energy": 2075.71,
     "distortion": 0.0,
     "dps": 2075.7,
-    "range": 3998,
-    "speed": 840,
+    "range": 7284,
+    "speed": 1048,
     "heatPerShot": 0.0
   },
   {
@@ -1611,8 +1659,8 @@
     "energy": 5150.0,
     "distortion": 0.0,
     "dps": 4720.8,
-    "range": 3999,
-    "speed": 860,
+    "range": 7284,
+    "speed": 1048,
     "heatPerShot": 0.0
   },
   {
@@ -1627,8 +1675,8 @@
     "energy": 3113.64,
     "distortion": 0.0,
     "dps": 5189.4,
-    "range": 4504,
-    "speed": 800,
+    "range": 7762,
+    "speed": 1016,
     "heatPerShot": 0.0
   },
   {
@@ -1643,8 +1691,8 @@
     "energy": 4670.46,
     "distortion": 0.0,
     "dps": 7784.1,
-    "range": 3800,
-    "speed": 760,
+    "range": 7916,
+    "speed": 992,
     "heatPerShot": 0.0
   },
   {
@@ -1659,8 +1707,8 @@
     "energy": 4670.46,
     "distortion": 0.0,
     "dps": 4670.5,
-    "range": 3800,
-    "speed": 760,
+    "range": 7916,
+    "speed": 992,
     "heatPerShot": 0.0
   },
   {
@@ -1675,8 +1723,8 @@
     "energy": 17.1,
     "distortion": 0.0,
     "dps": 313.5,
-    "range": 2592,
-    "speed": 1800,
+    "range": 1723,
+    "speed": 1346,
     "heatPerShot": 0.0
   },
   {
@@ -1691,8 +1739,8 @@
     "energy": 73.2,
     "distortion": 0.0,
     "dps": 427.0,
-    "range": 2000,
-    "speed": 1000,
+    "range": 1605,
+    "speed": 1500,
     "heatPerShot": 0.0
   },
   {
@@ -1707,8 +1755,8 @@
     "energy": 66.51,
     "distortion": 0.0,
     "dps": 388.0,
-    "range": 2000,
-    "speed": 1000,
+    "range": 1605,
+    "speed": 1500,
     "heatPerShot": 0.0
   },
   {
@@ -1723,8 +1771,8 @@
     "energy": 17.5,
     "distortion": 0.0,
     "dps": 218.8,
-    "range": 1998,
-    "speed": 1800,
+    "range": 1605,
+    "speed": 1500,
     "heatPerShot": 0.0
   },
   {
@@ -1739,8 +1787,8 @@
     "energy": 109.7,
     "distortion": 0.0,
     "dps": 639.9,
-    "range": 2300,
-    "speed": 1000,
+    "range": 1734,
+    "speed": 1495,
     "heatPerShot": 0.0
   },
   {
@@ -1755,8 +1803,8 @@
     "energy": 99.72,
     "distortion": 0.0,
     "dps": 581.7,
-    "range": 2300,
-    "speed": 1000,
+    "range": 1734,
+    "speed": 1495,
     "heatPerShot": 0.0
   },
   {
@@ -1771,8 +1819,8 @@
     "energy": 99.72,
     "distortion": 0.0,
     "dps": 581.7,
-    "range": 2300,
-    "speed": 1000,
+    "range": 1734,
+    "speed": 1495,
     "heatPerShot": 0.0
   },
   {
@@ -1787,8 +1835,8 @@
     "energy": 26.24,
     "distortion": 0.0,
     "dps": 328.0,
-    "range": 2304,
-    "speed": 1800,
+    "range": 1734,
+    "speed": 1495,
     "heatPerShot": 0.0
   },
   {
@@ -1803,8 +1851,8 @@
     "energy": 151.6,
     "distortion": 0.0,
     "dps": 884.3,
-    "range": 2600,
-    "speed": 1000,
+    "range": 1924,
+    "speed": 1480,
     "heatPerShot": 1800.0
   },
   {
@@ -1819,8 +1867,8 @@
     "energy": 134.78,
     "distortion": 0.0,
     "dps": 786.2,
-    "range": 2600,
-    "speed": 1000,
+    "range": 1924,
+    "speed": 1480,
     "heatPerShot": 1800.0
   },
   {
@@ -1835,8 +1883,8 @@
     "energy": 43.65,
     "distortion": 0.0,
     "dps": 545.6,
-    "range": 2592,
-    "speed": 1800,
+    "range": 1924,
+    "speed": 1480,
     "heatPerShot": 0.0
   },
   {
@@ -1851,8 +1899,8 @@
     "energy": 350.0,
     "distortion": 0.0,
     "dps": 2041.7,
-    "range": 5000,
-    "speed": 1000,
+    "range": 1924,
+    "speed": 1480,
     "heatPerShot": 1800.0
   },
   {
@@ -1867,8 +1915,8 @@
     "energy": 39.5,
     "distortion": 0.0,
     "dps": 559.6,
-    "range": 2592,
-    "speed": 1800,
+    "range": 1924,
+    "speed": 1480,
     "heatPerShot": 0.0
   },
   {
@@ -1883,8 +1931,8 @@
     "energy": 36.45,
     "distortion": 0.0,
     "dps": 455.6,
-    "range": 2592,
-    "speed": 1800,
+    "range": 1924,
+    "speed": 1480,
     "heatPerShot": 1200.0
   },
   {
@@ -1899,8 +1947,8 @@
     "energy": 85.0,
     "distortion": 0.0,
     "dps": 1062.5,
-    "range": 3003,
-    "speed": 1650,
+    "range": 2246,
+    "speed": 1440,
     "heatPerShot": 0.0
   },
   {
@@ -1915,8 +1963,8 @@
     "energy": 65.43,
     "distortion": 0.0,
     "dps": 817.9,
-    "range": 3006,
-    "speed": 1800,
+    "range": 2246,
+    "speed": 1440,
     "heatPerShot": 0.0
   },
   {
@@ -1931,8 +1979,8 @@
     "energy": 202.18,
     "distortion": 0.0,
     "dps": 1179.4,
-    "range": 3000,
-    "speed": 1000,
+    "range": 2246,
+    "speed": 1440,
     "heatPerShot": 0.0
   },
   {
@@ -1947,8 +1995,8 @@
     "energy": 150.0,
     "distortion": 0.0,
     "dps": 875.0,
-    "range": 7200,
-    "speed": 2400,
+    "range": 2246,
+    "speed": 1440,
     "heatPerShot": 0.0
   },
   {
@@ -1963,8 +2011,8 @@
     "energy": 65.43,
     "distortion": 0.0,
     "dps": 817.9,
-    "range": 3006,
-    "speed": 1800,
+    "range": 2246,
+    "speed": 1440,
     "heatPerShot": 0.0
   },
   {
@@ -1979,8 +2027,8 @@
     "energy": 98.19,
     "distortion": 0.0,
     "dps": 1227.4,
-    "range": 3294,
-    "speed": 1800,
+    "range": 3197,
+    "speed": 1390,
     "heatPerShot": 0.0
   },
   {
@@ -1995,8 +2043,8 @@
     "energy": 336.78,
     "distortion": 0.0,
     "dps": 1964.5,
-    "range": 3300,
-    "speed": 1000,
+    "range": 3197,
+    "speed": 1390,
     "heatPerShot": 0.0
   },
   {
@@ -2011,8 +2059,8 @@
     "energy": 98.19,
     "distortion": 0.0,
     "dps": 1227.4,
-    "range": 3294,
-    "speed": 1800,
+    "range": 3197,
+    "speed": 1390,
     "heatPerShot": 0.0
   },
   {
@@ -2027,8 +2075,24 @@
     "energy": 98.19,
     "distortion": 0.0,
     "dps": 1227.4,
-    "range": 3294,
-    "speed": 1800,
+    "range": 3197,
+    "speed": 1390,
+    "heatPerShot": 0.0
+  },
+  {
+    "name": "Gen2 LaserRepeater S6",
+    "entity": "VNCL_Gen2_LaserRepeater_S6",
+    "type": "Laser Repeater",
+    "dmgClass": "energy",
+    "size": 6,
+    "fireRate": 750,
+    "alpha": 64.0,
+    "physical": 0.0,
+    "energy": 64.0,
+    "distortion": 0.0,
+    "dps": 800.0,
+    "range": 4806,
+    "speed": 1350,
     "heatPerShot": 0.0
   },
   {
@@ -2043,8 +2107,8 @@
     "energy": 147.33,
     "distortion": 0.0,
     "dps": 1841.6,
-    "range": 3600,
-    "speed": 1800,
+    "range": 4806,
+    "speed": 1350,
     "heatPerShot": 0.0
   },
   {
@@ -2059,8 +2123,8 @@
     "energy": 505.35,
     "distortion": 0.0,
     "dps": 2947.9,
-    "range": 3600,
-    "speed": 1000,
+    "range": 4806,
+    "speed": 1350,
     "heatPerShot": 0.0
   },
   {
@@ -2075,8 +2139,8 @@
     "energy": 147.33,
     "distortion": 0.0,
     "dps": 1841.6,
-    "range": 3600,
-    "speed": 1800,
+    "range": 4806,
+    "speed": 1350,
     "heatPerShot": 0.0
   },
   {
@@ -2091,8 +2155,8 @@
     "energy": 25000.0,
     "distortion": 0.0,
     "dps": 145833.3,
-    "range": 5000,
-    "speed": 1000,
+    "range": 6405,
+    "speed": 1220,
     "heatPerShot": 50000.0
   },
   {
@@ -2107,8 +2171,8 @@
     "energy": 63.0,
     "distortion": 0.0,
     "dps": 52.5,
-    "range": 2000,
-    "speed": 1000,
+    "range": 999,
+    "speed": 900,
     "heatPerShot": 0.0
   },
   {
@@ -2123,8 +2187,8 @@
     "energy": 99.0,
     "distortion": 0.0,
     "dps": 82.5,
-    "range": 2000,
-    "speed": 1000,
+    "range": 1076,
+    "speed": 897,
     "heatPerShot": 12000.0
   },
   {
@@ -2139,8 +2203,8 @@
     "energy": 139.5,
     "distortion": 0.0,
     "dps": 116.2,
-    "range": 2000,
-    "speed": 1000,
+    "range": 1199,
+    "speed": 888,
     "heatPerShot": 0.0
   },
   {
@@ -2155,8 +2219,8 @@
     "energy": 0.0,
     "distortion": 0.0,
     "dps": 112.5,
-    "range": 1050,
-    "speed": 3000,
+    "range": 3003,
+    "speed": 1155,
     "heatPerShot": 0.0
   },
   {
@@ -2171,8 +2235,8 @@
     "energy": 0.0,
     "distortion": 0.0,
     "dps": 262.5,
-    "range": 1200,
-    "speed": 3000,
+    "range": 3234,
+    "speed": 1151,
     "heatPerShot": 0.0
   },
   {
@@ -2187,8 +2251,8 @@
     "energy": 0.0,
     "distortion": 0.0,
     "dps": 262.5,
-    "range": 5500,
-    "speed": 5000,
+    "range": 3234,
+    "speed": 1151,
     "heatPerShot": 0.0
   },
   {
@@ -2203,8 +2267,8 @@
     "energy": 0.0,
     "distortion": 0.0,
     "dps": 562.5,
-    "range": 1500,
-    "speed": 3000,
+    "range": 3602,
+    "speed": 1140,
     "heatPerShot": 0.0
   },
   {
@@ -2219,8 +2283,8 @@
     "energy": 0.0,
     "distortion": 0.0,
     "dps": 14416.0,
-    "range": 10000,
-    "speed": 5000,
+    "range": 11991,
+    "speed": 939,
     "heatPerShot": 50.0
   },
   {
@@ -2235,8 +2299,8 @@
     "energy": 0.0,
     "distortion": 0.0,
     "dps": 14416.0,
-    "range": 10000,
-    "speed": 5000,
+    "range": 11991,
+    "speed": 939,
     "heatPerShot": 50.0
   },
   {
@@ -2251,8 +2315,8 @@
     "energy": 0.0,
     "distortion": 0.0,
     "dps": 33333.3,
-    "range": 10000,
-    "speed": 5000,
+    "range": 12003,
+    "speed": 924,
     "heatPerShot": 0.0
   },
   {
@@ -2267,8 +2331,8 @@
     "energy": 101.2,
     "distortion": 0.0,
     "dps": 253.0,
-    "range": 2002,
-    "speed": 1400,
+    "range": 1247,
+    "speed": 765,
     "heatPerShot": 0.0
   },
   {
@@ -2283,8 +2347,8 @@
     "energy": 152.8,
     "distortion": 0.0,
     "dps": 382.0,
-    "range": 2296,
-    "speed": 1400,
+    "range": 1349,
+    "speed": 762,
     "heatPerShot": 0.0
   },
   {
@@ -2299,8 +2363,8 @@
     "energy": 220.7,
     "distortion": 0.0,
     "dps": 551.8,
-    "range": 2604,
-    "speed": 1400,
+    "range": 1502,
+    "speed": 755,
     "heatPerShot": 0.0
   },
   {
@@ -2315,8 +2379,8 @@
     "energy": 567.0,
     "distortion": 0.0,
     "dps": 1890.0,
-    "range": 3478,
-    "speed": 1288,
+    "range": 2503,
+    "speed": 709,
     "heatPerShot": 0.0
   },
   {
@@ -2332,7 +2396,7 @@
     "distortion": 0.0,
     "dps": 316.5,
     "range": 2002,
-    "speed": 1400,
+    "speed": 1275,
     "heatPerShot": 0.0
   },
   {
@@ -2347,8 +2411,8 @@
     "energy": 56.97,
     "distortion": 0.0,
     "dps": 474.8,
-    "range": 2296,
-    "speed": 1400,
+    "range": 2161,
+    "speed": 1271,
     "heatPerShot": 0.0
   },
   {
@@ -2363,8 +2427,8 @@
     "energy": 85.5,
     "distortion": 0.0,
     "dps": 712.5,
-    "range": 2604,
-    "speed": 1400,
+    "range": 2403,
+    "speed": 1258,
     "heatPerShot": 0.0
   },
   {
@@ -2379,8 +2443,8 @@
     "energy": 273.13,
     "distortion": 0.0,
     "dps": 455.2,
-    "range": 2300,
-    "speed": 1000,
+    "range": 2431,
+    "speed": 1136,
     "heatPerShot": 0.0
   },
   {
@@ -2395,8 +2459,8 @@
     "energy": 156.92,
     "distortion": 0.0,
     "dps": 915.4,
-    "range": 5500,
-    "speed": 500,
+    "range": 2431,
+    "speed": 1136,
     "heatPerShot": 0.0
   },
   {
@@ -2411,8 +2475,8 @@
     "energy": 526.5,
     "distortion": 0.0,
     "dps": 877.5,
-    "range": 2600,
-    "speed": 1600,
+    "range": 2700,
+    "speed": 1125,
     "heatPerShot": 0.0
   },
   {
@@ -2427,8 +2491,8 @@
     "energy": 185.45,
     "distortion": 0.0,
     "dps": 309.1,
-    "range": 5500,
-    "speed": 500,
+    "range": 3151,
+    "speed": 1094,
     "heatPerShot": 0.0
   },
   {
@@ -2443,8 +2507,8 @@
     "energy": 972.0,
     "distortion": 0.0,
     "dps": 810.0,
-    "range": 2795,
-    "speed": 1288,
+    "range": 4499,
+    "speed": 1056,
     "heatPerShot": 0.0
   },
   {
@@ -2459,8 +2523,24 @@
     "energy": 972.0,
     "distortion": 0.0,
     "dps": 810.0,
-    "range": 2795,
-    "speed": 1288,
+    "range": 4499,
+    "speed": 1056,
+    "heatPerShot": 0.0
+  },
+  {
+    "name": "Gen2 PlasmaCannon S8",
+    "entity": "VNCL_Gen2_PlasmaCannon_S8",
+    "type": "Plasma Cannon",
+    "dmgClass": "physical",
+    "size": 8,
+    "fireRate": 60,
+    "alpha": 4671.27,
+    "physical": 0.0,
+    "energy": 4671.27,
+    "distortion": 0.0,
+    "dps": 4671.3,
+    "range": 8724,
+    "speed": 965,
     "heatPerShot": 0.0
   },
   {
@@ -2475,8 +2555,8 @@
     "energy": 202.5,
     "distortion": 0.0,
     "dps": 303.8,
-    "range": 1050,
-    "speed": 3000,
+    "range": 3003,
+    "speed": 1050,
     "heatPerShot": 0.0
   },
   {
@@ -2491,8 +2571,8 @@
     "energy": 472.5,
     "distortion": 0.0,
     "dps": 708.8,
-    "range": 1200,
-    "speed": 3000,
+    "range": 3243,
+    "speed": 1046,
     "heatPerShot": 0.0
   },
   {
@@ -2507,8 +2587,24 @@
     "energy": 1012.5,
     "distortion": 0.0,
     "dps": 1518.8,
-    "range": 1500,
-    "speed": 3000,
+    "range": 3595,
+    "speed": 1036,
+    "heatPerShot": 0.0
+  },
+  {
+    "name": "Gen2 TachyonCannon S7",
+    "entity": "VNCL_Gen2_TachyonCannon_S7",
+    "type": "Tachyon Cannon",
+    "dmgClass": "energy",
+    "size": 7,
+    "fireRate": 60,
+    "alpha": 125.0,
+    "physical": 0.0,
+    "energy": 125.0,
+    "distortion": 0.0,
+    "dps": 125.0,
+    "range": 10921,
+    "speed": 917,
     "heatPerShot": 0.0
   }
 ]
