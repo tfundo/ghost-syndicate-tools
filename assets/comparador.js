@@ -328,6 +328,7 @@
 
       <div class="comp-tabs">
         <button class="${tabShips}"   onclick="Comp.switchTab('ships')">Naves</button>
+        <button class="${tabWeapons}" onclick="Comp.switchTab('weapons')">Armas</button>
         <button class="${tabFps}"     onclick="Comp.switchTab('fps')">FPS</button>
         <button class="${tabBuilds}"  onclick="Comp.switchTab('builds')">Builds</button>
         ${selCount > 0 ? `<button class="${tabCompare}" onclick="Comp.switchTab('compare')">Comparar ${badge}</button>` : ''}
