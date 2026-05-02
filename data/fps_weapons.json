@@ -1,0 +1,2725 @@
+{
+  "version": "4.8.0",
+  "generated": "2026-05-03",
+  "weapons": [
+    {
+      "entity": "behr_pistol_ballistic_01_300",
+      "name": "S-38 \"One Empire\" Pistola",
+      "class": "Pistola",
+      "mfr": "Behring",
+      "fireRate": 450,
+      "fireModes": [
+        {
+          "mode": "Single",
+          "rpm": 450,
+          "pellets": 1
+        }
+      ],
+      "alpha": 22.5,
+      "alphaPerBullet": 22.5,
+      "pellets": 1,
+      "dps": 168.8,
+      "dmgType": "physical",
+      "physical": 22.5,
+      "energy": 0.0,
+      "distortion": 0.0,
+      "magSize": 20,
+      "totalAmmo": 80,
+      "speed": 500,
+      "range": 20,
+      "maxRange": 950
+    },
+    {
+      "entity": "behr_pistol_ballistic_01",
+      "name": "S-38 Pistola",
+      "class": "Pistola",
+      "mfr": "Behring",
+      "fireRate": 450,
+      "fireModes": [
+        {
+          "mode": "Single",
+          "rpm": 450,
+          "pellets": 1
+        }
+      ],
+      "alpha": 22.5,
+      "alphaPerBullet": 22.5,
+      "pellets": 1,
+      "dps": 168.8,
+      "dmgType": "physical",
+      "physical": 22.5,
+      "energy": 0.0,
+      "distortion": 0.0,
+      "magSize": 20,
+      "totalAmmo": 80,
+      "speed": 500,
+      "range": 20,
+      "maxRange": 950
+    },
+    {
+      "entity": "gmni_pistol_ballistic_01_pink_cian01",
+      "name": "LH86 \"Takahashi Racing\" Pistol",
+      "class": "Pistola",
+      "mfr": "Gemini",
+      "fireRate": 950,
+      "fireModes": [
+        {
+          "mode": "Rapid",
+          "rpm": 950,
+          "pellets": 1
+        }
+      ],
+      "alpha": 13.0,
+      "alphaPerBullet": 13.0,
+      "pellets": 1,
+      "dps": 205.8,
+      "dmgType": "physical",
+      "physical": 13.0,
+      "energy": 0.0,
+      "distortion": 0.0,
+      "magSize": 25,
+      "totalAmmo": 100,
+      "speed": 500,
+      "range": 20,
+      "maxRange": 950
+    },
+    {
+      "entity": "gmni_pistol_ballistic_01",
+      "name": "LH86 Pistola",
+      "class": "Pistola",
+      "mfr": "Gemini",
+      "fireRate": 950,
+      "fireModes": [
+        {
+          "mode": "Rapid",
+          "rpm": 950,
+          "pellets": 1
+        }
+      ],
+      "alpha": 13.0,
+      "alphaPerBullet": 13.0,
+      "pellets": 1,
+      "dps": 205.8,
+      "dmgType": "physical",
+      "physical": 13.0,
+      "energy": 0.0,
+      "distortion": 0.0,
+      "magSize": 25,
+      "totalAmmo": 100,
+      "speed": 500,
+      "range": 20,
+      "maxRange": 950
+    },
+    {
+      "entity": "gmni_pistol_ballistic_01_gold01",
+      "name": "LH86 Pistola \"Executive Edition\"",
+      "class": "Pistola",
+      "mfr": "Gemini",
+      "fireRate": 950,
+      "fireModes": [
+        {
+          "mode": "Rapid",
+          "rpm": 950,
+          "pellets": 1
+        }
+      ],
+      "alpha": 13.0,
+      "alphaPerBullet": 13.0,
+      "pellets": 1,
+      "dps": 205.8,
+      "dmgType": "physical",
+      "physical": 13.0,
+      "energy": 0.0,
+      "distortion": 0.0,
+      "magSize": 25,
+      "totalAmmo": 100,
+      "speed": 500,
+      "range": 20,
+      "maxRange": 950
+    },
+    {
+      "entity": "hdgw_pistol_ballistic_01",
+      "name": "Pistola de fragmentación Salvo",
+      "class": "Pistola",
+      "mfr": "Hedgewar",
+      "fireRate": 0,
+      "fireModes": [
+        {
+          "mode": "Charge",
+          "rpm": 0,
+          "pellets": 1
+        }
+      ],
+      "alpha": 45.0,
+      "alphaPerBullet": 45.0,
+      "pellets": 1,
+      "dps": 0,
+      "dmgType": "physical",
+      "physical": 45.0,
+      "energy": 0.0,
+      "distortion": 0.0,
+      "magSize": 8,
+      "totalAmmo": 32,
+      "speed": 550,
+      "range": 30,
+      "maxRange": 1100
+    },
+    {
+      "entity": "hdgw_pistol_ballistic_01_engraved02",
+      "name": "Pistola de fragmentación Salvo Esteban",
+      "class": "Pistola",
+      "mfr": "Hedgewar",
+      "fireRate": 0,
+      "fireModes": [
+        {
+          "mode": "Charge",
+          "rpm": 0,
+          "pellets": 1
+        }
+      ],
+      "alpha": 45.0,
+      "alphaPerBullet": 45.0,
+      "pellets": 1,
+      "dps": 0,
+      "dmgType": "physical",
+      "physical": 45.0,
+      "energy": 0.0,
+      "distortion": 0.0,
+      "magSize": 8,
+      "totalAmmo": 32,
+      "speed": 550,
+      "range": 30,
+      "maxRange": 1100
+    },
+    {
+      "entity": "hdgw_pistol_ballistic_01_engraved01",
+      "name": "Pistola de fragmentación Salvo Saeed",
+      "class": "Pistola",
+      "mfr": "Hedgewar",
+      "fireRate": 0,
+      "fireModes": [
+        {
+          "mode": "Charge",
+          "rpm": 0,
+          "pellets": 1
+        }
+      ],
+      "alpha": 45.0,
+      "alphaPerBullet": 45.0,
+      "pellets": 1,
+      "dps": 0,
+      "dmgType": "physical",
+      "physical": 45.0,
+      "energy": 0.0,
+      "distortion": 0.0,
+      "magSize": 8,
+      "totalAmmo": 32,
+      "speed": 550,
+      "range": 30,
+      "maxRange": 1100
+    },
+    {
+      "entity": "ksar_pistol_ballistic_01",
+      "name": "Coda Pistol",
+      "class": "Pistola",
+      "mfr": "KSar",
+      "fireRate": 180,
+      "fireModes": [
+        {
+          "mode": "Single",
+          "rpm": 180,
+          "pellets": 1
+        }
+      ],
+      "alpha": 60.0,
+      "alphaPerBullet": 60.0,
+      "pellets": 1,
+      "dps": 180.0,
+      "dmgType": "physical",
+      "physical": 60.0,
+      "energy": 0.0,
+      "distortion": 0.0,
+      "magSize": 6,
+      "totalAmmo": 24,
+      "speed": 550,
+      "range": 55,
+      "maxRange": 1100
+    },
+    {
+      "entity": "ksar_pistol_ballistic_01_iae2023",
+      "name": "Pistola \"Ascensión\" Coda",
+      "class": "Pistola",
+      "mfr": "KSar",
+      "fireRate": 180,
+      "fireModes": [
+        {
+          "mode": "Single",
+          "rpm": 180,
+          "pellets": 1
+        }
+      ],
+      "alpha": 60.0,
+      "alphaPerBullet": 60.0,
+      "pellets": 1,
+      "dps": 180.0,
+      "dmgType": "physical",
+      "physical": 60.0,
+      "energy": 0.0,
+      "distortion": 0.0,
+      "magSize": 6,
+      "totalAmmo": 24,
+      "speed": 550,
+      "range": 55,
+      "maxRange": 1100
+    },
+    {
+      "entity": "ksar_pistol_ballistic_01_headhunters01",
+      "name": "Pistola Coda \"Nighthawk\"",
+      "class": "Pistola",
+      "mfr": "KSar",
+      "fireRate": 180,
+      "fireModes": [
+        {
+          "mode": "Single",
+          "rpm": 180,
+          "pellets": 1
+        }
+      ],
+      "alpha": 60.0,
+      "alphaPerBullet": 60.0,
+      "pellets": 1,
+      "dps": 180.0,
+      "dmgType": "physical",
+      "physical": 60.0,
+      "energy": 0.0,
+      "distortion": 0.0,
+      "magSize": 6,
+      "totalAmmo": 24,
+      "speed": 550,
+      "range": 55,
+      "maxRange": 1100
+    },
+    {
+      "entity": "ksar_pistol_ballistic_01_purple_pink01",
+      "name": "Pistola Coda \"Ultraviolet\"",
+      "class": "Pistola",
+      "mfr": "KSar",
+      "fireRate": 180,
+      "fireModes": [
+        {
+          "mode": "Single",
+          "rpm": 180,
+          "pellets": 1
+        }
+      ],
+      "alpha": 60.0,
+      "alphaPerBullet": 60.0,
+      "pellets": 1,
+      "dps": 180.0,
+      "dmgType": "physical",
+      "physical": 60.0,
+      "energy": 0.0,
+      "distortion": 0.0,
+      "magSize": 6,
+      "totalAmmo": 24,
+      "speed": 550,
+      "range": 55,
+      "maxRange": 1100
+    },
+    {
+      "entity": "ksar_pistol_ballistic_01_spc",
+      "name": "Pistola Coda (Modificada)",
+      "class": "Pistola",
+      "mfr": "KSar",
+      "fireRate": 180,
+      "fireModes": [
+        {
+          "mode": "Single",
+          "rpm": 180,
+          "pellets": 1
+        }
+      ],
+      "alpha": 60.0,
+      "alphaPerBullet": 60.0,
+      "pellets": 1,
+      "dps": 180.0,
+      "dmgType": "physical",
+      "physical": 60.0,
+      "energy": 0.0,
+      "distortion": 0.0,
+      "magSize": 6,
+      "totalAmmo": 24,
+      "speed": 550,
+      "range": 55,
+      "maxRange": 1100
+    },
+    {
+      "entity": "klwe_pistol_energy_01",
+      "name": "Pistola Arclight",
+      "class": "Pistola",
+      "mfr": "Klaus & Werner",
+      "fireRate": 700,
+      "fireModes": [
+        {
+          "mode": "Burst",
+          "rpm": 700,
+          "pellets": 1
+        },
+        {
+          "mode": "Single",
+          "rpm": 500,
+          "pellets": 1
+        }
+      ],
+      "alpha": 18.0,
+      "alphaPerBullet": 18.0,
+      "pellets": 1,
+      "dps": 210.0,
+      "dmgType": "energy",
+      "physical": 0.0,
+      "energy": 18.0,
+      "distortion": 0.0,
+      "magSize": 30,
+      "totalAmmo": 120,
+      "speed": 600,
+      "range": 1200,
+      "maxRange": 1200
+    },
+    {
+      "entity": "klwe_pistol_energy_01_gold01",
+      "name": "Pistola Arclight \"Executive Edition\"",
+      "class": "Pistola",
+      "mfr": "Klaus & Werner",
+      "fireRate": 700,
+      "fireModes": [
+        {
+          "mode": "Burst",
+          "rpm": 700,
+          "pellets": 1
+        },
+        {
+          "mode": "Single",
+          "rpm": 500,
+          "pellets": 1
+        }
+      ],
+      "alpha": 18.0,
+      "alphaPerBullet": 18.0,
+      "pellets": 1,
+      "dps": 210.0,
+      "dmgType": "energy",
+      "physical": 0.0,
+      "energy": 18.0,
+      "distortion": 0.0,
+      "magSize": 30,
+      "totalAmmo": 120,
+      "speed": 600,
+      "range": 1200,
+      "maxRange": 1200
+    },
+    {
+      "entity": "klwe_pistol_energy_01_chromic01",
+      "name": "Pistola Arclight \"Glimmer\"",
+      "class": "Pistola",
+      "mfr": "Klaus & Werner",
+      "fireRate": 700,
+      "fireModes": [
+        {
+          "mode": "Burst",
+          "rpm": 700,
+          "pellets": 1
+        },
+        {
+          "mode": "Single",
+          "rpm": 500,
+          "pellets": 1
+        }
+      ],
+      "alpha": 18.0,
+      "alphaPerBullet": 18.0,
+      "pellets": 1,
+      "dps": 210.0,
+      "dmgType": "energy",
+      "physical": 0.0,
+      "energy": 18.0,
+      "distortion": 0.0,
+      "magSize": 30,
+      "totalAmmo": 120,
+      "speed": 600,
+      "range": 1200,
+      "maxRange": 1200
+    },
+    {
+      "entity": "klwe_pistol_energy_01_engraved01",
+      "name": "Pistola Arclight \"Herrero\"",
+      "class": "Pistola",
+      "mfr": "Klaus & Werner",
+      "fireRate": 700,
+      "fireModes": [
+        {
+          "mode": "Burst",
+          "rpm": 700,
+          "pellets": 1
+        },
+        {
+          "mode": "Single",
+          "rpm": 500,
+          "pellets": 1
+        }
+      ],
+      "alpha": 18.0,
+      "alphaPerBullet": 18.0,
+      "pellets": 1,
+      "dps": 210.0,
+      "dmgType": "energy",
+      "physical": 0.0,
+      "energy": 18.0,
+      "distortion": 0.0,
+      "magSize": 30,
+      "totalAmmo": 120,
+      "speed": 600,
+      "range": 1200,
+      "maxRange": 1200
+    },
+    {
+      "entity": "lbco_pistol_energy_01",
+      "name": "Pistola Yubarev",
+      "class": "Pistola",
+      "mfr": "LBCo",
+      "fireRate": 350,
+      "fireModes": [
+        {
+          "mode": "Single",
+          "rpm": 350,
+          "pellets": 1
+        }
+      ],
+      "alpha": 40.0,
+      "alphaPerBullet": 40.0,
+      "pellets": 1,
+      "dps": 233.3,
+      "dmgType": "energy",
+      "physical": 0.0,
+      "energy": 32.5,
+      "distortion": 7.5,
+      "magSize": 10,
+      "totalAmmo": 40,
+      "speed": 500,
+      "range": 20,
+      "maxRange": 1000
+    },
+    {
+      "entity": "lbco_pistol_energy_01_sunset01",
+      "name": "Pistola Yubarev \"Igniter\"",
+      "class": "Pistola",
+      "mfr": "LBCo",
+      "fireRate": 350,
+      "fireModes": [
+        {
+          "mode": "Single",
+          "rpm": 350,
+          "pellets": 1
+        }
+      ],
+      "alpha": 40.0,
+      "alphaPerBullet": 40.0,
+      "pellets": 1,
+      "dps": 233.3,
+      "dmgType": "energy",
+      "physical": 0.0,
+      "energy": 32.5,
+      "distortion": 7.5,
+      "magSize": 10,
+      "totalAmmo": 40,
+      "speed": 500,
+      "range": 20,
+      "maxRange": 1000
+    },
+    {
+      "entity": "lbco_pistol_energy_01_chromic01",
+      "name": "Pistola Yubarev \"Mirage\"",
+      "class": "Pistola",
+      "mfr": "LBCo",
+      "fireRate": 350,
+      "fireModes": [
+        {
+          "mode": "Single",
+          "rpm": 350,
+          "pellets": 1
+        }
+      ],
+      "alpha": 40.0,
+      "alphaPerBullet": 40.0,
+      "pellets": 1,
+      "dps": 233.3,
+      "dmgType": "energy",
+      "physical": 0.0,
+      "energy": 32.5,
+      "distortion": 7.5,
+      "magSize": 10,
+      "totalAmmo": 40,
+      "speed": 500,
+      "range": 20,
+      "maxRange": 1000
+    },
+    {
+      "entity": "lbco_pistol_energy_01_acid01",
+      "name": "Pistola Yubarev \"Venom\"",
+      "class": "Pistola",
+      "mfr": "LBCo",
+      "fireRate": 350,
+      "fireModes": [
+        {
+          "mode": "Single",
+          "rpm": 350,
+          "pellets": 1
+        }
+      ],
+      "alpha": 40.0,
+      "alphaPerBullet": 40.0,
+      "pellets": 1,
+      "dps": 233.3,
+      "dmgType": "energy",
+      "physical": 0.0,
+      "energy": 32.5,
+      "distortion": 7.5,
+      "magSize": 10,
+      "totalAmmo": 40,
+      "speed": 500,
+      "range": 20,
+      "maxRange": 1000
+    },
+    {
+      "entity": "none_pistol_ballistic_01",
+      "name": "Pistola Tripledown",
+      "class": "Pistola",
+      "mfr": "Unkn",
+      "fireRate": 0,
+      "fireModes": [],
+      "alpha": 12.0,
+      "alphaPerBullet": 12.0,
+      "pellets": 1,
+      "dps": 0,
+      "dmgType": "physical",
+      "physical": 12.0,
+      "energy": 0.0,
+      "distortion": 0.0,
+      "magSize": 12,
+      "totalAmmo": 24,
+      "speed": 550,
+      "range": 10,
+      "maxRange": 1100
+    },
+    {
+      "entity": "volt_pistol_energy_01",
+      "name": "Pistola Láser de Pulso",
+      "class": "Pistola",
+      "mfr": "Volt",
+      "fireRate": 500,
+      "fireModes": [
+        {
+          "mode": "Rapid",
+          "rpm": 500,
+          "pellets": 1
+        }
+      ],
+      "alpha": 11.75,
+      "alphaPerBullet": 11.75,
+      "pellets": 1,
+      "dps": 97.9,
+      "dmgType": "energy",
+      "physical": 0.0,
+      "energy": 11.75,
+      "distortion": 0.0,
+      "magSize": 60,
+      "totalAmmo": 240,
+      "speed": 600,
+      "range": 1200,
+      "maxRange": 1200
+    },
+    {
+      "entity": "volt_pistol_energy_01_lumi01",
+      "name": "Pistola láser Pulse \"Piconalia\"",
+      "class": "Pistola",
+      "mfr": "Volt",
+      "fireRate": 500,
+      "fireModes": [
+        {
+          "mode": "Rapid",
+          "rpm": 500,
+          "pellets": 1
+        }
+      ],
+      "alpha": 11.75,
+      "alphaPerBullet": 11.75,
+      "pellets": 1,
+      "dps": 97.9,
+      "dmgType": "energy",
+      "physical": 0.0,
+      "energy": 11.75,
+      "distortion": 0.0,
+      "magSize": 60,
+      "totalAmmo": 240,
+      "speed": 600,
+      "range": 1200,
+      "maxRange": 1200
+    },
+    {
+      "entity": "behr_smg_ballistic_01_iae2201",
+      "name": "P8-SC \"Red Alert\" SMG",
+      "class": "SMG",
+      "mfr": "Behring",
+      "fireRate": 800,
+      "fireModes": [
+        {
+          "mode": "Rapid",
+          "rpm": 800,
+          "pellets": 1
+        },
+        {
+          "mode": "Burst",
+          "rpm": 850,
+          "pellets": 1
+        }
+      ],
+      "alpha": 13.75,
+      "alphaPerBullet": 13.75,
+      "pellets": 1,
+      "dps": 183.3,
+      "dmgType": "physical",
+      "physical": 13.75,
+      "energy": 0.0,
+      "distortion": 0.0,
+      "magSize": 45,
+      "totalAmmo": 180,
+      "speed": 500,
+      "range": 15,
+      "maxRange": 950
+    },
+    {
+      "entity": "behr_smg_ballistic_01",
+      "name": "P8-SC SMG",
+      "class": "SMG",
+      "mfr": "Behring",
+      "fireRate": 800,
+      "fireModes": [
+        {
+          "mode": "Rapid",
+          "rpm": 800,
+          "pellets": 1
+        },
+        {
+          "mode": "Burst",
+          "rpm": 850,
+          "pellets": 1
+        }
+      ],
+      "alpha": 13.75,
+      "alphaPerBullet": 13.75,
+      "pellets": 1,
+      "dps": 183.3,
+      "dmgType": "physical",
+      "physical": 13.75,
+      "energy": 0.0,
+      "distortion": 0.0,
+      "magSize": 45,
+      "totalAmmo": 180,
+      "speed": 500,
+      "range": 15,
+      "maxRange": 950
+    },
+    {
+      "entity": "behr_smg_ballistic_01_gold01",
+      "name": "P8-SC \"Executive Edition\" SMG",
+      "class": "SMG",
+      "mfr": "Behring",
+      "fireRate": 800,
+      "fireModes": [
+        {
+          "mode": "Rapid",
+          "rpm": 800,
+          "pellets": 1
+        },
+        {
+          "mode": "Burst",
+          "rpm": 850,
+          "pellets": 1
+        }
+      ],
+      "alpha": 13.75,
+      "alphaPerBullet": 13.75,
+      "pellets": 1,
+      "dps": 183.3,
+      "dmgType": "physical",
+      "physical": 13.75,
+      "energy": 0.0,
+      "distortion": 0.0,
+      "magSize": 45,
+      "totalAmmo": 180,
+      "speed": 500,
+      "range": 15,
+      "maxRange": 950
+    },
+    {
+      "entity": "behr_smg_ballistic_01_iae2501",
+      "name": "SMG P8-SC \"Epoque\"",
+      "class": "SMG",
+      "mfr": "Behring",
+      "fireRate": 800,
+      "fireModes": [
+        {
+          "mode": "Rapid",
+          "rpm": 800,
+          "pellets": 1
+        },
+        {
+          "mode": "Burst",
+          "rpm": 850,
+          "pellets": 1
+        }
+      ],
+      "alpha": 13.75,
+      "alphaPerBullet": 13.75,
+      "pellets": 1,
+      "dps": 183.3,
+      "dmgType": "physical",
+      "physical": 13.75,
+      "energy": 0.0,
+      "distortion": 0.0,
+      "magSize": 45,
+      "totalAmmo": 180,
+      "speed": 500,
+      "range": 15,
+      "maxRange": 950
+    },
+    {
+      "entity": "gmni_smg_ballistic_01_purple01",
+      "name": "C54 \"Starchaser\" SMG",
+      "class": "SMG",
+      "mfr": "Gemini",
+      "fireRate": 925,
+      "fireModes": [
+        {
+          "mode": "Rapid",
+          "rpm": 925,
+          "pellets": 1
+        }
+      ],
+      "alpha": 11.5,
+      "alphaPerBullet": 11.5,
+      "pellets": 1,
+      "dps": 177.3,
+      "dmgType": "physical",
+      "physical": 11.5,
+      "energy": 0.0,
+      "distortion": 0.0,
+      "magSize": 50,
+      "totalAmmo": 200,
+      "speed": 500,
+      "range": 15,
+      "maxRange": 950
+    },
+    {
+      "entity": "gmni_smg_ballistic_01",
+      "name": "C54 SMG",
+      "class": "SMG",
+      "mfr": "Gemini",
+      "fireRate": 925,
+      "fireModes": [
+        {
+          "mode": "Rapid",
+          "rpm": 925,
+          "pellets": 1
+        }
+      ],
+      "alpha": 11.5,
+      "alphaPerBullet": 11.5,
+      "pellets": 1,
+      "dps": 177.3,
+      "dmgType": "physical",
+      "physical": 11.5,
+      "energy": 0.0,
+      "distortion": 0.0,
+      "magSize": 50,
+      "totalAmmo": 200,
+      "speed": 500,
+      "range": 15,
+      "maxRange": 950
+    },
+    {
+      "entity": "gmni_smg_ballistic_01_sf01",
+      "name": "Smg Ballistic 01 Sf01",
+      "class": "SMG",
+      "mfr": "Gemini",
+      "fireRate": 925,
+      "fireModes": [
+        {
+          "mode": "Rapid",
+          "rpm": 925,
+          "pellets": 1
+        }
+      ],
+      "alpha": 11.5,
+      "alphaPerBullet": 11.5,
+      "pellets": 1,
+      "dps": 177.3,
+      "dmgType": "physical",
+      "physical": 11.5,
+      "energy": 0.0,
+      "distortion": 0.0,
+      "magSize": 50,
+      "totalAmmo": 200,
+      "speed": 500,
+      "range": 15,
+      "maxRange": 950
+    },
+    {
+      "entity": "ksar_smg_energy_01_cc17b",
+      "name": "Custodian \"Citizen's Pride\" SMG",
+      "class": "SMG",
+      "mfr": "KSar",
+      "fireRate": 800,
+      "fireModes": [
+        {
+          "mode": "Rapid",
+          "rpm": 800,
+          "pellets": 1
+        },
+        {
+          "mode": "Charge",
+          "rpm": 0,
+          "pellets": 1
+        }
+      ],
+      "alpha": 13.0,
+      "alphaPerBullet": 13.0,
+      "pellets": 1,
+      "dps": 173.3,
+      "dmgType": "energy",
+      "physical": 0.0,
+      "energy": 13.0,
+      "distortion": 0.0,
+      "magSize": 60,
+      "totalAmmo": 240,
+      "speed": 600,
+      "range": 1200,
+      "maxRange": 1200
+    },
+    {
+      "entity": "ksar_smg_energy_01_cc17",
+      "name": "Custodian \"CitizenCon 2947\" SMG",
+      "class": "SMG",
+      "mfr": "KSar",
+      "fireRate": 800,
+      "fireModes": [
+        {
+          "mode": "Rapid",
+          "rpm": 800,
+          "pellets": 1
+        },
+        {
+          "mode": "Charge",
+          "rpm": 0,
+          "pellets": 1
+        }
+      ],
+      "alpha": 13.0,
+      "alphaPerBullet": 13.0,
+      "pellets": 1,
+      "dps": 173.3,
+      "dmgType": "energy",
+      "physical": 0.0,
+      "energy": 13.0,
+      "distortion": 0.0,
+      "magSize": 60,
+      "totalAmmo": 240,
+      "speed": 600,
+      "range": 1200,
+      "maxRange": 1200
+    },
+    {
+      "entity": "ksar_smg_energy_01_gold01",
+      "name": "Custodian \"Executive Edition\" SMG",
+      "class": "SMG",
+      "mfr": "KSar",
+      "fireRate": 800,
+      "fireModes": [
+        {
+          "mode": "Rapid",
+          "rpm": 800,
+          "pellets": 1
+        },
+        {
+          "mode": "Charge",
+          "rpm": 0,
+          "pellets": 1
+        }
+      ],
+      "alpha": 13.0,
+      "alphaPerBullet": 13.0,
+      "pellets": 1,
+      "dps": 173.3,
+      "dmgType": "energy",
+      "physical": 0.0,
+      "energy": 13.0,
+      "distortion": 0.0,
+      "magSize": 60,
+      "totalAmmo": 240,
+      "speed": 600,
+      "range": 1200,
+      "maxRange": 1200
+    },
+    {
+      "entity": "ksar_smg_energy_01_cc17a",
+      "name": "Custodian \"Foundry's Fire\" SMG",
+      "class": "SMG",
+      "mfr": "KSar",
+      "fireRate": 800,
+      "fireModes": [
+        {
+          "mode": "Rapid",
+          "rpm": 800,
+          "pellets": 1
+        },
+        {
+          "mode": "Charge",
+          "rpm": 0,
+          "pellets": 1
+        }
+      ],
+      "alpha": 13.0,
+      "alphaPerBullet": 13.0,
+      "pellets": 1,
+      "dps": 173.3,
+      "dmgType": "energy",
+      "physical": 0.0,
+      "energy": 13.0,
+      "distortion": 0.0,
+      "magSize": 60,
+      "totalAmmo": 240,
+      "speed": 600,
+      "range": 1200,
+      "maxRange": 1200
+    },
+    {
+      "entity": "ksar_smg_energy_01",
+      "name": "Custodian SMG",
+      "class": "SMG",
+      "mfr": "KSar",
+      "fireRate": 800,
+      "fireModes": [
+        {
+          "mode": "Rapid",
+          "rpm": 800,
+          "pellets": 1
+        },
+        {
+          "mode": "Charge",
+          "rpm": 0,
+          "pellets": 1
+        }
+      ],
+      "alpha": 13.0,
+      "alphaPerBullet": 13.0,
+      "pellets": 1,
+      "dps": 173.3,
+      "dmgType": "energy",
+      "physical": 0.0,
+      "energy": 13.0,
+      "distortion": 0.0,
+      "magSize": 60,
+      "totalAmmo": 240,
+      "speed": 600,
+      "range": 1200,
+      "maxRange": 1200
+    },
+    {
+      "entity": "klwe_smg_energy_01",
+      "name": "Lumin V SMG",
+      "class": "SMG",
+      "mfr": "Klaus & Werner",
+      "fireRate": 625,
+      "fireModes": [
+        {
+          "mode": "Burst",
+          "rpm": 625,
+          "pellets": 1
+        }
+      ],
+      "alpha": 21.0,
+      "alphaPerBullet": 21.0,
+      "pellets": 1,
+      "dps": 218.8,
+      "dmgType": "energy",
+      "physical": 0.0,
+      "energy": 21.0,
+      "distortion": 0.0,
+      "magSize": 45,
+      "totalAmmo": 180,
+      "speed": 600,
+      "range": 1200,
+      "maxRange": 1200
+    },
+    {
+      "entity": "none_smg_energy_01",
+      "name": "Ripper \"Sunblock\" SMG",
+      "class": "SMG",
+      "mfr": "Unkn",
+      "fireRate": 0,
+      "fireModes": [
+        {
+          "mode": "Damage Beam",
+          "rpm": 0,
+          "pellets": 1
+        }
+      ],
+      "alpha": 21.0,
+      "alphaPerBullet": 21.0,
+      "pellets": 1,
+      "dps": 0,
+      "dmgType": "energy",
+      "physical": 0.0,
+      "energy": 21.0,
+      "distortion": 0.0,
+      "magSize": 60,
+      "totalAmmo": 240,
+      "speed": 600,
+      "range": 1200,
+      "maxRange": 1200
+    },
+    {
+      "entity": "volt_smg_energy_01_lumi01",
+      "name": "SMG de energía Quartz \"Piconalia\"",
+      "class": "SMG",
+      "mfr": "Volt",
+      "fireRate": 0,
+      "fireModes": [
+        {
+          "mode": "Damage Beam",
+          "rpm": 0,
+          "pellets": 1
+        }
+      ],
+      "alpha": 5.0,
+      "alphaPerBullet": 5.0,
+      "pellets": 1,
+      "dps": 0,
+      "dmgType": "energy",
+      "physical": 0.0,
+      "energy": 5.0,
+      "distortion": 0.0,
+      "magSize": 45,
+      "totalAmmo": 180,
+      "speed": 600,
+      "range": 1200,
+      "maxRange": 1200
+    },
+    {
+      "entity": "volt_smg_energy_01_uee01",
+      "name": "Subfusil Quartz \"GCD-Army\"",
+      "class": "SMG",
+      "mfr": "Volt",
+      "fireRate": 0,
+      "fireModes": [
+        {
+          "mode": "Damage Beam",
+          "rpm": 0,
+          "pellets": 1
+        }
+      ],
+      "alpha": 5.0,
+      "alphaPerBullet": 5.0,
+      "pellets": 1,
+      "dps": 0,
+      "dmgType": "energy",
+      "physical": 0.0,
+      "energy": 5.0,
+      "distortion": 0.0,
+      "magSize": 45,
+      "totalAmmo": 180,
+      "speed": 600,
+      "range": 1200,
+      "maxRange": 1200
+    },
+    {
+      "entity": "volt_smg_energy_01",
+      "name": "Subfusil de energía Quartz",
+      "class": "SMG",
+      "mfr": "Volt",
+      "fireRate": 0,
+      "fireModes": [
+        {
+          "mode": "Damage Beam",
+          "rpm": 0,
+          "pellets": 1
+        }
+      ],
+      "alpha": 5.0,
+      "alphaPerBullet": 5.0,
+      "pellets": 1,
+      "dps": 0,
+      "dmgType": "energy",
+      "physical": 0.0,
+      "energy": 5.0,
+      "distortion": 0.0,
+      "magSize": 45,
+      "totalAmmo": 180,
+      "speed": 600,
+      "range": 1200,
+      "maxRange": 1200
+    },
+    {
+      "entity": "behr_rifle_ballistic_01",
+      "name": "P4-AR Rifle",
+      "class": "Rifle",
+      "mfr": "Behring",
+      "fireRate": 810,
+      "fireModes": [
+        {
+          "mode": "Rapid",
+          "rpm": 810,
+          "pellets": 1
+        },
+        {
+          "mode": "Single",
+          "rpm": 810,
+          "pellets": 1
+        }
+      ],
+      "alpha": 12.0,
+      "alphaPerBullet": 12.0,
+      "pellets": 1,
+      "dps": 162.0,
+      "dmgType": "physical",
+      "physical": 12.0,
+      "energy": 0.0,
+      "distortion": 0.0,
+      "magSize": 40,
+      "totalAmmo": 160,
+      "speed": 550,
+      "range": 40,
+      "maxRange": 1100
+    },
+    {
+      "entity": "behr_rifle_ballistic_02_civilian",
+      "name": "Rifle P8-AR",
+      "class": "Rifle",
+      "mfr": "Behring",
+      "fireRate": 235,
+      "fireModes": [
+        {
+          "mode": "Single",
+          "rpm": 235,
+          "pellets": 1
+        }
+      ],
+      "alpha": 45.0,
+      "alphaPerBullet": 45.0,
+      "pellets": 1,
+      "dps": 176.2,
+      "dmgType": "physical",
+      "physical": 45.0,
+      "energy": 0.0,
+      "distortion": 0.0,
+      "magSize": 15,
+      "totalAmmo": 60,
+      "speed": 1150,
+      "range": 50,
+      "maxRange": 2300
+    },
+    {
+      "entity": "behr_rifle_ballistic_02_civilian_digi01",
+      "name": "Rifle P8-AR \"Metro Camo\"",
+      "class": "Rifle",
+      "mfr": "Behring",
+      "fireRate": 235,
+      "fireModes": [
+        {
+          "mode": "Single",
+          "rpm": 235,
+          "pellets": 1
+        }
+      ],
+      "alpha": 45.0,
+      "alphaPerBullet": 45.0,
+      "pellets": 1,
+      "dps": 176.2,
+      "dmgType": "physical",
+      "physical": 45.0,
+      "energy": 0.0,
+      "distortion": 0.0,
+      "magSize": 15,
+      "totalAmmo": 60,
+      "speed": 1150,
+      "range": 50,
+      "maxRange": 2300
+    },
+    {
+      "entity": "gmni_rifle_ballistic_01_iae2023",
+      "name": "Rifle \"Ascensión\" S71",
+      "class": "Rifle",
+      "mfr": "Gemini",
+      "fireRate": 500,
+      "fireModes": [
+        {
+          "mode": "Single",
+          "rpm": 500,
+          "pellets": 1
+        }
+      ],
+      "alpha": 21.5,
+      "alphaPerBullet": 21.5,
+      "pellets": 1,
+      "dps": 179.2,
+      "dmgType": "physical",
+      "physical": 21.5,
+      "energy": 0.0,
+      "distortion": 0.0,
+      "magSize": 30,
+      "totalAmmo": 120,
+      "speed": 1200,
+      "range": 100,
+      "maxRange": 2400
+    },
+    {
+      "entity": "gmni_rifle_ballistic_01_mr01",
+      "name": "Rifle Ballistic 01 Mr01",
+      "class": "Rifle",
+      "mfr": "Gemini",
+      "fireRate": 500,
+      "fireModes": [
+        {
+          "mode": "Single",
+          "rpm": 500,
+          "pellets": 1
+        }
+      ],
+      "alpha": 21.5,
+      "alphaPerBullet": 21.5,
+      "pellets": 1,
+      "dps": 179.2,
+      "dmgType": "physical",
+      "physical": 21.5,
+      "energy": 0.0,
+      "distortion": 0.0,
+      "magSize": 30,
+      "totalAmmo": 120,
+      "speed": 1200,
+      "range": 100,
+      "maxRange": 2400
+    },
+    {
+      "entity": "gmni_rifle_ballistic_01",
+      "name": "Rifle S71",
+      "class": "Rifle",
+      "mfr": "Gemini",
+      "fireRate": 500,
+      "fireModes": [
+        {
+          "mode": "Single",
+          "rpm": 500,
+          "pellets": 1
+        }
+      ],
+      "alpha": 21.5,
+      "alphaPerBullet": 21.5,
+      "pellets": 1,
+      "dps": 179.2,
+      "dmgType": "physical",
+      "physical": 21.5,
+      "energy": 0.0,
+      "distortion": 0.0,
+      "magSize": 30,
+      "totalAmmo": 120,
+      "speed": 1200,
+      "range": 100,
+      "maxRange": 2400
+    },
+    {
+      "entity": "ksar_rifle_energy_01_iae2023",
+      "name": "Rifle \"Ascensión\" Karna",
+      "class": "Rifle",
+      "mfr": "KSar",
+      "fireRate": 600,
+      "fireModes": [
+        {
+          "mode": "Rapid",
+          "rpm": 600,
+          "pellets": 1
+        },
+        {
+          "mode": "Charge",
+          "rpm": 0,
+          "pellets": 1
+        }
+      ],
+      "alpha": 17.5,
+      "alphaPerBullet": 17.5,
+      "pellets": 1,
+      "dps": 175.0,
+      "dmgType": "energy",
+      "physical": 0.0,
+      "energy": 17.5,
+      "distortion": 0.0,
+      "magSize": 35,
+      "totalAmmo": 140,
+      "speed": 600,
+      "range": 20,
+      "maxRange": 1200
+    },
+    {
+      "entity": "ksar_rifle_energy_01",
+      "name": "Rifle Karna",
+      "class": "Rifle",
+      "mfr": "KSar",
+      "fireRate": 600,
+      "fireModes": [
+        {
+          "mode": "Rapid",
+          "rpm": 600,
+          "pellets": 1
+        },
+        {
+          "mode": "Charge",
+          "rpm": 0,
+          "pellets": 1
+        }
+      ],
+      "alpha": 17.5,
+      "alphaPerBullet": 17.5,
+      "pellets": 1,
+      "dps": 175.0,
+      "dmgType": "energy",
+      "physical": 0.0,
+      "energy": 17.5,
+      "distortion": 0.0,
+      "magSize": 35,
+      "totalAmmo": 140,
+      "speed": 600,
+      "range": 20,
+      "maxRange": 1200
+    },
+    {
+      "entity": "ksar_rifle_energy_01_tow",
+      "name": "Rifle Karna",
+      "class": "Rifle",
+      "mfr": "KSar",
+      "fireRate": 600,
+      "fireModes": [
+        {
+          "mode": "Rapid",
+          "rpm": 600,
+          "pellets": 1
+        },
+        {
+          "mode": "Charge",
+          "rpm": 0,
+          "pellets": 1
+        }
+      ],
+      "alpha": 17.5,
+      "alphaPerBullet": 17.5,
+      "pellets": 1,
+      "dps": 175.0,
+      "dmgType": "energy",
+      "physical": 0.0,
+      "energy": 17.5,
+      "distortion": 0.0,
+      "magSize": 35,
+      "totalAmmo": 140,
+      "speed": 600,
+      "range": 20,
+      "maxRange": 1200
+    },
+    {
+      "entity": "klwe_rifle_energy_01_gold01",
+      "name": "Gallant \"Executive Edition\" Rifle",
+      "class": "Rifle",
+      "mfr": "Klaus & Werner",
+      "fireRate": 900,
+      "fireModes": [
+        {
+          "mode": "Burst",
+          "rpm": 900,
+          "pellets": 1
+        },
+        {
+          "mode": "Burst",
+          "rpm": 825,
+          "pellets": 1
+        }
+      ],
+      "alpha": 21.0,
+      "alphaPerBullet": 21.0,
+      "pellets": 1,
+      "dps": 315.0,
+      "dmgType": "energy",
+      "physical": 0.0,
+      "energy": 21.0,
+      "distortion": 0.0,
+      "magSize": 45,
+      "totalAmmo": 180,
+      "speed": 1200,
+      "range": 4800,
+      "maxRange": 4800
+    },
+    {
+      "entity": "klwe_rifle_energy_01_iae2201",
+      "name": "Gallant \"Red Alert\" Rifle",
+      "class": "Rifle",
+      "mfr": "Klaus & Werner",
+      "fireRate": 900,
+      "fireModes": [
+        {
+          "mode": "Burst",
+          "rpm": 900,
+          "pellets": 1
+        },
+        {
+          "mode": "Burst",
+          "rpm": 825,
+          "pellets": 1
+        }
+      ],
+      "alpha": 21.0,
+      "alphaPerBullet": 21.0,
+      "pellets": 1,
+      "dps": 315.0,
+      "dmgType": "energy",
+      "physical": 0.0,
+      "energy": 21.0,
+      "distortion": 0.0,
+      "magSize": 45,
+      "totalAmmo": 180,
+      "speed": 1200,
+      "range": 4800,
+      "maxRange": 4800
+    },
+    {
+      "entity": "klwe_rifle_energy_01",
+      "name": "Gallant Rifle",
+      "class": "Rifle",
+      "mfr": "Klaus & Werner",
+      "fireRate": 900,
+      "fireModes": [
+        {
+          "mode": "Burst",
+          "rpm": 900,
+          "pellets": 1
+        },
+        {
+          "mode": "Burst",
+          "rpm": 825,
+          "pellets": 1
+        }
+      ],
+      "alpha": 21.0,
+      "alphaPerBullet": 21.0,
+      "pellets": 1,
+      "dps": 315.0,
+      "dmgType": "energy",
+      "physical": 0.0,
+      "energy": 21.0,
+      "distortion": 0.0,
+      "magSize": 45,
+      "totalAmmo": 180,
+      "speed": 1200,
+      "range": 4800,
+      "maxRange": 4800
+    },
+    {
+      "entity": "klwe_rifle_energy_01_sf01",
+      "name": "Rifle Energy 01 Sf01",
+      "class": "Rifle",
+      "mfr": "Klaus & Werner",
+      "fireRate": 900,
+      "fireModes": [
+        {
+          "mode": "Burst",
+          "rpm": 900,
+          "pellets": 1
+        },
+        {
+          "mode": "Burst",
+          "rpm": 825,
+          "pellets": 1
+        }
+      ],
+      "alpha": 21.0,
+      "alphaPerBullet": 21.0,
+      "pellets": 1,
+      "dps": 315.0,
+      "dmgType": "energy",
+      "physical": 0.0,
+      "energy": 21.0,
+      "distortion": 0.0,
+      "magSize": 45,
+      "totalAmmo": 180,
+      "speed": 1200,
+      "range": 4800,
+      "maxRange": 4800
+    },
+    {
+      "entity": "none_rifle_multi_01",
+      "name": "Rifle Killshot",
+      "class": "Rifle",
+      "mfr": "Unkn",
+      "fireRate": 535,
+      "fireModes": [
+        {
+          "mode": "Sequence",
+          "rpm": 535,
+          "pellets": 1
+        }
+      ],
+      "alpha": 22.0,
+      "alphaPerBullet": 22.0,
+      "pellets": 1,
+      "dps": 196.2,
+      "dmgType": "physical",
+      "physical": 22.0,
+      "energy": 0.0,
+      "distortion": 0.0,
+      "magSize": 45,
+      "totalAmmo": 180,
+      "speed": 875,
+      "range": 60,
+      "maxRange": 1750
+    },
+    {
+      "entity": "volt_rifle_energy_01_uee01",
+      "name": "Rifle Parallax \"GCD-Army\"",
+      "class": "Rifle",
+      "mfr": "Volt",
+      "fireRate": 0,
+      "fireModes": [
+        {
+          "mode": "RapidBeam",
+          "rpm": 0,
+          "pellets": 1
+        }
+      ],
+      "alpha": 18.0,
+      "alphaPerBullet": 18.0,
+      "pellets": 1,
+      "dps": 0,
+      "dmgType": "energy",
+      "physical": 0.0,
+      "energy": 13.0,
+      "distortion": 5.0,
+      "magSize": 80,
+      "totalAmmo": 320,
+      "speed": 600,
+      "range": 200,
+      "maxRange": 1200
+    },
+    {
+      "entity": "volt_rifle_energy_01",
+      "name": "Rifle de Asalto de Energía Parallax",
+      "class": "Rifle",
+      "mfr": "Volt",
+      "fireRate": 0,
+      "fireModes": [
+        {
+          "mode": "RapidBeam",
+          "rpm": 0,
+          "pellets": 1
+        }
+      ],
+      "alpha": 18.0,
+      "alphaPerBullet": 18.0,
+      "pellets": 1,
+      "dps": 0,
+      "dmgType": "energy",
+      "physical": 0.0,
+      "energy": 13.0,
+      "distortion": 5.0,
+      "magSize": 80,
+      "totalAmmo": 320,
+      "speed": 600,
+      "range": 200,
+      "maxRange": 1200
+    },
+    {
+      "entity": "volt_rifle_energy_01_lumi01",
+      "name": "Rifle de asalto de energía Parallax \"Piconalia\"",
+      "class": "Rifle",
+      "mfr": "Volt",
+      "fireRate": 0,
+      "fireModes": [
+        {
+          "mode": "RapidBeam",
+          "rpm": 0,
+          "pellets": 1
+        }
+      ],
+      "alpha": 18.0,
+      "alphaPerBullet": 18.0,
+      "pellets": 1,
+      "dps": 0,
+      "dmgType": "energy",
+      "physical": 0.0,
+      "energy": 13.0,
+      "distortion": 5.0,
+      "magSize": 80,
+      "totalAmmo": 320,
+      "speed": 600,
+      "range": 200,
+      "maxRange": 1200
+    },
+    {
+      "entity": "behr_shotgun_ballistic_01",
+      "name": "Escopeta BR-2",
+      "class": "Escopeta",
+      "mfr": "Behring",
+      "fireRate": 90,
+      "fireModes": [
+        {
+          "mode": "Single",
+          "rpm": 90,
+          "pellets": 8
+        }
+      ],
+      "alpha": 88.0,
+      "alphaPerBullet": 11.0,
+      "pellets": 8,
+      "dps": 132.0,
+      "dmgType": "physical",
+      "physical": 88.0,
+      "energy": 0.0,
+      "distortion": 0.0,
+      "magSize": 12,
+      "totalAmmo": 48,
+      "speed": 225,
+      "range": 12,
+      "maxRange": 450
+    },
+    {
+      "entity": "behr_shotgun_ballistic_01_mr01",
+      "name": "Shotgun Ballistic 01 Mr01",
+      "class": "Escopeta",
+      "mfr": "Behring",
+      "fireRate": 90,
+      "fireModes": [
+        {
+          "mode": "Single",
+          "rpm": 90,
+          "pellets": 8
+        }
+      ],
+      "alpha": 88.0,
+      "alphaPerBullet": 11.0,
+      "pellets": 8,
+      "dps": 132.0,
+      "dmgType": "physical",
+      "physical": 88.0,
+      "energy": 0.0,
+      "distortion": 0.0,
+      "magSize": 12,
+      "totalAmmo": 48,
+      "speed": 225,
+      "range": 12,
+      "maxRange": 450
+    },
+    {
+      "entity": "gmni_shotgun_ballistic_01_reward01",
+      "name": "Escopeta R97 \"Crimson Camo\"",
+      "class": "Escopeta",
+      "mfr": "Gemini",
+      "fireRate": 375,
+      "fireModes": [
+        {
+          "mode": "Shotgun",
+          "rpm": 375,
+          "pellets": 8
+        },
+        {
+          "mode": "Single",
+          "rpm": 150,
+          "pellets": 12
+        }
+      ],
+      "alpha": 32.0,
+      "alphaPerBullet": 4.0,
+      "pellets": 8,
+      "dps": 200.0,
+      "dmgType": "physical",
+      "physical": 32.0,
+      "energy": 0.0,
+      "distortion": 0.0,
+      "magSize": 18,
+      "totalAmmo": 72,
+      "speed": 225,
+      "range": 12,
+      "maxRange": 450
+    },
+    {
+      "entity": "gmni_shotgun_ballistic_01",
+      "name": "R97 Escopeta",
+      "class": "Escopeta",
+      "mfr": "Gemini",
+      "fireRate": 375,
+      "fireModes": [
+        {
+          "mode": "Shotgun",
+          "rpm": 375,
+          "pellets": 8
+        },
+        {
+          "mode": "Single",
+          "rpm": 150,
+          "pellets": 12
+        }
+      ],
+      "alpha": 32.0,
+      "alphaPerBullet": 4.0,
+      "pellets": 8,
+      "dps": 200.0,
+      "dmgType": "physical",
+      "physical": 32.0,
+      "energy": 0.0,
+      "distortion": 0.0,
+      "magSize": 18,
+      "totalAmmo": 72,
+      "speed": 225,
+      "range": 12,
+      "maxRange": 450
+    },
+    {
+      "entity": "ksar_shotgun_energy_01",
+      "name": "Escopeta Devastator",
+      "class": "Escopeta",
+      "mfr": "KSar",
+      "fireRate": 0,
+      "fireModes": [
+        {
+          "mode": "Charge",
+          "rpm": 0,
+          "pellets": 1
+        }
+      ],
+      "alpha": 10.0,
+      "alphaPerBullet": 10.0,
+      "pellets": 1,
+      "dps": 0,
+      "dmgType": "energy",
+      "physical": 0.0,
+      "energy": 10.0,
+      "distortion": 0.0,
+      "magSize": 12,
+      "totalAmmo": 48,
+      "speed": 300,
+      "range": 14,
+      "maxRange": 600
+    },
+    {
+      "entity": "ksar_shotgun_energy_01_gold01",
+      "name": "Escopeta Devastator \"Executive Edition\"",
+      "class": "Escopeta",
+      "mfr": "KSar",
+      "fireRate": 0,
+      "fireModes": [
+        {
+          "mode": "Charge",
+          "rpm": 0,
+          "pellets": 1
+        }
+      ],
+      "alpha": 10.0,
+      "alphaPerBullet": 10.0,
+      "pellets": 1,
+      "dps": 0,
+      "dmgType": "energy",
+      "physical": 0.0,
+      "energy": 10.0,
+      "distortion": 0.0,
+      "magSize": 12,
+      "totalAmmo": 48,
+      "speed": 300,
+      "range": 14,
+      "maxRange": 600
+    },
+    {
+      "entity": "ksar_shotgun_energy_01_purple01",
+      "name": "Escopeta Devastator \"Starchaser\"",
+      "class": "Escopeta",
+      "mfr": "KSar",
+      "fireRate": 0,
+      "fireModes": [
+        {
+          "mode": "Charge",
+          "rpm": 0,
+          "pellets": 1
+        }
+      ],
+      "alpha": 10.0,
+      "alphaPerBullet": 10.0,
+      "pellets": 1,
+      "dps": 0,
+      "dmgType": "energy",
+      "physical": 0.0,
+      "energy": 10.0,
+      "distortion": 0.0,
+      "magSize": 12,
+      "totalAmmo": 48,
+      "speed": 300,
+      "range": 14,
+      "maxRange": 600
+    },
+    {
+      "entity": "ksar_shotgun_ballistic_01",
+      "name": "Escopeta Doble Ravager-212",
+      "class": "Escopeta",
+      "mfr": "KSar",
+      "fireRate": 350,
+      "fireModes": [
+        {
+          "mode": "Burst",
+          "rpm": 350,
+          "pellets": 8
+        }
+      ],
+      "alpha": 52.0,
+      "alphaPerBullet": 6.5,
+      "pellets": 8,
+      "dps": 303.3,
+      "dmgType": "physical",
+      "physical": 52.0,
+      "energy": 0.0,
+      "distortion": 0.0,
+      "magSize": 16,
+      "totalAmmo": 64,
+      "speed": 300,
+      "range": 12,
+      "maxRange": 600
+    },
+    {
+      "entity": "ksar_shotgun_ballistic_01_iae2201",
+      "name": "Escopeta Doble Ravager-212 \"Red Alert\"",
+      "class": "Escopeta",
+      "mfr": "KSar",
+      "fireRate": 350,
+      "fireModes": [
+        {
+          "mode": "Burst",
+          "rpm": 350,
+          "pellets": 8
+        }
+      ],
+      "alpha": 52.0,
+      "alphaPerBullet": 6.5,
+      "pellets": 8,
+      "dps": 303.3,
+      "dmgType": "physical",
+      "physical": 52.0,
+      "energy": 0.0,
+      "distortion": 0.0,
+      "magSize": 16,
+      "totalAmmo": 64,
+      "speed": 300,
+      "range": 12,
+      "maxRange": 600
+    },
+    {
+      "entity": "none_shotgun_ballistic_01",
+      "name": "Escopeta Deadrig",
+      "class": "Escopeta",
+      "mfr": "Unkn",
+      "fireRate": 120,
+      "fireModes": [
+        {
+          "mode": "Burst",
+          "rpm": 120,
+          "pellets": 8
+        }
+      ],
+      "alpha": 72.0,
+      "alphaPerBullet": 9.0,
+      "pellets": 8,
+      "dps": 144.0,
+      "dmgType": "physical",
+      "physical": 72.0,
+      "energy": 0.0,
+      "distortion": 0.0,
+      "magSize": 8,
+      "totalAmmo": 32,
+      "speed": 300,
+      "range": 7,
+      "maxRange": 600
+    },
+    {
+      "entity": "volt_shotgun_energy_01",
+      "name": "Escopeta Láser Prism",
+      "class": "Escopeta",
+      "mfr": "Volt",
+      "fireRate": 0,
+      "fireModes": [
+        {
+          "mode": "RapidBeam",
+          "rpm": 0,
+          "pellets": 1
+        }
+      ],
+      "alpha": 5.75,
+      "alphaPerBullet": 5.75,
+      "pellets": 1,
+      "dps": 0,
+      "dmgType": "energy",
+      "physical": 0.0,
+      "energy": 5.75,
+      "distortion": 0.0,
+      "magSize": 20,
+      "totalAmmo": 80,
+      "speed": 300,
+      "range": 600,
+      "maxRange": 600
+    },
+    {
+      "entity": "behr_sniper_ballistic_01",
+      "name": "P6-LR  Rifle Francotirador",
+      "class": "Francotirador",
+      "mfr": "Behring",
+      "fireRate": 55,
+      "fireModes": [
+        {
+          "mode": "Single",
+          "rpm": 55,
+          "pellets": 1
+        }
+      ],
+      "alpha": 100.0,
+      "alphaPerBullet": 100.0,
+      "pellets": 1,
+      "dps": 91.7,
+      "dmgType": "physical",
+      "physical": 100.0,
+      "energy": 0.0,
+      "distortion": 0.0,
+      "magSize": 8,
+      "totalAmmo": 32,
+      "speed": 725,
+      "range": 550,
+      "maxRange": 1450
+    },
+    {
+      "entity": "behr_sniper_ballistic_01_arctic01",
+      "name": "P6-LR \"Rime\"  Rifle Francotirador",
+      "class": "Francotirador",
+      "mfr": "Behring",
+      "fireRate": 55,
+      "fireModes": [
+        {
+          "mode": "Single",
+          "rpm": 55,
+          "pellets": 1
+        }
+      ],
+      "alpha": 100.0,
+      "alphaPerBullet": 100.0,
+      "pellets": 1,
+      "dps": 91.7,
+      "dmgType": "physical",
+      "physical": 100.0,
+      "energy": 0.0,
+      "distortion": 0.0,
+      "magSize": 8,
+      "totalAmmo": 32,
+      "speed": 725,
+      "range": 550,
+      "maxRange": 1450
+    },
+    {
+      "entity": "gmni_sniper_ballistic_01",
+      "name": "A03  Rifle Francotirador",
+      "class": "Francotirador",
+      "mfr": "Gemini",
+      "fireRate": 225,
+      "fireModes": [
+        {
+          "mode": "Single",
+          "rpm": 225,
+          "pellets": 1
+        }
+      ],
+      "alpha": 42.5,
+      "alphaPerBullet": 42.5,
+      "pellets": 1,
+      "dps": 159.4,
+      "dmgType": "physical",
+      "physical": 42.5,
+      "energy": 0.0,
+      "distortion": 0.0,
+      "magSize": 15,
+      "totalAmmo": 60,
+      "speed": 800,
+      "range": 150,
+      "maxRange": 1600
+    },
+    {
+      "entity": "gmni_sniper_ballistic_01_arctic01",
+      "name": "A03 \"Canuto\"  Rifle Francotirador",
+      "class": "Francotirador",
+      "mfr": "Gemini",
+      "fireRate": 225,
+      "fireModes": [
+        {
+          "mode": "Single",
+          "rpm": 225,
+          "pellets": 1
+        }
+      ],
+      "alpha": 42.5,
+      "alphaPerBullet": 42.5,
+      "pellets": 1,
+      "dps": 159.4,
+      "dmgType": "physical",
+      "physical": 42.5,
+      "energy": 0.0,
+      "distortion": 0.0,
+      "magSize": 15,
+      "totalAmmo": 60,
+      "speed": 800,
+      "range": 150,
+      "maxRange": 1600
+    },
+    {
+      "entity": "gmni_sniper_ballistic_01_urban01",
+      "name": "A03 \"Lodestone\"  Rifle Francotirador",
+      "class": "Francotirador",
+      "mfr": "Gemini",
+      "fireRate": 225,
+      "fireModes": [
+        {
+          "mode": "Single",
+          "rpm": 225,
+          "pellets": 1
+        }
+      ],
+      "alpha": 42.5,
+      "alphaPerBullet": 42.5,
+      "pellets": 1,
+      "dps": 159.4,
+      "dmgType": "physical",
+      "physical": 42.5,
+      "energy": 0.0,
+      "distortion": 0.0,
+      "magSize": 15,
+      "totalAmmo": 60,
+      "speed": 800,
+      "range": 150,
+      "maxRange": 1600
+    },
+    {
+      "entity": "gmni_sniper_ballistic_01_iae2201",
+      "name": "A03 \"Red Alert\"  Rifle Francotirador",
+      "class": "Francotirador",
+      "mfr": "Gemini",
+      "fireRate": 225,
+      "fireModes": [
+        {
+          "mode": "Single",
+          "rpm": 225,
+          "pellets": 1
+        }
+      ],
+      "alpha": 42.5,
+      "alphaPerBullet": 42.5,
+      "pellets": 1,
+      "dps": 159.4,
+      "dmgType": "physical",
+      "physical": 42.5,
+      "energy": 0.0,
+      "distortion": 0.0,
+      "magSize": 15,
+      "totalAmmo": 60,
+      "speed": 800,
+      "range": 150,
+      "maxRange": 1600
+    },
+    {
+      "entity": "ksar_sniper_ballistic_01",
+      "name": "Scalpel  Rifle Francotirador",
+      "class": "Francotirador",
+      "mfr": "KSar",
+      "fireRate": 0,
+      "fireModes": [
+        {
+          "mode": "Burst",
+          "rpm": 0,
+          "pellets": 1
+        },
+        {
+          "mode": "Single",
+          "rpm": 0,
+          "pellets": 1
+        }
+      ],
+      "alpha": 45.0,
+      "alphaPerBullet": 45.0,
+      "pellets": 1,
+      "dps": 0,
+      "dmgType": "physical",
+      "physical": 45.0,
+      "energy": 0.0,
+      "distortion": 0.0,
+      "magSize": 12,
+      "totalAmmo": 48,
+      "speed": 875,
+      "range": 335,
+      "maxRange": 1750
+    },
+    {
+      "entity": "klwe_sniper_energy_01",
+      "name": "Arrowhead  Rifle Francotirador",
+      "class": "Francotirador",
+      "mfr": "Klaus & Werner",
+      "fireRate": 0,
+      "fireModes": [
+        {
+          "mode": "Charge",
+          "rpm": 0,
+          "pellets": 1
+        }
+      ],
+      "alpha": 50.0,
+      "alphaPerBullet": 50.0,
+      "pellets": 1,
+      "dps": 0,
+      "dmgType": "energy",
+      "physical": 0.0,
+      "energy": 50.0,
+      "distortion": 0.0,
+      "magSize": 16,
+      "totalAmmo": 64,
+      "speed": 1000,
+      "range": 4000,
+      "maxRange": 4000
+    },
+    {
+      "entity": "klwe_sniper_energy_01_gold01",
+      "name": "Arrowhead \"Executive\"  Rifle Francotirador",
+      "class": "Francotirador",
+      "mfr": "Klaus & Werner",
+      "fireRate": 0,
+      "fireModes": [
+        {
+          "mode": "Charge",
+          "rpm": 0,
+          "pellets": 1
+        }
+      ],
+      "alpha": 50.0,
+      "alphaPerBullet": 50.0,
+      "pellets": 1,
+      "dps": 0,
+      "dmgType": "energy",
+      "physical": 0.0,
+      "energy": 50.0,
+      "distortion": 0.0,
+      "magSize": 16,
+      "totalAmmo": 64,
+      "speed": 1000,
+      "range": 4000,
+      "maxRange": 4000
+    },
+    {
+      "entity": "lbco_sniper_energy_01",
+      "name": "Atzkav  Rifle Francotirador",
+      "class": "Francotirador",
+      "mfr": "LBCo",
+      "fireRate": 30,
+      "fireModes": [
+        {
+          "mode": "Single",
+          "rpm": 30,
+          "pellets": 1
+        }
+      ],
+      "alpha": 155.0,
+      "alphaPerBullet": 155.0,
+      "pellets": 1,
+      "dps": 77.5,
+      "dmgType": "energy",
+      "physical": 0.0,
+      "energy": 120.0,
+      "distortion": 35.0,
+      "magSize": 8,
+      "totalAmmo": 32,
+      "speed": 500,
+      "range": 350,
+      "maxRange": 1000
+    },
+    {
+      "entity": "lbco_sniper_energy_01_sunset01",
+      "name": "Atzkav \"Igniter\"  Rifle Francotirador",
+      "class": "Francotirador",
+      "mfr": "LBCo",
+      "fireRate": 30,
+      "fireModes": [
+        {
+          "mode": "Single",
+          "rpm": 30,
+          "pellets": 1
+        }
+      ],
+      "alpha": 155.0,
+      "alphaPerBullet": 155.0,
+      "pellets": 1,
+      "dps": 77.5,
+      "dmgType": "energy",
+      "physical": 0.0,
+      "energy": 120.0,
+      "distortion": 35.0,
+      "magSize": 8,
+      "totalAmmo": 32,
+      "speed": 500,
+      "range": 350,
+      "maxRange": 1000
+    },
+    {
+      "entity": "lbco_sniper_energy_01_chromic01",
+      "name": "Atzkav \"Mirage\"  Rifle Francotirador",
+      "class": "Francotirador",
+      "mfr": "LBCo",
+      "fireRate": 30,
+      "fireModes": [
+        {
+          "mode": "Single",
+          "rpm": 30,
+          "pellets": 1
+        }
+      ],
+      "alpha": 155.0,
+      "alphaPerBullet": 155.0,
+      "pellets": 1,
+      "dps": 77.5,
+      "dmgType": "energy",
+      "physical": 0.0,
+      "energy": 120.0,
+      "distortion": 35.0,
+      "magSize": 8,
+      "totalAmmo": 32,
+      "speed": 500,
+      "range": 350,
+      "maxRange": 1000
+    },
+    {
+      "entity": "lbco_sniper_energy_01_acid01",
+      "name": "Atzkav \"Venom\"  Rifle Francotirador",
+      "class": "Francotirador",
+      "mfr": "LBCo",
+      "fireRate": 30,
+      "fireModes": [
+        {
+          "mode": "Single",
+          "rpm": 30,
+          "pellets": 1
+        }
+      ],
+      "alpha": 155.0,
+      "alphaPerBullet": 155.0,
+      "pellets": 1,
+      "dps": 77.5,
+      "dmgType": "energy",
+      "physical": 0.0,
+      "energy": 120.0,
+      "distortion": 35.0,
+      "magSize": 8,
+      "totalAmmo": 32,
+      "speed": 500,
+      "range": 350,
+      "maxRange": 1000
+    },
+    {
+      "entity": "utfl_crossbow_ballistic_01",
+      "name": "Crossbow Ballistic 01",
+      "class": "Francotirador",
+      "mfr": "UTFL",
+      "fireRate": 42,
+      "fireModes": [
+        {
+          "mode": "Rapid",
+          "rpm": 42,
+          "pellets": 1
+        }
+      ],
+      "alpha": 140.0,
+      "alphaPerBullet": 140.0,
+      "pellets": 1,
+      "dps": 98.0,
+      "dmgType": "energy",
+      "physical": 0.0,
+      "energy": 140.0,
+      "distortion": 0.0,
+      "magSize": 5,
+      "totalAmmo": 20,
+      "speed": 185,
+      "range": 1850,
+      "maxRange": 1850
+    },
+    {
+      "entity": "volt_sniper_energy_01",
+      "name": "Rifle Francotirador Laser Zenith",
+      "class": "Francotirador",
+      "mfr": "Volt",
+      "fireRate": 0,
+      "fireModes": [
+        {
+          "mode": "Charge",
+          "rpm": 0,
+          "pellets": 1
+        }
+      ],
+      "alpha": 42.5,
+      "alphaPerBullet": 42.5,
+      "pellets": 1,
+      "dps": 0,
+      "dmgType": "energy",
+      "physical": 0.0,
+      "energy": 42.5,
+      "distortion": 0.0,
+      "magSize": 22,
+      "totalAmmo": 88,
+      "speed": 700,
+      "range": 500,
+      "maxRange": 1400
+    },
+    {
+      "entity": "behr_lmg_ballistic_01",
+      "name": "FS-9 LMG",
+      "class": "LMG",
+      "mfr": "Behring",
+      "fireRate": 650,
+      "fireModes": [
+        {
+          "mode": "Rapid",
+          "rpm": 650,
+          "pellets": 1
+        }
+      ],
+      "alpha": 14.5,
+      "alphaPerBullet": 14.5,
+      "pellets": 1,
+      "dps": 157.1,
+      "dmgType": "physical",
+      "physical": 14.5,
+      "energy": 0.0,
+      "distortion": 0.0,
+      "magSize": 75,
+      "totalAmmo": 300,
+      "speed": 600,
+      "range": 50,
+      "maxRange": 1200
+    },
+    {
+      "entity": "gmni_lmg_ballistic_01_purple01",
+      "name": "F55 \"Starchaser\" LMG",
+      "class": "LMG",
+      "mfr": "Gemini",
+      "fireRate": 1200,
+      "fireModes": [
+        {
+          "mode": "Rapid",
+          "rpm": 1200,
+          "pellets": 1
+        }
+      ],
+      "alpha": 10.0,
+      "alphaPerBullet": 10.0,
+      "pellets": 1,
+      "dps": 200.0,
+      "dmgType": "physical",
+      "physical": 10.0,
+      "energy": 0.0,
+      "distortion": 0.0,
+      "magSize": 150,
+      "totalAmmo": 600,
+      "speed": 550,
+      "range": 30,
+      "maxRange": 1100
+    },
+    {
+      "entity": "gmni_lmg_ballistic_01",
+      "name": "F55 LMG",
+      "class": "LMG",
+      "mfr": "Gemini",
+      "fireRate": 1200,
+      "fireModes": [
+        {
+          "mode": "Rapid",
+          "rpm": 1200,
+          "pellets": 1
+        }
+      ],
+      "alpha": 10.0,
+      "alphaPerBullet": 10.0,
+      "pellets": 1,
+      "dps": 200.0,
+      "dmgType": "physical",
+      "physical": 10.0,
+      "energy": 0.0,
+      "distortion": 0.0,
+      "magSize": 150,
+      "totalAmmo": 600,
+      "speed": 550,
+      "range": 30,
+      "maxRange": 1100
+    },
+    {
+      "entity": "klwe_lmg_energy_01_iae2201",
+      "name": "Demeco \"Red Alert\" LMG",
+      "class": "LMG",
+      "mfr": "Klaus & Werner",
+      "fireRate": 800,
+      "fireModes": [
+        {
+          "mode": "Rapid",
+          "rpm": 800,
+          "pellets": 1
+        }
+      ],
+      "alpha": 11.5,
+      "alphaPerBullet": 11.5,
+      "pellets": 1,
+      "dps": 153.3,
+      "dmgType": "energy",
+      "physical": 0.0,
+      "energy": 11.5,
+      "distortion": 0.0,
+      "magSize": 100,
+      "totalAmmo": 400,
+      "speed": 600,
+      "range": 2400,
+      "maxRange": 2400
+    },
+    {
+      "entity": "klwe_lmg_energy_01",
+      "name": "LMG Demeco",
+      "class": "LMG",
+      "mfr": "Klaus & Werner",
+      "fireRate": 800,
+      "fireModes": [
+        {
+          "mode": "Rapid",
+          "rpm": 800,
+          "pellets": 1
+        }
+      ],
+      "alpha": 11.5,
+      "alphaPerBullet": 11.5,
+      "pellets": 1,
+      "dps": 153.3,
+      "dmgType": "energy",
+      "physical": 0.0,
+      "energy": 11.5,
+      "distortion": 0.0,
+      "magSize": 100,
+      "totalAmmo": 400,
+      "speed": 600,
+      "range": 2400,
+      "maxRange": 2400
+    },
+    {
+      "entity": "volt_lmg_energy_01",
+      "name": "LMG de energía Fresnel",
+      "class": "LMG",
+      "mfr": "Klaus & Werner",
+      "fireRate": 0,
+      "fireModes": [],
+      "alpha": 9.0,
+      "alphaPerBullet": 9.0,
+      "pellets": 1,
+      "dps": 0,
+      "dmgType": "energy",
+      "physical": 0.0,
+      "energy": 9.0,
+      "distortion": 0.0,
+      "magSize": 165,
+      "totalAmmo": 660,
+      "speed": 1100,
+      "range": 4400,
+      "maxRange": 4400
+    },
+    {
+      "entity": "klwe_lmg_energy_01_mr01",
+      "name": "Lmg Energy 01 Mr01",
+      "class": "LMG",
+      "mfr": "Klaus & Werner",
+      "fireRate": 800,
+      "fireModes": [
+        {
+          "mode": "Rapid",
+          "rpm": 800,
+          "pellets": 1
+        }
+      ],
+      "alpha": 11.5,
+      "alphaPerBullet": 11.5,
+      "pellets": 1,
+      "dps": 153.3,
+      "dmgType": "energy",
+      "physical": 0.0,
+      "energy": 11.5,
+      "distortion": 0.0,
+      "magSize": 100,
+      "totalAmmo": 400,
+      "speed": 600,
+      "range": 2400,
+      "maxRange": 2400
+    },
+    {
+      "entity": "none_lmg_ballistic_01",
+      "name": "Pulverizer LMG",
+      "class": "LMG",
+      "mfr": "Unkn",
+      "fireRate": 355,
+      "fireModes": [
+        {
+          "mode": "Rapid",
+          "rpm": 355,
+          "pellets": 1
+        }
+      ],
+      "alpha": 27.0,
+      "alphaPerBullet": 27.0,
+      "pellets": 1,
+      "dps": 159.8,
+      "dmgType": "physical",
+      "physical": 27.0,
+      "energy": 0.0,
+      "distortion": 0.0,
+      "magSize": 120,
+      "totalAmmo": 480,
+      "speed": 1050,
+      "range": 50,
+      "maxRange": 2100
+    },
+    {
+      "entity": "behr_glauncher_ballistic_01",
+      "name": "Lanzagranadas GP-33 MOD",
+      "class": "Lanzacohetes",
+      "mfr": "Behring",
+      "fireRate": 60,
+      "fireModes": [
+        {
+          "mode": "Single",
+          "rpm": 60,
+          "pellets": 1
+        }
+      ],
+      "alpha": 3.0,
+      "alphaPerBullet": 3.0,
+      "pellets": 1,
+      "dps": 3.0,
+      "dmgType": "physical",
+      "physical": 3.0,
+      "energy": 0.0,
+      "distortion": 0.0,
+      "magSize": 6,
+      "totalAmmo": 24,
+      "speed": 50,
+      "range": 200,
+      "maxRange": 200
+    },
+    {
+      "entity": "apar_special_ballistic_02",
+      "name": "Lanzamisiles Animus",
+      "class": "Otro",
+      "mfr": "Apocalypse Arms",
+      "fireRate": 0,
+      "fireModes": [],
+      "alpha": 0.0,
+      "alphaPerBullet": 0.0,
+      "pellets": 1,
+      "dps": 0,
+      "dmgType": "physical",
+      "physical": 0.0,
+      "energy": 0.0,
+      "distortion": 0.0,
+      "magSize": 0,
+      "totalAmmo": 0,
+      "speed": 0,
+      "range": 0,
+      "maxRange": 0
+    },
+    {
+      "entity": "apar_special_ballistic_01",
+      "name": "Railgun Scourge",
+      "class": "Otro",
+      "mfr": "Apocalypse Arms",
+      "fireRate": 0,
+      "fireModes": [
+        {
+          "mode": "Charge",
+          "rpm": 0,
+          "pellets": 1
+        }
+      ],
+      "alpha": 20.0,
+      "alphaPerBullet": 20.0,
+      "pellets": 1,
+      "dps": 0,
+      "dmgType": "physical",
+      "physical": 20.0,
+      "energy": 0.0,
+      "distortion": 0.0,
+      "magSize": 5,
+      "totalAmmo": 20,
+      "speed": 50,
+      "range": 200,
+      "maxRange": 200
+    },
+    {
+      "entity": "none_special_ballistic_01",
+      "name": "Lanzacohetes Boomtube",
+      "class": "Otro",
+      "mfr": "Unkn",
+      "fireRate": 500,
+      "fireModes": [
+        {
+          "mode": "Single",
+          "rpm": 500,
+          "pellets": 1
+        }
+      ],
+      "alpha": 20.0,
+      "alphaPerBullet": 20.0,
+      "pellets": 1,
+      "dps": 166.7,
+      "dmgType": "physical",
+      "physical": 20.0,
+      "energy": 0.0,
+      "distortion": 0.0,
+      "magSize": 1,
+      "totalAmmo": 4,
+      "speed": 135,
+      "range": 2000,
+      "maxRange": 2160
+    }
+  ],
+  "stats": {
+    "total": 96,
+    "byClass": {
+      "Escopeta": 11,
+      "Francotirador": 15,
+      "LMG": 8,
+      "Lanzacohetes": 1,
+      "Otro": 3,
+      "Pistola": 24,
+      "Rifle": 17,
+      "SMG": 17
+    },
+    "byMfr": {
+      "Apocalypse Arms": 2,
+      "Behring": 15,
+      "Gemini": 17,
+      "Hedgewar": 3,
+      "KSar": 19,
+      "Klaus & Werner": 15,
+      "LBCo": 8,
+      "UTFL": 1,
+      "Unkn": 6,
+      "Volt": 10
+    }
+  }
+}

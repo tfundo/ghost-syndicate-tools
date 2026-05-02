@@ -20,6 +20,9 @@
   // Updated each patch by running: python extract_weapon_data.py
   let WEAPONS = [];
 
+  // FPS weapons loaded from data/fps_weapons.json
+  let FPS_WEAPONS = [];
+
   // ============================================================
   // STATE
   // ============================================================
@@ -35,11 +38,16 @@
     filterSizeWeapon: '',
     sortShips: 'name',
     sortWeapons: 'dps',
+    searchFps: '',
+    filterFpsClass: '',
+    filterFpsMfr: '',
+    sortFps: 'dps',
     selected: [],  // [{type:'ship'|'weapon', name:string}]
     shipImages: {},
     _imagesLoaded: false,
     _shipsLoaded: false,
     _weaponsLoaded: false,
+    _fpsLoaded: false,
     createBuildShip: null,
   };
 
@@ -271,6 +279,7 @@
     const selCount = compState.selected.length;
     const tabShips   = compState.tab === 'ships'        ? 'comp-tab-btn active' : 'comp-tab-btn';
     const tabWeapons = compState.tab === 'weapons'      ? 'comp-tab-btn active' : 'comp-tab-btn';
+    const tabFps     = compState.tab === 'fps'          ? 'comp-tab-btn active' : 'comp-tab-btn';
     const tabCompare = compState.tab === 'compare'      ? 'comp-tab-btn active' : 'comp-tab-btn';
     const tabBuilds  = (compState.tab === 'builds' || compState.tab === 'create-build')
                        ? 'comp-tab-btn comp-tab-builds active' : 'comp-tab-btn comp-tab-builds';
@@ -284,6 +293,7 @@
     let content = '';
     if (compState.tab === 'ships')         content = buildShipsPane();
     if (compState.tab === 'weapons')       content = buildWeaponsPane();
+    if (compState.tab === 'fps')           content = buildFpsPane();
     if (compState.tab === 'compare')       content = buildComparePane();
     if (compState.tab === 'builds')        content = buildBuildsPane();
     if (compState.tab === 'create-build')  content = buildCreateBuildPane(compState.createBuildShip);
@@ -291,12 +301,13 @@
     return `
       <div class="page-header">
         <h1 class="page-title">◈ Comparador</h1>
-        <p class="page-subtitle">Naves y armas · SC 4.7.2</p>
+        <p class="page-subtitle" data-i18n="comp.page.subtitle">Naves y armas · SC 4.8.0 PTU</p>
       </div>
 
       <div class="comp-tabs">
         <button class="${tabShips}"    onclick="Comp.switchTab('ships')">Naves</button>
-        <button class="${tabWeapons}"  onclick="Comp.switchTab('weapons')">Armas</button>
+        <button class="${tabWeapons}"  onclick="Comp.switchTab('weapons')">Armas Nave</button>
+        <button class="${tabFps}"      onclick="Comp.switchTab('fps')">Armas FPS</button>
         <button class="${tabCompare}"  onclick="Comp.switchTab('compare')">
           Comparar ${badge}
         </button>
@@ -658,6 +669,153 @@
   }
 
   // ============================================================
+  // FPS WEAPONS PANE
+  // ============================================================
+
+  const FPS_CLASS_ORDER = ['Pistola','SMG','Rifle','Escopeta','Francotirador','LMG','Lanzacohetes','Otro'];
+
+  function getFpsClassColor(cls) {
+    const c = {
+      'Pistola':       '#f59e0b',
+      'SMG':           '#10b981',
+      'Rifle':         '#3b82f6',
+      'Escopeta':      '#ef4444',
+      'Francotirador': '#8b5cf6',
+      'LMG':           '#f97316',
+      'Lanzacohetes':  '#ec4899',
+      'Otro':          '#6b7280',
+    };
+    return c[cls] || '#a88b4a';
+  }
+
+  function getDmgTypeColor(t) {
+    if (t === 'physical')   return '#ef4444';
+    if (t === 'energy')     return '#fbbf24';
+    if (t === 'distortion') return '#06b6d4';
+    return '#a88b4a';
+  }
+
+  function buildFpsPane() {
+    const classes = [...new Set(FPS_WEAPONS.map(w => w.class))].sort(
+      (a,b) => FPS_CLASS_ORDER.indexOf(a) - FPS_CLASS_ORDER.indexOf(b)
+    );
+    const mfrs = [...new Set(FPS_WEAPONS.map(w => w.mfr).filter(Boolean))].sort();
+
+    const classOpts = classes.map(c =>
+      `<option value="${escComp(c)}" ${compState.filterFpsClass === c ? 'selected' : ''}>${escComp(c)}</option>`
+    ).join('');
+    const mfrOpts = mfrs.map(m =>
+      `<option value="${escComp(m)}" ${compState.filterFpsMfr === m ? 'selected' : ''}>${escComp(m)}</option>`
+    ).join('');
+    const FPS_SORT_OPTS = [
+      ['dps','DPS'],['alpha','Daño/Disparo'],['fireRate','Cadencia'],
+      ['range','Alcance'],['speed','Vel. Proyectil'],['magSize','Cargador'],['name','Nombre'],
+    ];
+    const sortOpts = FPS_SORT_OPTS.map(([v,l]) =>
+      `<option value="${v}" ${compState.sortFps === v ? 'selected' : ''}>${l}</option>`
+    ).join('');
+
+    let weapons = FPS_WEAPONS.filter(w => {
+      const q = compState.searchFps.toLowerCase();
+      if (q && !w.name.toLowerCase().includes(q) && !w.mfr.toLowerCase().includes(q) &&
+          !w.class.toLowerCase().includes(q)) return false;
+      if (compState.filterFpsClass && w.class !== compState.filterFpsClass) return false;
+      if (compState.filterFpsMfr  && w.mfr  !== compState.filterFpsMfr)   return false;
+      return true;
+    });
+
+    const sf = compState.sortFps;
+    if (sf === 'name') weapons.sort((a,b) => a.name.localeCompare(b.name));
+    else weapons.sort((a,b) => (b[sf] || 0) - (a[sf] || 0));
+
+    const cards = weapons.map(w => buildFpsCard(w)).join('');
+    const empty = weapons.length === 0
+      ? `<div class="comp-empty"><div class="comp-empty-icon">◈</div><p>Sin resultados</p></div>`
+      : '';
+
+    return `
+      <div class="controls-bar">
+        <div class="search-box">
+          <span class="search-icon">&#128269;</span>
+          <input type="text" id="compSearchFps" class="comp-search-input"
+            placeholder="Buscar arma, fabricante o clase..."
+            value="${escComp(compState.searchFps)}" autocomplete="off" />
+          ${compState.searchFps ? `<button class="search-clear visible" id="compClearFps" onclick="Comp._clearSearchFps()">✕</button>` : ''}
+        </div>
+        <div class="filters">
+          <select class="filter-select" id="compFpsClassFilter">
+            <option value="">Todas las clases</option>
+            ${classOpts}
+          </select>
+          <select class="filter-select" id="compFpsMfrFilter">
+            <option value="">Todos los fabricantes</option>
+            ${mfrOpts}
+          </select>
+          <select class="filter-select" id="compSortFps">
+            ${sortOpts}
+          </select>
+        </div>
+      </div>
+      <div class="comp-results-bar">
+        <span class="comp-count">${weapons.length} arma${weapons.length !== 1 ? 's' : ''} FPS</span>
+        <span class="comp-hint">SC 4.8.0 PTU · ${FPS_WEAPONS.length} total</span>
+      </div>
+      <div class="comp-grid">
+        ${cards}
+        ${empty}
+      </div>
+    `;
+  }
+
+  function buildFpsCard(w) {
+    const clsColor = getFpsClassColor(w.class);
+    const dmgColor = getDmgTypeColor(w.dmgType);
+    const modes    = (w.fireModes || []).map(m => m.mode).join(' / ');
+    const dpsDisplay = w.dps > 0 ? fmtNum(Math.round(w.dps)) : (w.dmgType === 'energy' && w.fireRate === 0 ? 'Rayo' : '—');
+    const rpmDisplay = w.fireRate > 0 ? fmtNum(w.fireRate) : (modes.includes('Beam') ? 'Rayo' : modes.includes('Charge') ? 'Carga' : '—');
+
+    return `
+      <div class="bp-card comp-card comp-weapon-card">
+        <div class="comp-card-header">
+          <div class="comp-ship-name">${escComp(w.name)}</div>
+          <div class="comp-mfr">${escComp(w.mfr || '—')}</div>
+        </div>
+        <div class="comp-badges">
+          <span class="comp-badge" style="background:${clsColor}18;border-color:${clsColor};color:${clsColor}">${escComp(w.class)}</span>
+          <span class="comp-badge" style="background:${dmgColor}18;border-color:${dmgColor};color:${dmgColor}">${escComp(w.dmgType)}</span>
+          ${modes ? `<span class="comp-badge" style="color:var(--text-muted);border-color:var(--border);font-size:0.6rem">${escComp(modes)}</span>` : ''}
+        </div>
+        <div class="comp-stats-row">
+          <div class="comp-stat">
+            <span class="comp-stat-label">DPS</span>
+            <span class="comp-stat-val">${dpsDisplay}</span>
+          </div>
+          <div class="comp-stat">
+            <span class="comp-stat-label">Daño</span>
+            <span class="comp-stat-val">${fmtNum(w.alpha)}</span>
+          </div>
+          <div class="comp-stat">
+            <span class="comp-stat-label">Cad.</span>
+            <span class="comp-stat-val">${rpmDisplay}${w.fireRate > 0 ? ' <span class="comp-stat-unit">rpm</span>' : ''}</span>
+          </div>
+          <div class="comp-stat">
+            <span class="comp-stat-label">Carg.</span>
+            <span class="comp-stat-val">${w.magSize > 0 ? w.magSize : '—'}</span>
+          </div>
+          <div class="comp-stat">
+            <span class="comp-stat-label">Vel.</span>
+            <span class="comp-stat-val">${w.speed > 0 ? fmtNum(w.speed) + ' <span class="comp-stat-unit">m/s</span>' : '—'}</span>
+          </div>
+          <div class="comp-stat">
+            <span class="comp-stat-label">Alcance</span>
+            <span class="comp-stat-val">${w.range > 0 ? fmtNum(w.range) + ' <span class="comp-stat-unit">m</span>' : '—'}</span>
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+  // ============================================================
   // COMPARE PANE
   // ============================================================
 
@@ -978,6 +1136,27 @@
     const sortWeapons = document.getElementById('compSortWeapons');
     if (sortWeapons) {
       sortWeapons.addEventListener('change', e => { compState.sortWeapons = e.target.value; render(); });
+    }
+
+    // FPS search
+    const fpsSearch = document.getElementById('compSearchFps');
+    if (fpsSearch) {
+      fpsSearch.addEventListener('input', e => { compState.searchFps = e.target.value; render(); });
+    }
+    // FPS class filter
+    const fpsClassFilter = document.getElementById('compFpsClassFilter');
+    if (fpsClassFilter) {
+      fpsClassFilter.addEventListener('change', e => { compState.filterFpsClass = e.target.value; render(); });
+    }
+    // FPS manufacturer filter
+    const fpsMfrFilter = document.getElementById('compFpsMfrFilter');
+    if (fpsMfrFilter) {
+      fpsMfrFilter.addEventListener('change', e => { compState.filterFpsMfr = e.target.value; render(); });
+    }
+    // FPS sort
+    const sortFps = document.getElementById('compSortFps');
+    if (sortFps) {
+      sortFps.addEventListener('change', e => { compState.sortFps = e.target.value; render(); });
     }
 
     // Fill component dropdowns async when create-build tab is active
@@ -1530,6 +1709,19 @@
         })
         .catch(() => {});
     }
+    // Load FPS weapon data
+    if (!compState._fpsLoaded) {
+      compState._fpsLoaded = true;
+      fetch('data/fps_weapons.json')
+        .then(r => r.ok ? r.json() : {weapons: []})
+        .then(data => {
+          FPS_WEAPONS.length = 0;
+          const list = data.weapons || data || [];
+          list.forEach(w => FPS_WEAPONS.push(w));
+          render();
+        })
+        .catch(() => {});
+    }
     // Load ship images
     if (!compState._imagesLoaded) {
       compState._imagesLoaded = true;
@@ -1557,6 +1749,10 @@
     },
     _clearSearchWeapons: function () {
       compState.searchWeapons = '';
+      render();
+    },
+    _clearSearchFps: function () {
+      compState.searchFps = '';
       render();
     }
   };
