@@ -345,14 +345,18 @@ body::after {
   -webkit-backdrop-filter: blur(16px);
   border-top: 1px solid rgba(180, 83, 9, 0.35);
   z-index: 1001;
-  justify-content: space-around;
   align-items: stretch;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
   /* Force GPU layer — fixes iOS Safari fixed positioning flicker */
   transform: translateZ(0);
   -webkit-transform: translateZ(0);
   /* Safe area for notched iPhones */
   padding-bottom: env(safe-area-inset-bottom, 0);
 }
+.nav-bottom::-webkit-scrollbar { display: none; }
 
 .nav-bottom-item {
   display: flex;
@@ -360,7 +364,8 @@ body::after {
   align-items: center;
   justify-content: center;
   gap: 3px;
-  flex: 1;
+  flex: 0 0 72px;
+  min-width: 72px;
   padding: 0.4rem 0.2rem;
   background: none;
   border: none;

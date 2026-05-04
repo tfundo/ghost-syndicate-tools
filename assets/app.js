@@ -201,6 +201,8 @@ window.showSection = function(sectionId, skipUrlUpdate = false) {
   document.querySelectorAll('.nav-bottom-item').forEach(b => {
     b.classList.toggle('active', b.dataset.section === sectionId);
   });
+  const activeBtn = document.querySelector(`.nav-bottom-item[data-section="${sectionId}"]`);
+  if (activeBtn) activeBtn.scrollIntoView({ inline: 'center', block: 'nearest', behavior: 'smooth' });
 
   // Update URL (skip when OAuth hash must be preserved for Supabase to read)
   if (!skipUrlUpdate) window.history.replaceState(null, '', '#' + sectionId);
