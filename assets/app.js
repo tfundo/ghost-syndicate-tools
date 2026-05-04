@@ -201,8 +201,9 @@ window.showSection = function(sectionId, skipUrlUpdate = false) {
   document.querySelectorAll('.nav-bottom-item').forEach(b => {
     b.classList.toggle('active', b.dataset.section === sectionId);
   });
-  const activeBtn = document.querySelector(`.nav-bottom-item[data-section="${sectionId}"]`);
-  if (activeBtn) activeBtn.scrollIntoView({ inline: 'center', block: 'nearest', behavior: 'smooth' });
+  document.querySelectorAll('.nav-menu-item').forEach(b => {
+    b.classList.toggle('active', b.dataset.section === sectionId);
+  });
 
   // Update URL (skip when OAuth hash must be preserved for Supabase to read)
   if (!skipUrlUpdate) window.history.replaceState(null, '', '#' + sectionId);
@@ -1618,3 +1619,19 @@ const HNG = (() => {
   function rebuildAll() { updateUI(); buildSchedule(); }
   return { start, stop, toggleAlert, rebuild: rebuildAll };
 })();
+
+// ===== NAV MENU PANEL =====
+window.toggleNavMenu = function() {
+  const panel   = document.getElementById('navMenuPanel');
+  const overlay = document.getElementById('navMenuOverlay');
+  const btn     = document.getElementById('navMenuBtn');
+  const isOpen  = panel.classList.contains('open');
+  panel.classList.toggle('open', !isOpen);
+  overlay.classList.toggle('open', !isOpen);
+  btn.classList.toggle('menu-open', !isOpen);
+};
+
+window.navMenuGo = function(sectionId) {
+  toggleNavMenu();
+  showSection(sectionId);
+};
