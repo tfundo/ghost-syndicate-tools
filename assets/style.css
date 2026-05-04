@@ -2344,6 +2344,74 @@ body::after {
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 1rem;
 }
+
+/* ── Wikelo Inventory ── */
+.wk-inv-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.wk-inv-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.65rem 0.75rem;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  transition: background 0.12s;
+}
+.wk-inv-row:hover { background: rgba(255,255,255,0.03); }
+.wk-inv-name {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-right: 0.75rem;
+}
+.wk-inv-ctrl {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  flex-shrink: 0;
+}
+.wk-inv-btn {
+  width: 36px;
+  height: 36px;
+  background: rgba(180,83,9,0.15);
+  border: 1px solid rgba(180,83,9,0.3);
+  color: var(--accent);
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.12s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.wk-inv-btn:hover { background: rgba(180,83,9,0.35); }
+.wk-inv-btn:active { background: rgba(180,83,9,0.5); transform: scale(0.94); }
+.wk-inv-qty {
+  width: 64px;
+  text-align: center;
+  background: rgba(0,0,0,0.25);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-left: none;
+  border-right: none;
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  padding: 0.45rem 0;
+  height: 36px;
+  -moz-appearance: textfield;
+}
+.wk-inv-qty::-webkit-outer-spin-button,
+.wk-inv-qty::-webkit-inner-spin-button { -webkit-appearance: none; }
+.wk-inv-qty:focus { outline: none; border-color: rgba(180,83,9,0.5); background: rgba(180,83,9,0.08); }
 .wk-card {
   background: var(--bg-glass);
   border: 1px solid var(--border);

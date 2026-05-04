@@ -1129,15 +1129,33 @@ async function loadWikeloDb() {
 function initWikelo() {
   const db = wkState.db;
   window._wkReady = true;
+
+  // Collect all unique materials sorted alphabetically
+  const matSet = new Map();
+  Object.entries(db).forEach(([catKey, cat]) => {
+    (cat.items || []).forEach(item => {
+      (item.cost || []).forEach(c => {
+        const parsed = parseCost(c);
+        if (parsed) {
+          const nk = window.Auth?.normalizeKey(parsed.resource) || parsed.resource;
+          if (!matSet.has(nk)) matSet.set(nk, parsed.resource);
+        }
+      });
+    });
+  });
+  wkState.allMaterials = [...matSet.entries()].sort((a, b) => a[1].localeCompare(b[1]));
+
   document.getElementById('wkLoading').classList.add('hidden');
 
-  // Build tabs
+  // Build tabs — inventory first, then categories
   const tabsEl = document.getElementById('wkTabs');
-  tabsEl.innerHTML = Object.entries(db).map(([key, cat]) =>
+  const invTab = `<button class="wk-tab${wkState.activeTab === 'inventory' ? ' active' : ''}" onclick="wkSetTab('inventory')">📦 Inventario</button>`;
+  const catTabs = Object.entries(db).map(([key, cat]) =>
     `<button class="wk-tab${key === wkState.activeTab ? ' active' : ''}" onclick="wkSetTab('${key}')">
       ${WK_ICONS[key] || '◈'} ${cat.label}
     </button>`
   ).join('');
+  tabsEl.innerHTML = invTab + catTabs;
 
   // Search listener
   const searchEl = document.getElementById('wkSearch');
@@ -1177,10 +1195,16 @@ window.wkClearSearch = function() {
 
 function renderWikelo() {
   const db = wkState.db;
-  const cat = db[wkState.activeTab];
   const content = document.getElementById('wkContent');
   const countEl = document.getElementById('wkCount');
 
+  if (wkState.activeTab === 'inventory') {
+    content.innerHTML = renderWikeloInventory();
+    countEl.textContent = `${wkState.allMaterials.length} materiales`;
+    return;
+  }
+
+  const cat = db[wkState.activeTab];
   if (cat.type === 'tables') {
     countEl.textContent = '';
     content.innerHTML = renderWikeloTables(cat);
@@ -1202,6 +1226,46 @@ function renderWikelo() {
     ? `<div class="wk-grid">${items.map(renderWikeloCard).join('')}</div>`
     : `<div class="empty-state"><div class="empty-icon">◈</div><p>${t('dyn.wk.no.items')}</p></div>`;
 }
+
+function renderWikeloInventory() {
+  const q = wkState.search;
+  const mats = q
+    ? wkState.allMaterials.filter(([, name]) => name.toLowerCase().includes(q))
+    : wkState.allMaterials;
+
+  if (!mats.length) return `<div class="empty-state"><div class="empty-icon">📦</div><p>Sin materiales encontrados</p></div>`;
+
+  const rows = mats.map(([nk, name]) => {
+    const qty = window.Auth?.getResource('wikelo', nk) || 0;
+    return `<div class="wk-inv-row" id="wkinv-${nk}">
+      <span class="wk-inv-name">${escHtml(name)}</span>
+      <div class="wk-inv-ctrl">
+        <button class="wk-inv-btn" onclick="wkAdjust('${escHtml(nk)}',-1)">−</button>
+        <input class="wk-inv-qty" type="number" min="0" max="99999" value="${qty}"
+          data-nk="${escHtml(nk)}"
+          oninput="wkAdjustSet(this.dataset.nk,this.value)"
+          onclick="this.select()">
+        <button class="wk-inv-btn" onclick="wkAdjust('${escHtml(nk)}',1)">+</button>
+      </div>
+    </div>`;
+  }).join('');
+
+  return `<div class="wk-inv-list">${rows}</div>`;
+}
+
+window.wkAdjust = function(nk, delta) {
+  const cur = window.Auth?.getResource('wikelo', nk) || 0;
+  const next = Math.max(0, cur + delta);
+  window.Auth?.setResource('wikelo', nk, next);
+  // Update input in DOM without full re-render
+  const row = document.getElementById('wkinv-' + nk);
+  if (row) row.querySelector('.wk-inv-qty').value = next;
+};
+
+window.wkAdjustSet = function(nk, rawVal) {
+  const qty = Math.max(0, parseInt(rawVal, 10) || 0);
+  window.Auth?.setResource('wikelo', nk, qty);
+};
 
 function renderWikeloCard(item) {
   const user    = window.Auth?.getUser();
