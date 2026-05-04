@@ -1,0 +1,10 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "org.gstool.app",
+    "sha256_cert_fingerprints": [
+      "28:F1:E4:36:9A:AB:7B:D0:EF:E3:59:4E:BD:51:7F:EF:74:B3:D1:3C:86:A5:E9:78:0F:26:1C:34:33:50:69:5D"
+    ]
+  }
+}]
