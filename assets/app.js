@@ -1272,12 +1272,9 @@ function renderWikeloCard(item) {
   const itemKey = item.id ? String(item.id) : window.Auth?.normalizeKey(item.name) || item.name;
   const isCollected = user ? (window.Auth?.getResource('wk_have', itemKey) > 0) : false;
 
-  // Build cost list — trackable inputs for logged-in users
-  let allMet = !!user;
+  // Build cost list — always show inventory comparison (localStorage or Supabase)
+  let allMet = true;
   const costsHtml = item.cost.map(c => {
-    if (!user) {
-      return `<li class="wk-cost-item"><span class="wk-bullet">▸</span>${escHtml(c)}</li>`;
-    }
     const parsed = parseCost(c);
     if (!parsed) {
       allMet = false;
@@ -1290,17 +1287,14 @@ function renderWikeloCard(item) {
     return `<li class="wk-cost-item wk-trackable${done ? ' wk-cost-done' : ''}">
       <span class="wk-track-check">${done ? '✓' : '✗'}</span>
       <span class="wk-cost-label" title="${escHtml(parsed.resource)}">${escHtml(parsed.resource)}</span>
-      <span class="wk-track-input">
-        <input type="number" class="wk-qty-input" min="0" max="9999" value="${have}"
-          data-rkey="${escHtml(rKey)}"
-          oninput="wkSetResource(this.dataset.rkey,this.value,this)"
-          onclick="event.stopPropagation()">
-        <span class="wk-qty-sep" data-need="${parsed.qty}">/ ${parsed.qty}</span>
+      <span class="wk-inv-summary">
+        <span class="wk-have${done ? ' wk-have-ok' : ''}">${have}</span>
+        <span class="wk-need">/ ${parsed.qty}</span>
       </span>
     </li>`;
   }).join('');
 
-  const isReady = user && allMet && !isCollected;
+  const isReady = allMet && !isCollected;
 
   const compsHtml = item.comps && item.comps.length
     ? `<div class="wk-comps">

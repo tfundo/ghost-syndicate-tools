@@ -5672,6 +5672,28 @@ body::after {
   white-space: nowrap;
 }
 
+/* ── Wikelo inventory summary inline (no login needed) ── */
+.wk-inv-summary {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  flex-shrink: 0;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+.wk-have {
+  font-weight: 700;
+  color: #ef4444;
+  min-width: 28px;
+  text-align: right;
+}
+.wk-have.wk-have-ok { color: #22c55e; }
+.wk-need {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+}
+
 /* ── CHANGELOG ─────────────────────────────────────────────── */
 .cl-list {
   display: flex;
